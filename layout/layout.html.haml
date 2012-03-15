@@ -1,0 +1,10 @@
+!!! 5
+%html( lang="#{ r18n.locale.code }" )
+  %head
+    %meta( charset='UTF-8' )
+    %title= t.title
+    %style= assets['style.css']
+    %script( src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" )
+  %body
+    = yield
+    %script= assets['action.js']
