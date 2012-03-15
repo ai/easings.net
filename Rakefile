@@ -6,11 +6,52 @@ LAYOUT  = ROOT.join('layout/')
 
 require 'haml'
 require 'r18n-core'
-R18n.default_places = CONTENT.join('i18n')
+R18n.default_places = ROOT.join('i18n')
+
+R18n::Filters.add('format') do |text, config|
+  '<p>' +
+    text.sub(/~([^~]+)~/, '<strong>\1</strong>').gsub("\n", '</p><p>') +
+  '</p>'
+end
 
 class Pathname
   def glob(pattern, &block)
     Pathname.glob(self.join(pattern), &block)
+  end
+end
+
+class Easing
+  attr_reader :name
+
+  def initialize(attrs)
+    @name = attrs['name']
+  end
+
+  def linear?
+    @name == 'linear'
+  end
+
+  def x(t)
+    if linear?
+      t
+    else
+      jqueryEasings.eval("jQuery.easing.#{@name}(null, #{t}, 0, 1, 1)")
+    end
+  end
+
+  def dots(count, x, y)
+    dots = count.times.to_a.map { |i| (x.to_f / count) * (i + 1) }
+    dots.map { |i| [i, y - (y * self.x(i / x.to_f))] }
+  end
+
+  def jqueryEasings
+    @@jqueryEasings ||= begin
+      require 'execjs'
+      js  = 'jQuery = { easing: {},' +
+                      ' extend: function (a, b) { jQuery.easing = b } };'
+      js += ROOT.join('vendor/jquery.easing.js').read
+      ExecJS.compile(js)
+    end
   end
 end
 
@@ -29,10 +70,20 @@ class Helpers
       end
     end
   end
-end
 
-def render(haml, &block)
-  Haml::Engine.new(haml, format: :html5).render(Helpers.new, &block)
+  def easings
+    @easings ||= begin
+      YAML.load_file(ROOT.join('easings.yml')).map { |i| Easing.new(i) }
+    end
+  end
+
+  def render(haml, &block)
+    Haml::Engine.new(haml, format: :html5).render(self, &block)
+  end
+
+  def to_path(dots)
+    dots.map { |i| i.join(',') }.join(' ')
+  end
 end
 
 task :clean_public do
@@ -42,10 +93,14 @@ end
 
 desc 'Build site files'
 task :build => :clean_public do
+  load ROOT.join('easings.rb').to_s
+  print 'build'
+
   layout = LAYOUT.join('layout.html.haml').read
+  helper = Helpers.new
 
   R18n.available_locales.each do |locale|
-    R18n.set(locale)
+    R18n.set(locale.code)
 
     LAYOUT.glob('*.html.haml') do |haml|
       next if haml.basename.to_s == 'layout.html.haml'
@@ -53,21 +108,27 @@ task :build => :clean_public do
         sub_ext(".#{locale.code}.html")
 
       PUBLIC.join(name).open('w') do |html|
-        html << render(layout) { render(haml.read) }
+        html << helper.render(layout) { helper.render(haml.read) }
+        print '.'
       end
     end
   end
+
+  print "\n"
 end
 
 desc 'Rebuild files on every changes'
 task :watch do
+  Rake::Task['build'].execute
+
   def rebuild
-    puts 'rebuild'
+    R18n.get.reload!
+    print 're'
     Rake::Task['build'].execute
   end
 
   require 'fssm'
-  FSSM.monitor(ROOT, '{content,layout}/**/*', directories: true) do
+  FSSM.monitor(ROOT, '{i18n,layout,easings.yml}/**/*') do
     update { rebuild }
     delete { rebuild }
     create { rebuild }

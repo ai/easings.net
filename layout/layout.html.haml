@@ -3,8 +3,11 @@
   %head
     %meta( charset='UTF-8' )
     %title= t.title
-    %style= assets['style.css']
     %script( src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" )
+    %link( rel="stylesheet" href="http://fonts.googleapis.com/css?#{t.font.url}" )
+    %style= assets['style.css']
+    %style
+      body { font-family: "#{ t.font.name }", sans-serif; }
   %body
     = yield
     %script= assets['action.js']

@@ -1,1 +1,18 @@
-1
+.root
+  .about
+    = t.about
+  %ul.easings
+    - easings.each do |easing|
+      %li
+        %a( href="##{easing.name}" )
+          %h2= easing.name
+          .graph
+            - x = 200
+            - y = 100
+            %svg( xmlns="http://www.w3.org/2000/svg" viewBox="-2 -40 #{x + 4} #{y + 80}" )
+              - dots = easing.dots(100, x, y)
+              %line( x1="0" y1="0" x2="#{x}" y2="0" )
+              %line( x1="0" y1="#{y}" x2="#{x}" y2="#{y}" )
+              %path( d="M0,#{y} L#{to_path dots}" )
+              %ellipse( cx="0" cy="#{y}" rx="1.5" ry="1.5" )
+              %ellipse( cx="#{x}" cy="0" rx="1.5" ry="1.5" )
