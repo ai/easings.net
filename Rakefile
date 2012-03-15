@@ -31,6 +31,10 @@ class Easing
     @name == 'linear'
   end
 
+  def in_out?
+    @name =~ /InOut/
+  end
+
   def x(t)
     if linear?
       t
@@ -83,6 +87,10 @@ class Helpers
 
   def to_path(dots)
     dots.map { |i| i.join(',') }.join(' ')
+  end
+
+  def class_if(cls, check)
+    check ? { class: cls } : {}
   end
 end
 

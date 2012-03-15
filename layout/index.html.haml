@@ -3,7 +3,7 @@
     = t.about
   %ul.easings
     - easings.each do |easing|
-      %li
+      %li{ class_if('in-out', easing.in_out?), class: easing.name }
         %a( href="##{easing.name}" )
           %h2= easing.name
           .graph

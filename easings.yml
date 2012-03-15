@@ -1,5 +1,4 @@
 - name: linear
-- name: swing
 - name: easeInSine
 - name: easeOutSine
 - name: easeInOutSine

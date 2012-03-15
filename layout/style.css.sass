@@ -10,18 +10,49 @@ body
   font-size: 16px
   font-family: sans-serif
 
+$easing-width: 120px + 4px
+
 .root
-  width: 800px
+  width: 6 * ($easing-width + 20px) + 25px
+  max-width: 100%
   margin: 10px auto
+  position: relative
 
 .about
+  padding: 15px ($easing-width + 40px) 10px 0
   p
     margin-bottom: 5px
 
 .easings
+  margin: 0 -35px 0 -10px
+  position: relative
+  li
+    list-style: none
+    display: inline-block
+    padding: 5px
+    margin: 5px
+    &.linear
+      position: absolute
+      top: -140px
+      right: 25px
+    &.in-out
+      margin-right: 30px
+  h2
+    text-align: center
+    font-size: 16px
+    font-weight: normal
+    margin-bottom: -20px
+    text-shadow: white 0 1px 2px, white 1px 0 2px, white 0 -1px 2px, white -1px 0 2px
+    position: relative
+    z-index: 2
+  a
+    display: block
+    color: black
+    text-decoration: none
   svg
-    width: 200px + 4px
-    height: 100px + 80px
+    width: $easing-width
+    height: 60px + 80px
+    margin-bottom: -30px
     line
       stroke: #bbb
     path
