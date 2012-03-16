@@ -5,6 +5,7 @@ PUBLIC  = ROOT.join('public/')
 LAYOUT  = ROOT.join('layout/')
 
 require 'haml'
+require 'compass'
 require 'r18n-core'
 R18n.default_places = ROOT.join('i18n')
 
