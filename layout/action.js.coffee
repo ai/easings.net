@@ -1,5 +1,6 @@
 #= require jquery.chrono
 #= require jquery.easing
+#= require jquery.hoverIntent
 
 after = jQueryChrono.after
 every = jQueryChrono.every
@@ -32,3 +33,22 @@ jQuery ($) ->
   headers.dblclick ->
     dblclickWaiting = false
     location.hash = ''
+
+  # Easing example
+
+  graphBottom = parseInt(easings.find('.example').css('top'))
+  graphHeight = easings.height()
+  dotX = easings.find('.dot').css('left')
+  dotY = easings.find('.dot').css('top')
+
+  easings.hoverIntent
+    out: ->
+      $(@).find('.example').stop().css(top: graphBottom).end().
+           find('.dot').stop().css(top: dotY, left: dotX)
+    over: ->
+      easing = $(@).find('h2').text()
+      $(@).
+        find('.example').animate(top: '-=60', 1000, easing).end().
+        find('.dot').animate { top: '-=60', left: '+=120'}
+          duration: 1000
+          specialEasing: top: easing, left: 'linear'

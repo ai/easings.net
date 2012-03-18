@@ -32,10 +32,13 @@ $easing-width: 120px + 4px
     display: inline-block
     margin: 5px
     padding: 5px
+    position: relative
     &.linear
       position: absolute
       top: -140px
       right: 35px
+      .dot
+        background: red
     &.in-out
       margin-right: 40px
   h2
@@ -53,7 +56,37 @@ $easing-width: 120px + 4px
     margin-bottom: -30px
     line
       stroke: #bbb
+      stroke-width: 1px
     path
       fill: transparent
       stroke: black
-      stroke-width: 3px
+      stroke-width: 2px
+  .example
+    position: absolute
+    top: 100px
+    left: $easing-width + 12px
+    background: red
+    width: 16px
+    height: 9px
+    .arrow
+      position: absolute
+      background: red
+      left: -4px
+      top: 1px
+      width: 7px
+      height: 7px
+      +rotate(45deg)
+  .dot
+    position: absolute
+    top: 102px
+    left: 5px
+    background: black
+    width: 4px
+    height: 4px
+    +border-radius(2px)
+  .example, .dot
+    opacity: 0
+    +transition(opacity 200ms)
+  li.hover
+    .example, .dot
+      opacity: 1

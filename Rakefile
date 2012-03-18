@@ -93,6 +93,10 @@ class Helpers
   def class_if(cls, check)
     check ? { class: cls } : {}
   end
+
+  def production?
+    false
+  end
 end
 
 task :clean_public do
