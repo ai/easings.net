@@ -63,6 +63,10 @@ end
 class Helpers
   include R18n::Helpers
 
+  def initialize(env)
+    @env = env
+  end
+
   def assets
     @sprockets ||= begin
       require 'sprockets'
@@ -95,7 +99,7 @@ class Helpers
   end
 
   def production?
-    false
+    @env == :production
   end
 end
 
@@ -104,26 +108,34 @@ task :clean_public do
   PUBLIC.glob('*') { |i| i.rmtree }
 end
 
+environment = nil
+
 desc 'Build site files'
-task :build => :clean_public do
+task :build => :clean_public do |t, args|
+  environment ||= :production
+
   load ROOT.join('easings.rb').to_s
   print 'build'
 
   layout = LAYOUT.join('layout.html.haml').read
-  helper = Helpers.new
+  helper = Helpers.new(environment)
 
   R18n.available_locales.each do |locale|
     R18n.set(locale.code)
 
-    LAYOUT.glob('*.html.haml') do |haml|
+    LAYOUT.glob('**/*.html.haml') do |haml|
       next if haml.basename.to_s == 'layout.html.haml'
       name = PUBLIC + haml.relative_path_from(LAYOUT).sub_ext('').
         sub_ext(".#{locale.code}.html")
+      file = PUBLIC.join(name)
 
-      PUBLIC.join(name).open('w') do |html|
+      file.open('w') do |html|
         html << helper.render(layout) { helper.render(haml.read) }
-        print '.'
       end
+
+      `gzip --best -c #{file} > #{file}.gz` if helper.production?
+
+      print '.'
     end
   end
 
@@ -132,6 +144,7 @@ end
 
 desc 'Rebuild files on every changes'
 task :watch do
+  environment ||= :development
   Rake::Task['build'].execute
 
   def rebuild
