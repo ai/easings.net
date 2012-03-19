@@ -10,7 +10,7 @@ jQuery ($) ->
 
   # Link emulation
 
-  easings.click -> location.hash = $(@).find('a').attr('href')
+  easings.click -> location.hash = $(@).find('.link').attr('href')
   easings.mouseenter -> $(@).addClass('hover')
   easings.mouseleave -> $(@).removeClass('hover')
   easings.mousedown  -> $(@).addClass('pressed')
@@ -52,3 +52,26 @@ jQuery ($) ->
         find('.dot').animate { top: '-=60', left: '+=119'}
           duration: 1000
           specialEasing: top: easing, left: 'linear'
+
+  # Highlight easing
+
+  highlight = ->
+    easing = easings.find(".link[href=#{location.hash}]").closest('li')
+    if easing.length
+      $('.easings').addClass('highlighted')
+      easings.removeClass('highlight')
+      easing.addClass('highlight')
+    else
+      $('.easings').removeClass('highlighted')
+      easings.removeClass('highlight')
+
+  highlight()
+  $(window).on('hashchange', highlight)
+
+  $('body').click ->
+    location.hash = '' if location.hash.length > 1
+
+  easings.click ->
+    if $(@).hasClass('highlight')
+      location.hash = ''
+      false

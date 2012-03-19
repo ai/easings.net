@@ -10,12 +10,16 @@ body
   font-size: 16px
   font-family: sans-serif
 
+a
+  outline: none
+
 $easing-width: 120px + 4px
 
 .root
   width: 6 * ($easing-width + 20px) + 35px
   max-width: 100%
-  margin: 10px auto
+  margin: 0 auto
+  padding: 10px
   position: relative
 
 .about
@@ -48,6 +52,8 @@ $easing-width: 120px + 4px
     z-index: 2
   li.easeOutElastic h2
     +box-shadow(white 0 21px 2px -2px inset)
+
+.easings
   svg
     width: $easing-width
     height: 60px + 80px
@@ -62,12 +68,17 @@ $easing-width: 120px + 4px
     text
       font-size: 12px
       fill: #bbb
+
+.easings
   .link
+    display: block
+  .graph
     text-decoration: none
+    position: relative
   .example
     position: absolute
-    top: 98px
-    left: $easing-width + 4px
+    top: 94px
+    left: $easing-width - 2px
     width: 21px
     height: 12px
     overflow: hidden
@@ -88,8 +99,8 @@ $easing-width: 120px + 4px
       +rotate(45deg)
   .dot
     position: absolute
-    top: 103px
-    left: 7px
+    top: 99px
+    left: 1px
     background: #ddd
     width: 2px
     height: 2px
@@ -99,4 +110,13 @@ $easing-width: 120px + 4px
     +transition(opacity 200ms)
   li.hover
     .example, .dot
+      opacity: 1
+
+.easings
+  li
+    +transition(opacity 300ms)
+  &.highlighted
+    li
+      opacity: 0.15
+    li.highlight
       opacity: 1

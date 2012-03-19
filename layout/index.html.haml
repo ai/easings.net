@@ -5,7 +5,7 @@
     - easings.each do |easing|
       %li{ class_if('in-out', easing.in_out?), class: easing.name }
         %h2= easing.name
-        %a.link( href="##{easing.name}" )
+        %a.graph.link( href="##{easing.name}" )
           .example
             .rect
             .arrow
