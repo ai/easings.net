@@ -63,6 +63,8 @@ end
 class Helpers
   include R18n::Helpers
 
+  attr_accessor :path
+
   def initialize(env)
     @env = env
   end
@@ -101,6 +103,12 @@ class Helpers
   def production?
     @env == :production
   end
+
+  def each_locale(&block)
+    r18n.available_locales.sort { |a, b| a.code <=> b.code }.each do |locale|
+      yield(locale.code, locale)
+    end
+  end
 end
 
 task :clean_public do
@@ -125,9 +133,10 @@ task :build => :clean_public do |t, args|
 
     LAYOUT.glob('**/*.html.haml') do |haml|
       next if haml.basename.to_s == 'layout.html.haml'
-      name = PUBLIC + haml.relative_path_from(LAYOUT).sub_ext('').
-        sub_ext(".#{locale.code}.html")
-      file = PUBLIC.join(name)
+      path = haml.relative_path_from(LAYOUT).sub_ext('').sub_ext('').to_s
+      file = PUBLIC.join(path + ".#{locale.code}.html")
+
+      helper.path = path
 
       file.open('w') do |html|
         html << helper.render(layout) { helper.render(haml.read) }

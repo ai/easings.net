@@ -7,7 +7,21 @@
     %link( rel="stylesheet" href="http://fonts.googleapis.com/css?#{t.font.url}" )
     %style= assets['style.css']
     %style
-      body { font-family: "#{ t.font.name }", sans-serif; }
+      body { font-family: "#{ t.font.name }", "Trebuchet MS", sans-serif; }
   %body
-    = yield
+    .root
+      = yield
+      .root-footer
+
+    %footer
+      %ul
+        - each_locale do |code, locale|
+          %li
+            - if locale == r18n.locale
+              %span.current
+                = locale.title
+            - else
+              %a( rel="alternate" lang="#{code}" href="/#{path}.#{code}.html" )
+                = locale.title
+
     %script= assets['action.js']
