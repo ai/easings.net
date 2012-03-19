@@ -3,8 +3,8 @@ font:
   name: PT Sans
   url: family=PT+Sans:400,700&subset=latin
 about: !!format
-  ~Easing-function~ displays the current speed of animation to make it more
-  realistic.
+  ~Easing function~ specifies the speed of animation progresses
+  to make it more realistic.
 
   The real object doesn’t begin its movement instantly and at a constant rate.
   When we open the drawer, we’ll first give it the acceleration, and then
