@@ -1,0 +1,14 @@
+title: Easing Functions Cheat Sheet
+font:
+  name: PT Sans
+  url: family=PT+Sans:400,700&subset=latin
+about: !!format
+  ~Easing-function~ displays the current speed of animation to make it more
+  realistic.
+
+  The real object doesn’t begin its movement instantly and at a constant rate.
+  When we open the drawer, we’ll first give it the acceleration, and then
+  slowing it. When something falls, it first flew faster and faster,
+  but it hit the floor and bounces back.
+
+  This page will help each time to pick the desired easing-function.
