@@ -49,6 +49,6 @@ jQuery ($) ->
       easing = $(@).find('h2').text()
       $(@).
         find('.example').animate(top: '-=60', 1000, easing).end().
-        find('.dot').animate { top: '-=60', left: '+=120'}
+        find('.dot').animate { top: '-=60', left: '+=119'}
           duration: 1000
           specialEasing: top: easing, left: 'linear'
