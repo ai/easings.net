@@ -10,19 +10,25 @@ jQuery ($) ->
 
   # Link emulation
 
-  easings.click -> location.hash = $(@).find('.link').attr('href')
+  easings.click ->
+    if $(@).hasClass('highlight')
+      location.hash = ''
+    else
+      location.hash = $(@).find('.link').attr('href')
+    false
+
   easings.mouseenter -> $(@).addClass('hover')
   easings.mouseleave -> $(@).removeClass('hover')
-  easings.mousedown  -> $(@).addClass('pressed')
-  easings.mouseup    -> $(@).removeClass('pressed')
 
   # Allow to copy easing name quicky by double click
 
-  dblclickWaiting = false
+  dblclickWaiting = null
+  dbclickHash     = location.hash
   headers = easings.find('h2')
 
   headers.click ->
     dblclickWaiting = true
+    dbclickHash     = location.hash
     easing = $(@).closest('li')
     after '200ms', ->
       if dblclickWaiting
@@ -31,8 +37,9 @@ jQuery ($) ->
     false
 
   headers.dblclick ->
-    dblclickWaiting = false
-    location.hash = ''
+    if dblclickWaiting
+      location.hash   = dbclickHash
+      dblclickWaiting = null
 
   # Easing example
 
@@ -67,11 +74,3 @@ jQuery ($) ->
 
   highlight()
   $(window).on('hashchange', highlight)
-
-  $('body').click ->
-    location.hash = '' if location.hash.length > 1
-
-  easings.click ->
-    if $(@).hasClass('highlight')
-      location.hash = ''
-      false

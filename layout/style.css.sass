@@ -121,8 +121,12 @@ $easing-width: 120px + 4px
   &.highlighted
     li
       opacity: 0.15
+    .example, .dot
+      display: none
     li.highlight
       opacity: 1
+      .example, .dot
+        display: block
 
 +sticky-footer(34px, ".root", ".root-footer", "footer")
 

@@ -111,16 +111,14 @@ class Helpers
   end
 end
 
-task :clean_public do
-  PUBLIC.mkpath
-  PUBLIC.glob('*') { |i| i.rmtree }
-end
-
 environment = nil
 
 desc 'Build site files'
 task :build => :clean_public do |t, args|
   environment ||= :production
+
+  PUBLIC.mkpath
+  PUBLIC.glob('*') { |i| i.rmtree }
 
   load ROOT.join('easings.rb').to_s
   print 'build'
