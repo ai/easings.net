@@ -114,7 +114,7 @@ end
 environment = nil
 
 desc 'Build site files'
-task :build => :clean_public do |t, args|
+task :build do |t, args|
   environment ||= :production
 
   PUBLIC.mkpath
@@ -166,4 +166,12 @@ task :watch do
     delete { rebuild }
     create { rebuild }
   end
+end
+
+desc 'Upload site files to production server'
+task :public => :build do
+  host = 'easings.net'
+  path = '/home/ai/easings.net'
+  sh "rsync --recursive --delete --compress --progress --human-readable " +
+    "#{PUBLIC} #{host}:#{path}"
 end
