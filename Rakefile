@@ -109,6 +109,10 @@ class Helpers
       yield(locale.code, locale)
     end
   end
+
+  def include_statistics
+    LAYOUT.join('statistics.html').read
+  end
 end
 
 environment = nil

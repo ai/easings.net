@@ -8,6 +8,8 @@
     %style= assets['style.css']
     %style
       body { font-family: "#{ t.font.name }", "Trebuchet MS", sans-serif; }
+    - if production?
+      = include_statistics
   %body
     .root
       = yield
