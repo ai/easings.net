@@ -6,6 +6,15 @@ after = jQueryChrono.after
 every = jQueryChrono.every
 
 jQuery ($) ->
+  # Language autodetection
+
+  if location.pathname == '/'
+    langs = $('footer li a')
+    codes = langs.map -> $(@).attr('lang')
+    if $.inArray(navigator.language, codes) > -1
+      link = langs.filter("[lang=#{navigator.language}]")
+      location.pathname = link.attr('href')
+
   easings = $('.easings li')
 
   # Link emulation
