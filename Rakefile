@@ -169,7 +169,7 @@ task :watch do
 end
 
 desc 'Upload site files to production server'
-task :public => :build do
+task :deploy => :build do
   host = 'easings.net'
   path = '/home/ai/easings.net'
   sh "rsync --recursive --delete --compress --progress --human-readable " +
