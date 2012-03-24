@@ -1,11 +1,8 @@
-#= require jquery.chrono
 #= require jquery.easing
 #= require jquery.hoverIntent
 
-after = jQueryChrono.after
-every = jQueryChrono.every
-
 jQuery ($) ->
+
   # Language autodetection
 
   if location.pathname == '/'
@@ -24,38 +21,15 @@ jQuery ($) ->
     document.location.hash = hash
     $(window).scrollTop(scroll)
 
-  easings.click ->
-    link = $(@).find('.link')
-    return unless link.length
-    if $(@).hasClass('highlight')
+  easings.find('.link').click ->
+    if $(@).closest('li').hasClass('highlight')
       hash('')
     else
-      hash(link.attr('href'))
+      hash($(@).attr('href'))
     false
 
   easings.mouseenter -> $(@).addClass('hover')
   easings.mouseleave -> $(@).removeClass('hover')
-
-  # Allow to copy easing name quicky by double click
-
-  dblclickWaiting = null
-  dbclickHash     = location.hash
-  headers = easings.find('h2')
-
-  headers.click ->
-    dblclickWaiting = true
-    dbclickHash     = location.hash
-    easing = $(@).closest('li')
-    after '200ms', ->
-      if dblclickWaiting
-        easing.click()
-        dblclickWaiting = false
-    false
-
-  headers.dblclick ->
-    if dblclickWaiting
-      location.hash   = dbclickHash
-      dblclickWaiting = null
 
   # Easing example
 
