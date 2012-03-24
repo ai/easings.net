@@ -12,3 +12,18 @@ about: !!format
   bounces back after it hits the floor.
 
   This page will each time help to pick the desired easing function.
+howtos:
+  name: easing name
+  desc: easing description
+  js: !!format
+    jQuery with jQuery Easing Plugin is the easiest way to describe animation
+    with easing. You need just set easing name to `.animate` method as
+    third argument ot in `easing` key.
+  sass: !!format
+    Sass/SCSS help you to describe animation. Compass remove prefixes before
+    `transition` and `animation` properties and Compass Ceaser plugin allow
+    to set easing by it name (without Bezier curves).
+  css: !!format
+    CSS properties `transition` and `animation` allow you to set easing
+    function. Unfortunately, them support not all easings and you must set
+    function by Bezier curves.

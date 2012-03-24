@@ -4,20 +4,32 @@ CONTENT = ROOT.join('content/')
 PUBLIC  = ROOT.join('public/')
 LAYOUT  = ROOT.join('layout/')
 
-require 'haml'
 require 'compass'
+
+require 'haml'
+require 'haml/template/options'
+Haml::Template.options[:ugly] = true
+
 require 'r18n-core'
 R18n.default_places = ROOT.join('i18n')
 
 R18n::Filters.add('format') do |text, config|
   '<p>' +
-    text.sub(/~([^~]+)~/, '<strong>\1</strong>').gsub("\n", '</p><p>') +
+    text.sub(/~([^~]+)~/, '<strong>\1</strong>').
+        gsub(/`([^`]+)`/, '<code>\1</code>').
+        gsub("\n", '</p><p>') +
   '</p>'
 end
 
 class Pathname
   def glob(pattern, &block)
     Pathname.glob(self.join(pattern), &block)
+  end
+end
+
+class R18n::TranslatedString
+  def link(title, href)
+    self.sub(title, "<a href=\"#{href}\">#{title}</a>")
   end
 end
 
@@ -112,6 +124,10 @@ class Helpers
 
   def include_statistics
     LAYOUT.join('statistics.html').read
+  end
+
+  def easing_example(name = 'name')
+    "<span class=\"easing\">#{ t.howtos[name] }</span>"
   end
 end
 

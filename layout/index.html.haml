@@ -22,3 +22,30 @@
             %line( x1="0" y1="0" x2="#{x}" y2="0" )
             %line( x1="0" y1="#{y}" x2="#{x}" y2="#{y}" )
           %path( d="M0,#{y} L#{to_path dots}" )
+.howtos
+  %h2 JavaScript
+  = t.howtos.js.link('jQuery Easing Plugin', 'http://gsgd.co.uk/sandbox/jquery/easing/')
+  %pre
+    %code
+      div.animate({ top: '-=100px' }, 600, '#{easing_example}', function () { … })
+
+  %h2 Sass
+  = t.howtos.sass.link('Compass Ceaser', 'http://thesassway.com/projects/compass-ceaser')
+  %pre
+    %code
+      :preserve
+        div
+          @include transition(all 600ms ceaser('#{easing_example}'))
+
+  %h2 CSS
+  = t.howtos.css
+
+  %pre
+    %code
+      :preserve
+        div {
+          -webkit-transition: all 600ms #{easing_example("desc")};
+          -moz-transition:    all 600ms #{easing_example("desc")};
+          -ms-transition:     all 600ms #{easing_example("desc")};
+          -o-transition:      all 600ms #{easing_example("desc")};
+          transition:         all 600ms #{easing_example("desc")}; }
