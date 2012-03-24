@@ -18,7 +18,7 @@ howtos:
   desc: easing description
   js: !!format
     jQuery with jQuery Easing Plugin is the easiest way to describe animation
-    with easing. You need just set easing name to `.animate` method as
+    with easing. You need just set easing name to `.animate` method as
     third argument ot in `easing` key.
   sass: !!format
     Sass/SCSS help you to describe animation. Compass remove prefixes before
@@ -26,7 +26,7 @@ howtos:
     to set easing by it name (without Bezier curves).
   css: !!format
     CSS properties `transition` and `animation` allow you to set easing
-    function. Unfortunately, them support not all easings and you must set
+    function. Unfortunately, them support not all easings and you must set
     function by Bezier curve.
   css_help:
     Select easing to show it description in Bezier curve.

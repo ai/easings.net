@@ -42,17 +42,18 @@
   %section.sass
     %h2 Sass
     = t.howtos.sass.link('Compass Ceaser', 'http://thesassway.com/projects/compass-ceaser')
-    .no-support= t.howtos.no_css
     %pre
       %code
         :preserve
           div
             @include transition(all 600ms ceaser('#{easing_example}'))
+    .no-css-support= t.howtos.no_css
 
   %section.css
     %h2 CSS
     = t.howtos.css
-    %p.click= t.howtos.css_help
+    .click
+      %p= t.howtos.css_help
     %pre
       %code
         :preserve

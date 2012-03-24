@@ -6,9 +6,10 @@
     %meta( name="description" content="#{ t.description }" )
     %script( src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery#{production? ? '.min' : ''}.js" )
     %link( rel="stylesheet" href="http://fonts.googleapis.com/css?#{t.font.url}" )
+    %link( rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Mono" )
     %style= assets['style.css']
     %style
-      body { font-family: "#{ t.font.name }", "Trebuchet MS", sans-serif; }
+      body, .howtos .easing { font-family: "#{ t.font.name }", "Trebuchet MS", sans-serif; }
     - if production?
       = include_statistics
   %body
