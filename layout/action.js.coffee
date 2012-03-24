@@ -19,11 +19,18 @@ jQuery ($) ->
 
   # Link emulation
 
+  hash = (hash) ->
+    scroll = $(window).scrollTop()
+    document.location.hash = hash
+    $(window).scrollTop(scroll)
+
   easings.click ->
+    link = $(@).find('.link')
+    return unless link.length
     if $(@).hasClass('highlight')
-      location.hash = ''
+      hash('')
     else
-      location.hash = $(@).find('.link').attr('href')
+      hash(link.attr('href'))
     false
 
   easings.mouseenter -> $(@).addClass('hover')
@@ -71,15 +78,32 @@ jQuery ($) ->
 
   # Highlight easing
 
+  howtos = $('.howtos')
+  howtos.find('.easing').each -> $(@).data(text: $(@).text())
+
   highlight = ->
     easing = easings.find(".link[href=#{location.hash}]").closest('li')
     if easing.length
       $('.easings').addClass('highlighted')
       easings.removeClass('highlight')
       easing.addClass('highlight')
+      howtos.find('.click').slideUp()
+      howtos.find('.js   .easing').text(easing.data('jquery'))
+      howtos.find('.sass .easing').text(easing.data('sass'))
+      howtos.find('.css  .easing').text(easing.data('css'))
+      if easing.data('css')
+        howtos.find('.no-css-support').slideUp(400)
+        howtos.find('.css pre, .sass pre').slideDown(400)
+      else
+        howtos.find('.no-css-support').slideDown(400)
+        howtos.find('.css pre, .sass pre').slideUp(400)
     else
       $('.easings').removeClass('highlighted')
       easings.removeClass('highlight')
+      howtos.find('.click').slideDown()
+      howtos.find('.easing').each -> $(@).text($(@).data('text'))
+      howtos.find('.no-css-support').slideUp(400)
+      howtos.find('.css pre, .sass pre').slideDown(400)
 
   highlight()
   $(window).on('hashchange', highlight)

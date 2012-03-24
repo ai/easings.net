@@ -2,50 +2,64 @@
   = t.about
 %ul.easings
   - easings.each do |easing|
-    %li{ class_if('in-out', easing.in_out?), class: easing.name }
+    %li{ class_if('in-out', easing.in_out?), class: easing.name, data: easing.names }
       %h2= easing.name
-      %a.graph.link( href="##{easing.name}" )
-        .example
-          .rect
-          .arrow
-        .dot
-        - x = 120
-        - y = 60
-        %svg( xmlns="http://www.w3.org/2000/svg" viewBox="-2 -40 #{x + 4} #{y + 80}" )
-          - dots = easing.dots(100, x, y)
-          - if easing.linear?
+      - x = 120
+      - y = 60
+      - dots = easing.dots(100, x, y)
+      - if easing.linear?
+        .graph
+          .example
+            .rect
+            .arrow
+          .dot
+          - x = 120
+          - y = 60
+          %svg( xmlns="http://www.w3.org/2000/svg" viewBox="-2 -40 #{x + 4} #{y + 80}" )
             %line( x1="0" y1="0" x2="0" y2="#{y}" )
             %text( x="2" y="6" ) x
             %line( x1="0" y1="#{y}" x2="#{x}" y2="#{y}" )
             %text( x="#{x - 5}" y="#{y - 3}" ) t
-          - else
+            %path( d="M0,#{y} L#{to_path dots}" )
+      - else
+        %a.graph.link( href="##{easing.name}" )
+          .example
+            .rect
+            .arrow
+          .dot
+          %svg( xmlns="http://www.w3.org/2000/svg" viewBox="-2 -40 #{x + 4} #{y + 80}" )
             %line( x1="0" y1="0" x2="#{x}" y2="0" )
             %line( x1="0" y1="#{y}" x2="#{x}" y2="#{y}" )
-          %path( d="M0,#{y} L#{to_path dots}" )
+            %path( d="M0,#{y} L#{to_path dots}" )
 .howtos
-  %h2 JavaScript
-  = t.howtos.js.link('jQuery Easing Plugin', 'http://gsgd.co.uk/sandbox/jquery/easing/')
-  %pre
-    %code
-      div.animate({ top: '-=100px' }, 600, '#{easing_example}', function () { … })
+  %section.js
+    %h2 JavaScript
+    = t.howtos.js.link('jQuery Easing Plugin', 'http://gsgd.co.uk/sandbox/jquery/easing/')
+    %pre
+      %code
+        div.animate({ top: '-=100px' }, 600, '#{easing_example}', function () { … })
 
-  %h2 Sass
-  = t.howtos.sass.link('Compass Ceaser', 'http://thesassway.com/projects/compass-ceaser')
-  %pre
-    %code
-      :preserve
-        div
-          @include transition(all 600ms ceaser('#{easing_example}'))
+  %section.sass
+    %h2 Sass
+    = t.howtos.sass.link('Compass Ceaser', 'http://thesassway.com/projects/compass-ceaser')
+    .no-support= t.howtos.no_css
+    %pre
+      %code
+        :preserve
+          div
+            @include transition(all 600ms ceaser('#{easing_example}'))
 
-  %h2 CSS
-  = t.howtos.css
-
-  %pre
-    %code
-      :preserve
-        div {
-          -webkit-transition: all 600ms #{easing_example("desc")};
-          -moz-transition:    all 600ms #{easing_example("desc")};
-          -ms-transition:     all 600ms #{easing_example("desc")};
-          -o-transition:      all 600ms #{easing_example("desc")};
-          transition:         all 600ms #{easing_example("desc")}; }
+  %section.css
+    %h2 CSS
+    = t.howtos.css
+    %p.click= t.howtos.css_help
+    %pre
+      %code
+        :preserve
+          div {
+            -webkit-transition: all 600ms #{easing_example("desc")};
+            -moz-transition:    all 600ms #{easing_example("desc")};
+            -ms-transition:     all 600ms #{easing_example("desc")};
+            -o-transition:      all 600ms #{easing_example("desc")};
+            transition:         all 600ms #{easing_example("desc")}; }
+    .no-css-support= t.howtos.no_css

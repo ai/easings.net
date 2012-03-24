@@ -117,7 +117,7 @@ $easing-width: 120px + 4px
 
 .easings
   li
-    +transition(opacity 300ms)
+    +transition(opacity 400ms)
   &.highlighted
     li
       opacity: 0.15
@@ -134,11 +134,15 @@ $easing-width: 120px + 4px
     font-weight: normal
     font-size: 25px
     margin: 20px 0 5px 0
+  p
+    margin-bottom: 5px
   pre
-    margin-top: 10px
+    margin-top: 5px
     font-size: 15px
     .easing
       color: red
+  .no-css-support
+    display: none
 
 +sticky-footer(34px, ".root", ".root-footer", "footer")
 

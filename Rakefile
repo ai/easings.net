@@ -38,6 +38,7 @@ class Easing
 
   def initialize(attrs)
     @name = attrs['name']
+    @css  = attrs['css']
   end
 
   def linear?
@@ -46,6 +47,10 @@ class Easing
 
   def in_out?
     @name =~ /InOut/
+  end
+
+  def names
+    { jquery: @name, sass: (@css ? @name : false), css: @css }
   end
 
   def x(t)
