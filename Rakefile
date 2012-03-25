@@ -4,12 +4,11 @@ CONTENT = ROOT.join('content/')
 PUBLIC  = ROOT.join('public/')
 LAYOUT  = ROOT.join('layout/')
 
+require 'sprockets'
+require 'haml'
+
 require 'compass'
 Compass.configuration.images_path = LAYOUT.to_s
-
-require 'haml'
-require 'haml/template/options'
-Haml::Template.options[:ugly] = true
 
 require 'r18n-core'
 R18n.default_places = ROOT.join('i18n')
@@ -78,6 +77,10 @@ class Easing
   end
 end
 
+class Sprockets::Context
+  include R18n::Helpers
+end
+
 class Helpers
   include R18n::Helpers
 
@@ -89,7 +92,6 @@ class Helpers
 
   def assets
     @sprockets ||= begin
-      require 'sprockets'
       Sprockets::Environment.new(ROOT) do |env|
         env.append_path(LAYOUT)
         env.append_path(ROOT.join('vendor'))
