@@ -5,6 +5,7 @@ PUBLIC  = ROOT.join('public/')
 LAYOUT  = ROOT.join('layout/')
 
 require 'compass'
+Compass.configuration.images_path = LAYOUT.to_s
 
 require 'haml'
 require 'haml/template/options'
@@ -183,6 +184,9 @@ task :watch do
     R18n.get.reload!
     print 're'
     Rake::Task['build'].execute
+  rescue Exception => e
+    puts
+    puts "ERROR: #{e.message}"
   end
 
   require 'fssm'

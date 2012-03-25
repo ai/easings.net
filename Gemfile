@@ -4,7 +4,7 @@ gem 'rake'
 gem 'fssm'
 
 gem 'haml'
-gem 'compass'
+gem 'compass', git: 'https://github.com/chriseppstein/compass.git'
 gem 'coffee-script'
 gem 'therubyracer'
 gem 'sprockets'

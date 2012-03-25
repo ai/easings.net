@@ -1,7 +1,7 @@
 !!! 5
 %html( lang="#{ r18n.locale.code }" )
   %head
-    %meta( charset='UTF-8' )
+    %meta( charset="UTF-8" )
     %title= t.title
     %meta( name="description" content="#{ t.description }" )
     %script( src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery#{production? ? '.min' : ''}.js" )
@@ -27,5 +27,24 @@
             - else
               %a( rel="alternate" lang="#{code}" href="/#{path}.#{code}.html" )
                 = locale.title
+
+    %a.open-source( href="https://github.com/ai/easings.net" )
+      .crop
+        .background
+        %pre.source
+          %code
+            :preserve
+              %html
+                %meta( charset="UTF-8" )
+                %title= title
+                %script
+        .source-crop
+        .octocat
+        .rotator
+          .corner
+            .title
+              .shadow
+            .border
+            .text open source
 
     %script= assets['action.js']

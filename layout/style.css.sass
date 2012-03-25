@@ -151,11 +151,140 @@ $easing-width: 120px + 4px
   .no-css-support
     display: none
 
+.open-source
+  display: block
+  position: absolute
+  width: 80px
+  height: 80px
+  top: 0
+  right: 0
+  text-decoration: none
+  &:active
+    .background
+      background: #ddd
+  .crop
+    position: absolute
+    top: 0
+    left: -10px
+    width: 90px
+    height: 90px
+    overflow: hidden
+  .background, .corner
+    position: absolute
+    top: -65px
+    left: 32px
+    width: 120px
+    height: 120px
+    +rotate(45deg)
+  .background
+    background: #e8e8e8
+    +box-shadow(rgba(0, 0, 0, 0.5) 0 -7px 7px -7px inset)
+  .source
+    position: absolute
+    color: black
+    text-shadow: white 0 1px 0
+    left: 40px
+    line-height: 1.1
+    code
+      font-size: 10px
+  .source-crop
+    position: absolute
+    width: 120px
+    height: 120px
+    background: white
+    top: 22px
+    left: -50px
+    +rotate(45deg)
+  .octocat
+    position: absolute
+    width: +image-width("octocat.png")
+    height: +image-height("octocat.png")
+    background: inline-image("octocat.png")
+    +rotate(45deg)
+    top: 24px
+    left: 43px
+    +box-shadow(rgba(0, 0, 0, 0.4) 0 -5px 5px -5px inset)
+  .corner
+    position: absolute
+    overflow: hidden
+    left: 21px
+    top: -66px
+  .title
+    position: absolute
+    top: 82px
+    left: 23px
+    width: 82px
+    height: 80px
+    +rotate(45deg)
+    background: white
+    +box-shadow(rgba(0, 0, 0, 0.5) 0 0 3px)
+  .border, .text
+    position: absolute
+    bottom: 0
+    width: 100%
+  .border
+    border-top: 1px dashed #999
+  .text
+    bottom: 4px
+    text-align: center
+    font-size: 12px
+    color: #666
+    padding-left: 5px
+  .rotator
+    position: absolute
+    width: 80px
+    height: 80px
+    left: 10px
+    z-index: 3
+
+.transform3d
+  .open-source
+    .text, .border
+      +backface-visibility(hidden)
+    .rotator
+      +transition(all 600ms linear)
+    .shadow
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: rgba(0, 0, 0, 0.1)
+      opacity: 0
+    &.unhover
+      .rotator
+        -moz-animation: unbending 600ms linear
+    &.hover
+      .rotator
+        -moz-animation: bending 600ms linear
+        +rotate3d(1, 1, 0, 180deg)
+
+@-moz-keyframes bending
+  from
+    -moz-transform: rotate3d(1, 1, 0, 0)
+  to
+    -moz-transform: rotate3d(1, 1, 0, 180deg)
+
+@-moz-keyframes bending
+  from
+    -moz-transform: rotate3d(1, 1, 0, 180deg)
+  to
+    -moz-transform: rotate3d(1, 1, 0, 0)
+
+.transform2d
+  .open-source
+    &:hover
+      .text, .border
+        display: none
+      .rotator
+        +rotate(180deg)
+
 +sticky-footer(34px, ".root", ".root-footer", "footer")
 
 footer
   height: 32px
   line-height: 32px
+  text-align: right
   li
     font-family: "Trebuchet MS", sans-serif
     list-style: none

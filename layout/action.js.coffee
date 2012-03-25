@@ -81,3 +81,50 @@ jQuery ($) ->
 
   highlight()
   $(window).on('hashchange', highlight)
+
+  # Detect 3D support
+
+  detect3d = ->
+    return true  if document.body.style.MozPerspective?
+
+    return false unless window.matchMedia?
+    result = matchMedia("all and (transform-3d)")
+    return true if result.matches
+
+    prefix = 'moz'    if $.browser.mozilla
+    prefix = 'webkit' if $.browser.webkit
+    prefix = 'o'      if $.browser.opera
+    prefix = 'ms'     if $.browser.msie
+    matchMedia("all and (-#{prefix}-transform-3d)").matches
+
+  support3d = detect3d()
+  $('body').addClass(if support3d then 'transform3d' else 'transform2d')
+
+  # Open source corner animation
+
+  if support3d
+    corner = $('.open-source')
+    shadow = corner.find('.shadow')
+
+    shadowing = ->
+      if shadow.is(':animated')
+        shadow.stop(true).animate(opacity: 0, 300, 'easeOutQuart')
+      else
+        shadow.animate(opacity: 1, 300, 'easeInQuart').
+               animate(opacity: 0, 300, 'easeOutQuart')
+
+    corner.mouseenter ->
+      corner.addClass('hover').removeClass('unhover')
+      shadowing()
+    corner.mouseleave ->
+      corner.removeClass('hover').addClass('unhover')
+      shadowing()
+
+    # FF backface-visibility fix
+
+    if $.browser.mozilla
+      back = corner.find('.text, .border')
+      corner.mouseenter ->
+        back.stop().delay(300).hide(1)
+      corner.mouseleave ->
+        back.stop().delay(300).show(1)
