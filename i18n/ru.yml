@@ -3,6 +3,7 @@ description: Сделай анимацию более реалистичной, 
 font:
   name: PT Sans
   url: family=PT+Sans:400,700&subset=latin,cyrillic
+
 about: !!format
   ~Easing-функция~ указывает скорость течения анимации, чтобы сделать анимацию
   более реалистичной.
@@ -13,6 +14,7 @@ about: !!format
   ударившись о пол — слегка подпрыгивает обратно.
 
   Этот сайт поможет каждый раз подобрать нужную easing-функцию.
+
 howtos:
   name: имя easing-функции
   desc: описание easing-функции
@@ -34,3 +36,7 @@ howtos:
   no_css: !!format
     К сожалению, такую easing-функцию нельзя задать с помощью CSS.
     Используйте JavaScript или специальные `@keyframes` в CSS Animation.
+
+opensource:
+  title: open source
+  translate: Помоги перевести сайт на твой язык

@@ -237,6 +237,16 @@ $easing-width: 120px + 4px
     height: 80px
     left: 10px
     z-index: 3
+  .translate
+    position: absolute
+    top: 90px
+    text-align: center
+    color: #666
+    font-size: 13px
+    opacity: 0
+    +transition(opacity, 400ms)
+    &.show
+      opacity: 1
 
 .transform3d
   .open-source
@@ -279,6 +289,8 @@ $easing-width: 120px + 4px
         display: none
       .rotator
         +rotate(180deg)
+      .translate
+        opacity: 1
 
 +sticky-footer(34px, ".root", ".root-footer", "footer")
 

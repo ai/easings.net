@@ -1,6 +1,8 @@
 #= require jquery.easing
 #= require jquery.hoverIntent
 
+after = (ms, fn) -> setTimeout(fn, ms)
+
 jQuery ($) ->
 
   # Language autodetection
@@ -103,8 +105,9 @@ jQuery ($) ->
   # Open source corner animation
 
   if support3d
-    corner = $('.open-source')
-    shadow = corner.find('.shadow')
+    corner    = $('.open-source')
+    shadow    = corner.find('.shadow')
+    translate = corner.find('.translate')
 
     shadowing = ->
       if shadow.is(':animated')
@@ -116,9 +119,12 @@ jQuery ($) ->
     corner.mouseenter ->
       corner.addClass('hover').removeClass('unhover')
       shadowing()
+      after 600, ->
+        translate.addClass('show') if corner.hasClass('hover')
     corner.mouseleave ->
       corner.removeClass('hover').addClass('unhover')
       shadowing()
+      translate.removeClass('show')
 
     # FF backface-visibility fix
 

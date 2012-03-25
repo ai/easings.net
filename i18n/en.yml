@@ -3,6 +3,7 @@ description: Make animation more realistic by picking right easing function.
 font:
   name: PT Sans
   url: family=PT+Sans:400,700&subset=latin
+
 about: !!format
   ~Easing function~ specifies the speed of animation progresses
   to make it more realistic.
@@ -33,3 +34,7 @@ howtos:
   no_css: !!format
     Unfortunately, CSS doesn’t support this easing. But you can use it by
     JavaScript or special CSS Animation `@keyframes`.
+
+opensource:
+  title: open source
+  translate: Help us to translate site to your language
