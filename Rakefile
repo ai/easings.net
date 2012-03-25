@@ -4,6 +4,7 @@ CONTENT = ROOT.join('content/')
 PUBLIC  = ROOT.join('public/')
 LAYOUT  = ROOT.join('layout/')
 
+require 'uglifier'
 require 'sprockets'
 require 'haml'
 
@@ -98,6 +99,10 @@ class Helpers
 
         compass = Gem.loaded_specs['compass'].full_gem_path
         env.append_path("#{compass}/frameworks/compass/stylesheets")
+
+        if @env == :production
+          env.js_compressor = Uglifier.new(copyright: false)
+        end
       end
     end
   end
@@ -109,7 +114,9 @@ class Helpers
   end
 
   def render(haml, &block)
-    Haml::Engine.new(haml, format: :html5).render(self, &block)
+    options = { format: :html5 }
+    options[:ugly] = true if @env == :production
+    Haml::Engine.new(haml, options).render(self, &block)
   end
 
   def to_path(dots)
