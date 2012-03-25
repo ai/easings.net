@@ -262,25 +262,9 @@ $easing-width: 120px + 4px
       bottom: 0
       background: rgba(0, 0, 0, 0.1)
       opacity: 0
-    &.unhover
+    &:hover
       .rotator
-        -moz-animation: unbending 600ms linear
-    &.hover
-      .rotator
-        -moz-animation: bending 600ms linear
         +rotate3d(1, 1, 0, 180deg)
-
-@-moz-keyframes bending
-  from
-    -moz-transform: rotate3d(1, 1, 0, 0)
-  to
-    -moz-transform: rotate3d(1, 1, 0, 180deg)
-
-@-moz-keyframes bending
-  from
-    -moz-transform: rotate3d(1, 1, 0, 180deg)
-  to
-    -moz-transform: rotate3d(1, 1, 0, 0)
 
 .transform2d
   .open-source

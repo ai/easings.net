@@ -88,8 +88,8 @@ jQuery ($) ->
 
   detect3d = ->
     return true  if document.body.style.MozPerspective?
-
     return false unless window.matchMedia?
+
     result = matchMedia("all and (transform-3d)")
     return true if result.matches
 
@@ -117,12 +117,10 @@ jQuery ($) ->
                animate(opacity: 0, 300, 'easeOutQuart')
 
     corner.mouseenter ->
-      corner.addClass('hover').removeClass('unhover')
       shadowing()
       after 600, ->
-        translate.addClass('show') if corner.hasClass('hover')
+        translate.addClass('show') if corner.is(':hover')
     corner.mouseleave ->
-      corner.removeClass('hover').addClass('unhover')
       shadowing()
       translate.removeClass('show')
 
@@ -131,6 +129,6 @@ jQuery ($) ->
     if $.browser.mozilla
       back = corner.find('.text, .border')
       corner.mouseenter ->
-        back.stop().delay(300).hide(1)
+        back.stop(true).delay(300).hide(1)
       corner.mouseleave ->
-        back.stop().delay(300).show(1)
+        back.stop(true).delay(300).show(1)
