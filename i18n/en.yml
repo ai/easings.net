@@ -19,7 +19,7 @@ howtos:
   js: !!format
     jQuery with jQuery Easing Plugin is the easiest way to describe animation
     with easing. You need just set easing name to `.animate` method as
-    third argument ot in `easing` key.
+    third argument or `easing` key.
   sass: !!format
     Sass/SCSS help you to describe animation. Compass remove prefixes before
     `transition` and `animation` properties and Compass Ceaser plugin allow
