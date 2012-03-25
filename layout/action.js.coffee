@@ -76,17 +76,17 @@ jQuery ($) ->
 
   # Detect 3D support
 
+  prefix = 'moz'    if $.browser.mozilla
+  prefix = 'webkit' if $.browser.webkit
+  prefix = 'o'      if $.browser.opera
+  prefix = 'ms'     if $.browser.msie
+
   detect3d = ->
     return true  if document.body.style.MozPerspective?
     return false unless window.matchMedia?
 
     result = matchMedia("all and (transform-3d)")
     return true if result.matches
-
-    prefix = 'moz'    if $.browser.mozilla
-    prefix = 'webkit' if $.browser.webkit
-    prefix = 'o'      if $.browser.opera
-    prefix = 'ms'     if $.browser.msie
     matchMedia("all and (-#{prefix}-transform-3d)").matches
 
   support3d = detect3d()
@@ -98,17 +98,22 @@ jQuery ($) ->
     corner    = $('.open-source')
     shadow    = corner.find('.shadow')
     translate = corner.find('.translate')
+    rotator   = corner.find('.rotator')
+
+    duration   = rotator.css('transition-duration')
+    duration ||= rotator.css("-#{prefix}-transition-duration")
+    duration   = parseFloat(duration) * 1000
 
     shadowing = ->
       if shadow.is(':animated')
-        shadow.stop(true).animate(opacity: 0, 300, 'easeOutQuart')
+        shadow.stop(true).animate(opacity: 0, (duration / 2), 'easeOutQuart')
       else
-        shadow.animate(opacity: 1, 300, 'easeInQuart').
-               animate(opacity: 0, 300, 'easeOutQuart')
+        shadow.animate(opacity: 1, (duration / 2), 'easeInQuart').
+               animate(opacity: 0, (duration / 2), 'easeOutQuart')
 
     corner.mouseenter ->
       shadowing()
-      after 600, ->
+      after duration, ->
         translate.addClass('show') if corner.is(':hover')
     corner.mouseleave ->
       shadowing()
@@ -119,6 +124,6 @@ jQuery ($) ->
     if $.browser.mozilla
       back = corner.find('.text, .border')
       corner.mouseenter ->
-        back.stop(true).delay(300).hide(1)
+        back.stop(true).delay(duration / 2).hide(1)
       corner.mouseleave ->
-        back.stop(true).delay(300).show(1)
+        back.stop(true).delay(duration / 2).show(1)
