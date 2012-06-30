@@ -6,7 +6,7 @@ LAYOUT  = ROOT.join('layout/')
 
 require 'uglifier'
 require 'sprockets'
-require 'haml'
+require 'slim'
 
 require 'compass'
 Compass.configuration.images_path = LAYOUT.to_s
@@ -36,6 +36,7 @@ end
 
 class Easing
   attr_reader :name
+  attr_reader :css
 
   def initialize(attrs)
     @name = attrs['name']
@@ -50,8 +51,8 @@ class Easing
     @name =~ /InOut/
   end
 
-  def names
-    { jquery: @name, sass: (@css ? @name : false), css: @css }
+  def sass
+    @css ? @name : false
   end
 
   def x(t)
@@ -113,18 +114,17 @@ class Helpers
     end
   end
 
-  def render(haml, &block)
-    options = { format: :html5 }
-    options[:ugly] = true if @env == :production
-    Haml::Engine.new(haml, options).render(self, &block)
+  def render(file, &block)
+    options = { format: :html5, pretty: true, disable_escape: true }
+    Slim::Template.new(file.to_s, options).render(self, &block)
   end
 
   def to_path(dots)
     dots.map { |i| i.join(',') }.join(' ')
   end
 
-  def class_if(cls, check)
-    check ? { class: cls } : {}
+  def easing_classes(easing)
+    easing.name + (easing.in_out? ? ' in-out' : '')
   end
 
   def production?
@@ -158,21 +158,21 @@ task :build do |t, args|
   load ROOT.join('easings.rb').to_s
   print 'build'
 
-  layout = LAYOUT.join('layout.html.haml').read
+  layout = LAYOUT.join('layout.html.slim')
   helper = Helpers.new(environment)
 
   R18n.available_locales.each do |locale|
     R18n.set(locale.code)
 
-    LAYOUT.glob('**/*.html.haml') do |haml|
-      next if haml.basename.to_s == 'layout.html.haml'
-      path = haml.relative_path_from(LAYOUT).sub_ext('').sub_ext('').to_s
+    LAYOUT.glob('**/*.html.slim') do |slim|
+      next if slim.basename.to_s == 'layout.html.slim'
+      path = slim.relative_path_from(LAYOUT).sub_ext('').sub_ext('').to_s
       file = PUBLIC.join(path + ".#{locale.code}.html")
 
       helper.path = path
 
       file.open('w') do |html|
-        html << helper.render(layout) { helper.render(haml.read) }
+        html << helper.render(layout) { helper.render(slim) }
       end
 
       `gzip --best -c #{file} > #{file}.gz` if helper.production?
@@ -198,11 +198,9 @@ task :watch do
     puts "ERROR: #{e.message}"
   end
 
-  require 'fssm'
-  FSSM.monitor(ROOT, '{i18n,layout,easings.yml}/**/*') do
-    update { rebuild }
-    delete { rebuild }
-    create { rebuild }
+  require 'listen'
+  Listen.to(ROOT, filter: /^(i18n|layout|easings.yml)/) do
+    rebuild
   end
 end
 

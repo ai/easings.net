@@ -1,0 +1,51 @@
+doctype 5
+html lang=r18n.locale.code
+  head
+    meta charset="UTF-8"
+    title= t.title
+    meta name="description" content=t.description
+    script= assets['language-redirect.js']
+    script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery#{production? ? '.min' : ''}.js"
+    link rel="stylesheet" href="http://fonts.googleapis.com/css?#{t.font.url}"
+    link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Mono"
+    style= assets['style.css']
+    style
+      | body, .howtos .easing { font-family: "#{ t.font.name }", "Trebuchet MS", sans-serif; }
+    - if production?
+      = include_statistics
+  body
+    .root
+      = yield
+      .root-footer
+
+    footer
+      ul
+        - each_locale do |code, locale|
+          li
+            - if locale == r18n.locale
+              span.current
+                = locale.title
+            - else
+              a rel="alternate" lang=code href="/#{path}.#{code}.html"
+                = locale.title
+
+    a.open-source( href="https://github.com/ai/easings.net" )
+      .crop
+        .background
+        pre.source
+          code
+            | html
+                meta charset="UTF-8"
+                title= title
+                script
+        .source-crop
+        .octocat
+        .rotator
+          .corner
+            .title
+              .shadow
+            .border
+            .text= t.opensource.title
+      .translate= t.opensource.translate
+
+    script= assets['action.js']
