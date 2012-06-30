@@ -1,6 +1,24 @@
 @import 'compass/css3'
 @import 'compass/layout/sticky-footer'
 
+// Mixin and Helpers
+
+@function black($opacity)
+  @return rgba(0, 0, 0, $opacity)
+
+@function white($opacity)
+  @return rgba(255, 255, 255, $opacity)
+
+@mixin image-size($path)
+  width: image-width($path)
+  height: image-height($path)
+
+@mixin image($path)
+  +image-size($path)
+  background: inline-image($path) no-repeat
+
+// Base styles
+
 *
   margin: 0
   padding: 0
@@ -17,6 +35,8 @@ code
 
 a
   outline: none
+
+// Easings
 
 $easing-width: 120px + 4px
 
@@ -70,7 +90,7 @@ $easing-width: 120px + 4px
       stroke-width: 1px
     path
       fill: transparent
-      fill: rgba(255, 255, 255, 0)
+      fill: white(0)
       stroke: black
       stroke-width: 2px
     text
@@ -152,6 +172,8 @@ $easing-width: 120px + 4px
   .no-css-support
     display: none
 
+// Open source badge
+
 .open-source
   display: block
   position: absolute
@@ -179,7 +201,7 @@ $easing-width: 120px + 4px
     +rotate(45deg)
   .background
     background: #e8e8e8
-    +box-shadow(rgba(0, 0, 0, 0.5) 0 -7px 7px -7px inset)
+    +box-shadow(black(0.5) 0 -7px 7px -7px inset)
   .source
     position: absolute
     color: black
@@ -198,13 +220,11 @@ $easing-width: 120px + 4px
     +rotate(45deg)
   .octocat
     position: absolute
-    width: +image-width("octocat.png")
-    height: +image-height("octocat.png")
-    background: inline-image("octocat.png")
+    +image("octocat.png")
     +rotate(45deg)
     top: 24px
     left: 43px
-    +box-shadow(rgba(0, 0, 0, 0.4) 0 -5px 5px -5px inset)
+    +box-shadow(black(0.4) 0 -5px 5px -5px inset)
   .corner
     position: absolute
     overflow: hidden
@@ -218,7 +238,7 @@ $easing-width: 120px + 4px
     height: 80px
     +rotate(45deg)
     background: white
-    +box-shadow(rgba(0, 0, 0, 0.5) 0 0 3px)
+    +box-shadow(black(0.5) 0 0 3px)
   .border, .text
     position: absolute
     bottom: 0
@@ -260,7 +280,7 @@ $easing-width: 120px + 4px
       left: 0
       right: 0
       bottom: 0
-      background: rgba(0, 0, 0, 0.1)
+      background: black(0.1)
       opacity: 0
     &:hover
       .rotator
@@ -275,6 +295,8 @@ $easing-width: 120px + 4px
         +rotate(180deg)
       .translate
         opacity: 1
+
+// Footer
 
 +sticky-footer(34px, ".root", ".root-footer", "footer")
 
