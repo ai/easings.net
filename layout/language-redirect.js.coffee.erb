@@ -1,5 +1,0 @@
-if location.pathname == '/'
-  langs = <%= r18n.locales.map(&:code) %>
-  for lang in langs
-    if navigator.language == lang
-      location.pathname = "/index.#{lang}.html"

@@ -1,0 +1,8 @@
+if (location.pathname == '/') {
+    var l = <%= R18n.available_locales.map(&:code) %>
+    for (var i = 0; i < l.length; i++) {
+        if (navigator.language == l[i]) {
+            location.pathname = '/index.' + l[i] + '.html';
+        }
+    }
+}
