@@ -6,7 +6,7 @@ Simple cheat sheet to help developers pick the right easing function.
 
 GitHub has great instructions on how to [set up Git], [fork a project] and
 [make pull requests]. If you have a problem with Git, just send your files
-to directly at <andrey@sitnik.ru>.
+directly to <andrey@sitnik.ru>.
 
 [RFC 3066]:          http://www.i18nguy.com/unicode/language-identifiers.html
 [set up Git]:        http://help.github.com/set-up-git-redirect
