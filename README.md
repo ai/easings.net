@@ -1,12 +1,12 @@
 # Easing Functions Cheat Sheet
 
-Simple cheat sheet to help developer pick right easing function.
+Simple cheat sheet to help developers pick the right easing function.
 
 ## Contributing
 
-GitHub has great instructions, how to [set up Git], [fork project] and
-[make pull request]. If you have a problem with Git, just send me files to
-<andrey@sitnik.ru>.
+GitHub has great instructions on how to [set up Git], [fork a project] and
+[make pull requests]. If you have a problem with Git, just send your files
+directly to <andrey@sitnik.ru>.
 
 [RFC 3066]:          http://www.i18nguy.com/unicode/language-identifiers.html
 [set up Git]:        http://help.github.com/set-up-git-redirect
@@ -15,12 +15,13 @@ GitHub has great instructions, how to [set up Git], [fork project] and
 
 ### Translate
 
-Just copy `i18n/en.yml` file to `i18n/CODE.yml` (where `CODE` is [RFC 3066]
-language code) and translate all messages.
+Just copy the `i18n/en.yml` file to `i18n/CODE.yml` (where `CODE` is 
+the [RFC 3066] language code of your target language) and translate all
+messages.
 
 ### Test
 
-To build site and test your fix/translation you’ll need to have Ruby and
+To build the site and test your fix/translation you’ll need to have Ruby and
 Bundler installed. For example, in a Debian-based (e.g. Ubuntu) environment:
 
 ```sh
@@ -34,8 +35,8 @@ That’s all. To build HTML just execute:
 bundle exec rake build
 ```
 
-While development, you can run `watch` task to rebuild site on every files
-change:
+During development, you can run the `watch` task to rebuild the site on
+every file change:
 
 ```sh
 bundle exec rake watch
