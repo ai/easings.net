@@ -1,5 +1,7 @@
 title: Easing Functions Guide de référence
-description: Créez des animations plus réalistes uniquement en utilisant une fonction prédefinie.
+description:
+  Créez des animations plus réalistes uniquement en utilisant une
+  fonction prédefinie.
 font:
   name: PT Sans
   url: family=PT+Sans:400,700&subset=latin
@@ -8,26 +10,37 @@ about: !!format
   ~Easing function~ précise la vitesse d'exécution d'une animation
   pour la rendre plus réaliste.
 
-  Un objet réel ne commence pas son mouvement instantanément et à vitesse constante. 
-  Lorsque nous ouvrons un tiroir, nous devons d'abord indiquer son accélération puis sa 
-  décélération. Lorsque quelque chose tombe, sa vitesse de chute va de plus en plus vite puis, 
-  lorsqu'il touche le sol il rebondit.
-  
+  Un objet réel ne commence pas son mouvement instantanément et à vitesse
+  constante. Lorsque nous ouvrons un tiroir, nous devons d'abord indiquer
+  son accélération puis sa décélération. Lorsque quelque chose tombe, sa vitesse
+  de chute va de plus en plus vite puis, lorsqu'il touche le sol il rebondit.
+
   Cette page permet de choisir la fonction désirée.
 howtos:
   name: easing name
   desc: easing description
   js: !!format
-    jQuery Easing Plugin est la solution la plus simple pour décrire une animation. Vous avez uniquement besoin de positionner le nom de la fonction easing sur la méthode `.animate` en 3ème argument ou le mot `easing`.
+    jQuery Easing Plugin est la solution la plus simple pour décrire
+    une animation. Vous avez uniquement besoin de positionner le nom de
+    la fonction easing sur la méthode `.animate` en 3ème argument
+    ou le mot `easing`.
   sass: !!format
-    Sass/SCSS permet de décrire une animation. Compass supprime les préfixes des propriétés 
-    `transition` et `animation` et Compass Ceaser plugin permet de positionner une fonction easing uniquement par son nom (sans utilisation de courbe de Bézier).
+    Sass/SCSS permet de décrire une animation. Compass supprime les préfixes
+    des propriétés `transition` et `animation` et Compass Ceaser plugin permet
+    de positionner une fonction easing uniquement par son nom (sans utilisation
+    de courbe de Bézier).
   css: !!format
-    Les propriétés CSS `transition` et `animation` permettent de positionner une fonction easing. Malheureusement, elles ne supportent pas toutes les fonctions easing  et vous devez positionner les fonctions non supportées en utilisant les courbes de Bézier.
+    Les propriétés CSS `transition` et `animation` permettent de positionner
+    une fonction easing. Malheureusement, elles ne supportent pas toutes
+    les fonctions easing  et vous devez positionner les fonctions non supportées
+    en utilisant les courbes de Bézier.
   css_help:
-    Selection de la function easing et affichage de sa description sous forme de courbe de Bézier.
+    Selection de la function easing et affichage de sa description sous forme
+    de courbe de Bézier.
   no_css: !!format
-    Malheureusement, CSS ne supportent pas cette fonction easing. Mais vous pouvez l'utiliser via JavaScript ou par l'animation spéciale CSS `@keyframes`.
+    Malheureusement, CSS ne supportent pas cette fonction easing.
+    Mais vous pouvez l'utiliser via JavaScript ou par l'animation spéciale
+    CSS `@keyframes`.
 
 opensource:
   title: open source
