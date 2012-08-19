@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rake'
-gem 'listen'
+gem 'sinatra'
 
 gem 'slim'
 gem 'compass', '~> 0.13.alpha.0'

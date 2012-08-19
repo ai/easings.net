@@ -84,7 +84,7 @@ end
 class Helpers
   include R18n::Helpers
 
-  attr_writer :path
+  attr_accessor :path
 
   def initialize(env)
     @env = env
@@ -142,47 +142,41 @@ class Helpers
   def easing_example(name = t.howtos.name)
     "<span class=\"easing\">#{ name }</span>"
   end
-
-  def path
-    if production?
-      '/' + @path
-    else
-      './' + @path
-    end
-  end
 end
 
-environment = nil
+def build_file(slim, production = false)
+  layout = LAYOUT.join('layout.html.slim')
+  helper = Helpers.new(production ? :production : :development)
+  locale = R18n.get.locale
+
+  path = slim.relative_path_from(LAYOUT).sub_ext('').sub_ext('').to_s
+
+  subpath = locale.code == 'en' ? '.html' : ".#{locale.code}.html"
+  file = PUBLIC.join(path + subpath)
+
+  helper.path = path
+
+  file.open('w') do |html|
+    html << helper.render(layout) { helper.render(slim) }
+  end
+
+  file
+end
 
 desc 'Build site files'
-task :build do |t, args|
-  environment ||= :production
-
+task :build do
   PUBLIC.mkpath
   PUBLIC.glob('*') { |i| i.rmtree }
 
   print 'build'
 
-  layout = LAYOUT.join('layout.html.slim')
-  helper = Helpers.new(environment)
-
   R18n.available_locales.each do |locale|
     R18n.set(locale.code)
-
     LAYOUT.glob('**/*.html.slim') do |slim|
       next if slim.basename.to_s == 'layout.html.slim'
-      path = slim.relative_path_from(LAYOUT).sub_ext('').sub_ext('').to_s
 
-      subpath = locale.code == 'en' ? '.html' : ".#{locale.code}.html"
-      file = PUBLIC.join(path + subpath)
-
-      helper.path = path
-
-      file.open('w') do |html|
-        html << helper.render(layout) { helper.render(slim) }
-      end
-
-      `gzip --best -c #{file} > #{file}.gz` if helper.production?
+      file = build_file(slim, true)
+      `gzip --best -c #{file} > #{file}.gz`
 
       print '.'
     end
@@ -191,25 +185,29 @@ task :build do |t, args|
   print "\n"
 end
 
-desc 'Rebuild files on every changes'
-task :watch do
-  environment ||= :development
-  Rake::Task['build'].execute
+desc 'Run server for development'
+task :server do
+  require 'sinatra/base'
 
-  def rebuild
-    R18n.clear_cache!
-    R18n.get.reload!
-    print 're'
-    Rake::Task['build'].execute
-  rescue Exception => e
-    puts
-    puts "ERROR: #{e.message}"
+  class EasingsNet < Sinatra::Base
+    set :public_folder, nil
+
+    get /^(\/|\/index\.html)$/ do
+      send_file build_page('index', 'en')
+    end
+
+    get '/index.:locale.html' do
+      send_file build_page('index', params[:locale])
+    end
+
+    def build_page(page, locale_code)
+      path   = LAYOUT.join("#{page}.html.slim")
+      R18n.set(locale_code)
+      build_file(path)
+    end
   end
 
-  require 'listen'
-  Listen.to(ROOT, filter: /^(i18n|layout|easings.yml)/) do
-    rebuild
-  end
+  EasingsNet.run!
 end
 
 desc 'Upload site files to production server'
@@ -217,5 +215,5 @@ task :deploy => :build do
   host = 'easings.net'
   path = '/home/ai/easings.net'
   sh "rsync --recursive --delete --compress --progress --human-readable " +
-    "#{PUBLIC} #{host}:#{path}"
+     "#{PUBLIC} #{host}:#{path}"
 end

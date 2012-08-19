@@ -21,23 +21,24 @@ messages.
 
 ### Test
 
-To build the site and test your fix/translation you’ll need to have Ruby and
-Bundler installed. For example, in a Debian-based (e.g. Ubuntu) environment:
+1. To build the site and test your fix/translation you’ll need to have Ruby and
+   Bundler installed. For example, in a Debian-based (e.g. Ubuntu) environment:
 
-```sh
-sudo apt-get install ruby1.9.1 ruby1.9.1-dev
-sudo gem1.9.1 install bundler --no-user-install --bindir /usr/bin
-```
+     ```sh
+    sudo apt-get install ruby1.9.1 ruby1.9.1-dev
+    sudo gem1.9.1 install bundler --no-user-install --bindir /usr/bin
+     ```
 
-That’s all. To build HTML just execute:
+2. Install project dependencies:
 
-```sh
-bundle exec rake build
-```
+     ```sh
+    bundle install --path=.bundle
+     ```
 
-During development, you can run the `watch` task to rebuild the site on
-every file change:
+3. That’s all. Run development server:
 
-```sh
-bundle exec rake watch
-```
+     ```sh
+    bundle exec rake server
+     ```
+
+4. And open <localhost:4567> in browser.
