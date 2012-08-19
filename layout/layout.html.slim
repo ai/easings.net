@@ -11,7 +11,7 @@ html lang=r18n.locale.code
     link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Mono"
     style= assets['style.css']
     style
-      | body, .howtos .easing { font-family: "#{ t.font.name }", "Trebuchet MS", sans-serif; }
+      | body, pre strong { font-family: "#{ t.font.name }", "Trebuchet MS", sans-serif; }
     - if production?
       = include_statistics
   body

@@ -148,7 +148,7 @@ class Helpers
   end
 
   def easing_example(name = t.howtos.name)
-    "<span class=\"easing\">#{ name }</span>"
+    "<strong>#{ name }</strong>"
   end
 end
 
