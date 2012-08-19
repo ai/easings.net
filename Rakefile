@@ -161,7 +161,6 @@ task :build do |t, args|
   PUBLIC.mkpath
   PUBLIC.glob('*') { |i| i.rmtree }
 
-  load ROOT.join('easings.rb').to_s
   print 'build'
 
   layout = LAYOUT.join('layout.html.slim')
