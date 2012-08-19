@@ -165,7 +165,9 @@ task :build do |t, args|
     LAYOUT.glob('**/*.html.slim') do |slim|
       next if slim.basename.to_s == 'layout.html.slim'
       path = slim.relative_path_from(LAYOUT).sub_ext('').sub_ext('').to_s
-      file = PUBLIC.join(path + ".#{locale.code}.html")
+
+      subpath = locale.code == 'en' ? '.html' : ".#{locale.code}.html"
+      file = PUBLIC.join(path + subpath)
 
       helper.path = path
 

@@ -3,7 +3,8 @@ html lang=r18n.locale.code
   head
     meta charset="UTF-8"
     title= t.title
-    script= assets['language-redirect.js']
+    - if r18n.locale.code == 'en'
+      script= assets['language-redirect.js']
     meta name="description" content=t.description
     script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery#{production? ? '.min' : ''}.js"
     link rel="stylesheet" href="http://fonts.googleapis.com/css?#{t.font.url}"
@@ -26,7 +27,8 @@ html lang=r18n.locale.code
               span.current
                 = locale.title
             - else
-              a rel="alternate" lang=code href="/#{path}.#{code}.html"
+              - page = code == 'en' ? "/#{path}.html" : "/#{path}.#{code}.html"
+              a rel="alternate" lang=code href=page
                 = locale.title
 
     a.open-source( href="https://github.com/ai/easings.net" )

@@ -1,5 +1,5 @@
 if (location.pathname == '/') {
-    var l = <%= R18n.available_locales.map(&:code) %>
+    var l = <%= R18n.available_locales.map(&:code).reject { |i| i == 'en' } %>
     for (var i = 0; i < l.length; i++) {
         if (navigator.language == l[i]) {
             location.pathname = '/index.' + l[i] + '.html';
