@@ -14,11 +14,13 @@ Compass.configuration.images_path = LAYOUT.to_s
 require 'r18n-core'
 R18n.default_places = ROOT.join('i18n')
 
+R18n::Filters.add('code') do |text, config|
+  text.gsub(/`([^`]+)`/, '<code>\1</code>')
+end
+
 R18n::Filters.add('format') do |text, config|
   '<p>' +
-    text.sub(/~([^~]+)~/, '<strong>\1</strong>').
-        gsub(/`([^`]+)`/, '<code>\1</code>').
-        gsub("\n", '</p><p>') +
+    text.sub(/~([^~]+)~/, '<strong>\1</strong>').gsub("\n", '</p><p>') +
   '</p>'
 end
 
@@ -51,15 +53,11 @@ class Easing
     @name =~ /InOut/
   end
 
-  def sass
-    @css ? @name : false
-  end
-
   def x(t)
     if linear?
       t
     else
-      jqueryEasings.eval("jQuery.easing.#{@name}(null, #{t}, 0, 1, 1)")
+      jquery_easings.eval("jQuery.easing.#{@name}(null, #{t}, 0, 1, 1)")
     end
   end
 
@@ -68,8 +66,8 @@ class Easing
     dots.map { |i| [i, y - (y * self.x(i / x.to_f))] }
   end
 
-  def jqueryEasings
-    @@jqueryEasings ||= begin
+  def jquery_easings
+    @@jquery_easings ||= begin
       require 'execjs'
       js  = 'jQuery = { easing: {},' +
                       ' extend: function (a, b) { jQuery.easing = b } };'
@@ -141,8 +139,8 @@ class Helpers
     LAYOUT.join('statistics.html').read
   end
 
-  def easing_example(name = 'name')
-    "<span class=\"easing\">#{ t.howtos[name] }</span>"
+  def easing_example(name = t.howtos.name)
+    "<span class=\"easing\">#{ name }</span>"
   end
 end
 
@@ -190,6 +188,7 @@ task :watch do
   Rake::Task['build'].execute
 
   def rebuild
+    R18n.clear_cache!
     R18n.get.reload!
     print 're'
     Rake::Task['build'].execute

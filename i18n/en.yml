@@ -28,10 +28,15 @@ howtos:
     to set easing by it name (without Bezier curves).
   css: !!format
     CSS properties `transition` and `animation` allow you to set easing
-    function. Unfortunately, them support not all easings and you must set
-    function by Bezier curve.
+    function.
+  css_bad:
+    Unfortunately, them support not all easings and you must set function
+    by Bezier curve.
   css_help:
     Select easing to show it description in Bezier curve.
+
+easing:
+  all_easings: All easings
   no_css: !!format
     Unfortunately, CSS doesn’t support this easing. But you can use it by
     JavaScript or special CSS Animation `@keyframes`.

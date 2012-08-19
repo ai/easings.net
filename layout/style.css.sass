@@ -61,7 +61,7 @@ $easing-width: 120px + 4px
   li
     list-style: none
     display: inline-block
-    margin: 3px 5px
+    margin: 3px 4px
     padding: 5px
     position: relative
     &.linear
@@ -152,14 +152,39 @@ $easing-width: 120px + 4px
       opacity: 1
       .example, .dot
         display: block
+
 .howtos
   margin-top: -10px
-  a
-    color: black
   h2
     font-weight: normal
     font-size: 25px
     padding: 17px 0 5px 0
+  h3
+    font-size: 25px
+
+// Easing description
+
+.easing-description
+  .back
+    float: right
+    margin-top: 4px
+    color:  red
+    text-decoration: none
+    .text
+      display: inline-block
+      margin-left: 5px
+      border-bottom: 1px dotted
+    &:hover .text
+      border-bottom-style: solid
+  h2
+    font-weight: normal
+    font-size: 25px
+  h3
+    font-size: 22px
+
+// Description formation
+
+.howtos, .easing-description
   p
     padding-bottom: 5px
   pre
@@ -169,8 +194,29 @@ $easing-width: 120px + 4px
     .easing
       color: red
       font-size: 14px
-  .no-css-support
-    display: none
+  a
+    color: black
+  h3
+    font-weight: normal
+    padding: 17px 0 5px 0
+
+// Slider
+
+.slide-position
+  position: relative
+  overflow: hidden
+.slide-slider
+  position: relative
+  &.animated
+    +transition(left 600ms cubic-bezier(0.770, 0.000, 0.175, 1.000))
+  &.easing
+    left: -105%
+.easing-description
+  position: absolute
+  top: 0
+  left: 105%
+  width: 100%
+  display: none
 
 // Open source badge
 

@@ -19,21 +19,26 @@ about: !!format
 howtos:
   name: имя easing-функции
   desc: описание easing-функции
-  js: !!format
+  js: !!code
     Проще всего рисовать анимации по easing-функции через jQuery, добавив
     jQuery Easing Plugin. После этого надо лишь указать имя функции
     в методе `.animate` третьим аргументом или через ключ `easing`.
-  sass: !!format
+  sass: !!code
     В Sass/SCSS анимации описывать гораздо проще — Compass избавляет
     от префиксов перед свойствами `transition` и `animation`, а расширение
     Compass Ceaser позволит указывать easing-функцию просто по имени, не думая
     о кривых Безье.
-  css: !!format
+  css: !!code
     В CSS свойства `transition` и `animation` позволяют указывать
-    easing-функцию. К сожалению, доступны не все функции и чаще всего указывать
-    их надо через кривую Безье.
+    easing-функцию.
+  css_bad:
+    К сожалению, доступны не все функции и чаще всего указывать их надо через
+    кривую Безье.
   css_help:
     Выберите easing-функцию, чтобы увидеть, как её описать через кривую Безье.
+
+easing:
+  all_easings: Все easing-функции
   no_css: !!format
     К сожалению, такую easing-функцию нельзя задать с помощью CSS.
     Используйте JavaScript или специальные `@keyframes` в CSS Animation.
