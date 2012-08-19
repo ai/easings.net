@@ -63,18 +63,11 @@ jQuery ($) ->
 
   # Detect 3D support
 
-  prefix = 'moz'    if $.browser.mozilla
-  prefix = 'webkit' if $.browser.webkit
-  prefix = 'o'      if $.browser.opera
-  prefix = 'ms'     if $.browser.msie
-
   detect3d = ->
-    return true  if document.body.style.MozPerspective?
-    return false unless window.matchMedia?
-
-    result = matchMedia("all and (transform-3d)")
-    return true if result.matches
-    matchMedia("all and (-#{prefix}-transform-3d)").matches
+    support = $('body').css('perspective')?
+    if support and document.body.style.webkitPerspective?
+      support = matchMedia("(transform-3d), (-webkit-transform-3d)").matches
+    support
 
   support3d = detect3d()
   $('body').addClass(if support3d then 'transform3d' else 'transform2d')
@@ -87,9 +80,8 @@ jQuery ($) ->
     translate = corner.find('.translate')
     rotator   = corner.find('.rotator')
 
-    duration   = rotator.css('transition-duration')
-    duration ||= rotator.css("-#{prefix}-transition-duration")
-    duration   = parseFloat(duration) * 1000
+    duration = rotator.css('transition-duration')
+    duration = parseFloat(duration) * 1000
 
     shadowing = ->
       if shadow.is(':animated')
