@@ -27,7 +27,7 @@ html lang=r18n.locale.code
               span.current
                 = locale.title
             - else
-              - page = code == 'en' ? "/#{path}.html" : "/#{path}.#{code}.html"
+              - page = code == 'en' ? "#{path}.html" : "#{path}.#{code}.html"
               a rel="alternate" lang=code href=page
                 = locale.title
 

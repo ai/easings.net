@@ -84,7 +84,7 @@ end
 class Helpers
   include R18n::Helpers
 
-  attr_accessor :path
+  attr_writer :path
 
   def initialize(env)
     @env = env
@@ -141,6 +141,14 @@ class Helpers
 
   def easing_example(name = t.howtos.name)
     "<span class=\"easing\">#{ name }</span>"
+  end
+
+  def path
+    if production?
+      '/' + @path
+    else
+      './' + @path
+    end
   end
 end
 
