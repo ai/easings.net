@@ -5,6 +5,7 @@ after = (ms, fn) -> setTimeout(fn, ms)
 
 jQuery ($) ->
   easings = $('.easings li')
+  $body   = $('body')
 
   # Link emulation
 
@@ -49,28 +50,28 @@ jQuery ($) ->
 
   showSubpage = ->
     if location.hash == '#' or location.hash == ''
-      slider.removeClass('easing')
+      $body.removeClass('easing-page')
     else
       name = location.hash[1..-1]
       easingPages.hide()
       easingPages.filter(".#{name}").show()
-      slider.addClass('easing')
+      $body.addClass('easing-page')
 
   showSubpage()
   $(window).on('hashchange', showSubpage)
 
-  after 1, -> slider.addClass('animated')
+  after 1, -> $body.addClass('page-animation')
 
   # Detect 3D support
 
   detect3d = ->
-    support = $('body').css('perspective')?
+    support = $body.css('perspective')?
     if support and document.body.style.webkitPerspective?
       support = matchMedia("(transform-3d), (-webkit-transform-3d)").matches
     support
 
   support3d = detect3d()
-  $('body').addClass(if support3d then 'transform3d' else 'transform2d')
+  $body.addClass(if support3d then 'transform3d' else 'transform2d')
 
   # Open source corner animation
 

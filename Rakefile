@@ -108,7 +108,15 @@ class Helpers
 
   def easings
     @easings ||= begin
-      YAML.load_file(ROOT.join('easings.yml')).map { |i| Easing.new(i) }
+      YAML.load_file(ROOT.join('easings.yml')).
+        map { |i| Easing.new(i) }.reject(&:linear?)
+    end
+  end
+
+  def linear_easing
+    @linear_easing ||= begin
+      YAML.load_file(ROOT.join('easings.yml')).
+        map { |i| Easing.new(i) }.find(&:linear?)
     end
   end
 

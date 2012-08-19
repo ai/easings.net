@@ -48,6 +48,7 @@ $easing-width: 120px + 4px
 
 .root
   padding: 0 10px
+  overflow: hidden
 
 .about
   padding: 20px ($easing-width + 40px) 5px 0
@@ -58,18 +59,21 @@ $easing-width: 120px + 4px
 .easings
   margin: 0 -30px 0 -10px
   position: relative
-  li
-    list-style: none
-    display: inline-block
-    margin: 3px 4px
-    padding: 5px
-    position: relative
-    &.linear
-      position: absolute
-      top: -140px
-      right: 35px
-    &.in-out
-      margin-right: 25px
+
+.easing
+  list-style: none
+  display: inline-block
+  margin: 3px 4px
+  padding: 5px
+  position: relative
+  &.linear
+    position: absolute
+    top: 0
+    right: 25px
+  &.in-out
+    margin-right: 25px
+  &.easeOutElastic h2
+    +box-shadow(white 0 26px 8px -8px inset)
   h2
     text-align: center
     font-size: 15px
@@ -77,10 +81,11 @@ $easing-width: 120px + 4px
     margin-bottom: -25px
     position: relative
     z-index: 2
-  li.easeOutElastic h2
-    +box-shadow(white 0 26px 8px -8px inset)
+  .graph
+    text-decoration: none
+    position: relative
 
-.easings
+.easing
   svg
     width: $easing-width
     height: 60px + 80px
@@ -97,15 +102,10 @@ $easing-width: 120px + 4px
       font-size: 12px
       fill: #bbb
 
-.easings
-  .link
-    display: block
-  .graph
-    text-decoration: none
-    position: relative
+.easing
   .example
     position: absolute
-    top: 94px
+    top: 0
     left: $easing-width - 2px
     width: 21px
     height: 12px
@@ -136,22 +136,9 @@ $easing-width: 120px + 4px
   .example, .dot
     opacity: 0
     +transition(opacity 200ms)
-  li.hover
+  &.hover
     .example, .dot
       opacity: 1
-
-.easings
-  li
-    +transition(opacity 400ms)
-  &.highlighted
-    li
-      opacity: 0.15
-    .example, .dot
-      display: none
-    li.highlight
-      opacity: 1
-      .example, .dot
-        display: block
 
 .howtos
   margin-top: -10px
@@ -167,7 +154,7 @@ $easing-width: 120px + 4px
 .easing-description
   .back
     float: right
-    margin-top: 4px
+    margin-top: 19px
     color:  red
     text-decoration: none
     .text
@@ -179,6 +166,7 @@ $easing-width: 120px + 4px
   h2
     font-weight: normal
     font-size: 25px
+    margin-top: 15px
   h3
     font-size: 22px
 
@@ -202,21 +190,24 @@ $easing-width: 120px + 4px
 
 // Slider
 
-.slide-position
-  position: relative
-  overflow: hidden
-.slide-slider
-  position: relative
-  &.animated
-    +transition(left 600ms cubic-bezier(0.770, 0.000, 0.175, 1.000))
-  &.easing
-    left: -105%
 .easing-description
   position: absolute
   top: 0
   left: 105%
   width: 100%
   display: none
+.page-slider
+  position: relative
+.page-animation
+  .page-slider
+    +transition(left 600ms cubic-bezier(0.770, 0.000, 0.175, 1.000))
+  .easing.linear
+    +transition(top 600ms cubic-bezier(0.770, 0.000, 0.175, 1.000))
+.easing-page
+  .page-slider
+    left: -105%
+  .easing.linear
+    top: -105px
 
 // Open source badge
 
