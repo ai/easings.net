@@ -184,7 +184,14 @@ $easing-width: 120px + 4px
       font-size: 14px
       font-weight: normal
   a
+    display: inline-block
     color: black
+    text-decoration: none
+    border-bottom: 1px solid #bbb
+    line-height: 1
+    +transition(border-bottom-color 150ms)
+    &:hover
+      border-bottom-color: black
   h3
     font-weight: normal
     padding: 17px 0 5px 0
