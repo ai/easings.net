@@ -182,10 +182,7 @@ task :build do
     R18n.set(locale.code)
     LAYOUT.glob('**/*.html.slim') do |slim|
       next if slim.basename.to_s == 'layout.html.slim'
-
-      file = build_file(slim, true)
-      `gzip --best -c #{file} > #{file}.gz`
-
+      build_file(slim, true)
       print '.'
     end
   end
@@ -218,10 +215,10 @@ task :server do
   EasingsNet.run!
 end
 
-desc 'Upload site files to production server'
+desc 'Prepare commit to GitHub Pages'
 task :deploy => :build do
-  host = 'easings.net'
-  path = '/home/ai/easings.net'
-  sh "rsync --recursive --delete --compress --progress --human-readable " +
-     "#{PUBLIC} #{host}:#{path}"
+  sh 'git checkout gh-pages && ' +
+     'git rm *.html && ' +
+     'cp public/*.html ./ && ' +
+     'git add *.html'
 end
