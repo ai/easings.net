@@ -41,4 +41,6 @@ messages.
     bundle exec rake server
      ```
 
-4. And open <http://localhost:4567> in browser.
+4. And open [localhost:4567] in browser.
+
+[localhost:4567]: http://localhost:4567/
