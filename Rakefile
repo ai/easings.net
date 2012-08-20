@@ -159,6 +159,7 @@ def build_file(slim, production = false)
   path = slim.relative_path_from(LAYOUT).sub_ext('').sub_ext('').to_s
 
   subpath = locale.code == 'en' ? '.html' : ".#{locale.code}.html"
+  PUBLIC.mkpath
   file = PUBLIC.join(path + subpath)
 
   helper.path = path
