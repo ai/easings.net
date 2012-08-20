@@ -37,7 +37,7 @@ howtos:
 
 easing:
   all_easings: All easings
-  no_css: !!format
+  no_css: !!code
     Unfortunately, CSS doesn’t support this easing. But you can use it by
     JavaScript or special CSS Animation `@keyframes`.
 

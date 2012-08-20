@@ -39,7 +39,7 @@ howtos:
 
 easing:
   all_easings: Все easing-функции
-  no_css: !!format
+  no_css: !!code
     К сожалению, такую easing-функцию нельзя задать с помощью CSS.
     Используйте JavaScript или специальные `@keyframes` в CSS Animation.
 
