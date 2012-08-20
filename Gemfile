@@ -9,5 +9,6 @@ gem 'coffee-script'
 gem 'therubyracer'
 gem 'sprockets'
 gem 'uglifier'
+gem 'ceaser-easing'
 
 gem 'r18n-core'

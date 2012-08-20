@@ -9,6 +9,7 @@ require 'sprockets'
 require 'slim'
 
 require 'compass'
+require 'ceaser-easing'
 Compass.configuration.images_path = LAYOUT.to_s
 
 require 'r18n-core'
@@ -95,9 +96,7 @@ class Helpers
       Sprockets::Environment.new(ROOT) do |env|
         env.append_path(LAYOUT)
         env.append_path(ROOT.join('vendor'))
-
-        compass = Gem.loaded_specs['compass'].full_gem_path
-        env.append_path("#{compass}/frameworks/compass/stylesheets")
+        Sass.load_paths.concat(Compass.sass_engine_options[:load_paths])
 
         if @env == :production
           env.js_compressor = Uglifier.new(copyright: false)

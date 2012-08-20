@@ -1,5 +1,6 @@
 @import 'compass/css3'
 @import 'compass/layout/sticky-footer'
+@import 'ceaser-easing'
 
 // Mixin and Helpers
 
@@ -200,9 +201,9 @@ $easing-width: 120px + 4px
   position: relative
 .page-animation
   .page-slider
-    +transition(left 600ms cubic-bezier(0.770, 0.000, 0.175, 1.000))
+    +transition(left 600ms ceaser('easeInOutQuart'))
   .easing.linear
-    +transition(top 600ms cubic-bezier(0.770, 0.000, 0.175, 1.000))
+    +transition(top 600ms ceaser('easeInOutQuart'))
 .easing-page
   .page-slider
     left: -105%
@@ -310,7 +311,7 @@ $easing-width: 120px + 4px
     .text, .border
       +backface-visibility(hidden)
     .rotator
-      +transition(all 600ms cubic-bezier(0.455, 0.030, 0.515, 0.955))
+      +transition(all 600ms ceaser('easeInOutQuad'))
     .shadow
       position: absolute
       top: 0

@@ -1,6 +1,8 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    ceaser-easing (0.4)
+      compass (>= 0.12)
     chunky_png (1.2.6)
     coffee-script (2.2.0)
       coffee-script-source
@@ -46,6 +48,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ceaser-easing
   coffee-script
   compass (~> 0.13.alpha.0)
   r18n-core
