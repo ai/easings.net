@@ -8,10 +8,10 @@ GitHub has great instructions on how to [set up Git], [fork a project] and
 [make pull requests]. If you have a problem with Git, just send your files
 directly to <andrey@sitnik.ru>.
 
-[RFC 3066]:          http://www.i18nguy.com/unicode/language-identifiers.html
-[set up Git]:        http://help.github.com/set-up-git-redirect
-[fork project]:      http://help.github.com/fork-a-repo/
-[make pull request]: http://help.github.com/send-pull-requests/
+[RFC 3066]:            http://www.i18nguy.com/unicode/language-identifiers.html
+[set up Git]:          http://help.github.com/set-up-git-redirect
+[fork a project]:      http://help.github.com/fork-a-repo/
+[make pull requests]:  http://help.github.com/send-pull-requests/
 
 ### Translate
 
