@@ -44,5 +44,7 @@ easing:
     Используйте JavaScript или специальные `@keyframes` в CSS Animation.
 
 opensource:
-  title: open source
+  title:
+    opensource: open source
+    translate: переведи
   translate: Помоги перевести сайт на твой язык

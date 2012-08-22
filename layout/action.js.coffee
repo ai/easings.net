@@ -73,6 +73,12 @@ jQuery ($) ->
   support3d = detect3d()
   $body.addClass(if support3d then 'transform3d' else 'transform2d')
 
+  # Open source badge text
+
+  texts = $('.open-source .text .variant')
+  selected = Math.floor((texts.length - 0.001) * Math.random())
+  texts.removeClass('show').eq(selected).addClass('show')
+
   # Open source corner animation
 
   if support3d

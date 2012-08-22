@@ -47,7 +47,9 @@ html lang=r18n.locale.code
             .title
               .shadow
             .border
-            .text= t.opensource.title
+            .text
+              .variant.show= t.opensource.title.opensource
+              .variant= t.opensource.title.translate
       .translate= t.opensource.translate
 
     script= assets['action.js']

@@ -48,5 +48,7 @@ easing:
     CSS `@keyframes`.
 
 opensource:
-  title: open source
+  title:
+    opensource: open source
+    translate: traduire
   translate: Aidez-nous à traduire ce site dans votre langue.

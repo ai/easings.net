@@ -42,5 +42,7 @@ easing:
     JavaScript or special CSS Animation `@keyframes`.
 
 opensource:
-  title: open source
+  title:
+    opensource: open source
+    translate: translate
   translate: Help us to translate site to your language
