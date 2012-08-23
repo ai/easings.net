@@ -13,11 +13,9 @@
       svg( xmlns="http://www.w3.org/2000/svg"
            viewBox="-2 -40 #{x + 4} #{y + 80}" )
         line x1="0" y1="0" x2="0" y2="#{y}"
-        text x="2" y="6"
-          | x
+        text x="2" y="6" x
         line x1="0" y1="#{y}" x2="#{x}" y2="#{y}"
-        text x="#{x - 5}" y="#{y - 3}"
-          | t
+        text x="#{x - 5}" y="#{y - 3}" t
         path d="M0,#{y} L#{to_path dots}"
 
 .page-slider
@@ -75,6 +73,17 @@
         | ←
         span.text= t.easing.all_easings
       h2= easing.name
+      .graph
+        - x = 120
+        - y = 60
+        - dots = easing.dots(100, x, y)
+        svg( xmlns="http://www.w3.org/2000/svg"
+             viewBox="-2 -40 #{x + 4} #{y + 80}" )
+          line x1="0" y1="0" x2="0" y2="#{y}"
+          text x="2" y="6" x
+          line x1="0" y1="#{y}" x2="#{x}" y2="#{y}"
+          text x="#{x - 5}" y="#{y - 3}" t
+          path d="M0,#{y} L#{to_path dots}"
       section.js
         h3 JavaScript
         p= t.howtos.js.link('jQuery Easing Plugin', 'http://gsgd.co.uk/sandbox/jquery/easing/')
