@@ -206,8 +206,9 @@ task :server do
     end
 
     def build_page(page, locale_code)
-      path   = LAYOUT.join("#{page}.html.slim")
-      R18n.set(locale_code)
+      R18n.clear_cache!
+      path = LAYOUT.join("#{page}.html.slim")
+      R18n.set(locale_code).reload!
       build_file(path)
     end
   end
