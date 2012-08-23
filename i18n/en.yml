@@ -17,7 +17,7 @@ about: !!format
   This page will each time help to pick the desired easing function.
 howtos:
   name: easing name
-  desc: easing description
+  curve: easing’s Bezier curve
   js: !!code
     jQuery with jQuery Easing Plugin is the easiest way to describe animation
     with easing. You need just set easing name to `.animate` method as

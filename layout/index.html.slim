@@ -60,11 +60,11 @@
       pre
         code
           | div {
-              -webkit-transition: all 600ms #{easing_example(t.howtos.desc)};
-              -moz-transition:    all 600ms #{easing_example(t.howtos.desc)};
-              -ms-transition:     all 600ms #{easing_example(t.howtos.desc)};
-              -o-transition:      all 600ms #{easing_example(t.howtos.desc)};
-              transition:         all 600ms #{easing_example(t.howtos.desc)}; }
+              -webkit-transition: all 600ms #{easing_example(t.howtos.curve)};
+              -moz-transition:    all 600ms #{easing_example(t.howtos.curve)};
+              -ms-transition:     all 600ms #{easing_example(t.howtos.curve)};
+              -o-transition:      all 600ms #{easing_example(t.howtos.curve)};
+              transition:         all 600ms #{easing_example(t.howtos.curve)}; }
 
   - easings.each do |easing|
     - next if easing.linear?

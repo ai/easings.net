@@ -18,7 +18,7 @@ about: !!format
 
 howtos:
   name: имя easing-функции
-  desc: описание easing-функции
+  curve: кривая Безье easing-функции
   js: !!code
     Проще всего рисовать анимации по easing-функции через jQuery, добавив
     jQuery Easing Plugin. После этого надо лишь указать имя функции

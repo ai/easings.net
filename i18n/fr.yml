@@ -17,8 +17,8 @@ about: !!format
 
   Cette page permet de choisir la fonction désirée.
 howtos:
-  name: easing name
-  desc: easing description
+  name: easing nom
+  curve: courbe de Bézier pour easing
   js: !!code
     jQuery Easing Plugin est la solution la plus simple pour décrire
     une animation. Vous avez uniquement besoin de positionner le nom de
