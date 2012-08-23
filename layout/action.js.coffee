@@ -96,8 +96,9 @@ jQuery ($) ->
 
   # Open source corner animation
 
+  corner = $('.open-source').attr(target: '_blank')
+
   if support3d
-    corner    = $('.open-source')
     shadow    = corner.find('.shadow')
     translate = corner.find('.translate')
     rotator   = corner.find('.rotator')
