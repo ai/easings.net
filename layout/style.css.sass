@@ -59,22 +59,43 @@ $easing-width: 120px + 4px
 .easings
   margin: 0 -30px 0 -10px
   position: relative
+  .part
+    position: relative
+    ul
+      +transition(opacity 400ms)
+  .part-title
+    position: absolute
+    top: -12px
+    right: 35px
+    width: 40px
+    color: #999
+    font-size: 14px
+    font-weight: normal
+    text-align: right
+
+.easings.hightlight-part
+  .part ul
+    opacity: 0.15
+  .part:hover ul
+    opacity: 1
 
 .easing
   list-style: none
   display: inline-block
-  margin: 3px 4px
+  margin: 3px 5px
   padding: 5px
   position: relative
   &.linear
     position: absolute
-    top: 0
-    right: 15px
+    top: 11px
+    right: 25px
+    .easing-title
+      margin-bottom: -35px
   &.in-out
     margin-right: 25px
   &.easeOutElastic h2
     +box-shadow(white 0 26px 8px -8px inset)
-  h2
+  .easing-title
     text-align: center
     font-size: 15px
     font-weight: normal

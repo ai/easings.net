@@ -36,12 +36,19 @@ jQuery ($) ->
       $(@).find('.example').stop().css(top: graphBottom).end().
            find('.dot').stop().css(top: dotY, left: dotX)
     over: ->
-      easing = $(@).find('h2').text()
+      easing = $(@).find('.easing-title').text()
       $(@).
         find('.example').animate(top: '-=60', 1000, easing).end().
         find('.dot').animate { top: '-=60', left: '+=119'}
           duration: 1000
           specialEasing: top: easing, left: 'linear'
+
+  # Highlight easings part
+
+  section = $('.easings')
+  titles  = section.find('.part-title')
+  titles.mouseenter -> section.addClass('hightlight-part')
+  titles.mouseleave -> section.removeClass('hightlight-part')
 
   # Show easing description
 

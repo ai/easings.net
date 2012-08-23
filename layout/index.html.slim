@@ -1,7 +1,7 @@
 .about
   = t.about
   .easing.linear
-    h2= linear_easing.name
+    h3.easing-title= linear_easing.name
     .graph
       .example
         .rect
@@ -19,24 +19,20 @@
         path d="M0,#{y} L#{to_path dots}"
 
 .page-slider
-  ul.easings
-    - easings.each do |easing|
-      li.easing class=easing_classes(easing)
-        h2= easing.name
-        - x = 120
-        - y = 60
-        - dots = easing.dots(100, x, y)
-        a.graph.link href="##{easing.name}"
-          .example
-            .rect
-            .arrow
-          .dot
-          svg( xmlns="http://www.w3.org/2000/svg"
-               viewBox="-2 -40 #{x + 4} #{y + 80}" )
-            line x1="0" y1="0" x2="#{x}" y2="0"
-            line x1="0" y1="#{y}" x2="#{x}" y2="#{y}"
-            path d="M0,#{y} L#{to_path dots}"
-  .howtos
+  .easings
+    .part.css
+      h2.part-title css+js
+      ul
+        - css_easings.each do |easing|
+          - @easing = easing
+          = partial 'easing'
+    .part.js
+      h2.part-title js
+      ul
+        - js_easings.each do |easing|
+          - @easing = easing
+          = partial 'easing'
+  article.howtos
     section.js
       h3 JavaScript
       p= t.howtos.js.link('jQuery Easing Plugin', 'http://gsgd.co.uk/sandbox/jquery/easing/')
@@ -66,7 +62,7 @@
               -o-transition:      all 600ms #{easing_example(t.howtos.curve)};
               transition:         all 600ms #{easing_example(t.howtos.curve)}; }
 
-  - easings.each do |easing|
+  - all_easings.each do |easing|
     - next if easing.linear?
     article.easing-description class=easing.name
       a.back href="#"

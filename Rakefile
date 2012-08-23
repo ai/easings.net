@@ -105,18 +105,22 @@ class Helpers
     end
   end
 
-  def easings
-    @easings ||= begin
-      YAML.load_file(ROOT.join('easings.yml')).
-        map { |i| Easing.new(i) }.reject(&:linear?)
+  def all_easings
+    @all_easings ||= begin
+      YAML.load_file(ROOT.join('easings.yml')).map { |i| Easing.new(i) }
     end
   end
 
+  def css_easings
+    all_easings.reject(&:linear?).reject { |i| !i.css }
+  end
+
+  def js_easings
+    all_easings.reject(&:linear?).reject { |i| i.css }
+  end
+
   def linear_easing
-    @linear_easing ||= begin
-      YAML.load_file(ROOT.join('easings.yml')).
-        map { |i| Easing.new(i) }.find(&:linear?)
-    end
+    @linear_easings ||= all_easings.find(&:linear?)
   end
 
   def render(file, &block)
@@ -148,6 +152,10 @@ class Helpers
 
   def easing_example(name = t.howtos.name)
     "<strong>#{ name }</strong>"
+  end
+
+  def partial(name)
+    render(LAYOUT.join("_#{name}.slim"))
   end
 end
 
