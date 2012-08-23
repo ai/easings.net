@@ -45,6 +45,7 @@ easing:
   no_css: !!code
     Unfortunately, CSS doesn’t support this easing. But you can use it by
     JavaScript or special CSS Animation `@keyframes`.
+  edit: <a href="%1">Edit</a> on cubic-bezier.com.
 
 opensource:
   title:

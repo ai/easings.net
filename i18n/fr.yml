@@ -51,6 +51,7 @@ easing:
     Malheureusement, CSS ne supportent pas cette fonction easing.
     Mais vous pouvez l'utiliser via JavaScript ou par l'animation spéciale
     CSS `@keyframes`.
+  edit: <a href="%1">Modifier</a> le cubic-bezier.com.
 
 opensource:
   title:

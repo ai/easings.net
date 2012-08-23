@@ -110,5 +110,6 @@
                   -ms-transition:     all 600ms #{easing_example(easing.css)};
                   -o-transition:      all 600ms #{easing_example(easing.css)};
                   transition:         all 600ms #{easing_example(easing.css)}; }
+          p= t.easing.edit("http://cubic-bezier.com/##{easing.bezier}")
         - else
           p= t.easing.no_css

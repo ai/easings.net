@@ -67,6 +67,10 @@ class Easing
     dots.map { |i| [i, y - (y * self.x(i / x.to_f))] }
   end
 
+  def bezier
+    css.match(/cubic-bezier\(([^\)]+)\)/)[1].gsub(' ', '').gsub('0.', '.')
+  end
+
   def jquery_easings
     @@jquery_easings ||= begin
       require 'execjs'

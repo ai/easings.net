@@ -46,6 +46,7 @@ easing:
   no_css: !!code
     К сожалению, такую easing-функцию нельзя задать с помощью CSS.
     Используйте JavaScript или специальные `@keyframes` в CSS Animation.
+  edit: <a href="%1">Редактировать</a> на cubic-bezier.com.
 
 opensource:
   title:
