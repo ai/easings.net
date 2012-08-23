@@ -16,6 +16,11 @@ about: !!format
   de chute va de plus en plus vite puis, lorsqu'il touche le sol il rebondit.
 
   Cette page permet de choisir la fonction désirée.
+
+easings:
+  css: Disponible partout
+  js: Seulement en JavaScript
+
 howtos:
   name: easing nom
   curve: courbe de Bézier pour easing

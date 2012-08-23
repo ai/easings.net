@@ -16,6 +16,10 @@ about: !!format
 
   Этот сайт поможет каждый раз подобрать нужную easing-функцию.
 
+easings:
+  css: Доступные везде
+  js: Есть только в JavaScript
+
 howtos:
   name: имя easing-функции
   curve: кривая Безье easing-функции

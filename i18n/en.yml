@@ -15,6 +15,11 @@ about: !!format
   bounces back after it hits the floor.
 
   This page will each time help to pick the desired easing function.
+
+easings:
+  css: Available everywhere
+  js: Only in JavaScript
+
 howtos:
   name: easing name
   curve: easing’s Bezier curve

@@ -21,13 +21,13 @@
 .page-slider
   .easings
     .part.css
-      h2.part-title css+js
+      h2.part-title title=t.easings.css css+js
       ul
         - css_easings.each do |easing|
           - @easing = easing
           = partial 'easing'
     .part.js
-      h2.part-title js
+      h2.part-title title=t.easings.js js
       ul
         - js_easings.each do |easing|
           - @easing = easing
