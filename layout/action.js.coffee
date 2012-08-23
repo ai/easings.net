@@ -52,17 +52,25 @@ jQuery ($) ->
 
   # Show easing description
 
+  translations = $('footer a')
+  hashToTranslations = (hash) ->
+    translations.each ->
+      url = $(@).attr('href').replace(/#.*$/, '')
+      $(@).attr(href: url + hash)
+
   easingPages = $('.easing-description')
   slider      = $('.slide-slider')
 
   showSubpage = ->
     if location.hash == '#' or location.hash == ''
       $body.removeClass('easing-page')
+      hashToTranslations('')
     else
       name = location.hash[1..-1]
       easingPages.hide()
       easingPages.filter(".#{name}").show()
       $body.addClass('easing-page')
+      hashToTranslations("##{name}")
 
   showSubpage()
   $(window).on('hashchange', showSubpage)
