@@ -18,98 +18,99 @@
         text x="#{x - 5}" y="#{y - 3}" t
         path d="M0,#{y} L#{to_path dots}"
 
-.page-slider
-  .easings
-    .part.css
-      h2.part-title title=t.easings.css css+js
-      ul
-        - css_easings.each do |easing|
-          - @easing = easing
-          = partial 'easing'
-    .part.js
-      h2.part-title title=t.easings.js js
-      ul
-        - js_easings.each do |easing|
-          - @easing = easing
-          = partial 'easing'
-  article.howtos
-    section.js
-      h3 JavaScript
-      p= t.howtos.js.link('jQuery Easing Plugin', 'http://gsgd.co.uk/sandbox/jquery/easing/')
-      pre
-        code
-          | div.animate({ top: '-=100px' }, 600, '#{easing_example}', function () { … })
-
-    section.sass
-      h3 Sass
-      p= t.howtos.sass.link('Compass Ceaser', 'http://thesassway.com/projects/compass-ceaser')
-      pre
-        code
-          | div
-              @include transition(all 600ms ceaser('#{easing_example}'))
-
-    section.css
-      h3 CSS
-      p= t.howtos.css + ' ' + t.howtos.css_bad
-      .click
-        p= t.howtos.css_help
-      pre
-        code
-          | div {
-              -webkit-transition: all 600ms #{easing_example(t.howtos.curve)};
-              -moz-transition:    all 600ms #{easing_example(t.howtos.curve)};
-              -ms-transition:     all 600ms #{easing_example(t.howtos.curve)};
-              -o-transition:      all 600ms #{easing_example(t.howtos.curve)};
-              transition:         all 600ms #{easing_example(t.howtos.curve)}; }
-
-  - all_easings.each do |easing|
-    - next if easing.linear?
-    article.easing-description class=easing.name
-      a.back href="#"
-        | ←
-        span.text= t.easing.all_easings
-      h2= easing.name
-      .graph
-        - x = 120
-        - y = 60
-        - dots = easing.dots(100, x, y)
-        svg( xmlns="http://www.w3.org/2000/svg"
-             viewBox="-2 -40 #{x + 4} #{y + 80}" )
-          line x1="0" y1="0" x2="0" y2="#{y}"
-          text x="2" y="6" x
-          line x1="0" y1="#{y}" x2="#{x}" y2="#{y}"
-          text x="#{x - 5}" y="#{y - 3}" t
-          path d="M0,#{y} L#{to_path dots}"
+.page-crop
+  .page-slider
+    .easings
+      .part.css
+        h2.part-title title=t.easings.css css+js
+        ul
+          - css_easings.each do |easing|
+            - @easing = easing
+            = partial 'easing'
+      .part.js
+        h2.part-title title=t.easings.js js
+        ul
+          - js_easings.each do |easing|
+            - @easing = easing
+            = partial 'easing'
+    article.howtos
       section.js
         h3 JavaScript
         p= t.howtos.js.link('jQuery Easing Plugin', 'http://gsgd.co.uk/sandbox/jquery/easing/')
         pre
           code
-            | div.animate({ top: '-=100px' }, 600, '#{easing_example(easing.name)}', function () { … })
+            | div.animate({ top: '-=100px' }, 600, '#{easing_example}', function () { … })
 
       section.sass
         h3 Sass
-        - if easing.css
-          p= t.howtos.sass.link('Compass Ceaser', 'http://thesassway.com/projects/compass-ceaser')
-          pre
-            code
-              | div
-                  @include transition(all 600ms ceaser('#{easing_example(easing.name)}'))
-        - else
-          p= t.easing.no_css
+        p= t.howtos.sass.link('Compass Ceaser', 'http://thesassway.com/projects/compass-ceaser')
+        pre
+          code
+            | div
+                @include transition(all 600ms ceaser('#{easing_example}'))
 
       section.css
         h3 CSS
-        - if easing.css
-          p= t.howtos.css
+        p= t.howtos.css + ' ' + t.howtos.css_bad
+        .click
+          p= t.howtos.css_help
+        pre
+          code
+            | div {
+                -webkit-transition: all 600ms #{easing_example(t.howtos.curve)};
+                -moz-transition:    all 600ms #{easing_example(t.howtos.curve)};
+                -ms-transition:     all 600ms #{easing_example(t.howtos.curve)};
+                -o-transition:      all 600ms #{easing_example(t.howtos.curve)};
+                transition:         all 600ms #{easing_example(t.howtos.curve)}; }
+
+    - all_easings.each do |easing|
+      - next if easing.linear?
+      article.easing-description class=easing.name
+        a.back href="#"
+          | ←
+          span.text= t.easing.all_easings
+        h2= easing.name
+        .graph
+          - x = 120
+          - y = 60
+          - dots = easing.dots(100, x, y)
+          svg( xmlns="http://www.w3.org/2000/svg"
+               viewBox="-2 -40 #{x + 4} #{y + 80}" )
+            line x1="0" y1="0" x2="0" y2="#{y}"
+            text x="2" y="6" x
+            line x1="0" y1="#{y}" x2="#{x}" y2="#{y}"
+            text x="#{x - 5}" y="#{y - 3}" t
+            path d="M0,#{y} L#{to_path dots}"
+        section.js
+          h3 JavaScript
+          p= t.howtos.js.link('jQuery Easing Plugin', 'http://gsgd.co.uk/sandbox/jquery/easing/')
           pre
             code
-              | div {
-                  -webkit-transition: all 600ms #{easing_example(easing.css)};
-                  -moz-transition:    all 600ms #{easing_example(easing.css)};
-                  -ms-transition:     all 600ms #{easing_example(easing.css)};
-                  -o-transition:      all 600ms #{easing_example(easing.css)};
-                  transition:         all 600ms #{easing_example(easing.css)}; }
-          p= t.easing.edit("http://cubic-bezier.com/##{easing.bezier}")
-        - else
-          p= t.easing.no_css
+              | div.animate({ top: '-=100px' }, 600, '#{easing_example(easing.name)}', function () { … })
+
+        section.sass
+          h3 Sass
+          - if easing.css
+            p= t.howtos.sass.link('Compass Ceaser', 'http://thesassway.com/projects/compass-ceaser')
+            pre
+              code
+                | div
+                    @include transition(all 600ms ceaser('#{easing_example(easing.name)}'))
+          - else
+            p= t.easing.no_css
+
+        section.css
+          h3 CSS
+          - if easing.css
+            p= t.howtos.css
+            pre
+              code
+                | div {
+                    -webkit-transition: all 600ms #{easing_example(easing.css)};
+                    -moz-transition:    all 600ms #{easing_example(easing.css)};
+                    -ms-transition:     all 600ms #{easing_example(easing.css)};
+                    -o-transition:      all 600ms #{easing_example(easing.css)};
+                    transition:         all 600ms #{easing_example(easing.css)}; }
+            p= t.easing.edit("http://cubic-bezier.com/##{easing.bezier}")
+          - else
+            p= t.easing.no_css

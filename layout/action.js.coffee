@@ -14,12 +14,17 @@ jQuery ($) ->
     document.location.hash = hash
     $(window).scrollTop(scroll)
 
-  easings.find('.link').click ->
+  links = easings.find('.link')
+
+  links.click ->
     if $(@).closest('li').hasClass('highlight')
       hash('')
     else
       hash($(@).attr('href'))
     false
+
+  links.mousedown -> $(@).closest('.button').addClass('pressed')
+  links.mouseup   -> easings.find('.button').removeClass('pressed')
 
   easings.mouseenter -> $(@).addClass('hover')
   easings.mouseleave -> $(@).removeClass('hover')

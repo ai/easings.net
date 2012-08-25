@@ -47,9 +47,6 @@ $easing-width: 120px + 4px
   margin: 0 auto
   position: relative
 
-.root
-  overflow: hidden
-
 .about
   padding: 20px ($easing-width + 40px) 5px 0
   line-height: 1.3
@@ -95,6 +92,9 @@ $easing-width: 120px + 4px
     margin-right: 25px
   &.easeOutElastic .easing-title
     +box-shadow(white 0 26px 8px -8px inset)
+  .button
+    margin: -5px
+    padding: 5px
   .easing-title
     text-align: center
     font-size: 15px
@@ -105,6 +105,15 @@ $easing-width: 120px + 4px
   .graph
     text-decoration: none
     position: relative
+
+.easings
+  .easing
+    background: #f0f0f0
+    box-shadow: inset 0 0 5px black(0.5)
+  .button
+    background: white
+    &.pressed
+      +scale(0.9)
 
 .graph
   svg
@@ -131,6 +140,7 @@ $easing-width: 120px + 4px
     width: 21px
     height: 12px
     overflow: hidden
+    z-index: 10
     .rect
       position: absolute
       top: 0
@@ -222,6 +232,10 @@ $easing-width: 120px + 4px
 
 // Slider
 
+.page-crop
+  overflow: hidden
+  margin: -10px 0 0 -10px
+  padding: 10px 0 0 10px
 .easing-description
   position: absolute
   top: 0
