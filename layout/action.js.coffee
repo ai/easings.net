@@ -23,8 +23,8 @@ jQuery ($) ->
       hash($(@).attr('href'))
     false
 
-  links.mousedown -> $(@).closest('.button').addClass('pressed')
-  links.mouseup   -> easings.find('.button').removeClass('pressed')
+  links.mousedown -> $(@).closest('.easing').addClass('pressed')
+  links.mouseup   -> easings.removeClass('pressed')
 
   easings.mouseenter -> $(@).addClass('hover')
   easings.mouseleave -> $(@).removeClass('hover')
