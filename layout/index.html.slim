@@ -3,10 +3,6 @@
   .easing.linear
     h3.easing-title= linear_easing.name
     .graph
-      .example
-        .rect
-        .arrow
-      .dot
       - x = 120
       - y = 60
       - dots = linear_easing.dots(100, x, y)
@@ -39,15 +35,15 @@
         p= t.howtos.js.link('jQuery Easing Plugin', 'http://gsgd.co.uk/sandbox/jquery/easing/')
         pre
           code
-            | div.animate({ top: '-=100px' }, 600, '#{easing_example}', function () { … })
+            | div.animate({ top: '-=100px' }, 600, '#{easing_example}', function () { … })
 
-      section.sass
-        h3 Sass
-        p= t.howtos.sass.link('Compass Ceaser', 'http://thesassway.com/projects/compass-ceaser')
+      section.scss
+        h3 SCSS
+        p= t.howtos.scss.link('Compass Ceaser', 'http://thesassway.com/projects/compass-ceaser')
         pre
           code
-            | div
-                @include transition(all 600ms ceaser('#{easing_example}'))
+            | div {
+                @include transition(all 600ms ceaser('#{easing_example}')); }
 
       section.css
         h3 CSS
@@ -88,14 +84,14 @@
             code
               | div.animate({ top: '-=100px' }, 600, '#{easing_example(easing.name)}', function () { … })
 
-        section.sass
-          h3 Sass
+        section.scss
+          h3 SCSS
           - if easing.css
-            p= t.howtos.sass.link('Compass Ceaser', 'http://thesassway.com/projects/compass-ceaser')
+            p= t.howtos.scss.link('Compass Ceaser', 'http://thesassway.com/projects/compass-ceaser')
             pre
               code
-                | div
-                    @include transition(all 600ms ceaser('#{easing_example(easing.name)}'))
+                | div {
+                    @include transition(all 600ms ceaser('#{easing_example(easing.name)}')); }
           - else
             p= t.easing.no_css
 

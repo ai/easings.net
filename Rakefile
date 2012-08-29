@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'pathname'
 ROOT    = Pathname(__FILE__).dirname
 CONTENT = ROOT.join('content/')
@@ -155,6 +157,7 @@ class Helpers
   end
 
   def easing_example(name = t.howtos.name)
+    name = name.gsub(' ', ' ').gsub('-', '‑') # non-break space and hyphen
     "<strong>#{ name }</strong>"
   end
 

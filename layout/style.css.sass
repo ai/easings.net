@@ -1,5 +1,6 @@
 @import 'compass/css3'
 @import 'compass/layout/sticky-footer'
+@import 'compass/typography/text/force-wrap'
 @import 'ceaser-easing'
 
 // Mixin and Helpers
@@ -106,14 +107,19 @@ $easing-width: 120px + 4px
     text-decoration: none
     position: relative
 
-.easings
-  .easing.pressed
-    background: #f0f0f0
-    box-shadow: inset 0 0 5px black(0.5)
-    .button
-      background: white
-      +scale(0.9)
-      box-shadow: 0 0 2px black(0.3)
+@mixin pressed-easing
+  background: #f0f0f0
+  box-shadow: inset 0 0 5px black(0.5)
+  .button
+    background: white
+    +scale(0.9)
+    box-shadow: 0 0 2px black(0.3)
+
+.easings .easing.pressed
+  +pressed-easing
+@media (min-width: 481px)
+  .easings .easing:active
+    +pressed-easing
 
 .graph
   svg
@@ -167,7 +173,7 @@ $easing-width: 120px + 4px
   .example, .dot
     opacity: 0
     +transition(opacity 200ms)
-  &.hover
+  &:hover
     .example, .dot
       opacity: 1
 
@@ -226,6 +232,7 @@ $easing-width: 120px + 4px
       color: red
       font-size: 14px
       font-weight: normal
+      white-space: nowrap
   h3
     font-weight: normal
     padding: 7px 0 5px 0
@@ -405,3 +412,87 @@ footer
         text-decoration: none
     .current
       color: black
+
+// Mobile
+
+@media (max-width: 481px)
+  body.limit-internet
+    &, pre strong
+      font-family: Droid Sans, "Trebuchet MS", sans-serif !important
+      font-size: 15px
+    code
+      font-family: monospace
+
+  .root, footer
+    width: auto
+    max-width: 100%
+    padding: 0 10px
+
+  .about
+    padding: 10px 0 5px 0
+  .easing.linear
+    display: none
+
+  .easings
+    margin: 0 -10px
+    .part-title
+      position: relative
+      top: auto
+      left: auto
+      width: 100%
+      text-align: center
+      font-size: 12px
+      margin: -3px 0 -1px 27px
+
+  .easing
+    .easing-title
+      font-size: 13px
+    .example, .dot
+      display: none
+    &.in-out
+      margin-right: 0
+
+  .graph
+    svg
+      width: 0.8 * $easing-width
+      height: 0.8 * (60px + 80px)
+
+  pre
+    overflow: auto
+    +force-wrap
+    strong
+      white-space: nowrap
+      word-wrap: normal
+
+  .howtos
+    h2
+      font-size: 23px
+    h3
+      font-size: 23px
+
+  .page-crop
+    margin-right: -10px
+
+  .easing-description
+    margin-top: -10px
+    padding-right: 10px
+    +box-sizing(border-box)
+    .back
+      font-size: 14px
+    h2
+      font-size: 23px
+    h3
+      font-size: 20px
+
+  .easing .link, .easing-description .back
+    -webkit-tap-highlight-color: white(0)
+
+  .open-source
+    display: none
+
+  +sticky-footer(40px, ".root", ".root-footer", "footer")
+  footer
+    height: 40px
+    line-height: 40px
+    li
+      padding-left: 5px
