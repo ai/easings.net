@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
     <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <style>* {
         margin: 0;
         padding: 0; }
@@ -107,6 +108,18 @@
           transform: scale(0.9, 0.9);
           box-shadow: 0 0 2px rgba(0, 0, 0, 0.3); }
       
+      @media (min-width: 481px) {
+        .easings .easing:active {
+          background: #f0f0f0;
+          box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); }
+          .easings .easing:active .button {
+            background: white;
+            -webkit-transform: scale(0.9, 0.9);
+            -moz-transform: scale(0.9, 0.9);
+            -ms-transform: scale(0.9, 0.9);
+            -o-transform: scale(0.9, 0.9);
+            transform: scale(0.9, 0.9);
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.3); } }
       .graph svg {
         width: 124px;
         height: 140px;
@@ -169,7 +182,7 @@
         -ms-transition: opacity 200ms;
         -o-transition: opacity 200ms;
         transition: opacity 200ms; }
-      .easing.hover .example, .easing.hover .dot {
+      .easing:hover .example, .easing:hover .dot {
         opacity: 1; }
       
       .howtos h2 {
@@ -223,7 +236,8 @@
         .howtos pre strong, .easing-description pre strong {
           color: red;
           font-size: 14px;
-          font-weight: normal; }
+          font-weight: normal;
+          white-space: nowrap; }
       .howtos h3, .easing-description h3 {
         font-weight: normal;
         padding: 7px 0 5px 0; }
@@ -459,6 +473,110 @@
               text-decoration: none; }
           footer li .current {
             color: black; }
+      
+      @media (max-width: 481px) {
+        body.limit-internet, body.limit-internet pre strong {
+          font-family: Droid Sans, "Trebuchet MS", sans-serif !important;
+          font-size: 15px; }
+        body.limit-internet code {
+          font-family: monospace; }
+      
+        .root, footer {
+          width: auto;
+          max-width: 100%;
+          padding: 0 10px; }
+      
+        .about {
+          padding: 10px 0 5px 0; }
+      
+        .easing.linear {
+          display: none; }
+      
+        .easings {
+          margin: 0 -10px; }
+          .easings .part-title {
+            position: relative;
+            top: auto;
+            left: auto;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            margin: -3px 0 -1px 27px; }
+      
+        .easing .easing-title {
+          font-size: 13px; }
+        .easing .example, .easing .dot {
+          display: none; }
+        .easing.in-out {
+          margin-right: 0; }
+      
+        .graph svg {
+          width: 99.2px;
+          height: 112px; }
+      
+        pre {
+          overflow: auto;
+          white-space: pre;
+          white-space: pre-wrap;
+          white-space: pre-line;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -hp-pre-wrap;
+          word-wrap: break-word; }
+          pre strong {
+            white-space: nowrap;
+            word-wrap: normal; }
+      
+        .howtos h2 {
+          font-size: 23px; }
+        .howtos h3 {
+          font-size: 23px; }
+      
+        .page-crop {
+          margin-right: -10px; }
+      
+        .easing-description {
+          margin-top: -10px;
+          padding-right: 10px;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box; }
+          .easing-description .back {
+            font-size: 14px; }
+          .easing-description h2 {
+            font-size: 23px; }
+          .easing-description h3 {
+            font-size: 20px; }
+      
+        .easing .link, .easing-description .back {
+          -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+      
+        .open-source {
+          display: none; }
+      
+        html, body {
+          height: 100%; }
+      
+        .root {
+          clear: both;
+          min-height: 100%;
+          height: auto !important;
+          height: 100%;
+          margin-bottom: -40px; }
+          .root .root-footer {
+            height: 40px; }
+      
+        footer {
+          clear: both;
+          position: relative;
+          height: 40px; }
+      
+        footer {
+          height: 40px;
+          line-height: 40px; }
+          footer li {
+            padding-left: 5px; } }
       </style>
     <style>body, pre strong { font-family: "PT Sans", "Trebuchet MS", sans-serif; }</style><script>
       var _gaq = _gaq || [];
@@ -472,15 +590,10 @@
       })();
     </script>
     </head>
-  <body>
+  <body class="limit-internet">
     <div class="root"><div class="about"><p><strong>Easing function</strong> specifies the speed of animation progresses to make it more realistic.</p><p>The real object doesn’t begin its movement instantly and at a constant rate. When we open the drawer, we first give it acceleration, and then we slow it down. When something falls, it first goes down faster and faster, and then bounces back after it hits the floor.</p><p>This page will each time help to pick the desired easing function.</p><div class="easing linear">
     <h3 class="easing-title">linear</h3>
     <div class="graph">
-      <div class="example">
-        <div class="rect"></div>
-        <div class="arrow"></div>
-      </div>
-      <div class="dot"></div>
       <svg viewBox="-2 -40 124 140" xmlns="http://www.w3.org/2000/svg"><line x1="0" x2="0" y1="0" y2="60"></line><text x="2" y="6">x</text><line x1="0" x2="120" y1="60" y2="60"></line><text x="115" y="57">t</text><path d="M0,60 L1.2,59.4 2.4,58.8 3.5999999999999996,58.2 4.8,57.6 6.0,57.0 7.199999999999999,56.4 8.4,55.8 9.6,55.2 10.799999999999999,54.6 12.0,54.0 13.2,53.4 14.399999999999999,52.8 15.6,52.2 16.8,51.6 18.0,51.0 19.2,50.4 20.4,49.8 21.599999999999998,49.2 22.8,48.6 24.0,48.0 25.2,47.4 26.4,46.8 27.599999999999998,46.2 28.799999999999997,45.6 30.0,45.0 31.2,44.4 32.4,43.8 33.6,43.2 34.8,42.6 36.0,42.0 37.199999999999996,41.400000000000006 38.4,40.8 39.6,40.2 40.8,39.6 42.0,39.0 43.199999999999996,38.400000000000006 44.4,37.8 45.6,37.2 46.8,36.6 48.0,36.0 49.199999999999996,35.400000000000006 50.4,34.8 51.6,34.2 52.8,33.6 54.0,33.0 55.199999999999996,32.400000000000006 56.4,31.8 57.599999999999994,31.200000000000003 58.8,30.6 60.0,30.0 61.199999999999996,29.4 62.4,28.799999999999997 63.599999999999994,28.200000000000006 64.8,27.6 66.0,27.0 67.2,26.4 68.39999999999999,25.800000000000004 69.6,25.200000000000003 70.8,24.6 72.0,24.0 73.2,23.4 74.39999999999999,22.800000000000004 75.6,22.200000000000003 76.8,21.6 78.0,21.0 79.2,20.4 80.39999999999999,19.800000000000004 81.6,19.200000000000003 82.8,18.6 84.0,18.0 85.2,17.4 86.39999999999999,16.800000000000004 87.6,16.200000000000003 88.8,15.600000000000001 90.0,15.0 91.2,14.399999999999999 92.39999999999999,13.800000000000004 93.6,13.200000000000003 94.8,12.600000000000001 96.0,12.0 97.2,11.399999999999999 98.39999999999999,10.800000000000004 99.6,10.200000000000003 100.8,9.600000000000001 102.0,9.0 103.2,8.399999999999999 104.39999999999999,7.800000000000004 105.6,7.200000000000003 106.8,6.600000000000001 108.0,6.0 109.2,5.399999999999999 110.39999999999999,4.800000000000004 111.6,4.200000000000003 112.8,3.6000000000000014 114.0,3.0 115.19999999999999,2.4000000000000057 116.39999999999999,1.8000000000000043 117.6,1.2000000000000028 118.8,0.6000000000000014 120.0,0.0"></path></svg>
     </div>
   </div>
@@ -830,27 +943,27 @@
     <article class="howtos">
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
-        <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easing name</strong>', function () { … })</code></pre>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easing name</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easing name</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easing name</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function. Unfortunately, them support not all easings and you must set function by Bezier curve.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function. Unfortunately, them support not all easings and you must set function by Bezier curve.</p>
         <div class="click">
-          <p>Select easing to show it description in Bezier curve.</p>
+          <p>Select easing to show it description in Bezier curve.</p>
         </div>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>easing’s Bezier curve</strong>;
-  -moz-transition:    all 600ms <strong>easing’s Bezier curve</strong>;
-  -ms-transition:     all 600ms <strong>easing’s Bezier curve</strong>;
-  -o-transition:      all 600ms <strong>easing’s Bezier curve</strong>;
-  transition:         all 600ms <strong>easing’s Bezier curve</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>easing’s Bezier curve</strong>;
+  -moz-transition:    all 600ms <strong>easing’s Bezier curve</strong>;
+  -ms-transition:     all 600ms <strong>easing’s Bezier curve</strong>;
+  -o-transition:      all 600ms <strong>easing’s Bezier curve</strong>;
+  transition:         all 600ms <strong>easing’s Bezier curve</strong>; }</code></pre>
       </section>
     </article>
     <article class="easing-description easeInSine">
@@ -861,24 +974,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInSine</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeInSine</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeInSine</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.47, 0, 0.745, 0.715)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.47, 0, 0.745, 0.715)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.47, 0, 0.745, 0.715)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.47, 0, 0.745, 0.715)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.47, 0, 0.745, 0.715)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.47, 0, 0.745, 0.715)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.47, 0, 0.745, 0.715)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.47, 0, 0.745, 0.715)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.47, 0, 0.745, 0.715)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.47, 0, 0.745, 0.715)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.47,0,.745,.715">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -890,24 +1003,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeOutSine</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeOutSine</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeOutSine</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.39, 0.575, 0.565, 1)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.39, 0.575, 0.565, 1)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.39, 0.575, 0.565, 1)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.39, 0.575, 0.565, 1)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.39, 0.575, 0.565, 1)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.39, 0.575, 0.565, 1)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.39, 0.575, 0.565, 1)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.39, 0.575, 0.565, 1)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.39, 0.575, 0.565, 1)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.39, 0.575, 0.565, 1)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.39,.575,.565,1">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -919,24 +1032,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInOutSine</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeInOutSine</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeInOutSine</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.445, 0.05, 0.55, 0.95)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.445, 0.05, 0.55, 0.95)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.445, 0.05, 0.55, 0.95)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.445, 0.05, 0.55, 0.95)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.445, 0.05, 0.55, 0.95)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.445, 0.05, 0.55, 0.95)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.445, 0.05, 0.55, 0.95)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.445, 0.05, 0.55, 0.95)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.445, 0.05, 0.55, 0.95)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.445, 0.05, 0.55, 0.95)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.445,.05,.55,.95">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -948,24 +1061,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInQuad</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeInQuad</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeInQuad</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.55, 0.085, 0.68, 0.53)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.55, 0.085, 0.68, 0.53)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.55, 0.085, 0.68, 0.53)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.55, 0.085, 0.68, 0.53)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.55, 0.085, 0.68, 0.53)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.55, 0.085, 0.68, 0.53)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.55, 0.085, 0.68, 0.53)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.55, 0.085, 0.68, 0.53)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.55, 0.085, 0.68, 0.53)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.55, 0.085, 0.68, 0.53)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.55,.085,.68,.53">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -977,24 +1090,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeOutQuad</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeOutQuad</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeOutQuad</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.25, 0.46, 0.45, 0.94)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.25, 0.46, 0.45, 0.94)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.25, 0.46, 0.45, 0.94)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.25, 0.46, 0.45, 0.94)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.25, 0.46, 0.45, 0.94)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.25, 0.46, 0.45, 0.94)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.25, 0.46, 0.45, 0.94)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.25, 0.46, 0.45, 0.94)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.25, 0.46, 0.45, 0.94)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.25, 0.46, 0.45, 0.94)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.25,.46,.45,.94">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1006,24 +1119,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInOutQuad</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeInOutQuad</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeInOutQuad</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.455, 0.03, 0.515, 0.955)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.455, 0.03, 0.515, 0.955)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.455, 0.03, 0.515, 0.955)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.455, 0.03, 0.515, 0.955)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.455, 0.03, 0.515, 0.955)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.455, 0.03, 0.515, 0.955)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.455, 0.03, 0.515, 0.955)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.455, 0.03, 0.515, 0.955)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.455, 0.03, 0.515, 0.955)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.455, 0.03, 0.515, 0.955)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.455,.03,.515,.955">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1035,24 +1148,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInCubic</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeInCubic</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeInCubic</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.55, 0.055, 0.675, 0.19)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.55, 0.055, 0.675, 0.19)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.55, 0.055, 0.675, 0.19)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.55, 0.055, 0.675, 0.19)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.55, 0.055, 0.675, 0.19)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.55, 0.055, 0.675, 0.19)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.55, 0.055, 0.675, 0.19)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.55, 0.055, 0.675, 0.19)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.55, 0.055, 0.675, 0.19)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.55, 0.055, 0.675, 0.19)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.55,.055,.675,.19">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1064,24 +1177,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeOutCubic</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeOutCubic</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeOutCubic</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.215, 0.61, 0.355, 1)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.215, 0.61, 0.355, 1)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.215, 0.61, 0.355, 1)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.215, 0.61, 0.355, 1)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.215, 0.61, 0.355, 1)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.215, 0.61, 0.355, 1)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.215, 0.61, 0.355, 1)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.215, 0.61, 0.355, 1)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.215, 0.61, 0.355, 1)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.215, 0.61, 0.355, 1)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.215,.61,.355,1">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1093,24 +1206,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInOutCubic</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeInOutCubic</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeInOutCubic</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.645, 0.045, 0.355, 1)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.645, 0.045, 0.355, 1)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.645, 0.045, 0.355, 1)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.645, 0.045, 0.355, 1)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.645, 0.045, 0.355, 1)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.645, 0.045, 0.355, 1)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.645, 0.045, 0.355, 1)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.645, 0.045, 0.355, 1)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.645, 0.045, 0.355, 1)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.645, 0.045, 0.355, 1)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.645,.045,.355,1">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1122,24 +1235,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInQuart</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeInQuart</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeInQuart</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.895, 0.03, 0.685, 0.22)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.895, 0.03, 0.685, 0.22)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.895, 0.03, 0.685, 0.22)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.895, 0.03, 0.685, 0.22)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.895, 0.03, 0.685, 0.22)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.895, 0.03, 0.685, 0.22)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.895, 0.03, 0.685, 0.22)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.895, 0.03, 0.685, 0.22)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.895, 0.03, 0.685, 0.22)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.895, 0.03, 0.685, 0.22)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.895,.03,.685,.22">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1151,24 +1264,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeOutQuart</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeOutQuart</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeOutQuart</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.165, 0.84, 0.44, 1)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.165, 0.84, 0.44, 1)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.165, 0.84, 0.44, 1)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.165, 0.84, 0.44, 1)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.165, 0.84, 0.44, 1)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.165, 0.84, 0.44, 1)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.165, 0.84, 0.44, 1)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.165, 0.84, 0.44, 1)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.165, 0.84, 0.44, 1)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.165, 0.84, 0.44, 1)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.165,.84,.44,1">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1180,24 +1293,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInOutQuart</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeInOutQuart</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeInOutQuart</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.77, 0, 0.175, 1)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.77, 0, 0.175, 1)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.77, 0, 0.175, 1)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.77, 0, 0.175, 1)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.77, 0, 0.175, 1)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.77, 0, 0.175, 1)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.77, 0, 0.175, 1)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.77, 0, 0.175, 1)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.77, 0, 0.175, 1)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.77, 0, 0.175, 1)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.77,0,.175,1">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1209,24 +1322,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInQuint</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeInQuint</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeInQuint</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.755, 0.05, 0.855, 0.06)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.755, 0.05, 0.855, 0.06)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.755, 0.05, 0.855, 0.06)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.755, 0.05, 0.855, 0.06)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.755, 0.05, 0.855, 0.06)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.755, 0.05, 0.855, 0.06)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.755, 0.05, 0.855, 0.06)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.755, 0.05, 0.855, 0.06)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.755, 0.05, 0.855, 0.06)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.755, 0.05, 0.855, 0.06)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.755,.05,.855,.06">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1238,24 +1351,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeOutQuint</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeOutQuint</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeOutQuint</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.23, 1, 0.32, 1)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.23, 1, 0.32, 1)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.23, 1, 0.32, 1)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.23, 1, 0.32, 1)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.23, 1, 0.32, 1)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.23, 1, 0.32, 1)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.23, 1, 0.32, 1)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.23, 1, 0.32, 1)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.23, 1, 0.32, 1)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.23, 1, 0.32, 1)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.23,1,.32,1">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1267,24 +1380,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInOutQuint</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeInOutQuint</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeInOutQuint</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.86, 0, 0.07, 1)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.86, 0, 0.07, 1)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.86, 0, 0.07, 1)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.86, 0, 0.07, 1)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.86, 0, 0.07, 1)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.86, 0, 0.07, 1)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.86, 0, 0.07, 1)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.86, 0, 0.07, 1)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.86, 0, 0.07, 1)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.86, 0, 0.07, 1)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.86,0,.07,1">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1296,24 +1409,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInExpo</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeInExpo</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeInExpo</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.95, 0.05, 0.795, 0.035)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.95, 0.05, 0.795, 0.035)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.95, 0.05, 0.795, 0.035)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.95, 0.05, 0.795, 0.035)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.95, 0.05, 0.795, 0.035)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.95, 0.05, 0.795, 0.035)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.95, 0.05, 0.795, 0.035)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.95, 0.05, 0.795, 0.035)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.95, 0.05, 0.795, 0.035)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.95, 0.05, 0.795, 0.035)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.95,.05,.795,.035">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1325,24 +1438,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeOutExpo</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeOutExpo</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeOutExpo</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.19, 1, 0.22, 1)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.19, 1, 0.22, 1)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.19, 1, 0.22, 1)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.19, 1, 0.22, 1)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.19, 1, 0.22, 1)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.19, 1, 0.22, 1)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.19, 1, 0.22, 1)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.19, 1, 0.22, 1)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.19, 1, 0.22, 1)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.19, 1, 0.22, 1)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.19,1,.22,1">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1354,24 +1467,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInOutExpo</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeInOutExpo</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeInOutExpo</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(1, 0, 0, 1)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(1, 0, 0, 1)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(1, 0, 0, 1)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(1, 0, 0, 1)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(1, 0, 0, 1)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(1, 0, 0, 1)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(1, 0, 0, 1)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(1, 0, 0, 1)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(1, 0, 0, 1)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(1, 0, 0, 1)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#1,0,0,1">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1383,24 +1496,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInCirc</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeInCirc</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeInCirc</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.6, 0.04, 0.98, 0.335)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.6, 0.04, 0.98, 0.335)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.6, 0.04, 0.98, 0.335)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.6, 0.04, 0.98, 0.335)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.6, 0.04, 0.98, 0.335)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.6, 0.04, 0.98, 0.335)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.6, 0.04, 0.98, 0.335)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.6, 0.04, 0.98, 0.335)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.6, 0.04, 0.98, 0.335)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.6, 0.04, 0.98, 0.335)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.6,.04,.98,.335">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1412,24 +1525,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeOutCirc</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeOutCirc</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeOutCirc</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.075, 0.82, 0.165, 1)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.075, 0.82, 0.165, 1)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.075, 0.82, 0.165, 1)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.075, 0.82, 0.165, 1)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.075, 0.82, 0.165, 1)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.075, 0.82, 0.165, 1)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.075, 0.82, 0.165, 1)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.075, 0.82, 0.165, 1)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.075, 0.82, 0.165, 1)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.075, 0.82, 0.165, 1)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.075,.82,.165,1">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1441,24 +1554,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInOutCirc</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeInOutCirc</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeInOutCirc</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.785, 0.135, 0.15, 0.86)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.785, 0.135, 0.15, 0.86)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.785, 0.135, 0.15, 0.86)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.785, 0.135, 0.15, 0.86)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.785, 0.135, 0.15, 0.86)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.785, 0.135, 0.15, 0.86)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.785, 0.135, 0.15, 0.86)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.785, 0.135, 0.15, 0.86)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.785, 0.135, 0.15, 0.86)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.785, 0.135, 0.15, 0.86)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.785,.135,.15,.86">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1470,24 +1583,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInBack</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeInBack</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeInBack</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.6, -0.28, 0.735, 0.045)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.6, -0.28, 0.735, 0.045)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.6, -0.28, 0.735, 0.045)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.6, -0.28, 0.735, 0.045)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.6, -0.28, 0.735, 0.045)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.6, ‑0.28, 0.735, 0.045)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.6, ‑0.28, 0.735, 0.045)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.6, ‑0.28, 0.735, 0.045)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.6, ‑0.28, 0.735, 0.045)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.6, ‑0.28, 0.735, 0.045)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.6,-.28,.735,.045">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1499,24 +1612,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeOutBack</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeOutBack</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeOutBack</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.175, 0.885, 0.32, 1.275)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.175, 0.885, 0.32, 1.275)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.175, 0.885, 0.32, 1.275)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.175, 0.885, 0.32, 1.275)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.175, 0.885, 0.32, 1.275)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.175, 0.885, 0.32, 1.275)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.175, 0.885, 0.32, 1.275)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.175, 0.885, 0.32, 1.275)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.175, 0.885, 0.32, 1.275)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.175, 0.885, 0.32, 1.275)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.175,.885,.32,1.275">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1528,24 +1641,24 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInOutBack</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
-        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
-        <pre><code>div
-  @include transition(all 600ms ceaser('<strong>easeInOutBack</strong>'))</code></pre>
+      <section class="scss">
+        <h3>SCSS</h3>
+        <p>Sass/SCSS help you to describe animation. Compass remove prefixes before <code>transition</code> and <code>animation</code> properties and <a href="http://thesassway.com/projects/compass-ceaser">Compass Ceaser</a> plugin allow to set easing by it name (without Bezier curves).</p>
+        <pre><code>div {
+  @include transition(all 600ms ceaser('<strong>easeInOutBack</strong>')); }</code></pre>
       </section>
       <section class="css">
         <h3>CSS</h3>
-        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
+        <p>CSS properties <code>transition</code> and <code>animation</code> allow you to set easing function.</p>
         <pre><code>div {
-  -webkit-transition: all 600ms <strong>cubic-bezier(0.68, -0.55, 0.265, 1.55)</strong>;
-  -moz-transition:    all 600ms <strong>cubic-bezier(0.68, -0.55, 0.265, 1.55)</strong>;
-  -ms-transition:     all 600ms <strong>cubic-bezier(0.68, -0.55, 0.265, 1.55)</strong>;
-  -o-transition:      all 600ms <strong>cubic-bezier(0.68, -0.55, 0.265, 1.55)</strong>;
-  transition:         all 600ms <strong>cubic-bezier(0.68, -0.55, 0.265, 1.55)</strong>; }</code></pre>
+  -webkit-transition: all 600ms <strong>cubic‑bezier(0.68, ‑0.55, 0.265, 1.55)</strong>;
+  -moz-transition:    all 600ms <strong>cubic‑bezier(0.68, ‑0.55, 0.265, 1.55)</strong>;
+  -ms-transition:     all 600ms <strong>cubic‑bezier(0.68, ‑0.55, 0.265, 1.55)</strong>;
+  -o-transition:      all 600ms <strong>cubic‑bezier(0.68, ‑0.55, 0.265, 1.55)</strong>;
+  transition:         all 600ms <strong>cubic‑bezier(0.68, ‑0.55, 0.265, 1.55)</strong>; }</code></pre>
         <p><a href="http://cubic-bezier.com/#.68,-.55,.265,1.55">Edit</a> on cubic-bezier.com.</p>
       </section>
     </article>
@@ -1557,11 +1670,11 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInElastic</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
+      <section class="scss">
+        <h3>SCSS</h3>
         <p>Unfortunately, CSS doesn’t support this easing. But you can use it by JavaScript or special CSS Animation <code>@keyframes</code>.</p>
       </section>
       <section class="css">
@@ -1577,11 +1690,11 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeOutElastic</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
+      <section class="scss">
+        <h3>SCSS</h3>
         <p>Unfortunately, CSS doesn’t support this easing. But you can use it by JavaScript or special CSS Animation <code>@keyframes</code>.</p>
       </section>
       <section class="css">
@@ -1597,11 +1710,11 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInOutElastic</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
+      <section class="scss">
+        <h3>SCSS</h3>
         <p>Unfortunately, CSS doesn’t support this easing. But you can use it by JavaScript or special CSS Animation <code>@keyframes</code>.</p>
       </section>
       <section class="css">
@@ -1617,11 +1730,11 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInBounce</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
+      <section class="scss">
+        <h3>SCSS</h3>
         <p>Unfortunately, CSS doesn’t support this easing. But you can use it by JavaScript or special CSS Animation <code>@keyframes</code>.</p>
       </section>
       <section class="css">
@@ -1637,11 +1750,11 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeOutBounce</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
+      <section class="scss">
+        <h3>SCSS</h3>
         <p>Unfortunately, CSS doesn’t support this easing. But you can use it by JavaScript or special CSS Animation <code>@keyframes</code>.</p>
       </section>
       <section class="css">
@@ -1657,11 +1770,11 @@
       </div>
       <section class="js">
         <h3>JavaScript</h3>
-        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
+        <p>jQuery with <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a> is the easiest way to describe animation with easing. You need just set easing name to <code>.animate</code> method as third argument or <code>easing</code> key.</p>
         <pre><code>div.animate({ top: '-=100px' }, 600, '<strong>easeInOutBounce</strong>', function () { … })</code></pre>
       </section>
-      <section class="sass">
-        <h3>Sass</h3>
+      <section class="scss">
+        <h3>SCSS</h3>
         <p>Unfortunately, CSS doesn’t support this easing. But you can use it by JavaScript or special CSS Animation <code>@keyframes</code>.</p>
       </section>
       <section class="css">
@@ -1707,6 +1820,6 @@
       </div>
       <div class="translate">Help us to translate site to your language</div>
     </a>
-    <script>jQuery.easing.jswing=jQuery.easing.swing,jQuery.extend(jQuery.easing,{def:"easeOutQuad",swing:function(e,t,n,r,i){return jQuery.easing[jQuery.easing.def](e,t,n,r,i)},easeInQuad:function(e,t,n,r,i){return r*(t/=i)*t+n},easeOutQuad:function(e,t,n,r,i){return-r*(t/=i)*(t-2)+n},easeInOutQuad:function(e,t,n,r,i){return(t/=i/2)<1?r/2*t*t+n:-r/2*(--t*(t-2)-1)+n},easeInCubic:function(e,t,n,r,i){return r*(t/=i)*t*t+n},easeOutCubic:function(e,t,n,r,i){return r*((t=t/i-1)*t*t+1)+n},easeInOutCubic:function(e,t,n,r,i){return(t/=i/2)<1?r/2*t*t*t+n:r/2*((t-=2)*t*t+2)+n},easeInQuart:function(e,t,n,r,i){return r*(t/=i)*t*t*t+n},easeOutQuart:function(e,t,n,r,i){return-r*((t=t/i-1)*t*t*t-1)+n},easeInOutQuart:function(e,t,n,r,i){return(t/=i/2)<1?r/2*t*t*t*t+n:-r/2*((t-=2)*t*t*t-2)+n},easeInQuint:function(e,t,n,r,i){return r*(t/=i)*t*t*t*t+n},easeOutQuint:function(e,t,n,r,i){return r*((t=t/i-1)*t*t*t*t+1)+n},easeInOutQuint:function(e,t,n,r,i){return(t/=i/2)<1?r/2*t*t*t*t*t+n:r/2*((t-=2)*t*t*t*t+2)+n},easeInSine:function(e,t,n,r,i){return-r*Math.cos(t/i*(Math.PI/2))+r+n},easeOutSine:function(e,t,n,r,i){return r*Math.sin(t/i*(Math.PI/2))+n},easeInOutSine:function(e,t,n,r,i){return-r/2*(Math.cos(Math.PI*t/i)-1)+n},easeInExpo:function(e,t,n,r,i){return t==0?n:r*Math.pow(2,10*(t/i-1))+n},easeOutExpo:function(e,t,n,r,i){return t==i?n+r:r*(-Math.pow(2,-10*t/i)+1)+n},easeInOutExpo:function(e,t,n,r,i){return t==0?n:t==i?n+r:(t/=i/2)<1?r/2*Math.pow(2,10*(t-1))+n:r/2*(-Math.pow(2,-10*--t)+2)+n},easeInCirc:function(e,t,n,r,i){return-r*(Math.sqrt(1-(t/=i)*t)-1)+n},easeOutCirc:function(e,t,n,r,i){return r*Math.sqrt(1-(t=t/i-1)*t)+n},easeInOutCirc:function(e,t,n,r,i){return(t/=i/2)<1?-r/2*(Math.sqrt(1-t*t)-1)+n:r/2*(Math.sqrt(1-(t-=2)*t)+1)+n},easeInElastic:function(e,t,n,r,i){var s=1.70158,o=0,u=r;if(t==0)return n;if((t/=i)==1)return n+r;o||(o=i*.3);if(u<Math.abs(r)){u=r;var s=o/4}else var s=o/(2*Math.PI)*Math.asin(r/u);return-(u*Math.pow(2,10*(t-=1))*Math.sin((t*i-s)*2*Math.PI/o))+n},easeOutElastic:function(e,t,n,r,i){var s=1.70158,o=0,u=r;if(t==0)return n;if((t/=i)==1)return n+r;o||(o=i*.3);if(u<Math.abs(r)){u=r;var s=o/4}else var s=o/(2*Math.PI)*Math.asin(r/u);return u*Math.pow(2,-10*t)*Math.sin((t*i-s)*2*Math.PI/o)+r+n},easeInOutElastic:function(e,t,n,r,i){var s=1.70158,o=0,u=r;if(t==0)return n;if((t/=i/2)==2)return n+r;o||(o=i*.3*1.5);if(u<Math.abs(r)){u=r;var s=o/4}else var s=o/(2*Math.PI)*Math.asin(r/u);return t<1?-0.5*u*Math.pow(2,10*(t-=1))*Math.sin((t*i-s)*2*Math.PI/o)+n:u*Math.pow(2,-10*(t-=1))*Math.sin((t*i-s)*2*Math.PI/o)*.5+r+n},easeInBack:function(e,t,n,r,i,s){return s==undefined&&(s=1.70158),r*(t/=i)*t*((s+1)*t-s)+n},easeOutBack:function(e,t,n,r,i,s){return s==undefined&&(s=1.70158),r*((t=t/i-1)*t*((s+1)*t+s)+1)+n},easeInOutBack:function(e,t,n,r,i,s){return s==undefined&&(s=1.70158),(t/=i/2)<1?r/2*t*t*(((s*=1.525)+1)*t-s)+n:r/2*((t-=2)*t*(((s*=1.525)+1)*t+s)+2)+n},easeInBounce:function(e,t,n,r,i){return r-jQuery.easing.easeOutBounce(e,i-t,0,r,i)+n},easeOutBounce:function(e,t,n,r,i){return(t/=i)<1/2.75?r*7.5625*t*t+n:t<2/2.75?r*(7.5625*(t-=1.5/2.75)*t+.75)+n:t<2.5/2.75?r*(7.5625*(t-=2.25/2.75)*t+.9375)+n:r*(7.5625*(t-=2.625/2.75)*t+.984375)+n},easeInOutBounce:function(e,t,n,r,i){return t<i/2?jQuery.easing.easeInBounce(e,t*2,0,r,i)*.5+n:jQuery.easing.easeOutBounce(e,t*2-i,0,r,i)*.5+r*.5+n}}),function(e){e.fn.hoverIntent=function(t,n){var r={sensitivity:7,interval:100,timeout:0};r=e.extend(r,n?{over:t,out:n}:t);var i,s,o,u,a=function(e){i=e.pageX,s=e.pageY},f=function(t,n){n.hoverIntent_t=clearTimeout(n.hoverIntent_t);if(Math.abs(o-i)+Math.abs(u-s)<r.sensitivity)return e(n).unbind("mousemove",a),n.hoverIntent_s=1,r.over.apply(n,[t]);o=i,u=s,n.hoverIntent_t=setTimeout(function(){f(t,n)},r.interval)},l=function(e,t){return t.hoverIntent_t=clearTimeout(t.hoverIntent_t),t.hoverIntent_s=0,r.out.apply(t,[e])},c=function(t){var n=jQuery.extend({},t),i=this;i.hoverIntent_t&&(i.hoverIntent_t=clearTimeout(i.hoverIntent_t)),t.type=="mouseenter"?(o=n.pageX,u=n.pageY,e(i).bind("mousemove",a),i.hoverIntent_s!=1&&(i.hoverIntent_t=setTimeout(function(){f(n,i)},r.interval))):(e(i).unbind("mousemove",a),i.hoverIntent_s==1&&(i.hoverIntent_t=setTimeout(function(){l(n,i)},r.timeout)))};return this.bind("mouseenter",c).bind("mouseleave",c)}}(jQuery),function(){var e;e=function(e,t){return setTimeout(t,e)},jQuery(function(t){var n,r,i,s,o,u,a,f,l,c,h,p,d,v,m,g,y,b,w,E,S,x,T,N,C,k;l=t(".easings li"),n=t("body"),p=function(e){var n;return n=t(window).scrollTop(),document.location.hash=e,t(window).scrollTop(n)},v=l.find(".link"),v.click(function(){return t(this).closest("li").hasClass("highlight")?p(""):p(t(this).attr("href")),!1}),v.mousedown(function(){return t(this).closest(".easing").addClass("pressed")}),v.mouseup(function(){return l.removeClass("pressed")}),l.mouseenter(function(){return t(this).addClass("hover")}),l.mouseleave(function(){return t(this).removeClass("hover")}),c=parseInt(l.find(".example").css("top")),h=l.height(),o=l.find(".dot").css("left"),u=l.find(".dot").css("top"),l.hoverIntent({out:function(){return t(this).find(".example").stop().css({top:c}).end().find(".dot").stop().css({top:u,left:o})},over:function(){var e;return e=t(this).find(".easing-title").text(),t(this).find(".example").animate({top:"-=60"},1e3,e).end().find(".dot").animate({top:"-=60",left:"+=119"},{duration:1e3,specialEasing:{top:e,left:"linear"}})}}),g=t(".easings"),N=g.find(".part-title"),N.mouseenter(function(){return g.addClass("hightlight-part")}),N.mouseleave(function(){return g.removeClass("hightlight-part")}),k=t("footer a"),d=function(e){return k.each(function(){var n;return n=t(this).attr("href").replace(/#.*$/,""),t(this).attr({href:n+e})})},f=t(".easing-description"),S=t(".slide-slider"),E=function(){var e;return location.hash==="#"||location.hash===""?(n.removeClass("easing-page"),d("")):(e=location.hash.slice(1),f.hide(),f.filter("."+e).show(),n.addClass("easing-page"),d("#"+e))},E(),t(window).on("hashchange",E),e(1,function(){return n.addClass("page-animation")}),s=function(){var e;return e=n.css("perspective")!=null,e&&document.body.style.webkitPerspective!=null&&(e=matchMedia("(transform-3d), (-webkit-transform-3d)").matches),e},x=s(),n.addClass(x?"transform3d":"transform2d"),T=t(".open-source .text .variant"),y=Math.floor((T.length-.001)*Math.random()),T.removeClass("show").eq(y).addClass("show"),i=t(".open-source").attr({target:"_blank"});if(x)return b=i.find(".shadow"),C=i.find(".translate"),m=i.find(".rotator"),a=m.css("transition-duration"),a=parseFloat(a)*1e3,w=function(){return b.is(":animated")?b.stop(!0).animate({opacity:0},a/2,"easeOutQuart"):b.animate({opacity:1},a/2,"easeInQuart").animate({opacity:0},a/2,"easeOutQuart")},i.mouseenter(function(){return w(),e(a,function(){if(i.is(":hover"))return C.addClass("show")})}),i.mouseleave(function(){return w(),C.removeClass("show")}),r=i.find(".text, .border"),i.mouseenter(function(){return r.stop(!0).delay(a/2).hide(1)}),i.mouseleave(function(){return r.stop(!0).delay(a/2).show(1)})})}.call(this);</script>
+    <script>jQuery.easing.jswing=jQuery.easing.swing,jQuery.extend(jQuery.easing,{def:"easeOutQuad",swing:function(e,t,n,r,i){return jQuery.easing[jQuery.easing.def](e,t,n,r,i)},easeInQuad:function(e,t,n,r,i){return r*(t/=i)*t+n},easeOutQuad:function(e,t,n,r,i){return-r*(t/=i)*(t-2)+n},easeInOutQuad:function(e,t,n,r,i){return(t/=i/2)<1?r/2*t*t+n:-r/2*(--t*(t-2)-1)+n},easeInCubic:function(e,t,n,r,i){return r*(t/=i)*t*t+n},easeOutCubic:function(e,t,n,r,i){return r*((t=t/i-1)*t*t+1)+n},easeInOutCubic:function(e,t,n,r,i){return(t/=i/2)<1?r/2*t*t*t+n:r/2*((t-=2)*t*t+2)+n},easeInQuart:function(e,t,n,r,i){return r*(t/=i)*t*t*t+n},easeOutQuart:function(e,t,n,r,i){return-r*((t=t/i-1)*t*t*t-1)+n},easeInOutQuart:function(e,t,n,r,i){return(t/=i/2)<1?r/2*t*t*t*t+n:-r/2*((t-=2)*t*t*t-2)+n},easeInQuint:function(e,t,n,r,i){return r*(t/=i)*t*t*t*t+n},easeOutQuint:function(e,t,n,r,i){return r*((t=t/i-1)*t*t*t*t+1)+n},easeInOutQuint:function(e,t,n,r,i){return(t/=i/2)<1?r/2*t*t*t*t*t+n:r/2*((t-=2)*t*t*t*t+2)+n},easeInSine:function(e,t,n,r,i){return-r*Math.cos(t/i*(Math.PI/2))+r+n},easeOutSine:function(e,t,n,r,i){return r*Math.sin(t/i*(Math.PI/2))+n},easeInOutSine:function(e,t,n,r,i){return-r/2*(Math.cos(Math.PI*t/i)-1)+n},easeInExpo:function(e,t,n,r,i){return t==0?n:r*Math.pow(2,10*(t/i-1))+n},easeOutExpo:function(e,t,n,r,i){return t==i?n+r:r*(-Math.pow(2,-10*t/i)+1)+n},easeInOutExpo:function(e,t,n,r,i){return t==0?n:t==i?n+r:(t/=i/2)<1?r/2*Math.pow(2,10*(t-1))+n:r/2*(-Math.pow(2,-10*--t)+2)+n},easeInCirc:function(e,t,n,r,i){return-r*(Math.sqrt(1-(t/=i)*t)-1)+n},easeOutCirc:function(e,t,n,r,i){return r*Math.sqrt(1-(t=t/i-1)*t)+n},easeInOutCirc:function(e,t,n,r,i){return(t/=i/2)<1?-r/2*(Math.sqrt(1-t*t)-1)+n:r/2*(Math.sqrt(1-(t-=2)*t)+1)+n},easeInElastic:function(e,t,n,r,i){var s=1.70158,o=0,u=r;if(t==0)return n;if((t/=i)==1)return n+r;o||(o=i*.3);if(u<Math.abs(r)){u=r;var s=o/4}else var s=o/(2*Math.PI)*Math.asin(r/u);return-(u*Math.pow(2,10*(t-=1))*Math.sin((t*i-s)*2*Math.PI/o))+n},easeOutElastic:function(e,t,n,r,i){var s=1.70158,o=0,u=r;if(t==0)return n;if((t/=i)==1)return n+r;o||(o=i*.3);if(u<Math.abs(r)){u=r;var s=o/4}else var s=o/(2*Math.PI)*Math.asin(r/u);return u*Math.pow(2,-10*t)*Math.sin((t*i-s)*2*Math.PI/o)+r+n},easeInOutElastic:function(e,t,n,r,i){var s=1.70158,o=0,u=r;if(t==0)return n;if((t/=i/2)==2)return n+r;o||(o=i*.3*1.5);if(u<Math.abs(r)){u=r;var s=o/4}else var s=o/(2*Math.PI)*Math.asin(r/u);return t<1?-0.5*u*Math.pow(2,10*(t-=1))*Math.sin((t*i-s)*2*Math.PI/o)+n:u*Math.pow(2,-10*(t-=1))*Math.sin((t*i-s)*2*Math.PI/o)*.5+r+n},easeInBack:function(e,t,n,r,i,s){return s==undefined&&(s=1.70158),r*(t/=i)*t*((s+1)*t-s)+n},easeOutBack:function(e,t,n,r,i,s){return s==undefined&&(s=1.70158),r*((t=t/i-1)*t*((s+1)*t+s)+1)+n},easeInOutBack:function(e,t,n,r,i,s){return s==undefined&&(s=1.70158),(t/=i/2)<1?r/2*t*t*(((s*=1.525)+1)*t-s)+n:r/2*((t-=2)*t*(((s*=1.525)+1)*t+s)+2)+n},easeInBounce:function(e,t,n,r,i){return r-jQuery.easing.easeOutBounce(e,i-t,0,r,i)+n},easeOutBounce:function(e,t,n,r,i){return(t/=i)<1/2.75?r*7.5625*t*t+n:t<2/2.75?r*(7.5625*(t-=1.5/2.75)*t+.75)+n:t<2.5/2.75?r*(7.5625*(t-=2.25/2.75)*t+.9375)+n:r*(7.5625*(t-=2.625/2.75)*t+.984375)+n},easeInOutBounce:function(e,t,n,r,i){return t<i/2?jQuery.easing.easeInBounce(e,t*2,0,r,i)*.5+n:jQuery.easing.easeOutBounce(e,t*2-i,0,r,i)*.5+r*.5+n}}),function(e){e.fn.hoverIntent=function(t,n){var r={sensitivity:7,interval:100,timeout:0};r=e.extend(r,n?{over:t,out:n}:t);var i,s,o,u,a=function(e){i=e.pageX,s=e.pageY},f=function(t,n){n.hoverIntent_t=clearTimeout(n.hoverIntent_t);if(Math.abs(o-i)+Math.abs(u-s)<r.sensitivity)return e(n).unbind("mousemove",a),n.hoverIntent_s=1,r.over.apply(n,[t]);o=i,u=s,n.hoverIntent_t=setTimeout(function(){f(t,n)},r.interval)},l=function(e,t){return t.hoverIntent_t=clearTimeout(t.hoverIntent_t),t.hoverIntent_s=0,r.out.apply(t,[e])},c=function(t){var n=jQuery.extend({},t),i=this;i.hoverIntent_t&&(i.hoverIntent_t=clearTimeout(i.hoverIntent_t)),t.type=="mouseenter"?(o=n.pageX,u=n.pageY,e(i).bind("mousemove",a),i.hoverIntent_s!=1&&(i.hoverIntent_t=setTimeout(function(){f(n,i)},r.interval))):(e(i).unbind("mousemove",a),i.hoverIntent_s==1&&(i.hoverIntent_t=setTimeout(function(){l(n,i)},r.timeout)))};return this.bind("mouseenter",c).bind("mouseleave",c)}}(jQuery),function(){var e;e=function(e,t){return setTimeout(t,e)},jQuery(function(t){var n,r,i,s,o,u,a,f,l,c,h,p,d,v,m,g,y,b,w,E,S,x,T,N,C,k,L,A,O,M,_;h=t(".easings li"),n=t("body"),r=t(window),g=window.innerWidth<=480,i=null,v=function(e){var t;return t=r.scrollTop(),document.location.hash=e,r.scrollTop(t)},E=function(e,n){return t("html, body").animate({scrollTop:e},400,n)},y=h.find(".link"),y.click(function(){return v(t(this).attr("href")),g&&e(600,function(){var e;i=r.scrollTop(),e=t(".easing-description:visible").offset().top+10;if(i>e)return E(e)}),!1}),y.on("touchstart",function(){return t(this).closest(".easing").addClass("pressed")}),y.on("touchend touchmove",function(){return h.removeClass("pressed")}),t(document).scroll(function(){return h.removeClass("pressed")}),g||(p=parseInt(h.find(".example").css("top")),d=h.height(),a=h.find(".dot").css("left"),f=h.find(".dot").css("top"),h.hoverIntent({out:function(){return t(this).find(".example").stop().css({top:p}).end().find(".dot").stop().css({top:f,left:a})},over:function(){var e;return e=t(this).find(".easing-title").text(),t(this).find(".example").animate({top:"-=60"},1e3,e).end().find(".dot").animate({top:"-=60",left:"+=119"},{duration:1e3,specialEasing:{top:e,left:"linear"}})}})),g||(S=t(".easings"),O=S.find(".part-title"),O.mouseenter(function(){return S.addClass("hightlight-part")}),O.mouseleave(function(){return S.removeClass("hightlight-part")})),_=t("footer a"),m=function(e){return _.each(function(){var n;return n=t(this).attr("href").replace(/#.*$/,""),t(this).attr({href:n+e})})},c=t(".easing-description"),k=t(".slide-slider"),C=function(){var e;return location.hash==="#"||location.hash===""?(n.removeClass("easing-page"),m("")):(e=location.hash.slice(1),c.hide(),c.filter("."+e).show(),n.addClass("easing-page"),m("#"+e))},C(),r.on("hashchange",C),e(1,function(){return n.addClass("page-animation")}),t(".easing-description .back").click(function(){var e;return e=t(this).attr("href"),g&&i?E(i,function(){return v(e)}):v(e),!1}),u=function(){var e;return e=n.css("perspective")!=null,e&&document.body.style.webkitPerspective!=null&&(e=matchMedia("(transform-3d), (-webkit-transform-3d)").matches),e},L=u(),n.addClass(L?"transform3d":"transform2d"),A=t(".open-source .text .variant"),x=Math.floor((A.length-.001)*Math.random()),A.removeClass("show").eq(x).addClass("show"),g||(o=t(".open-source").attr({target:"_blank"}),L&&(T=o.find(".shadow"),M=o.find(".translate"),w=o.find(".rotator"),l=w.css("transition-duration"),l=parseFloat(l)*1e3,N=function(){return T.is(":animated")?T.stop(!0).animate({opacity:0},l/2,"easeOutQuart"):T.animate({opacity:1},l/2,"easeInQuart").animate({opacity:0},l/2,"easeOutQuart")},o.mouseenter(function(){return N(),e(l,function(){if(o.is(":hover"))return M.addClass("show")})}),o.mouseleave(function(){return N(),M.removeClass("show")}),s=o.find(".text, .border"),o.mouseenter(function(){return s.stop(!0).delay(l/2).hide(1)}),o.mouseleave(function(){return s.stop(!0).delay(l/2).show(1)})));if(g){b=navigator.connection;if(b&&b.type!==b.CELL_2G&&b.type!==b.CELL_3G)return n.removeClass("limit-internet")}})}.call(this);</script>
   </body>
 </html>
