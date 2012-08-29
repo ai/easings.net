@@ -1,0 +1,18 @@
+ul
+  - @block.each do |easing|
+    li.easing class=easing.name
+      .button
+        h3.easing-title= easing.name
+        - x = 120
+        - y = 60
+        - dots = easing.dots(100, x, y)
+        a.graph.link href="##{easing.name}"
+          .example
+            .rect
+            .arrow
+          .dot
+          svg( xmlns="http://www.w3.org/2000/svg"
+               viewBox="-2 -40 #{x + 4} #{y + 80}" )
+            line x1="0" y1="0" x2="#{x}" y2="0"
+            line x1="0" y1="#{y}" x2="#{x}" y2="#{y}"
+            path d="M0,#{y} L#{to_path dots}"

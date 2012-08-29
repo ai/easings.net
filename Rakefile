@@ -125,21 +125,30 @@ class Helpers
     all_easings.reject(&:linear?).reject { |i| i.css }
   end
 
+  def blocked(easings)
+    blocks = []
+    block  = []
+    easings.each do |easing|
+      block << easing
+      if easing.in_out?
+        blocks << block
+        block = []
+      end
+    end
+    blocks
+  end
+
   def linear_easing
     @linear_easings ||= all_easings.find(&:linear?)
   end
 
   def render(file, &block)
-    options = { format: :html5, pretty: true, disable_escape: true }
+    options = { format: :html5, disable_escape: true }
     Slim::Template.new(file.to_s, options).render(self, &block)
   end
 
   def to_path(dots)
     dots.map { |i| i.join(',') }.join(' ')
-  end
-
-  def easing_classes(easing)
-    easing.name + (easing.in_out? ? ' in-out' : '')
   end
 
   def production?

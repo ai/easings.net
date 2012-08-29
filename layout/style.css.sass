@@ -57,6 +57,9 @@ $easing-width: 120px + 4px
 .easings
   margin: 0 -30px 0 -10px
   position: relative
+  ul
+    display: inline-block
+    margin-right: 20px
   .part
     position: relative
     ul
@@ -89,8 +92,6 @@ $easing-width: 120px + 4px
     right: 25px
     .easing-title
       margin-bottom: -35px
-  &.in-out
-    margin-right: 25px
   &.easeOutElastic .easing-title
     +box-shadow(white 0 26px 8px -8px inset)
   .button
@@ -117,7 +118,7 @@ $easing-width: 120px + 4px
 
 .easings .easing.pressed
   +pressed-easing
-@media (min-width: 481px)
+@media (min-width: 601px)
   .easings .easing:active
     +pressed-easing
 
@@ -415,7 +416,19 @@ footer
 
 // Mobile
 
-@media (max-width: 481px)
+@media (max-width: 899px)
+  .easings
+    text-align: center
+    .part-title
+      position: static
+      top: auto
+      right: auto
+      width: auto
+      text-align: center
+      font-size: 12px
+      margin: -3px 0 -1px 0
+
+@media (max-width: 600px)
   body.limit-internet
     font-size: 15px
     font-family: "Droid Sans", "Roboto Sans", "Trebuchet MS", sans-serif !important
@@ -429,33 +442,17 @@ footer
     padding: 0 10px
 
   .about
-    padding: 10px 0 5px 0
-  .easing.linear
-    display: none
+    padding-top: 10px
 
-  .easings
-    margin: 0 -10px
-    .part-title
-      position: relative
-      top: auto
-      left: auto
-      width: 100%
-      text-align: center
-      font-size: 12px
-      margin: -3px 0 -1px 27px
+  .easing .link, .easing-description .back
+    -webkit-tap-highlight-color: white(0)
 
   .easing
+    margin: 3px 0
     .easing-title
       font-size: 13px
     .example, .dot
       display: none
-    &.in-out
-      margin-right: 0
-
-  .graph
-    svg
-      width: 0.8 * $easing-width
-      height: 0.8 * (60px + 80px)
 
   pre
     overflow: auto
@@ -463,29 +460,6 @@ footer
     strong
       white-space: nowrap
       word-wrap: normal
-
-  .howtos
-    h2
-      font-size: 23px
-    h3
-      font-size: 23px
-
-  .page-crop
-    margin-right: -10px
-
-  .easing-description
-    margin-top: -10px
-    padding-right: 10px
-    +box-sizing(border-box)
-    .back
-      font-size: 14px
-    h2
-      font-size: 23px
-    h3
-      font-size: 20px
-
-  .easing .link, .easing-description .back
-    -webkit-tap-highlight-color: white(0)
 
   .open-source
     display: none
@@ -496,3 +470,49 @@ footer
     line-height: 40px
     li
       padding-left: 5px
+
+@media (max-width: 481px)
+  .about
+    padding: 10px 0 5px 0
+  .easing.linear
+    display: none
+
+  .easings
+    margin: 0
+    ul
+      margin-right: 0
+
+  .howtos
+    padding: 0 10px
+
+  .graph
+    svg
+      width: 0.85 * $easing-width
+      height: 0.85 * (60px + 80px)
+
+  .howtos
+    h2
+      font-size: 23px
+    h3
+      font-size: 23px
+
+  .page-crop
+    margin: 0 -10px
+    padding: 0
+
+  .easing-description
+    margin-top: -10px
+    padding: 0 10px
+    +box-sizing(border-box)
+    .back
+      font-size: 14px
+    h2
+      font-size: 23px
+    h3
+      font-size: 20px
+
+@media (max-width: 332px)
+  .graph
+    svg
+      width: 0.75 * $easing-width
+      height: 0.75 * (60px + 80px)

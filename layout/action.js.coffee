@@ -7,7 +7,7 @@ jQuery ($) ->
   easings  = $('.easings li')
   $body    = $('body')
   $window  = $(window)
-  isMobile = window.innerWidth <= 480
+  isMobile = window.innerWidth < 600
 
   # Scroll
 
@@ -18,8 +18,7 @@ jQuery ($) ->
     document.location.hash = hash
     $window.scrollTop(scroll)
 
-  scrollTo = (top, callback) ->
-    $('html, body').animate(scrollTop: top, 400, callback)
+  scrollTo = (top) -> $('html, body').animate(scrollTop: top, 600)
 
   # Link emulation
 
@@ -27,11 +26,10 @@ jQuery ($) ->
 
   links.click ->
     hash($(@).attr('href'))
-    if isMobile
-      after 600, ->
-        allScroll = $window.scrollTop()
-        top = $('.easing-description:visible').offset().top + 10
-        scrollTo(top) if allScroll > top
+    after 600, ->
+      allScroll = $window.scrollTop()
+      top = $('.easing-description:visible').offset().top + 10
+      scrollTo(top) if allScroll > top
     false
 
   links.on 'touchstart', -> $(@).closest('.easing').addClass('pressed')
@@ -96,11 +94,9 @@ jQuery ($) ->
   # Back to all easings
 
   $('.easing-description .back').click ->
-    href = $(@).attr('href')
-    if isMobile and allScroll
-      scrollTo allScroll, -> hash(href)
-    else
-      hash(href)
+    hash($(@).attr('href'))
+    if allScroll
+      after 600, -> scrollTo(allScroll)
     false
 
   # Detect 3D support

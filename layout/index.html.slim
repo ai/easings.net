@@ -19,16 +19,14 @@
     .easings
       .part.css
         h2.part-title title=t.easings.css css+js
-        ul
-          - css_easings.each do |easing|
-            - @easing = easing
-            = partial 'easing'
+        - blocked(css_easings).each do |block|
+          - @block = block
+          = partial 'easings_block'
       .part.js
         h2.part-title title=t.easings.js js
-        ul
-          - js_easings.each do |easing|
-            - @easing = easing
-            = partial 'easing'
+        - blocked(js_easings).each do |block|
+          - @block = block
+          = partial 'easings_block'
     article.howtos
       section.js
         h3 JavaScript
