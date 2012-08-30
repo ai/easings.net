@@ -211,6 +211,8 @@ task :build do
     end
   end
 
+  FileUtils.cp LAYOUT.join('favicon.ico'), PUBLIC.join('favicon.ico')
+
   print "\n"
 end
 
@@ -229,6 +231,10 @@ task :server do
       send_file build_page('index', params[:locale])
     end
 
+    get '/favicon.ico' do
+      send_file LAYOUT.join('favicon.ico')
+    end
+
     def build_page(page, locale_code)
       R18n.clear_cache!
       path = LAYOUT.join("#{page}.html.slim")
@@ -243,7 +249,10 @@ end
 desc 'Prepare commit to GitHub Pages'
 task :deploy => :build do
   sh 'git checkout gh-pages && ' +
+     'git rm *.ico && ' +
      'git rm *.html && ' +
      'cp public/*.html ./ && ' +
-     'git add *.html'
+     'cp public/*.ico ./ && ' +
+     'git add *.html &&' +
+     'git add *.ico'
 end
