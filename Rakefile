@@ -211,7 +211,9 @@ task :build do
     end
   end
 
-  FileUtils.cp LAYOUT.join('favicon.ico'), PUBLIC.join('favicon.ico')
+  %w( favicon.ico apple-touch-icon.png ).each do |file|
+    FileUtils.cp LAYOUT.join(file), PUBLIC.join(file)
+  end
 
   print "\n"
 end
@@ -235,6 +237,10 @@ task :server do
       send_file LAYOUT.join('favicon.ico')
     end
 
+    get '/apple-touch-icon.png' do
+      send_file LAYOUT.join('apple-touch-icon.png')
+    end
+
     def build_page(page, locale_code)
       R18n.clear_cache!
       path = LAYOUT.join("#{page}.html.slim")
@@ -250,9 +256,10 @@ desc 'Prepare commit to GitHub Pages'
 task :deploy => :build do
   sh 'git checkout gh-pages && ' +
      'git rm *.ico && ' +
+     'git rm *.png && ' +
      'git rm *.html && ' +
-     'cp public/*.html ./ && ' +
-     'cp public/*.ico ./ && ' +
+     'cp public/* ./ && ' +
      'git add *.html &&' +
+     'git add *.png &&' +
      'git add *.ico'
 end
