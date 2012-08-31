@@ -381,6 +381,8 @@ $easing-width: 120px + 4px
     font-size: 13px
     opacity: 0
     padding: 0 3px
+    background: white
+    box-shadow: 0 0 6px white
     +transition(opacity 400ms)
     &.show
       opacity: 1
@@ -434,13 +436,25 @@ footer
     .current
       color: black
 
-// Mobile
+// Small screens
 
 @media (max-height: 768px)
   .about
     padding-top: 15px
   .easing.linear
     top: 6px
+
+@media (max-width: 899px)
+  .easings
+    text-align: center
+    .part-title
+      position: static
+      top: auto
+      left: auto
+      width: auto
+      text-align: center
+      font-size: 12px
+      margin: -3px 0 -1px 0
 
 // Tablet
 
@@ -451,18 +465,6 @@ body.tablet
         display: none
 
 // Mobile
-
-@media (max-width: 899px)
-  .easings
-    text-align: center
-    .part-title
-      position: static
-      top: auto
-      right: auto
-      width: auto
-      text-align: center
-      font-size: 12px
-      margin: -3px 0 -1px 0
 
 @media (max-width: 600px)
   body.limit-internet
