@@ -144,21 +144,19 @@ $easing-width: 120px + 4px
     height: 12px
     overflow: hidden
     z-index: 10
-    .rect
-      position: absolute
-      top: 0
-      right: 0
-      bottom: 0
-      left: 8px
-      background: red
-    .arrow
-      position: absolute
-      background: red
-      left: 4px
-      top: 1px
-      width: 10px
-      height: 10px
+    background: #e40000
+    +background( linear-gradient(#fe0000, #d00000) )
+    .top, .bottom
       +rotate(45deg)
+      background: white
+      position: absolute
+      left: -11px
+      width: 15px
+      height: 15px
+    .top
+      top: -8px
+    .bottom
+      top: 5px
   .dot
     position: absolute
     background: #ddd
