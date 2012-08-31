@@ -135,11 +135,11 @@ $easing-width: 120px + 4px
       font-size: 12px
       fill: #bbb
 
-.easing
+.graph
+  position: relative
+  display: inline-block
   .example
     position: absolute
-    top: 0
-    left: $easing-width - 2px
     width: 21px
     height: 12px
     overflow: hidden
@@ -161,16 +161,23 @@ $easing-width: 120px + 4px
       +rotate(45deg)
   .dot
     position: absolute
-    top: 5px
-    left: 1px
     background: #ddd
     width: 2px
     height: 2px
     +border-radius(2px)
-  .example, .dot
-    opacity: 0
-    +transition(opacity 200ms)
-  &:hover
+
+.easing
+  .graph
+    .example, .dot
+      opacity: 0
+      +transition(opacity 200ms)
+    .example
+      top: 94px
+      left: $easing-width - 2px
+    .dot
+      top: 99px
+      left: 1px
+  &:hover .graph
     .example, .dot
       opacity: 1
 
@@ -204,9 +211,26 @@ $easing-width: 120px + 4px
     font-size: 22px
   .graph
     margin: -20px 0 -10px 0
+    .example
+      top: 124px
+      left: 1.3 * $easing-width
+    .dot
+      width: 4px
+      height: 4px
+      border-radius: 2px
+      top: 128px
+      left: 2px
     svg
       width: 1.3 * $easing-width
       height: 1.3 * (60px + 80px)
+
+.easing-description.example-on-demand
+  .example, .dot
+    opacity: 0
+    +transition(opacity 200ms)
+  &.exampled
+    .example, .dot
+      opacity: 1
 
 // Description formation
 
@@ -412,6 +436,22 @@ footer
 
 // Mobile
 
+@media (max-height: 768px)
+  .about
+    padding-top: 15px
+  .easing.linear
+    top: 6px
+
+// Tablet
+
+body.tablet
+  .easing
+    .graph
+      .example, .dot
+        display: none
+
+// Mobile
+
 @media (max-width: 899px)
   .easings
     text-align: center
@@ -440,15 +480,16 @@ footer
   .about
     padding-top: 10px
 
-  .easing .link, .easing-description .back
+  .easing .link, .easing-description .back, .easing-description .graph
     -webkit-tap-highlight-color: white(0)
 
   .easing
     margin: 3px 0
     .easing-title
       font-size: 13px
-    .example, .dot
-      display: none
+    .graph
+      .example, .dot
+        display: none
 
   pre
     +force-wrap
@@ -473,6 +514,8 @@ footer
     margin: 0
     ul
       margin-right: 0
+    .easing
+      left: -2px
 
   .howtos
     padding: 0 10px

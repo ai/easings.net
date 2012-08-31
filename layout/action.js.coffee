@@ -3,11 +3,18 @@
 
 after = (ms, fn) -> setTimeout(fn, ms)
 
+isAgent = (regexp) ->
+  !!navigator.userAgent.match(regexp)
+
 jQuery ($) ->
-  easings  = $('.easings li')
-  $body    = $('body')
-  $window  = $(window)
-  isMobile = window.innerWidth < 600
+  easings      = $('.easings li')
+  descriptions = $('.easing-description')
+  $body        = $('body')
+  $window      = $(window)
+  isMobile     = window.innerWidth < 600
+  isTablet     = isAgent(/iPad/) or isAgent(/Android/)
+
+  $body.addClass('tablet') if isTablet
 
   # Scroll
 
@@ -18,19 +25,17 @@ jQuery ($) ->
     document.location.hash = hash
     $window.scrollTop(scroll)
 
-  scrollTo = (top) -> $('html, body').animate(scrollTop: top, 600)
+  scrollTo = (top, fn) -> $('html, body').animate(scrollTop: top, 600, fn)
+
+  # Don’t scroll on hash change
+
+  $('a[href^=#]').click ->
+    hash($(@).attr('href'))
+    false
 
   # Link emulation
 
   links = easings.find('.link')
-
-  links.click ->
-    hash($(@).attr('href'))
-    after 600, ->
-      allScroll = $window.scrollTop()
-      top = $('.easing-description:visible').offset().top + 10
-      scrollTo(top) if allScroll > top
-    false
 
   links.on 'mousedown touchstart', -> $(@).closest('.easing').addClass('pressed')
   links.on 'touchend touchmove', -> easings.removeClass('pressed')
@@ -40,22 +45,17 @@ jQuery ($) ->
   # Easing example
 
   unless isMobile
-    graphBottom = parseInt(easings.find('.example').css('top'))
-    graphHeight = easings.height()
-    dotX = easings.find('.dot').css('left')
-    dotY = easings.find('.dot').css('top')
-
     easings.hoverIntent
       out: ->
-        $(@).find('.example').stop().css(top: graphBottom).end().
-             find('.dot').stop().css(top: dotY, left: dotX)
+        $(@).find('.example').stop().css(marginTop: 0).end().
+             find('.dot').stop().css(marginTop: 0, marginLeft: 0)
       over: ->
         easing = $(@).find('.easing-title').text()
         $(@).
-          find('.example').animate(top: '-=60', 1000, easing).end().
-          find('.dot').animate { top: '-=60', left: '+=119'}
+          find('.example').animate(marginTop: -60, 1000, easing).end().
+          find('.dot').animate { marginTop: -60, marginLeft: 119}
             duration: 1000
-            specialEasing: top: easing, left: 'linear'
+            specialEasing: marginTop: easing, marginLeft: 'linear'
 
   # Highlight easings part
 
@@ -65,6 +65,36 @@ jQuery ($) ->
     titles.mouseenter -> section.addClass('hightlight-part')
     titles.mouseleave -> section.removeClass('hightlight-part')
 
+  # Easing example in easing page
+
+  cleanExample = (page) ->
+    return if page.hasClass('exampled')
+    page.find('.example').stop().css(marginTop: 0)
+    page.find('.dot').stop().css(marginTop: 0, marginLeft: 0)
+
+  showExample = (page) ->
+    return if page.hasClass('exampled')
+    easing = page.find('h2').text()
+    after 200, ->
+      page.find('.example').animate(marginTop: -78, 1000, easing)
+      page.find('.dot').animate { marginTop: -78, marginLeft: 154}
+        duration: 1000
+        specialEasing: marginTop: easing, marginLeft: 'linear'
+
+  if isMobile or isTablet
+    descriptions.on 'open',  -> showExample($(@))
+    descriptions.on 'close', -> cleanExample($(@))
+  else
+    descriptions.addClass('example-on-demand')
+
+  descriptions.find('.graph').click ->
+    page = $(@).closest('.easing-description')
+    cleanExample(page)
+    showExample(page)
+
+    page.addClass('exampled')
+    after 1600, -> page.removeClass('exampled')
+
   # Show easing description
 
   translations = $('footer a')
@@ -73,32 +103,44 @@ jQuery ($) ->
       url = $(@).attr('href').replace(/#.*$/, '')
       $(@).attr(href: url + hash)
 
-  easingPages = $('.easing-description')
-  slider      = $('.slide-slider')
+  easingPages  = $('.easing-description')
+  slider       = $('.slide-slider')
+  lastPage     = null
+  pageAnimated = false
 
   showSubpage = ->
     if location.hash == '#' or location.hash == ''
+      return unless pageAnimated
+
       $body.removeClass('easing-page')
       hashToTranslations('')
+      after 600, ->
+        lastPage?.trigger('close')
+        scrollTo(allScroll) if allScroll
     else
       name = location.hash[1..-1]
       easingPages.hide()
-      easingPages.filter(".#{name}").show()
+      lastPage = easingPages.filter(".#{name}").show()
       $body.addClass('easing-page')
       hashToTranslations("##{name}")
+
+      if pageAnimated
+        allScroll = $window.scrollTop()
+        pageTop   = lastPage.offset().top + 10
+        after 600, ->
+          if allScroll > pageTop
+            scrollTo pageTop, -> lastPage.trigger('open')
+          else
+            lastPage.trigger('open')
+      else
+        after 800, -> lastPage.trigger('open')
 
   showSubpage()
   $window.on('hashchange', showSubpage)
 
-  after 1, -> $body.addClass('page-animation')
-
-  # Back to all easings
-
-  $('.easing-description .back').click ->
-    hash($(@).attr('href'))
-    if allScroll
-      after 600, -> scrollTo(allScroll)
-    false
+  after 1, ->
+    pageAnimated = true
+    $body.addClass('page-animation')
 
   # Detect 3D support
 
