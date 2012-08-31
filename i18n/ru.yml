@@ -25,12 +25,12 @@ howtos:
   curve: кривая Безье easing-функции
   js: !!code
     Проще всего рисовать анимации по easing‑функции через jQuery, добавив
-    jQuery Easing Plugin. После этого надо лишь указать имя функции
+    ^jQuery Easing Plugin^. После этого надо лишь указать имя функции
     в методе `.animate` третьим аргументом или через ключ `easing`.
   scss: !!code
     В Sass/SCSS анимации описывать гораздо проще — Compass избавляет
     от префиксов перед свойствами `transition` и `animation`, а расширение
-    Compass Ceaser позволит указывать easing-функцию просто по имени, не думая
+    ^Compass Ceaser^ позволит указывать easing-функцию просто по имени, не думая
     о кривых Безье.
   css: !!code
     В CSS свойства `transition` и `animation` позволяют указывать
@@ -46,10 +46,10 @@ easing:
   no_css: !!code
     К сожалению, такую easing-функцию нельзя задать с помощью CSS.
     Используйте JavaScript или специальные `@keyframes` в CSS Animation.
-  edit: <a href="%1">Редактировать</a> на cubic-bezier.com.
+  edit: ^Редактировать^ на cubic-bezier.com.
 
 opensource:
   title:
     opensource: open source
     translate: переведи
-  translate: Помоги перевести сайт на твой язык
+  translate: ^Помоги перевести^ сайт на твой язык

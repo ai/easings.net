@@ -30,14 +30,14 @@
     article.howtos
       section.js
         h3 JavaScript
-        p= t.howtos.js.link('jQuery Easing Plugin', 'http://gsgd.co.uk/sandbox/jquery/easing/')
+        p= t.howtos.js.link('http://gsgd.co.uk/sandbox/jquery/easing/')
         pre
           code
             | div.animate({ top: '-=100px' }, 600, '#{easing_example}', function () { … })
 
       section.scss
         h3 SCSS
-        p= t.howtos.scss.link('Compass Ceaser', 'http://thesassway.com/projects/compass-ceaser')
+        p= t.howtos.scss.link('http://thesassway.com/projects/compass-ceaser')
         pre
           code
             | div {
@@ -81,7 +81,7 @@
             path d="M0,#{y} L#{to_path dots}"
         section.js
           h3 JavaScript
-          p= t.howtos.js.link('jQuery Easing Plugin', 'http://gsgd.co.uk/sandbox/jquery/easing/')
+          p= t.howtos.js.link('http://gsgd.co.uk/sandbox/jquery/easing/')
           pre
             code
               | div.animate({ top: '-=100px' }, 600, '#{easing_example(easing.name)}', function () { … })
@@ -89,7 +89,7 @@
         section.scss
           h3 SCSS
           - if easing.css
-            p= t.howtos.scss.link('Compass Ceaser', 'http://thesassway.com/projects/compass-ceaser')
+            p= t.howtos.scss.link('http://thesassway.com/projects/compass-ceaser')
             pre
               code
                 | div {
@@ -109,6 +109,6 @@
                     -ms-transition:     all 600ms #{easing_example(easing.css)};
                     -o-transition:      all 600ms #{easing_example(easing.css)};
                     transition:         all 600ms #{easing_example(easing.css)}; }
-            p= t.easing.edit("http://cubic-bezier.com/##{easing.bezier}")
+            p= t.easing.edit.link("http://cubic-bezier.com/##{easing.bezier}", target: '_blank')
           - else
             p= t.easing.no_css

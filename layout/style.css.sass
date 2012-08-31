@@ -287,23 +287,23 @@ $easing-width: 120px + 4px
 // Open source badge
 
 .open-source
-  display: block
   position: absolute
   width: 80px
   height: 80px
   top: 0
   right: 0
   text-decoration: none
-  &:active
-    .background
-      background: #ddd
   .crop
+    display: block
     position: absolute
     top: 0
     left: -10px
     width: 90px
     height: 90px
     overflow: hidden
+  &:active
+    .background
+      background: #ddd
   .background, .corner
     position: absolute
     top: -65px
@@ -384,6 +384,9 @@ $easing-width: 120px + 4px
     background: white
     box-shadow: 0 0 6px white
     +transition(opacity 400ms)
+    a
+      color: #666
+      text-decoration: none
     &.show
       opacity: 1
 
@@ -401,19 +404,18 @@ $easing-width: 120px + 4px
       bottom: 0
       background: black(0.1)
       opacity: 0
-    &:hover
+    &.show
       .rotator
         +rotate3d(1, 1, 0, 180deg)
 
 .transform2d
-  .open-source
-    &:hover
-      .text, .border
-        display: none
-      .rotator
-        +rotate(180deg)
-      .translate
-        opacity: 1
+  .open-source.show
+    .text, .border
+      display: none
+    .rotator
+      +rotate(180deg)
+    .translate
+      opacity: 1
 
 // Footer
 
@@ -463,6 +465,9 @@ body.tablet
     .graph
       .example, .dot
         display: none
+  .open-source
+    .translate a
+      text-decoration: underline
 
 // Mobile
 

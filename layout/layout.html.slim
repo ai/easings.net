@@ -32,8 +32,8 @@ html lang=r18n.locale.code
               a rel="alternate" lang=code href=page
                 = locale.title
 
-    a.open-source( href="https://github.com/ai/easings.net" )
-      .crop
+    .open-source
+      a.crop href="https://github.com/ai/easings.net" target='_blank'
         .background
         pre.source
           code
@@ -51,6 +51,7 @@ html lang=r18n.locale.code
             .text
               .variant.show= t.opensource.title.opensource
               .variant= t.opensource.title.translate
-      .translate= t.opensource.translate
+      .translate
+        = t.opensource.translate.link("https://github.com/ai/easings.net", target: '_blank')
 
     script= assets['action.js']

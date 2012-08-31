@@ -161,39 +161,46 @@ jQuery ($) ->
 
   # Open source corner animation
 
-  unless isMobile
-    corner = $('.open-source').attr(target: '_blank')
+  corner = $('.open-source')
 
-    if support3d
-      shadow    = corner.find('.shadow')
-      translate = corner.find('.translate')
-      rotator   = corner.find('.rotator')
+  if not isMobile and support3d
+    shadow    = corner.find('.shadow')
+    translate = corner.find('.translate')
+    rotator   = corner.find('.rotator')
+    back      = corner.find('.text, .border')
 
-      duration = rotator.css('transition-duration')
-      duration = parseFloat(duration) * 1000
+    duration = rotator.css('transition-duration')
+    duration = parseFloat(duration) * 1000
 
-      shadowing = ->
-        if shadow.is(':animated')
-          shadow.stop(true).animate(opacity: 0, (duration / 2), 'easeOutQuart')
-        else
-          shadow.animate(opacity: 1, (duration / 2), 'easeInQuart').
-                 animate(opacity: 0, (duration / 2), 'easeOutQuart')
+    shadowing = ->
+      if shadow.is(':animated')
+        shadow.stop(true).animate(opacity: 0, (duration / 2), 'easeOutQuart')
+      else
+        shadow.animate(opacity: 1, (duration / 2), 'easeInQuart').
+               animate(opacity: 0, (duration / 2), 'easeOutQuart')
 
-      corner.mouseenter ->
-        shadowing()
-        after duration, ->
-          translate.addClass('show') if corner.is(':hover')
-      corner.mouseleave ->
-        shadowing()
-        translate.removeClass('show')
+    showCorner = ->
+      corner.addClass('show')
+      shadowing()
+      after duration, ->
+        translate.addClass('show') if corner.is(':hover')
+      back.stop(true).delay(duration / 2).hide(1)
+    hideCorner = ->
+      corner.removeClass('show')
+      shadowing()
+      translate.removeClass('show')
+      back.stop(true).delay(duration / 2).show(1)
 
-      # FF backface-visibility fix
-
-      back = corner.find('.text, .border')
-      corner.mouseenter ->
-        back.stop(true).delay(duration / 2).hide(1)
-      corner.mouseleave ->
-        back.stop(true).delay(duration / 2).show(1)
+  if isTablet
+    corner.find('.crop').click ->
+      if corner.hasClass('show')
+        hideCorner()
+      else
+        showCorner()
+      false
+  else
+    corner.mouseenter(showCorner)
+    corner.mouseleave(hideCorner)
 
   # Detect limit Internet on mobile
 

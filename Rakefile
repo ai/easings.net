@@ -34,8 +34,10 @@ class Pathname
 end
 
 class R18n::TranslatedString
-  def link(title, href)
-    self.sub(title, "<a href=\"#{href}\">#{title}</a>")
+  def link(href, args = { })
+    args[:href] = href
+    args = args.map { |k, v| "#{k}=\"#{v}\"" }.join(' ')
+    self.sub(/\^([^\^]+)\^/, "<a #{args}>\\1</a>")
   end
 end
 

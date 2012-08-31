@@ -7,13 +7,13 @@ font:
   url: family=PT+Sans:400,700&subset=latin
 
 about: !!format
-  ~Easing function~ précise la vitesse d'exécution d'une animation
+  ~Easing function~ précise la vitesse d’exécution d’une animation
   pour la rendre plus réaliste.
 
   Un objet réel ne commence pas son mouvement instantanément et à vitesse
-  constante. Lorsque nous ouvrons un tiroir, nous devons d'abord indiquer
+  constante. Lorsque nous ouvrons un tiroir, nous devons d’abord indiquer
   son accélération puis sa décélération. Lorsque quelque chose tombe, sa vitesse
-  de chute va de plus en plus vite puis, lorsqu'il touche le sol il rebondit.
+  de chute va de plus en plus vite puis, lorsqu’il touche le sol il rebondit.
 
   Cette page permet de choisir la fonction désirée.
 
@@ -25,13 +25,13 @@ howtos:
   name: easing nom
   curve: courbe de Bézier pour easing
   js: !!code
-    jQuery Easing Plugin est la solution la plus simple pour décrire
+    ^jQuery Easing Plugin^ est la solution la plus simple pour décrire
     une animation. Vous avez uniquement besoin de positionner le nom de
     la fonction easing sur la méthode `.animate` en 3ème argument
     ou le mot `easing`.
   scss: !!code
     Sass/SCSS permet de décrire une animation. Compass supprime les préfixes
-    des propriétés `transition` et `animation` et Compass Ceaser plugin permet
+    des propriétés `transition` et `animation` et ^Compass Ceaser^ plugin permet
     de positionner une fonction easing uniquement par son nom (sans utilisation
     de courbe de Bézier).
   css: !!code
@@ -49,12 +49,12 @@ easing:
   all_easings: Toutes easings
   no_css: !!code
     Malheureusement, CSS ne supportent pas cette fonction easing.
-    Mais vous pouvez l'utiliser via JavaScript ou par l'animation spéciale
+    Mais vous pouvez l’utiliser via JavaScript ou par l’animation spéciale
     CSS `@keyframes`.
-  edit: <a href="%1">Modifier</a> le cubic-bezier.com.
+  edit: ^Modifier^ le cubic-bezier.com.
 
 opensource:
   title:
     opensource: open source
     translate: traduire
-  translate: Aidez-nous à traduire ce site dans votre langue.
+  translate: ^Aidez à traduire^ ce site dans votre langue.
