@@ -32,8 +32,9 @@ jQuery ($) ->
       scrollTo(top) if allScroll > top
     false
 
-  links.on 'touchstart', -> $(@).closest('.easing').addClass('pressed')
+  links.on 'mousedown touchstart', -> $(@).closest('.easing').addClass('pressed')
   links.on 'touchend touchmove', -> easings.removeClass('pressed')
+  $body.mouseup -> easings.removeClass('pressed')
   $(document).scroll -> easings.removeClass('pressed')
 
   # Easing example
