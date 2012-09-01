@@ -21,14 +21,10 @@ R18n::Filters.add('code') do |text, config|
   text.gsub(/`([^`]+)`/, '<code>\1</code>')
 end
 
-R18n::Filters.add('format') do |text, config, param|
-  if param == :no_html
-    text.gsub(/~/, '').gsub("\n", ' ')
-  else
-    '<p>' +
-      text.gsub(/~([^~]+)~/, '<strong>\1</strong>').gsub("\n", '</p><p>') +
-    '</p>'
-  end
+R18n::Filters.add('format') do |text, config|
+  '<p>' +
+    text.gsub(/~([^~]+)~/, '<strong>\1</strong>').gsub("\n", '</p><p>') +
+  '</p>'
 end
 
 class Pathname

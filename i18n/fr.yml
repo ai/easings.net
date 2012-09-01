@@ -2,6 +2,11 @@ title: Easing Functions Guide de référence
 description:
   Créez des animations plus réalistes uniquement en utilisant une
   fonction prédefinie.
+share:
+  Easing function précise la vitesse d’exécution d’une animation
+  pour la rendre plus réaliste. Un objet réel ne commence pas son mouvement
+  instantanément et à vitesse constante. Cette page permet de choisir
+  la fonction désirée.
 font:
   name: PT Sans
   url: family=PT+Sans:400,700&subset=latin
