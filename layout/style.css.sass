@@ -109,8 +109,6 @@ $easing-width: 120px + 4px
     text-decoration: none
     position: relative
 
-@mixin pressed-easing
-
 .easings .easing.pressed
   background: #f0f0f0
   box-shadow: inset 0 0 5px black(0.5)
@@ -430,6 +428,7 @@ footer
       text-decoration: none
   .author
     float: left
+    padding-left: 27px
     font-size: 13px
     position: relative
     +transition(color 400ms)
@@ -441,7 +440,7 @@ footer
   .mask
     position: absolute
     top: 10px
-    left: -27px
+    left: 0
     overflow: hidden
     background-color: #888
   .hover
@@ -471,10 +470,6 @@ footer
     padding-top: 15px
   .easing.linear
     top: 6px
-
-@media (max-width: 953px)
-  footer .author
-    margin-left: 27px
 
 @media (max-width: 899px)
   .easings
