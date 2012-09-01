@@ -256,14 +256,14 @@ end
 
 desc 'Prepare commit to GitHub Pages'
 task :deploy => :build do
-  sh 'git checkout gh-pages && ' +
-     'git rm *.ico && ' +
-     'git rm *.png && ' +
-     'git rm *.html && ' +
-     'cp public/* ./ && ' +
-     'git add *.html &&' +
-     'git add *.png &&' +
-     'git add *.ico'
+  sh ['git checkout gh-pages',
+      'git rm *.ico',
+      'git rm *.png',
+      'git rm *.html',
+      'cp public/* ./',
+      'git add *.html',
+      'git add *.png',
+      'git add *.ico'].join(' && ')
 end
 
 desc 'Optimize PNG images'
