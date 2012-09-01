@@ -11,13 +11,14 @@
 @function white($opacity)
   @return rgba(255, 255, 255, $opacity)
 
-@mixin image-size($path)
-  width: image-width($path)
-  height: image-height($path)
+@mixin image-size($path, $factor)
+  width: image-width($path) / $factor
+  height: image-height($path) / $factor
 
 @mixin image($path)
-  +image-size($path)
-  background: inline-image($path) no-repeat
+  +image-size($path, 2)
+  background-image: inline-image($path)
+  background-size: 100% 100%
 
 // Base styles
 
@@ -451,10 +452,7 @@ footer
     top: -100%
     +transition(top 400ms ceaser('easeInOutQuart'))
   .image
-    width: image-width("mask.png") / 2
-    height: image-height("mask.png") / 2
-    background-image: inline-image("mask.png")
-    background-size: 100% 100%
+    +image("mask.png")
     position: relative
     z-index: 2
   li
