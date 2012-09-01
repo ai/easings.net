@@ -265,29 +265,3 @@ task :deploy => :build do
       'git add *.png',
       'git add *.ico'].join(' && ')
 end
-
-desc 'Optimize PNG images'
-task :png do
-  compress = LAYOUT.glob('**/*.png').map do |png|
-    next if png.to_s =~ /\/images\/data\//
-
-    tmp = Pathname(png.to_s + '.optimized')
-    `pngcrush -rem gAMA -rem cHRM -rem iCCP -rem sRGB "#{png}" "#{tmp}"`
-    level = png.size / tmp.size.to_f
-    if level > 1
-      FileUtils.rm(png)
-      FileUtils.mv(tmp, png)
-      [png.relative_path_from(ROOT).to_s, level]
-    else
-      FileUtils.rm(tmp)
-      nil
-    end
-  end
-
-  compress.compact!
-  max = compress.map { |i| i[0].length }.max
-  compress.each do |file, level|
-    spaces = (max - file.length).times.to_a.map { ' ' }.join
-    puts "Compress #{file}#{spaces}  #{level.round(2)} times"
-  end
-end
