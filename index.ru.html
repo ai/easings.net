@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><title>Шпаргалка easing-функций</title><meta content="Сделай анимацию более реалистичной, подобрав нужную easing-функцию." name="description"><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script><link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic" rel="stylesheet"><link href="http://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="/apple-touch-icon.png" property="og:image"><meta content="Easing-функция указывает скорость течения анимации, чтобы сделать анимацию более реалистичной. Реальные вещи не начинают двигаться мгновенно и с постоянной скоростью. Если мы открываем ящик стола, то сначала ускоряем его, а на второй половине пути — тормозим. Если что-то упало, то оно сначала летит всё быстрее и быстрее, а ударившись о пол — слегка подпрыгивает обратно. Этот сайт поможет каждый раз подобрать нужную easing-функцию." property="og:description"><style>* {
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><title>Шпаргалка easing-функций</title><meta content="Сделай анимацию более реалистичной, подобрав нужную easing-функцию." name="description"><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script><link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic" rel="stylesheet"><link href="http://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="http://easings.net/apple-touch-icon.png" property="og:image"><meta content="Easing-функция указывает скорость течения анимации, чтобы сделать анимацию более реалистичной. Реальные вещи не начинают двигаться мгновенно и с постоянной скоростью. Если мы открываем ящик стола, то сначала ускоряем его, а на второй половине пути — тормозим. Если что-то упало, то оно сначала летит всё быстрее и быстрее, а ударившись о пол — слегка подпрыгивает обратно. Этот сайт поможет каждый раз подобрать нужную easing-функцию." property="og:description"><style>* {
   margin: 0;
   padding: 0; }
 
@@ -479,6 +479,7 @@ footer {
       text-decoration: none; }
   footer .author {
     float: left;
+    padding-left: 27px;
     font-size: 13px;
     position: relative;
     -webkit-transition: color 400ms;
@@ -494,7 +495,7 @@ footer {
   footer .mask {
     position: absolute;
     top: 10px;
-    left: -27px;
+    left: 0;
     overflow: hidden;
     background-color: #888888; }
   footer .hover {
@@ -530,9 +531,6 @@ footer {
 
   .easing.linear {
     top: 6px; } }
-@media (max-width: 953px) {
-  footer .author {
-    margin-left: 27px; } }
 @media (max-width: 899px) {
   .easings {
     text-align: center; }
