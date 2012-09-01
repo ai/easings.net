@@ -21,6 +21,11 @@ html lang=r18n.locale.code
       .root-footer
 
     footer
+      a.author href="https://github.com/ai" target="_blank"
+        .mask
+          .hover
+          .image
+        = t.author
       ul
         - each_locale do |code, locale|
           li

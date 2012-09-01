@@ -417,22 +417,53 @@ $easing-width: 120px + 4px
 
 // Footer
 
-+sticky-footer(34px, ".root", ".root-footer", "footer")
++sticky-footer(40px, ".root", ".root-footer", "footer")
 
 footer
-  height: 32px
-  line-height: 32px
+  height: 40px
+  line-height: 40px
   text-align: right
+  a
+    color: #888
+    &:hover
+      text-decoration: none
+  .author
+    float: left
+    font-size: 13px
+    position: relative
+    +transition(color 400ms)
+    &:hover
+      text-decoration: none
+      color: black
+      .hover
+        top: 0
+  .mask
+    position: absolute
+    top: 10px
+    left: -27px
+    overflow: hidden
+    background-color: #888
+  .hover
+    position: absolute
+    background: black
+    width: 100%
+    height: 100%
+    top: -100%
+    +transition(top 400ms ceaser('easeInOutQuart'))
+  .image
+    width: image-width("mask.png") / 2
+    height: image-height("mask.png") / 2
+    background-image: inline-image("mask.png")
+    background-size: 100% 100%
+    position: relative
+    z-index: 2
   li
+    font-size: 12px
     font-family: "Trebuchet MS", sans-serif
     list-style: none
     display: inline-block
-    font-size: 12px
     padding-right: 5px
-    a
-      color: #888
-      &:hover
-        text-decoration: none
+    line-height: 1
     .current
       color: black
 
@@ -443,6 +474,10 @@ footer
     padding-top: 15px
   .easing.linear
     top: 6px
+
+@media (max-width: 953px)
+  footer .author
+    margin-left: 27px
 
 @media (max-width: 899px)
   .easings
@@ -502,10 +537,9 @@ body.tablet
   .open-source
     display: none
 
-  +sticky-footer(40px, ".root", ".root-footer", "footer")
   footer
-    height: 40px
-    line-height: 40px
+    .author
+      font-size: 12px
     li
       padding-left: 5px
 

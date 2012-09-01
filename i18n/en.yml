@@ -52,3 +52,5 @@ opensource:
     opensource: open source
     translate: translate
   translate: ^Help to translate^ site to your language
+
+author: Andrey Sitnik
