@@ -422,9 +422,9 @@ $easing-width: 120px + 4px
 
 footer
   height: 40px
-  line-height: 40px
   text-align: right
   a
+    line-height: 40px
     color: #888
     &:hover
       text-decoration: none
@@ -460,8 +460,7 @@ footer
     font-family: "Trebuchet MS", sans-serif
     list-style: none
     display: inline-block
-    padding-right: 5px
-    line-height: 1
+    padding-left: 10px
     .current
       color: black
 
@@ -518,7 +517,7 @@ body.tablet
   .about
     padding-top: 10px
 
-  .easing .link, .easing-description .back, .easing-description .graph
+  .easing .link, .easing-description .graph
     -webkit-tap-highlight-color: white(0)
 
   .easing
@@ -536,10 +535,10 @@ body.tablet
     display: none
 
   footer
+    ul
+      padding-right: 2px
     .author
       font-size: 12px
-    li
-      padding-left: 5px
 
 @media (max-width: 481px)
   .about
