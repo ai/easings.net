@@ -1,5 +1,4 @@
 #= require jquery.easing
-#= require jquery.hoverIntent
 
 after = (ms, fn) -> setTimeout(fn, ms)
 
@@ -45,17 +44,15 @@ jQuery ($) ->
   # Easing example
 
   unless isMobile
-    easings.hoverIntent
-      out: ->
-        $(@).find('.example').stop().css(marginTop: 0).end().
-             find('.dot').stop().css(marginTop: 0, marginLeft: 0)
-      over: ->
-        easing = $(@).find('.easing-title').text()
-        $(@).
-          find('.example').animate(marginTop: -60, 1000, easing).end().
-          find('.dot').animate { marginTop: -60, marginLeft: 119}
-            duration: 1000
-            specialEasing: marginTop: easing, marginLeft: 'linear'
+    easings.mouseenter ->
+      div    = $(@)
+      easing = div.find('.easing-title').text()
+      div.find('.example').stop().css(marginTop: 0).delay(400).
+        animate(marginTop: -60, 1000, easing)
+      div.find('.dot').stop().css(marginTop: 0, marginLeft: 0).delay(400).
+        animate { marginTop: -60, marginLeft: 119}
+          duration: 1000
+          specialEasing: marginTop: easing, marginLeft: 'linear'
 
   # Highlight easings part
 
