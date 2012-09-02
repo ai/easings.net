@@ -366,6 +366,10 @@ $easing-width: 120px + 4px
     height: 80px
     left: 10px
     z-index: 3
+  &.show
+    .rotator
+      left: 12px
+      top: -2px
   .variant
     display: none
     &.show
@@ -403,8 +407,6 @@ $easing-width: 120px + 4px
       opacity: 0
     &.show
       .rotator
-        left: 12px
-        top: -2px
         +rotate3d(1, 1, 0, 180deg)
 
 .transform2d

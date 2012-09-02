@@ -153,52 +153,56 @@ jQuery ($) ->
 
   # Open source badge text
 
-  texts = $('.open-source .text .variant')
+  texts    = $('.open-source .text .variant')
   selected = Math.floor((texts.length - 0.001) * Math.random())
   texts.removeClass('show').eq(selected).addClass('show')
 
   # Open source corner animation
 
-  corner = $('.open-source')
+  unless isMobile
+    corner = $('.open-source')
 
-  if not isMobile and support3d
-    shadow    = corner.find('.shadow')
-    translate = corner.find('.translate')
-    rotator   = corner.find('.rotator')
-    back      = corner.find('.text, .border')
+    if support3d
+      shadow    = corner.find('.shadow')
+      translate = corner.find('.translate')
+      rotator   = corner.find('.rotator')
+      back      = corner.find('.text, .border')
 
-    duration = rotator.css('transition-duration')
-    duration = parseFloat(duration) * 1000
+      duration = rotator.css('transition-duration')
+      duration = parseFloat(duration) * 1000
 
-    shadowing = ->
-      if shadow.is(':animated')
-        shadow.stop(true).animate(opacity: 0, (duration / 2), 'easeOutQuart')
-      else
-        shadow.animate(opacity: 1, (duration / 2), 'easeInQuart').
-               animate(opacity: 0, (duration / 2), 'easeOutQuart')
+      shadowing = ->
+        if shadow.is(':animated')
+          shadow.stop(true).animate(opacity: 0, (duration / 2), 'easeOutQuart')
+        else
+          shadow.animate(opacity: 1, (duration / 2), 'easeInQuart').
+                 animate(opacity: 0, (duration / 2), 'easeOutQuart')
 
-    showCorner = ->
-      corner.addClass('show')
-      shadowing()
-      after duration, ->
-        translate.addClass('show') if corner.is(':hover')
-      back.stop(true).delay(duration / 2).hide(1)
-    hideCorner = ->
-      corner.removeClass('show')
-      shadowing()
-      translate.removeClass('show')
-      back.stop(true).delay(duration / 2).show(1)
+      showCorner = ->
+        corner.addClass('show')
+        shadowing()
+        after duration, ->
+          translate.addClass('show') if corner.is(':hover')
+        back.stop(true).delay(duration / 2).hide(1)
+      hideCorner = ->
+        corner.removeClass('show')
+        shadowing()
+        translate.removeClass('show')
+        back.stop(true).delay(duration / 2).show(1)
+    else
+      showCorner = -> corner.addClass('show')
+      hideCorner = -> corner.removeClass('show')
 
-  if isTablet
-    corner.find('.crop').click ->
-      if corner.hasClass('show')
-        hideCorner()
-      else
-        showCorner()
-      false
-  else
-    corner.mouseenter(showCorner)
-    corner.mouseleave(hideCorner)
+    if isTablet
+      corner.find('.crop').click ->
+        if corner.hasClass('show')
+          hideCorner()
+        else
+          showCorner()
+        false
+    else
+      corner.mouseenter(showCorner)
+      corner.mouseleave(hideCorner)
 
   # Detect limit Internet on mobile
 
