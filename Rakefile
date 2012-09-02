@@ -68,7 +68,10 @@ class Easing
 
   def dots(count, x, y)
     dots = count.times.to_a.map { |i| (x.to_f / count) * (i + 1) }
-    dots.map { |i| [i, y - (y * self.x(i / x.to_f))] }
+    dots.map do |i|
+      iy = y - (y * self.x(i / x.to_f))
+      [i.round(1), iy.round(1)]
+    end
   end
 
   def bezier
