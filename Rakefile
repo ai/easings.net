@@ -97,9 +97,12 @@ class Helpers
   include R18n::Helpers
 
   attr_accessor :path
+  attr_accessor :env
 
-  def initialize(env)
-    @env = env
+  def self.instance(env)
+    @@instance ||= self.new
+    @@instance.env = env
+    @@instance
   end
 
   def assets
@@ -182,7 +185,7 @@ end
 
 def build_file(slim, production = false)
   layout = LAYOUT.join('layout.html.slim')
-  helper = Helpers.new(production ? :production : :development)
+  helper = Helpers.instance(production ? :production : :development)
   locale = R18n.get.locale
 
   path = slim.relative_path_from(LAYOUT).sub_ext('').sub_ext('').to_s
