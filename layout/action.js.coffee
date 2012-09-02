@@ -37,10 +37,14 @@ jQuery ($) ->
 
   links = easings.find('.link')
 
-  links.on 'mousedown touchstart', -> $(@).closest('.easing').addClass('pressed')
-  links.on 'touchend touchmove', -> easings.removeClass('pressed')
-  $body.mouseup -> easings.removeClass('pressed')
-  $(document).scroll -> easings.removeClass('pressed')
+  links.on 'mousedown touchstart', ->
+    $(@).closest('.easing').addClass('pressed')
+  links.on 'touchend touchmove', ->
+    easings.removeClass('pressed')
+  $body.mouseup ->
+    easings.removeClass('pressed')
+  $(document).scroll ->
+    easings.removeClass('pressed')
 
   # Easing example
 
@@ -73,25 +77,23 @@ jQuery ($) ->
   showExample = (page) ->
     return if page.hasClass('exampled')
     easing = page.find('h2').text()
-    after 200, ->
+
+    page.addClass('exampled')
+    after 400, ->
       page.find('.example').animate(marginTop: -78, 1000, easing)
       page.find('.dot').animate { marginTop: -78, marginLeft: 154}
         duration: 1000
         specialEasing: marginTop: easing, marginLeft: 'linear'
+        complete: ->
+          after 400, -> page.removeClass('exampled')
 
-  if isDesktop
-    descriptions.addClass('example-on-demand')
-  else
-    descriptions.on 'open',  -> showExample($(@))
-    descriptions.on 'close', -> cleanExample($(@))
+  descriptions.on 'open',  -> showExample($(@))
+  descriptions.on 'close', -> cleanExample($(@))
 
   descriptions.find('.graph').click ->
     page = $(@).closest('.easing-description')
     cleanExample(page)
     showExample(page)
-
-    page.addClass('exampled')
-    after 1600, -> page.removeClass('exampled')
 
   # Show easing description
 

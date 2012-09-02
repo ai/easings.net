@@ -217,15 +217,13 @@ $easing-width: 120px + 4px
       border-radius: 2px
       top: 128px
       left: 2px
+    .example, .dot
+      opacity: 0
+      +transition(opacity 200ms)
     svg
       width: 1.3 * $easing-width
       height: 1.3 * (60px + 80px)
-
-.easing-description.example-on-demand
-  .example, .dot
-    opacity: 0
-    +transition(opacity 200ms)
-  &.exampled
+  &.exampled .graph
     .example, .dot
       opacity: 1
 
