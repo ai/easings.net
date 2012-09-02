@@ -12,6 +12,7 @@ jQuery ($) ->
   $window      = $(window)
   isMobile     = window.innerWidth < 600
   isTablet     = isAgent(/iPad/) or isAgent(/Android/)
+  isDesktop    = not isMobile and not isTablet
 
   $body.addClass('tablet') if isTablet
 
@@ -43,7 +44,7 @@ jQuery ($) ->
 
   # Easing example
 
-  unless isMobile
+  if isDesktop
     easings.mouseenter ->
       div    = $(@)
       easing = div.find('.easing-title').text()
@@ -56,7 +57,7 @@ jQuery ($) ->
 
   # Highlight easings part
 
-  unless isMobile
+  if isDesktop
     section = $('.easings')
     titles  = section.find('.part-title')
     titles.mouseenter -> section.addClass('hightlight-part')
@@ -78,11 +79,11 @@ jQuery ($) ->
         duration: 1000
         specialEasing: marginTop: easing, marginLeft: 'linear'
 
-  if isMobile or isTablet
+  if isDesktop
+    descriptions.addClass('example-on-demand')
+  else
     descriptions.on 'open',  -> showExample($(@))
     descriptions.on 'close', -> cleanExample($(@))
-  else
-    descriptions.addClass('example-on-demand')
 
   descriptions.find('.graph').click ->
     page = $(@).closest('.easing-description')
