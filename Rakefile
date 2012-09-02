@@ -93,6 +93,35 @@ class Sprockets::Context
   include R18n::Helpers
 end
 
+class SassCompiler < Sprockets::SassTemplate
+  def sass_options(context)
+    {
+      filename:    eval_file,
+      line:        line,
+      syntax:      syntax,
+      cache_store: Sprockets::SassCacheStore.new(context.environment),
+      importer:    Sprockets::SassImporter.new(context, context.pathname),
+      sprockets:   { context: context, environment: context.environment },
+      load_paths:  context.environment.paths.map { |path|
+        Sprockets::SassImporter.new(context, path)
+      }
+    }
+  end
+
+  def evaluate(context, locals, &block)
+    ::Sass::Engine.new(data, sass_options(context)).render
+  rescue ::Sass::SyntaxError => e
+    context.__LINE__ = e.sass_backtrace.first[:line]
+    raise e
+  end
+end
+
+class CompressedSassCompiler < SassCompiler
+  def sass_options(*params)
+    super.merge(style: :compressed)
+  end
+end
+
 class Helpers
   include R18n::Helpers
 
@@ -107,12 +136,16 @@ class Helpers
 
   def assets
     @sprockets ||= begin
+      Sprockets.register_engine '.sass',
+        @env == :production ? CompressedSassCompiler : SassCompiler
+
       Sprockets::Environment.new(ROOT) do |env|
         env.append_path(LAYOUT)
         env.append_path(ROOT.join('vendor'))
         Sass.load_paths.concat(Compass.sass_engine_options[:load_paths])
 
         if @env == :production
+          #Sass::Plugin.options[:style] = :compressed
           env.js_compressor = Uglifier.new(copyright: false)
         end
       end
