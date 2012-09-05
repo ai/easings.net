@@ -166,9 +166,7 @@ jQuery ($) ->
 
     if support3d
       shadow    = corner.find('.shadow')
-      translate = corner.find('.translate')
       rotator   = corner.find('.rotator')
-      back      = corner.find('.text, .border')
 
       duration = rotator.css('transition-duration')
       duration = parseFloat(duration) * 1000
@@ -183,14 +181,9 @@ jQuery ($) ->
       showCorner = ->
         corner.addClass('show')
         shadowing()
-        after duration, ->
-          translate.addClass('show') if corner.is(':hover')
-        back.stop(true).delay(duration / 2).hide(1)
       hideCorner = ->
         corner.removeClass('show')
         shadowing()
-        translate.removeClass('show')
-        back.stop(true).delay(duration / 2).show(1)
     else
       showCorner = -> corner.addClass('show')
       hideCorner = -> corner.removeClass('show')

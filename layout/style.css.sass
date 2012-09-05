@@ -352,16 +352,19 @@ $easing-width: 120px + 4px
     width: 100%
   .border
     border-top: 1px dashed #999
+    opacity: 1
   .text
     bottom: 4px
     text-align: center
     font-size: 12px
     color: #666
     padding-left: 5px
+    opacity: 1
   .rotator
     position: absolute
     width: 80px
     height: 80px
+    top: 0
     left: 10px
     z-index: 3
   &.show
@@ -386,13 +389,14 @@ $easing-width: 120px + 4px
     a
       color: #666
       text-decoration: none
-    &.show
+  &.show
+    .text, .border
+      opacity: 0
+    .translate
       opacity: 1
 
 .transform3d
   .open-source
-    .text, .border
-      +backface-visibility(hidden)
     .rotator
       +transition(all 600ms ceaser('easeInOutQuad'))
     .shadow
@@ -403,7 +407,16 @@ $easing-width: 120px + 4px
       bottom: 0
       background: black(0.1)
       opacity: 0
+    .text, .border
+      +transition-property(opacity)
+      +transition-delay(250ms)
+    .translate
+      +transition-delay(0)
     &.show
+      .translate
+        +transition-delay(400ms)
+      .text, .border
+        +transition-delay(200ms)
       .rotator
         +rotate3d(1, 1, 0, 180deg)
 
