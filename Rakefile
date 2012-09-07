@@ -142,10 +142,10 @@ class Helpers
       Sprockets::Environment.new(ROOT) do |env|
         env.append_path(LAYOUT)
         env.append_path(ROOT.join('vendor'))
+
         Sass.load_paths.concat(Compass.sass_engine_options[:load_paths])
 
         if @env == :production
-          #Sass::Plugin.options[:style] = :compressed
           env.js_compressor = Uglifier.new(copyright: false)
         end
       end
