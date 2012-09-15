@@ -1,7 +1,8 @@
 if (location.pathname == '/') {
-    var l = <%= R18n.available_locales.map(&:code).reject { |i| i == 'en' } %>
+    var l = <%= R18n.available_locales.map { |i| i.code.downcase }.reject { |i| i == 'en' } %>;
+    var u = navigator.language.toLowerCase();
     for (var i = 0; i < l.length; i++) {
-        if (navigator.language == l[i]) {
+        if ( u == l[i] ) {
             location.pathname = '/index.' + l[i] + '.html';
         }
     }
