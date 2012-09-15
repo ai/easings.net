@@ -205,3 +205,17 @@ jQuery ($) ->
     net = navigator.connection
     if net and net.type != net.CELL_2G and net.type != net.CELL_3G
       $body.removeClass('limit-internet')
+
+  # Change languages link to select
+
+  changer = $('<select />').insertAfter('footer ul').change ->
+    selected = changer.find('option:selected')
+    location.href = selected.val() if selected.val()
+
+  $('footer li').each ->
+    lang   = $(@).find('a, span')
+    href   = lang.attr('href') || ''
+    option = $('<option />').attr(value: href).text(lang.text())
+    option.attr(selected: true) if lang.is('span')
+    option.appendTo(changer)
+  $('footer ul').hide()
