@@ -97,12 +97,6 @@ jQuery ($) ->
 
   # Show easing description
 
-  translations = $('footer a')
-  hashToTranslations = (hash) ->
-    translations.each ->
-      url = $(@).attr('href').replace(/#.*$/, '')
-      $(@).attr(href: url + hash)
-
   easingPages  = $('.easing-description')
   slider       = $('.slide-slider')
   lastPage     = null
@@ -113,7 +107,6 @@ jQuery ($) ->
       return unless pageAnimated
 
       $body.removeClass('easing-page')
-      hashToTranslations('')
       after 600, ->
         lastPage?.trigger('close')
         scrollTo(allScroll) if allScroll
@@ -122,7 +115,6 @@ jQuery ($) ->
       easingPages.hide()
       lastPage = easingPages.filter(".#{name}").show()
       $body.addClass('easing-page')
-      hashToTranslations("##{name}")
 
       if pageAnimated
         allScroll = $window.scrollTop()
@@ -209,12 +201,11 @@ jQuery ($) ->
   # Change languages link to select
 
   changer = $('<select />').insertAfter('footer ul').change ->
-    selected = changer.find('option:selected')
-    location.href = selected.val() if selected.val()
+    location.href = $(@).val() + location.hash
 
   $('footer li').each ->
     lang   = $(@).find('a, span')
-    href   = lang.attr('href') || ''
+    href   = lang.attr('href') || location.pathname
     option = $('<option />').attr(value: href).text(lang.text())
     option.attr(selected: true) if lang.is('span')
     option.appendTo(changer)
