@@ -37,8 +37,8 @@ html lang=r18n.locale.code
               span.current
                 = locale.title
             - else
-              - page = code == 'en' ? "#{path}.html" : "#{path}.#{code}.html"
-              a rel="alternate" lang=code href=page
+              - postfix = code == 'en' ? ".html" : ".#{code.downcase}.html"
+              a rel="alternate" lang=code href=(path + postfix)
                 = locale.title
 
     .open-source
