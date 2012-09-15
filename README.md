@@ -8,16 +8,17 @@ GitHub has great instructions on how to [set up Git], [fork a project] and
 [make pull requests]. If you have a problem with Git, just send your files
 directly to <andrey@sitnik.ru>.
 
-[RFC 3066]:            http://www.i18nguy.com/unicode/language-identifiers.html
-[set up Git]:          http://help.github.com/set-up-git-redirect
-[fork a project]:      http://help.github.com/fork-a-repo/
-[make pull requests]:  http://help.github.com/send-pull-requests/
+[set up Git]:         http://help.github.com/set-up-git-redirect
+[fork a project]:     http://help.github.com/fork-a-repo/
+[make pull requests]: http://help.github.com/send-pull-requests/
 
 ### Translate
 
-Just copy the `i18n/en.yml` file to `i18n/CODE.yml` (where `CODE` is 
-the [RFC 3066] language code of your target language) and translate all
-messages.
+Just copy the `i18n/en.yml` file to `i18n/CODE.yml` (where `CODE` is
+the lowercased [RFC 3066] language code of your target language,
+for example `fr-ca` for Canadian French) and translate all messages.
+
+[RFC 3066]: http://www.i18nguy.com/unicode/language-identifiers.html
 
 ### Test
 
