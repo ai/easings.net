@@ -3,8 +3,6 @@ html lang=r18n.locale.code
   head
     meta charset="UTF-8"
     title= t.title
-    - if r18n.locale.code == 'en'
-      script= assets['language-redirect.js']
     meta name="description" content=t.description
     script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery#{production? ? '.min' : ''}.js"
     link rel="stylesheet" href="http://fonts.googleapis.com/css?#{t.font.url}"
@@ -37,8 +35,7 @@ html lang=r18n.locale.code
               span.current
                 = locale.title
             - else
-              - postfix = code == 'en' ? ".html" : ".#{code.downcase}.html"
-              a rel="alternate" lang=code href=(path + postfix)
+              a rel="alternate" lang=code href="/#{code.downcase}"
                 = locale.title
 
     .open-source

@@ -1,9 +1,7 @@
 #= require jquery.easing
 
-after = (ms, fn) -> setTimeout(fn, ms)
-
-isAgent = (regexp) ->
-  !!navigator.userAgent.match(regexp)
+after   = (ms, fn) -> setTimeout(fn, ms)
+isAgent = (regexp) -> !!navigator.userAgent.match(regexp)
 
 jQuery ($) ->
   easings      = $('.easings li')

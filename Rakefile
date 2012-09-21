@@ -127,7 +127,6 @@ end
 class Helpers
   include R18n::Helpers
 
-  attr_accessor :path
   attr_accessor :env
 
   def self.instance(env)
@@ -218,24 +217,33 @@ class Helpers
   end
 end
 
-def build_file(slim, production = false)
+def copy_with_extra_js(from, to, js)
+  to.open('w') do |io|
+    io << from.read.gsub(/<head>/, "<head><script>#{js}</script>")
+  end
+end
+
+def build_index(production = false)
+  slim   = LAYOUT.join('index.html.slim')
   layout = LAYOUT.join('layout.html.slim')
   helper = Helpers.instance(production ? :production : :development)
-  locale = R18n.get.locale
+  locale = R18n.get.locale.code.downcase
 
-  path = slim.relative_path_from(LAYOUT).sub_ext('').sub_ext('').to_s
-
-  subpath = locale.code == 'en' ? '.html' : ".#{locale.code.downcase}.html"
   PUBLIC.mkpath
-  file = PUBLIC.join(path + subpath)
 
-  helper.path = path
+  file = PUBLIC.join("#{locale}.html")
 
-  file.open('w') do |html|
-    html << helper.render(layout) { helper.render(slim) }
+  file.open('w') do |io|
+    io << helper.render(layout) { helper.render(slim) }
   end
 
-  file
+  if locale == 'en'
+    redirect = helper.assets['language-redirect.js']
+    copy_with_extra_js(file, PUBLIC.join("index.html"), redirect)
+  else
+    redirect = "location.href = '/#{locale}';"
+    copy_with_extra_js(file, PUBLIC.join("index.#{locale}.html"), redirect)
+  end
 end
 
 desc 'Build site files'
@@ -247,11 +255,8 @@ task :build do
 
   R18n.available_locales.each do |locale|
     R18n.set(locale.code)
-    LAYOUT.glob('**/*.html.slim') do |slim|
-      next if slim.basename.to_s == 'layout.html.slim'
-      build_file(slim, true)
-      print '.'
-    end
+    build_index(true)
+    print '.'
   end
 
   %w( favicon.ico apple-touch-icon.png ).each do |file|
@@ -269,11 +274,8 @@ task :server do
     set :public_folder, nil
 
     get /^(\/|\/index\.html)$/ do
-      send_file build_page('index', 'en')
-    end
-
-    get '/index.:locale.html' do
-      send_file build_page('index', params[:locale])
+      build_page('en')
+      send_file PUBLIC.join('index.html')
     end
 
     get '/favicon.ico' do
@@ -284,11 +286,21 @@ task :server do
       send_file LAYOUT.join('apple-touch-icon.png')
     end
 
-    def build_page(page, locale_code)
+    get '/:locale' do
+      file   = params[:locale]
+      file  += '.html' unless file =~ /\.html/
+
+      locale = params[:locale]
+      locale = locale.match(/index\.(\w+)\.html/)[1] if locale =~ /index\./
+
+      build_page(locale)
+      send_file PUBLIC.join(file)
+    end
+
+    def build_page(locale_code)
       R18n.clear_cache!
-      path = LAYOUT.join("#{page}.html.slim")
       R18n.set(locale_code).reload!
-      build_file(path)
+      build_index
     end
   end
 

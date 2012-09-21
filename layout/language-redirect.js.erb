@@ -3,7 +3,7 @@ if (location.pathname == '/') {
     var u = navigator.language.toLowerCase();
     for (var i = 0; i < l.length; i++) {
         if ( u == l[i] ) {
-            location.pathname = '/index.' + l[i] + '.html';
+            location.pathname = '/' + l[i];
         }
     }
 }
