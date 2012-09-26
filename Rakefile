@@ -228,6 +228,9 @@ def copy_with_extra_js(from, to, js)
   end
 end
 
+# Locales, which was used, when URLs was like /index.ru.html
+OLD_URL_LOCALES = %w{ ru fr uk pt-br }
+
 def build_index(production = false)
   slim   = LAYOUT.join('index.html.slim')
   layout = LAYOUT.join('layout.html.slim')
@@ -245,7 +248,7 @@ def build_index(production = false)
   if locale == 'en'
     redirect = helper.assets['language-redirect.js']
     copy_with_extra_js(file, PUBLIC.join("index.html"), redirect)
-  else
+  elsif OLD_URL_LOCALES.include? locale
     redirect = "location.href = '/#{locale}';"
     copy_with_extra_js(file, PUBLIC.join("index.#{locale}.html"), redirect)
   end
