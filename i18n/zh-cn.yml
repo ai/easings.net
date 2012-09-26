@@ -5,7 +5,7 @@ share:
   缓动函数指定动画效果在执行时的速度，使其看起来更加真实。现实物件照着一定节奏移动，非初始即移动很快。本页可以在每次你需要时，帮助你找到想要的缓动函数。
 font:
   name: PT Sans
-  url: family=PT+Sans:400,700&subset=latin
+  url: family=PT+Sans&subset=latin
 
 about: !!format
   ~缓动函数~ 指定动画效果在执行时的速度，使其看起来更加真实。

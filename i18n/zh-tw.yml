@@ -5,7 +5,7 @@ share:
   Easing公式指定了動畫效果在執行時的速度，讓它看起來更加真實。真實的物件是照著一定節奏移動，不會一開始就移動很快。本頁可以在每次你需要時，幫助你找到想要的公式。
 font:
   name: PT Sans
-  url: family=PT+Sans:400,700&subset=latin
+  url: family=PT+Sans&subset=latin
 
 about: !!format
   ~Easing公式~ 指定動畫效果在執行時的速度，讓它看起來更加真實。
