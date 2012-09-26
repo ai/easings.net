@@ -2,15 +2,15 @@ title: 缓动函数速查表
 description:
   透过正确使用的缓动函数，让动画更加真实。
 share:
-  缓动函数指定动画效果在执行时的速度，使其看起来更加真实。
-  现实物件照着一定节奏移动，非初始即移动很快。
+  缓动函数允许指定动画在执行时的进度，使其看起来更加真实。
+  现实物体照着一定速率移动，非初始即移动很快。
   本页可以在每次你需要时，帮助你找到想要的缓动函数。
 font:
   name: PT Sans
   url: family=PT+Sans:400,700&subset=latin
 
 about: !!format
-  ~缓动函数~ 指定动画效果在执行时的速度，使其看起来更加真实。
+  ~缓动函数~指定动画效果在执行时的速度，使其看起来更加真实。
 
   现实物件照着一定节奏移动，非初始即移动很快。
   当打开抽屉时，首先会加速，然后慢下来。当某个东西往下掉时，首先是越掉越快，撞到地上后回弹，最终才又碰触地板。
@@ -25,11 +25,11 @@ howtos:
   name: 缓动函数名称
   curve: 缓动函数的贝齐尔曲线
   js: !!code
-    使用 jQuery 加上^jQuery Easing 套件^ 是实现缓动函数最简单的方法. 你只需要指定缓动函数名称给 `.animate`函数当做第三个参数或是 `easing` 的键值。
+    使用 jQuery 加上 ^jQuery Easing 套件^是实现缓动函数最简单的方法. 你只需要指定缓动函数名称给 `.animate` 函数当做第三个参数或是 `easing` 的键值。
   scss: !!code
-    Sass/SCSS 帮助你描述动画. Compass 除去了CSS属性 `transition` 和 `animation` 的前缀字元，还有 ^Compass Ceaser^ 套件允许你直接指定缓动函数名称来实现缓动函数。
+    Sass/SCSS 帮助你描述动画. Compass 除去了 CSS3 属性 `transition` 和 `animation` 的前缀字元，还有 ^Compass Ceaser^ 套件允许你直接指定缓动函数名称来实现缓动函数。
   css: !!code
-    CSS 属性 `transition` 和 `animation` 允许你指定缓动函数。
+    CSS3 属性 `transition` 和 `animation` 允许你指定缓动函数。
   css_bad:
     不幸的是，他们不支持所有的缓动函数，所以你必须指定贝齐尔曲线实现缓动函数。
   css_help:
@@ -45,6 +45,6 @@ opensource:
   title:
     opensource: 开放式源代码
     translate: 翻译
-  translate: ^帮忙翻译^ 本站成你的语言
+  translate: ^帮忙翻译^本站成你的语言
 
 author: Andrey Sitnik
