@@ -1,0 +1,50 @@
+title: Easing公式速查表
+description:
+  透過選擇使用正確的Easing公式，讓動畫更加真實。
+share:
+  Easing公式指定了動畫效果在執行時的速度，讓它看起來更加真實。
+  真實的物件是照著一定節奏移動，不會一開始就移動很快。
+  本頁可以在每次你需要時，幫助你找到想要的公式。
+font:
+  name: PT Sans
+  url: family=PT+Sans:400,700&subset=latin
+
+about: !!format
+  ~Easing公式~ 指定動畫效果在執行時的速度，讓它看起來更加真實。
+
+  真實的物件是照著一定節奏移動，不會一開始就移動很快。
+  像當我們打開抽屜時，我們首先會加速，然後慢下來。當某個東西往下掉時，它首先是越掉越快，撞到地上然後彈回來，最後才又回到地板。
+
+  本頁可以在每次你需要時，幫助你找到想要的公式。
+
+easings:
+  css: 可放在任何地方
+  js: 只能放在JavaScript中
+
+howtos:
+  name: Easing公式名稱
+  curve: Easing公式的效果曲線圖
+  js: !!code
+    使用 jQuery 加上^jQuery Easing 外掛^ 是套用Easing公式最簡單的方式. 你只需要指定Easing公式名稱給 `.animate`方程式當做第三個參數或是 `easing` 的鍵值。
+  scss: !!code
+    Sass/SCSS 幫助你描述動畫. Compass 除去了CSS屬性 `transition` 和 `animation` 的前綴字元，還有 ^Compass Ceaser^ 外掛允許你直接指定Easing公式名稱來套用Easing公式。
+  css: !!code
+    CSS 屬性 `transition` 和 `animation` 允許你指定Easing公式。
+  css_bad:
+    不幸的是，他們不支持所有的Easing公式，所以你必須設定效果曲線來套用Easing公式。
+  css_help:
+    選取Easing公式以顯示效果曲線。
+
+easing:
+  all_easings: 所有Easing公式眾
+  no_css: !!code
+    不幸的是, CSS 不支援所有這些Easing公式。 但你可以透過 JavaScript 或是 CSS3 動畫的  `@keyframes`來達成。
+  edit: 在 cubic-bezier.com ^編輯^  
+
+opensource:
+  title:
+    opensource: 開放式原始碼
+    translate: 翻譯
+  translate: ^幫忙翻譯^ 本站成你的語言
+
+author: Andrey Sitnik
