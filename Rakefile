@@ -193,6 +193,11 @@ class Helpers
     dots.map { |i| i.join(',') }.join(' ')
   end
 
+  def fonts_list(fonts)
+    fonts.map! { |i| i =~ /\s/ ? "\"#{i}\"" : i }
+    fonts.uniq.join(', ')
+  end
+
   def production?
     @env == :production
   end

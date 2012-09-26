@@ -13,7 +13,8 @@ html lang=r18n.locale.code
     meta property="og:description" content=t.share
     style= assets['style.css']
     style
-      | body, pre strong { font-family: "#{ t.font.name }", "Trebuchet MS", sans-serif; }
+      - fonts = [t.font.name, 'Trebuchet MS', 'sans-serif']
+      | body, pre strong { font-family: #{ fonts_list(fonts) }; }
     - if production?
       = include_statistics
   body.limit-internet
