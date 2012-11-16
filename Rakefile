@@ -14,10 +14,10 @@ require 'compass'
 require 'ceaser-easing'
 Compass.configuration.images_path = LAYOUT.to_s
 
+require 'coffee_script'
+
 require 'r18n-core'
 R18n.default_places = ROOT.join('i18n')
-
-require 'coffee_script'
 
 R18n::Filters.add('code') do |text, config|
   text.gsub(/`([^`]+)`/, '<code>\1</code>')
