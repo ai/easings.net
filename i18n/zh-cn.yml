@@ -41,9 +41,7 @@ easing:
   edit: 在 cubic-bezier.com ^编辑^
 
 opensource:
-  title:
-    opensource: 开放式源代码
-    translate: 翻译
+  title: 开放式源代码
   translate: ^帮忙翻译^本站成你的语言
 
 author: Andrey Sitnik

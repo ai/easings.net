@@ -372,15 +372,11 @@ $easing-width: 120px + 4px
     .rotator
       left: 12px
       top: -2px
-  .variant
-    display: none
-    &.show
-      display: block
   .translate
     position: absolute
     top: 90px
     text-align: center
-    color: #666
+    color: #333
     font-size: 13px
     opacity: 0
     padding: 0 3px
@@ -389,7 +385,7 @@ $easing-width: 120px + 4px
     z-index: 3
     +transition(opacity 400ms)
     a
-      color: #666
+      color: #333
       text-decoration: none
   &.show
     .text, .border
@@ -428,8 +424,6 @@ $easing-width: 120px + 4px
       display: none
     .rotator
       +rotate(180deg)
-    .translate
-      opacity: 1
 
 // Footer
 
@@ -480,6 +474,16 @@ footer
   select
     position: relative
     top: 9px
+
+// Big screens
+
+@media (min-width: 1045px)
+  .open-source.user-can-translate
+    .translate
+      +transition-delay(0)
+      opacity: 0.6
+    &.show .translate
+      opacity: 1
 
 // Small screens
 

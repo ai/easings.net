@@ -15,8 +15,8 @@ about: !!format
   to make it more realistic.
 
   The real object doesn’t begin its movement instantly and at a constant rate.
-  When we open the drawer, we first give it acceleration, and then we slow
-  it down. When something falls, it first goes down faster and faster, and then
+  When we open the drawer, we first give it acceleration, and then we slow
+  it down. When something falls, it first goes down faster and faster, and then
   bounces back after it hits the floor.
 
   This page will each time help to pick the desired easing function.
@@ -53,9 +53,7 @@ easing:
   edit: ^Edit^ on cubic-bezier.com.
 
 opensource:
-  title:
-    opensource: open source
-    translate: translate
+  title: open source
   translate: ^Help to translate^ site to your language
 
 author: Andrey Sitnik

@@ -56,9 +56,7 @@ easing:
   edit: ^Редактировать^ на cubic-bezier.com.
 
 opensource:
-  title:
-    opensource: open source
-    translate: переведи
+  title: open source
   translate: ^Помоги перевести^ сайт на твой язык
 
 author: Андрей Ситник

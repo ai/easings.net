@@ -53,9 +53,7 @@ easing:
   edit: ^Editar^ em cubic-bezier.com.
 
 opensource:
-  title:
-    opensource: open source
-    translate: tradução
+  title: open source
   translate: ^Ajude a traduzir^ o site para seu idioma
 
 author: Andrey Sitnik

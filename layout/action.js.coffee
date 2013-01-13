@@ -145,9 +145,8 @@ jQuery ($) ->
 
   # Open source badge text
 
-  texts    = $('.open-source .text .variant')
-  selected = Math.floor((texts.length - 0.001) * Math.random())
-  texts.removeClass('show').eq(selected).addClass('show')
+  if $('html').attr('lang') != navigator.language
+    $('.open-source').addClass('user-can-translate')
 
   # Open source corner animation
 
