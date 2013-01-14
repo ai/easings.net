@@ -145,14 +145,16 @@ jQuery ($) ->
 
   # Open source badge text
 
-  if $('html').attr('lang') != navigator.language
-    $('.open-source').addClass('user-can-translate')
+  corner = $('.open-source')
+
+  mainLang = (code) -> code.replace(/-[^-]+$/, '')
+
+  if mainLang($('html').attr('lang')) != mainLang(navigator.language)
+    corner.addClass('user-can-translate')
 
   # Open source corner animation
 
   unless isMobile
-    corner = $('.open-source')
-
     if support3d
       shadow    = corner.find('.shadow')
       rotator   = corner.find('.rotator')
