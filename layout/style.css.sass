@@ -271,9 +271,9 @@ $easing-width: 120px + 4px
   left: 0
 .page-animation
   .page-slider
-    +transition(left 600ms ceaser('easeInOutQuart'))
+    +transition(left 600ms ceaser($easeInOutQuart))
   .easing.linear
-    +transition(top 600ms ceaser('easeInOutQuart'))
+    +transition(top 600ms ceaser($easeInOutQuart))
 .easing-page
   .page-slider
     left: -105%
@@ -396,7 +396,7 @@ $easing-width: 120px + 4px
 .transform3d
   .open-source
     .rotator
-      +transition(all 600ms ceaser('easeInOutQuad'))
+      +transition(all 600ms ceaser($easeInOutQuad))
     .shadow
       position: absolute
       top: 0
@@ -460,7 +460,7 @@ footer
     width: 100%
     height: 100%
     top: -100%
-    +transition(top 400ms ceaser('easeInOutQuart'))
+    +transition(top 400ms ceaser($easeInOutQuart))
   .image
     +image("mask.png")
     position: relative
@@ -477,7 +477,7 @@ footer
 
 // Big screens
 
-@media (min-width: 1045px)
+@media (min-width: 1150px)
   .open-source.user-can-translate
     .translate
       +transition-delay(0)

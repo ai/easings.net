@@ -41,7 +41,7 @@
         pre
           code
             | div {
-                @include transition(all 600ms ceaser('<strong>#{t.howtos.name}</strong>')); }
+                @include transition(all 600ms ceaser(<strong>$#{t.howtos.name}</strong>); }
 
       section.css
         h3 CSS
@@ -93,7 +93,7 @@
             pre
               code
                 | div {
-                    @include transition(all 600ms ceaser('<strong>#{easing.name}</strong>')); }
+                    @include transition(all 600ms ceaser(<strong>$#{easing.name}</strong>); }
           - else
             p= t.easing.no_css
 
