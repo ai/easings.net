@@ -212,11 +212,6 @@ class Helpers
     LAYOUT.join('statistics.html').read
   end
 
-  def easing_example(name = t.howtos.name)
-    name = name.gsub(' ', ' ').gsub('-', '‑') # non-break space and hyphen
-    "<strong>#{ name }</strong>"
-  end
-
   def partial(name)
     render(LAYOUT.join("_#{name}.slim"))
   end
