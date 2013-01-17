@@ -15,12 +15,12 @@ about: !!format
   Denne side hjælper dig med at finde den rette easing funktion.
 
 easings:
-  css: Available everywhere
-  js: Only in JavaScript
+  css: Tilgængeligt alle steder
+  js: Kun i JavaScript
 
 howtos:
-  name: easing name
-  curve: easing’s Bezier curve
+  name: easing navn
+  curve: easing funktionens Bezier kurve
   js: !!code
     jQuery med ^jQuery Easing Plugin^ er  det lettede måde at angive en animation med easing. Du skal bare sætte easing navnet til `.animate` metoden som det tredje argument eller `easing`key.
   scss: !!code
@@ -34,13 +34,13 @@ howtos:
     Vælg easing for at se beskrivelsen sammen med en Bezier kurve.
 
 easing:
-  all_easings: All easings
+  all_easings: Alle easing funktioner
   no_css: !!code
     Desværre, CSS understøtter ikke denne easing funktion. Men du kan bruge JavaScript eller en speciel CSS animation `@keyframes`.
-  edit: ^Edit^ on cubic-bezier.com.
+  edit: ^Rediger^ på cubic-bezier.com.
 
 opensource:
   title: open source
-  translate: ^Help to translate^ site to your language
+  translate: ^Hjælp med at oversætte^ websitet til dit sprog
 
 author: Andrey Sitnik
