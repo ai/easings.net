@@ -1,0 +1,46 @@
+title: Reference over easing funktioner
+description:
+  Gør dine animationer mere realistiske ved at vælge den rette easingfunktion
+share:
+  Easing funktion angiver hvordan animationen forløber for at gøre den mere realistisk. Objektet begynder ikke at bevæge sig med det samme og med en konstant hastighed. Denne side hjælper dig med at finde den rette easing funktion.
+font:
+  name: PT Sans
+  url: family=PT+Sans:400,700&subset=latin
+
+about: !!format
+  ~Easing funktion~ angiver hvordan animationen forløber for at gøre den mere realistisk.
+
+  Objektet begynder ikke at bevæge sig med det samme og med en konstant hastighed. Når vi åbner en skuffe accellererer vi først bevægelsen, og så bremser vi den ned. Når noget falder, ryger det ned hurtigere og hurtigere, og så hopper det op igen efter det har ramt gulvet.
+
+  Denne side hjælper dig med at finde den rette easing funktion.
+
+easings:
+  css: Available everywhere
+  js: Only in JavaScript
+
+howtos:
+  name: easing name
+  curve: easing’s Bezier curve
+  js: !!code
+    jQuery med ^jQuery Easing Plugin^ er  det lettede måde at angive en animation med easing. Du skal bare sætte easing navnet til `.animate` metoden som det tredje argument eller `easing`key.
+  scss: !!code
+    Sass/SCSS hjælper dig med at angive animationer. Compass fjerner de nødvendige prefixes før `transition` og `animation` properties og med ^Compass Ceaser^ plugin kan du sætte easing funktioner ved navn (uden Bezier kurver).
+    to set easing by it name (without Bezier curves).
+  css: !!code
+    `transition` og `animation` CSS properties givr dig mulighed for at vælge en easing funktion.
+  css_bad:
+    Desværre understøtter de ikke alle easing funktioner, og du er nødt til at definere dem via Bezier kurver.
+  css_help:
+    Vælg easing for at se beskrivelsen sammen med en Bezier kurve.
+
+easing:
+  all_easings: All easings
+  no_css: !!code
+    Desværre, CSS understøtter ikke denne easing funktion. Men du kan bruge JavaScript eller en speciel CSS animation `@keyframes`.
+  edit: ^Edit^ on cubic-bezier.com.
+
+opensource:
+  title: open source
+  translate: ^Help to translate^ site to your language
+
+author: Andrey Sitnik
