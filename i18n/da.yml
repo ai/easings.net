@@ -15,7 +15,7 @@ about: !!format
   realistisk.
 
   Objektet begynder ikke at bevæge sig med det samme og med en konstant
-  hastighed. Når vi åbner en skuffe accellererer vi først bevægelsen, og så
+  hastighed. Når vi åbner en skuffe accellererer vi først bevægelsen, og så
   bremser vi den ned. Når noget falder, ryger det ned hurtigere og hurtigere,
   og så hopper det op igen efter det har ramt gulvet.
 
@@ -55,6 +55,6 @@ easing:
 
 opensource:
   title: open source
-  translate: ^Hjælp med at oversætte^ websitet til dit sprog
+  translate: ^Hjælp med at oversætte^ websitet til dit sprog
 
 author: Andrey Sitnik
