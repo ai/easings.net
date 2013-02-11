@@ -219,7 +219,7 @@ end
 
 def copy_with_extra_js(from, to, js)
   to.open('w') do |io|
-    io << from.read.gsub(/<head>/, "<head><script>#{js}</script>")
+    io << from.read.gsub(/<\/title>/, "<\/title><script>#{js}</script>")
   end
 end
 
