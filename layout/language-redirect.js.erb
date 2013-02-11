@@ -1,6 +1,9 @@
 if (location.pathname == '/') {
     var l = <%= R18n.available_locales.map { |i| i.code.downcase }.reject { |i| i == 'en' } %>;
     var u = navigator.language.toLowerCase().replace(/-\w+$/, '');
+    if ( u == 'no' ) {
+      u = 'nb';
+    }
     for (var i = 0; i < l.length; i++) {
         if ( u == l[i] ) {
             location.pathname = '/' + l[i];
