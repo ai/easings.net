@@ -6,9 +6,6 @@ share:
   para hacerla más realista. El objeto real no comienza su movimiento
   instantáneamente y de manera constante. Esta página le ayudará a escoger
   la función deseada.
-font:
-  name: PT Sans
-  url: family=PT+Sans:400,700&subset=latin
 
 about: !!format
   La ~función easing~ especifica la velocidad de la animación para hacerla

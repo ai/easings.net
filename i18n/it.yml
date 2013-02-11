@@ -6,9 +6,6 @@ share:
   un'animazione, rendendola più realistica. Un oggetto nella realtà non inizia
   istantaneamente il suo movimento e ad una frequenza costante. Questa pagina
   ti aiuta ogni volta a scegliere la funzione easing desiderata.
-font:
-  name: PT Sans
-  url: family=PT+Sans:400,700&subset=latin
 
 about: !!format
   ~La funzione Easing~ specifica la velocità delle accellerazioni di

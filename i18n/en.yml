@@ -6,9 +6,6 @@ share:
   to make it more realistic. The real object doesn’t begin its movement
   instantly and at a constant rate. This page will each time help to pick
   the desired easing function.
-font:
-  name: PT Sans
-  url: family=PT+Sans:400,700&subset=latin
 
 about: !!format
   ~Easing function~ specifies the speed of animation progresses

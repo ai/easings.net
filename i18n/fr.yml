@@ -7,9 +7,6 @@ share:
   pour la rendre plus réaliste. Un objet réel ne commence pas son mouvement
   instantanément et à vitesse constante. Cette page permet de choisir
   la fonction désirée.
-font:
-  name: PT Sans
-  url: family=PT+Sans:400,700&subset=latin
 
 about: !!format
   ~Easing function~ précise la vitesse d’exécution d’une animation

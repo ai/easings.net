@@ -3,9 +3,6 @@ description:
   透過選擇使用正確的Easing函數，讓動畫更加真實。
 share:
   Easing 函數指定了動畫效果在執行時的進度，讓它看起來更加真實。真實的物體是照著一定的速度移動，不會一開始就移動很快。本頁可以在每次你需要時，幫助你找到想要的函數。
-font:
-  name: PT Sans
-  url: family=PT+Sans&subset=latin
 
 about: !!format
   ~Easing函數~讓你可以指定動畫效果在執行時的速度，使其看起來更加真實。

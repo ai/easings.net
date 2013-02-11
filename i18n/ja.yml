@@ -5,9 +5,6 @@ share:
   Easing Functionはアニメーションの進み具合を指定することで、アニメーションをよりリアルに見せることが出来ます。
   現実の物体は急に動き出して、一定のスピードで動くことなんて有り得ません。
   このページでは、そのEasingの選択をより簡単にすることを目的としています。
-font:
-  name: PT Sans
-  url: family=PT+Sans:400,700&subset=latin
 
 about: !!format
   ~Easing function~はアニメーションの進み具合を指定し、それをよりリアルに見せることが出来ます。

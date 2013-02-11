@@ -3,9 +3,7 @@ description:
   透过正确使用的缓动函数，让动画更加真实。
 share:
   缓动函数允许指定动画在执行时的进度，使其看起来更加真实。现实物体照着一定速率移动，非初始即移动很快。本页可以在每次你需要时，帮助你找到想要的缓动函数。
-font:
-  name: PT Sans
-  url: family=PT+Sans&subset=latin
+font: 400&subset=latin
 
 about: !!format
   ~缓动函数~指定动画效果在执行时的速度，使其看起来更加真实。

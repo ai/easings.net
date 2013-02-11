@@ -4,9 +4,6 @@ description:
   mer realisitisk. Et ekte objekt begynner ikke bevegelsen umiddelbart med en
   konstant hurtighet. Denne siden vil hjelpe deg med å velge riktigeasing
   function.
-font:
-  name: PT Sans
-  url: family=PT+Sans:400,700&subset=latin
 
 about: !!format
   ~Easing funksjonen~ bestemmer hurtigheten på animasjonprogressen får å gjøre

@@ -5,17 +5,14 @@ html lang=r18n.locale.code
     title= t.title
     meta name="description" content=t.description
     script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery#{production? ? '.min' : ''}.js"
-    - font = t.font.url.gsub('&', '&amp;')
-    link rel="stylesheet" href="//fonts.googleapis.com/css?#{font}"
+    - font = (t.font | '400,700&subset=latin').gsub('&', '&amp;')
+    link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:#{font}"
     link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Mono"
     meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     meta property="og:url"         content="http://easings.net/"
     meta property="og:image"       content="http://easings.net/apple-touch-icon.png"
     meta property="og:description" content=t.share
     style= assets['style.css']
-    style
-      - fonts = [t.font.name, 'Trebuchet MS', 'sans-serif']
-      | body, pre strong { font-family: #{ fonts_list(fonts) }; }
     - if production?
       = include_statistics
   body.limit-internet

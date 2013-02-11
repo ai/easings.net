@@ -6,9 +6,6 @@ share:
   realistisk. Objektet begynder ikke at bevæge sig med det samme og med
   en konstant hastighed. Denne side hjælper dig med at finde den rette
   easing funktion.
-font:
-  name: PT Sans
-  url: family=PT+Sans:400,700&subset=latin
 
 about: !!format
   ~Easing funktion~ angiver hvordan animationen forløber for at gøre den mere
