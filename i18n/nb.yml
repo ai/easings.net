@@ -1,0 +1,55 @@
+title: Easing Functions Referanser
+description:
+  Easing funksjonen bestemmer hurtigheten på animasjonprogressen får å gjøre dem
+  mer realisitisk. Et ekte objekt begynner ikke bevegelsen umiddelbart med en
+  konstant hurtighet. Denne siden vil hjelpe deg med å velge riktigeasing
+  function.
+font:
+  name: PT Sans
+  url: family=PT+Sans:400,700&subset=latin
+
+about: !!format
+  ~Easing funksjonen~ bestemmer hurtigheten på animasjonprogressen får å gjøre
+  dem mer realisitisk.
+
+  Når vi åpner en skuff, gir vi den først akselerasjon, og så senker vi farten.
+  Når noe faller, vil det gå fortere og fortere, og så spretter tilbake etter at
+  den har truffet bakken.
+
+  Denne siden vil hjelpe deg med å velge riktigeasing function.
+
+easings:
+  css: Tilgjengelig overalt
+  js: Kun i JavaScript
+
+howtos:
+  name: easing navn
+  curve: easing’s Bezier kurve
+  js: !!code
+    jQuery med ^jQuery Easing Plugin^ er den letteste måten å forklare animasjon
+    med easing. Du trenger bare å sette easing-navnet til dey tredje argumentet,
+    eller `easing` key.
+  scss: !!code
+    Sass/SCSS hjelper deg med å forklare animasjon. Compass fjerner prefikser
+    før `transition` og `animation` property-ene, og ^Compass Ceaser^ plugin
+    tillater å sette easings etter navn (uten Bezier curves).
+  css: !!code
+    CSS property-ene `transition` og `animation` setter easing funksjon.
+  css_bad:
+    Uheldigvis, støtter ikke dem ikke alle easing-ene, og du må sette
+    funksjonene etter Bezier kurve.
+  css_help:
+    Velg easing for å se den i beskrivelsene i Bezier curve.
+
+easing:
+  all_easings: Alle easing-er
+  no_css: !!code
+   Uheldigvis, så støtter ikke CSS denne easing-en. Men du kan bruke den med
+   JavaScript eller spesielle CSS Animation `@keyframes`.
+  edit: ^Rediger^ på cubic-bezier.com.
+
+opensource:
+  title: open kildekode
+  translate: ^Help til å oversett^ siden til ditt språk
+
+author: Andrey Sitnik
