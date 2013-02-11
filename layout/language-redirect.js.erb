@@ -1,12 +1,26 @@
-if (location.pathname == '/') {
-    var l = <%= R18n.available_locales.map { |i| i.code.downcase }.reject { |i| i == 'en' } %>;
-    var u = navigator.language.toLowerCase().replace(/-\w+$/, '');
-    if ( u == 'no' ) {
-      u = 'nb';
+(function () {
+    var translations = <%= R18n.available_locales.
+        map    { |i| i.code.downcase }.
+        reject { |i| i == 'en' } %>;
+
+    var dialect  = navigator.language.toLowerCase();
+    var language = dialect.replace(/-\w+$/, '');
+
+    if ( language == 'no' ) {
+        language = 'nb';
     }
-    for (var i = 0; i < l.length; i++) {
-        if ( u == l[i] ) {
-            location.pathname = '/' + l[i];
+    if ( language == 'zh' ) {
+        language = 'zh-cn';
+    }
+
+    var find = function (user) {
+        for (var i = 0; i < translations.length; i++) {
+            if ( user == translations[i] ) {
+                location.pathname = '/' + translations[i];
+            }
         }
-    }
-}
+    };
+
+    find(dialect);
+    find(language);
+})();
