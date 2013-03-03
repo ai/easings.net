@@ -53,7 +53,7 @@ jQuery ($) ->
       div.find('.example').stop().css(marginTop: 0).delay(400).
         animate(marginTop: -60, 1000, easing)
       div.find('.dot').stop().css(marginTop: 0, marginLeft: 0).delay(400).
-        animate { marginTop: -60, marginLeft: 119}
+        animate { marginTop: -60, marginLeft: 119 },
           duration: 1000
           specialEasing: marginTop: easing, marginLeft: 'linear'
 
