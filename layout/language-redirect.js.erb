@@ -3,7 +3,8 @@
         map    { |i| i.code.downcase }.
         reject { |i| i == 'en' } %>;
 
-    var dialect  = navigator.language.toLowerCase();
+    var system   = navigator.userLanguage || navigator.language;
+    var dialect  = system.toLowerCase();
     var language = dialect.replace(/-\w+$/, '');
 
     if ( language == 'no' ) {

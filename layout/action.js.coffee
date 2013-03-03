@@ -149,8 +149,9 @@ jQuery ($) ->
 
   mainLang = (code) -> code.replace(/-[^-]+$/, '')
 
-  if mainLang($('html').attr('lang')) != mainLang(navigator.language)
-    corner.addClass('user-can-translate')
+  pageLang   = mainLang($('html').attr('lang'))
+  systemLang = mainLang(navigator.language || navigator.userLanguage)
+  corner.addClass('user-can-translate') if pageLang != systemLang
 
   # Open source corner animation
 
