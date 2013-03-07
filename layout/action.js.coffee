@@ -180,16 +180,15 @@ jQuery ($) ->
       showCorner = -> corner.addClass('show')
       hideCorner = -> corner.removeClass('show')
 
-    if isTablet
-      corner.find('.crop').click ->
-        if corner.hasClass('show')
-          hideCorner()
-        else
-          showCorner()
-        false
-    else
-      corner.mouseenter(showCorner)
-      corner.mouseleave(hideCorner)
+    corner.mouseenter(showCorner)
+    corner.mouseleave(hideCorner)
+
+    corner.find('.crop').on 'touchend', ->
+      if corner.hasClass('show')
+        hideCorner()
+      else
+        showCorner()
+      false
 
   # Detect limit Internet on mobile
 
