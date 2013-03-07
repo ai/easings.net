@@ -8,11 +8,6 @@ jQuery ($) ->
   descriptions = $('.easing-description')
   $body        = $('body')
   $window      = $(window)
-  isMobile     = window.innerWidth < 600
-  isTablet     = isAgent(/iPad/) or isAgent(/Android/)
-  isDesktop    = not isMobile and not isTablet
-
-  $body.addClass('tablet') if isTablet
 
   # Scroll
 
@@ -46,24 +41,27 @@ jQuery ($) ->
 
   # Easing example
 
-  if isDesktop
-    easings.mouseenter ->
-      div    = $(@)
-      easing = div.find('.easing-title').text()
-      div.find('.example').stop().css(marginTop: 0).delay(400).
-        animate(marginTop: -60, 1000, easing)
-      div.find('.dot').stop().css(marginTop: 0, marginLeft: 0).delay(400).
-        animate { marginTop: -60, marginLeft: 119 },
-          duration: 1000
-          specialEasing: marginTop: easing, marginLeft: 'linear'
+  easings.on 'touchstart', -> $(@).addClass('tapped')
+  easings.mouseenter ->
+    div = $(@)
+
+    return if div.addClass('tapped')
+    easings.removeClass('tapped')
+
+    easing = div.find('.easing-title').text()
+    div.find('.example').stop().css(marginTop: 0).delay(400).
+      animate(marginTop: -60, 1000, easing)
+    div.find('.dot').stop().css(marginTop: 0, marginLeft: 0).delay(400).
+      animate { marginTop: -60, marginLeft: 119 },
+        duration: 1000
+        specialEasing: marginTop: easing, marginLeft: 'linear'
 
   # Highlight easings part
 
-  if isDesktop
-    section = $('.easings')
-    titles  = section.find('.part-title')
-    titles.mouseenter -> section.addClass('hightlight-part')
-    titles.mouseleave -> section.removeClass('hightlight-part')
+  section = $('.easings')
+  titles  = section.find('.part-title')
+  titles.mouseenter -> section.addClass('hightlight-part')
+  titles.mouseleave -> section.removeClass('hightlight-part')
 
   # Easing example in easing page
 
@@ -155,7 +153,13 @@ jQuery ($) ->
 
   # Open source corner animation
 
-  unless isMobile
+  cornerActivated = false
+  cornerAnimation = ->
+    return if $window.width() < 600
+
+    cornerActivated = true
+    $window.off('resize.corner')
+
     if support3d
       shadow    = corner.find('.shadow')
       rotator   = corner.find('.rotator')
@@ -174,11 +178,11 @@ jQuery ($) ->
         corner.addClass('show')
         shadowing()
       hideCorner = ->
-        corner.removeClass('show')
+        corner.removeClass('show tappable')
         shadowing()
     else
       showCorner = -> corner.addClass('show')
-      hideCorner = -> corner.removeClass('show')
+      hideCorner = -> corner.removeClass('show tappable')
 
     corner.mouseenter(showCorner)
     corner.mouseleave(hideCorner)
@@ -188,7 +192,11 @@ jQuery ($) ->
         hideCorner()
       else
         showCorner()
+        corner.addClass('tappable')
       false
+
+  cornerAnimation()
+  $window.on('resize.corner', cornerAnimation) unless cornerActivated
 
   # Change languages link to select
 

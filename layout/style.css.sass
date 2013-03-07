@@ -180,6 +180,9 @@ $easing-width: 120px + 4px
   &:hover .graph
     .example, .dot
       opacity: 1
+  &:hover.tapped
+    .example, .dot
+      opacity: 0
 
 .howtos
   h2
@@ -391,6 +394,9 @@ $easing-width: 120px + 4px
       opacity: 0
     .translate
       opacity: 1
+  &.tappable
+    .translate a
+      text-decoration: underline
 
 .transform3d
   .open-source
@@ -503,17 +509,6 @@ footer
       text-align: center
       font-size: 12px
       margin: -3px 0 -1px 0
-
-// Tablet
-
-body.tablet
-  .easing
-    .graph
-      .example, .dot
-        display: none
-  .open-source
-    .translate a
-      text-decoration: underline
 
 // Mobile
 
