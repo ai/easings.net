@@ -270,17 +270,14 @@ $easing-width: 120px + 4px
   display: none
 .page-slider
   position: relative
-  left: 0
 .page-animation
-  .page-slider
-    +transition(left 600ms ceaser($easeInOutQuart))
-  .easing.linear
-    +transition(top 600ms ceaser($easeInOutQuart))
+  .page-slider, .easing.linear
+    +transition(all 600ms ceaser($easeInOutQuart))
 .easing-page
   .page-slider
-    left: -105%
+    +translateX(-105%)
   .easing.linear
-    top: -105px
+    +translateY(-105px)
 
 // Open source badge
 
