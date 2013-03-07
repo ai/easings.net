@@ -79,7 +79,7 @@ jQuery ($) ->
     page.addClass('exampled')
     after 400, ->
       page.find('.example').animate(marginTop: -78, 1000, easing)
-      page.find('.dot').animate { marginTop: -78, marginLeft: 154}
+      page.find('.dot').animate { marginTop: -78, marginLeft: 154 },
         duration: 1000
         specialEasing: marginTop: easing, marginLeft: 'linear'
         complete: ->
