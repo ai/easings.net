@@ -190,13 +190,6 @@ jQuery ($) ->
         showCorner()
       false
 
-  # Detect limit Internet on mobile
-
-  if isMobile
-    net = navigator.connection
-    if net and net.type != net.CELL_2G and net.type != net.CELL_3G
-      $body.removeClass('limit-internet')
-
   # Change languages link to select
 
   changer = $('<select />').insertAfter('footer ul').change ->
