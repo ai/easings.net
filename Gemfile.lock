@@ -24,7 +24,7 @@ GEM
       rack
     rake (10.0.3)
     ref (1.0.2)
-    sass (3.2.6)
+    sass (3.2.7)
     sinatra (1.3.5)
       rack (~> 1.4)
       rack-protection (~> 1.3)
@@ -41,7 +41,7 @@ GEM
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
       ref
-    tilt (1.3.4)
+    tilt (1.3.5)
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
