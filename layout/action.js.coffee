@@ -45,7 +45,7 @@ jQuery ($) ->
   easings.mouseenter ->
     div = $(@)
 
-    return if div.addClass('tapped')
+    return if div.hasClass('tapped')
     easings.removeClass('tapped')
 
     easing = div.find('.easing-title').text()
