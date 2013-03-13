@@ -20,7 +20,7 @@ GEM
     multi_json (1.6.1)
     r18n-core (1.1.4)
     rack (1.5.2)
-    rack-protection (1.4.0)
+    rack-protection (1.5.0)
       rack
     rake (10.0.3)
     ref (1.0.2)
