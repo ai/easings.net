@@ -37,7 +37,7 @@ howtos:
     CSS properties `transition` and `animation` allow you to set easing
     function.
   css_bad:
-    Unfortunately, them support not all easings and you must set function
+    Unfortunately, they don't support all easings and you must set function
     by Bezier curve.
   css_help:
     Select easing to show it description in Bezier curve.
