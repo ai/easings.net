@@ -26,16 +26,16 @@ howtos:
   name: easing navn
   curve: easing funktionens Bezier kurve
   js: !!code
-    jQuery med ^jQuery Easing Plugin^ er  det lettede måde at angive en
+    jQuery med ^jQuery Easing Plugin^ er den letteste måde at angive en
     animation med easing. Du skal bare sætte easing navnet til `.animate`
-    metoden som det tredje argument eller `easing`key.
+    metoden som det tredje argument, eller vha. `easing` key.
   scss: !!code
     Sass/SCSS hjælper dig med at angive animationer. Compass fjerner
     de nødvendige prefixes før `transition` og `animation` properties og med
-    ^Compass Ceaser^ plugin kan du sætte easing funktioner ved navn
+    ^Compass Ceaser^ plugin kan du sætte easing funktioner vha. deres navn
     (uden Bezier kurver).
   css: !!code
-    "`transition` og `animation` CSS properties givr dig mulighed for at vælge
+    "`transition` og `animation` CSS properties giver dig mulighed for at vælge
     en easing funktion."
   css_bad:
     Desværre understøtter de ikke alle easing funktioner, og du er nødt til
@@ -47,7 +47,7 @@ easing:
   all_easings: Alle easing funktioner
   no_css: !!code
     Desværre, CSS understøtter ikke denne easing funktion. Men du kan bruge
-    JavaScript eller en speciel CSS animation `@keyframes`.
+    JavaScript eller en speciel CSS animation vha. `@keyframes`.
   edit: ^Rediger^ på cubic-bezier.com.
 
 opensource:
