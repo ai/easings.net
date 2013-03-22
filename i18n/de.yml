@@ -14,7 +14,7 @@ about: !!format
   Animation damit diese realistischer wirkt.
 
   Wenn man zum Beispiel eine Schublade öffnet, wird diese erst beschleunigt.
-  Anschließend bremsen wir die Beschleunigung wieder. Das wäre die easeOutCirc
+  Anschließend bremsen wir die Beschleunigung wieder. Das wäre die easeOutCirc
   Übergangsfunktion.
 
   Diese Seite hilft dir die richtige Übergangsfunktion auszuwählen.
