@@ -8,15 +8,15 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.1)
-    compass (0.13.alpha.2.222937c)
+    compass (0.13.alpha.0)
       chunky_png (~> 1.2)
-      listen (~> 0.5.3)
+      fssm (>= 0.2.7)
       sass (~> 3.2.0.alpha.93)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    fssm (0.2.10)
     hike (1.2.1)
     libv8 (3.11.8.13)
-    listen (0.5.3)
     multi_json (1.6.1)
     r18n-core (1.1.4)
     rack (1.5.2)
