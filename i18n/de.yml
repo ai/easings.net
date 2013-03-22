@@ -28,13 +28,13 @@ howtos:
   curve: Bézierkurve
   js: !!code
     jQuery mit dem ^jQuery Easing Plugin^ ist der einfachste Weg eine Animation
-    für Elemente zu erstellen. Der Name der Übergangsfunktion wird als
+    für Elemente zu erstellen. Der Name der Übergangsfunktion wird als
     3. Argument an die `.animate` Funktion übergeben.
   scss: !!code
     Sass/SCSS helfen dir deine Animation kompakt zu beschreiben. Compass
     entfernt die Präfixe vor den Eigenschaften `transition` ùnd `animation`.
     Die Compass Erweiterung ^Compass Ceaser^ erlaubt eine Animation per Namen
-    auszuwählen oder die Bézierkurve zu definieren.
+    auszuwählen oder die Bézierkurve zu definieren.
   css: !!code
     Die CSS Eigenschaften `transition` und `animation` erlauben es die
     Übergangsfunktion festzulegen.
