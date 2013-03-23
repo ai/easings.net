@@ -45,10 +45,12 @@ end
 
 class Easing
   attr_reader :name
+  attr_reader :gs_name
   attr_reader :css
 
   def initialize(attrs)
     @name = attrs['name']
+    @gs_name = attrs['gs_name']
     @css  = attrs['css']
   end
 
