@@ -35,6 +35,13 @@
           code
             | div.animate({ top: '-=100px' }, 600, '<strong>#{t.howtos.name}</strong>', function () { … })
 
+      section.gsap
+        h3 GSAP
+        p= t.howtos.gsap.link('http://www.greensock.com/tweenmax/').link('http://www.greensock.com/jquery-gsap-plugin/')
+        pre
+          code
+            | TweenMax.to(div, 0.6, {y: -100, ease: <strong>#{t.howtos.gs_name}</strong>, onComplete: function () { … }})
+
       section.scss
         h3 SCSS
         p= t.howtos.scss.link('https://github.com/jhardy/compass-ceaser-easing')
@@ -85,6 +92,13 @@
           pre
             code
               | div.animate({ top: '-=100px' }, 600, '<strong>#{easing.name}</strong>', function () { … })
+        
+        section.gsap
+          h3 GSAP
+          p= t.howtos.gsap.link('http://www.greensock.com/tweenmax/').link('http://www.greensock.com/jquery-gsap-plugin/')
+          pre
+            code
+              | TweenMax.to(div, 0.6, {y: -100, ease: <strong>#{easing.gs_name}</strong>, onComplete: function () { … }})
 
         section.scss
           h3 SCSS

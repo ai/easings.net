@@ -1,61 +1,92 @@
 - name: linear
+  gs_name: Linear
 - name: easeInSine
+  gs_name: 'Sine.easeIn'
   css:  cubic-bezier(0.47, 0, 0.745, 0.715)
 - name: easeOutSine
+  gs_name: Sine.easeOut
   css:  cubic-bezier(0.39, 0.575, 0.565, 1)
 - name: easeInOutSine
+  gs_name: Sine.easeInOut
   css:  cubic-bezier(0.445, 0.05, 0.55, 0.95)
 - name: easeInQuad
+  gs_name: Quad.easeIn
   css:  cubic-bezier(0.55, 0.085, 0.68, 0.53)
 - name: easeOutQuad
+  gs_name: Quad.easeOut
   css:  cubic-bezier(0.25, 0.46, 0.45, 0.94)
 - name: easeInOutQuad
+  gs_name: Quad.easeInOut
   css:  cubic-bezier(0.455, 0.03, 0.515, 0.955)
 - name: easeInCubic
+  gs_name: Cubic.easeIn
   css:  cubic-bezier(0.55, 0.055, 0.675, 0.19)
 - name: easeOutCubic
+  gs_name: Cubic.easeOut
   css:  cubic-bezier(0.215, 0.61, 0.355, 1)
 - name: easeInOutCubic
+  gs_name: Cubic.easeInOut
   css:  cubic-bezier(0.645, 0.045, 0.355, 1)
 - name: easeInQuart
+  gs_name: Quart.easeIn
   css:  cubic-bezier(0.895, 0.03, 0.685, 0.22)
 - name: easeOutQuart
+  gs_name: Quart.easeOut
   css:  cubic-bezier(0.165, 0.84, 0.44, 1)
 - name: easeInOutQuart
+  gs_name: Quart.easeInOut
   css:  cubic-bezier(0.77, 0, 0.175, 1)
 - name: easeInQuint
+  gs_name: Quint.easeIn
   css:  cubic-bezier(0.755, 0.05, 0.855, 0.06)
 - name: easeOutQuint
+  gs_name: Quint.easeOut
   css:  cubic-bezier(0.23, 1, 0.32, 1)
 - name: easeInOutQuint
+  gs_name: Quint.easeInOut
   css:  cubic-bezier(0.86, 0, 0.07, 1)
 - name: easeInExpo
+  gs_name: Expo.easeIn
   css:  cubic-bezier(0.95, 0.05, 0.795, 0.035)
 - name: easeOutExpo
+  gs_name: Expo.easeOut
   css:  cubic-bezier(0.19, 1, 0.22, 1)
 - name: easeInOutExpo
+  gs_name: Expo.easeInOut
   css:  cubic-bezier(1, 0, 0, 1)
 - name: easeInCirc
+  gs_name: Circ.easeIn
   css:  cubic-bezier(0.6, 0.04, 0.98, 0.335)
 - name: easeOutCirc
+  gs_name: Circ.easeOut
   css:  cubic-bezier(0.075, 0.82, 0.165, 1)
 - name: easeInOutCirc
+  gs_name: Circ.easeInOut
   css:  cubic-bezier(0.785, 0.135, 0.15, 0.86)
 - name: easeInBack
+  gs_name: Back.easeIn
   css:  cubic-bezier(0.6, -0.28, 0.735, 0.045)
 - name: easeOutBack
+  gs_name: Back.easeOut
   css:  cubic-bezier(0.175, 0.885, 0.32, 1.275)
 - name: easeInOutBack
+  gs_name: Back.easeInOut
   css:  cubic-bezier(0.68, -0.55, 0.265, 1.55)
 - name: easeInElastic
+  gs_name: Elastic.easeIn
   css:  no
 - name: easeOutElastic
+  gs_name: Elastic.easeOut
   css:  no
 - name: easeInOutElastic
+  gs_name: Elastic.easeInOut
   css:  no
 - name: easeInBounce
+  gs_name: Bounce.easeIn
   css:  no
 - name: easeOutBounce
+  gs_name: Bounce.easeOut
   css:  no
 - name: easeInOutBounce
+  gs_name: Bounce.easeInOut
   css:  no

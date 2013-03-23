@@ -24,11 +24,14 @@ easings:
 
 howtos:
   name: easing name
+  gs_name: Easing.name
   curve: easing’s Bezier curve
   js: !!code
     jQuery with ^jQuery Easing Plugin^ is the easiest way to describe animation
     with easing. You need just set easing name to `.animate` method as
     third argument or `easing` key.
+  gsap: !!code
+    The ^Greensock Animation Platform^ offers an industry standard (originally ActionScript) tweening solution for JavaScript. Besides the smoothest and nicely optimised 2D and 3D transforms, it handles all easing equations throught its easing plugin. A ^jQuery plugin^ is also available for those, who prefer to use the jQuery `animate()` method with nicer and better performing animations.
   scss: !!code
     Sass/SCSS help you to describe animation. Compass remove prefixes before
     `transition` and `animation` properties and ^Compass Ceaser^ plugin allow
