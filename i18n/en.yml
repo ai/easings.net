@@ -10,13 +10,13 @@ share:
 about: !!format
   ~Easing functions~ specify the rate of change of a parameter
   over time.
-  
+
   Objects in real life don’t just start and stop instantly, and almost never
   move at a constant speed.
-  
+
   When we open a drawer, we first move it quickly, and slow it down as it comes
-  out. Drop something on the floor, and it will first accelerate downwards, and then
-  bounce back up after hitting the floor.
+  out. Drop something on the floor, and it will first accelerate downwards,
+  and then bounce back up after hitting the floor.
 
   This page helps you choose the right easing function.
 
@@ -28,17 +28,20 @@ howtos:
   name: easing name
   curve: easing’s Bezier curve
   js: !!code
-    jQuery with the ^jQuery Easing Plugin^ is the easiest way to describe animation
-    with easing. Pass the easing name (like `easeInCirc`) to the `.animate()` function
-    as the third argument, or use it as the value of the `easing` option.
+    jQuery with the ^jQuery Easing Plugin^ is the easiest way to describe
+    animation with easing. Pass the easing name (like `easeInCirc`)
+    to the `.animate()` function as the third argument, or use it as the value
+    of the `easing` option.
   scss: !!code
     Sass/SCSS can describe animations too! Compass removes prefixes before
-    the `transition` and `animation` properties, and the ^Compass Ceaser^ plugin
-    lets you pass the easing function by name (without specifying the exact Bezier curves).
+    the `transition` and `animation` properties, <nobr>and the
+    ^Compass Ceaser^</nobr> plugin lets you pass the easing function by name
+    (without specifying the exact Bezier curves).
   css: !!code
-    CSS properties `transition` and `animation` allow you to pick the easing function.
+    CSS properties `transition` and `animation` allow you to pick the easing
+    function.
   css_bad:
-    Unfortunately, they don’t support all easings and you must 
+    Unfortunately, they don’t support all easings and you must
     specify the desired easing function yourself (as a Bezier curve).
   css_help:
     Select an easing function to show it’s Bezier curve notation.
