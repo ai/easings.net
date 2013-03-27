@@ -14,11 +14,9 @@ about: !!format
   Animationsverläufe.
 
   Wenn man zum Beispiel eine Schublade öffnet, wird diese erst beschleunigt.
-  Anschließend bremsen wir die Beschleunigung wieder. Das wäre die easeOutCirc
-  Übergangsfunktion.
-
-  Lässt man einen Ball fallen beschleunigt dieser und hüpft nach Auftreffen auf
-  dem Boden noch ein paar mal herum.
+  Anschließend bremsen wir die Beschleunigung wieder. Lässt man einen
+  Ball fallen beschleunigt dieser und hüpft nach Auftreffen auf dem Boden
+  noch ein paar mal herum.
 
   Diese Seite hilft dir die richtige Übergangsfunktion auszuwählen.
 
