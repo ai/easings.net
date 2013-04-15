@@ -1,5 +1,3 @@
-@import 'compass/css3'
-@import 'compass/layout/sticky-footer'
 @import 'compass/typography/text/force-wrap'
 @import 'ceaser-easing'
 
@@ -45,7 +43,7 @@ a
 
 $easing-width: 120px + 4px
 
-.root, footer
+.centered
   width: 6 * ($easing-width + 20px) + 35px
   max-width: 96%
   margin: 0 auto
@@ -66,7 +64,7 @@ $easing-width: 120px + 4px
   .part
     position: relative
     ul
-      +transition(opacity 400ms)
+      transition: opacity 400ms
   .part-title
     position: absolute
     top: -12px
@@ -97,7 +95,7 @@ $easing-width: 120px + 4px
     .easing-title
       margin-bottom: -35px
   &.easeOutElastic .easing-title
-    +box-shadow(white 0 26px 8px -8px inset)
+    box-shadow: white 0 26px 8px -8px inset
   .button
     margin: -5px
     padding: 5px
@@ -117,7 +115,7 @@ $easing-width: 120px + 4px
   box-shadow: inset 0 0 5px black(0.5)
   .button
     background: white
-    +scale(0.9)
+    transform: scale(0.9)
     box-shadow: 0 0 2px black(0.3)
 
 .graph
@@ -147,9 +145,9 @@ $easing-width: 120px + 4px
     overflow: hidden
     z-index: 10
     background: #e40000
-    +background( linear-gradient(#fe0000, #d00000) )
+    background: linear-gradient(#fe0000, #d00000)
     .top, .bottom
-      +rotate(45deg)
+      transform: rotate(45deg)
       background: white
       position: absolute
       left: -11px
@@ -164,13 +162,13 @@ $easing-width: 120px + 4px
     background: #ddd
     width: 2px
     height: 2px
-    +border-radius(2px)
+    border-radius: 2px
 
 .easing
   .graph
     .example, .dot
       opacity: 0
-      +transition(opacity 200ms)
+      transition: opacity 200ms
     .example
       top: 94px
       left: $easing-width - 2px
@@ -225,7 +223,7 @@ $easing-width: 120px + 4px
       left: 2px
     .example, .dot
       opacity: 0
-      +transition(opacity 200ms)
+      transition: opacity 200ms
     svg
       width: 1.3 * $easing-width
       height: 1.3 * (60px + 80px)
@@ -244,7 +242,7 @@ $easing-width: 120px + 4px
       text-decoration: none
       border-bottom: 1px solid #bbb
       line-height: 1
-      +transition(border-bottom-color 150ms)
+      transition: border-bottom-color 150ms
       &:hover
         border-bottom-color: black
   pre
@@ -275,12 +273,12 @@ $easing-width: 120px + 4px
   position: relative
 .page-animation
   .page-slider, .easing.linear
-    +transition(all 600ms ceaser($easeInOutQuart))
+    transition: all 600ms ceaser($easeInOutQuart)
 .easing-page
   .page-slider
-    +translateX(-105%)
+    transform: translateX(-105%)
   .easing.linear
-    +translateY(-105px)
+    transform: translateY(-105px)
 
 // Open source badge
 
@@ -309,10 +307,10 @@ $easing-width: 120px + 4px
     left: 32px
     width: 120px
     height: 120px
-    +rotate(45deg)
+    transform: rotate(45deg)
   .background
     background: #e8e8e8
-    +box-shadow(black(0.5) 0 -7px 7px -7px inset)
+    box-shadow: inset 0 -7px 7px -7px black(0.5)
   .source
     position: absolute
     color: black
@@ -328,14 +326,14 @@ $easing-width: 120px + 4px
     background: white
     top: 22px
     left: -50px
-    +rotate(45deg)
+    transform: rotate(45deg)
   .octocat
     position: absolute
     +image("octocat.png")
-    +rotate(45deg)
+    transform: rotate(45deg)
     top: 24px
     left: 43px
-    +box-shadow(black(0.4) 0 -5px 5px -5px inset)
+    box-shadow: inset 0 -5px 5px -5px black(0.4)
   .corner
     position: absolute
     overflow: hidden
@@ -347,9 +345,9 @@ $easing-width: 120px + 4px
     left: 23px
     width: 82px
     height: 80px
-    +rotate(45deg)
+    transform: rotate(45deg)
     background: white
-    +box-shadow(black(0.5) 0 0 3px)
+    box-shadow: 0 0 3px black(0.5)
   .border, .text
     position: absolute
     bottom: 0
@@ -385,7 +383,7 @@ $easing-width: 120px + 4px
     background: white
     box-shadow: 0 0 6px white
     z-index: 3
-    +transition(opacity 400ms)
+    transition: opacity 400ms
     a
       color: black
       text-decoration: none
@@ -401,7 +399,7 @@ $easing-width: 120px + 4px
 .transform3d
   .open-source
     .rotator
-      +transition(all 600ms ceaser($easeInOutQuad))
+      transition: all 600ms ceaser($easeInOutQuad)
     .shadow
       position: absolute
       top: 0
@@ -411,31 +409,40 @@ $easing-width: 120px + 4px
       background: black(0.1)
       opacity: 0
     .text, .border
-      +transition-property(opacity)
-      +transition-delay(250ms)
+      transition-property: opacity
+      transition-delay: 250ms
     .translate
-      +transition-delay(0)
+      transition-delay: 0
     &.show
       .translate
-        +transition-delay(400ms)
+        transition-delay: 400ms
       .text, .border
-        +transition-delay(200ms)
+        transition-delay: 200ms
       .rotator
-        +rotate3d(1, 1, 0, 180deg)
+        transform: rotate3d(1, 1, 0, 180deg)
 
 .transform2d
   .open-source.show
     .text, .border
       display: none
     .rotator
-      +rotate(180deg)
+      transform: rotate(180deg)
 
 // Footer
 
-+sticky-footer(40px, ".root", ".root-footer", "footer")
+html
+  position: relative
+  min-height: 100%
+
+body
+  margin-bottom: 40px
 
 footer
+  position: absolute
+  left: 0
+  bottom: 0
   height: 40px
+  width: 100%
   text-align: right
   a
     line-height: 40px
@@ -447,7 +454,7 @@ footer
     padding-left: 27px
     font-size: 13px
     position: relative
-    +transition(color 400ms)
+    transition: color 400ms
     &:hover
       text-decoration: none
       color: black
@@ -465,7 +472,7 @@ footer
     width: 100%
     height: 100%
     top: -100%
-    +transition(top 400ms ceaser($easeInOutQuart))
+    transition: top 400ms ceaser($easeInOutQuart)
   .image
     +image("mask.png")
     position: relative
@@ -485,7 +492,7 @@ footer
 @media (min-width: 1150px)
   .open-source.user-can-translate
     .translate
-      +transition-delay(0)
+      transition-delay: 0
       opacity: 0.5
     &.show .translate
       opacity: 1
@@ -513,7 +520,7 @@ footer
 // Mobile
 
 @media (max-width: 600px)
-  .root, footer
+  .centered
     width: auto
     max-width: 100%
     padding: 0 10px
@@ -576,7 +583,7 @@ footer
   .easing-description
     margin-top: -10px
     padding: 0 10px
-    +box-sizing(border-box)
+    box-sizing: border-box
     .back
       font-size: 14px
     h2

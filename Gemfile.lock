@@ -1,6 +1,8 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    autoprefixer-rails (0.2.20130413)
+      execjs
     ceaser-easing (0.6.1)
       compass (>= 0.12.2)
     chunky_png (1.2.8)
@@ -50,6 +52,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   ceaser-easing
   coffee-script
   compass (~> 0.13.alpha.0)

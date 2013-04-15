@@ -12,6 +12,7 @@ require 'slim'
 
 require 'compass'
 require 'ceaser-easing'
+require 'autoprefixer-rails'
 Compass.configuration.images_path = LAYOUT.to_s
 
 require 'coffee_script'
@@ -149,6 +150,8 @@ class Helpers
         if @env == :production
           env.js_compressor = Uglifier.new(copyright: false)
         end
+
+        AutoprefixerRails.install(env)
       end
     end
   end

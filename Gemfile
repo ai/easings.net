@@ -5,6 +5,7 @@ gem 'sinatra'
 
 gem 'slim'
 gem 'compass', '~> 0.13.alpha.0'
+gem 'autoprefixer-rails'
 gem 'coffee-script'
 gem 'therubyracer'
 gem 'sprockets'

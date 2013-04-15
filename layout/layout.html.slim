@@ -16,26 +16,26 @@ html lang=r18n.locale.code
     - if production?
       = include_statistics
   body
-    .root
+    .centered
       = yield
-      .root-footer
 
     footer
-      a.author href="https://github.com/ai" target="_blank"
-        .mask
-          .hover
-          .image
-        = t.author
-      .share
-      ul
-        - each_locale do |code, locale|
-          li
-            - if locale == r18n.locale
-              span.current
-                = locale.title
-            - else
-              a rel="alternate" hreflang=code href="/#{code.downcase}"
-                = locale.title
+      .centered
+        a.author href="https://github.com/ai" target="_blank"
+          .mask
+            .hover
+            .image
+          = t.author
+        .share
+        ul
+          - each_locale do |code, locale|
+            li
+              - if locale == r18n.locale
+                span.current
+                  = locale.title
+              - else
+                a rel="alternate" hreflang=code href="/#{code.downcase}"
+                  = locale.title
 
     .open-source
       a.crop href="https://github.com/ai/easings.net" target='_blank'
