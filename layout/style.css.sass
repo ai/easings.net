@@ -1,7 +1,6 @@
-@import 'compass/typography/text/force-wrap'
-@import 'ceaser-easing'
-
 // Mixin and Helpers
+
+@import "rails-sass-images"
 
 @function black($opacity)
   @return rgba(0, 0, 0, $opacity)
@@ -9,14 +8,8 @@
 @function white($opacity)
   @return rgba(255, 255, 255, $opacity)
 
-@mixin image-size($path, $factor)
-  width: image-width($path) / $factor
-  height: image-height($path) / $factor
-
-@mixin image($path)
-  +image-size($path, 2)
-  background-image: inline-image($path)
-  background-size: 100% 100%
+$ease-in-out-quad:  cubic-bezier(0.455, 0.03, 0.515, 0.955)
+$ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1)
 
 // Base styles
 
@@ -273,7 +266,7 @@ $easing-width: 120px + 4px
   position: relative
 .page-animation
   .page-slider, .easing.linear
-    transition: all 600ms ceaser($easeInOutQuart)
+    transition: all 600ms $ease-in-out-quart
 .easing-page
   .page-slider
     transform: translateX(-105%)
@@ -329,7 +322,7 @@ $easing-width: 120px + 4px
     transform: rotate(45deg)
   .octocat
     position: absolute
-    +image("octocat.png")
+    +hidpi-inline("octocat.png")
     transform: rotate(45deg)
     top: 24px
     left: 43px
@@ -399,7 +392,7 @@ $easing-width: 120px + 4px
 .transform3d
   .open-source
     .rotator
-      transition: all 600ms ceaser($easeInOutQuad)
+      transition: all 600ms $ease-in-out-quad
     .shadow
       position: absolute
       top: 0
@@ -472,9 +465,9 @@ footer
     width: 100%
     height: 100%
     top: -100%
-    transition: top 400ms ceaser($easeInOutQuart)
+    transition: top 400ms $ease-in-out-quart
   .image
-    +image("mask.png")
+    +hidpi-inline("mask.png")
     position: relative
     z-index: 2
   li
@@ -540,7 +533,7 @@ footer
         display: none
 
   pre
-    +force-wrap
+    white-space: pre-wrap
 
   .open-source
     display: none

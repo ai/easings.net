@@ -1,21 +1,24 @@
 # encoding: utf-8
 
 require 'pathname'
+
+class Pathname
+  def glob(pattern, &block)
+    Pathname.glob(self.join(pattern), &block)
+  end
+end
+
 ROOT    = Pathname(__FILE__).dirname
 CONTENT = ROOT.join('content/')
 PUBLIC  = ROOT.join('public/')
 LAYOUT  = ROOT.join('layout/')
 
+require 'slim'
 require 'uglifier'
 require 'sprockets'
-require 'slim'
-
-require 'compass'
-require 'ceaser-easing'
-require 'autoprefixer-rails'
-Compass.configuration.images_path = LAYOUT.to_s
-
 require 'coffee_script'
+require 'rails-sass-images'
+require 'autoprefixer-rails'
 
 require 'r18n-core'
 R18n.default_places = ROOT.join('i18n')
@@ -28,12 +31,6 @@ R18n::Filters.add('format') do |text, config|
   '<p>' +
     text.gsub(/~([^~]+)~/, '<strong>\1</strong>').gsub("\n", '</p><p>') +
   '</p>'
-end
-
-class Pathname
-  def glob(pattern, &block)
-    Pathname.glob(self.join(pattern), &block)
-  end
 end
 
 class R18n::TranslatedString
@@ -113,14 +110,13 @@ class Helpers
         env.append_path(LAYOUT)
         env.append_path(ROOT.join('vendor'))
 
-        Sass.load_paths.concat(Compass.sass_engine_options[:load_paths])
-
         if @env == :production
           env.js_compressor  = Uglifier.new(copyright: false)
-          env.css_compressor = Sprockets::SassCompressor
+          env.css_compressor = :sass
         end
 
         AutoprefixerRails.install(env)
+        RailsSassImages.install(env)
       end
     end
   end

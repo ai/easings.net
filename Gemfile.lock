@@ -1,32 +1,32 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    autoprefixer-rails (0.2.20130413)
+    autoprefixer-rails (0.4.20130507)
       execjs
-    ceaser-easing (0.6.1)
-      compass (>= 0.12.2)
-    chunky_png (1.2.8)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
-    compass (0.13.alpha.4)
-      chunky_png (~> 1.2)
-      listen (<= 0.9.9)
-      sass (~> 3.2.5)
+    dimensions (1.2.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
     hike (1.2.2)
+    json (1.7.7)
     libv8 (3.11.8.17)
-    listen (0.7.3)
-    multi_json (1.7.2)
+    mime-types (1.23)
+    multi_json (1.7.3)
     r18n-core (1.1.4)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
+    rails-sass-images (0.3)
+      dimensions (> 0)
+      mime-types (> 0)
+      sass (> 0)
+      sprockets (> 0)
     rake (10.0.4)
     ref (1.0.4)
-    sass (3.2.7)
+    sass (3.2.8)
     sinatra (1.4.2)
       rack (~> 1.5, >= 1.5.2)
       rack-protection (~> 1.4)
@@ -34,12 +34,12 @@ GEM
     slim (1.3.8)
       temple (~> 0.6.3)
       tilt (~> 1.3.3)
-    sprockets (2.9.2)
+    sprockets (2.9.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    temple (0.6.3)
+    temple (0.6.4)
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
       ref
@@ -53,13 +53,13 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
-  ceaser-easing
   coffee-script
-  compass (~> 0.13.alpha.0)
+  json
   r18n-core
+  rails-sass-images
   rake
   sinatra
-  slim
+  slim (> 1.3.0)
   sprockets
   therubyracer
   uglifier
