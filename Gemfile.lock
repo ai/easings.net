@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     autoprefixer-rails (0.4.20130507)
       execjs
@@ -26,7 +26,7 @@ GEM
       sprockets (> 0)
     rake (10.0.4)
     ref (1.0.4)
-    sass (3.2.8)
+    sass (3.2.9)
     sinatra (1.4.2)
       rack (~> 1.5, >= 1.5.2)
       rack-protection (~> 1.4)
@@ -44,7 +44,7 @@ GEM
       libv8 (~> 3.11.8.12)
       ref
     tilt (1.3.7)
-    uglifier (2.0.1)
+    uglifier (2.1.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
 
@@ -58,6 +58,7 @@ DEPENDENCIES
   r18n-core
   rails-sass-images
   rake
+  sass
   sinatra
   slim (> 1.3.0)
   sprockets
