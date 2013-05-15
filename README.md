@@ -42,6 +42,6 @@ for example `fr-ca` for Canadian French) and translate all messages.
     bundle exec rake server
      ```
 
-4. And open [localhost:4567] in browser.
+4. And open [localhost:3000] in browser.
 
-[localhost:4567]: http://localhost:4567/
+[localhost:3000]: http://localhost:3000/
