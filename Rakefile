@@ -16,6 +16,7 @@ LAYOUT  = ROOT.join('layout/')
 require 'slim'
 require 'uglifier'
 require 'sprockets'
+require 'evil-front'
 require 'coffee_script'
 require 'rails-sass-images'
 require 'autoprefixer-rails'
@@ -95,6 +96,7 @@ end
 
 class Helpers
   include R18n::Helpers
+  include EvilFront::Helpers
 
   attr_accessor :env
 
@@ -117,6 +119,7 @@ class Helpers
 
         AutoprefixerRails.install(env)
         RailsSassImages.install(env)
+        EvilFront.install(env)
       end
     end
   end

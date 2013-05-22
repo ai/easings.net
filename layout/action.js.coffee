@@ -1,22 +1,19 @@
 #= require jquery.easing
+#= require evil-front/after
+#= require evil-front/detect-3d
 
-after   = (ms, fn) -> setTimeout(fn, ms)
-isAgent = (regexp) -> !!navigator.userAgent.match(regexp)
-
-jQuery ($) ->
+evil.doc.ready ($) ->
   easings      = $('.easings li')
   descriptions = $('.easing-description')
-  $body        = $('body')
-  $window      = $(window)
 
   # Scroll
 
   allScroll = null
 
   hash = (hash) ->
-    scroll = $window.scrollTop()
+    scroll = evil.win.scrollTop()
     document.location.hash = hash
-    $window.scrollTop(scroll)
+    evil.win.scrollTop(scroll)
 
   scrollTo = (top, fn) -> $('html, body').animate(scrollTop: top, 600, fn)
 
@@ -31,22 +28,22 @@ jQuery ($) ->
   links = easings.find('.link')
 
   links.on 'mousedown touchstart', ->
-    $(@).closest('.easing').addClass('pressed')
+    $(@).closest('.easing').addClass('is-pressed')
   links.on 'touchend touchmove', ->
-    easings.removeClass('pressed')
-  $body.mouseup ->
-    easings.removeClass('pressed')
-  $(document).scroll ->
-    easings.removeClass('pressed')
+    easings.removeClass('is-pressed')
+  evil.body.mouseup ->
+    easings.removeClass('is-pressed')
+  evil.doc.scroll ->
+    easings.removeClass('is-pressed')
 
   # Easing example
 
-  easings.on 'touchstart', -> $(@).addClass('tapped')
+  easings.on 'touchstart', -> $(@).addClass('is-tapped')
   easings.mouseenter ->
     div = $(@)
 
-    return if div.hasClass('tapped')
-    easings.removeClass('tapped')
+    return if div.hasClass('is-tapped')
+    easings.removeClass('is-tapped')
 
     easing = div.find('.easing-title').text()
     div.find('.example').stop().css(marginTop: 0).delay(400).
@@ -102,7 +99,7 @@ jQuery ($) ->
     if location.hash == '#' or location.hash == ''
       return unless pageAnimated
 
-      $body.removeClass('easing-page')
+      evil.body.removeClass('easing-page')
       after 600, ->
         lastPage?.trigger('close')
         scrollTo(allScroll) if allScroll
@@ -110,10 +107,10 @@ jQuery ($) ->
       name = location.hash[1..-1]
       easingPages.hide()
       lastPage = easingPages.filter(".#{name}").show()
-      $body.addClass('easing-page')
+      evil.body.addClass('easing-page')
 
       if pageAnimated
-        allScroll = $window.scrollTop()
+        allScroll = evil.win.scrollTop()
         pageTop   = lastPage.offset().top + 10
         after 600, ->
           if allScroll > pageTop
@@ -124,27 +121,15 @@ jQuery ($) ->
         after 800, -> lastPage.trigger('open')
 
   showSubpage()
-  $window.on('hashchange', showSubpage)
+  evil.win.on('hashchange', showSubpage)
 
   after 1, ->
     pageAnimated = true
-    $body.addClass('page-animation')
-
-  # Detect 3D support
-
-  detect3d = ->
-    support = $body.css('perspective')?
-    if support and document.body.style.webkitPerspective?
-      support = matchMedia("(transform-3d), (-webkit-transform-3d)").matches
-    support
-
-  support3d = detect3d()
-  $body.addClass(if support3d then 'transform3d' else 'transform2d')
+    evil.body.addClass('page-animation')
 
   # Open source badge text
 
-  corner = $('.open-source')
-
+  corner   = $('.open-source')
   mainLang = (code) -> code.replace(/-[^-]+$/, '')
 
   pageLang   = mainLang($('html').attr('lang'))
@@ -155,15 +140,14 @@ jQuery ($) ->
 
   cornerActivated = false
   cornerAnimation = ->
-    return if $window.width() < 600
+    return if evil.win.width() < 600
 
     cornerActivated = true
-    $window.off('resize.corner')
+    evil.win.off('resize.corner')
 
-    if support3d
-      shadow    = corner.find('.shadow')
-      rotator   = corner.find('.rotator')
-
+    if evil.body.hasClass('transform-3d')
+      shadow   = corner.find('.shadow')
+      rotator  = corner.find('.rotator')
       duration = rotator.css('transition-duration')
       duration = parseFloat(duration) * 1000
 
@@ -196,7 +180,7 @@ jQuery ($) ->
       false
 
   cornerAnimation()
-  $window.on('resize.corner', cornerAnimation) unless cornerActivated
+  evil.win.on('resize.corner', cornerAnimation) unless cornerActivated
 
   # Change languages link to select
 

@@ -1,13 +1,31 @@
+GIT
+  remote: git://github.com/ai/evil-front.git
+  revision: 6e5b2c1cf79f4afbd5cc26a8b1f9bee5823861d2
+  specs:
+    evil-front (0.1)
+      autoprefixer-rails (>= 0.4)
+      coffee-script (>= 2.2.0)
+      evil-blocks-rails (>= 0.2)
+      rails-sass-images (>= 0.3)
+      sass (>= 3.2.9)
+      slim (>= 1.3.9)
+      sprockets (>= 1)
+      standalone_typograf (>= 2)
+      uglifier (>= 2.1.1)
+      unicode_utils (>= 1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    autoprefixer-rails (0.4.20130515)
+    autoprefixer-rails (0.4.20130521)
       execjs
     coffee-script (2.2.0)
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
     dimensions (1.2.0)
+    evil-blocks-rails (0.2.0)
+      sprockets (>= 2)
     execjs (1.4.0)
       multi_json (~> 1.0)
     hike (1.2.2)
@@ -25,42 +43,38 @@ GEM
       sass (> 0)
       sprockets (> 0)
     rake (10.0.4)
-    ref (1.0.4)
+    ref (1.0.5)
     sass (3.2.9)
     sinatra (1.4.2)
       rack (~> 1.5, >= 1.5.2)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
-    slim (1.3.8)
+    slim (1.3.9)
       temple (~> 0.6.3)
-      tilt (~> 1.3.3)
+      tilt (~> 1.3, >= 1.3.3)
     sprockets (2.9.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    temple (0.6.4)
+    standalone_typograf (2.0.2)
+    temple (0.6.5)
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
       ref
-    tilt (1.3.7)
-    uglifier (2.1.0)
+    tilt (1.4.1)
+    uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    unicode_utils (1.4.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  autoprefixer-rails
-  coffee-script
+  evil-front!
   json
   r18n-core
-  rails-sass-images
   rake
-  sass
   sinatra
-  slim (> 1.3.0)
-  sprockets
   therubyracer
-  uglifier

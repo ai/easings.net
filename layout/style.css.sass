@@ -1,15 +1,4 @@
-// Mixin and Helpers
-
-@import "rails-sass-images"
-
-@function black($opacity)
-  @return rgba(0, 0, 0, $opacity)
-
-@function white($opacity)
-  @return rgba(255, 255, 255, $opacity)
-
-$ease-in-out-quad:  cubic-bezier(0.455, 0.03, 0.515, 0.955)
-$ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1)
+@import "evil-front"
 
 // Base styles
 
@@ -103,7 +92,7 @@ $easing-width: 120px + 4px
     text-decoration: none
     position: relative
 
-.easings .easing.pressed
+.easings .easing.is-pressed
   background: #f0f0f0
   box-shadow: inset 0 0 5px black(0.5)
   .button
@@ -171,9 +160,11 @@ $easing-width: 120px + 4px
   &:hover .graph
     .example, .dot
       opacity: 1
-  &:hover.tapped
+  &:hover.is-tapped
     .example, .dot
       opacity: 0
+  .link
+    +no-tap-highlight
 
 .howtos
   h2
@@ -197,6 +188,8 @@ $easing-width: 120px + 4px
       border-bottom: 1px dotted
     &:hover .text
       border-bottom-style: solid
+    &:active
+      transform: translateY(2px)
   h2
     font-weight: normal
     font-size: 25px
@@ -266,7 +259,7 @@ $easing-width: 120px + 4px
   position: relative
 .page-animation
   .page-slider, .easing.linear
-    transition: all 600ms $ease-in-out-quart
+    transition: all 600ms $easeInOutQuart
 .easing-page
   .page-slider
     transform: translateX(-105%)
@@ -290,7 +283,6 @@ $easing-width: 120px + 4px
     width: 90px
     height: 90px
     overflow: hidden
-    -webkit-tap-highlight-color: white(0)
   &:active
     .background
       background: #ddd
@@ -389,10 +381,10 @@ $easing-width: 120px + 4px
     .translate a
       text-decoration: underline
 
-.transform3d
+.transform-3d
   .open-source
     .rotator
-      transition: all 600ms $ease-in-out-quad
+      transition: all 600ms $easeInOutQuad
     .shadow
       position: absolute
       top: 0
@@ -414,7 +406,7 @@ $easing-width: 120px + 4px
       .rotator
         transform: rotate3d(1, 1, 0, 180deg)
 
-.transform2d
+.transform-2d
   .open-source.show
     .text, .border
       display: none
@@ -423,20 +415,12 @@ $easing-width: 120px + 4px
 
 // Footer
 
-html
-  position: relative
-  min-height: 100%
-
-body
-  margin-bottom: 40px
++sticky-footer(50px, "footer")
 
 footer
-  position: absolute
-  left: 0
-  bottom: 0
-  height: 40px
-  width: 100%
   text-align: right
+  padding-top: 10px
+  height: 40px
   a
     line-height: 40px
     color: #888
@@ -465,7 +449,7 @@ footer
     width: 100%
     height: 100%
     top: -100%
-    transition: top 400ms $ease-in-out-quart
+    transition: top 400ms $easeInOutQuart
   .image
     +hidpi-inline("mask.png")
     position: relative
@@ -493,12 +477,13 @@ footer
 // Small screens
 
 @media (max-height: 768px)
++max-height(768)
   .about
     padding-top: 15px
   .easing.linear
     top: 6px
 
-@media (max-width: 899px)
++max-width(899)
   .easings
     text-align: center
     .part-title
@@ -512,7 +497,7 @@ footer
 
 // Mobile
 
-@media (max-width: 600px)
++max-width(600)
   .centered
     width: auto
     max-width: 100%
@@ -520,9 +505,6 @@ footer
 
   .about
     padding-top: 10px
-
-  .easing .link, .easing-description .graph
-    -webkit-tap-highlight-color: white(0)
 
   .easing
     margin: 3px 0
@@ -542,7 +524,7 @@ footer
     .author
       font-size: 12px
 
-@media (max-width: 481px)
++max-width(481)
   .about
     padding: 10px 0 5px 0
   .easing.linear
@@ -584,7 +566,7 @@ footer
     h3
       font-size: 20px
 
-@media (max-width: 332px)
++max-width(332)
   .graph
     svg
       width: 0.75 * $easing-width
