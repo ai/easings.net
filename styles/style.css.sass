@@ -314,7 +314,8 @@ $easing-width: 120px + 4px
     transform: rotate(45deg)
   .octocat
     position: absolute
-    +hidpi-inline("octocat.png")
+    +image-size("octocat.png", 2)
+    background-size: 100% 100%
     transform: rotate(45deg)
     top: 24px
     left: 43px
@@ -451,7 +452,8 @@ footer
     top: -100%
     transition: top 400ms $easeInOutQuart
   .image
-    +hidpi-inline("mask.png")
+    +image-size("mask.png", 2)
+    background-size: 100% 100%
     position: relative
     z-index: 2
   li
@@ -476,7 +478,6 @@ footer
 
 // Small screens
 
-@media (max-height: 768px)
 +max-height(768)
   .about
     padding-top: 15px
