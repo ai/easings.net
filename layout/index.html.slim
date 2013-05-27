@@ -1,108 +1,167 @@
-.about
-  = t.about
-  .easing.linear
-    h3.easing-title= linear_easing.name
-    .graph
-      - x = 120
-      - y = 60
-      - dots = linear_easing.dots(100, x, y)
-      svg( xmlns="http://www.w3.org/2000/svg"
-           viewBox="-2 -40 #{x + 4} #{y + 80}" )
-        line x1="0" y1="0" x2="0" y2="#{y}"
-        text x="2" y="6" x
-        line x1="0" y1="#{y}" x2="#{x}" y2="#{y}"
-        text x="#{x - 5}" y="#{y - 3}" t
-        path d="M0,#{y} L#{to_path dots}"
+doctype 5
+html lang=r18n.locale.code
+  head
+    meta charset="UTF-8"
+    title= t.title
+    meta name="description" content=t.description
+    script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery#{production? ? '.min' : ''}.js"
+    - font = (t.font | '400,700&subset=latin').gsub('&', '&amp;')
+    link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:#{font}"
+    link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Mono"
+    = disable_mobile_zoom
+    meta property="og:url"         content="http://easings.net/"
+    meta property="og:image"       content="http://easings.net/apple-touch-icon.png"
+    meta property="og:description" content=t.share
+    style= assets['style.css']
+    - if production?
+      = include_statistics
+  body
+    .centered
+      .about
+        = t.about
+        .easing.linear
+          h3.easing-title= linear_easing.name
+          .graph
+            - x = 120
+            - y = 60
+            - dots = linear_easing.dots(100, x, y)
+            svg( xmlns="http://www.w3.org/2000/svg"
+                 viewBox="-2 -40 #{x + 4} #{y + 80}" )
+              line x1="0" y1="0" x2="0" y2="#{y}"
+              text x="2" y="6" x
+              line x1="0" y1="#{y}" x2="#{x}" y2="#{y}"
+              text x="#{x - 5}" y="#{y - 3}" t
+              path d="M0,#{y} L#{to_path dots}"
 
-.page-crop
-  .page-slider
-    .easings
-      .part.css
-        h2.part-title title=t.easings.css css+js
-        - blocked(css_easings).each do |block|
-          - @block = block
-          = partial 'easings_block'
-      .part.js
-        h2.part-title title=t.easings.js js
-        - blocked(js_easings).each do |block|
-          - @block = block
-          = partial 'easings_block'
-    article.howtos
-      section.js
-        h3 JavaScript
-        p= t.howtos.js.link('http://gsgd.co.uk/sandbox/jquery/easing/')
-        pre
+      .page-crop
+        .page-slider
+          .easings
+            .part.css
+              h2.part-title title=t.easings.css css+js
+              - blocked(css_easings).each do |block|
+                - @block = block
+                = partial 'easings_block'
+            .part.js
+              h2.part-title title=t.easings.js js
+              - blocked(js_easings).each do |block|
+                - @block = block
+                = partial 'easings_block'
+          article.howtos
+            section.js
+              h3 JavaScript
+              p= t.howtos.js.link('http://gsgd.co.uk/sandbox/jquery/easing/')
+              pre
+                code
+                  | div.animate({ top: '-=100px' }, 600, '<strong>#{t.howtos.name}</strong>', function () { … })
+
+            section.scss
+              h3 SCSS
+              p= t.howtos.scss.link('https://github.com/jhardy/compass-ceaser-easing')
+              pre
+                code
+                  | div {
+                      @include transition(all 600ms ceaser(<strong>$#{t.howtos.name}</strong>)); }
+
+            section.css
+              h3 CSS
+              p= t.howtos.css + ' ' + t.howtos.css_bad
+              .click
+                p= t.howtos.css_help
+              pre
+                code
+                  | div {
+                      -webkit-transition: all 600ms <strong>#{t.howtos.curve}</strong>;
+                      transition:         all 600ms <strong>#{t.howtos.curve}</strong>; }
+
+          - all_easings.each do |easing|
+            - next if easing.linear?
+            article.easing-description class=easing.name
+              a.back href="#"
+                | ←
+                span.text= t.easing.all_easings
+              h2= easing.name
+              .graph
+                .example
+                  .top
+                  .bottom
+                .dot
+                - x = 120
+                - y = 60
+                - dots = easing.dots(100, x, y)
+                svg( xmlns="http://www.w3.org/2000/svg"
+                     viewBox="-2 -40 #{x + 4} #{y + 80}" )
+                  line x1="0" y1="0" x2="0" y2="#{y}"
+                  text x="2" y="6" x
+                  line x1="0" y1="#{y}" x2="#{x}" y2="#{y}"
+                  text x="#{x - 5}" y="#{y - 3}" t
+                  path d="M0,#{y} L#{to_path dots}"
+              section.js
+                h3 JavaScript
+                p= t.howtos.js.link('http://gsgd.co.uk/sandbox/jquery/easing/')
+                pre
+                  code
+                    | div.animate({ top: '-=100px' }, 600, '<strong>#{easing.name}</strong>', function () { … })
+
+              section.scss
+                h3 SCSS
+                - if easing.css
+                  p= t.howtos.scss.link('https://github.com/jhardy/compass-ceaser-easing')
+                  pre
+                    code
+                      | div {
+                          @include transition(all 600ms ceaser(<strong>$#{easing.name}</strong>)); }
+                - else
+                  p= t.easing.no_css
+
+              section.css
+                h3 CSS
+                - if easing.css
+                  p= t.howtos.css
+                  pre
+                    code
+                      | div {
+                          -webkit-transition: all 600ms <strong>#{easing.css}</strong>;
+                          transition:         all 600ms <strong>#{easing.css}</strong>; }
+                  p= t.easing.edit.link("http://cubic-bezier.com/##{easing.bezier}", target: '_blank')
+                - else
+                  p= t.easing.no_css
+
+    footer
+      .centered
+        a.author href="https://github.com/ai" target="_blank"
+          .mask
+            .hover
+            .image
+          = t.author
+        .share
+        ul
+          - each_locale do |code, locale|
+            li
+              - if locale == r18n.locale
+                span.current
+                  = locale.title
+              - else
+                a rel="alternate" hreflang=code href="/#{code.downcase}"
+                  = locale.title
+
+    .open-source
+      a.crop href="https://github.com/ai/easings.net" target='_blank'
+        .background
+        pre.source
           code
-            | div.animate({ top: '-=100px' }, 600, '<strong>#{t.howtos.name}</strong>', function () { … })
+            | html
+                meta charset="UTF-8"
+                title= title
+                script
+        .source-crop
+        .octocat
+        .rotator
+          .corner
+            .title
+              .shadow
+            .border
+            .text= t.opensource.title
+      .translate
+        = t.opensource.translate.link("https://github.com/ai/easings.net", target: '_blank')
 
-      section.scss
-        h3 SCSS
-        p= t.howtos.scss.link('https://github.com/jhardy/compass-ceaser-easing')
-        pre
-          code
-            | div {
-                @include transition(all 600ms ceaser(<strong>$#{t.howtos.name}</strong>)); }
-
-      section.css
-        h3 CSS
-        p= t.howtos.css + ' ' + t.howtos.css_bad
-        .click
-          p= t.howtos.css_help
-        pre
-          code
-            | div {
-                -webkit-transition: all 600ms <strong>#{t.howtos.curve}</strong>;
-                transition:         all 600ms <strong>#{t.howtos.curve}</strong>; }
-
-    - all_easings.each do |easing|
-      - next if easing.linear?
-      article.easing-description class=easing.name
-        a.back href="#"
-          | ←
-          span.text= t.easing.all_easings
-        h2= easing.name
-        .graph
-          .example
-            .top
-            .bottom
-          .dot
-          - x = 120
-          - y = 60
-          - dots = easing.dots(100, x, y)
-          svg( xmlns="http://www.w3.org/2000/svg"
-               viewBox="-2 -40 #{x + 4} #{y + 80}" )
-            line x1="0" y1="0" x2="0" y2="#{y}"
-            text x="2" y="6" x
-            line x1="0" y1="#{y}" x2="#{x}" y2="#{y}"
-            text x="#{x - 5}" y="#{y - 3}" t
-            path d="M0,#{y} L#{to_path dots}"
-        section.js
-          h3 JavaScript
-          p= t.howtos.js.link('http://gsgd.co.uk/sandbox/jquery/easing/')
-          pre
-            code
-              | div.animate({ top: '-=100px' }, 600, '<strong>#{easing.name}</strong>', function () { … })
-
-        section.scss
-          h3 SCSS
-          - if easing.css
-            p= t.howtos.scss.link('https://github.com/jhardy/compass-ceaser-easing')
-            pre
-              code
-                | div {
-                    @include transition(all 600ms ceaser(<strong>$#{easing.name}</strong>)); }
-          - else
-            p= t.easing.no_css
-
-        section.css
-          h3 CSS
-          - if easing.css
-            p= t.howtos.css
-            pre
-              code
-                | div {
-                    -webkit-transition: all 600ms <strong>#{easing.css}</strong>;
-                    transition:         all 600ms <strong>#{easing.css}</strong>; }
-            p= t.easing.edit.link("http://cubic-bezier.com/##{easing.bezier}", target: '_blank')
-          - else
-            p= t.easing.no_css
+    script= assets['action.js']

@@ -200,18 +200,14 @@ def copy_with_extra_js(from, to, js)
 end
 
 def build_index(production = false)
-  slim   = LAYOUT.join('index.html.slim')
-  layout = LAYOUT.join('layout.html.slim')
+  index  = LAYOUT.join('index.html.slim')
   helper = Helpers.instance(production ? :production : :development)
   locale = R18n.get.locale.code.downcase
 
   PUBLIC.mkpath
 
   file = PUBLIC.join("#{locale}.html")
-
-  file.open('w') do |io|
-    io << helper.render(layout) { helper.render(slim) }
-  end
+  file.open('w') { |io| io << helper.render(index) }
 
   if locale == 'en'
     redirect = helper.assets['language-redirect.js']
