@@ -8,10 +8,12 @@ class Pathname
   end
 end
 
-ROOT    = Pathname(__FILE__).dirname
-CONTENT = ROOT.join('content/')
-PUBLIC  = ROOT.join('public/')
-LAYOUT  = ROOT.join('layout/')
+ROOT   = Pathname(__FILE__).dirname
+PUBLIC = ROOT.join('public/')
+LAYOUT = ROOT.join('layout/')
+IMAGES = ROOT.join('images/')
+
+STANDALONE = %w( favicon.ico apple-touch-icon.png )
 
 require 'slim'
 require 'uglifier'
@@ -110,6 +112,9 @@ class Helpers
     @sprockets ||= begin
       Sprockets::Environment.new(ROOT) do |env|
         env.append_path(LAYOUT)
+        env.append_path(IMAGES)
+        env.append_path(ROOT.join('scripts/'))
+        env.append_path(ROOT.join('styles/'))
         env.append_path(ROOT.join('vendor'))
 
         if @env == :production
@@ -227,9 +232,7 @@ task :build do
     print '.'
   end
 
-  %w( favicon.ico apple-touch-icon.png ).each do |file|
-    FileUtils.cp LAYOUT.join(file), PUBLIC.join(file)
-  end
+  STANDALONE.each { |i| FileUtils.cp IMAGES.join(i), PUBLIC.join(i) }
 
   print "\n"
 end
@@ -247,12 +250,10 @@ task :server do
       send_file PUBLIC.join('index.html')
     end
 
-    get '/favicon.ico' do
-      send_file LAYOUT.join('favicon.ico')
-    end
-
-    get '/apple-touch-icon.png' do
-      send_file LAYOUT.join('apple-touch-icon.png')
+    STANDALONE.each do |image|
+      get "/#{image}" do
+        send_file IMAGES.join(image)
+      end
     end
 
     get '/:locale' do
