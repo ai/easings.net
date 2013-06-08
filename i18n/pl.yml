@@ -1,0 +1,56 @@
+title: Easing Functions Cheat Sheet
+description:
+  Twórz bardziej realistyczne animacje z użyciem funkcji wygładzających.
+share:
+  Funkcje wygładzające (ang. easing functions) określają prędkość animacji
+  aby uczynić ruch bardziej naturalnym. Rzeczywiste obiekty nie poruszają się
+  ze stałą prędkością i nie rozpoczynają, ani nie kończą ruchu nagle.
+  Ta strona pomoże Ci wybrać właściwą funkcję wygładzającą.
+
+about: !!format
+  ~Funkcje wygładzające~ (ang. easing functions) określają częstotliwość zmian danego parametru w czasie.
+
+  Obiekty w świecie rzeczywistym nie rozpoczynają, ani nie kończą ruchu nagle
+  i prawie nigdy nie poruszają się ze stałą prędkością. Kiedy otwieramy szufladę, szybkim ruchem wysuwamy małą część
+  i zwalniamy aż do wysunięcia całości. Upuść jakiś przedmiot, a zobaczysz jak zacznie on przyśpieszać w kierunku podłogi,
+  po czym odbije się po zderzeniu z nią.
+
+  Ta strona pomoże Ci wybrać właściwą funkcję wygładzającą.
+
+easings:
+  css: Dostępne w CSS i JS
+  js: Dostępne tylko w JavaScriptcie
+
+howtos:
+  name: nazwaFunkcji
+  curve: krzywa Béziera
+
+  js: !!code
+    Użycie jQuery razem z ^jQuery Easing Plugin^ to najłatwiejszy sposób na określenie animacji z wygładzeniem.
+    Przekaż nazwę jednej z powyższych funkcji (np. `easeInCirc`) jako trzeci argument funkcji `.animate()`
+    albo użyj jej jako wartość opcji `easing`.
+
+  scss: !!code
+    Animacje można określać również z użyciem Sass/SCSS! Compass usuwa prefiksy
+    z właściwości `transition` i `animation`, a plugin ^Compass Ceaser^ pozwala przekazywać funkcje wygładzające przez nazwę
+    (bez określania dokładnych krzywych Béziera)
+
+  css: !!code
+    Właściwości CSS `transition` i `animation` pozwalają Ci określić funkcję wygładzającą.
+  css_bad:
+    Niestety, nie obsługują one wszystkich wygładzeń, a daną funkcję trzeba zapisać samemu (jako krzywą Béziera).
+  css_help:
+    Wybierz jedną z powyższych funkcji wygładzających aby zobaczyć jej zapis jako krzywa Béziera.
+
+easing:
+  all_easings: Wszystkie wygładzenia
+  no_css: !!code
+    Niedostępne w CSS. Możesz użyć JS albo zapisać to jako animacja CSS korzystając z `@keyframes`.
+
+  edit: ^Edytuj^ na cubic-bezier.com.
+
+opensource:
+  title: open source
+  translate: ^Pomóż tłumaczyć^ stronę na swój język
+
+author: Andrey Sitnik
