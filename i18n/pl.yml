@@ -6,6 +6,7 @@ share:
   aby uczynić ruch bardziej naturalnym. Rzeczywiste obiekty nie poruszają się
   ze stałą prędkością i nie rozpoczynają, ani nie kończą ruchu nagle.
   Ta strona pomoże Ci wybrać właściwą funkcję wygładzającą.
+font: 400,700&subset=latin,latin-ext
 
 about: !!format
   ~Funkcje wygładzające~ (ang. easing functions) określają częstotliwość zmian
