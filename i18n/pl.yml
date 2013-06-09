@@ -33,17 +33,18 @@ howtos:
     użyj jej jako wartość opcji `easing`.
   scss: !!code
     Animacje można określać również z użyciem Sass/SCSS! Compass usuwa
-    prefiksy z właściwości `transition` i `animation`, <nobr>a plugin 
+    prefiksy z właściwości `transition` i `animation`, <nobr>a plugin
     ^Compass Ceaser^</nobr> pozwala przekazywać funkcje wygładzające przez nazwę
     (bez określania dokładnych krzywych Béziera)
   css: !!code
     Właściwości CSS `transition` i `animation` pozwalają Ci określić
     funkcję wygładzającą.
   css_bad:
-    Niestety, nie obsługują one wszystkich wygładzeń, a daną funkcję 
+    Niestety, nie obsługują one wszystkich wygładzeń, a daną funkcję
     trzeba zapisać samemu (jako krzywą Béziera).
   css_help:
-    Wybierz jedną z powyższych funkcji wygładzających aby zobaczyć jej zapis jako krzywa Béziera.
+    Wybierz jedną z powyższych funkcji wygładzających aby zobaczyć jej zapis
+    jako krzywa Béziera.
 
 easing:
   all_easings: Wszystkie wygładzenia
