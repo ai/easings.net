@@ -125,6 +125,7 @@ class Helpers
         AutoprefixerRails.install(env)
         RailsSassImages.install(env)
         EvilFront.install(env)
+        Csso.install(env)
       end
     end
   end
