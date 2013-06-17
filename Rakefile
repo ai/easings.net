@@ -122,10 +122,7 @@ class Helpers
           env.css_compressor = :sass
         end
 
-        AutoprefixerRails.install(env)
-        RailsSassImages.install(env)
-        EvilFront.install(env)
-        Csso.install(env)
+        EvilFront.install_all(env)
       end
     end
   end
