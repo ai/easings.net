@@ -1,0 +1,56 @@
+title: Funcions Easing Guia de Referència
+description:
+  Creï animacions més realistes triant la funció 'easing' correcta.
+share:
+  La funció 'easing' especifica la velocitat de progrés de l'animació
+  per fer-la més realista. L'objecte real no comença el seu movimient
+  de forma instantània i de manera constant. Aquesta pàgina l'ajudarà a
+  triar la funció desitjada.
+
+about: !!format
+  La ~funció easing~ especifica la velocitat de l'animació per fer-la
+  més realista.
+
+  L'objecte real no comença el seu movimient de forma instantània i de manera
+  constant. Quan obrim el calaix, primer li donem acceleració, i després
+  el frenem. Quan alguna cosa cau, primer baixa ràpidament i després d'arribar
+  a terra rebota.
+
+  Aquesta pàgina l'ajudarà a triar la función desitjada.
+
+easings:
+  css: Tots disponibles
+  js: Només en JavaScript
+
+howtos:
+  name: nom easing
+  curve: corba Bezier de l'easing
+  js: !!code
+    jQuery amb ^jQuery Easing Plugin^ és la forma més senzilla de definir una
+    animació amb 'easing'. Únicament necessita ajustar el nom 'easing' al mètode
+    `.animate` com tercer argument o la key `easing`.
+  scss: !!code
+    Sass/SCSS l'ajuden a definir l'animació. Compass elimina els prefixes previs
+    a les propietats `transition` y `animation` i el plugin ^Compass Ceaser^
+    permet fixar l'easing per el seu nom (sense corbes Bezier).
+  css: !!code
+    Les propietats CSS `transition` i `animation` li permeten fixar la función
+    'easing'.
+  css_bad:
+    Desgraciadament, no estan tots suportats i haurà de fixar la funció
+    amb corba Bezier.
+  css_help:
+    Seleccioni 'easing' per mostrar la seva descripció en la corba Bézier.
+
+easing:
+  all_easings: Tots els easings
+  no_css: !!code
+    Desgraciadament, CSS no suporta aquest 'easing'. Però pot utilitzar-lo amb
+    JavaScript o amb la propietat CSS Animation `@keyframes`.
+  edit: ^Editar^ en cubic-bezier.com.
+
+opensource:
+  title: open source
+  translate: ^Ajuda a traduir^ aquesta web al teu idioma
+
+author: Andrey Sitnik
