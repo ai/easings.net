@@ -16,7 +16,7 @@ about: !!format
   el frenem. Quan alguna cosa cau, primer baixa ràpidament i després d'arribar
   a terra rebota.
 
-  Aquesta pàgina l'ajudarà a triar la función desitjada.
+  Aquesta pàgina l'ajudarà a triar la funció desitjada.
 
 easings:
   css: Tots disponibles
@@ -31,10 +31,10 @@ howtos:
     `.animate` com tercer argument o la key `easing`.
   scss: !!code
     Sass/SCSS l'ajuden a definir l'animació. Compass elimina els prefixes previs
-    a les propietats `transition` y `animation` i el plugin ^Compass Ceaser^
+    a les propietats `transition` i `animation` i el plugin ^Compass Ceaser^
     permet fixar l'easing per el seu nom (sense corbes Bezier).
   css: !!code
-    Les propietats CSS `transition` i `animation` li permeten fixar la función
+    Les propietats CSS `transition` i `animation` li permeten fixar la funció
     'easing'.
   css_bad:
     Desgraciadament, no estan tots suportats i haurà de fixar la funció
