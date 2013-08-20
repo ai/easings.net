@@ -117,12 +117,12 @@ class Helpers
         env.append_path(ROOT.join('styles/'))
         env.append_path(ROOT.join('vendor'))
 
+        EvilFront.install_all(env)
+
         if @env == :production
           env.js_compressor  = Uglifier.new(copyright: false)
-          env.css_compressor = :sass
+          env.css_compressor = :csso
         end
-
-        EvilFront.install_all(env)
       end
     end
   end
