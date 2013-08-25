@@ -9,8 +9,8 @@ class Pathname
 end
 
 ROOT   = Pathname(__FILE__).dirname
+VIEWS  = ROOT.join('views/')
 PUBLIC = ROOT.join('public/')
-LAYOUT = ROOT.join('layout/')
 IMAGES = ROOT.join('images/')
 
 STANDALONE = %w( favicon.ico apple-touch-icon.png )
@@ -106,7 +106,6 @@ class Builder
   def assets
     @sprockets ||= begin
       Sprockets::Environment.new(ROOT) do |env|
-        env.append_path(LAYOUT)
         env.append_path(IMAGES)
         env.append_path(ROOT.join('scripts/'))
         env.append_path(ROOT.join('styles/'))
@@ -178,11 +177,11 @@ class Builder
   end
 
   def include_statistics
-    LAYOUT.join('statistics.html').read
+    VIEWS.join('statistics.html').read
   end
 
   def partial(name)
-    render(LAYOUT.join("_#{name}.slim"))
+    render(VIEWS.join("_#{name}.slim"))
   end
 end
 
@@ -193,7 +192,7 @@ def copy_with_extra_js(from, to, js)
 end
 
 def build_index(production = false)
-  index   = LAYOUT.join('index.html.slim')
+  index   = VIEWS.join('index.html.slim')
   locale  = R18n.get.locale.code.downcase
   builder = Builder.instance(production ? :production : :development)
 
