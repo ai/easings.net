@@ -15,13 +15,8 @@ IMAGES = ROOT.join('images/')
 
 STANDALONE = %w( favicon.ico apple-touch-icon.png )
 
-require 'slim'
-require 'uglifier'
-require 'sprockets'
 require 'evil-front'
-require 'coffee_script'
-require 'rails-sass-images'
-require 'autoprefixer-rails'
+JqueryCdn.local_url = proc { '/jquery.js' }
 
 require 'r18n-core'
 R18n.default_places = ROOT.join('i18n')
@@ -102,7 +97,7 @@ class Builder
 
   attr_accessor :env
 
-  def self.instance(env)
+  def self.instance(env = :development)
     @@instance ||= self.new
     @@instance.env = env
     @@instance
@@ -227,6 +222,9 @@ task :build do
   end
 
   STANDALONE.each { |i| FileUtils.cp IMAGES.join(i), PUBLIC.join(i) }
+  PUBLIC.join('jquery.js').open('w') do |io|
+    io << Builder.instance(:production).assets['jquery.js']
+  end
 
   print "\n"
 end
@@ -248,6 +246,11 @@ task :server do
       get "/#{image}" do
         send_file IMAGES.join(image)
       end
+    end
+
+    get '/jquery.js' do
+      content_type 'text/javascript'
+      Builder.instance.assets['jquery.js'].to_s
     end
 
     get '/:locale' do
@@ -277,7 +280,9 @@ task :deploy => :build do
       'git rm *.ico',
       'git rm *.png',
       'git rm *.html',
+      'git rm *.js',
       'cp public/* ./',
+      'git add *.js',
       'git add *.html',
       'git add *.png',
       'git add *.ico'].join(' && ')

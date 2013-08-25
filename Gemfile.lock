@@ -1,12 +1,13 @@
 GIT
   remote: git://github.com/ai/evil-front.git
-  revision: 0b94a015571ed6baea7ce6093e3afc442bfbdd7b
+  revision: 6f60f8aec45974c5a61d6f6a1bac605f07f67183
   specs:
     evil-front (0.1)
       autoprefixer-rails (>= 0.5)
       coffee-script (>= 2.2.0)
       csso-rails (>= 0.3)
       evil-blocks-rails (>= 0.2)
+      jquery-cdn (>= 1)
       rails-sass-images (>= 0.3)
       sass (>= 3.2.9)
       slim (>= 1.3.9)
@@ -32,6 +33,8 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     hike (1.2.3)
+    jquery-cdn (2.0.3)
+      sprockets (>= 2)
     json (1.8.0)
     libv8 (3.16.14.3)
     mime-types (1.24)
@@ -66,7 +69,7 @@ GEM
       libv8 (~> 3.16.14.0)
       ref
     tilt (1.4.1)
-    uglifier (2.1.2)
+    uglifier (2.2.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     unicode_utils (1.4.0)

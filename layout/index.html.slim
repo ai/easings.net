@@ -4,7 +4,7 @@ html lang=r18n.locale.code
     meta charset="UTF-8"
     title= t.title
     meta name="description" content=t.description
-    script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery#{production? ? '.min' : ''}.js"
+    = include_jquery(env: env)
     - font = (t.font | '400,700&subset=latin').gsub('&', '&amp;')
     link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:#{font}"
     link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Mono"
