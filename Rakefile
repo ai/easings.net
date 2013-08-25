@@ -96,7 +96,7 @@ class Sprockets::Context
   include R18n::Helpers
 end
 
-class Helpers
+class Builder
   include R18n::Helpers
   include EvilFront::Helpers
 
@@ -198,17 +198,17 @@ def copy_with_extra_js(from, to, js)
 end
 
 def build_index(production = false)
-  index  = LAYOUT.join('index.html.slim')
-  helper = Helpers.instance(production ? :production : :development)
-  locale = R18n.get.locale.code.downcase
+  index   = LAYOUT.join('index.html.slim')
+  locale  = R18n.get.locale.code.downcase
+  builder = Builder.instance(production ? :production : :development)
 
   PUBLIC.mkpath
 
   file = PUBLIC.join("#{locale}.html")
-  file.open('w') { |io| io << helper.render(index) }
+  file.open('w') { |io| io << builder.render(index) }
 
   if locale == 'en'
-    redirect = helper.assets['language-redirect.js']
+    redirect = builder.assets['language-redirect.js']
     copy_with_extra_js(file, PUBLIC.join("index.html"), redirect)
   end
 end
