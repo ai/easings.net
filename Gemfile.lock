@@ -18,7 +18,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    autoprefixer-rails (0.7.20130810)
+    autoprefixer-rails (0.7.20130824)
       execjs
     coffee-script (2.2.0)
       coffee-script-source
@@ -36,7 +36,7 @@ GEM
     libv8 (3.16.14.3)
     mime-types (1.24)
     multi_json (1.7.9)
-    r18n-core (1.1.5)
+    r18n-core (1.1.6)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
