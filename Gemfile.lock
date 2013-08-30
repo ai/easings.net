@@ -25,13 +25,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    csso-rails (0.3.0)
-      execjs (~> 1.4)
+    csso-rails (0.3.1)
+      execjs (>= 1)
     dimensions (1.2.0)
     evil-blocks-rails (0.3.2)
       sprockets (>= 2)
-    execjs (1.4.0)
-      multi_json (~> 1.0)
+    execjs (2.0.1)
     hike (1.2.3)
     jquery-cdn (2.0.3)
       sprockets (>= 2)
@@ -69,7 +68,7 @@ GEM
       libv8 (~> 3.16.14.0)
       ref
     tilt (1.4.1)
-    uglifier (2.2.0)
+    uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     unicode_utils (1.4.0)
