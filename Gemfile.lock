@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/ai/evil-front.git
-  revision: d66790918ca19a5426aa06148b3a1c2c3d07cf37
+  revision: b8198ffc326aace45377eb26427d53e73f2c553c
   specs:
     evil-front (0.1)
       autoprefixer-rails (>= 0.5)
@@ -19,16 +19,16 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    autoprefixer-rails (0.8.20130903)
+    autoprefixer-rails (0.8.20130923)
       execjs
     coffee-script (2.2.0)
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    csso-rails (0.3.1)
+    csso-rails (0.3.2)
       execjs (>= 1)
     dimensions (1.2.0)
-    evil-blocks-rails (0.3.2)
+    evil-blocks-rails (0.4.1)
       sprockets (>= 2)
     execjs (2.0.1)
     hike (1.2.3)
@@ -37,7 +37,7 @@ GEM
     json (1.8.0)
     libv8 (3.16.14.3)
     mime-types (1.25)
-    multi_json (1.7.9)
+    multi_json (1.8.0)
     r18n-core (1.1.6)
     rack (1.5.2)
     rack-protection (1.5.0)
