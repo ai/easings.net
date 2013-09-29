@@ -1,0 +1,42 @@
+title: Easing Functies Cheat Sheet
+description:
+  Maak animaties realistischer door de juiste easing functie te kiezen.
+share:
+  Easing functies specificeren de snelheid van de animatie om de beweging natuurlijker te maken. Echte objecten bewegen niet in een constante snelheid en starten en stoppen niet direct. Deze pagina helpt je om de juiste easing functie te kiezen.
+
+about: !!format
+  ~Easing functies~ specificeren de mate van verandering in de tijd weer.
+
+  Objecten in het dagelijks leven bewegen niet in een constante snelheid en starten en stoppen niet direct. Bij het openen van een lade gebeurd dit eerst snel en langzamer zodra deze bijna geopend is. Laat iets op de grond vallen en het zal eerst versnellen naar beneden en na het raken van de grond terug stuiteren.
+
+  Deze pagina helpt bij het kiezen van de juiste easing functie.
+
+easings:
+  css: Altijd beschikbaar
+  js: Alleen in JavaScript
+
+howtos:
+  name: easing naam
+  curve: easing Bézierkromme
+  js: !!code
+    jQuery met de ^jQuery Easing Plugin^ is de makkelijkste manier om animaties met easing te maken. Geef de easing naam (bijvoorbeeld `easeInCirc`) door aan de `.animate()` functie als derde argument, of gebruik het als de waarde van de `easing` optie.
+  scss: !!code
+    Sass/SCSS ondersteund de animaties ook! Compass verwijderd de prefixes voor de `transition` en `animation` properties, en met de <nobr>^Compass Ceaser^</nobr> plugin kunnen de easing functies ook op naam worden gebruikt (zonder de exacte Bézierkromme).
+  css: !!code
+    CSS properties `transition` en `animation` staan het gebruik van de easing functies toe.
+  css_bad:
+    Helaas, worden niet alle easing functies ondersteund en moeten gewenste easing functies zelf worden gemaakt (zoals een Bézierkromme).
+  css_help:
+    Selecteer een easing functie om de Bézierkromme notatie te zien.
+
+easing:
+  all_easings: Alle easing functies
+  no_css: !!code
+    Niet ondersteund in CSS. Wel te gebruiken in JS of te maken met behulp va CSS Animation `@keyframes`.
+  edit: ^Bewerk^ op cubic-bezier.com.
+
+opensource:
+  title: open source
+  translate: ^Help het vertalen^ van deze website in jouw taal
+  
+author: Jeffrey NL
