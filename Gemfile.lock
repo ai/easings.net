@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/ai/evil-front.git
-  revision: b8198ffc326aace45377eb26427d53e73f2c553c
+  revision: 6d9ffac57572e9344a25976b387b9b1a706795fa
   specs:
     evil-front (0.1)
       autoprefixer-rails (>= 0.5)
@@ -30,7 +30,7 @@ GEM
     dimensions (1.2.0)
     evil-blocks-rails (0.4.1)
       sprockets (>= 2)
-    execjs (2.0.1)
+    execjs (2.0.2)
     hike (1.2.3)
     jquery-cdn (2.0.3)
       sprockets (>= 2)
@@ -49,7 +49,7 @@ GEM
       sprockets (> 0)
     rake (10.1.0)
     ref (1.0.5)
-    sass (3.2.10)
+    sass (3.2.11)
     sinatra (1.4.3)
       rack (~> 1.4)
       rack-protection (~> 1.4)
