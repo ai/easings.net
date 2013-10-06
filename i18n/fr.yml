@@ -20,12 +20,12 @@ about: !!format
   Cette page permet de choisir la fonction désirée.
 
 easings:
-  css: Disponible partout
-  js: Seulement en JavaScript
+  css: Toujours disponible
+  js: Disponible seulement en JavaScript
 
 howtos:
-  name: easing nom
-  curve: courbe de Bézier pour easing
+  name: nom du easing
+  curve: courbe de Bézier du easing
   js: !!code
     ^jQuery Easing Plugin^ est la solution la plus simple pour décrire
     une animation. Vous avez uniquement besoin de positionner le nom de
@@ -48,13 +48,13 @@ howtos:
     de courbe de Bézier.
 
 easing:
-  all_easings: Toutes easings
+  all_easings: Tous les easings
   no_css: !!code
     Malheureusement, CSS ne supportent pas cette fonction easing.
     Mais vous pouvez l’utiliser via JavaScript ou par l’animation spéciale
     CSS `@keyframes`.
-  edit: ^Modifier^ le cubic-bezier.com.
+  edit: ^Modifier^ sur cubic-bezier.com.
 
 opensource:
   title: open source
-  translate: ^Aidez à traduire^ ce site dans votre langue
+  translate: ^Aidez à traduire^ ce site dans votre langue.
