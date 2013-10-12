@@ -8,12 +8,13 @@ share:
   Halaman ini membantu anda memilih Fungsi Easing yang tepat.
 
 about: !!format
-  ~Fungsi Easing~ menentukan laju perubahan sebuah parameter dari waktu ke waktu.
+  ~Fungsi Easing~ menentukan laju perubahan sebuah parameter dari waktu
+  ke waktu.
 
   Objek pada kehidupan nyata tidak bergerak dan berhenti dalam sekejap, dan
   hampir tidak pernah bergerak pada kecepatan konstan. Ketika kita membuka laci,
-  pertama kita lakukan secara cepat lalu pelan setelah hampir keluar. Menjatuhkan
-  benda ke lantai, pertama akan ke bawah kemudian memantul kembali.
+  pertama kita lakukan secara cepat lalu pelan setelah hampir keluar.
+  Menjatuhkan benda ke lantai, pertama akan ke bawah kemudian memantul kembali.
 
   Halaman ini membantu anda memilih Fungsi Easing yang tepat.
 
@@ -26,14 +27,17 @@ howtos:
   curve: kurva Bezier Easing
   js: !!code
     jQuery dengan ^jQuery Easing Plugin^ adalah cara termudah untuk menggunakan
-    Easing di animasi. Gunakan nama Easing (seperti `easeInCirc`) di fungsi `.animate()`
-    sebagai argumen ketiga, atau menggunakannya sebagai nilai di opsi `easing`.
+    Easing di animasi. Gunakan nama Easing (seperti `easeInCirc`) di fungsi
+    `.animate()` sebagai argumen ketiga, atau menggunakannya sebagai nilai di
+    opsi `easing`.
   scss: !!code
-    Sass/SCSS juga dapat menggunakan Easing pada animasi. Compass menghilangkan prefiks
-    sebelum `transition` dan `animation`, <nobr>dan plugin ^Compass Ceaser^ memungkinkan
-    anda menggunakan Fungsi Easing dengan nama Easingnya (tanpa kurva Beziernya).
+    Sass/SCSS juga dapat menggunakan Easing pada animasi. Compass menghilangkan
+    prefiks sebelum `transition` dan `animation`, dan plugin ^Compass Ceaser^
+    memungkinkan anda menggunakan Fungsi Easing dengan nama Easingnya
+    (tanpa kurva Beziernya).
   css: !!code
-    Properti CSS `transition` dan `animation` memungkinkan anda untuk menggunakan Fungsi Easing.
+    Properti CSS `transition` dan `animation` memungkinkan anda untuk
+    menggunakan Fungsi Easing.
   css_bad:
     Sayang sekali, mereka tidak mendukung semua Fungsi Easing, anda harus
     menentukan sendiri Fungsi Easing yang diinginkan (sebagai kurva Bezier).
