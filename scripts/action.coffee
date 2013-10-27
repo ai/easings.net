@@ -127,6 +127,9 @@ evil.doc.ready ($) ->
     pageAnimated = true
     evil.body.addClass('page-animation')
 
+  evil.win.on 'keyup', (e) ->
+    location.hash = '' if e.keyCode == 27 # Esc
+
   # Open source badge text
 
   corner   = $('.open-source')
