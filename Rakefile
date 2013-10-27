@@ -235,6 +235,7 @@ task :server do
   class EasingsNet < Sinatra::Base
     set :public_folder, nil
     set :port, 3000
+    set :lock, true
 
     get /^(\/|\/index\.html)$/ do
       build_page('en')
