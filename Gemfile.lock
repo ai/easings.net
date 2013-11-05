@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/ai/evil-front.git
-  revision: e72b7c23a7c17b62ec71971a27d4495eafc2c1b2
+  revision: dd9e521d21cf61d0237efd7ca268d58e1b7ee119
   specs:
     evil-front (0.1)
       autoprefixer-rails (>= 0.5)
@@ -27,7 +27,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     atomic (1.1.14)
-    autoprefixer-rails (0.8.20131029)
+    autoprefixer-rails (0.8.20131104)
       execjs
     coffee-script (2.2.0)
       coffee-script-source
