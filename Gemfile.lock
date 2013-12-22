@@ -27,7 +27,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     atomic (1.1.14)
-    autoprefixer-rails (0.8.20131213)
+    autoprefixer-rails (1.0.20131222)
       execjs
     coffee-script (2.2.0)
       coffee-script-source
@@ -60,9 +60,9 @@ GEM
       mime-types (> 0)
       sass (> 0)
       sprockets (> 0)
-    rake (10.1.0)
+    rake (10.1.1)
     ref (1.0.5)
-    sass (3.2.12)
+    sass (3.2.13)
     sinatra (1.4.4)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -85,7 +85,7 @@ GEM
       atomic
     tilt (1.4.1)
     tzinfo (0.3.38)
-    uglifier (2.3.3)
+    uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     unicode_utils (1.4.0)
