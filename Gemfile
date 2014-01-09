@@ -4,7 +4,7 @@ gem 'rake'
 gem 'sinatra'
 gem 'json'
 
-gem 'evil-front',   github: 'ai/evil-front'
+gem 'evil-front-all'
 gem 'therubyracer'
 
 gem 'r18n-core'

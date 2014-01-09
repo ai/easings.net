@@ -15,7 +15,7 @@ IMAGES = ROOT.join('images/')
 
 STANDALONE = %w( favicon.ico apple-touch-icon.png )
 
-require 'evil-front'
+require 'evil-front-all'
 JqueryCdn.local_url = proc { '/jquery.js' }
 
 require 'r18n-core'
@@ -153,7 +153,7 @@ class Builder
   end
 
   def render(file, &block)
-    options = { format: :html5, disable_escape: true }
+    options = { format: :html5, disable_escape: true, pretty: false }
     Slim::Template.new(file.to_s, options).render(self, &block)
   end
 
