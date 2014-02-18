@@ -8,7 +8,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     atomic (1.1.14)
-    autoprefixer-rails (1.0.20140203)
+    autoprefixer-rails (1.1.20140218)
       execjs
     coffee-script (2.2.0)
       coffee-script-source
