@@ -1,0 +1,56 @@
+title: Ťahák na easing funkcie
+description:
+  Tvorte realistickejšie animácie použitím správnych easing funkcií.
+share:
+  Easing funkcie určujú rýchlosť animácie aby pohyb vyzeral
+  prirodzenejšie. Reálne objekty sa nepohybujú konštantnou
+  rýchlosťou a ich počiatok a koniec je postupný. Táto stránka
+  vám pomôže vybrať správnu easing funkciu.
+
+about: !!format
+  ~Easing funkcie~ určujú rýchlosť zmeny parametru v priebehu času.
+
+  Reálne objekty sa nepohybujú konštantnou rýchlosťou a ich počiatok
+  a koniec je postupný. Keď otvárame šuflík, z počiatku ho otvárame
+  rýchlo a postupne spomaľujeme. Keď predmet padne na zem, najprv
+  zrýchľuje a po dopade začne skákať.
+
+  Táto stránka vám pomôže vybrať správnu easing funkciu, ktorá najlepšie
+  zodpovedá realite.
+
+easings:
+  css: Dostupné v CSS aj JS
+  js: Len v JavaScripte
+
+howtos:
+  name: názov easing funkcie
+  curve: Beziérova krivka funkcie
+  js: !!code
+    jQuery s ^jQuery Easing Pluginom^ je najľahší spôsob ako definovať
+    animáciu s easing funkciou. Stačí určiť názov easing funkcie (napr.
+    `easeInCirc`) ako tretí parameter funkcie `.animate()` alebo ho
+    použiť ako hodnotu pre parameter `easing`.
+  scss: !!code
+    Ak popri Sass/SCSS používate aj Compass, nebudete sklamaný. Stačí
+    použiť ^Compass Ceaser^ plugin a ten vám dovolí pre `transition`
+    a `animation` používať len názov easing funkcií namiesto určovania
+    konkretnej Beziérovej krivky.
+  css: !!code
+    CSS vlastnosti `transition` a `animation` vám dovoľujú použiť easing
+    funkcie.
+  css_bad:
+    Bohužiaľ, podporujú len základné easing funkcie a tak niektoré musíte
+    špecifikovať pomocou Beziérovej krivky danej easing funkcie.
+  css_help:
+    Po kliku na vybranú easing funkciu sa zobrazí jej Beziérova krivka.
+
+easing:
+  all_easings: Všetky easing funkcie
+  no_css: !!code
+    Nepodporované v CSS. Ale môžete ju použiť v JS alebo si ju
+    napísať pomocou CSS Animation `@keyframes`.
+  edit: ^Upraviť^ na cubic-bezier.com.
+
+opensource:
+  title: open source
+  translate: ^Pomôžte preložiť^ stránku do vášho jazyka
