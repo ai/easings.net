@@ -7,8 +7,8 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
-    atomic (1.1.14)
-    autoprefixer-rails (1.1.20140222)
+    atomic (1.1.15)
+    autoprefixer-rails (1.1.20140226)
       execjs
     coffee-script (2.2.0)
       coffee-script-source
@@ -81,8 +81,8 @@ GEM
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
-    thread_safe (0.1.3)
-      atomic
+    thread_safe (0.2.0)
+      atomic (>= 1.1.7, < 2)
     tilt (1.4.1)
     tzinfo (0.3.38)
     uglifier (2.4.0)
