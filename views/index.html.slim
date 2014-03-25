@@ -128,7 +128,8 @@ html lang=r18n.locale.code
 
     footer
       .centered
-        a.author href="https://github.com/ai" target="_blank"
+        - login = r18n.locale.code == 'ru' ? 'andrey_sitnik' : 'andreysitnik'
+        a.author href="https://twitter.com/#{ login }" target="_blank"
           .mask
             .hover
             .image
