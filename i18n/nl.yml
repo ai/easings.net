@@ -30,7 +30,7 @@ howtos:
     met easing te maken. Geef de easing naam (bijvoorbeeld `easeInCirc`) door
     aan de `.animate()` functie als derde argument, of gebruik het als de waarde van de `easing` optie.
   scss: !!code
-    Sass/SCSS ondersteund de animaties ook! Compass verwijderd de prefixes voor
+    Sass/SCSS ondersteunt de animaties ook! Compass verwijdert de prefixes voor
     de `transition` en `animation` properties, en met de
     <nobr>^Compass Ceaser^</nobr> plugin kunnen de easing functies ook op naam
     worden gebruikt (zonder de exacte Bézierkromme).
@@ -46,7 +46,7 @@ howtos:
 easing:
   all_easings: Alle easing functies
   no_css: !!code
-    Niet ondersteund in CSS. Wel te gebruiken in JS of te maken met behulp va
+    Niet ondersteund in CSS. Wel te gebruiken in JS of te maken met behulp van
     CSS Animation `@keyframes`.
   edit: ^Bewerk^ op cubic-bezier.com.
 
