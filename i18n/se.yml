@@ -1,56 +1,59 @@
-title: Easing Functions Cheat Sheet
+title: Dämpningsfuktioner - liten fusklapp
 description:
-  Make animations more realistic by picking right the easing function.
+  Gör dina animationer mer realistiska genom att välja rätt funktion.
 share:
-  Easing functions specify the speed of animation
-  to make the movement more natural. Real objects don’t just move
-  at a constant speed, and do not start and stop in an instant.
-  This page helps you choose the right easing function.
+  Dämpningsfunktionerna (engelska "easing functions") reglerar farten på
+  en animation för att få rörelsen mer naturlig. Objekt i den verkliga
+  världen rör sig inte med en jämn hastighet, och startar och stannar
+  inte helt plötsligt. Den här sidan hjälper dig att välja rätt
+  dämpningsfunktion.
 
 about: !!format
-  ~Easing functions~ specify the rate of change of a parameter
-  over time.
+  ~Dämpningsfuktioner~ bestämmer ändringshastigheten på en paramter
+  över en viss tid.
 
-  Objects in real life don’t just start and stop instantly, and almost never
-  move at a constant speed. When we open a drawer, we first move it quickly,
-  and slow it down as it comes out. Drop something on the floor, and it will
-  first accelerate downwards, and then bounce back up after hitting the floor.
+  Objekt i den verkliga världen startar och stannar inte bara helt
+  plötsligt och rör sig nästan aldrig med en jämn hastighet.
+  Om du öppnar en byrålåda, drar du först snabbt och sedan långsammare
+  när den kommer ut. Släpper du en boll på golvet, kommer den först
+  öka hastigheten på väg ner och sedan studsa tillbaks upp när den
+  träffat golvet
 
-  This page helps you choose the right easing function.
+  Den här sidan är till för att hjälpa dig att välja rätt dämpningsfunktion.
 
 easings:
-  css: Available everywhere
-  js: Only in JavaScript
+  css: Tillgänglig överallt
+  js: Endast i JavaScript
 
 howtos:
-  name: easing name
-  curve: easing’s Bezier curve
+  name: dämpningens namn
+  curve: dämpningens bezierkurva
   js: !!code
-    jQuery with the ^jQuery Easing Plugin^ is the easiest way to describe
-    animation with easing. Pass the easing name (like `easeInCirc`)
-    to the `.animate()` function as the third argument, or use it as the value
-    of the `easing` option.
+    jQuery med ^jQuery Easing Plugin^ är det enklaste sättet att beskriva
+    animationer med dämpning på. Ange dämpningsfunktionens namn
+    (t.ex. "easeInCirc") som ".animate()"-funktionens tredje argument,
+    eller använd den som värde för alternativet "easing".
   scss: !!code
-    Sass/SCSS can describe animations too! Compass removes prefixes before
-    the `transition` and `animation` properties, <nobr>and the
-    ^Compass Ceaser^</nobr> plugin lets you pass the easing function by name
-    (without specifying the exact Bezier curves).
+    Sass/SCSS kan också beskiva animationer! Compass använder inte prefixen
+    före "transition" and "animation", <nobr>och tillägget
+    ^Compass Ceaser^</nobr> låter dig ange dämpningsfunktionerna
+    med deras namn (utan att behöva ange bezierkurvan)
   css: !!code
-    CSS properties `transition` and `animation` allow you to pick the easing
-    function.
+    Med CSS kan du använda "transition" och "animation" för att välja
+    en dämpningsfunktion.
   css_bad:
-    Unfortunately, they don’t support all easings and you must
-    specify the desired easing function yourself (as a Bezier curve).
+    Tyvärr stödjer de inte alla dämpningar så du måste ange den
+    dämpningsfunktion du vill använda manuellt (som en bezierkurva)
   css_help:
-    Select an easing function to show it’s Bezier curve notation.
+    Välj en dämpnigsfunktion för att visa en notation av bezierkurvan.
 
 easing:
-  all_easings: All easings
+  all_easings: Alla dämpningar
   no_css: !!code
-    Not supported in CSS. But you can use in JS
-    or write it out with the CSS Animation `@keyframes`.
-  edit: ^Edit^ on cubic-bezier.com.
+    Stöds inte i CSS. Men du kan använda JS eller
+    skriva ut det med CSS-animationen "@keyframes".
+  edit: ^Redigera^ på cubic-bezier.com.
 
 opensource:
-  title: open source
-  translate: ^Help translate^ site to your language
+  title: öppen källkod
+  translate: Hjälp oss ^översätta^ sidan till ditt språk
