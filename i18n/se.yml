@@ -1,11 +1,11 @@
-title: Dämpningsfuktioner - liten fusklapp
+title: Lista över dämpningsfunktioner
 description:
   Gör dina animationer mer realistiska genom att välja rätt funktion.
 share:
   Dämpningsfunktionerna (engelska "easing functions") reglerar farten på
-  en animation för att få rörelsen mer naturlig. Objekt i den verkliga
+  din animation för att få rörelsen mer naturlig. Objekt i den verkliga
   världen rör sig inte med en jämn hastighet, och startar och stannar
-  inte helt plötsligt. Den här sidan hjälper dig att välja rätt
+  inte bara helt plötsligt. Den här sidan hjälper dig att välja rätt
   dämpningsfunktion.
 
 about: !!format
@@ -13,11 +13,11 @@ about: !!format
   över en viss tid.
 
   Objekt i den verkliga världen startar och stannar inte bara helt
-  plötsligt och rör sig nästan aldrig med en jämn hastighet.
+  plötsligt, och rör sig nästan aldrig med en jämn hastighet.
   Om du öppnar en byrålåda, drar du först snabbt och sedan långsammare
-  när den kommer ut. Släpper du en boll på golvet, kommer den först
-  öka hastigheten på väg ner och sedan studsa tillbaks upp när den
-  träffat golvet
+  när lådan har kommit ut en bit. Släpper du en boll på golvet, kommer
+  den först öka hastigheten på vägen ner och sedan studsa tillbaks upp
+  när den träffat golvet.
 
   Den här sidan är till för att hjälpa dig att välja rätt dämpningsfunktion.
 
@@ -27,7 +27,7 @@ easings:
 
 howtos:
   name: dämpningens namn
-  curve: dämpningens bezierkurva
+  curve: dämpningens Bezierkurva
   js: !!code
     jQuery med ^jQuery Easing Plugin^ är det enklaste sättet att beskriva
     animationer med dämpning på. Ange dämpningsfunktionens namn
@@ -43,9 +43,9 @@ howtos:
     en dämpningsfunktion.
   css_bad:
     Tyvärr stödjer de inte alla dämpningar så du måste ange den
-    dämpningsfunktion du vill använda manuellt (som en bezierkurva)
+    dämpningsfunktion du vill använda manuellt (som en Bezierkurva)
   css_help:
-    Välj en dämpnigsfunktion för att visa en notation av bezierkurvan.
+    Välj en dämpnigsfunktion för att visa en notation av Bezierkurvan.
 
 easing:
   all_easings: Alla dämpningar
