@@ -37,7 +37,7 @@ howtos:
     Sass/SCSS kan också beskiva animationer! Compass använder inte prefixen
     före "transition" and "animation", <nobr>och tillägget
     ^Compass Ceaser^</nobr> låter dig ange dämpningsfunktionerna
-    med deras namn (utan att behöva ange bezierkurvan)
+    med deras namn (utan att behöva ange Bezierkurvan)
   css: !!code
     Med CSS kan du använda "transition" och "animation" för att välja
     en dämpningsfunktion.
