@@ -1,0 +1,59 @@
+title: Puškica za izing (easing) funkcije
+description:
+  Uradite animaciju realističnije, da izaberete pravu izing (easing) funkciju.
+share:
+  Izing (easing) funkcije određuju stopu promene parametra tokom vremena,
+  čineći kretanje realističnije jer objekti u stvarnom životu ne započinju
+  kretanje i ne zaustavljaju se trenutačno. Ova stranica vam pomaže da
+  izaberete pravu izing funkciju.
+font: 400,700&subset=latin,cyrillic
+
+about: !!format
+  ~Izing (easing) funkcije~ određuju stopu promene parametra tokom vremena.
+
+  Objekti u stvarnom životu ne započinju kretanje i ne zaustavljaju se
+  trenutačno, i gotovo nikada se ne kreću konstantnom brzinom. Kada otvorimo
+  ladicu, najpre je pomerimo brzo, a usporimo dok izlazi napolje. Ispustite
+  nešto na pod, i ono će prvo da ubrzava na dole, a zatim da se odbije nazad
+  nakon udaranja u pod.
+
+  Ova stranica vam pomaže da izaberete pravu izing funkciju.
+
+easings:
+  css: Dostupno svuda
+  js: Samo u JavaScript-u
+
+howtos:
+  name: ime izinga
+  curve: Bezijer kriva izing funkcije
+  js: !!code
+    jQuery sa ^jQuery Easing Plugin^-om je najlakši način da se opiše animacija
+    sa izingom. Unesite izing ime (kao što je `easeInCirc`) u `.animate()`
+    funkciju kao treći argument ili upotrebite kao vrednost opcije `easing`.
+  scss: !!code
+    Sass/SCSS može takođe da opiše animacije! Compass uklanja prefikse pre
+    `transition` <nobr>i `animation`</nobr> svojstva, a ^Compass Ceaser^ plugin
+    vam dozvoljava da predate izing funkciju zadatu sa imenom (bez preciziranja
+    tačnih Bezijerovih kriva).
+  css: !!code
+    CSS svojstva `transition` i `animation` dozvoljavaju da izaberete izing
+    funkciju.
+  css_bad:
+    Nažalost, ova svojstva ne podržavaju sve izinge i morate da precizirate
+    željenu izing funkciju sami (kao Bezijerovu krivu).
+  css_help:
+    Izaberite izing funkciju da biste prikazali njenu notaciju kao Bezijerove
+    krive.
+
+easing:
+  all_easings: Sve funkcije
+  no_css: !!code
+    Nažalost, ovakvu izing funkciju nije moguće odrediti u CSS.
+    Koristite JavaScript ili specijalni `@keyframes` u CSS Animation.
+  edit: ^Uređivati^ na cubic-bezier.com.
+
+opensource:
+  title: open source
+  translate: ^Pomozite da prevedete^ stranicu na vaš jezik
+
+author: Andrej Sitnik
