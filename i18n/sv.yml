@@ -8,7 +8,7 @@ share:
   sidan hjälper dig att välja rätt dämpningsfunktion.
 
 about: !!format
-  ~Dämpningsfuktioner~ (engelska "easing functions") bestämmer
+  ~Dämpningsfuktioner~ (engelska "easing functions") kontrollerar
   ändringshastigheten på en parameter över en viss tid.
 
   Objekt i den verkliga världen startar och stannar inte bara helt
@@ -41,7 +41,7 @@ howtos:
     Med CSS kan du använda "transition" och "animation" för att välja
     en dämpningsfunktion.
   css_bad:
-    Tyvärr stödjer de inte alla sorters dämpningar och då måste du ange den
+    Tyvärr stödjer de inte alla sorters dämpningar, och då måste du ange den
     dämpningsfunktion du vill använda manuellt (i form av en Bezierkurva)
   css_help:
     Välj en dämpnigsfunktion för att visa en notation av Bezierkurvan.
@@ -49,8 +49,8 @@ howtos:
 easing:
   all_easings: Alla dämpningsfunktioner
   no_css: !!code
-    Stöds inte i CSS. Istället kan du använda JS eller CSS-regeln
-    "@keyframes".
+    Stöds inte i CSS. Du kan dock använda JavaScript, eller CSS med
+    regeln "@keyframes".
   edit: ^Redigera^ på cubic-bezier.com.
 
 opensource:
