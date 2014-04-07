@@ -1,6 +1,6 @@
 title: Puškica za izing (easing) funkcije
 description:
-  Uradite animaciju realističnije, da izaberete pravu izing (easing) funkciju.
+  Načinite animaciju realističnijom tako što ćete izabrati pravu izing funkciju.
 share:
   Izing (easing) funkcije određuju stopu promene parametra tokom vremena,
   čineći kretanje realističnije jer objekti u stvarnom životu ne započinju
@@ -50,7 +50,7 @@ easing:
   no_css: !!code
     Nažalost, ovakvu izing funkciju nije moguće odrediti u CSS.
     Koristite JavaScript ili specijalni `@keyframes` u CSS Animation.
-  edit: ^Uređivati^ na cubic-bezier.com.
+  edit: ^Uredite^ na cubic-bezier.com.
 
 opensource:
   title: open source
