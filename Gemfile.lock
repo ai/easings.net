@@ -80,7 +80,7 @@ GEM
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
-    thread_safe (0.3.2)
+    thread_safe (0.3.3)
     tilt (1.4.1)
     tzinfo (0.3.39)
     uglifier (2.5.0)
