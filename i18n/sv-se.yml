@@ -2,21 +2,20 @@ title: Lista över dämpningsfunktioner
 description:
   Gör dina animationer mer realistiska genom att välja rätt funktion.
 share:
-  Dämpningsfunktionerna (engelska "easing functions") reglerar farten på
-  din animation för att få rörelsen mer naturlig. Objekt i den verkliga
-  världen rör sig inte med en jämn hastighet, och startar och stannar
-  inte bara helt plötsligt. Den här sidan hjälper dig att välja rätt
-  dämpningsfunktion.
+  Gör din animation mer naturlig med dämpningsfunktioner! Objekt i
+  den verkliga världen rör sig inte med en jämn hastighet, och startar
+  och stannar inte bara helt plötsligt. Den här sidan hjälper dig att
+  välja rätt dämpningsfunktion.
 
 about: !!format
-  ~Dämpningsfuktioner~ bestämmer ändringshastigheten på en paramter
-  över en viss tid.
+  ~Dämpningsfuktionerna~ (engelska "easing functions") kontrollerar
+  hur ett värde ändras över en viss tid.
 
-  Objekt i den verkliga världen startar och stannar inte bara helt
-  plötsligt, och rör sig nästan aldrig med en jämn hastighet.
-  Om du öppnar en byrålåda, drar du först snabbt och sedan långsammare
+  I den verkliga världen rör sig saker och ting nästan aldrig med en
+  jämn hastighet. De startar och stannar heller inte helt plötsligt —
+  om du t.ex öppnar en byrålåda, drar du först snabbt och sedan långsammare
   när lådan har kommit ut en bit. Släpper du en boll på golvet, kommer
-  den först öka hastigheten på vägen ner och sedan studsa tillbaks upp
+  den först öka hastigheten på väg neråt och sedan studsa tillbaks uppåt
   när den träffat golvet.
 
   Den här sidan är till för att hjälpa dig att välja rätt dämpningsfunktion.
@@ -30,28 +29,28 @@ howtos:
   curve: dämpningens Bezierkurva
   js: !!code
     jQuery med ^jQuery Easing Plugin^ är det enklaste sättet att beskriva
-    animationer med dämpning på. Ange dämpningsfunktionens namn
+    animationer med dämpning. Ange dämpningsfunktionens namn
     (t.ex. "easeInCirc") som ".animate()"-funktionens tredje argument,
     eller använd den som värde för alternativet "easing".
   scss: !!code
-    Sass/SCSS kan också beskiva animationer! Compass använder inte prefixen
-    före "transition" and "animation", <nobr>och tillägget
-    ^Compass Ceaser^</nobr> låter dig ange dämpningsfunktionerna
+    Sass/SCSS kan också beskiva animationer. Compass använder inte prefixen
+    före "transition" och "animation", <nobr>och tillägget
+    ^Compass Ceaser^</nobr> låter dig referera till dämpningsfunktionerna
     med deras namn (utan att behöva ange Bezierkurvan)
   css: !!code
     Med CSS kan du använda "transition" och "animation" för att välja
     en dämpningsfunktion.
   css_bad:
-    Tyvärr stödjer de inte alla dämpningar så du måste ange den
-    dämpningsfunktion du vill använda manuellt (som en Bezierkurva)
+    Tyvärr stödjer de inte alla sorters dämpningar, och då måste du ange den
+    dämpningsfunktion du vill använda manuellt (i form av en Bezierkurva)
   css_help:
-    Välj en dämpnigsfunktion för att visa en notation av Bezierkurvan.
+    Välj en dämpningsfunktion för att visa en notation av Bezierkurvan.
 
 easing:
-  all_easings: Alla dämpningar
+  all_easings: Alla dämpningsfunktioner
   no_css: !!code
-    Stöds inte i CSS. Men du kan använda JS eller
-    skriva ut det med CSS-animationen "@keyframes".
+    Stöds inte i CSS. Du kan dock använda JavaScript, eller CSS med
+    regeln "@keyframes".
   edit: ^Redigera^ på cubic-bezier.com.
 
 opensource:
