@@ -2,20 +2,20 @@ title: Lista över dämpningsfunktioner
 description:
   Gör dina animationer mer realistiska genom att välja rätt funktion.
 share:
-  Dämpningsfunktionerna reglerar farten på din animation för att få rörelsen
-  mer naturlig. Objekt i den verkliga världen rör sig inte med en jämn
-  hastighet, och startar och stannar inte bara helt plötsligt. Den här
-  sidan hjälper dig att välja rätt dämpningsfunktion.
+  Gör din animation mer naturlig med dämpningsfunktioner! Objekt i
+  den verkliga världen rör sig inte med en jämn hastighet, och startar
+  och stannar inte bara helt plötsligt. Den här sidan hjälper dig att
+  välja rätt dämpningsfunktion.
 
 about: !!format
-  ~Dämpningsfuktioner~ (engelska "easing functions") kontrollerar
-  ändringshastigheten på en parameter över en viss tid.
+  ~Dämpningsfuktionerna~ (engelska "easing functions") kontrollerar
+  hur ett värde ändras över en viss tid.
 
-  Objekt i den verkliga världen startar och stannar inte bara helt
-  plötsligt, och rör sig nästan aldrig med en jämn hastighet.
-  Om du öppnar en byrålåda, drar du först snabbt och sedan långsammare
+  I den verkliga världen rör sig saker och ting nästan aldrig med en
+  jämn hastighet. De startar och stannar heller inte helt plötsligt —
+  om du t.ex öppnar en byrålåda, drar du först snabbt och sedan långsammare
   när lådan har kommit ut en bit. Släpper du en boll på golvet, kommer
-  den först öka hastigheten på väg neråt och sedan studsa tillbaks upp
+  den först öka hastigheten på väg neråt och sedan studsa tillbaks uppåt
   när den träffat golvet.
 
   Den här sidan är till för att hjälpa dig att välja rätt dämpningsfunktion.
@@ -44,7 +44,7 @@ howtos:
     Tyvärr stödjer de inte alla sorters dämpningar, och då måste du ange den
     dämpningsfunktion du vill använda manuellt (i form av en Bezierkurva)
   css_help:
-    Välj en dämpnigsfunktion för att visa en notation av Bezierkurvan.
+    Välj en dämpningsfunktion för att visa en notation av Bezierkurvan.
 
 easing:
   all_easings: Alla dämpningsfunktioner
