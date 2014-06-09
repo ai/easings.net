@@ -7,7 +7,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    autoprefixer-rails (1.1.20140523)
+    autoprefixer-rails (1.1.20140605)
       execjs
     coffee-script (2.2.0)
       coffee-script-source
@@ -37,7 +37,7 @@ GEM
       jquery-cdn (>= 1)
       sprockets (>= 1)
       uglifier (>= 2.1.1)
-    execjs (2.1.0)
+    execjs (2.2.0)
     hike (1.2.3)
     i18n (0.6.9)
     jquery-cdn (2.1.1)
