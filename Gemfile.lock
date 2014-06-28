@@ -1,13 +1,13 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.1.1)
+    activesupport (4.1.2)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    autoprefixer-rails (2.0.0.20140622)
+    autoprefixer-rails (2.0.1.20140626)
       execjs
     coffee-script (2.2.0)
       coffee-script-source
@@ -37,7 +37,7 @@ GEM
       jquery-cdn (>= 1)
       sprockets (>= 1)
       uglifier (>= 2.1.1)
-    execjs (2.2.0)
+    execjs (2.2.1)
     hike (1.2.3)
     i18n (0.6.9)
     jquery-cdn (2.1.1)
@@ -61,7 +61,7 @@ GEM
     rake (10.3.2)
     ref (1.0.5)
     rubypants-unicode (0.2.3)
-    sass (3.3.8)
+    sass (3.3.9)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
