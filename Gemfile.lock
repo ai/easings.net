@@ -7,7 +7,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    autoprefixer-rails (2.2.0.20140727)
+    autoprefixer-rails (2.2.0.20140804)
       execjs
     coffee-script (2.3.0)
       coffee-script-source
@@ -61,7 +61,7 @@ GEM
     rake (10.3.2)
     ref (1.0.5)
     rubypants-unicode (0.2.3)
-    sass (3.3.11)
+    sass (3.3.14)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -82,7 +82,7 @@ GEM
       ref
     thread_safe (0.3.4)
     tilt (1.4.1)
-    tzinfo (1.2.1)
+    tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
       execjs (>= 0.3.0)
