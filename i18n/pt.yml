@@ -1,0 +1,56 @@
+title: Guia de funções de transição
+description:
+  Faça animações mais realistas utilizando a função de transição mais apropriada.
+share:
+  As funções de transição usam a velocidade da animação
+  de modo a tornar o movimento mais natural. Os objectos na vida real não se movem
+  a uma velocidade constance, e não começam e param num instante.
+  Esta página ajuda-o a escolher a melhor função de transição.
+
+about: !!format
+  ~Funções de transição~ especificam a variação de um parâmetro
+  ao longo do tempo.
+
+  Os objectos na vida real não começam e param instantaneamente, e quase nunca
+  se movem a uma velocidade constante. Quando abrimos uma gaveta, começamos com um movimento rápido,
+  e vamos abrandando à medida que vamos abrindo. Drop something on the floor, and it will
+  first accelerate downwards, and then bounce back up after hitting the floor.
+
+  This page helps you choose the right easing function.
+
+easings:
+  css: Available everywhere
+  js: Only in JavaScript
+
+howtos:
+  name: easing name
+  curve: easing’s Bezier curve
+  js: !!code
+    jQuery with the ^jQuery Easing Plugin^ is the easiest way to describe
+    animation with easing. Pass the easing name (like `easeInCirc`)
+    to the `.animate()` function as the third argument, or use it as the value
+    of the `easing` option.
+  scss: !!code
+    Sass/SCSS can describe animations too! Compass removes prefixes before
+    the `transition` and `animation` properties, <nobr>and the
+    ^Compass Ceaser^</nobr> plugin lets you pass the easing function by name
+    (without specifying the exact Bezier curves).
+  css: !!code
+    CSS properties `transition` and `animation` allow you to pick the easing
+    function.
+  css_bad:
+    Unfortunately, they don’t support all easings and you must
+    specify the desired easing function yourself (as a Bezier curve).
+  css_help:
+    Select an easing function to show it’s Bezier curve notation.
+
+easing:
+  all_easings: All easings
+  no_css: !!code
+    Not supported in CSS. But you can use in JS
+    or write it out with the CSS Animation `@keyframes`.
+  edit: ^Edit^ on cubic-bezier.com.
+
+opensource:
+  title: open source
+  translate: ^Help translate^ site to your language
