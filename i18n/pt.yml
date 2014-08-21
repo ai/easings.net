@@ -1,56 +1,56 @@
-title: Guia de funções de transição
+title: Guia de funções de atenuação
 description:
-  Faça animações mais realistas utilizando a função de transição mais apropriada.
+  Faça animações mais realistas utilizando a função de atenuação mais apropriada.
 share:
-  As funções de transição usam a velocidade da animação
-  de modo a tornar o movimento mais natural. Os objectos na vida real não se movem
-  a uma velocidade constance, e não começam e param num instante.
-  Esta página ajuda-o a escolher a melhor função de transição.
+  As funções de atenuação usam a velocidade da animação
+  de modo a tornar o movimento mais natural. Os objectos na vida real não se movem
+  a uma velocidade constance, e não começam e param num instante.
+  Esta página ajuda-o a escolher a melhor função de atenuação.
 
 about: !!format
-  ~Funções de transição~ especificam a variação de um parâmetro
+  ~Funções de atenuação~ especificam a variação de um parâmetro
   ao longo do tempo.
 
   Os objectos na vida real não começam e param instantaneamente, e quase nunca
-  se movem a uma velocidade constante. Quando abrimos uma gaveta, começamos com um movimento rápido,
-  e vamos abrandando à medida que vamos abrindo. Drop something on the floor, and it will
-  first accelerate downwards, and then bounce back up after hitting the floor.
+  se movem a uma velocidade constante. Quando abrimos uma gaveta, começamos com um movimento rápido,
+  e vamos abrandando à medida que vamos abrindo. Quando deixamos cair algo chão, o objecto
+  primeiro acelera durante a queda, e depois resalta novamente para cima depois de atingir o chão.
 
-  This page helps you choose the right easing function.
+  Esta página ajuda-o a escolher a melhor função de atenuação.
 
 easings:
-  css: Available everywhere
-  js: Only in JavaScript
+  css: Amplamente disponíveis
+  js: Apenas em JavaScript
 
 howtos:
-  name: easing name
-  curve: easing’s Bezier curve
+  name: nome da atenuação
+  curve: curva de Bezier
   js: !!code
-    jQuery with the ^jQuery Easing Plugin^ is the easiest way to describe
-    animation with easing. Pass the easing name (like `easeInCirc`)
-    to the `.animate()` function as the third argument, or use it as the value
-    of the `easing` option.
+    jQuery com o ^jQuery Easing Plugin^ é façil de descrever
+    a animação com atenuação. Passamos o nome da função (por exemplo `easeInCirc`)
+    para a função `.animate()` como o terceiro argumento, ou usando como o valor
+    da opção `easing`.
   scss: !!code
-    Sass/SCSS can describe animations too! Compass removes prefixes before
-    the `transition` and `animation` properties, <nobr>and the
-    ^Compass Ceaser^</nobr> plugin lets you pass the easing function by name
-    (without specifying the exact Bezier curves).
+    Sass/SCSS também podem descrever animações! O Compass remove prefixos antes
+    das propriedades `transition` e `animation`, <nobr>e o
+    plugin ^Compass Ceaser^</nobr> permite passar o nome da função de atenuação
+    (sem especificar exactamente as curvas de Bezier).
   css: !!code
-    CSS properties `transition` and `animation` allow you to pick the easing
-    function.
+    As propriedade CSS `transition` e `animation` permitem escolher a função
+    de atenuação.
   css_bad:
-    Unfortunately, they don’t support all easings and you must
-    specify the desired easing function yourself (as a Bezier curve).
+    Infelizmente, não suportam todas as transições e terá que
+    especificar a função de atenuação desejada (como uma curva Bezier).
   css_help:
-    Select an easing function to show it’s Bezier curve notation.
+    Escolha uma função de atenuação para mostrar a notação da curva de Bezier.
 
 easing:
-  all_easings: All easings
+  all_easings: Todas as atenuações
   no_css: !!code
-    Not supported in CSS. But you can use in JS
-    or write it out with the CSS Animation `@keyframes`.
-  edit: ^Edit^ on cubic-bezier.com.
+    Não é suportado em CSS. Mas pode usar em JS
+    ou escreva-a com animações `@keyframes` em CSS.
+  edit: ^Editar^ em cubic-bezier.com.
 
 opensource:
   title: open source
-  translate: ^Help translate^ site to your language
+  translate: ^Ajude a traduzir^ a página para o seu idioma
