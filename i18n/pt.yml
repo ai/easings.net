@@ -5,7 +5,7 @@ share:
   As funções de atenuação usam a velocidade da animação
   de modo a tornar o movimento mais natural. Os objectos na vida real não se movem
   a uma velocidade constance, e não começam e param num instante.
-  Esta página ajuda-o a escolher a melhor função de atenuação.
+  Esta página ajudá-lo-á a escolher a melhor função de atenuação.
 
 about: !!format
   ~Funções de atenuação~ especificam a variação de um parâmetro
@@ -13,20 +13,20 @@ about: !!format
 
   Os objectos na vida real não começam e param instantaneamente, e quase nunca
   se movem a uma velocidade constante. Quando abrimos uma gaveta, começamos com um movimento rápido,
-  e vamos abrandando à medida que vamos abrindo. Quando deixamos cair algo chão, o objecto
-  primeiro acelera durante a queda, e depois resalta novamente para cima depois de atingir o chão.
+  e vamos abrandando à medida que vamos abrindo. Quando deixamos cair algo, o objecto
+  inicialmente acelera durante a queda, e depois resalta ao atingir o chão.
 
-  Esta página ajuda-o a escolher a melhor função de atenuação.
+  Esta página ajudá-lo-á a escolher a melhor função de atenuação.
 
 easings:
   css: Amplamente disponíveis
   js: Apenas em JavaScript
 
 howtos:
-  name: nome da atenuação
+  name: nome da função de atenuação
   curve: curva de Bezier
   js: !!code
-    jQuery com o ^jQuery Easing Plugin^ é façil de descrever
+    jQuery com o ^jQuery Easing Plugin^ é fácil de descrever
     a animação com atenuação. Passamos o nome da função (por exemplo `easeInCirc`)
     para a função `.animate()` como o terceiro argumento, ou usando como o valor
     da opção `easing`.
@@ -48,9 +48,9 @@ easing:
   all_easings: Todas as atenuações
   no_css: !!code
     Não é suportado em CSS. Mas pode usar em JS
-    ou escreva-a com animações `@keyframes` em CSS.
+    ou descreva-a com animações `@keyframes` em CSS.
   edit: ^Editar^ em cubic-bezier.com.
 
 opensource:
   title: open source
-  translate: ^Ajude a traduzir^ a página para o seu idioma
+  translate: ^Ajude a traduzir^ para o seu idioma
