@@ -7,7 +7,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    autoprefixer-rails (2.2.0.20140804)
+    autoprefixer-rails (3.0.0.20140821)
       execjs
     coffee-script (2.3.0)
       coffee-script-source
@@ -28,8 +28,8 @@ GEM
       sprockets (>= 1)
       standalone_typograf (>= 3.0.1)
       unicode_utils (>= 1.4)
-    evil-front-all (0.3.0)
-      autoprefixer-rails (>= 0.5)
+    evil-front-all (0.3.1)
+      autoprefixer-rails (>= 3.0)
       coffee-script (>= 2.2.0)
       csso-rails (>= 0.3)
       evil-blocks-rails (>= 0.2)
