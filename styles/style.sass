@@ -458,6 +458,16 @@ footer
     background-size: 100% 100%
     position: relative
     z-index: 2
+  .star
+    display: none
+    opacity: 0
+    &.is-enable
+      display: block
+      float: left
+      margin: 9px 0 0 30px
+    &.is-show
+      opacity: 1
+      transition: opacity 400ms
   li
     font-size: 12px
     font-family: "Trebuchet MS", sans-serif

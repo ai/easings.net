@@ -185,6 +185,14 @@ evil.doc.ready ($) ->
   cornerAnimation()
   evil.win.on('resize.corner', cornerAnimation) unless cornerActivated
 
+  # Enable GitHub star button
+
+  star = $('.star')
+  evil.win.load ->
+    star.html( star.text() ).addClass('is-enable')
+    star.find('iframe').on 'load', -> star.addClass('is-show')
+    after 5000, -> star.addClass('is-show')
+
   # Change languages link to select
 
   changer = $('<select />').insertAfter('footer ul').change ->

@@ -134,7 +134,8 @@ html lang=r18n.locale.code
             .hover
             .image
           = t.author | 'Andrey Sitnik'
-        .share
+        .star
+          | &lt;iframe src="http://ghbtns.com/github-btn.html?user=ai&amp;repo=easings.net&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="104" height="20">&lt;/iframe>'
         ul
           - each_locale do |code, locale|
             li
