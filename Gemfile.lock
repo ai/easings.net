@@ -7,7 +7,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    autoprefixer-rails (3.1.0.20140911)
+    autoprefixer-rails (3.1.1.20141001)
       execjs
     coffee-script (2.3.0)
       coffee-script-source
@@ -46,7 +46,7 @@ GEM
     libv8 (3.16.14.7)
     mime-types (2.3)
     mini_portile (0.6.0)
-    minitest (5.4.1)
+    minitest (5.4.2)
     multi_json (1.10.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
@@ -61,7 +61,7 @@ GEM
     rake (10.3.2)
     ref (1.0.5)
     rubypants-unicode (0.2.3)
-    sass (3.4.4)
+    sass (3.4.5)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
