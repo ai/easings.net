@@ -1,6 +1,6 @@
 ul
   - @block.each do |easing|
-    li.easing class=easing.name
+    li.easing.is-clickable class=easing.name
       .button
         h3.easing-title= easing.name
         - x = 120

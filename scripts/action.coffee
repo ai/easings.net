@@ -23,6 +23,13 @@ evil.doc.ready ($) ->
     hash($(@).attr('href'))
     false
 
+  # Block :active on title click
+
+  easings.find('.easing-title').mousedown ->
+    $(@).closest('.easing').removeClass('is-clickable')
+  easings.find('.easing-title').mouseup ->
+    $(@).closest('.easing').addClass('is-clickable')
+
   # Easing example
 
   easings.on 'touchstart', -> $(@).addClass('is-tapped')
