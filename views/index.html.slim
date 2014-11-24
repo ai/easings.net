@@ -4,16 +4,22 @@ html lang=r18n.locale.code
     meta charset="UTF-8"
     title= t.title
     meta name="description" content=t.description
+
+    meta name="viewport"           content="width=device-width"
+    link rel="icon" type="image/png" href="/apple-touch-icon.png" sizes="192x192"
+    meta name="theme-color"        content="#fff"
+
     = include_jquery(env: env)
     - font = (t.font | '400,700&subset=latin').gsub('&', '&amp;')
     link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:#{font}"
     link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Mono"
-    meta name="viewport"           content="width=device-width"
-    meta name="theme-color"        content="#fff"
+
     meta property="og:url"         content="http://easings.net/"
     meta property="og:image"       content="http://easings.net/apple-touch-icon.png"
     meta property="og:description" content=t.share
+
     style= assets['style.css']
+
     - if production?
       = include_statistics
   body
