@@ -8,7 +8,7 @@ html lang=r18n.locale.code
     - font = (t.font | '400,700&subset=latin').gsub('&', '&amp;')
     link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:#{font}"
     link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Mono"
-    = disable_mobile_zoom
+    meta name="viewport"           content="width=device-width"
     meta property="og:url"         content="http://easings.net/"
     meta property="og:image"       content="http://easings.net/apple-touch-icon.png"
     meta property="og:description" content=t.share

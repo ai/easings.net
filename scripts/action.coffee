@@ -23,19 +23,6 @@ evil.doc.ready ($) ->
     hash($(@).attr('href'))
     false
 
-  # Link emulation
-
-  links = easings.find('.link')
-
-  links.on 'mousedown touchstart', ->
-    $(@).closest('.easing').addClass('is-pressed')
-  links.on 'touchend touchmove', ->
-    easings.removeClass('is-pressed')
-  evil.body.mouseup ->
-    easings.removeClass('is-pressed')
-  evil.doc.scroll ->
-    easings.removeClass('is-pressed')
-
   # Easing example
 
   easings.on 'touchstart', -> $(@).addClass('is-tapped')
