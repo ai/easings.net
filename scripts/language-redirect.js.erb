@@ -1,4 +1,4 @@
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
     var translations = <%= R18n.available_locales.
         map    { |i| i.code.downcase }.
         reject { |i| i == 'en' } %>;
@@ -24,4 +24,4 @@
 
     find(dialect);
     find(language);
-})();
+});
