@@ -46,20 +46,6 @@ html lang=r18n.locale.code
                 - @block = block
                 = partial 'easings_block'
           article.howtos
-            section.js
-              h3 JavaScript
-              p= t.howtos.js.link('http://gsgd.co.uk/sandbox/jquery/easing/')
-              pre
-                code
-                  | div.animate({ top: '-=100px' }, 600, '<strong>#{t.howtos.name}</strong>', function () { … })
-
-            section.scss
-              h3 SCSS
-              p= t.howtos.scss.link('https://github.com/jhardy/compass-ceaser-easing')
-              pre
-                code
-                  | div {
-                      @include transition(all 600ms ceaser(<strong>$#{t.howtos.name}</strong>)); }
 
             section.css
               h3 CSS
@@ -71,6 +57,21 @@ html lang=r18n.locale.code
                   | div {
                       -webkit-transition: all 600ms <strong>#{t.howtos.curve}</strong>;
                       transition:         all 600ms <strong>#{t.howtos.curve}</strong>; }
+
+            section.scss
+              h3 SCSS
+              p= t.howtos.scss.link('https://github.com/jhardy/compass-ceaser-easing')
+              pre
+                code
+                  | div {
+                      @include transition(all 600ms ceaser(<strong>$#{t.howtos.name}</strong>)); }
+
+            section.js
+              h3 JavaScript
+              p= t.howtos.js.link('http://gsgd.co.uk/sandbox/jquery/easing/')
+              pre
+                code
+                  | div.animate({ top: '-=100px' }, 600, '<strong>#{t.howtos.name}</strong>', function () { … })
 
           - all_easings.each do |easing|
             - next if easing.linear?
@@ -94,23 +95,6 @@ html lang=r18n.locale.code
                   line x1="0" y1="#{y}" x2="#{x}" y2="#{y}"
                   text x="#{x - 5}" y="#{y - 3}" t
                   path d="M0,#{y} L#{to_path dots}"
-              section.js
-                h3 JavaScript
-                p= t.howtos.js.link('http://gsgd.co.uk/sandbox/jquery/easing/')
-                pre
-                  code
-                    | div.animate({ top: '-=100px' }, 600, '<strong>#{easing.name}</strong>', function () { … })
-
-              section.scss
-                h3 SCSS
-                - if easing.css
-                  p= t.howtos.scss.link('https://github.com/jhardy/compass-ceaser-easing')
-                  pre
-                    code
-                      | div {
-                          @include transition(all 600ms ceaser(<strong>$#{easing.name}</strong>)); }
-                - else
-                  p= t.easing.no_css
 
               section.css
                 h3 CSS
@@ -124,6 +108,24 @@ html lang=r18n.locale.code
                   p= t.easing.edit.link("http://cubic-bezier.com/##{easing.bezier}", target: '_blank')
                 - else
                   p= t.easing.no_css
+
+              section.scss
+                h3 SCSS
+                - if easing.css
+                  p= t.howtos.scss.link('https://github.com/jhardy/compass-ceaser-easing')
+                  pre
+                    code
+                      | div {
+                          @include transition(all 600ms ceaser(<strong>$#{easing.name}</strong>)); }
+                - else
+                  p= t.easing.no_css
+
+              section.js
+                h3 JavaScript
+                p= t.howtos.js.link('http://gsgd.co.uk/sandbox/jquery/easing/')
+                pre
+                  code
+                    | div.animate({ top: '-=100px' }, 600, '<strong>#{easing.name}</strong>', function () { … })
 
     footer
       .centered
