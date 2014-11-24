@@ -13,7 +13,7 @@ VIEWS  = ROOT.join('views/')
 PUBLIC = ROOT.join('public/')
 IMAGES = ROOT.join('images/')
 
-STANDALONE = %w( favicon.ico favicon192.png apple-touch-icon.png )
+STANDALONE = %w( favicon.ico favicon.png apple-touch-icon.png )
 
 require 'evil-front-all'
 JqueryCdn.local_url = proc { '/jquery.js' }

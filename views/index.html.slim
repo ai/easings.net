@@ -5,9 +5,9 @@ html lang=r18n.locale.code
     title= t.title
     meta name="description" content=t.description
 
-    meta name="viewport"           content="width=device-width"
-    link rel="icon" type="image/png" href="/favicon192.png" sizes="192x192"
-    meta name="theme-color"        content="#fff"
+    meta name="viewport"    content="width=device-width"
+    meta name="theme-color" content="#fff"
+    link rel="icon" type="image/png" sizes="192x192" href="/favicon.png"
 
     = include_jquery(env: env)
     - font = (t.font | '400,700&subset=latin').gsub('&', '&amp;')
