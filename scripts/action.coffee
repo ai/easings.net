@@ -77,7 +77,7 @@ evil.doc.ready ($) ->
   descriptions.on 'open',  -> showExample($(@))
   descriptions.on 'close', -> cleanExample($(@))
 
-  descriptions.find('.graph').click ->
+  descriptions.find('.graph').on 'mouseenter click', ->
     page = $(@).closest('.easing-description')
     cleanExample(page)
     showExample(page)
