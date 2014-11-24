@@ -175,10 +175,11 @@ evil.doc.ready ($) ->
   # Enable GitHub star button
 
   star = $('.star')
-  evil.win.load ->
-    star.html( star.text() ).addClass('is-enable')
-    star.find('iframe').on 'load', -> star.addClass('is-show')
-    after 5000, -> star.addClass('is-show')
+  if evil.body.width() > 430
+    evil.win.load ->
+      star.html( star.text() ).addClass('is-enable')
+      star.find('iframe').on 'load', -> star.addClass('is-show')
+      after 5000, -> star.addClass('is-show')
 
   # Change languages link to select
 
