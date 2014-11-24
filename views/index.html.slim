@@ -12,6 +12,7 @@ html lang=r18n.locale.code
     meta property="og:url"         content="http://easings.net/"
     meta property="og:image"       content="http://easings.net/apple-touch-icon.png"
     meta property="og:description" content=t.share
+    style= assets['style.css']
     - if production?
       = include_statistics
   body
@@ -167,6 +168,5 @@ html lang=r18n.locale.code
       .translate
         = t.opensource.translate.link("https://github.com/ai/easings.net", target: '_blank')
 
-    style=  assets['style.css']
     script= assets['action.js']
     style=  assets['images.css']
