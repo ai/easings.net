@@ -2,18 +2,18 @@ title: Easing Functions Cheat Sheet
 description:
   Rendi le animazioni più realistiche scegliendo la corretta funzione easing
 share:
-  La funzione Easing specifica la velocità delle accellerazioni di
+  La funzione Easing specifica la velocità delle accelerazioni di
   un'animazione, rendendola più realistica. Un oggetto nella realtà non inizia
   istantaneamente il suo movimento e ad una frequenza costante. Questa pagina
   ti aiuta ogni volta a scegliere la funzione easing desiderata.
 
 about: !!format
-  ~La funzione Easing~ specifica la velocità delle accellerazioni di
+  ~La funzione Easing~ specifica la velocità delle accelerazioni di
   un'animazione, rendendola più realistica.
 
   Un oggetto nella realtà non inizia istantaneamente il suo movimento e ad una
   frequenza costante. Quando apriamo il cassetto, prima gli imprimiamo
-  un'accellerazione e poi lo facciamo rallentare. Quando qualcosa cade,
+  un'accelerazione e poi lo facciamo rallentare. Quando qualcosa cade,
   per prima cosa scende sempre più veloce, fino a che non rimbalza indietro
   quando colpisce il pavimento.
 
