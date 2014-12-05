@@ -50,7 +50,7 @@ GEM
     multi_json (1.10.1)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
-    r18n-core (1.1.11)
+    r18n-core (2.0.0)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -58,7 +58,7 @@ GEM
       dimensions (> 0)
       mime-types (> 0)
       sass (> 0)
-    rake (10.4.0)
+    rake (10.4.2)
     ref (1.0.5)
     rubypants-unicode (0.2.5)
     sass (3.4.9)
