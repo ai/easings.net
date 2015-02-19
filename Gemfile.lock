@@ -94,7 +94,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  evil-front-all
+  evil-front-all (>= 0.3.1)
+  jquery-cdn (>= 2.1.3)
   json
   r18n-core
   rake
