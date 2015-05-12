@@ -1,4 +1,4 @@
-title: Easing Functions Guide de référence
+title: Guide des 
 description:
   Créez des animations plus réalistes uniquement en utilisant une
   fonction prédefinie.
@@ -24,8 +24,8 @@ easings:
   js: Disponible seulement en JavaScript
 
 howtos:
-  name: nom du easing
-  curve: courbe de Bézier du easing
+  name: nom de l'easing
+  curve: courbe de Bézier de l'easing
   js: !!code
     ^jQuery Easing Plugin^ est la solution la plus simple pour décrire
     une animation. Vous avez uniquement besoin de positionner le nom de
@@ -37,11 +37,11 @@ howtos:
     de positionner une fonction easing uniquement par son nom (sans utilisation
     de courbe de Bézier).
   css: !!code
-    Les propriétés CSS `transition` et `animation` permettent de positionner
-    une fonction easing.
+    Les propriétés CSS `transition` et `animation` permettent de définir
+    une fonction d'easing.
   css_bad:
-    Malheureusement, elles ne supportent pas toutes les fonctions easing
-    et vous devez positionner les fonctions non supportées en utilisant les
+    Malheureusement, elles ne supportent pas toutes les fonctions d'easing
+    et vous devez définir les fonctions non supportées en utilisant les
     courbes de Bézier.
   css_help:
     Selection de la function easing et affichage de sa description sous forme
@@ -50,8 +50,8 @@ howtos:
 easing:
   all_easings: Tous les easings
   no_css: !!code
-    Malheureusement, CSS ne supportent pas cette fonction easing.
-    Mais vous pouvez l’utiliser via JavaScript ou par l’animation spéciale
+    Malheureusement, cet easing n'est pas supporté en CSS.
+    Vous pouvez cependant l'utiliser en Javascript our par des animations spéciales.
     CSS `@keyframes`.
   edit: ^Modifier^ sur cubic-bezier.com.
 
