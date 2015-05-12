@@ -115,7 +115,9 @@ class Builder
 
         if @env == :production
           env.js_compressor  = Uglifier.new(copyright: false)
-          env.css_compressor = :csso
+          env.css_compressor = :sass
+        else
+          env.css_compressor = nil
         end
       end
     end
