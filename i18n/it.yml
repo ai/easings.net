@@ -1,54 +1,58 @@
-title: Easing Functions Cheat Sheet
+title: Guida alle funzioni di interpolazione
 description:
-  Rendi le animazioni più realistiche scegliendo la corretta funzione easing
+  Rendi le animazioni più realistiche scegliendo la corretta funzione
+  di interpolazione
 share:
-  La funzione Easing specifica la velocità delle accelerazioni di
-  un'animazione, rendendola più realistica. Un oggetto nella realtà non inizia
-  istantaneamente il suo movimento e ad una frequenza costante. Questa pagina
-  ti aiuta ogni volta a scegliere la funzione easing desiderata.
+  La funzione di interpolazione specifica la velocità delle accelerazioni di
+  un’animazione, rendendola più realistica. Un oggetto nella realtà non inizia
+  istantaneamente il suo movimento e la sua velocità non rimane costante.
+  Questa pagina ti aiuta a scegliere la funzione di interpolazione desiderata.
 
 about: !!format
-  ~La funzione Easing~ specifica la velocità delle accelerazioni di
-  un'animazione, rendendola più realistica.
+  ~La funzione di interpolazione~ specifica la velocità delle accelerazioni di
+  un’animazione, rendendola più realistica.
 
-  Un oggetto nella realtà non inizia istantaneamente il suo movimento e ad una
-  frequenza costante. Quando apriamo il cassetto, prima gli imprimiamo
-  un'accelerazione e poi lo facciamo rallentare. Quando qualcosa cade,
-  per prima cosa scende sempre più veloce, fino a che non rimbalza indietro
-  quando colpisce il pavimento.
+  Un oggetto nella realtà non inizia istantaneamente il suo movimento e la sua
+  velocità non rimane costante. Quando apriamo il cassetto, prima gli imprimiamo
+  un’accelerazione e poi lo facciamo rallentare. Quando qualcosa cade,
+  prima accelera verso il basso, poi rimbalza in alto dopo aver colpito il
+  pavimento.
 
-  Questa pagina ti aiuta ogni volta a scegliere la funzione easing desiderata.
+  Questa pagina ti aiuta ogni volta a scegliere la funzione di interpolazione
+  desiderata.
 
 easings:
   css: Disponibile ovunque
   js: Solo in JavaScript
 
 howtos:
-  name: nome easing
-  curve: curva di Bezier easing
+  name: nome della funzione di interpolazione
+  curve: curva di Bezier della funzione di interpolazione
   js: !!code
     jQuery con il plugin ^jQuery Easing^ è il modo più semplice per impostare
-    le animazioni con easing. Hai solo bisogno di inserire il nome dell'easing
-    nella funzione `.animate` come terzo parametro o come chiave `easing`.
+    le animazioni con interpolazione. Passa come terzo parametro il nome della
+    funzione di interpolazione (per esempio `easeInCirc`) alla funzione
+    `.animate()` o  come valore dell’opzione `easing`.
   scss: !!code
-    Sass/SCSS ti aiuta a impostare le animazioni. Compass rimuove i prefissi
-    prima delle proprietà `transition` e `animation`, il plugin
-    ^Compass Ceaser^ ti permette di impostare l'easing con il suo nome
-    (senza curve di Bezier).
+    Puoi definire le animazioni anche in Sass/SCSS! Compass rimuove i prefissi
+    prima delle proprietà `transition` e `animation` e il plugin
+    ^Compass Ceaser^ ti permette di impostare la funzione di interpolazione con
+    il suo nome (senza specificare la curva di Bezier).
   css: !!code
     Le proprietà CSS `transition` and `animation` ti permettono di impostare
-    l'easing.
+    la funzione di interpolazione.
   css_bad:
-    Sfortunatamente, il loro supporto non è per tutte le easing, per questo devi
-    impostare funzioni tramite la curva di Bezier.
+    Sfortunatamente, il loro supporto non è per tutte le interpolazioni, per
+    questo devi impostare le funzioni specificando la curva di Bezier.
   css_help:
-    Seleziona l'easing per mostrare la descrizione in curva di Bezier.
+    Seleziona l’interpolazione per visualizzare la descrizione della curva di
+    Bezier.
 
 easing:
-  all_easings: Tutti gli easing
+  all_easings: Tutte le interpolazioni
   no_css: !!code
-    Sfortunatamente, CSS non supporta questo easing. Puoi però utilizzarlo
-    dentro JavaScript oppure con le Animazioni CSS speciali `@keyframes`.
+    Sfortunatamente, CSS non supporta questa interpolazione. Puoi però
+    utilizzarla in JavaScript oppure con le Animazioni CSS `@keyframes`.
   edit: ^Modifica^ su cubic-bezier.com.
 
 opensource:
