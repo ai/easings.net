@@ -39,7 +39,7 @@ howtos:
     ^Compass Ceaser^ ti permette di impostare la funzione di interpolazione con
     il suo nome (senza specificare la curva di Bezier).
   css: !!code
-    Le proprietà CSS `transition` and `animation` ti permettono di impostare
+    Le proprietà CSS `transition` e `animation` ti permettono di impostare
     la funzione di interpolazione.
   css_bad:
     Sfortunatamente, il loro supporto non è per tutte le interpolazioni, per
