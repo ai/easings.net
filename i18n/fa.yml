@@ -1,0 +1,54 @@
+title: برگه تقلب توابع ایزینگ
+description:
+  واقعی تر کردن انیمیشن ها با انتخاب تابع درستی از ایزینگ
+share:
+  توابع ایزینگ مشخص کننده سرعت انیمیشن ها برای طبیعی جلوه دادن حرکات هستند.
+  اشیاء واقعی با یک سرعت ثابت حرکت نمی کنند و به سرعت شروع به حرکت و ایستادن نمی کنند.
+  این صفحه به شما کمک میکنه تا ایزینگ درستی رو نتخاب کنید
+
+about: !!format
+  ~توابع ایزینگ - نرخ تغییر پارامتر را در طول زمان مشخص می کنند.
+
+اشیاء در زندگی واقعی به سرعت شروع به حرکت کردن و استادن نمی کنند، و همچنین
+هیچوقت با یک سرعت ثابت حرکت نمی کنند . وقتی ما یک کشو را باز می کنیم در ایتدا
+اون رو با سرعت حرکت میدم و سرعتش کم میشه تا زمانی که بیرون بیاد. یا یک شیء رو روی
+زمین بندازید ، اول با سرعت شتاب رو به پائین می گیره و بعد از برخورد با زمین به بالا می پره.
+
+  این صفحه به شما کمک میکنه تا ایزینگ درستی رو نتخاب کنید
+
+easings:
+  css: در دسترس در همه جا
+  js: فقط در Javasscript
+
+howtos:
+  name: نام ایزینگ
+  curve: easing’s Bezier curve
+  js: !!code
+    jQuery with the ^jQuery Easing Plugin^ is the easiest way to describe
+    animation with easing. Pass the easing name (like `easeInCirc`)
+    to the `.animate()` function as the third argument, or use it as the value
+    of the `easing` option.
+  scss: !!code
+    Sass/SCSS can describe animations too! Compass removes prefixes before
+    the `transition` and `animation` properties, <nobr>and the
+    ^Compass Ceaser^</nobr> plugin lets you pass the easing function by name
+    (without specifying the exact Bezier curves).
+  css: !!code
+    CSS properties `transition` and `animation` allow you to pick the easing
+    function.
+  css_bad:
+    Unfortunately, they don’t support all easings and you must
+    specify the desired easing function yourself (as a Bezier curve).
+  css_help:
+    Select an easing function to show it’s Bezier curve notation.
+
+easing:
+  all_easings: همه ایزینگ ها
+  no_css: !!code
+    Not supported in CSS. But you can use in JS
+    or write it out with the CSS Animation `@keyframes`.
+  edit: ^Edit^ on cubic-bezier.com.
+
+opensource:
+  title: متن باز
+  translate: ^کمک در ترجمه^ سایت به زبان شما
