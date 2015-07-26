@@ -1,53 +1,52 @@
-title: برگه تقلب توابع ایزینگ
+title: برگه تقلب توابع easing
 description:
-  واقعی تر کردن انیمیشن ها با انتخاب تابع درستی از ایزینگ
+  واقعی تر کردن انیمیشن ها با انتخاب تابع درستی از easing
 share:
-  توابع ایزینگ مشخص کننده سرعت انیمیشن ها برای طبیعی جلوه دادن حرکات هستند.
+  توابع easing مشخص کننده سرعت انیمیشن ها برای طبیعی جلوه دادن حرکات هستند.
   اشیاء واقعی با یک سرعت ثابت حرکت نمی کنند و به سرعت شروع به حرکت و ایستادن نمی کنند.
-  این صفحه به شما کمک میکنه تا ایزینگ درستی رو نتخاب کنید
+  این صفحه به شما کمک میکنه تا easing درستی رو نتخاب کنید
 
 about: !!format
-  ~توابع ایزینگ - نرخ تغییر پارامتر را در طول زمان مشخص می کنند.
+  ~توابع easing - نرخ تغییر پارامتر را در طول زمان مشخص می کنند.
 
 اشیاء در زندگی واقعی به سرعت شروع به حرکت کردن و استادن نمی کنند، و همچنین
 هیچوقت با یک سرعت ثابت حرکت نمی کنند . وقتی ما یک کشو را باز می کنیم در ایتدا
 اون رو با سرعت حرکت میدم و سرعتش کم میشه تا زمانی که بیرون بیاد. یا یک شیء رو روی
 زمین بندازید ، اول با سرعت شتاب رو به پائین می گیره و بعد از برخورد با زمین به بالا می پره.
 
-  این صفحه به شما کمک میکنه تا ایزینگ درستی رو نتخاب کنید
+  این صفحه به شما کمک میکنه تا easing درستی رو نتخاب کنید
 
 easings:
   css: در دسترس در همه جا
   js: فقط در Javasscript
 
 howtos:
-  name: نام ایزینگ
-  curve: easing’s Bezier curve
+  name: نام  easing
+  curve: منحنی easing
   js: !!code
-    jQuery with the ^jQuery Easing Plugin^ is the easiest way to describe
-    animation with easing. Pass the easing name (like `easeInCirc`)
-    to the `.animate()` function as the third argument, or use it as the value
-    of the `easing` option.
+  jQuery به همراه ^jQuery Easing Plugin^ ساده ترین روش برای تعریف انیمیشن توسط easing هستند.
+  نام easing را(مثل `easeInCirc`) به عنوان سومین پارامتر تابع `.animate()` قرار دهید
+  یا به عنوان مقدار گزینه easing استفاده کنید.
   scss: !!code
-    Sass/SCSS can describe animations too! Compass removes prefixes before
-    the `transition` and `animation` properties, <nobr>and the
-    ^Compass Ceaser^</nobr> plugin lets you pass the easing function by name
-    (without specifying the exact Bezier curves).
+  Sass/SCSS هم انیمیشن تعریف می کنند. Compass پیشوند های قبل از  ویژگی ها
+  `transition` و `animation` رو حذف میکنه و پلاگین <nobr>^Compass Ceaser^</nobr>
+  به شما امکان پاس دادن نام تابع easign رو میده.
+  (بدون تعیین دقیق منحنی ها)
   css: !!code
-    CSS properties `transition` and `animation` allow you to pick the easing
-    function.
+    خصوصیت های `transition` و `animation` به شما اجازه می دهد تا یک تابع easing را انتخاب کنید
   css_bad:
-    Unfortunately, they don’t support all easings and you must
-    specify the desired easing function yourself (as a Bezier curve).
+  متاسفانه همه آن ها easing را پشتیبانی نمی کنند و شما باید
+  تابع easing مد نظر خودتون رو به عنوان  (Bezier curve) انتخاب کنید.
   css_help:
-    Select an easing function to show it’s Bezier curve notation.
+    یک تابع easing را جهت نمایش نماد های منحنی آن انتخاب کنید.
 
 easing:
-  all_easings: همه ایزینگ ها
+  all_easings: همه easing ها
   no_css: !!code
-    Not supported in CSS. But you can use in JS
-    or write it out with the CSS Animation `@keyframes`.
-  edit: ^Edit^ on cubic-bezier.com.
+
+  در CSS پشتیبانی نمیشه. اما می تونید در JS از اون
+  استفاده کنید یا با استفاده از انیمیشن CSS`@keyframes` بنویسید.
+  edit: ^ویرایش^ در  cubic-bezier.com.
 
 opensource:
   title: متن باز
