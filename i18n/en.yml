@@ -42,7 +42,7 @@ howtos:
     Unfortunately, they don’t support all easings and you must
     specify the desired easing function yourself (as a Bezier curve).
   css_help:
-    Select an easing function to show it’s Bezier curve notation.
+    Select an easing function to show its Bezier curve notation.
 
 easing:
   all_easings: All easings
