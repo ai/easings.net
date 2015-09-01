@@ -1,4 +1,4 @@
-title: Guide des 
+title: Guide de référence des fonctions d'easing
 description:
   Créez des animations plus réalistes uniquement en utilisant une
   fonction prédefinie.
@@ -51,7 +51,7 @@ easing:
   all_easings: Tous les easings
   no_css: !!code
     Malheureusement, cet easing n'est pas supporté en CSS.
-    Vous pouvez cependant l'utiliser en Javascript our par des animations spéciales.
+    Vous pouvez cependant l'utiliser en Javascript ou avec des animations spéciales.
     CSS `@keyframes`.
   edit: ^Modifier^ sur cubic-bezier.com.
 
