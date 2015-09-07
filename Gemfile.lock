@@ -7,7 +7,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    autoprefixer-rails (5.2.1.3)
+    autoprefixer-rails (6.0.2)
       execjs
       json
     coffee-script (2.4.1)
