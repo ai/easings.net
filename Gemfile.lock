@@ -7,7 +7,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    autoprefixer-rails (6.0.2)
+    autoprefixer-rails (6.0.3)
       execjs
       json
     coffee-script (2.4.1)
@@ -44,16 +44,16 @@ GEM
       sprockets (>= 2)
     json (1.8.3)
     libv8 (3.16.14.11)
-    mime-types (2.6.1)
+    mime-types (2.6.2)
     mini_portile (0.6.2)
-    minitest (5.8.0)
+    minitest (5.8.1)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     r18n-core (2.0.4)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
-    rails-sass-images (0.5)
+    rails-sass-images (1.0.0)
       dimensions (> 0)
       mime-types (> 0)
       sass (> 0)
@@ -68,8 +68,8 @@ GEM
     slim (3.0.6)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
-    sprockets (3.3.4)
-      rack (~> 1.0)
+    sprockets (3.3.5)
+      rack (> 1, < 3)
     standalone_typograf (3.0.2)
       activesupport
     temple (0.7.6)
@@ -98,4 +98,4 @@ DEPENDENCIES
   therubyracer
 
 BUNDLED WITH
-   1.10.3
+   1.10.6
