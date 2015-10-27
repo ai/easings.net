@@ -32,7 +32,7 @@ howtos:
     Trong jQuery có plugin ^jQuery Easing^, đây là cách dễ nhất để làm
     việc với easing. Bạn chỉ cần cung cấp tên easing vào tham số thứ ba
     của phương thức `.animate()`. Hoặc có thể truyền vào dạng option,
-    khi đó 'easing' map với tên easing.
+    khi đó `easing` map với tên easing.
   scss: !!code
     Sass/CSS cũng có thể xác định hiệu ứng như trong jQuery. với Compass,
     bạn cần include thuộc tính transition hoặc animation ( không có tiền tố ), Sau đó
