@@ -10,10 +10,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if ( language == 'no' ) {
         language = 'nb';
     }
-    if ( language == 'zh' ) {
+    else if ( language == 'zh' ) {
         language = 'zh-cn';
     }
-
+    else if ( language == 'vi' ) {
+        language = 'vi-vn';
+    }
     var find = function (user) {
         for (var i = 0; i < translations.length; i++) {
             if ( user == translations[i] ) {
