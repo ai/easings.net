@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if ( language == 'no' ) {
         language = 'nb';
-    }
-    else if ( language == 'zh' ) {
+    } else if ( language == 'zh' ) {
         language = 'zh-cn';
     }
-    var find = function (user) {
+
+    function find(user) {
         for (var i = 0; i < translations.length; i++) {
             if ( user == translations[i] ) {
                 location.pathname = '/' + translations[i];
