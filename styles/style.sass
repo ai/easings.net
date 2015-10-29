@@ -32,7 +32,7 @@ $easing-width: 120px + 4px
   position: relative
 
 .about
-  padding: 20px ($easing-width + 40px) 5px 0
+  padding: 20px ($easing-width + 50px) 5px 0
   line-height: 1.3
   p
     margin-bottom: 5px
@@ -482,6 +482,32 @@ footer
   select
     position: relative
     top: 9px
+
+// RTL
+
+.rtl
+  direction: rtl
+
+  pre
+    direction: ltr
+
+  .easing.linear
+    right: auto
+    left: 25px
+
+  .easings
+    direction: ltr
+    left: 15px
+    .part-title
+      right: auto
+      left: -20px
+
+  .about
+    padding-right: 0
+    padding-left: $easing-width + 50px
+
+  .easing-description .back
+    float: left
 
 // Big screens
 

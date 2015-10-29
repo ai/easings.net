@@ -22,7 +22,7 @@ html lang=r18n.locale.code
 
     - if production?
       = include_statistics
-  body
+  body class=('rtl' unless r18n.locale.ltr?)
     .centered
       .about
         = t.about
