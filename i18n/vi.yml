@@ -1,0 +1,60 @@
+title: Thủ thuật chuyển động Easing
+description:
+  Tạo ra các hiệu ứng chuyển động giống thật tế hơn bằng cách chọn đúng hàm easing.
+share:
+  Các hàm easing xác định tốc độ của các hiệu ứng
+  giúp tạo ra chuyển động tự nhiên hơn.
+  Các đối tượng trong thực tế
+  không phải lúc nào cũng chuyển động với tốc độ cố định và cũng không
+  phải nói di chuyển là di chuyển liền, dừng là dừng liền.
+  Bài viết hay sẽ giúp bạn chọn đúng hàm easing mà bạn cần.
+
+about: !!format
+  ~Các hàm easing~ xác định độ thay đổi của các thuộc tính theo thời gian.
+
+  Các đố tượng trong thế giới thật không bao giờ di chuyển hoặc dừng lại
+  một cách đột ngột, và cũng không di chuyển với tốc độ cố định. Khi bạn mở
+  ngắn kéo, đầu tiên chúng ta kéo nó nhanh, sau đó chậm dần cho đến khi nó
+  mở hoàn toàn. Khi thả một cái gì đó xuống sàn nhà, nó sẽ bật ngược lại
+  với độ cao thấp hơn, và cứ bật như vậy, mỗi lần chiều cao lại giảm cho
+  đến khi đứng im.
+
+  Bài viết này sẽ giúp bạn chọn đúng hàm easing để diễn tả đối tượng của bạn.
+
+easings:
+  css: Luôn hoạt động trên mọi trình duyệt
+  js: Chỉ hoạt động khi có javascript
+
+howtos:
+  name: hàm easing
+  curve: easing’s Bezier curve
+  js: !!code
+    Trong jQuery có plugin ^jQuery Easing^, đây là cách dễ nhất để làm
+    việc với easing. Bạn chỉ cần cung cấp tên easing vào tham số thứ ba
+    của phương thức `.animate()`. Hoặc có thể truyền vào dạng option,
+    khi đó `easing` map với tên easing.
+  scss: !!code
+    Sass/CSS cũng có thể xác định hiệu ứng như trong jQuery. với Compass,
+    bạn cần include thuộc tính transition hoặc animation ( không có tiền tố ), Sau đó
+    <nobr>plugin ^Compass Ceaser^</nobr> sẽ giúp bạn xây dựng code
+    css cho hiệu ứng. Bạn chỉ cần truyền vào tên của easing mà bạn muốn.
+  css: !!code
+    Thuộc tính `transition` và `animation` cho phép bạn chọn một hàm easing
+    cho selector
+  css_bad:
+    Không may là css không hỗ trợ sẵn tất cả các hàm easing mà bạn thấy ở đây,
+    Bạn phải tự mình mô tả bằng cách sử dụng Bezier.
+  css_help:
+    Click vào một hình easing để xem cách xây dựng Bezier của nó.
+
+easing:
+  all_easings: Tất cả easing
+  no_css: !!code
+    Không được hỗ trợ sẵn trong CSS. Nhưng bạn có thể
+    sử dụng Javastring hoặc `@keyframes` trong CSS để thay thế.
+
+  edit: ^Sửa^ trên cubic-bezier.com.
+
+opensource:
+  title: open source
+  translate: ^Help translate^ site to your language
