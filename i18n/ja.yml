@@ -26,7 +26,7 @@ howtos:
     jQueryと^jQuery Easing Plugin^の組み合わせが、一番簡単にEasingを持ったアニメーションを指定することができる方法です。
     `.animate`メソッドの第三引数、もしくは`easing`キーにeasingの名前を指定するだけです。
   scss: !!code
-    Saas/SCSSもアニメーションの指定に一役買ってくれます。Compassを使えば、`transition`や`animation`の前のベンダープレフィックスを付ける必要も無いですし、^Compass Ceaser^プラグインを使えば、ベジェ曲線を使わずに、名前で指定することも可能になります。
+    Sass/SCSSもアニメーションの指定に一役買ってくれます。Compassを使えば、`transition`や`animation`の前のベンダープレフィックスを付ける必要も無いですし、^Compass Ceaser^プラグインを使えば、ベジェ曲線を使わずに、名前で指定することも可能になります。
   css: !!code
     CSSの`transition`と`animation`では、easing functionを指定することが出来ます。
   css_bad:
