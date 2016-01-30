@@ -35,7 +35,7 @@ howtos:
 easing:
   all_easings: 所有Easing函數
   no_css: !!code
-    不幸的是, CSS 不支援這個 Easing 函數。 但你仍可以透過 JavaScript 或是 CSS 動畫的  `@keyframes` 來達成。
+    很不幸 CSS 不支援這個 Easing 函數。但你仍可以透過 JavaScript 或是 CSS 動畫的  `@keyframes` 來達成。
   edit: 在 cubic-bezier.com ^編輯^
 
 opensource:
