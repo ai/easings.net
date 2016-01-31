@@ -19,7 +19,7 @@ evil.doc.ready ($) ->
 
   # Don’t scroll on hash change
 
-  $('a[href^=#]').click ->
+  $('a[href^="#"]').click ->
     hash($(@).attr('href'))
     false
 
