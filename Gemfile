@@ -1,11 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem 'sinatra'
 gem 'json'
-
-gem 'jquery-cdn',     '>= 2.1.3'
-gem 'evil-front-all', '>= 0.3.1'
+gem 'sinatra'
 gem 'therubyracer'
+
+gem 'uglifier'
+gem 'evil-front'
+gem 'jquery-cdn'
+gem 'coffee-script'
+gem 'autoprefixer-rails'
 
 gem 'r18n-core'

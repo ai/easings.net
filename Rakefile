@@ -1,6 +1,13 @@
 # encoding: utf-8
 
 require 'pathname'
+require 'uglifier'
+require 'sprockets'
+require 'r18n-core'
+require 'evil-front'
+require 'jquery-cdn'
+require 'coffee_script'
+require 'autoprefixer-rails'
 
 class Pathname
   def glob(pattern, &block)
@@ -15,10 +22,8 @@ IMAGES = ROOT.join('images/')
 
 STANDALONE = %w( favicon.ico favicon.png apple-touch-icon.png )
 
-require 'evil-front-all'
 JqueryCdn.local_url = proc { '/jquery.js' }
 
-require 'r18n-core'
 R18n.default_places = ROOT.join('i18n')
 
 R18n::Filters.add('code') do |text, config|
@@ -93,7 +98,7 @@ end
 
 class Builder
   include R18n::Helpers
-  include EvilFront::Helpers
+  include JqueryCdn::Helpers
 
   attr_accessor :env
 
@@ -111,7 +116,10 @@ class Builder
         env.append_path(ROOT.join('styles/'))
         env.append_path(ROOT.join('vendor'))
 
-        EvilFront.install_all(env)
+        AutoprefixerRails.install(env)
+        JqueryCdn.install(env)
+        EvilFront.install(env)
+        EvilFront.set_slim_options!
 
         if @env == :production
           env.js_compressor  = Uglifier.new(copyright: false)
