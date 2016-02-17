@@ -14,8 +14,8 @@ about: !!format
 
   Các đố tượng trong thế giới thật không bao giờ di chuyển hoặc dừng lại
   một cách đột ngột, và cũng không di chuyển với tốc độ cố định. Khi bạn mở
-  ngắn kéo, đầu tiên chúng ta kéo nó nhanh, sau đó chậm dần cho đến khi nó
-  mở hoàn toàn. Khi thả một cái gì đó xuống sàn nhà, nó sẽ bật ngược lại
+  ngăn kéo, đầu tiên ta kéo nó nhanh, sau đó chậm dần cho đến khi mở hoàn toàn. 
+  Khi thả một cái gì đó xuống sàn nhà, nó sẽ bật ngược lại
   với độ cao thấp hơn, và cứ bật như vậy, mỗi lần chiều cao lại giảm cho
   đến khi đứng im.
 
@@ -48,10 +48,10 @@ howtos:
     Click vào một hình easing để xem cách xây dựng Bezier của nó.
 
 easing:
-  all_easings: Tất cả easing
+  all_easings: Quay lại
   no_css: !!code
     Không được hỗ trợ sẵn trong CSS. Nhưng bạn có thể
-    sử dụng Javastring hoặc `@keyframes` trong CSS để thay thế.
+    sử dụng Javascript hoặc tự viết `@keyframes` trong CSS Animation.
 
   edit: ^Sửa^ trên cubic-bezier.com.
 
