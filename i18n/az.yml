@@ -1,0 +1,61 @@
+title: Yumşaqlıq funksiyaları (easing)
+description:
+  Lazım olan yumşaqlıq funksiyasını (easing) seçməklə animasiyaları daha təbii edin.
+share:
+  Yumşaqlıq funksiyası (easing) animasiyanı daha təbii etmək üçün onun
+  cərəyan sürətini müəyyən edir. Belə ki, təbiətdə heç bir şey dərhal və
+  bərabərsürətli hərəkət etmir. Bu saytdan siz müxtəlif yumşaqlıq
+  funksiyalarını seçə bilərsiniz.
+font: 400,700&subset=latin,cyrillic
+
+about: !!format
+  ~Yumşaqlıq funksiyası (easing)~ animasiyanı daha təbii etmək üçün onun
+  cərəyan cürətini müəyyən edir.
+
+  Təbiətdə heç bir şey dərhal və bərabər sürətlə hərəkət etmir.
+  Məsələn, əgər bir yeşiyin qapağını açırıqsa biz əvvəlcə onu
+  artan təcillə açırıq, daha sonra sürəti azaldaraq hərəkəti
+  saxlayırıq. Əgər bir şey yerə düşərsə, əvvəlcə sürəti artaraq
+  yerə düşür, yerə dəydikdən sonra bir az yuxarı tullanır.
+
+  Bu saytdan siz müxtəlif yumşaqlıq funksiyalarını seçə bilərsiniz.
+
+easings:
+  css: Hər yerdə mövcud
+  js: Yalnız JavaScript vasitəsilə mövcud
+
+howtos:
+  name: funksiyanın adı
+  curve: Bezye əyrisi funksiyaları
+  js: !!code
+    ^jQuery Easing Plugin^ əlavə etməklə yumşaqlıq funksiyası üzrə animasiyanı
+    tərtib etmək daha rahat olar. Bundan sonra `.animate` funksiyasında üçüncü
+    arqument olaraq yalnız funksiyanın adını göstərmək kifayətdir.
+  scss: !!code
+    Sass və SCSS animasiyaları tərtib etmək daha asandır - Compass 
+    `transition` <nobr>və `animation`</nobr> xassələrinin önündəki
+    prefixlərdən bizi azad edir. ^Compass Ceaser^ ilə isə funksiyanın
+    adını Bezye əyrisi olmadan belə göstərmək mümkündür.
+  css: !!code
+    CSS-də `transition` və `animation` xassələri yumşaqlıq funksiyasını
+    göstərməyə imkan verir.
+  css_bad:
+    Təəssüf ki, heç də bütün funksiyalar mövcud deyil, onları Bezye
+    əyrisi olaraq göstərmək lazımdır.
+  css_help:
+    Bezye əyrisi olaraq onu necə tərtib etməyi görmək üçün, funksiyanı
+    seçin.
+
+easing:
+  all_easings: Все функции
+  no_css: !!code
+    Təəssüf ki, belə funksiyanı CSS vasitəsilə göstərmək mümkün deyil.
+    Bunun üçün JavaScript və ya CSS Animation ilə xüsusi `@keyframes`
+    istifadə edin.
+  edit: ^Redaktə et^ на cubic-bezier.com.
+
+opensource:
+  title: open source
+  translate: Saytı öz dilinə tərcümə etməyə ^Yardım et^
+
+author: Andrey Sitnik
