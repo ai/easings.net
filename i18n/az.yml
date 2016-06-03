@@ -1,12 +1,12 @@
 title: Yumşaqlıq funksiyaları (easing)
 description:
-  Lazım olan yumşaqlıq funksiyasını (easing) seçməklə animasiyaları daha təbii edin.
+  Lazım olan yumşaqlıq funksiyasını (easing) seçməklə animasiyaları
+  daha təbii edin.
 share:
   Yumşaqlıq funksiyası (easing) animasiyanı daha təbii etmək üçün onun
   cərəyan sürətini müəyyən edir. Belə ki, təbiətdə heç bir şey dərhal və
   bərabərsürətli hərəkət etmir. Bu saytdan siz müxtəlif yumşaqlıq
   funksiyalarını seçə bilərsiniz.
-font: 400,700&subset=latin,cyrillic
 
 about: !!format
   ~Yumşaqlıq funksiyası (easing)~ animasiyanı daha təbii etmək üçün onun
@@ -32,7 +32,7 @@ howtos:
     tərtib etmək daha rahat olar. Bundan sonra `.animate` funksiyasında üçüncü
     arqument olaraq yalnız funksiyanın adını göstərmək kifayətdir.
   scss: !!code
-    Sass və SCSS animasiyaları tərtib etmək daha asandır - Compass 
+    Sass və SCSS animasiyaları tərtib etmək daha asandır - Compass
     `transition` <nobr>və `animation`</nobr> xassələrinin önündəki
     prefixlərdən bizi azad edir. ^Compass Ceaser^ ilə isə funksiyanın
     adını Bezye əyrisi olmadan belə göstərmək mümkündür.
