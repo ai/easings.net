@@ -1,53 +1,53 @@
 title: Reference over easing funktioner
 description:
-  Gør dine animationer mere realistiske ved at vælge den rette easingfunktion
+  Gør animationer mere realistiske ved at vælge den rette easing-funktion.
 share:
-  Easing funktion angiver hvordan animationen forløber for at gøre den mere
-  realistisk. Objektet begynder ikke at bevæge sig med det samme og med
-  en konstant hastighed. Denne side hjælper dig med at finde den rette
-  easing funktion.
+  Easing-funktionen angiver hvordan animationen forløber for at gøre den mere
+  realistisk. Virkelige objekter bevæger sig ikke med
+  en konstant hastighed, og starter og stopper ikke sine bevægelser øjeblikkeligt. Denne side hjælper dig med at finde den rette
+  easing-funktion.
 
 about: !!format
-  ~Easing funktion~ angiver hvordan animationen forløber for at gøre den mere
+  ~Easing-funktionen~ angiver hvordan animationen forløber for at gøre den mere
   realistisk.
 
-  Objektet begynder ikke at bevæge sig med det samme og med en konstant
-  hastighed. Når vi åbner en skuffe accellererer vi først bevægelsen, og så
+  Objekter begynder ikke at bevæge sig med det samme eller med en konstant
+  hastighed. Når vi åbner en skuffe er første del af bevægelsen hurtig, og så
   bremser vi den ned. Når noget falder, ryger det ned hurtigere og hurtigere,
   og så hopper det op igen efter det har ramt gulvet.
 
-  Denne side hjælper dig med at finde den rette easing funktion.
+  Denne side hjælper dig med at finde den rette easing-funktion.
 
 easings:
-  css: Tilgængeligt alle steder
+  css: Tilgængelige alle steder
   js: Kun i JavaScript
 
 howtos:
-  name: easing navn
-  curve: easing funktionens Bezier kurve
+  name: easing-navn
+  curve: easing-funktionens Bezierkurve
   js: !!code
     jQuery med ^jQuery Easing Plugin^ er den letteste måde at angive en
-    animation med easing. Du skal bare sætte easing navnet til `.animate`
-    metoden som det tredje argument, eller vha. `easing` key.
+    animation med easing. Kald metoden `.animate` med easing-navnet (f.eks. `easeInCirc`) som tredje argument
+    eller som værdi af `easing`-parametret.
   scss: !!code
     Sass/SCSS hjælper dig med at angive animationer. Compass fjerner
-    de nødvendige prefixes før `transition` og `animation` properties og med
-    ^Compass Ceaser^ plugin kan du sætte easing funktioner vha. deres navn
-    (uden Bezier kurver).
+    de nødvendige prefixes før `transition` og `animation` egenskaber, og med
+    ^Compass Ceaser^ plugin kan du sætte easing-funktioner vha. deres navn
+    (uden at angive specifikke Bezierkurver).
   css: !!code
-    "`transition` og `animation` CSS properties giver dig mulighed for at vælge
-    en easing funktion."
+    CSS-egenskaberne `transition` og `animation` giver dig mulighed for at vælge
+    en easing-funktion.
   css_bad:
-    Desværre understøtter de ikke alle easing funktioner, og du er nødt til
-    at definere dem via Bezier kurver.
+    Desværre understøtter de ikke alle easing-funktioner, og du kan blive nødt til
+    at definere dem via Bezier-kurver.
   css_help:
-    Vælg easing for at se beskrivelsen sammen med en Bezier kurve.
+    Vælg easing-funktion for at se beskrivelsen sammen med en Bezierkurve.
 
 easing:
-  all_easings: Alle easing funktioner
+  all_easings: Alle easing-funktioner
   no_css: !!code
-    Desværre, CSS understøtter ikke denne easing funktion. Men du kan bruge
-    JavaScript eller en speciel CSS animation vha. `@keyframes`.
+    Desværre, CSS understøtter ikke denne easing-funktion. Men du kan bruge den i
+    JavaScript eller en speciel CSS-animation vha. `@keyframes`.
   edit: ^Rediger^ på cubic-bezier.com.
 
 opensource:
