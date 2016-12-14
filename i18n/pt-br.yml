@@ -2,29 +2,28 @@ title: Guia de referência das funções Easing
 description:
   Tornando a animação mais realista escolhendo a função easing correta.
 share:
-  A função Easing especifica a velocidade do progresso da animação
+  A função de atenuação especifica a velocidade do progresso da animação
   para tornar mais realista. Um objeto real não começa seu movimento
   instantaneamente e numa taxa constante. Esta página permite escolhe
   a função easing desejada.
 
 about: !!format
-  ~Easing function~ especifica a velocidade do progresso da animação
+  ~Função de atenuação~ especifica a velocidade do progresso da animação
   para tornar mais realista.
 
   O objeto real não começa seu movimento instantaneamente e numa taxa constante.
-  Quando abrimos uma gaveta, nós primeiro aceleramos e, depois, desaceleramos.
-  Quando algo cai, isso primeiro cai rapidamente e, depois, quica de volta
-  depois de chegar ao chão.
+  Quando abrimos uma gaveta, nós primeiro aceleramos e depois desaceleramos quando aberta.
+  Quando um objeto cai, o mesmo inicialmente acelera durante a queda e então quica ao chegar no chão.
 
-  Essa pagina permitirá que você escolha a função easing desejada.
+  Essa pagina permitirá que você escolha a função de atenuação desejada.
 
 easings:
-  css: Disponível em toda parte
+  css: Amplamente disponível
   js: Somente no JavaScript
 
 howtos:
-  name: nome do easing
-  curve: curva Bezier da easing
+  name: nome da função de atenuação
+  curve: curva Bezier
   js: !!code
     jQuery com ^Plugin jQuery Easing^ é a forma mais fácil de descrever
     a animação com easing. Você precisa apenas definir o nome da easing para
@@ -37,15 +36,15 @@ howtos:
     As propriedades CSS `transition` e `animation` te permite definir
     a função easing.
   css_bad:
-    Infelizmente, não dá suporte a todos os easings e você tem de definir a
+    Infelizmente não dá suporte a todas as transições e você tem de definir a
     função pela curva Bezier.
   css_help:
-    Selecione a easing para mostar sua descrição na curva Bezier.
+    Selecione a transição para mostar sua descrição na curva Bezier.
 
 easing:
-  all_easings: Todos os easings
+  all_easings: Todos as atenuações
   no_css: !!code
-    Infelizmente, o CSS não suporta esse easing. Porém você pode usar com
+    Infelizmente o CSS não suporta esse easing, porém você pode usar com
     JavaScript ou CSS Animation especial `@keyframes`.
   edit: ^Editar^ em cubic-bezier.com.
 
