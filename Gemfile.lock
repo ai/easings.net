@@ -1,18 +1,18 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.0.0.1)
+    activesupport (5.0.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    autoprefixer-rails (6.5.4)
+    autoprefixer-rails (6.6.0)
       execjs
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.11.1)
-    concurrent-ruby (1.0.2)
+    coffee-script-source (1.12.2)
+    concurrent-ruby (1.0.4)
     dimensions (1.3.0)
     evil-front (0.5.0)
       i18n
@@ -35,7 +35,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
-    nokogiri (1.6.8.1)
+    nokogiri (1.7.0)
       mini_portile2 (~> 2.1.0)
     r18n-core (2.1.4)
     rack (1.6.5)
@@ -48,7 +48,7 @@ GEM
     rake (12.0.0)
     ref (2.0.0)
     rubypants-unicode (0.2.5)
-    sass (3.4.22)
+    sass (3.4.23)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -56,7 +56,7 @@ GEM
     slim (3.0.7)
       temple (~> 0.7.6)
       tilt (>= 1.3.3, < 2.1)
-    sprockets (3.7.0)
+    sprockets (3.7.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     standalone_typograf (3.0.2)
@@ -89,4 +89,4 @@ DEPENDENCIES
   uglifier
 
 BUNDLED WITH
-   1.13.6
+   1.13.7
