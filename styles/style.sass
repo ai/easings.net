@@ -49,9 +49,9 @@ $easing-width: 120px + 4px
       transition: opacity 400ms
   .part-title
     position: absolute
-    top: -12px
-    right: 35px
-    width: 98%
+    top: -5px
+    right: 50px
+    left: 0
     color: #999
     font-size: 14px
     font-weight: normal
@@ -498,9 +498,6 @@ footer
   .easings
     direction: ltr
     left: 15px
-    .part-title
-      right: auto
-      left: -20px
 
   .about
     padding-right: 0
@@ -521,23 +518,22 @@ footer
 
 // Small screens
 
++max-width(899)
+  .easings
+    text-align: center
+
+    .part-title
+      position: static
+      top: auto
+      left: auto
+      font-size: 12px
+      margin: -3px 0 -1px 0
+
 +max-height(768)
   .about
     padding-top: 15px
   .easing.linear
     top: 6px
-
-+max-width(899)
-  .easings
-    text-align: center
-    .part-title
-      position: static
-      top: auto
-      left: auto
-      width: auto
-      text-align: center
-      font-size: 12px
-      margin: -3px 0 -1px 0
 
 // Mobile
 
