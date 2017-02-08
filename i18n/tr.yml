@@ -1,0 +1,50 @@
+title: Geçiş Fonksiyonları Kullanma Klavuzu
+description:
+  Animasyionları doğru geçiş fonksiyonlarını seçerek daha gerçekçi kılın.
+share:
+  Geçiş fonksiyonları daha doğal gözükmesini sağlamak için animasonun hızı ayarlar.
+  Gerçekte objeler harekete birden başlayıp durmazlar ve çoğu zaman sabit hızda ilerlemzler.
+  Bu site size doğru geçiş fonsiyonunuzu seçmenizde yardımcı olur.
+
+about: !!format
+  ~Geçiş Fonksiyonları~ bir parametrenin zaman çizelgesinde değişm oranını kontrol eder.
+  
+  Gerçekte objeler harekete birden başlayıp durmazlar ve çoğu zaman sabit hızda ilerlemzler.
+  Çekmeceyi açtığımızda önce hızlıca çekeriz, açıldıkça yavaşlatırız. Yere bir şey attığınızda önce ağaşı doğru hızlanır
+  ve sonra yere çarparak zıplar.
+
+  Bu site size doğru geçiş fonsiyonunuzu seçmenizde yardımcı olur.
+
+easings:
+  css: Heryerde kullanılabilir
+  js: Sadece javascript
+
+howtos:
+  name: geçiş adı
+  curve: geçişin Bezier eğrisi
+  js: !!code
+    ^jQuery Easing Eklentisi^ ile jQuery geçiş ile animasonu tanımlamanın en kolay yoludur. 
+    Geçiş adını `.animate()` fonksiyonunda üçüncü argüman olarak yazın (`easeInCirc` gibi), 
+    yada bunu `easing` seçeneğine değer olarak atayın.
+  scss: !!code
+    Sass/SCSS da animasyon tanımlayabilir! Compass `transition` ve `animation` değerlerinden önceki önekleri kaldırır, 
+    <nobr>ve ^Compass Ceaser^</nobr> eklentisi geçiş fonksiyonlarını isimleri ile girmenizi sağlar
+    (Bezier eğrisini berlilemenize gerek olmadan).
+  css: !!code
+    CSSin `transition` ve `animation` değerleri geçiş fonksiyonunu seçmenizi sağlar
+  css_bad:
+    Malesef, bütün geçişleri desteklemiyorlar ve kendi istediğiniz 
+    geçiş fonksiyonunu belirlemeniz gerekmekte (Bezier eğrisi olarak)
+  css_help:
+    Bezier eğrisi gösterimi için bir geçiş fonksiyonu seçiniz.
+
+easing:
+  all_easings: All easings
+  no_css: !!code
+    CSS desteklenmemekte . Ancak JS kullanabilirsiniz
+    yada `@keyframes` ile CSS animasyonu yazabilirsiniz.
+  edit: ^Edit^ on cubic-bezier.com.
+
+opensource:
+  title: açık kaynak
+  translate: ^Siteyi dilinize^ çevirmede yardımcı olun
