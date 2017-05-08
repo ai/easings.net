@@ -10,7 +10,7 @@ html lang=r18n.locale.code
     link rel="icon" type="image/png" sizes="192x192" href="/favicon.png"
 
     = include_jquery(env: env)
-    - font = (t.font | '400,700&subset=latin').gsub('&', '&amp;')
+    - font = (t.font | '400,700&subset=latin').gsub('&', '&amp;').to_s
     link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:#{font}"
     link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Mono"
 

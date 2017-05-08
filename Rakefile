@@ -40,7 +40,7 @@ class R18n::TranslatedString
   def link(href, args = { })
     args[:href] = href
     args = args.map { |k, v| "#{k}=\"#{v}\"" }.join(' ')
-    self.sub(/\^([^\^]+)\^/, "<a #{args}>\\1</a>")
+    self.sub(/\^([^\^]+)\^/, "<a #{args}>\\1</a>").to_s
   end
 end
 
