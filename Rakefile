@@ -245,7 +245,7 @@ task :server do
     set :port, 3000
     set :lock, true
 
-    get /^(\/|\/index\.html)$/ do
+    get "/" do
       build_page('en')
       send_file PUBLIC.join('index.html')
     end
