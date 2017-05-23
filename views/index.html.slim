@@ -75,11 +75,11 @@ html lang=r18n.locale.code
                       @include transition(all 600ms ceaser(<strong>$#{t.howtos.name}</strong>)); }
 
             section.js
-              h3 JavaScript
+              h3 jQuery, Velocity and others
               p= t.howtos.js.link('http://gsgd.co.uk/sandbox/jquery/easing/')
               pre
                 code
-                  | div.animate({ top: '-=100px' }, 600, '<strong>#{t.howtos.name}</strong>', function () { … })
+                  | div.animate({ top: '-=100px' }, 600, '<strong>#{t.howtos.name}</strong>', function () { … })
 
           - all_easings.each do |easing|
             - next if easing.linear?
@@ -129,7 +129,7 @@ html lang=r18n.locale.code
                   p= t.easing.no_css
 
               section.js
-                h3 jQuery
+                h3 jQuery, Velocity and others
                 p= t.howtos.js.link('http://gsgd.co.uk/sandbox/jquery/easing/')
                 pre
                   code
