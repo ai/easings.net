@@ -1,12 +1,12 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.1.0)
+    activesupport (5.1.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    autoprefixer-rails (7.0.1)
+    autoprefixer-rails (7.1.1)
       execjs
     coffee-script (2.4.1)
       coffee-script-source
@@ -34,12 +34,12 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
-    minitest (5.10.1)
+    minitest (5.10.2)
     mustermann (1.0.0)
-    nokogiri (1.7.1)
+    nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
-    r18n-core (2.1.5)
-    rack (2.0.2)
+    r18n-core (2.1.6)
+    rack (2.0.3)
     rack-protection (2.0.0)
       rack
     rails-sass-images (1.0.3)
@@ -49,7 +49,7 @@ GEM
     rake (12.0.0)
     ref (2.0.0)
     rubypants-unicode (0.2.5)
-    sass (3.4.23)
+    sass (3.4.24)
     sinatra (2.0.0)
       mustermann (~> 1.0)
       rack (~> 2.0)
