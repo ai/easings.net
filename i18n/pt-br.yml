@@ -1,51 +1,56 @@
-title: Guia de referência das funções Easing
+title: Guia de referências de funcões de curvas de aceleração para animações
 description:
-  Tornando a animação mais realista escolhendo a função easing correta.
+  Deixe suas animações mais realistas escolhendo a melhor curva de aceleração
+  para o movimento desejado.
 share:
-  A função de atenuação especifica a velocidade do progresso da animação
-  para tornar mais realista. Um objeto real não começa seu movimento
-  instantaneamente e numa taxa constante. Esta página permite escolhe
-  a função easing desejada.
+  As funções de curva de aceleração definem diferentes velocidades 
+  durante o progresso da sua animação. Listamos aqui várias funções para que 
+  você consiga obter um movimento mais suave e realista para sua animação.
 
 about: !!format
-  ~Função de atenuação~ especifica a velocidade do progresso da animação
-  para tornar mais realista.
+  As funções de curva de aceleração definem diferentes velocidades 
+  durante o progresso da sua animação, fazendo com seus efeitos
+  fiquem mais realistas.
 
-  O objeto real não começa seu movimento instantaneamente e numa taxa constante.
-  Quando abrimos uma gaveta, nós primeiro aceleramos e depois desaceleramos quando aberta.
-  Quando um objeto cai, o mesmo inicialmente acelera durante a queda e então quica ao chegar no chão.
+  Algo que se mova não faz isso instantaneamente e constantemente,
+  todo objeto ao se mover possui uma aceleração no início do seu movimento,
+  e desacelera perto do final, ou bate e volta no caso de um objeto que
+  esta caindo ou foi lançado.
 
-  Essa pagina permitirá que você escolha a função de atenuação desejada.
+  Nessa página listamos várias funções de aceleração que auxiliam a replicar
+  esses movimentos naturais.
 
 easings:
   css: Amplamente disponível
   js: Somente no JavaScript
 
 howtos:
-  name: nome da função de atenuação
+  name: nome da curva de aceleração
   curve: curva Bezier
   js: !!code
-    jQuery com ^Plugin jQuery Easing^ é a forma mais fácil de descrever
-    a animação com easing. Você precisa apenas definir o nome da easing para
-    o método `.animate` como terceiro argumento or chave `easing`.
+    jQuery com o plugin ^jQuery Easing^ é a forma mais fácil de se usar 
+    uma função de aceleração na sua animação. Você precisa apenas descrever o
+    nome da função para o método `.animate` como terceiro argumento ou
+    usando a chave `easing`.
   scss: !!code
-    Sass/SCSS te ajuda a descrever a animação. Compass remove prefixos antes das
-    propriedades `transition` e  `animation` e o plugin ^Compass Ceaser^ permite
-    definir o easing pelo nome (sem curva Bezier).
+    SASS/SCSS te ajudam a descrever suas animações. O Compass remove automaticamente
+    os prefixos antes das propriedades `transition` e  `animation`, e o plugin 
+    ^Compass Ceaser^ permite a você definir a função de aceleração pelo nome 
+    (não possuio movimento de curba Bezier).
   css: !!code
-    As propriedades CSS `transition` e `animation` te permite definir
-    a função easing.
+    As propriedades CSS `transition` e `animation` permitem a você definir
+    a função de aceleração pelo nome.
   css_bad:
-    Infelizmente não dá suporte a todas as transições e você tem de definir a
-    função pela curva Bezier.
+    Infelizmente não tem suporte a todas as transições e você precisa definir
+    os valores usando a funcão de Bezier.
   css_help:
-    Selecione a transição para mostar sua descrição na curva Bezier.
+    Selecione a transição para mostrar sua descrição na curva Bezier.
 
 easing:
-  all_easings: Todos as atenuações
+  all_easings: Todas as curvas de aceleração
   no_css: !!code
-    Infelizmente o CSS não suporta esse easing, porém você pode usar com
-    JavaScript ou CSS Animation especial `@keyframes`.
+    Infelizmente o CSS não suporta essa função, porém você pode usar com
+    JavaScript ou com CSS Animation usando `@keyframes`.
   edit: ^Editar^ em cubic-bezier.com.
 
 opensource:
