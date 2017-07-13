@@ -1,0 +1,58 @@
+title: Easing Functions Cheat Sheet
+description:
+  Maak animasies meer realisties deur die regte oorgangsfunksie te kies.
+share:
+  Oorgangsfunksies spesifiseer die spoed van animasie om die beweging
+  meer natuurlik te maak. Regte voorwerpe beweeg nie net teen 'n
+  konstante spoed nie, en begin en stop nie onmiddellik nie. Hierdie
+  bladsy help jou om die regte oorgangsfunksie te kies.
+
+about: !!format
+  ~Oorgangsfunksies~ (Easing functions) Bepaal die spoed van verandering
+  van 'n sekere waarde oor 'n bepaalde periode.
+
+  Voorwerpe in realiteit begin en stop nie onmiddellik nie, en beweeg
+  amper nooit teen 'n konstante spoed nie. Wanneer ons 'n laai oopmaak
+  beweeg ons eers vinnig en dan stadiger soos dit uit kom. Laat val iets
+  op die vloer en dit sal eers versnel na onderen dan terug hop nadat
+  dit die vloer getref het.
+
+  Hierdie bladsy help jou om die regte oorgangsfunksie te kies.
+
+easings:
+  css: Orals beskikbaar
+  js: Net in JavaScript
+
+howtos:
+  name: oorgang-naam
+  curve: oorgang-Bézierkurwe
+  js: !!code
+    jQuery met die ^jQuery Easing Plugin^ is die maklikste manier om die
+    animasie met oorgang te beskryf. Verskaf sie oorgangsfunksie naam
+    (soos 'easeInCirc') aan die '.animate()' funksie as die derde argument,
+    of gebruik dit as waarde van die oorgangsfunksie.
+  scss: !!code
+    Sass/SCSS kan ook die animasie beskryf! Compass verwyder die voorvoegsels
+    voor die 'transition' en 'animation' waardes,
+    <nobr> en die ^Compss Ceaser^</nobr> plugin laat jou toe om die
+    oorgangsfunksie by die naam te verskaf (sonder om die presiese Bézierkurwe
+    te spesifiseer).
+  css: !!code
+    CSS eienskappe 'transition' en 'animation' laat jou toe om die
+    oorgangsfunksie te kies.
+  css_bad:
+   Ongelukkig ondersteun hulle nie alle oorgangsfunksies nie en jy moet
+    die gewenste oorgangsfunksie self spesifiseer (as 'n Bézierkurwe).
+  css_help:
+    Kies 'n oorgangsfunksie om die Bézierkurwe notasie te wys.
+
+easing:
+  all_easings: Alle oorgange
+  no_css: !!code
+    Word nie ondersteun in CSS nie, maar jy kan dit gebruik in JS of dit
+    uitskryf met CSS Animation '@keyframes'.
+  edit: ^Edit^ op cubic-bezier.com.
+
+opensource:
+  title: open source
+  translate: ^Help vertaal^ blad in jou taal
