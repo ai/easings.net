@@ -45,9 +45,6 @@ howtos:
 easing:
   all_easings: Všechny funkce easing 
   no_css: !!code
-    Not supported in CSS. But you can use in JS
-    or write it out with the CSS Animation `@keyframes`.
-    
     V CSS není podporováno. Lze ovšem použít v JS 
     nebo napsat pomocí CSS Animation `@keyframes`.
   edit: ^Upravit^ na cubic-bezier.com.
