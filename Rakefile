@@ -122,7 +122,7 @@ class Builder
         EvilFront.set_slim_options!
 
         if @env == :production
-          env.js_compressor  = Uglifier.new()
+          env.js_compressor  = Uglifier.new(output: { comments: :none })
           env.css_compressor = :sass
         else
           env.css_compressor = nil
