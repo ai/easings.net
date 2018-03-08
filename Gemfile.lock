@@ -1,12 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.1.5)
-      concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (~> 0.7)
-      minitest (~> 5.1)
-      tzinfo (~> 1.1)
-    autoprefixer-rails (8.1.0)
+    activesupport (3.1.12)
+      multi_json (~> 1.0)
+    autoprefixer-rails (8.1.0.1)
       execjs
     coffee-script (2.4.1)
       coffee-script-source
@@ -26,7 +23,7 @@ GEM
       unicode_utils (>= 1.4)
     execjs (2.7.0)
     ffi (1.9.23)
-    i18n (0.9.5)
+    i18n (1.0.0)
       concurrent-ruby (~> 1.0)
     jquery-cdn (2.2.4)
       sprockets (>= 2)
@@ -36,7 +33,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_portile2 (2.3.0)
-    minitest (5.11.3)
+    multi_json (1.13.1)
     mustermann (1.0.2)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
@@ -49,7 +46,7 @@ GEM
       mime-types (> 0)
       sass (> 0)
     rake (12.3.0)
-    rb-fsevent (0.10.2)
+    rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     ref (2.0.0)
@@ -76,10 +73,7 @@ GEM
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)
       ref
-    thread_safe (0.3.6)
     tilt (2.0.8)
-    tzinfo (1.2.5)
-      thread_safe (~> 0.1)
     uglifier (4.1.6)
       execjs (>= 0.3.0, < 3)
     unicode_utils (1.4.0)
