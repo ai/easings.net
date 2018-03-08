@@ -37,7 +37,7 @@ GEM
     mustermann (1.0.2)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
-    r18n-core (3.0.0)
+    r18n-core (3.0.1)
     rack (2.0.4)
     rack-protection (2.0.1)
       rack
