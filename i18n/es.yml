@@ -23,7 +23,7 @@ easings:
 
 howtos:
   name: nombre easing
-  curve: curva Bezier del easing
+  curve: curva Bézier del easing
   js: !!code
     jQuery con ^jQuery Easing Plugin^ es la manera más sencilla de definir una animación
     con `easing`. Únicamente necesita ajustar el nombre `easing` al método `.animate` como
@@ -31,7 +31,7 @@ howtos:
   scss: !!code
     Sass/SCSS le ayudan a definir la animación. Compass elimina los prefijos previos a
     las propiedades `transition` y `animation` y el plugin ^Compass Ceaser^ permite fijar
-    el `easing` por su nombre (sin Bezier curves).
+    el `easing` por su nombre (sin curvas Bézier).
   css: !!code
     Las propiedades CSS `transition` y `animation` le permiten fijar la función `easing`.
   css_bad:
