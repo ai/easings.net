@@ -33,7 +33,7 @@ howtos:
     (t.ex. "easeInCirc") som ".animate()"-funktionens tredje argument,
     eller använd den som värde för alternativet "easing".
   scss: !!code
-    Sass/SCSS kan också beskiva animationer. Compass använder inte prefixen
+    Sass/SCSS kan också beskriva animationer. Compass använder inte prefixen
     före "transition" och "animation", <nobr>och tillägget
     ^Compass Ceaser^</nobr> låter dig referera till dämpningsfunktionerna
     med deras namn (utan att behöva ange Bezierkurvan)
