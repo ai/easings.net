@@ -1,50 +1,50 @@
-title: Geçiş Fonksiyonları Kullanma Klavuzu
+title: Geçiş Fonksiyonlarını Kullanma Kılavuzu
 description:
-  Animasyionları doğru geçiş fonksiyonlarını seçerek daha gerçekçi kılın.
+  Animasyonları doğru geçiş fonksiyonlarını seçerek daha gerçekçi kılın.
 share:
-  Geçiş fonksiyonları daha doğal gözükmesini sağlamak için animasonun hızı ayarlar.
-  Gerçekte objeler harekete birden başlayıp durmazlar ve çoğu zaman sabit hızda ilerlemzler.
-  Bu site size doğru geçiş fonsiyonunuzu seçmenizde yardımcı olur.
+  Geçiş fonksiyonları hareketlerin daha doğal gözükmesini için animasyonun hızını ayarlar.
+  Gerçekte objeler harekete birden başlayıp durmazlar ve çoğu zaman sabit hızda ilerlemezler.
+  Bu site size doğru geçiş fonksiyonunu seçmenizde yardımcı olur.
 
 about: !!format
-  ~Geçiş Fonksiyonları~ bir parametrenin zaman çizelgesinde değişm oranını kontrol eder.
+  ~Geçiş Fonksiyonları~ bir parametrenin zaman çizelgesinde değişim oranını kontrol eder.
   
-  Gerçekte objeler harekete birden başlayıp durmazlar ve çoğu zaman sabit hızda ilerlemzler.
-  Çekmeceyi açtığımızda önce hızlıca çekeriz, açıldıkça yavaşlatırız. Yere bir şey attığınızda önce ağaşı doğru hızlanır
-  ve sonra yere çarparak zıplar.
+  Gerçekte objeler harekete birden başlayıp durmazlar ve çoğu zaman sabit hızda ilerlemezler.
+  Bir çekmeceyi açarken önce hızlıca çekeriz, açıldıkça yavaşlatırız. Yere bir şey attığınızda
+  önce aşağı doğru hızlanır ve sonra yere çarparak seker.
 
-  Bu site size doğru geçiş fonsiyonunuzu seçmenizde yardımcı olur.
+  Bu site size doğru geçiş fonksiyonunu seçmenizde yardımcı olur.
 
 easings:
-  css: Heryerde kullanılabilir
+  css: Her yerde kullanılabilir
   js: Sadece javascript
 
 howtos:
   name: geçiş adı
   curve: geçişin Bezier eğrisi
   js: !!code
-    ^jQuery Easing Eklentisi^ ile jQuery geçiş ile animasonu tanımlamanın en kolay yoludur. 
+    jQuery ^jQuery Easing Eklentisi^ ile geçiş animasyonu tanımlamanın en kolay yoludur. 
     Geçiş adını `.animate()` fonksiyonunda üçüncü argüman olarak yazın (`easeInCirc` gibi), 
-    yada bunu `easing` seçeneğine değer olarak atayın.
+    ya da bunu `easing` seçeneğine değer olarak atayın.
   scss: !!code
-    Sass/SCSS da animasyon tanımlayabilir! Compass `transition` ve `animation` değerlerinden önceki önekleri kaldırır, 
+    Sass/SCSS da animasyon tanımlayabilir! Compass `transition` ve `animation` değerlerinden önceki ön ekleri kaldırır, 
     <nobr>ve ^Compass Ceaser^</nobr> eklentisi geçiş fonksiyonlarını isimleri ile girmenizi sağlar
-    (Bezier eğrisini berlilemenize gerek olmadan).
+    (Bezier eğrisini doğrudan belirlemenize gerek olmadan).
   css: !!code
-    CSSin `transition` ve `animation` değerleri geçiş fonksiyonunu seçmenizi sağlar
+    CSSin `transition` ve `animation` değerleri geçiş fonksiyonunu seçmenizi sağlar.
   css_bad:
-    Malesef, bütün geçişleri desteklemiyorlar ve kendi istediğiniz 
+    Maalesef, bütün geçişleri desteklemiyorlar ve kendi istediğiniz 
     geçiş fonksiyonunu belirlemeniz gerekmekte (Bezier eğrisi olarak)
   css_help:
     Bezier eğrisi gösterimi için bir geçiş fonksiyonu seçiniz.
 
 easing:
-  all_easings: All easings
+  all_easings: Tüm geçişler
   no_css: !!code
-    CSS desteklenmemekte . Ancak JS kullanabilirsiniz
-    yada `@keyframes` ile CSS animasyonu yazabilirsiniz.
+    CSS desteklenmemekte. Ancak JS kullanabilirsiniz
+    ya da `@keyframes` ile CSS animasyonu yazabilirsiniz.
   edit: ^Edit^ on cubic-bezier.com.
 
 opensource:
   title: açık kaynak
-  translate: ^Siteyi dilinize^ çevirmede yardımcı olun
+  translate: ^Siteyi dilinize^ çevirmeye yardımcı olun
