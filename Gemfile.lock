@@ -31,11 +31,13 @@ GEM
     jquery-cdn (3.3.1)
       sprockets (>= 2)
     json (2.1.0)
-    libv8 (3.16.14.19)
+    libv8 (6.7.288.46.1)
     mime-types (3.2.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2018.0812)
     mini_portile2 (2.3.0)
+    mini_racer (0.2.3)
+      libv8 (>= 6.3)
     minitest (5.11.3)
     mustermann (1.0.3)
     nokogiri (1.8.5)
@@ -52,7 +54,6 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    ref (2.0.0)
     rubypants-unicode (0.2.5)
     sass (3.6.0)
       sass-listen (~> 4.0.0)
@@ -73,9 +74,6 @@ GEM
     standalone_typograf (3.0.2)
       activesupport
     temple (0.8.0)
-    therubyracer (0.12.3)
-      libv8 (~> 3.16.14.15)
-      ref
     thread_safe (0.3.6)
     tilt (2.0.8)
     tzinfo (1.2.5)
@@ -93,10 +91,10 @@ DEPENDENCIES
   evil-front
   jquery-cdn
   json
+  mini_racer
   r18n-core
   rake
   sinatra
-  therubyracer
   uglifier
 
 BUNDLED WITH
