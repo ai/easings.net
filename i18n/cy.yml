@@ -1,0 +1,55 @@
+title: Coflen Ffrwythianau Easing
+description:
+  Gwneud animeiddio yn fwy realistig drwy ddewis y ffrwythiant easeing cywir. 
+share:
+  Mae'r ffrwythiannau easing yn gosod cyflymder yr animeiddio
+  i'w gwneud yn fwy naturiol. Nid yw gwrthrychau yn symud ar 
+  gyflymder cyson yn y byd go iawn, nac yn dechrau neu aros ar unwaith. 
+  Mae'r dudalen hon yn eich cynorthwyo i ddewis y ffrwythiant cywir. 
+  
+about: !!format
+  Mae ~ffrwythianau easing~ yn gosod cyfradd newid paramedr dros amser.
+
+  Nid yw gwrthrychau yn dechrau neu sdopio symud ar unwaith, a bron byth yn 
+  symud ar gyflymder cyson. Pan agorwn ddror, mae'n symud yn gyflym i ddechrau, 
+  yna'n arafu fel mae'n dod allan. Os gollyngi rywbeth ar y llawr, bydd yn 
+  cyflymu lawr, yna'n adlamu fyny ar ôl taro'r llawr. 
+  
+  Mae'r dudalen hon yn eich cynorthwyo i ddewis y ffrwythiant easing cywir. 
+
+easings:
+  css: Ar gael ym mhob man
+  js: Dim ond gyda JavaScript
+
+howtos:
+  name: enw'r easing
+  curve: cromlin Bezier yr easing
+  js: !!code
+    jQuery gyda'r ^jQuery Easing Plugin^ yw'r ffordd orau i ddisgrifio 
+    animeiddio gyda easing. Gellir pasio enw'r easing (fel `easeInCirc`) 
+    i'r ffrwythiant `.animate()` fel trydydd dadl, neu ei ddefnyddio fel 
+    gwerth yr opsiwn `easing`. 
+  scss: !!code
+    Gall Sass/SCSS ddisgrifio animeiddio hefyd! Mae Compass yn cael gwared
+    o ragddodiaid cyn y priodweddau `transition` ac `animation`, <nobr> ac 
+    mae'r plugin ^Compass Ceaser^</nobr> yn caniatau i basio'r ffrwythiant easing 
+    fel enw (heb bennu y gromliniau Bezier). 
+  css: !!code
+    Gellir dewis y ffwrythiant easing gyda'r priodweddau CSS `transition` ac 
+    `animation`.
+  css_bad:
+    Yn anffodus, nid ydynt yn defnyddio pob math o easing a rhaid pennu'r ffrwythiant 
+    easing eich hunain (fel cromlin Bezier).
+  css_help:
+    Dewiser ffrwythiant easing i arddangos ei nodiant cromlin Bezier.
+
+easing:
+  all_easings: Pob easing
+  no_css: !!code
+    Nid yw'n gweithio gyda CSS. Ond gellir ei ddefnyddio gyda JS
+    neu ei nodi gyda CSS Animation `@keyframes`. 
+  edit: ^Golygu^ ar cubic-bezier.com.
+
+opensource:
+  title: côd agored
+  translate: ^Cyfieithu'r^ wefan i dy iaith di
