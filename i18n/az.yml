@@ -47,7 +47,7 @@ howtos:
     seçin.
 
 easing:
-  all_easings: Все функции
+  all_easings: Bütün funksiyalar
   no_css: !!code
     Təəssüf ki, belə funksiyanı CSS vasitəsilə göstərmək mümkün deyil.
     Bunun üçün JavaScript və ya CSS Animation ilə xüsusi `@keyframes`
