@@ -1,0 +1,31 @@
+@import "var";
+
+.b-function {
+	box-sizing: border-box;
+	padding: px2rem(15) px2rem(20) px2rem(8);
+	flex: 0 0 calc(100% / 3);
+	transition: $transition;
+	position: relative;
+}
+
+		.b-function--active {
+			background: #fafafa;
+			box-shadow: 0 0 3px rgba(#000, .3);
+			z-index: 1;
+		}
+
+		.b-function--inactive {
+			opacity: .4;
+			background: #fff;
+		}
+
+	.b-function__chart {
+		box-sizing: border-box;
+		margin: 0 auto;
+	}
+
+	.b-function__caption {
+		padding: .75em 0 0;
+		font-size: 1rem;
+		text-align: center;
+	}

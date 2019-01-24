@@ -1,0 +1,15 @@
+@import "var";
+
+.b-footer {
+	padding: px2rem(20) 0;
+}
+
+	.b-footer__lang {
+		display: flex;
+		justify-content: flex-end;
+		margin: 0 0 px2rem(5);
+	}
+
+	.b-footer__copyright {
+		text-align: center;
+	}

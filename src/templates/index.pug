@@ -1,0 +1,54 @@
+include components/Item
+
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+
+		title index
+
+		//if dev
+		//	link(href="app/css/core.css" rel="stylesheet")
+		//	link(href="app/css/animations.css" rel="stylesheet")
+		//	link(href="app/css/b-header.css" rel="stylesheet")
+		//	link(href="app/css/b-columns.css" rel="stylesheet")
+		//	link(href="app/css/b-function.css" rel="stylesheet")
+		//	link(href="app/css/b-chart.css" rel="stylesheet")
+		//	link(href="app/css/b-footer.css" rel="stylesheet")
+		//
+		//else
+		link(href="app/css/main.css" rel="stylesheet")
+
+	body
+		div
+			h1.u-visually-hidden Шпаргалка функций плавности (easing)
+
+			.b-opensource
+				button.b-opensource__button
+					svg.b-opensource__icon(role="none")
+						use(xlink:href="/app/img/sprite.svg#github")
+
+			.u-wrap
+				.b-header
+					.b-header__definition
+						p #[b Функция плавности (easing)] определяет скорость течения анимации, делая её более реалистичной.
+						p Реальные вещи не начинают двигаться мгновенно и с постоянной скоростью. Если мы открываем ящик стола, то сначала ускоряем его, а на второй половине пути — тормозим. Если что-то упало, то оно сначала летит всё быстрее и быстрее, а ударившись о пол — слегка подпрыгивает обратно.
+						p Этот сайт поможет каждый раз подобрать нужную функцию плавности.
+
+				.b-columns
+					each group in all_easings
+						.b-columns__group
+							each item in group
+								+Item(item)
+
+				footer.b-footer
+					.b-footer__lang
+						|<select><option value="/af">Afrikaans</option><option value="/az">Azərbaycanca</option><option value="/ca">Català</option><option value="/cs">Český</option><option value="/cy">Welsh</option><option value="/da">Dansk</option><option value="/de">Deutsch</option><option value="/en">English</option><option value="/es">Español</option><option value="/fa">فارسی</option><option value="/fr">Français</option><option value="/id">Bahasa Indonesia</option><option value="/it">Italiano</option><option value="/ja">日本語</option><option value="/ko">한국어</option><option value="/nb">Norsk (bokmål)</option><option value="/nl">Nederlands</option><option value="/pl">Polski</option><option value="/pt">Português</option><option value="/pt-br">Português brasileiro</option><option value="/ru" selected="selected">Русский</option><option value="/sk">Slovenský</option><option value="/sr-latn">Srpski</option><option value="/sv-se">Svenska</option><option value="/tr">Türkçe</option><option value="/uk">Українська</option><option value="/vi">Tiếng Việt</option><option value="/zh-cn">简体中文</option><option value="/zh-tw">繁體中文</option></select>
+
+					.b-footer__copyright
+						a(href="https://twitter.com/andrey_sitnik" rel="noopener noreferrer" target="_blank") Андрей Ситник
+
+
+		script(src='app/js/main.js' async)

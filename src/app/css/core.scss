@@ -1,0 +1,37 @@
+@import 'var';
+@import "./helpers/norm";
+
+html {
+	font-kerning: normal;
+}
+
+body {
+	line-height: 1.35;
+	letter-spacing: 0.01em;
+}
+
+.u-wrap {
+	@include wrap;
+}
+
+.u-visually-hidden {
+	@include visually-hidden;
+}
+
+a {
+	color: $text-color;
+	text-decoration: underline;
+	text-decoration-skip: ink;
+	transition: $transition;
+	display: inline-block;
+
+	&:hover,
+	&:focus {
+		color: $brand;
+	}
+
+	&:active {
+		transform: scale(0.95);
+	}
+}
+

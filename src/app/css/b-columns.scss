@@ -1,0 +1,20 @@
+@import "var";
+
+.b-columns {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: center;
+	margin: 0 -20px;
+	box-sizing: border-box;
+}
+
+	.b-columns__group {
+		flex: 0 0 calc(50% - 20px);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		box-sizing: border-box;
+		margin: 0 10px 20px;
+		background: #f7f7f7;
+	}

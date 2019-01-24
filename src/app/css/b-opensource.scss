@@ -1,0 +1,29 @@
+@import "var";
+
+.b-opensource {
+	position: absolute;
+	top: 30px;
+	right: 0;
+	overflow: hidden;
+}
+
+	.b-opensource__button {
+		background: none;
+		border: none;
+		outline: none;
+		padding: 0;
+		border-radius: 0;
+		color: $text-color;
+		height: 78px;
+		width: 68px;
+		transform: translateX(52%);
+		cursor: pointer;
+	}
+
+		.b-opensource__icon	{
+			width: 78px;
+			height: 68px;
+			fill: currentColor;
+			transform: rotate(-90deg);
+			display: block;
+		}

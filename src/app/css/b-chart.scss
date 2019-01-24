@@ -1,0 +1,96 @@
+@import "var";
+
+.b-chart {
+	box-sizing: border-box;
+	position: relative;
+	display: block;
+	text-decoration: none;
+
+	&:active {
+		transform: none;
+	}
+}
+
+	.b-chart__image {
+		width: $chart-width;
+		height: $chart-height;
+		overflow: visible;
+		display: block;
+	}
+
+		.b-chart__curve {
+			fill: none;
+			stroke: $chart-color;
+			stroke-width: 2px;
+			stroke-linecap: round;
+			transform: translate(1px, -1px);
+		}
+
+		.b-chart__axis {
+			fill: none;
+			stroke-width: 1px;
+			stroke: $chart-axis-color;
+		}
+
+		.b-chart__dot {
+			position: absolute;
+			width: 9px;
+			height: 9px;
+			border-radius: 50%;
+			background: $brand;
+			bottom: -4px;
+			left: -4px;
+			animation: $transition-show linear forwards;
+			animation-delay: $transition-show-delay;
+			//opacity: 0;
+		}
+
+				.b-chart:not(.b-chart--active) .b-chart__dot {
+					animation: none !important;
+				}
+
+				.b-chart--active .b-chart__dot {
+					//opacity: 1;
+					transition: stroke-dashoffset $transition-show linear, opacity $transition;
+				}
+
+		.b-chart__text {
+			fill: $chart-axis-color;
+			font-size: px2rem(10);
+			transition: $transition;
+			opacity: 0;
+		}
+
+				.b-chart--active .b-chart__text {
+					opacity: 1;
+				}
+
+
+	.b-chart__cursor {
+		position: absolute;
+		bottom: -4px;
+		right: -15px;
+		opacity: 0;
+		transition: transform 0s, opacity $transition;
+		transition-delay: $transition-show-delay, 0s;
+		will-change: transform, opacity;
+
+		&::after {
+			content: '';
+			display: block;
+			width: 8px;
+			height: 8px;
+			border-radius: 0 50% 50% 50%;
+			background: $brand;
+			transform: rotate(-45deg);
+		}
+	}
+
+			.b-chart--active .b-chart__cursor {
+				opacity: 1;
+				transform: translateY(-$chart-height);
+				transition: transform $transition-show, opacity $transition;
+				transition-delay: $transition-show-delay, 0s;
+			}
+
+

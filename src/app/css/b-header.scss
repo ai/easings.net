@@ -1,0 +1,17 @@
+@import "var";
+
+.b-header {
+	padding: 1rem 0;
+}
+
+	.b-header__definition {
+		width: 100%;
+		max-width: 800px;
+		text-align: justify;
+		hyphens: auto;
+
+		p {
+			padding: 0 0 .5em;
+			margin: 0;
+		}
+	}
