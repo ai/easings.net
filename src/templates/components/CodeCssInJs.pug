@@ -1,8 +1,9 @@
 mixin CodeCssInJs()
 	-
 		var html = '<span class="u-color-third">const</span> <span class="u-color-second">Block</span> = styled.div`<br>';
-		html += '<span class="b-example__spaces"></span><span class="u-color-second">transition</span>: transform 0.6s ';
-		html += '<span class="u-color-brand js-info-func"> </span>;<br>'
+		html += '<span class="b-example__spaces"></span><span class="u-color-second">transition</span>: <br>';
+		html += '<span class="b-example__spaces"></span><span class="b-example__spaces"></span>';
+		html += 'transform 0.6s <span class="u-color-brand js-info-func"> </span>;<br>'
 		html += '`;'
 
 	code!= html
