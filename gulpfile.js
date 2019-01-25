@@ -213,7 +213,7 @@ gulp.task("clean", done => {
 	});
 });
 
-gulp.task("server", done => {
+gulp.task("server", () => {
 	const express = require("express"),
 		app = express(),
 		listener = app.listen(),
@@ -226,7 +226,7 @@ gulp.task("server", done => {
 
 	app.set("views", "./");
 
-	app.use(express.static("./dist"));
+	app.use(express.static(`./${path.dist.name}`));
 
 	app.get("/*.html", function(req, res) {
 		const fileName = req.url.replace(/static\/|\..*$/g, "") || "index";
@@ -256,7 +256,7 @@ gulp.task("server", done => {
 
 	// обновляем страницу, если обновились assets файлы
 	browserSync
-		.watch("./dist/app/**/*")
+		.watch(`./${path.dist.name}/app/**/*`)
 		.on("add", browserSync.reload)
 		.on("change", browserSync.reload);
 

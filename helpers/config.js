@@ -21,6 +21,8 @@ module.exports = {
 			static: `${cwd}/src/static`
 		},
 		dist: {
+			name: dist,
+
 			templates: `${cwd}/${dist}`,
 
 			css: `${cwd}/${dist}/app/css`,
