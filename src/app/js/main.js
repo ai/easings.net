@@ -1,6 +1,10 @@
 import { forNodeList } from "./helpers/forNodeList";
 import { scrollTo } from "./helpers/scrollTo";
 
+const classFunctionActive = "b-function--active";
+const classFunctionInactive = "b-function--inactive";
+const classFunctionFocus = "b-function--focus";
+
 const listFunction = document.querySelectorAll(".js-function");
 if (listFunction) {
 	forNodeList(listFunction, item => {
@@ -8,12 +12,13 @@ if (listFunction) {
 			const chart = item.querySelector(".js-function-chart");
 			const offset = chart.getAttribute("data-length");
 
-			forNodeList(listFunction, other =>
-				other.classList.add("b-function--inactive")
-			);
+			forNodeList(listFunction, other => {
+				other.classList.add(classFunctionInactive);
+				other.classList.remove(classFunctionFocus);
+			});
 
-			item.classList.remove("b-function--inactive");
-			item.classList.add("b-function--active");
+			item.classList.remove(classFunctionInactive);
+			item.classList.add(classFunctionActive);
 
 			chart.classList.add("b-chart--active");
 
@@ -24,16 +29,38 @@ if (listFunction) {
 
 		item.addEventListener("mouseleave", () => {
 			forNodeList(listFunction, other =>
-				other.classList.remove("b-function--inactive")
+				other.classList.remove(classFunctionInactive)
 			);
 
-			item.classList.remove("b-function--active");
+			item.classList.remove(classFunctionActive);
 
 			item
 				.querySelector(".js-function-chart")
 				.classList.remove("b-chart--active");
 
 			item.querySelector(".js-function-dot").style.strokeDashoffset = null;
+		});
+
+		item.querySelector("a").addEventListener("blur", () => {
+			item.classList.remove(classFunctionFocus);
+		});
+
+		item.addEventListener("keyup", event => {
+			if (
+				event.key.toLowerCase() === "tab" ||
+				event.code.toLowerCase() === "tab"
+			) {
+				item.classList.add(classFunctionFocus);
+			}
+		});
+
+		item.addEventListener("keydown", event => {
+			if (
+				event.key.toLowerCase() === "tab" ||
+				event.code.toLowerCase() === "tab"
+			) {
+				item.classList.remove(classFunctionFocus);
+			}
 		});
 	});
 }

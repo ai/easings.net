@@ -6,7 +6,32 @@
 	flex: 0 0 calc(100% / 3);
 	transition: $transition;
 	position: relative;
+	outline: none;
+
+	&:active {
+		transform: scale(.95);
+	}
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		pointer-events: none;
+		top: -3px;
+		right: px2rem(3);
+		bottom: 0;
+		left: px2rem(3);
+		box-shadow: 0 0 2px 4px $a11y-color;
+		transition: $transition;
+		opacity: 0;
+	}
 }
+
+		.b-function--focus {
+			&::after {
+				opacity: 1;
+			}
+		}
 
 		.b-function--active {
 			z-index: 1;
@@ -19,6 +44,7 @@
 	.b-function__chart {
 		box-sizing: border-box;
 		margin: 0 auto;
+		outline: none;
 	}
 
 	.b-function__caption {

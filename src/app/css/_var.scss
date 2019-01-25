@@ -32,6 +32,8 @@ $wrap-width: 1080px;
 $media-medium: 900px;
 $media-small: 550px;
 
+$a11y-color: #007AFF;
+
 @mixin wrap {
 	box-sizing: border-box;
 	width: 100%;
