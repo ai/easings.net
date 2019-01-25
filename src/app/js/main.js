@@ -1,5 +1,5 @@
-import AnimateScroll from "js-animate-scroll";
 import { forNodeList } from "./helpers/forNodeList";
+import { scrollTo } from "./helpers/scrollTo";
 
 const listFunction = document.querySelectorAll(".js-function");
 if (listFunction) {
@@ -43,11 +43,12 @@ if (linkMore) {
 	linkMore.addEventListener("click", event => {
 		event.preventDefault();
 
-		new AnimateScroll("#definition", {
-			duration: 200,
-			easing: "ease",
-			padding: 0,
-			align: "top"
+		const position = document
+			.getElementById("definition")
+			.getBoundingClientRect();
+		scrollTo({
+			to: position.top,
+			duration: 200
 		});
 	});
 }
