@@ -130,7 +130,7 @@ export function navigateChart(id) {
 
 			setTimeout(() => {
 				info.classList.remove("b-info-chart--active");
-			}, time + delay + 100);
+			}, time + delay + 300);
 		}, 100);
 	}
 }

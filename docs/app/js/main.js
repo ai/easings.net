@@ -262,7 +262,7 @@
 								s = parseFloat(c) * a;
 							setTimeout(function() {
 								n.classList.remove("b-info-chart--active");
-							}, u + s + 100);
+							}, u + s + 300);
 						}, 100);
 				}
 			}

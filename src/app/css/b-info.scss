@@ -22,6 +22,7 @@
 			text-decoration: none;
 			color: $brand;
 			border-bottom: 1px solid transparent;
+			padding: 0 3px;
 
 			&:hover,
 			&:focus {
@@ -44,23 +45,21 @@
 	.b-info__wrap {
 		display: flex;
 		align-items: flex-start;
-		margin: 0 -30px;
 	}
 
 		.b-info__chart {
-			flex: 0 0 40%;
+			flex: 1 1 auto;
 			box-sizing: border-box;
-			padding: 0 30px $general-line-height*2;
+			padding: 0 20px $general-line-height*2 0;
+			width: 40%;
 		}
 
 		.b-info__main {
-			flex: 0 0 60%;
+			flex: 1 1 auto;
+			width: 60%;
 			max-width: $max-readable-text-width;
 			box-sizing: border-box;
-			padding: 0 30px $general-line-height*2;
-		}
-
-		.b-info__main {
+			padding: 0 0 $general-line-height*2 20px;
 			margin-top: -1rem;
 		}
 
@@ -72,7 +71,7 @@
 				padding: 0 0 $title-offset;
 			}
 
-@media (max-width: #{$wrap-width + 40px}) {
+@media (max-width: 800px) {
 	.b-info__wrap {
 		margin: 0;
 		display: block;
@@ -85,5 +84,6 @@
 
 		.b-info__main {
 			padding: 0 0 $general-line-height*2;
+			width: 100%;
 		}
 }

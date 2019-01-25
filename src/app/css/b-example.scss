@@ -21,8 +21,8 @@
 	}
 
 	.b-example__code {
-		padding: $general-line-height/2 0;
-		margin: 0;
+		padding: px2rem(5) 0;
+		margin: px2rem(-2) 0;
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
 		white-space: nowrap;
