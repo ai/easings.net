@@ -9,14 +9,11 @@
 }
 
 		.b-function--active {
-			background: #fafafa;
-			box-shadow: 0 0 3px rgba(#000, .3);
 			z-index: 1;
 		}
 
 		.b-function--inactive {
 			opacity: .4;
-			background: #fff;
 		}
 
 	.b-function__chart {

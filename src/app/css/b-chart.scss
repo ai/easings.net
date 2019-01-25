@@ -20,8 +20,7 @@
 
 		.b-chart__curve {
 			fill: none;
-			stroke: $chart-color;
-			stroke-width: 2px;
+			stroke-width: 3px;
 			stroke-linecap: round;
 			transform: translate(1px, -1px);
 		}
@@ -30,28 +29,30 @@
 			fill: none;
 			stroke-width: 1px;
 			stroke: $chart-axis-color;
+			opacity: 0;
+			transition: $transition;
 		}
 
-		.b-chart__dot {
-			position: absolute;
-			width: 9px;
-			height: 9px;
-			border-radius: 50%;
-			background: $brand;
-			bottom: -4px;
-			left: -4px;
-			animation: $transition-show linear forwards;
-			animation-delay: $transition-show-delay;
-			//opacity: 0;
-		}
-
-				.b-chart:not(.b-chart--active) .b-chart__dot {
-					animation: none !important;
+				.b-chart--active .b-chart__axis {
+					opacity: 1;
 				}
 
+		.b-chart__dot {
+			fill: none;
+			stroke: $brand;
+			stroke-width: 5px;
+			transform: translate(1px, -1px);
+
+			opacity: 0;
+			transition: stroke-dashoffset 0s, opacity $transition;
+			transition-delay: 0s, 0s;
+			will-change: stroke-dashoffset, opacity;
+		}
+
 				.b-chart--active .b-chart__dot {
-					//opacity: 1;
-					transition: stroke-dashoffset $transition-show linear, opacity $transition;
+					opacity: 1;
+					transition: stroke-dashoffset $transition-show, opacity $transition;
+					transition-delay: $transition-show-delay, 0s;
 				}
 
 		.b-chart__text {
@@ -68,12 +69,12 @@
 
 	.b-chart__cursor {
 		position: absolute;
-		bottom: -4px;
+		bottom: -3px;
 		right: -15px;
 		opacity: 0;
-		transition: transform 0s, opacity $transition;
-		transition-delay: $transition-show-delay, 0s;
 		will-change: transform, opacity;
+		transition: transform 0s, opacity $transition;
+		transition-delay: 0s, 0s;
 
 		&::after {
 			content: '';
@@ -92,5 +93,3 @@
 				transition: transform $transition-show, opacity $transition;
 				transition-delay: $transition-show-delay, 0s;
 			}
-
-

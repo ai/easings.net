@@ -24,6 +24,7 @@ a {
 	text-decoration-skip: ink;
 	transition: $transition;
 	display: inline-block;
+	cursor: pointer;
 
 	&:hover,
 	&:focus {

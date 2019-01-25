@@ -10,11 +10,9 @@
 }
 
 	.b-columns__group {
-		flex: 0 0 calc(50% - 20px);
+		flex: 0 0 calc(50% - 30px);
 		display: flex;
-		flex-wrap: wrap;
 		justify-content: center;
 		box-sizing: border-box;
-		margin: 0 10px 20px;
-		background: #f7f7f7;
+		margin: 0 15px 45px;
 	}

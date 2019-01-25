@@ -22,33 +22,60 @@ html
 		link(href="app/css/main.css" rel="stylesheet")
 
 	body
-		div
-			h1.u-visually-hidden Шпаргалка функций плавности (easing)
+		svg.u-visually-hidden(xmlns="http://www.w3.org/2000/svg" width="0" height="0")
+			-
+				const colorBase = '#222';
+				const colorStart = '#34AADC';
+				const colorEnd = '#4CD964';
 
-			.b-opensource
-				button.b-opensource__button
-					svg.b-opensource__icon(role="none")
-						use(xlink:href="/app/img/sprite.svg#github")
+			defs
+				linearGradient#in(x1="0%" y1="100%" x2="100%" y2="0%")
+					stop(offset="0%" stop-color=colorBase)
+					stop(offset="50%" stop-color=colorBase)
+					stop(offset="70%" stop-color=colorEnd)
+					stop(offset="100%" stop-color=colorEnd)
+				linearGradient#out(x1="0%" y1="100%" x2="100%" y2="0%")
+					stop(offset="0%" stop-color=colorStart)
+					stop(offset="30%" stop-color=colorStart)
+					stop(offset="50%" stop-color=colorBase)
+					stop(offset="100%" stop-color=colorBase)
+				linearGradient#inOut(x1="0%" y1="100%" x2="100%" y2="0%")
+					stop(offset="0%" stop-color=colorStart)
+					stop(offset="20%" stop-color=colorStart)
+					stop(offset="80%" stop-color=colorEnd)
+					stop(offset="100%" stop-color=colorEnd)
 
-			.u-wrap
-				.b-header
-					.b-header__definition
-						p #[b Функция плавности (easing)] определяет скорость течения анимации, делая её более реалистичной.
-						p Реальные вещи не начинают двигаться мгновенно и с постоянной скоростью. Если мы открываем ящик стола, то сначала ускоряем его, а на второй половине пути — тормозим. Если что-то упало, то оно сначала летит всё быстрее и быстрее, а ударившись о пол — слегка подпрыгивает обратно.
-						p Этот сайт поможет каждый раз подобрать нужную функцию плавности.
+		h1.u-visually-hidden Шпаргалка функций плавности (easing)
 
-				.b-columns
-					each group in all_easings
-						.b-columns__group
-							each item in group
-								+Item(item)
+		a.b-opensource(target="_blank" href="https://github.com/ai/easings.net")
+			button.b-opensource__button
+				svg.b-opensource__icon(role="none")
+					use(xlink:href="/app/img/sprite.svg#github")
 
-				footer.b-footer
-					.b-footer__lang
-						|<select><option value="/af">Afrikaans</option><option value="/az">Azərbaycanca</option><option value="/ca">Català</option><option value="/cs">Český</option><option value="/cy">Welsh</option><option value="/da">Dansk</option><option value="/de">Deutsch</option><option value="/en">English</option><option value="/es">Español</option><option value="/fa">فارسی</option><option value="/fr">Français</option><option value="/id">Bahasa Indonesia</option><option value="/it">Italiano</option><option value="/ja">日本語</option><option value="/ko">한국어</option><option value="/nb">Norsk (bokmål)</option><option value="/nl">Nederlands</option><option value="/pl">Polski</option><option value="/pt">Português</option><option value="/pt-br">Português brasileiro</option><option value="/ru" selected="selected">Русский</option><option value="/sk">Slovenský</option><option value="/sr-latn">Srpski</option><option value="/sv-se">Svenska</option><option value="/tr">Türkçe</option><option value="/uk">Українська</option><option value="/vi">Tiếng Việt</option><option value="/zh-cn">简体中文</option><option value="/zh-tw">繁體中文</option></select>
+			.b-opensource__wrap Помоги перевести сайт на твой язык
 
+		.u-wrap
+			.b-header #[b Функция плавности (easing)] – #[a.b-header__more.js-more(href="#definition") что это?]
+
+			.b-columns
+				each group in all_easings
+					.b-columns__group
+						each item, index in group
+							+Item(item, index)
+
+			footer.b-footer#definition
+				.b-footer__definition
+					p #[b Функция плавности (easing)] определяет скорость течения анимации, делая её более реалистичной.
+					p Реальные вещи не начинают двигаться мгновенно и с постоянной скоростью. Если мы открываем ящик стола, то сначала ускоряем его, а на второй половине пути — тормозим. Если что-то упало, то оно сначала летит всё быстрее и быстрее, а ударившись о пол — слегка подпрыгивает обратно.
+					p Этот сайт поможет каждый раз подобрать нужную функцию плавности.
+
+				.b-footer__group
 					.b-footer__copyright
 						a(href="https://twitter.com/andrey_sitnik" rel="noopener noreferrer" target="_blank") Андрей Ситник
+
+					.b-footer__lang
+						| <select><option value="/af">Afrikaans</option><option value="/az">Azərbaycanca</option><option value="/ca">Català</option><option value="/cs">Český</option><option value="/cy">Welsh</option><option value="/da">Dansk</option><option value="/de">Deutsch</option><option value="/en">English</option><option value="/es">Español</option><option value="/fa">فارسی</option><option value="/fr">Français</option><option value="/id">Bahasa Indonesia</option><option value="/it">Italiano</option><option value="/ja">日本語</option><option value="/ko">한국어</option><option value="/nb">Norsk (bokmål)</option><option value="/nl">Nederlands</option><option value="/pl">Polski</option><option value="/pt">Português</option><option value="/pt-br">Português brasileiro</option><option value="/ru" selected="selected">Русский</option><option value="/sk">Slovenský</option><option value="/sr-latn">Srpski</option><option value="/sv-se">Svenska</option><option value="/tr">Türkçe</option><option value="/uk">Українська</option><option value="/vi">Tiếng Việt</option><option value="/zh-cn">简体中文</option><option value="/zh-tw">繁體中文</option></select>
+
 
 
 		script(src='app/js/main.js' async)

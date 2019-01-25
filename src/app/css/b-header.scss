@@ -1,17 +1,17 @@
 @import "var";
 
 .b-header {
-	padding: 1rem 0;
+	padding: 1.7em 0 2em;
+	font-size: px2rem(18);
 }
 
-	.b-header__definition {
-		width: 100%;
-		max-width: 800px;
-		text-align: justify;
-		hyphens: auto;
+	.b-header__more {
+		text-decoration: none;
 
-		p {
-			padding: 0 0 .5em;
-			margin: 0;
+		&::after {
+			content: '';
+			display: block;
+			border-bottom: 1px dotted currentColor;
+			margin: -.1em 0 0;
 		}
 	}

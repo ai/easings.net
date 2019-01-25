@@ -5367,6 +5367,10 @@ jest-validate@^23.5.0:
     leven "^2.1.0"
     pretty-format "^23.6.0"
 
+js-animate-scroll@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/js-animate-scroll/-/js-animate-scroll-1.0.6.tgz#597e49dc97cd1ecef135fb1e9ed518bac72aec68"
+
 js-base64@^2.1.8:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.5.1.tgz#1efa39ef2c5f7980bb1784ade4a8af2de3291121"

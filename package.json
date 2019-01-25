@@ -14,6 +14,7 @@
 	"dependencies": {
 		"focus-visible": "^4.1.5",
 		"imagesloaded": "^4.1.4",
+		"js-animate-scroll": "^1.0.6",
 		"lodash": "^4.17.11"
 	},
 	"devDependencies": {

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>index</title>
+    <!--if dev-->
+    <!--	link(href="app/css/core.css" rel="stylesheet")-->
+    <!--	link(href="app/css/animations.css" rel="stylesheet")-->
+    <!--	link(href="app/css/b-header.css" rel="stylesheet")-->
+    <!--	link(href="app/css/b-columns.css" rel="stylesheet")-->
+    <!--	link(href="app/css/b-function.css" rel="stylesheet")-->
+    <!--	link(href="app/css/b-chart.css" rel="stylesheet")-->
+    <!--	link(href="app/css/b-footer.css" rel="stylesheet")-->
+    <!---->
+    <!--else-->
+    <link href="app/css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <svg class="u-visually-hidden" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+      <defs>
+        <linearGradient id="in" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#222"></stop>
+          <stop offset="50%" stop-color="#222"></stop>
+          <stop offset="70%" stop-color="#4CD964"></stop>
+          <stop offset="100%" stop-color="#4CD964"></stop>
+        </linearGradient>
+        <linearGradient id="out" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#34AADC"></stop>
+          <stop offset="30%" stop-color="#34AADC"></stop>
+          <stop offset="50%" stop-color="#222"></stop>
+          <stop offset="100%" stop-color="#222"></stop>
+        </linearGradient>
+        <linearGradient id="inOut" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#34AADC"></stop>
+          <stop offset="20%" stop-color="#34AADC"></stop>
+          <stop offset="80%" stop-color="#4CD964"></stop>
+          <stop offset="100%" stop-color="#4CD964"></stop>
+        </linearGradient>
+      </defs>
+    </svg>
+    <h1 class="u-visually-hidden">Шпаргалка функций плавности (easing)</h1><a class="b-opensource" target="_blank" href="https://github.com/ai/easings.net">
+      <button class="b-opensource__button">
+        <svg class="b-opensource__icon" role="none">
+          <use xlink:href="/app/img/sprite.svg#github"></use>
+        </svg>
+      </button>
+      <div class="b-opensource__wrap">Помоги перевести сайт на твой язык</div></a>
+    <div class="u-wrap">
+      <div class="b-header"><b>Функция плавности (easing)</b> – <a class="b-header__more js-more" href="#definition">что это?</a></div>
+      <div class="b-columns">
+        <div class="b-columns__group">
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeInSine" data-length="155.08001054762676">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C58.750 85.000 93.125 24.225 125 0" fill="none" stroke="url(#in)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C58.750 85.000 93.125 24.225 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.47, 0, 0.745, 0.715)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.47, 0, 0.745, 0.715)"></div></a>
+            <div class="b-function__caption">easeInSine</div>
+          </div>
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeOutSine" data-length="155.89071431326352">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C48.750 36.125 70.625 0.000 125 0" fill="none" stroke="url(#out)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C48.750 36.125 70.625 0.000 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.39, 0.575, 0.565, 1)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.39, 0.575, 0.565, 1)"></div></a>
+            <div class="b-function__caption">easeOutSine</div>
+          </div>
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeInOutSine" data-length="155.3081837710691">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C55.625 80.750 68.750 4.250 125 0" fill="none" stroke="url(#inOut)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C55.625 80.750 68.750 4.250 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.445, 0.05, 0.55, 0.95)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.445, 0.05, 0.55, 0.95)"></div></a>
+            <div class="b-function__caption">easeInOutSine</div>
+          </div>
+        </div>
+        <div class="b-columns__group">
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeInQuad" data-length="155.61370428272215">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C68.750 77.775 85.000 39.950 125 0" fill="none" stroke="url(#in)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C68.750 77.775 85.000 39.950 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.55, 0.085, 0.68, 0.53)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.55, 0.085, 0.68, 0.53)"></div></a>
+            <div class="b-function__caption">easeInQuad</div>
+          </div>
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeOutQuad" data-length="156.7794037567463">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C31.250 45.900 56.250 5.100 125 0" fill="none" stroke="url(#out)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C31.250 45.900 56.250 5.100 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.25, 0.46, 0.45, 0.94)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.25, 0.46, 0.45, 0.94)"></div></a>
+            <div class="b-function__caption">easeOutQuad</div>
+          </div>
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeInOutQuad" data-length="156.05764043509694">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C56.875 82.450 64.375 3.825 125 0" fill="none" stroke="url(#inOut)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C56.875 82.450 64.375 3.825 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955)"></div></a>
+            <div class="b-function__caption">easeInOutQuad</div>
+          </div>
+        </div>
+        <div class="b-columns__group">
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeInCubic" data-length="160.86152244059073">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C68.750 80.325 84.375 68.850 125 0" fill="none" stroke="url(#in)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C68.750 80.325 84.375 68.850 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.55, 0.055, 0.675, 0.19)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.55, 0.055, 0.675, 0.19)"></div></a>
+            <div class="b-function__caption">easeInCubic</div>
+          </div>
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeOutCubic" data-length="162.65514195987782">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C26.875 33.150 44.375 0.000 125 0" fill="none" stroke="url(#out)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C26.875 33.150 44.375 0.000 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.215, 0.61, 0.355, 1)"></div></a>
+            <div class="b-function__caption">easeOutCubic</div>
+          </div>
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeInOutCubic" data-length="160.91512163436897">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C80.625 81.175 44.375 0.000 125 0" fill="none" stroke="url(#inOut)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C80.625 81.175 44.375 0.000 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.645, 0.045, 0.355, 1)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.645, 0.045, 0.355, 1)"></div></a>
+            <div class="b-function__caption">easeInOutCubic</div>
+          </div>
+        </div>
+        <div class="b-columns__group">
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeInQuart" data-length="168.36571599656932">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C111.875 82.450 85.625 66.300 125 0" fill="none" stroke="url(#in)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C111.875 82.450 85.625 66.300 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.895, 0.03, 0.685, 0.22)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.895, 0.03, 0.685, 0.22)"></div></a>
+            <div class="b-function__caption">easeInQuart</div>
+          </div>
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeOutQuart" data-length="167.0318008536485">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C20.625 13.600 55.000 0.000 125 0" fill="none" stroke="url(#out)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C20.625 13.600 55.000 0.000 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.165, 0.84, 0.44, 1)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.165, 0.84, 0.44, 1)"></div></a>
+            <div class="b-function__caption">easeOutQuart</div>
+          </div>
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeInOutQuart" data-length="167.0323243331494">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C96.250 85.000 21.875 0.000 125 0" fill="none" stroke="url(#inOut)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C96.250 85.000 21.875 0.000 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.77, 0, 0.175, 1)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.77, 0, 0.175, 1)"></div></a>
+            <div class="b-function__caption">easeInOutQuart</div>
+          </div>
+        </div>
+        <div class="b-columns__group">
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeInQuint" data-length="173.01795492809833">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C94.375 80.750 106.875 79.900 125 0" fill="none" stroke="url(#in)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C94.375 80.750 106.875 79.900 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.755, 0.05, 0.855, 0.06)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.755, 0.05, 0.855, 0.06)"></div></a>
+            <div class="b-function__caption">easeInQuint</div>
+          </div>
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeOutQuint" data-length="171.29127694596687">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C28.750 0.000 40.000 0.000 125 0" fill="none" stroke="url(#out)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C28.750 0.000 40.000 0.000 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.23, 1, 0.32, 1)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.23, 1, 0.32, 1)"></div></a>
+            <div class="b-function__caption">easeOutQuint</div>
+          </div>
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeInOutQuint" data-length="171.35746518335284">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C107.500 85.000 8.750 0.000 125 0" fill="none" stroke="url(#inOut)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C107.500 85.000 8.750 0.000 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.86, 0, 0.07, 1)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.86, 0, 0.07, 1)"></div></a>
+            <div class="b-function__caption">easeInOutQuint</div>
+          </div>
+        </div>
+        <div class="b-columns__group">
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeInExpo" data-length="176.51463201301146">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C118.750 80.750 99.375 82.025 125 0" fill="none" stroke="url(#in)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C118.750 80.750 99.375 82.025 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.95, 0.05, 0.795, 0.035)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.95, 0.05, 0.795, 0.035)"></div></a>
+            <div class="b-function__caption">easeInExpo</div>
+          </div>
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeOutExpo" data-length="174.88867914753473">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C23.750 0.000 27.500 0.000 125 0" fill="none" stroke="url(#out)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C23.750 0.000 27.500 0.000 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.19, 1, 0.22, 1)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.19, 1, 0.22, 1)"></div></a>
+            <div class="b-function__caption">easeOutExpo</div>
+          </div>
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeInOutExpo" data-length="176.8155944226686">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C125.000 85.000 0.000 0.000 125 0" fill="none" stroke="url(#inOut)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C125.000 85.000 0.000 0.000 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(1, 0, 0, 1)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(1, 0, 0, 1)"></div></a>
+            <div class="b-function__caption">easeInOutExpo</div>
+          </div>
+        </div>
+        <div class="b-columns__group">
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeInCirc" data-length="167.81255137759783">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C75.000 81.600 122.500 56.525 125 0" fill="none" stroke="url(#in)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C75.000 81.600 122.500 56.525 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.6, 0.04, 0.98, 0.335)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.6, 0.04, 0.98, 0.335)"></div></a>
+            <div class="b-function__caption">easeInCirc</div>
+          </div>
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeOutCirc" data-length="176.0479053506571">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C9.375 15.300 20.625 0.000 125 0" fill="none" stroke="url(#out)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C9.375 15.300 20.625 0.000 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1)"></div></a>
+            <div class="b-function__caption">easeOutCirc</div>
+          </div>
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeInOutCirc" data-length="163.1557160406948">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C98.125 73.525 18.750 11.900 125 0" fill="none" stroke="url(#inOut)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C98.125 73.525 18.750 11.900 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.785, 0.135, 0.15, 0.86)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.785, 0.135, 0.15, 0.86)"></div></a>
+            <div class="b-function__caption">easeInOutCirc</div>
+          </div>
+        </div>
+        <div class="b-columns__group">
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeInBack" data-length="176.10650951917594">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C75.000 108.800 91.875 81.175 125 0" fill="none" stroke="url(#in)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C75.000 108.800 91.875 81.175 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.6, -0.28, 0.735, 0.045)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.6, -0.28, 0.735, 0.045)"></div></a>
+            <div class="b-function__caption">easeInBack</div>
+          </div>
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeOutBack" data-length="178.70018446498332">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C21.875 9.775 40.000 -23.375 125 0" fill="none" stroke="url(#out)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C21.875 9.775 40.000 -23.375 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.175, 0.885, 0.32, 1.275)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.175, 0.885, 0.32, 1.275)"></div></a>
+            <div class="b-function__caption">easeOutBack</div>
+          </div>
+          <div class="b-function js-function"><a class="b-function__chart b-chart js-function-chart" href="#easeInOutBack" data-length="188.20454212284798">
+              <svg class="b-chart__image" viewBox="0 0 125 85" xmlns="http://www.w3.org/2000/svg">
+                <path class="b-chart__axis" d="M0 0V85H125" fill="none"></path>
+                <path class="b-chart__curve" d="M0 85C85.000 131.750 33.125 -46.750 125 0" fill="none" stroke="url(#inOut)"></path>
+                <!--path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")-->
+                <text class="b-chart__text" x="5" y="10">x</text>
+                <text class="b-chart__text" x="122" y="80" text-anchor="end">t</text>
+                <path class="b-chart__dot js-function-dot" d="M0 85C85.000 131.750 33.125 -46.750 125 0" fill="none" stroke-dasharray="0, 1000" stroke-dashoffset="1" stroke-linecap="round" style="transition-timing-function:cubic-bezier(0.68, -0.55, 0.265, 1.55)"></path>
+              </svg>
+              <div class="b-chart__cursor" style="transition-timing-function:cubic-bezier(0.68, -0.55, 0.265, 1.55)"></div></a>
+            <div class="b-function__caption">easeInOutBack</div>
+          </div>
+        </div>
+      </div>
+      <footer class="b-footer" id="definition">
+        <div class="b-footer__definition">
+          <p><b>Функция плавности (easing)</b> определяет скорость течения анимации, делая её более реалистичной.</p>
+          <p>Реальные вещи не начинают двигаться мгновенно и с постоянной скоростью. Если мы открываем ящик стола, то сначала ускоряем его, а на второй половине пути — тормозим. Если что-то упало, то оно сначала летит всё быстрее и быстрее, а ударившись о пол — слегка подпрыгивает обратно.</p>
+          <p>Этот сайт поможет каждый раз подобрать нужную функцию плавности.</p>
+        </div>
+        <div class="b-footer__group">
+          <div class="b-footer__copyright"><a href="https://twitter.com/andrey_sitnik" rel="noopener noreferrer" target="_blank">Андрей Ситник</a></div>
+          <div class="b-footer__lang"><select><option value="/af">Afrikaans</option><option value="/az">Azərbaycanca</option><option value="/ca">Català</option><option value="/cs">Český</option><option value="/cy">Welsh</option><option value="/da">Dansk</option><option value="/de">Deutsch</option><option value="/en">English</option><option value="/es">Español</option><option value="/fa">فارسی</option><option value="/fr">Français</option><option value="/id">Bahasa Indonesia</option><option value="/it">Italiano</option><option value="/ja">日本語</option><option value="/ko">한국어</option><option value="/nb">Norsk (bokmål)</option><option value="/nl">Nederlands</option><option value="/pl">Polski</option><option value="/pt">Português</option><option value="/pt-br">Português brasileiro</option><option value="/ru" selected="selected">Русский</option><option value="/sk">Slovenský</option><option value="/sr-latn">Srpski</option><option value="/sv-se">Svenska</option><option value="/tr">Türkçe</option><option value="/uk">Українська</option><option value="/vi">Tiếng Việt</option><option value="/zh-cn">简体中文</option><option value="/zh-tw">繁體中文</option></select></div>
+        </div>
+      </footer>
+    </div>
+    <script src="app/js/main.js" async></script>
+  </body>
+</html>
