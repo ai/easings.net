@@ -93,3 +93,79 @@
 				transition: transform $transition-show, opacity $transition;
 				transition-delay: $transition-show-delay, 0s;
 			}
+
+@media (max-width: $wrap-width) {
+	$chart-width: 100px;
+	$chart-height: 70px;
+
+	.b-chart {
+		width: $chart-width;
+	}
+
+	.b-chart__image {
+		width: $chart-width;
+		height: $chart-height;
+		margin: 0 auto;
+	}
+
+	.b-chart--active .b-chart__cursor {
+		transform: translateY(-$chart-height);
+	}
+}
+
+@media (max-width: 1000px) {
+	$chart-width: 80px;
+	$chart-height: 50px;
+
+	.b-chart {
+		width: $chart-width;
+	}
+
+	.b-chart__image {
+		width: $chart-width;
+		height: $chart-height;
+		margin: 0 auto;
+	}
+
+	.b-chart--active .b-chart__cursor {
+		transform: translateY(-$chart-height);
+	}
+}
+
+@media (max-width: $media-medium) {
+	$chart-width: 125px;
+	$chart-height: 85px;
+
+	.b-chart {
+		width: $chart-width;
+	}
+
+	.b-chart__image {
+		width: $chart-width;
+		height: $chart-height;
+		margin: 0 auto;
+	}
+
+	.b-chart--active .b-chart__cursor {
+		transform: translateY(-$chart-height);
+	}
+}
+
+@media (max-width: $media-small) {
+	$chart-width: 100px;
+	$chart-height: 70px;
+
+	.b-chart {
+		width: $chart-width;
+	}
+
+	.b-chart__image {
+		width: $chart-width;
+		height: $chart-height;
+		margin: 0 auto;
+	}
+
+	.b-chart--active .b-chart__cursor {
+		transform: translateY(-$chart-height);
+	}
+}

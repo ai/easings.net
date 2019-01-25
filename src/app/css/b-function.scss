@@ -26,3 +26,9 @@
 		font-size: 1rem;
 		text-align: center;
 	}
+
+@media (max-width: $wrap-width) {
+	.b-function {
+		padding: px2rem(10) px2rem(15) px2rem(3);
+	}
+}

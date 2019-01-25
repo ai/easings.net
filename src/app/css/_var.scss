@@ -27,12 +27,16 @@ $brand: #FF3333;
 $chart-width: 125px;
 $chart-height: 85px;
 
+$wrap-width: 1080px;
+
+$media-medium: 900px;
+$media-small: 550px;
 
 @mixin wrap {
 	box-sizing: border-box;
 	width: 100%;
 	margin: 0 auto;
-	max-width: 1040px;
+	max-width: $wrap-width;
 	padding: 0 15px;
 }
 

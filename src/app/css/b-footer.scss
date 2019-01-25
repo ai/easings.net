@@ -32,3 +32,13 @@
 			justify-content: flex-end;
 			margin: 0 0 px2rem(5);
 		}
+
+@media (max-width: $media-medium) {
+	.b-footer__group {
+		flex-direction: column-reverse;
+	}
+
+		.b-footer__copyright {
+			margin: 0 auto;
+		}
+}
