@@ -5,9 +5,7 @@
 	"author": "Ivan Solovev <solovev.one@yandex.ru> (https://solovev.one/)",
 	"scripts": {
 		"start": "./node_modules/.bin/gulp dev",
-		"build": "./node_modules/.bin/gulp prod",
-		"min": "./node_modules/.bin/gulp min",
-		"view": "./node_modules/.bin/gulp view",
+		"build": "./node_modules/.bin/gulp min",
 		"precommit": "lint-staged"
 	},
 	"license": "MIT",
