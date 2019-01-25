@@ -1,4 +1,4 @@
-mixin Item(item)
+mixin Item(item, index)
 	-
 		const radioScale = 1;
 		const chartWidth = 125 * radioScale;
@@ -9,17 +9,32 @@ mixin Item(item)
 		const x2 = (parseFloat(points[3]) * chartWidth).toFixed(3);
 		const y2 = ((1 - parseFloat(points[4])) * chartHeight).toFixed(3);
 
+		const a = '';
+
+		const ratioMask = 1.1951;
+		const strokeLength = item.path / ratioMask;
+
+		var gradient = 'inOut';
+		if (index === 0) gradient = 'in';
+		if (index === 1) gradient = 'out';
+
+
 	.b-function.js-function(data-path-length=item.length)
-		a.b-function__chart.b-chart.js-function-chart(href=`#${item.name}`)
-			svg.b-chart__image(viewBox=`0 0 ${chartWidth} ${chartHeight}` xmlns="http://www.w3.org/2000/svg")
-				path.b-chart__axis(d=`M0 0V${chartHeight}H${chartWidth}` fill="none")
-				path.b-chart__curve(d=`M0 ${chartHeight}C${x1} ${y1} ${x2} ${y2} ${chartWidth} 0` fill="none")
-				path.b-chart__axis(d=`M0 ${chartHeight}V1M0 ${chartHeight}H2` fill="none")
-				//- path.b-chart__dot(d=`M0 ${chartHeight}C${x1} ${y1} ${x2} ${y2} ${chartWidth} 0` fill="none")
+		a.b-function__chart.b-chart.js-function-chart(href=`#${item.name}` data-length=strokeLength)
+			svg.b-chart__image(viewBox=(`0 0 ${chartWidth} ${chartHeight}`) xmlns="http://www.w3.org/2000/svg")
+				path.b-chart__axis(d=(`M0 0V${chartHeight}H${chartWidth}`) fill="none")
+
+				path.b-chart__curve(d=(`M0 ${chartHeight}C${x1} ${y1} ${x2} ${y2} ${chartWidth} 0`)
+				fill="none" stroke=(`url(#${gradient})`))
+
+				//path.b-chart__axis(d=(`M0 ${chartHeight}V1M0 ${chartHeight}H20`) fill="none")
 				text.b-chart__text(x="5" y="10") x
 				text.b-chart__text(x=(chartWidth - 3) y=(chartHeight - 5) text-anchor="end") t
 
-			.b-chart__dot(style=`animation-name:${item.name}`)
+				path.b-chart__dot.js-function-dot(d=(`M0 ${chartHeight}C${x1} ${y1} ${x2} ${y2} ${chartWidth} 0`) fill="none"
+				stroke-dasharray="0, 1000" stroke-dashoffset="1"
+				stroke-linecap="round" style=`transition-timing-function:${item.css}`)
+
 			.b-chart__cursor(style=`transition-timing-function:${item.css}`)
 
 		.b-function__caption= item.name

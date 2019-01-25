@@ -8,7 +8,6 @@
 	}
 
 	@return $pixels / $context * 1rem;
-	//@return $pixels;
 }
 
 $system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -17,6 +16,7 @@ $system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen"
 
 $transition: 0.2s;
 $transition-show: 1.5s;
+//$transition-show: 3.5s;
 $transition-show-delay: 0.3s;
 
 $text-color: #222;

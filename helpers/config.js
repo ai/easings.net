@@ -1,5 +1,6 @@
 const cwd = process.cwd();
 
+const dist = "docs";
 module.exports = {
 	autoPrefix: ["Last 5 versions", "IE >= 10"],
 
@@ -20,17 +21,17 @@ module.exports = {
 			static: `${cwd}/src/static`
 		},
 		dist: {
-			templates: `${cwd}/dist`,
+			templates: `${cwd}/${dist}`,
 
-			css: `${cwd}/dist/app/css`,
-			fonts: `${cwd}/dist/app/fonts`,
-			img: `${cwd}/dist/app/img`,
-			js: `${cwd}/dist/app/js`,
-			svg: `${cwd}/dist/app/svg`,
+			css: `${cwd}/${dist}/app/css`,
+			fonts: `${cwd}/${dist}/app/fonts`,
+			img: `${cwd}/${dist}/app/img`,
+			js: `${cwd}/${dist}/app/js`,
+			svg: `${cwd}/${dist}/app/svg`,
 
-			cont: `${cwd}/dist/cont`,
+			cont: `${cwd}/${dist}/cont`,
 
-			static: `${cwd}/dist`
+			static: `${cwd}/${dist}`
 		}
 	}
 };

@@ -2,28 +2,72 @@
 
 .b-opensource {
 	position: absolute;
-	top: 30px;
+	top: px2rem(95);
 	right: 0;
 	overflow: hidden;
+	text-decoration: none;
+	max-width: 110px;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 0 5px;
 }
 
 	.b-opensource__button {
 		background: none;
 		border: none;
 		outline: none;
-		padding: 0;
+		padding: px2rem(5);
 		border-radius: 0;
 		color: $text-color;
-		height: 78px;
-		width: 68px;
-		transform: translateX(52%);
+
 		cursor: pointer;
+		transform: translateX(105%);
+		transition: $transition;
 	}
 
+			.b-opensource:hover .b-opensource__button {
+				transform: translateX(0);
+				transition-delay: .25s;
+			}
+
 		.b-opensource__icon	{
-			width: 78px;
-			height: 68px;
+			width: 48px;
+			height: 42px;
 			fill: currentColor;
-			transform: rotate(-90deg);
 			display: block;
+			transform: rotate(-90deg);
+			transition: $transition;
+			transition-delay: .25s;
 		}
+
+				.b-opensource:hover .b-opensource__icon {
+					transition-delay: 0s;
+					transform: rotate(0);
+				}
+
+	.b-opensource__wrap {
+		transition: $transition;
+		transition-delay: 0s;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+			.b-opensource:hover .b-opensource__wrap {
+				opacity: 1;
+				visibility: visible;
+				transition-delay: .3s;
+			}
+
+@keyframes opensourceGithub {
+	0% {
+		transform: translateX(100%) rotate(-90deg);
+	}
+
+	60% {
+		transform: translateX(0) rotate(-90deg);
+	}
+
+	100% {
+		transform: translateX(0) rotate(0deg);
+	}
+}
