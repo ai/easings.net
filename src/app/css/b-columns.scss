@@ -6,7 +6,16 @@
 	align-items: stretch;
 	justify-content: center;
 	box-sizing: border-box;
+	transition: $transition;
 }
+		.b-columns--hide {
+			position: absolute;
+			left: 0;
+			right: 0;
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(-20px);
+		}
 
 	.b-columns__group {
 		flex: 0 0 calc(50% - 30px);

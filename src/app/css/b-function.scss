@@ -7,6 +7,7 @@
 	transition: $transition;
 	position: relative;
 	outline: none;
+	width: 33%;
 
 	&:active {
 		transform: scale(.95);
@@ -35,11 +36,10 @@
 
 		.b-function--active {
 			z-index: 1;
+			box-shadow: 0 0 2px 1px rgba(#000, .3);
 		}
 
-		.b-function--inactive {
-			opacity: .4;
-		}
+		.b-function--inactive {}
 
 	.b-function__chart {
 		box-sizing: border-box;
@@ -56,5 +56,11 @@
 @media (max-width: $wrap-width) {
 	.b-function {
 		padding: px2rem(10) px2rem(15) px2rem(3);
+	}
+}
+
+@media (max-width: 450px) {
+	.b-function {
+		width: auto;
 	}
 }

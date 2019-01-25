@@ -1,54 +1,44 @@
 @import "var";
 
-.b-chart {
-	box-sizing: border-box;
+.b-info-chart {
 	position: relative;
-	display: block;
-	text-decoration: none;
 }
 
-	.b-chart__image {
+	.b-info-chart__image {
 		width: 100%;
-		min-width: 70px;
-		max-width: 130px;
 		height: 100%;
 		overflow: visible;
 		display: block;
 		margin: 0 auto;
 	}
 
-		.b-chart__curve {
+		.b-info-chart__curve {
 			fill: none;
+			stroke: $brand;
 			stroke-width: 3px;
 			stroke-linecap: round;
 			transform: translate(1px, -1px);
 		}
 
-		.b-chart__axis {
+				.b-info-chart__curve--linear {
+					opacity: .7;
+					stroke: $text-color;
+				}
+
+
+		.b-info-chart__axis {
 			fill: none;
 			stroke-width: 1px;
 			stroke: $chart-axis-color;
-			opacity: 0;
-			transition: $transition;
 		}
 
-				.b-chart--active .b-chart__axis {
-					opacity: 1;
-				}
-
-		.b-chart__text {
+		.b-info-chart__text {
 			fill: $chart-axis-color;
-			font-size: px2rem(10);
-			transition: $transition;
-			opacity: 0;
+			font-size: px2rem(16);
 		}
 
-				.b-chart--active .b-chart__text {
-					opacity: 1;
-				}
 
-
-	.b-chart__cursor {
+	.b-info-chart__cursor {
 		position: absolute;
 		bottom: -4px;
 		right: -17px;
@@ -68,15 +58,17 @@
 		}
 	}
 
-			.b-chart--active .b-chart__cursor {
+			.b-info-chart__cursor--linear {
+				&::after {
+					opacity: .7;
+					background: $text-color;
+				}
+			}
+
+			.b-info-chart:hover .b-info-chart__cursor,
+			.b-info-chart--active .b-info-chart__cursor {
 				opacity: 1;
 				bottom: calc(100% - 4px);
 				transition: bottom $transition-show, opacity $transition;
-				transition-delay: $transition, 0s;
+				transition-delay: $transition-show-delay, 0s;
 			}
-
-@media (max-width: $media-small) {
-	.b-chart {
-		width: 100px;
-	}
-}
