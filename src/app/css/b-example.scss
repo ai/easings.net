@@ -25,5 +25,10 @@
 		margin: 0;
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
-		white-space: pre;
+		white-space: nowrap;
 	}
+
+		.b-example__spaces {
+			width: 4ex;
+			display: inline-block;
+		}
