@@ -1,3 +1,31 @@
+@-webkit-keyframes opensourceGithub {
+	0% {
+		-webkit-transform: translateX(100%) rotate(-90deg);
+		transform: translateX(100%) rotate(-90deg);
+	}
+	60% {
+		-webkit-transform: translateX(0) rotate(-90deg);
+		transform: translateX(0) rotate(-90deg);
+	}
+	to {
+		-webkit-transform: translateX(0) rotate(0deg);
+		transform: translateX(0) rotate(0deg);
+	}
+}
+@keyframes opensourceGithub {
+	0% {
+		-webkit-transform: translateX(100%) rotate(-90deg);
+		transform: translateX(100%) rotate(-90deg);
+	}
+	60% {
+		-webkit-transform: translateX(0) rotate(-90deg);
+		transform: translateX(0) rotate(-90deg);
+	}
+	to {
+		-webkit-transform: translateX(0) rotate(0deg);
+		transform: translateX(0) rotate(0deg);
+	}
+}
 html {
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
@@ -11,12 +39,14 @@ html {
 		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 	font-size: 100%;
 	color: #222;
+	-webkit-font-kerning: normal;
+	font-kerning: normal;
 }
-
 body {
 	margin: 0;
+	line-height: 1.35;
+	letter-spacing: 0.01em;
 }
-
 h1,
 h2,
 h3 {
@@ -24,96 +54,49 @@ h3 {
 	margin: 0;
 	padding: 0;
 }
-
 img {
-	border: none;
+	border: 0;
 }
-
 progress {
 	vertical-align: baseline;
 }
-
 button,
 input,
 optgroup,
 select,
 textarea {
 	font-family: inherit;
-	/* 1 */
 	font-size: 100%;
-	/* 1 */
 	line-height: 1.15;
-	/* 1 */
 	margin: 0;
-	/* 2 */
 }
-
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-
 button,
 input {
-	/* 1 */
 	overflow: visible;
 }
-
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-
 button,
 select {
-	/* 1 */
 	text-transform: none;
 }
-
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
-
-button,
 [type="button"],
 [type="reset"],
-[type="submit"] {
+[type="submit"],
+button {
 	-webkit-appearance: button;
 }
-
-/**
- * Remove the inner border and padding in Firefox.
- */
-
-button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
 	border-style: none;
 	padding: 0;
 }
-
-/**
- * Restore the focus styles unset by the previous rule.
- */
-
-button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type="submit"]:-moz-focusring,
+button:-moz-focusring {
 	outline: 1px dotted ButtonText;
 }
-
-html {
-	-webkit-font-kerning: normal;
-	font-kerning: normal;
-}
-
-body {
-	line-height: 1.35;
-	letter-spacing: 0.01em;
-}
-
 .u-wrap {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
@@ -122,7 +105,6 @@ body {
 	max-width: 1040px;
 	padding: 0 15px;
 }
-
 .u-visually-hidden {
 	position: absolute;
 	clip: rect(0 0 0 0);
@@ -130,7 +112,6 @@ body {
 	height: 1px;
 	margin: -1px;
 }
-
 a {
 	color: #222;
 	text-decoration: underline;
@@ -142,34 +123,34 @@ a {
 	display: inline-block;
 	cursor: pointer;
 }
-
-a:hover,
-a:focus {
-	color: #ff3333;
+a:focus,
+a:hover {
+	color: #f33;
 }
-
 a:active {
 	-webkit-transform: scale(0.95);
 	-ms-transform: scale(0.95);
 	transform: scale(0.95);
 }
-
 .b-header {
 	padding: 1.7em 0 2em;
 	font-size: 1.125rem;
 }
-
 .b-header__more {
 	text-decoration: none;
 }
-
 .b-header__more::after {
 	content: "";
 	display: block;
 	border-bottom: 1px dotted currentColor;
 	margin: -0.1em 0 0;
 }
-
+.b-columns,
+.b-columns__group,
+.b-function {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
 .b-columns {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -183,30 +164,24 @@ a:active {
 	-ms-flex-pack: center;
 	justify-content: center;
 	margin: 0 -20px;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
 }
-
-.b-columns__group {
+.b-columns__group,
+.b-function {
 	-webkit-box-flex: 0;
-	-ms-flex: 0 0 calc(50% - 30px);
-	flex: 0 0 calc(50% - 30px);
+}
+.b-columns__group {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
 	margin: 0 15px 45px;
+	-ms-flex: 0 0 calc(50% - 30px);
+	flex: 0 0 calc(50% - 30px);
 }
-
 .b-function {
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
 	padding: 0.9375rem 1.25rem 0.5rem;
-	-webkit-box-flex: 0;
 	-ms-flex: 0 0 calc(100% / 3);
 	flex: 0 0 calc(100% / 3);
 	-webkit-transition: 0.2s;
@@ -214,27 +189,22 @@ a:active {
 	transition: 0.2s;
 	position: relative;
 }
-
 .b-function--active {
 	z-index: 1;
 }
-
 .b-function--inactive {
 	opacity: 0.4;
 }
-
 .b-function__chart {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	margin: 0 auto;
 }
-
 .b-function__caption {
 	padding: 0.75em 0 0;
 	font-size: 1rem;
 	text-align: center;
 }
-
 .b-chart {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
@@ -242,20 +212,17 @@ a:active {
 	display: block;
 	text-decoration: none;
 }
-
 .b-chart:active {
 	-webkit-transform: none;
 	-ms-transform: none;
 	transform: none;
 }
-
 .b-chart__image {
 	width: 125px;
 	height: 85px;
 	overflow: visible;
 	display: block;
 }
-
 .b-chart__curve {
 	fill: none;
 	stroke-width: 3px;
@@ -264,8 +231,8 @@ a:active {
 	-ms-transform: translate(1px, -1px);
 	transform: translate(1px, -1px);
 }
-
-.b-chart__axis {
+.b-chart__axis,
+.b-chart__dot {
 	fill: none;
 	stroke-width: 1px;
 	stroke: #ccc;
@@ -274,19 +241,15 @@ a:active {
 	-o-transition: 0.2s;
 	transition: 0.2s;
 }
-
 .b-chart--active .b-chart__axis {
 	opacity: 1;
 }
-
 .b-chart__dot {
-	fill: none;
-	stroke: #ff3333;
+	stroke: #f33;
 	stroke-width: 5px;
 	-webkit-transform: translate(1px, -1px);
 	-ms-transform: translate(1px, -1px);
 	transform: translate(1px, -1px);
-	opacity: 0;
 	-webkit-transition: stroke-dashoffset 0s, opacity 0.2s;
 	-o-transition: stroke-dashoffset 0s, opacity 0.2s;
 	transition: stroke-dashoffset 0s, opacity 0.2s;
@@ -295,7 +258,6 @@ a:active {
 	transition-delay: 0s, 0s;
 	will-change: stroke-dashoffset, opacity;
 }
-
 .b-chart--active .b-chart__dot {
 	opacity: 1;
 	-webkit-transition: stroke-dashoffset 1.5s, opacity 0.2s;
@@ -305,7 +267,6 @@ a:active {
 	-o-transition-delay: 0.3s, 0s;
 	transition-delay: 0.3s, 0s;
 }
-
 .b-chart__text {
 	fill: #ccc;
 	font-size: 0.625rem;
@@ -314,11 +275,9 @@ a:active {
 	transition: 0.2s;
 	opacity: 0;
 }
-
 .b-chart--active .b-chart__text {
 	opacity: 1;
 }
-
 .b-chart__cursor {
 	position: absolute;
 	bottom: -3px;
@@ -326,7 +285,6 @@ a:active {
 	opacity: 0;
 	will-change: transform, opacity;
 	-webkit-transition: opacity 0.2s, -webkit-transform 0s;
-	transition: opacity 0.2s, -webkit-transform 0s;
 	-o-transition: transform 0s, opacity 0.2s;
 	transition: transform 0s, opacity 0.2s;
 	transition: transform 0s, opacity 0.2s, -webkit-transform 0s;
@@ -334,26 +292,23 @@ a:active {
 	-o-transition-delay: 0s, 0s;
 	transition-delay: 0s, 0s;
 }
-
 .b-chart__cursor::after {
 	content: "";
 	display: block;
 	width: 8px;
 	height: 8px;
 	border-radius: 0 50% 50% 50%;
-	background: #ff3333;
+	background: #f33;
 	-webkit-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
-
 .b-chart--active .b-chart__cursor {
 	opacity: 1;
 	-webkit-transform: translateY(-85px);
 	-ms-transform: translateY(-85px);
 	transform: translateY(-85px);
 	-webkit-transition: opacity 0.2s, -webkit-transform 1.5s;
-	transition: opacity 0.2s, -webkit-transform 1.5s;
 	-o-transition: transform 1.5s, opacity 0.2s;
 	transition: transform 1.5s, opacity 0.2s;
 	transition: transform 1.5s, opacity 0.2s, -webkit-transform 1.5s;
@@ -361,11 +316,9 @@ a:active {
 	-o-transition-delay: 0.3s, 0s;
 	transition-delay: 0.3s, 0s;
 }
-
 .b-footer {
 	padding: 1.25rem 0;
 }
-
 .b-footer__definition {
 	width: 100%;
 	max-width: 800px;
@@ -375,12 +328,10 @@ a:active {
 	hyphens: auto;
 	padding: 0 0 1rem;
 }
-
 .b-footer__definition p {
 	padding: 0 0 0.5em;
 	margin: 0;
 }
-
 .b-footer__group {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -392,11 +343,9 @@ a:active {
 	-ms-flex-align: baseline;
 	align-items: baseline;
 }
-
 .b-footer__copyright {
 	text-align: center;
 }
-
 .b-footer__lang {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -406,7 +355,6 @@ a:active {
 	justify-content: flex-end;
 	margin: 0 0 0.3125rem;
 }
-
 .b-opensource {
 	position: absolute;
 	top: 5.9375rem;
@@ -419,11 +367,10 @@ a:active {
 	box-sizing: border-box;
 	padding: 0 5px;
 }
-
 .b-opensource__button {
-	background: none;
-	border: none;
-	outline: none;
+	background: 0 0;
+	border: 0;
+	outline: 0;
 	padding: 0.3125rem;
 	border-radius: 0;
 	color: #222;
@@ -435,16 +382,17 @@ a:active {
 	-o-transition: 0.2s;
 	transition: 0.2s;
 }
-
-.b-opensource:hover .b-opensource__button {
-	-webkit-transform: translateX(0);
-	-ms-transform: translateX(0);
-	transform: translateX(0);
+.b-opensource:hover .b-opensource__button,
+.b-opensource__icon {
 	-webkit-transition-delay: 0.25s;
 	-o-transition-delay: 0.25s;
 	transition-delay: 0.25s;
 }
-
+.b-opensource:hover .b-opensource__button {
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
+}
 .b-opensource__icon {
 	width: 48px;
 	height: 42px;
@@ -456,69 +404,29 @@ a:active {
 	-webkit-transition: 0.2s;
 	-o-transition: 0.2s;
 	transition: 0.2s;
-	-webkit-transition-delay: 0.25s;
-	-o-transition-delay: 0.25s;
-	transition-delay: 0.25s;
 }
-
-.b-opensource:hover .b-opensource__icon {
+.b-opensource:hover .b-opensource__icon,
+.b-opensource__wrap {
 	-webkit-transition-delay: 0s;
 	-o-transition-delay: 0s;
 	transition-delay: 0s;
+}
+.b-opensource:hover .b-opensource__icon {
 	-webkit-transform: rotate(0);
 	-ms-transform: rotate(0);
 	transform: rotate(0);
 }
-
 .b-opensource__wrap {
 	-webkit-transition: 0.2s;
 	-o-transition: 0.2s;
 	transition: 0.2s;
-	-webkit-transition-delay: 0s;
-	-o-transition-delay: 0s;
-	transition-delay: 0s;
 	opacity: 0;
 	visibility: hidden;
 }
-
 .b-opensource:hover .b-opensource__wrap {
 	opacity: 1;
 	visibility: visible;
 	-webkit-transition-delay: 0.3s;
 	-o-transition-delay: 0.3s;
 	transition-delay: 0.3s;
-}
-
-@-webkit-keyframes opensourceGithub {
-	0% {
-		-webkit-transform: translateX(100%) rotate(-90deg);
-		transform: translateX(100%) rotate(-90deg);
-	}
-
-	60% {
-		-webkit-transform: translateX(0) rotate(-90deg);
-		transform: translateX(0) rotate(-90deg);
-	}
-
-	100% {
-		-webkit-transform: translateX(0) rotate(0deg);
-		transform: translateX(0) rotate(0deg);
-	}
-}
-
-@keyframes opensourceGithub {
-	0% {
-		-webkit-transform: translateX(100%) rotate(-90deg);
-		transform: translateX(100%) rotate(-90deg);
-	}
-
-	60% {
-		-webkit-transform: translateX(0) rotate(-90deg);
-		transform: translateX(0) rotate(-90deg);
-	}
-
-	100% {
-		-webkit-transform: translateX(0) rotate(0deg);
-		transform: translateX(0) rotate(0deg);
-	}
 }
