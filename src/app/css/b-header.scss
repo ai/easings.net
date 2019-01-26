@@ -1,19 +1,31 @@
 @import "var";
 
 .b-header {
-	padding: 1rem 0 0;
 	font-size: px2rem(14);
+
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
 }
 
 	.b-header__definition {
+		flex: 1 1 auto;
 		width: 100%;
 		max-width: $max-readable-text-width;
 		text-align: justify;
 		hyphens: auto;
-		padding: 0 0 1rem;
+		padding: 1rem 0;
 
 		p {
 			padding: 0 0 .5em;
 			margin: 0;
 		}
+	}
+
+	.b-header__space {
+		flex: 0 1 100px;
+	}
+
+	.b-header__opensource {
+		flex: 0 0 auto;
 	}
