@@ -81,8 +81,7 @@ export function navigateChart(id) {
 			chart.style.width = `${position.width}px`;
 			infoChart.style.paddingBottom = `${position.height /
 				position.width *
-				100 +
-				3}%`;
+				100}%`;
 
 			requestAnimationFrame(() => {
 				const offsetLeft = infoChartPosition.x - position.x;
@@ -96,14 +95,14 @@ export function navigateChart(id) {
 					chart.style.width = `${infoChartPosition.width}px`;
 				}, itemTimeSlide);
 
-				setTimeout(() => {
-					const position = chart.getBoundingClientRect();
-					const infoChartPosition = infoChart.getBoundingClientRect();
-					const diffX = infoChartPosition.x - position.x;
-
-					chart.style.transform = `translate(${offsetLeft +
-						diffX}px, ${offsetTop}px)`;
-				}, timeTransitionChart + itemTimeSlide);
+				// setTimeout(() => {
+				// 	const position = chart.getBoundingClientRect();
+				// 	const infoChartPosition = infoChart.getBoundingClientRect();
+				// 	const diffX = infoChartPosition.x - position.x;
+				//
+				// 	chart.style.transform = `translate(${offsetLeft +
+				// 		diffX}px, ${offsetTop}px)`;
+				// }, timeTransitionChart + itemTimeSlide);
 
 				setTimeout(() => {
 					info.classList.add("b-info--evident");
