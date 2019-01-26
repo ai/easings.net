@@ -27,7 +27,7 @@
 
 
 @media (max-width: $media-medium) {
-	.b-columns {
+	.b-columns__wrap {
 		flex-direction: column;
 		flex-wrap: nowrap;
 		align-items: center;
