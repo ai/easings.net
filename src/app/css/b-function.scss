@@ -54,11 +54,11 @@
 		}
 
 	.b-function__chart {
-		box-sizing: border-box;
 		margin: 0 auto;
 		outline: none;
 		position: relative;
 		width: 100%;
+		transition: none;
 
 		&:active {
 			transform: none;

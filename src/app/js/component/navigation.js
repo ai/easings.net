@@ -14,15 +14,20 @@ export function navigateMain() {
 	const info = document.querySelector(selectorInfo);
 	const columns = document.querySelector(selectorColumns);
 	const chart = item.querySelector(selectorChartForInfo);
+	const chartLink = item.querySelector(".js-function-chart");
 
 	columns.removeAttribute("style");
 	item.isExpand = false;
+	chart.style.transitionDuration = `${timeTransitionChart}ms`;
+	chart.style.transitionTimingFunction = item.getAttribute("data-func");
+	chartLink.removeAttribute("style");
 
 	requestAnimationFrame(() => {
 		info.classList.remove("b-info--evident");
 
 		chart.style.transform = null;
 		chart.style.width = null;
+		chart.style.position = null;
 	});
 
 	setTimeout(() => {
@@ -52,6 +57,7 @@ export function navigateChart(id) {
 		const infoChart = info.querySelector(".js-info-chart");
 		const columns = document.querySelector(selectorColumns);
 		const chart = item.querySelector(selectorChartForInfo);
+		const chartLink = item.querySelector(".js-function-chart");
 		const infoTimeSlide = getTransitionTime(info);
 		const itemTimeSlide = getTransitionTime(item);
 
@@ -77,11 +83,12 @@ export function navigateChart(id) {
 
 			const position = chart.getBoundingClientRect();
 			const infoChartPosition = infoChart.getBoundingClientRect();
+			const holderOffset = position.height / position.width * 100;
+
 			chart.style.position = `absolute`;
 			chart.style.width = `${position.width}px`;
-			infoChart.style.paddingBottom = `${position.height /
-				position.width *
-				100}%`;
+			infoChart.style.paddingBottom = `${holderOffset}%`;
+			chartLink.style.paddingBottom = `${holderOffset}%`;
 
 			requestAnimationFrame(() => {
 				const offsetLeft = infoChartPosition.x - position.x;
