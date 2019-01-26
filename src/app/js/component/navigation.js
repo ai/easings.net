@@ -95,15 +95,6 @@ export function navigateChart(id) {
 					chart.style.width = `${infoChartPosition.width}px`;
 				}, itemTimeSlide);
 
-				// setTimeout(() => {
-				// 	const position = chart.getBoundingClientRect();
-				// 	const infoChartPosition = infoChart.getBoundingClientRect();
-				// 	const diffX = infoChartPosition.x - position.x;
-				//
-				// 	chart.style.transform = `translate(${offsetLeft +
-				// 		diffX}px, ${offsetTop}px)`;
-				// }, timeTransitionChart + itemTimeSlide);
-
 				setTimeout(() => {
 					info.classList.add("b-info--evident");
 				}, timeTransitionChart + itemTimeSlide * 1.5);
