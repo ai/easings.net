@@ -4,19 +4,6 @@
 	padding: px2rem(20) 0;
 }
 
-	.b-footer__definition {
-		width: 100%;
-		max-width: $max-readable-text-width;
-		text-align: justify;
-		hyphens: auto;
-		padding: 0 0 1rem;
-
-		p {
-			padding: 0 0 .5em;
-			margin: 0;
-		}
-	}
-
 	.b-footer__group {
 		display: flex;
 		justify-content: space-between;
