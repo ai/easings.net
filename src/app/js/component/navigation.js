@@ -31,7 +31,7 @@ export function navigateMain() {
 	});
 
 	setTimeout(() => {
-		item.classList.remove("b-function--open");
+		item.classList.remove("b-function--open", "b-function--opened");
 		columns.classList.remove("b-columns--hide");
 	}, 200);
 
@@ -77,6 +77,7 @@ export function navigateChart(id) {
 		item.classList.add("b-function--open");
 
 		info.style.display = "block";
+		chartLink.classList.remove("b-chart--active");
 
 		requestAnimationFrame(() => {
 			const columnsPosition = columns.getBoundingClientRect();
@@ -116,6 +117,8 @@ export function navigateChart(id) {
 
 					columns.style.height = `${height}px`;
 					columns.style.overflow = "hidden";
+
+					item.classList.add("b-function--opened");
 				}, timeTransitionChart + itemTimeSlide + infoTimeSlide);
 
 				setTimeout(() => {
@@ -126,6 +129,8 @@ export function navigateChart(id) {
 					chart.style.transform = `translate(${offsetLeft +
 						diffX}px, ${offsetTop}px)`;
 					chart.style.width = `${infoChartPosition.width}px`;
+
+					chartLink.classList.add("b-chart--active");
 				}, timeTransitionChart + itemTimeSlide + infoTimeSlide + 100);
 
 				scrollTo({

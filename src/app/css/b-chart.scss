@@ -59,6 +59,10 @@
 						transform: none;
 					}
 
+					.b-function--opened .b-chart__curve {
+						stroke: $brand;
+					}
+
 		.b-chart__cursor {
 			position: absolute;
 			bottom: -4px;
@@ -84,6 +88,10 @@
 					bottom: calc(100% - 5px);
 					transition: bottom $transition-show, opacity $transition;
 					transition-delay: $transition, 0s;
+				}
+
+				.b-function--open .b-chart--active .b-chart__cursor {
+					bottom: calc(100% - 7px);
 				}
 
 @media (max-width: $media-small) {
