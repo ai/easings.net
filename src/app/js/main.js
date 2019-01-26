@@ -1,9 +1,12 @@
 import { forNodeList } from "./helpers/forNodeList";
 import { scrollTo } from "./helpers/scrollTo";
-import { navigateChart, navigateMain } from "./component/navigation";
+import {
+	navigateChart,
+	navigateMain,
+	resizeChart
+} from "./component/navigation";
 
 const classFunctionActive = "b-function--active";
-const classFunctionInactive = "b-function--inactive";
 const classFunctionFocus = "b-function--focus";
 
 const listFunction = document.querySelectorAll(".js-function");
@@ -13,24 +16,16 @@ if (listFunction) {
 		const link = item.querySelector("a");
 
 		item.addEventListener("mouseenter", () => {
-			const offset = chart.getAttribute("data-length");
-
 			forNodeList(listFunction, other => {
-				other.classList.add(classFunctionInactive);
 				other.classList.remove(classFunctionFocus);
 			});
 
-			item.classList.remove(classFunctionInactive);
 			item.classList.add(classFunctionActive);
 
 			chart.classList.add("b-chart--active");
 		});
 
 		item.addEventListener("mouseleave", () => {
-			forNodeList(listFunction, other =>
-				other.classList.remove(classFunctionInactive)
-			);
-
 			item.classList.remove(classFunctionActive);
 
 			chart.classList.remove("b-chart--active");
@@ -96,3 +91,5 @@ const chartId = window.location.hash.slice(1);
 if (chartId) {
 	navigateChart(chartId);
 }
+
+window.addEventListener("resize", resizeChart);

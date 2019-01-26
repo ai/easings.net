@@ -1,33 +1,32 @@
 import { forNodeList } from "../helpers/forNodeList";
 import { scrollTo } from "../helpers/scrollTo";
+import { getTransitionTime } from "../helpers/getTransitionTime";
 
-export function navigate(id) {
-	if (id !== "") {
-		navigateChart(id);
-	} else {
-		navigateMain();
-	}
-}
+const selectorChartForInfo = ".js-chart-for-info";
+const selectorInfo = ".js-info";
+const selectorColumns = ".js-columns";
+const timeTransitionChart = 400;
+const additionalIndentForColumns = 50;
+const additionalDiffStateInfo = 20;
 
 export function navigateMain() {
-	const info = document.querySelector(".js-info");
-	const columns = document.querySelector(".js-columns");
-	const chart = document.querySelector(".b-function--open .js-function-chart");
+	const item = document.querySelector(".b-function--open");
+	const info = document.querySelector(selectorInfo);
+	const columns = document.querySelector(selectorColumns);
+	const chart = item.querySelector(selectorChartForInfo);
 
-	columns.style.display = null;
+	columns.removeAttribute("style");
+	item.isExpand = false;
 
 	requestAnimationFrame(() => {
 		info.classList.remove("b-info--evident");
 
-		chart.style.position = null;
 		chart.style.transform = null;
 		chart.style.width = null;
 	});
 
 	setTimeout(() => {
-		document
-			.querySelector(".b-function--open")
-			.classList.remove("b-function--open");
+		item.classList.remove("b-function--open");
 		columns.classList.remove("b-columns--hide");
 	}, 200);
 
@@ -35,72 +34,128 @@ export function navigateMain() {
 		info.style.display = null;
 		chart.removeAttribute("style");
 	}, 400);
-
-	// const style = window.getComputedStyle(info);
-	// const transitionDurationString = /([\d.]+m*s)/i.exec(
-	// 	style.transitionDuration
-	// );
-	// const transitionDuration = Array.isArray(transitionDurationString)
-	// 	? transitionDurationString[1]
-	// 	: 0;
-	// const ratioTime = transitionDuration.indexOf("ms") > -1 ? 1 : 1000;
-	// const time = transitionDuration * ratioTime;
-	//
-	// setTimeout(() => {
-	// 	info.style.display = null;
-	// }, time);
 }
 
 export function navigateChart(id) {
-	const item = document.getElementById(id);
+	const item = document.getElementById(`func-${id}`);
 
-	if (!item) {
+	if (!item || item.isExpand) {
 		return;
 	}
 
-	const info = document.querySelector(".js-info");
-	const infoChart = info.querySelector(".js-info-chart");
-	const infoHolderNameArray = info.querySelectorAll(".js-info-name");
-	const infoHolderFunctionNameArray = info.querySelectorAll(".js-info-func");
-	const columns = document.querySelector(".js-columns");
-
+	item.isExpand = true;
 	const name = item.getAttribute("data-name");
 	const func = item.getAttribute("data-func");
 
 	if (name && func) {
+		const info = document.querySelector(selectorInfo);
+		const infoChart = info.querySelector(".js-info-chart");
+		const columns = document.querySelector(selectorColumns);
+		const chart = item.querySelector(selectorChartForInfo);
+		const infoTimeSlide = getTransitionTime(info);
+		const itemTimeSlide = getTransitionTime(item);
+
+		forNodeList(
+			info.querySelectorAll(".js-info-name"),
+			e => (e.innerText = name)
+		);
+		forNodeList(
+			info.querySelectorAll(".js-info-func"),
+			e => (e.innerText = func)
+		);
+
+		info.style.transitionTimingFunction = func;
+		chart.style.transitionTimingFunction = func;
+
 		columns.classList.add("b-columns--hide");
 		item.classList.add("b-function--open");
 
-		forNodeList(infoHolderNameArray, e => (e.innerText = name));
-		forNodeList(infoHolderFunctionNameArray, e => (e.innerText = func));
-
 		info.style.display = "block";
 
-		const chart = item.querySelector(".js-function-chart");
-		const position = chart.getBoundingClientRect();
-		const infoChartPosition = infoChart.getBoundingClientRect();
+		requestAnimationFrame(() => {
+			const columnsPosition = columns.getBoundingClientRect();
 
-		chart.style.width = `${position.width}px`;
+			const position = chart.getBoundingClientRect();
+			const infoChartPosition = infoChart.getBoundingClientRect();
+			chart.style.position = `absolute`;
+			chart.style.width = `${position.width}px`;
+			infoChart.style.paddingBottom = `${position.height /
+				position.width *
+				100 +
+				3}%`;
 
-		const offsetLeft = infoChartPosition.x - position.x;
-		const offsetTop = infoChartPosition.y - position.y;
-		const timeTransition = 400;
+			requestAnimationFrame(() => {
+				const offsetLeft = infoChartPosition.x - position.x;
+				const offsetTop =
+					infoChartPosition.y - position.y - additionalDiffStateInfo;
 
-		chart.style.transition = `${timeTransition}ms`;
+				chart.style.transitionDuration = `${timeTransitionChart}ms`;
 
-		setTimeout(() => {
-			chart.style.position = "absolute";
-			chart.style.transform = `translate(${offsetLeft}px, ${offsetTop}px)`;
-			chart.style.width = `${infoChartPosition.width}px`;
-		}, 200);
+				setTimeout(() => {
+					chart.style.transform = `translate(${offsetLeft}px, ${offsetTop}px)`;
+					chart.style.width = `${infoChartPosition.width}px`;
+				}, itemTimeSlide);
 
-		setTimeout(() => {
-			info.classList.add("b-info--evident");
-		}, timeTransition + 300);
+				setTimeout(() => {
+					const position = chart.getBoundingClientRect();
+					const infoChartPosition = infoChart.getBoundingClientRect();
+					const diffX = infoChartPosition.x - position.x;
 
-		scrollTo({
-			to: 0,
-			duration: 500
+					chart.style.transform = `translate(${offsetLeft +
+						diffX}px, ${offsetTop}px)`;
+				}, timeTransitionChart + itemTimeSlide);
+
+				setTimeout(() => {
+					info.classList.add("b-info--evident");
+				}, timeTransitionChart + itemTimeSlide * 1.5);
+
+				setTimeout(() => {
+					const position = chart.getBoundingClientRect();
+					const height =
+						position.y -
+						columnsPosition.y +
+						infoChart.offsetHeight +
+						additionalIndentForColumns;
+
+					columns.style.height = `${height}px`;
+					columns.style.overflow = "hidden";
+				}, timeTransitionChart + itemTimeSlide + infoTimeSlide);
+
+				scrollTo({
+					to: 0,
+					duration: 500
+				});
+			});
 		});
+	}
+}
+
+export function resizeChart() {
+	const item = document.querySelector(".js-function.b-function--open");
+
+	if (item) {
+		const chart = item.querySelector(selectorChartForInfo);
+		const chartParent = chart.parentElement;
+		const info = document.querySelector(selectorInfo);
+		const infoChart = info.querySelector(".js-info-chart");
+		const columns = document.querySelector(selectorColumns);
+		const infoPosition = info.getBoundingClientRect();
+		const columnsPosition = columns.getBoundingClientRect();
+
+		const position = chartParent.getBoundingClientRect();
+		const infoChartPosition = infoChart.getBoundingClientRect();
+		const offsetLeft = infoChartPosition.x - position.x;
+		const offsetTop =
+			infoChartPosition.y - position.y + columnsPosition.y - infoPosition.y;
+		const height =
+			position.y -
+			columnsPosition.y +
+			infoChartPosition.height +
+			additionalIndentForColumns;
+
+		chart.style.transition = "none";
+		chart.style.transform = `translate(${offsetLeft}px, ${offsetTop}px)`;
+		chart.style.width = `${infoChartPosition.width}px`;
+		columns.style.height = `${height}px`;
 	}
 }

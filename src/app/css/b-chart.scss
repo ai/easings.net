@@ -1,103 +1,90 @@
 @import "var";
 
 .b-chart {
-	box-sizing: border-box;
-	position: relative;
 	display: block;
+	max-width: 130px;
 	text-decoration: none;
 }
 
-		.b-function--open .b-chart {
-			z-index: 1;
-			position: relative;
-		}
-
-	.b-chart__image {
-		width: 100%;
-		min-width: 70px;
-		max-width: 130px;
-		height: 100%;
-		overflow: visible;
-		display: block;
-		margin: 0 auto;
+	.b-chart__wrap {
+		position: relative;
+		z-index: 1;
+		left: 0;
 	}
 
-			.b-function--open .b-chart__image {
-				max-width: none;
-			}
-
-		.b-chart__curve {
-			fill: none;
-			stroke-width: 3px;
-			stroke-linecap: round;
-			transform: translate(1px, -1px);
-		}
-
-				.b-function--open .b-chart__curve {
-					stroke-width: 1px;
-				}
-
-		.b-chart__axis {
-			fill: none;
-			stroke-width: 1px;
-			stroke: $chart-axis-color;
-			opacity: 0;
-			transition: $transition;
-		}
-
-				.b-chart--active .b-chart__axis {
-					opacity: 1;
-				}
-
-				.b-function--open .b-chart__axis {
-					opacity: 1;
-					stroke-width: .25px;
-				}
-
-		.b-chart__text {
-			fill: $chart-axis-color;
-			font-size: px2rem(10);
-			transition: $transition;
-			opacity: 0;
-		}
-
-				.b-chart--active .b-chart__text {
-					opacity: 1;
-				}
-
-				.b-function--open .b-chart__text {
-					opacity: 1;
-					font-size: px2rem(5);
-				}
-
-
-	.b-chart__cursor {
-		position: absolute;
-		bottom: -4px;
-		right: -17px;
-		opacity: 0;
-		will-change: top, opacity;
-		transition: bottom 0s, opacity $transition;
-		transition-delay: $transition-show-delay, 0s;
-
-		&::after {
-			content: '';
+		.b-chart__image {
+			width: 100%;
+			min-width: 50px;
+			height: 100%;
+			overflow: visible;
 			display: block;
-			width: 10px;
-			height: 10px;
-			border-radius: 0 50% 50% 50%;
-			background: $brand;
-			transform: rotate(-45deg);
+			margin: 0 auto;
 		}
-	}
 
-			.b-function--open .b-chart__image:hover .b-chart__cursor,
-			.b-chart--active .b-chart__cursor {
-				opacity: 1;
-				bottom: calc(100% - 4px);
-				transition: bottom $transition-show, opacity $transition;
-				transition-delay: $transition, 0s;
+			.b-chart__explanations {
+				opacity: 0;
+				transition: $transition;
 			}
+
+					.b-chart--active .b-chart__explanations {
+						opacity: 1;
+					}
+
+					.b-function--open .b-chart__explanations {
+						opacity: 0;
+					}
+
+				.b-chart__axis {
+					fill: none;
+					stroke-width: 1px;
+					stroke: $chart-axis-color;
+				}
+
+				.b-chart__text {
+					fill: $chart-axis-color;
+					font-size: px2rem(10);
+				}
+
+
+			.b-chart__curve {
+				fill: none;
+				stroke-width: 3px;
+				stroke-linecap: round;
+				transition: $transition;
+				transform: translate(1px, -1px);
+			}
+
+					.b-function--open .b-chart__curve {
+						stroke-width: 1px;
+						transform: none;
+					}
+
+		.b-chart__cursor {
+			position: absolute;
+			bottom: -4px;
+			right: -17px;
+			opacity: 0;
+			will-change: top, opacity;
+			transition: bottom 0s, opacity $transition;
+			transition-delay: $transition-show-delay, 0s;
+
+			&::after {
+				content: '';
+				display: block;
+				width: 10px;
+				height: 10px;
+				border-radius: 0 50% 50% 50%;
+				background: $brand;
+				transform: rotate(-45deg);
+			}
+		}
+
+				.b-chart--active .b-chart__cursor {
+					opacity: 1;
+					bottom: calc(100% - 5px);
+					transition: bottom $transition-show, opacity $transition;
+					transition-delay: $transition, 0s;
+				}
 
 @media (max-width: $media-small) {
 	.b-chart {

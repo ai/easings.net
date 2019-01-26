@@ -52,10 +52,11 @@ html
 
 			.u-container
 				.b-columns.js-columns
-					each group in all_easings
-						.b-columns__group
-							each item, index in group
-								+Item(item, index)
+					.b-columns__wrap
+						each group in all_easings
+							.b-columns__group
+								each item, index in group
+									+Item(item, index)
 
 
 				section.b-info.js-info

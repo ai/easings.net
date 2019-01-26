@@ -9,8 +9,12 @@
 	outline: none;
 	width: 33%;
 
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+
 	&:active {
-		transform: scale(.95);
+		background: #eee;
 	}
 
 	&::after {
@@ -39,8 +43,6 @@
 			box-shadow: 0 0 2px 1px rgba(#000, .3);
 		}
 
-		.b-function--inactive {}
-
 		.b-columns--hide .b-function:not(.b-function--open) {
 			opacity: 0;
 			visibility: hidden;
@@ -55,6 +57,12 @@
 		box-sizing: border-box;
 		margin: 0 auto;
 		outline: none;
+		position: relative;
+		width: 100%;
+
+		&:active {
+			transform: none;
+		}
 	}
 
 	.b-function__caption {
@@ -72,8 +80,8 @@
 			}
 
 @media (max-width: $wrap-width) {
-	.b-function {
-		padding: px2rem(10) px2rem(15) px2rem(3);
+	.b-function__caption {
+		font-size: px2rem(14);
 	}
 }
 

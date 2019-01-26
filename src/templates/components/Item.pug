@@ -19,17 +19,18 @@ mixin Item(item, index)
 		if (index === 1) gradient = 'out';
 
 
-	.b-function.js-function(id=item.name data-name=item.name data-func=item.css data-path-length=item.length)
+	.b-function.js-function(id=(`func-${item.name}`) data-name=item.name data-func=item.css data-path-length=item.length)
 		a.b-function__chart.b-chart.js-function-chart(href=`#${item.name}` data-length=strokeLength)
-			svg.b-chart__image(viewBox=(`0 0 ${chartWidth} ${chartHeight}`) xmlns="http://www.w3.org/2000/svg")
-				path.b-chart__axis(d=(`M0 0V${chartHeight}H${chartWidth}`) fill="none")
+			.b-chart__wrap.js-chart-for-info
+				svg.b-chart__image(viewBox=(`0 0 ${chartWidth} ${chartHeight}`) xmlns="http://www.w3.org/2000/svg")
+					g.b-chart__explanations
+						path.b-chart__axis(d=(`M1 0V${chartHeight - 1}H${chartWidth}`) fill="none")
+						text.b-chart__text(x="4" y="8") x
+						text.b-chart__text(x=(chartWidth - 3) y=(chartHeight - 5) text-anchor="end") t
 
-				path.b-chart__curve(d=(`M0 ${chartHeight}C${x1} ${y1} ${x2} ${y2} ${chartWidth} 0`)
-				fill="none" stroke=(`url(#${gradient})`))
+					path.b-chart__curve(d=(`M1 ${chartHeight-1}C${x1} ${y1} ${x2} ${y2} ${chartWidth-1} 1`)
+					fill="none" stroke=(`url(#${gradient})`))
 
-				text.b-chart__text(x="5" y="10") x
-				text.b-chart__text(x=(chartWidth - 3) y=(chartHeight - 5) text-anchor="end") t
-
-			.b-chart__cursor(style=`transition-timing-function:${item.css}`)
+				.b-chart__cursor(style=`transition-timing-function:${item.css}`)
 
 		.b-function__caption= item.name
