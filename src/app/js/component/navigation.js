@@ -12,27 +12,43 @@ export function navigate(id) {
 export function navigateMain() {
 	const info = document.querySelector(".js-info");
 	const columns = document.querySelector(".js-columns");
+	const chart = document.querySelector(".b-function--open .js-function-chart");
 
 	columns.style.display = null;
 
 	requestAnimationFrame(() => {
-		columns.classList.remove("b-columns--hide");
 		info.classList.remove("b-info--evident");
+
+		chart.style.position = null;
+		chart.style.transform = null;
+		chart.style.width = null;
 	});
 
-	const style = window.getComputedStyle(info);
-	const transitionDurationString = /([\d.]+m*s)/i.exec(
-		style.transitionDuration
-	);
-	const transitionDuration = Array.isArray(transitionDurationString)
-		? transitionDurationString[1]
-		: 0;
-	const ratioTime = transitionDuration.indexOf("ms") > -1 ? 1 : 1000;
-	const time = transitionDuration * ratioTime;
+	setTimeout(() => {
+		document
+			.querySelector(".b-function--open")
+			.classList.remove("b-function--open");
+		columns.classList.remove("b-columns--hide");
+	}, 200);
 
 	setTimeout(() => {
 		info.style.display = null;
-	}, time);
+		chart.removeAttribute("style");
+	}, 400);
+
+	// const style = window.getComputedStyle(info);
+	// const transitionDurationString = /([\d.]+m*s)/i.exec(
+	// 	style.transitionDuration
+	// );
+	// const transitionDuration = Array.isArray(transitionDurationString)
+	// 	? transitionDurationString[1]
+	// 	: 0;
+	// const ratioTime = transitionDuration.indexOf("ms") > -1 ? 1 : 1000;
+	// const time = transitionDuration * ratioTime;
+	//
+	// setTimeout(() => {
+	// 	info.style.display = null;
+	// }, time);
 }
 
 export function navigateChart(id) {
@@ -43,6 +59,7 @@ export function navigateChart(id) {
 	}
 
 	const info = document.querySelector(".js-info");
+	const infoChart = info.querySelector(".js-info-chart");
 	const infoHolderNameArray = info.querySelectorAll(".js-info-name");
 	const infoHolderFunctionNameArray = info.querySelectorAll(".js-info-func");
 	const columns = document.querySelector(".js-columns");
@@ -52,85 +69,38 @@ export function navigateChart(id) {
 
 	if (name && func) {
 		columns.classList.add("b-columns--hide");
-		info.style.display = "block";
-
-		requestAnimationFrame(() => {
-			info.classList.add("b-info--evident");
-		});
-
-		const style = window.getComputedStyle(columns);
-		const transitionDurationString = /([\d.]+m*s)/i.exec(
-			style.transitionDuration
-		);
-		const transitionDuration = Array.isArray(transitionDurationString)
-			? transitionDurationString[1]
-			: 0;
-		const ratioTime = transitionDuration.indexOf("ms") > -1 ? 1 : 1000;
-		const time = transitionDuration * ratioTime;
-
-		setTimeout(() => {
-			columns.style.display = "none";
-		}, time);
+		item.classList.add("b-function--open");
 
 		forNodeList(infoHolderNameArray, e => (e.innerText = name));
 		forNodeList(infoHolderFunctionNameArray, e => (e.innerText = func));
 
-		const curve = info.querySelector(".js-info-curve");
-		const svg = curve.parentElement;
-		const cursor = info.querySelector(".js-info-cursor");
+		info.style.display = "block";
 
-		cursor.style.transitionTimingFunction = func;
+		const chart = item.querySelector(".js-function-chart");
+		const position = chart.getBoundingClientRect();
+		const infoChartPosition = infoChart.getBoundingClientRect();
 
-		const viewBox = svg.getAttribute("viewBox");
-		const viewBoxPoints = /([-\d.]+)\s([-\d.]+)\s([-\d.]+)\s([-\d.]+)/.exec(
-			viewBox
-		);
+		chart.style.width = `${position.width}px`;
 
-		const chartWidth = parseFloat(viewBoxPoints[3]);
-		const chartHeight = parseFloat(viewBoxPoints[4]);
+		const offsetLeft = infoChartPosition.x - position.x;
+		const offsetTop = infoChartPosition.y - position.y;
+		const timeTransition = 400;
 
-		const points = /([-\d.]+), ([-\d.]+), ([-\d.]+), ([-\d.]+)/.exec(func);
-		const x1 = (parseFloat(points[1]) * chartWidth).toFixed(3);
-		const y1 = ((1 - parseFloat(points[2])) * chartHeight).toFixed(3);
-		const x2 = (parseFloat(points[3]) * chartWidth).toFixed(3);
-		const y2 = ((1 - parseFloat(points[4])) * chartHeight).toFixed(3);
+		chart.style.transition = `${timeTransition}ms`;
 
-		curve.setAttribute(
-			"d",
-			`M0 ${chartHeight}C${x1} ${y1} ${x2} ${y2} ${chartWidth} 0`
-		);
+		setTimeout(() => {
+			chart.style.position = "absolute";
+			chart.style.transform = `translate(${offsetLeft}px, ${offsetTop}px)`;
+			chart.style.width = `${infoChartPosition.width}px`;
+		}, 200);
+
+		setTimeout(() => {
+			info.classList.add("b-info--evident");
+		}, timeTransition + 300);
 
 		scrollTo({
 			to: 0,
 			duration: 500
 		});
-
-		setTimeout(() => {
-			info.classList.add("b-info-chart--active");
-
-			const cursorStyle = window.getComputedStyle(cursor);
-			const transitionDurationString = /([\d.]+m*s)/i.exec(
-				cursorStyle.transitionDuration
-			);
-			const transitionDuration = Array.isArray(transitionDurationString)
-				? transitionDurationString[1]
-				: 0;
-			const ratioTime = transitionDuration.indexOf("ms") > -1 ? 1 : 1000;
-
-			const transitionDelayString = /([\d.]+m*s)/i.exec(
-				cursorStyle.transitionDelay
-			);
-			const transitionDelay = Array.isArray(transitionDelayString)
-				? transitionDelayString[1]
-				: 0;
-			const ratioDelay = transitionDelay.indexOf("ms") > -1 ? 1 : 1000;
-
-			const time = parseFloat(transitionDuration) * ratioTime;
-			const delay = parseFloat(transitionDelay) * ratioDelay;
-
-			setTimeout(() => {
-				info.classList.remove("b-info-chart--active");
-			}, time + delay + 300);
-		}, 100);
 	}
 }

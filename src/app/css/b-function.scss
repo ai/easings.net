@@ -41,6 +41,16 @@
 
 		.b-function--inactive {}
 
+		.b-columns--hide .b-function:not(.b-function--open) {
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(20px);
+		}
+
+		.b-function--open {
+			box-shadow: none;
+		}
+
 	.b-function__chart {
 		box-sizing: border-box;
 		margin: 0 auto;
@@ -51,7 +61,15 @@
 		padding: .75em 0 0;
 		font-size: 1rem;
 		text-align: center;
+		transition: $transition;
+		margin: auto 0 0;
 	}
+
+			.b-function--open .b-function__caption {
+				opacity: 0;
+				visibility: hidden;
+				transform: translateY(20px);
+			}
 
 @media (max-width: $wrap-width) {
 	.b-function {

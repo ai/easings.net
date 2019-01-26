@@ -7,6 +7,11 @@
 	text-decoration: none;
 }
 
+		.b-function--open .b-chart {
+			z-index: 1;
+			position: relative;
+		}
+
 	.b-chart__image {
 		width: 100%;
 		min-width: 70px;
@@ -17,12 +22,20 @@
 		margin: 0 auto;
 	}
 
+			.b-function--open .b-chart__image {
+				max-width: none;
+			}
+
 		.b-chart__curve {
 			fill: none;
 			stroke-width: 3px;
 			stroke-linecap: round;
 			transform: translate(1px, -1px);
 		}
+
+				.b-function--open .b-chart__curve {
+					stroke-width: 1px;
+				}
 
 		.b-chart__axis {
 			fill: none;
@@ -36,6 +49,11 @@
 					opacity: 1;
 				}
 
+				.b-function--open .b-chart__axis {
+					opacity: 1;
+					stroke-width: .25px;
+				}
+
 		.b-chart__text {
 			fill: $chart-axis-color;
 			font-size: px2rem(10);
@@ -45,6 +63,11 @@
 
 				.b-chart--active .b-chart__text {
 					opacity: 1;
+				}
+
+				.b-function--open .b-chart__text {
+					opacity: 1;
+					font-size: px2rem(5);
 				}
 
 
@@ -68,6 +91,7 @@
 		}
 	}
 
+			.b-function--open .b-chart__image:hover .b-chart__cursor,
 			.b-chart--active .b-chart__cursor {
 				opacity: 1;
 				bottom: calc(100% - 4px);

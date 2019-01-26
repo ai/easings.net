@@ -64,23 +64,7 @@ html
 
 					.b-info__wrap
 						.b-info__chart
-							.b-info-chart
-								-
-									const chartWidth = 625;
-									const chartHeight = 425;
-
-								svg.b-info-chart__image(viewBox=(`0 0 ${chartWidth} ${chartHeight}`) xmlns="http://www.w3.org/2000/svg")
-									path.b-info-chart__axis(d=(`M0 0V${chartHeight}H${chartWidth}`) fill="none")
-
-									path.b-info-chart__curve.b-info-chart__curve--linear(d=(`M0 ${chartHeight}L${chartWidth} 0`)
-									fill="none")
-									path.b-info-chart__curve.js-info-curve(d="" fill="none")
-
-									text.b-info-chart__text(x="5" y="10") x
-									text.b-info-chart__text(x=(chartWidth - 3) y=(chartHeight - 5) text-anchor="end") t
-
-								.b-info-chart__cursor.b-info-chart__cursor--linear
-								.b-info-chart__cursor.js-info-cursor
+							.b-info-chart.js-info-chart
 
 						.b-info__main
 							h2.b-info__title.js-info-name easeInSine
