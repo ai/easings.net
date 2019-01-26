@@ -2,8 +2,8 @@
 	var e = {};
 	function n(o) {
 		if (e[o]) return e[o].exports;
-		var r = (e[o] = { i: o, l: !1, exports: {} });
-		return t[o].call(r.exports, r, r.exports, n), (r.l = !0), r.exports;
+		var i = (e[o] = { i: o, l: !1, exports: {} });
+		return t[o].call(i.exports, i, i.exports, n), (i.l = !0), i.exports;
 	}
 	(n.m = t),
 		(n.c = e),
@@ -25,13 +25,13 @@
 				Object.defineProperty(o, "default", { enumerable: !0, value: t }),
 				2 & e && "string" != typeof t)
 			)
-				for (var r in t)
+				for (var i in t)
 					n.d(
 						o,
-						r,
+						i,
 						function(e) {
 							return t[e];
-						}.bind(null, r)
+						}.bind(null, i)
 					);
 			return o;
 		}),
@@ -54,15 +54,15 @@
 })([
 	function(t, e, n) {
 		var o = n(3),
-			r = n(9),
-			i = "[object AsyncFunction]",
+			i = n(9),
+			r = "[object AsyncFunction]",
 			c = "[object Function]",
-			a = "[object GeneratorFunction]",
-			u = "[object Proxy]";
+			u = "[object GeneratorFunction]",
+			a = "[object Proxy]";
 		t.exports = function(t) {
-			if (!r(t)) return !1;
+			if (!i(t)) return !1;
 			var e = o(t);
-			return e == c || e == a || e == i || e == u;
+			return e == c || e == u || e == r || e == a;
 		};
 	},
 	function(t, e, n) {
@@ -71,29 +71,29 @@
 	},
 	function(t, e, n) {
 		var o = n(0),
-			r = n(10);
+			i = n(10);
 		t.exports = function(t) {
-			return null != t && r(t.length) && !o(t);
+			return null != t && i(t.length) && !o(t);
 		};
 	},
 	function(t, e, n) {
 		var o = n(1),
-			r = n(7),
-			i = n(8),
+			i = n(7),
+			r = n(8),
 			c = "[object Null]",
-			a = "[object Undefined]",
-			u = o ? o.toStringTag : void 0;
+			u = "[object Undefined]",
+			a = o ? o.toStringTag : void 0;
 		t.exports = function(t) {
 			return null == t
-				? void 0 === t ? a : c
-				: u && u in Object(t) ? r(t) : i(t);
+				? void 0 === t ? u : c
+				: a && a in Object(t) ? i(t) : r(t);
 		};
 	},
 	function(t, e, n) {
 		var o = n(5),
-			r = "object" == typeof self && self && self.Object === Object && self,
-			i = o || r || Function("return this")();
-		t.exports = i;
+			i = "object" == typeof self && self && self.Object === Object && self,
+			r = o || i || Function("return this")();
+		t.exports = r;
 	},
 	function(t, e, n) {
 		(function(e) {
@@ -115,19 +115,19 @@
 	},
 	function(t, e, n) {
 		var o = n(1),
-			r = Object.prototype,
-			i = r.hasOwnProperty,
-			c = r.toString,
-			a = o ? o.toStringTag : void 0;
+			i = Object.prototype,
+			r = i.hasOwnProperty,
+			c = i.toString,
+			u = o ? o.toStringTag : void 0;
 		t.exports = function(t) {
-			var e = i.call(t, a),
-				n = t[a];
+			var e = r.call(t, u),
+				n = t[u];
 			try {
-				t[a] = void 0;
+				t[u] = void 0;
 				var o = !0;
 			} catch (t) {}
-			var r = c.call(t);
-			return o && (e ? (t[a] = n) : delete t[a]), r;
+			var i = c.call(t);
+			return o && (e ? (t[u] = n) : delete t[u]), i;
 		};
 	},
 	function(t, e) {
@@ -152,141 +152,134 @@
 		"use strict";
 		n.r(e);
 		var o = n(2),
-			r = n.n(o),
-			i = n(0),
-			c = n.n(i);
-		function a(t, e) {
-			t && r()(t) && c()(e) && Array.prototype.slice.call(t).forEach(e);
+			i = n.n(o),
+			r = n(0),
+			c = n.n(r);
+		function u(t, e) {
+			t && i()(t) && c()(e) && Array.prototype.slice.call(t).forEach(e);
 		}
-		function u(t) {
+		function a(t) {
 			var e = t.to,
 				n = t.duration,
 				o =
 					(window.pageYOffset || document.documentElement.scrollTop) -
 					(document.documentElement.clientTop || 0),
-				r = e - o,
-				i = 0;
+				i = e - o,
+				r = 0;
 			!(function t() {
-				var e, c, a;
-				(i += 16),
+				var e, c, u;
+				(r += 16),
 					window.scrollTo(
 						0,
-						((e = i),
+						((e = r),
 						(c = o),
-						(a = r),
+						(u = i),
 						(e /= n / 2) < 1
-							? a / 2 * e * e * e + c
-							: a / 2 * ((e -= 2) * e * e + 2) + c)
+							? u / 2 * e * e * e + c
+							: u / 2 * ((e -= 2) * e * e + 2) + c)
 					),
-					i < n && requestAnimationFrame(t);
+					r < n && requestAnimationFrame(t);
 			})();
 		}
-		function s() {
-			var t = document.querySelector(".js-info"),
-				e = document.querySelector(".js-columns");
-			(e.style.display = null),
-				requestAnimationFrame(function() {
-					e.classList.remove("b-columns--hide"),
-						t.classList.remove("b-info--evident");
-				});
-			var n = window.getComputedStyle(t),
-				o = /([\d.]+m*s)/i.exec(n.transitionDuration),
-				r = Array.isArray(o) ? o[1] : 0,
-				i = r.indexOf("ms") > -1 ? 1 : 1e3;
-			setTimeout(function() {
-				t.style.display = null;
-			}, r * i);
+		function s(t) {
+			if (!t) throw "Element must not be empty";
+			var e = window.getComputedStyle(t),
+				n = /([\d.]+m*s)/i.exec(e.transitionDuration),
+				o = Array.isArray(n) ? n[1] : 0,
+				i = o.indexOf("ms") > -1 ? 1 : 1e3;
+			return parseFloat(o) * i;
 		}
-		function l(t) {
-			var e = document.getElementById(t);
-			if (e) {
-				var n = document.querySelector(".js-info"),
-					o = n.querySelectorAll(".js-info-name"),
-					r = n.querySelectorAll(".js-info-func"),
-					i = document.querySelector(".js-columns"),
-					c = e.getAttribute("data-name"),
-					s = e.getAttribute("data-func");
-				if (c && s) {
-					i.classList.add("b-columns--hide"),
-						(n.style.display = "block"),
-						requestAnimationFrame(function() {
-							n.classList.add("b-info--evident");
-						});
-					var l = window.getComputedStyle(i),
-						f = /([\d.]+m*s)/i.exec(l.transitionDuration),
-						d = Array.isArray(f) ? f[1] : 0,
-						v = d.indexOf("ms") > -1 ? 1 : 1e3;
-					setTimeout(function() {
-						i.style.display = "none";
-					}, d * v),
-						a(o, function(t) {
-							return (t.innerText = c);
+		var l = ".js-chart-for-info",
+			f = ".js-info",
+			d = ".js-columns",
+			y = 400,
+			m = 50,
+			v = 20;
+		function p(t) {
+			var e = document.getElementById("func-".concat(t));
+			if (e && !e.isExpand) {
+				e.isExpand = !0;
+				var n = e.getAttribute("data-name"),
+					o = e.getAttribute("data-func");
+				if (n && o) {
+					var i = document.querySelector(f),
+						r = i.querySelector(".js-info-chart"),
+						c = document.querySelector(d),
+						p = e.querySelector(l),
+						b = e.querySelector(".js-function-chart"),
+						g = s(i),
+						h = s(e);
+					u(i.querySelectorAll(".js-info-name"), function(t) {
+						return (t.innerText = n);
+					}),
+						u(i.querySelectorAll(".js-info-func"), function(t) {
+							return (t.innerText = o);
 						}),
-						a(r, function(t) {
-							return (t.innerText = s);
+						(i.style.transitionTimingFunction = o),
+						(p.style.transitionTimingFunction = o),
+						c.classList.add("b-columns--hide"),
+						e.classList.add("b-function--open"),
+						(i.style.display = "block"),
+						b.classList.remove("b-chart--active"),
+						requestAnimationFrame(function() {
+							var t = c.getBoundingClientRect(),
+								n = p.getBoundingClientRect(),
+								o = r.getBoundingClientRect(),
+								u = n.height / n.width * 100;
+							(p.style.position = "absolute"),
+								(p.style.width = "".concat(n.width, "px")),
+								(r.style.paddingBottom = "".concat(u, "%")),
+								(b.style.paddingBottom = "".concat(u, "%")),
+								requestAnimationFrame(function() {
+									var u = o.x - n.x,
+										s = o.y - n.y - v;
+									(p.style.transitionDuration = "".concat(y, "ms")),
+										setTimeout(function() {
+											(p.style.transform = "translate("
+												.concat(u, "px, ")
+												.concat(s, "px)")),
+												(p.style.width = "".concat(o.width, "px"));
+										}, h),
+										setTimeout(function() {
+											i.classList.add("b-info--evident");
+										}, y + 1.5 * h),
+										setTimeout(function() {
+											var n =
+												p.getBoundingClientRect().y - t.y + r.offsetHeight + m;
+											(c.style.height = "".concat(n, "px")),
+												(c.style.overflow = "hidden"),
+												e.classList.add("b-function--opened");
+										}, y + h + g),
+										setTimeout(function() {
+											var t = p.getBoundingClientRect(),
+												e = r.getBoundingClientRect(),
+												n = e.x - t.x;
+											(p.style.transform = "translate("
+												.concat(u + n, "px, ")
+												.concat(s, "px)")),
+												(p.style.width = "".concat(e.width, "px")),
+												b.classList.add("b-chart--active");
+										}, y + h + g + 100),
+										a({ to: 0, duration: 500 });
+								});
 						});
-					var m = n.querySelector(".js-info-curve"),
-						y = m.parentElement,
-						p = n.querySelector(".js-info-cursor");
-					p.style.transitionTimingFunction = s;
-					var b = y.getAttribute("viewBox"),
-						j = /([-\d.]+)\s([-\d.]+)\s([-\d.]+)\s([-\d.]+)/.exec(b),
-						x = parseFloat(j[3]),
-						g = parseFloat(j[4]),
-						w = /([-\d.]+), ([-\d.]+), ([-\d.]+), ([-\d.]+)/.exec(s),
-						L = (parseFloat(w[1]) * x).toFixed(3),
-						S = ((1 - parseFloat(w[2])) * g).toFixed(3),
-						h = (parseFloat(w[3]) * x).toFixed(3),
-						A = ((1 - parseFloat(w[4])) * g).toFixed(3);
-					m.setAttribute(
-						"d",
-						"M0 "
-							.concat(g, "C")
-							.concat(L, " ")
-							.concat(S, " ")
-							.concat(h, " ")
-							.concat(A, " ")
-							.concat(x, " 0")
-					),
-						u({ to: 0, duration: 500 }),
-						setTimeout(function() {
-							n.classList.add("b-info-chart--active");
-							var t = window.getComputedStyle(p),
-								e = /([\d.]+m*s)/i.exec(t.transitionDuration),
-								o = Array.isArray(e) ? e[1] : 0,
-								r = o.indexOf("ms") > -1 ? 1 : 1e3,
-								i = /([\d.]+m*s)/i.exec(t.transitionDelay),
-								c = Array.isArray(i) ? i[1] : 0,
-								a = c.indexOf("ms") > -1 ? 1 : 1e3,
-								u = parseFloat(o) * r,
-								s = parseFloat(c) * a;
-							setTimeout(function() {
-								n.classList.remove("b-info-chart--active");
-							}, u + s + 300);
-						}, 100);
 				}
 			}
 		}
-		var f = document.querySelectorAll(".js-function");
-		f &&
-			a(f, function(t) {
+		var b = document.querySelectorAll(".js-function");
+		b &&
+			u(b, function(t) {
 				var e = t.querySelector(".js-function-chart"),
 					n = t.querySelector("a");
 				t.addEventListener("mouseenter", function() {
-					e.getAttribute("data-length");
-					a(f, function(t) {
-						t.classList.add("b-function--inactive"),
-							t.classList.remove("b-function--focus");
+					u(b, function(t) {
+						t.classList.remove("b-function--focus");
 					}),
-						t.classList.remove("b-function--inactive"),
 						t.classList.add("b-function--active"),
 						e.classList.add("b-chart--active");
 				}),
 					t.addEventListener("mouseleave", function() {
-						a(f, function(t) {
-							return t.classList.remove("b-function--inactive");
-						}),
-							t.classList.remove("b-function--active"),
+						t.classList.remove("b-function--active"),
 							e.classList.remove("b-chart--active");
 					}),
 					n.addEventListener("blur", function() {
@@ -303,25 +296,73 @@
 					n.addEventListener("click", function(t) {
 						t.preventDefault();
 						var e = n.getAttribute("href").slice(1);
-						l(e), (window.location.hash = e);
+						p(e), (window.location.hash = e);
 					});
 			});
-		var d = document.querySelector(".js-more");
-		d &&
-			d.addEventListener("click", function(t) {
+		var g = document.querySelector(".js-more");
+		g &&
+			g.addEventListener("click", function(t) {
 				t.preventDefault(),
-					u({
+					a({
 						to: document.getElementById("definition").getBoundingClientRect()
 							.top,
 						duration: 200
 					});
 			}),
-			a(document.querySelectorAll(".js-goto-main"), function(t) {
+			u(document.querySelectorAll(".js-goto-main"), function(t) {
 				t.addEventListener("click", function(t) {
-					t.preventDefault(), s(), (window.location.hash = "");
+					var e, n, o, i, r;
+					t.preventDefault(),
+						(e = document.querySelector(".b-function--open")),
+						(n = document.querySelector(f)),
+						(o = document.querySelector(d)),
+						(i = e.querySelector(l)),
+						(r = e.querySelector(".js-function-chart")),
+						o.removeAttribute("style"),
+						(e.isExpand = !1),
+						(i.style.transitionDuration = "".concat(y, "ms")),
+						(i.style.transitionTimingFunction = e.getAttribute("data-func")),
+						r.removeAttribute("style"),
+						requestAnimationFrame(function() {
+							n.classList.remove("b-info--evident"),
+								(i.style.transform = null),
+								(i.style.width = null),
+								(i.style.position = null);
+						}),
+						setTimeout(function() {
+							e.classList.remove("b-function--open", "b-function--opened"),
+								o.classList.remove("b-columns--hide");
+						}, 200),
+						setTimeout(function() {
+							(n.style.display = null), i.removeAttribute("style");
+						}, 400),
+						(window.location.hash = "");
 				});
 			});
-		var v = window.location.hash.slice(1);
-		v && l(v);
+		var h = window.location.hash.slice(1);
+		h && p(h),
+			window.addEventListener("resize", function() {
+				var t = document.querySelector(".js-function.b-function--open");
+				if (t) {
+					var e = t.querySelector(l),
+						n = e.parentElement,
+						o = document.querySelector(f),
+						i = o.querySelector(".js-info-chart"),
+						r = document.querySelector(d),
+						c = o.getBoundingClientRect(),
+						u = r.getBoundingClientRect(),
+						a = n.getBoundingClientRect(),
+						s = i.getBoundingClientRect(),
+						y = s.x - a.x,
+						v = s.y - a.y + u.y - c.y,
+						p = a.y - u.y + s.height + m;
+					(e.style.transition = "none"),
+						(e.style.transform = "translate("
+							.concat(y, "px, ")
+							.concat(v, "px)")),
+						(e.style.width = "".concat(s.width, "px")),
+						(r.style.height = "".concat(p, "px"));
+				}
+			});
 	}
 ]);
