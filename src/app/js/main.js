@@ -51,25 +51,8 @@ if (listFunction) {
 				item.classList.remove(classFunctionFocus);
 			}
 		});
-
-		link.addEventListener("click", event => {
-			event.preventDefault();
-
-			const id = link.getAttribute("href").slice(1);
-			navigateChart(id);
-			window.location.hash = id;
-		});
 	});
 }
-
-const linkBack = document.querySelectorAll(".js-goto-main");
-forNodeList(linkBack, item => {
-	item.addEventListener("click", event => {
-		event.preventDefault();
-		navigateMain();
-		window.location.hash = "";
-	});
-});
 
 const chartId = window.location.hash.slice(1);
 if (chartId) {
@@ -77,3 +60,17 @@ if (chartId) {
 }
 
 window.addEventListener("resize", resizeChart);
+
+window.addEventListener(
+	"hashchange",
+	() => {
+		const id = window.location.hash.slice(1);
+
+		if (id) {
+			navigateChart(id);
+		} else {
+			navigateMain();
+		}
+	},
+	false
+);
