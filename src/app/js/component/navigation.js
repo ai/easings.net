@@ -7,7 +7,6 @@ const selectorInfo = ".js-info";
 const selectorColumns = ".js-columns";
 const timeTransitionChart = 400;
 const additionalIndentForColumns = 50;
-const additionalDiffStateInfo = 20;
 
 export function navigateMain() {
 	const item = document.querySelector(".b-function--open");
@@ -93,8 +92,7 @@ export function navigateChart(id) {
 
 			requestAnimationFrame(() => {
 				const offsetLeft = infoChartPosition.x - position.x;
-				const offsetTop =
-					infoChartPosition.y - position.y - additionalDiffStateInfo;
+				const offsetTop = infoChartPosition.y - position.y;
 
 				chart.style.transitionDuration = `${timeTransitionChart}ms`;
 
@@ -105,7 +103,7 @@ export function navigateChart(id) {
 
 				setTimeout(() => {
 					info.classList.add("b-info--evident");
-				}, timeTransitionChart + itemTimeSlide * 1.5);
+				}, timeTransitionChart + itemTimeSlide);
 
 				setTimeout(() => {
 					const position = chart.getBoundingClientRect();

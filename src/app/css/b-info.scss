@@ -3,15 +3,15 @@
 .b-info {
 	opacity: 0;
 	visibility: hidden;
-	transform: translateY(20px);
 	transition: $transition;
 	display: none;
+	position: relative;
+	z-index: 1;
 }
 
 		.b-info--evident {
 			opacity: 1;
 			visibility: visible;
-			transform: translateY(0);
 		}
 
 	.b-info__header {
