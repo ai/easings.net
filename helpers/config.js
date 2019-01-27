@@ -1,39 +1,26 @@
+const path = require("path");
 const cwd = process.cwd();
 
+const pwd = path.join(cwd, "..");
 const dist = "docs";
-module.exports = {
-	autoPrefix: ["Last 5 versions", "IE >= 10"],
 
+module.exports = {
 	path: {
-		helpers: `${cwd}/helpers`,
+		pwd: pwd,
+		helpers: path.join(pwd, "helpers"),
 
 		src: {
-			templates: `${cwd}/src/templates`,
+			templates: path.join(pwd, "src", "templates"),
 
-			css: `${cwd}/src/app/css`,
-			fonts: `${cwd}/src/app/fonts`,
-			img: `${cwd}/src/app/img`,
-			js: `${cwd}/src/app/js`,
-			svg: `${cwd}/src/app/svg`,
-
-			cont: `${cwd}/src/cont`,
-
-			static: `${cwd}/src/static`
+			css: path.join(pwd, "src", "app", "css"),
+			js: path.join(pwd, "src", "app", "js"),
+			svg: path.join(pwd, "src", "app", "svg")
 		},
 		dist: {
-			name: dist,
-
-			templates: `${cwd}/${dist}`,
-
-			css: `${cwd}/${dist}/app/css`,
-			fonts: `${cwd}/${dist}/app/fonts`,
-			img: `${cwd}/${dist}/app/img`,
-			js: `${cwd}/${dist}/app/js`,
-			svg: `${cwd}/${dist}/app/svg`,
-
-			cont: `${cwd}/${dist}/cont`,
-
-			static: `${cwd}/${dist}`
+			root: path.join(pwd, dist),
+			css: path.join(pwd, dist, "app", "css"),
+			js: path.join(pwd, dist, "app", "js"),
+			svg: path.join(pwd, dist, "app", "img")
 		}
 	}
 };
