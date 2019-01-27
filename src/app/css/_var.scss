@@ -1,0 +1,66 @@
+@function px2rem($pixels, $context: 16px) {
+	@if (unitless($pixels)) {
+		$pixels: $pixels * 1px;
+	}
+
+	@if (unitless($context)) {
+		$context: $context * 1px;
+	}
+
+	@return $pixels / $context * 1rem;
+}
+
+$system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
+$transition: 0.2s;
+$transition-big: 0.3s;
+$transition-info: 0.5s;
+$transition-show: 1.5s;
+//$transition-show: 3.5s;
+$transition-show-delay: 0.3s;
+
+$text-color: #222;
+$chart-color: $text-color;
+$chart-axis-color: #ccc;
+$brand: #FF3333;
+
+$second-color: #0055FF;
+$third-color: #7B59C0;
+
+$chart-width: 125px;
+$chart-height: 85px;
+
+$wrap-width: 1080px;
+$max-readable-text-width: 800px;
+
+$media-medium: 900px;
+$media-small: 550px;
+
+$a11y-color: #007AFF;
+
+$general-line-height: px2rem(22);
+
+$title-size: px2rem(42);
+$title-line-height: $general-line-height * 2;
+$title-offset: .25em;
+
+$subtitle-size: px2rem(26);
+$subtitle-line-height: $general-line-height * 2;
+
+@mixin wrap {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0 auto;
+	max-width: $wrap-width;
+	padding: 0 15px;
+}
+
+@mixin visually-hidden {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+}

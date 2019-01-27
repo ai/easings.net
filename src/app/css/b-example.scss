@@ -1,0 +1,34 @@
+@import "var";
+
+.b-example {
+
+}
+
+		.b-example + .b-example {
+			padding: $general-line-height 0 0;
+		}
+
+	.b-example__title {
+		font-size: $subtitle-size;
+		font-weight: 500;
+		line-height: $subtitle-line-height;
+		margin: 0;
+		padding: 0;
+	}
+
+	.b-example__text {
+
+	}
+
+	.b-example__code {
+		padding: px2rem(5) 0;
+		margin: px2rem(-2) 0;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		white-space: nowrap;
+	}
+
+		.b-example__spaces {
+			width: 4ex;
+			display: inline-block;
+		}

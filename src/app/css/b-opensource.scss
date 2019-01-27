@@ -1,0 +1,89 @@
+@import "var";
+
+.b-opensource {
+	text-decoration: none;
+	max-width: 120px;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 10px 5px 0;
+	font-size: px2rem(14);
+}
+
+	.b-opensource__button {
+		background: none;
+		border: none;
+		outline: none;
+		padding: px2rem(5);
+		border-radius: 0;
+		color: $text-color;
+
+		cursor: pointer;
+		transform: translateY(-75%);
+		transition: $transition-big;
+		transition-delay: .1s;
+	}
+
+			.b-opensource:hover .b-opensource__button {
+				transform: translateX(0);
+				transition-delay: 0s;
+			}
+
+		.b-opensource__icon	{
+			width: 74px;
+			height: 65px;
+			fill: currentColor;
+			display: block;
+			transform: rotate(180deg);
+			transition: $transition-big;
+			transition-delay: 0s;
+		}
+
+				.b-opensource:hover .b-opensource__icon {
+					transition-delay: .1s;
+					transform: rotate(0);
+				}
+
+			.b-opensource__ear-right {
+				animation: catEarRight 4s infinite both ease-in;
+				transform-origin: 410px 40px;
+			}
+
+			.b-opensource__ear-left {
+				animation: catEarLeft 4s infinite both ease;
+				transform-origin: 70px 60px;
+				animation-delay: 2.5s;
+			}
+
+	.b-opensource__wrap {
+		transition: $transition;
+		transition-delay: 0s;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+			.b-opensource:hover .b-opensource__wrap {
+				opacity: 1;
+				visibility: visible;
+				transition-delay: .3s;
+			}
+
+
+@keyframes catEarRight {
+	10%, 30% {
+		transform: rotateX(0deg) rotateY(0deg);
+	}
+
+	20%, 25% {
+		transform: rotateX(75deg) rotateY(30deg);
+	}
+}
+
+@keyframes catEarLeft {
+	10%, 35% {
+		transform: rotateX(0deg) rotateY(0deg);
+	}
+
+	20%, 25% {
+		transform: rotateX(-75deg) rotateY(30deg);
+	}
+}

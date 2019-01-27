@@ -1,0 +1,40 @@
+@import "var";
+
+.b-info-chart {
+	position: relative;
+	width: 100%;
+}
+
+	.b-info-chart__wrap {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		color: $chart-axis-color;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 1px;
+			left: 1px;
+			border-left: 1px solid currentColor;
+			border-bottom: 1px solid currentColor;
+		}
+	}
+
+		.b-info-chart__text {
+			font-size: px2rem(14);
+			position: absolute;
+			top: 1px;
+			left: 5px;
+		}
+
+				.b-info-chart__text--bottom {
+					top: auto;
+					left: auto;
+					right: 8px;
+					bottom: 4px;
+				}

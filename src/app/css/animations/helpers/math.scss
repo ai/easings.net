@@ -1,0 +1,72 @@
+@function pi() {
+	@return 3.14159265359;
+}
+
+$PI: pi();
+$c1: 1.70158;
+$c2: $c1 * 1.525;
+$c3: $c1 + 1;
+$c4: ( 2 * $PI ) / 3;
+$c5: ( 2 * $PI ) / 4.5;
+
+@function pow($number, $exp) {
+	$value: 1;
+	@if $exp > 0 {
+		@for $i from 1 through $exp {
+			$value: $value * $number;
+		}
+	}
+	@else if $exp < 0 {
+		@for $i from 1 through -$exp {
+			$value: $value / $number;
+		}
+	}
+	@return $value;
+}
+
+@function factorial($value) {
+	$result: 1;
+
+	@if $value == 0 {
+		@return $result;
+	}
+
+	@for $index from 1 through $value {
+		$result: $result * $index;
+	}
+
+	@return $result;
+}
+
+@function summation($iteratee, $input, $initial: 0, $limit: 100) {
+	$sum: 0;
+
+	@for $index from $initial to $limit {
+		$sum: $sum + call($iteratee, $input, $index);
+	}
+
+	@return $sum;
+}
+
+@function exp-maclaurin($x, $n) {
+	@return (pow($x, $n) / factorial($n));
+}
+
+@function exp($value) {
+	@return summation('exp-maclaurin', $value, 0, 100);
+}
+
+@function ln-maclaurin($x, $n) {
+	@return (pow(-1, $n + 1) / $n) * (pow($x - 1, $n));
+}
+
+@function ln($value) {
+	$ten-exp: 1;
+	$ln-ten: 2.30258509;
+
+	@while ($value > pow(10, $ten-exp)) {
+		$ten-exp: $ten-exp + 1;
+	}
+
+	@return summation(ln-maclaurin, $value / pow(10, $ten-exp), 1, 100) + $ten-exp * $ln-ten;
+}

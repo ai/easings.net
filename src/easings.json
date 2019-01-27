@@ -1,0 +1,138 @@
+[
+	[
+		{
+			"name": "easeInSine",
+			"css": "cubic-bezier(0.47, 0, 0.745, 0.715)",
+			"path": 185.33612060546875
+		},
+		{
+			"name": "easeOutSine",
+			"css": "cubic-bezier(0.39, 0.575, 0.565, 1)",
+			"path": 186.30499267578125
+		},
+		{
+			"name": "easeInOutSine",
+			"css": "cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+			"path": 185.6088104248047
+		}
+	],
+	[
+		{
+			"name": "easeInQuad",
+			"css": "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+			"path": 185.97393798828125
+		},
+		{
+			"name": "easeOutQuad",
+			"css": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+			"path": 187.3670654296875
+		},
+		{
+			"name": "easeInOutQuad",
+			"css": "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+			"path": 186.50448608398438
+		}
+	],
+	[
+		{
+			"name": "easeInCubic",
+			"css": "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+			"path": 192.24560546875
+		},
+		{
+			"name": "easeOutCubic",
+			"css": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+			"path": 194.38916015625
+		},
+		{
+			"name": "easeInOutCubic",
+			"css": "cubic-bezier(0.645, 0.045, 0.355, 1)",
+			"path": 192.30966186523438
+		}
+	],
+	[
+		{
+			"name": "easeInQuart",
+			"css": "cubic-bezier(0.895, 0.03, 0.685, 0.22)",
+			"path": 201.2138671875
+		},
+		{
+			"name": "easeOutQuart",
+			"css": "cubic-bezier(0.165, 0.84, 0.44, 1)",
+			"path": 199.6197052001953
+		},
+		{
+			"name": "easeInOutQuart",
+			"css": "cubic-bezier(0.77, 0, 0.175, 1)",
+			"path": 199.62033081054688
+		}
+	],
+	[
+		{
+			"name": "easeInQuint",
+			"css": "cubic-bezier(0.755, 0.05, 0.855, 0.06)",
+			"path": 206.7737579345703
+		},
+		{
+			"name": "easeOutQuint",
+			"css": "cubic-bezier(0.23, 1, 0.32, 1)",
+			"path": 204.710205078125
+		},
+		{
+			"name": "easeInOutQuint",
+			"css": "cubic-bezier(0.86, 0, 0.07, 1)",
+			"path": 204.789306640625
+		}
+	],
+	[
+		{
+			"name": "easeInExpo",
+			"css": "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+			"path": 210.95263671875
+		},
+		{
+			"name": "easeOutExpo",
+			"css": "cubic-bezier(0.19, 1, 0.22, 1)",
+			"path": 209.00946044921875
+		},
+		{
+			"name": "easeInOutExpo",
+			"css": "cubic-bezier(1, 0, 0, 1)",
+			"path": 211.31231689453125
+		}
+	],
+	[
+		{
+			"name": "easeInCirc",
+			"css": "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+			"path": 200.5527801513672
+		},
+		{
+			"name": "easeOutCirc",
+			"css": "cubic-bezier(0.075, 0.82, 0.165, 1)",
+			"path": 210.3948516845703
+		},
+		{
+			"name": "easeInOutCirc",
+			"css": "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+			"path": 194.98739624023438
+		}
+	],
+	[
+		{
+			"name": "easeInBack",
+			"css": "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+			"path": 210.4648895263672
+		},
+		{
+			"name": "easeOutBack",
+			"css": "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+			"path": 213.56459045410156
+		},
+		{
+			"name": "easeInOutBack",
+			"css": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+			"path": 224.92324829101562
+		}
+	]
+]

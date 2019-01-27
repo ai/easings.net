@@ -1,0 +1,42 @@
+@import "var";
+
+.b-columns {
+	box-sizing: border-box;
+	padding: .25rem 0 0;
+}
+		.b-columns--hide {
+			position: absolute;
+			left: 0;
+			right: 0;
+		}
+
+	.b-columns__wrap {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+		justify-content: center;
+	}
+
+		.b-columns__group {
+			flex: 0 0 calc(50% - 30px);
+			display: flex;
+			justify-content: center;
+			box-sizing: border-box;
+			margin: 0 15px 45px;
+		}
+
+
+@media (max-width: $media-medium) {
+	.b-columns__wrap {
+		flex-direction: column;
+		flex-wrap: nowrap;
+		align-items: center;
+	}
+}
+
+@media (max-width: $media-small) {
+	.b-columns__group {
+		flex-wrap: wrap;
+		margin: 0 0 px2rem(30);
+	}
+}
