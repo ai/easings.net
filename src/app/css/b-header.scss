@@ -1,8 +1,6 @@
 @import "var";
 
 .b-header {
-	font-size: px2rem(14);
-
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
@@ -14,10 +12,10 @@
 		max-width: $max-readable-text-width;
 		text-align: justify;
 		hyphens: auto;
-		padding: 1rem 0;
+		padding: $general-line-height 0 $general-line-height/2;
 
 		p {
-			padding: 0 0 .5em;
+			padding: 0 0 $general-line-height/2;
 			margin: 0;
 		}
 	}
