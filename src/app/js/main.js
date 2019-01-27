@@ -1,5 +1,4 @@
 import { forNodeList } from "./helpers/forNodeList";
-import { scrollTo } from "./helpers/scrollTo";
 import {
 	navigateChart,
 	navigateMain,
@@ -59,21 +58,6 @@ if (listFunction) {
 			const id = link.getAttribute("href").slice(1);
 			navigateChart(id);
 			window.location.hash = id;
-		});
-	});
-}
-
-const linkMore = document.querySelector(".js-more");
-if (linkMore) {
-	linkMore.addEventListener("click", event => {
-		event.preventDefault();
-
-		const position = document
-			.getElementById("definition")
-			.getBoundingClientRect();
-		scrollTo({
-			to: position.top,
-			duration: 200
 		});
 	});
 }
