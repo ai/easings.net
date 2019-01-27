@@ -3,6 +3,7 @@ public/
 dist/
 deploy.sh
 .idea/
+.DS_Store
 
 # Created by https://www.gitignore.io/api/node,webstorm
 
