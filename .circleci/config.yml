@@ -12,9 +12,9 @@ jobs:
       - run:
           name: Install dependencies
           command: npm i
-       - run:
-         name: Install gh-pages
-         command: npm install gh-pages@2.0.1
+      - run:
+          name: Install gh-pages
+          command: npm install gh-pages@2.0.1
       - run:
           name: Build project
           command: npm run build
