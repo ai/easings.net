@@ -19,18 +19,3 @@
 			margin: 0;
 		}
 	}
-
-	.b-header__space {
-		flex: 0 1 100px;
-	}
-
-	.b-header__opensource {
-		flex: 0 0 auto;
-	}
-
-@media (max-width: $media-small) {
-	.b-header__space,
-	.b-header__opensource {
-		display: none;
-	}
-}

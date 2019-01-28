@@ -1,89 +1,183 @@
 @import "var";
 
 .b-opensource {
-	text-decoration: none;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
 	max-width: 120px;
 	text-align: center;
 	box-sizing: border-box;
-	padding: 10px 5px 0;
-	font-size: px2rem(14);
-}
+	text-decoration: none;
+	color: $text-color;
 
-	.b-opensource__button {
-		background: none;
-		border: none;
-		outline: none;
-		padding: px2rem(5);
-		border-radius: 0;
-		color: $text-color;
-
-		cursor: pointer;
-		transform: translateY(-75%);
-		transition: $transition-big;
-		transition-delay: .1s;
+	&:active {
+		transform: none;
 	}
-
-			.b-opensource:hover .b-opensource__button {
-				transform: translateX(0);
-				transition-delay: 0s;
-			}
-
-		.b-opensource__icon	{
-			width: 74px;
-			height: 65px;
-			fill: currentColor;
-			display: block;
-			transform: rotate(180deg);
-			transition: $transition-big;
-			transition-delay: 0s;
-		}
-
-				.b-opensource:hover .b-opensource__icon {
-					transition-delay: .1s;
-					transform: rotate(0);
-				}
-
-			.b-opensource__ear-right {
-				animation: catEarRight 4s infinite both ease-in;
-				transform-origin: 410px 40px;
-			}
-
-			.b-opensource__ear-left {
-				animation: catEarLeft 4s infinite both ease;
-				transform-origin: 70px 60px;
-				animation-delay: 2.5s;
-			}
+}
 
 	.b-opensource__wrap {
-		transition: $transition;
-		transition-delay: 0s;
-		opacity: 0;
-		visibility: hidden;
+		font-size: 14px;
+		width: $opensource-size-root;
+		height: $opensource-size-root;
+		position: relative;
+		overflow: hidden;
 	}
 
-			.b-opensource:hover .b-opensource__wrap {
+		.b-opensource__corner {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 2;
+			width: $opensource-size;
+			height: $opensource-size;
+			color: $text-light-color;
+			transition: transform $opensource-transition-duration $opensource-transition-timing-func,
+				color $opensource-transition-duration/2 ease;
+			transition-delay: 0s, $opensource-transition-duration*2/4;
+		}
+
+				.b-opensource:hover .b-opensource__corner,
+				.b-opensource:focus .b-opensource__corner {
+					color: transparent;
+					transform: rotate3d(1, 1, 0, 180deg);
+
+					transition-delay: 0s, $opensource-transition-duration*1/4;
+				}
+
+			.b-opensource__caption {
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 1.5 * $opensource-size;
+				height: 1.5 * $opensource-size;
+				transform: rotate(45deg) translateY(-72.5%);
+				border-bottom: 1px dashed currentColor;
+				overflow: hidden;
+
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 1.5 * $opensource-size;
+					height: 1.5 * $opensource-size;
+					transform: rotate(45deg) translate(50%, 50%);
+					background: #fff;
+					box-shadow: 0 0 3px rgba(#000, .3);
+				}
+			}
+
+				.b-opensource__text {
+					position: absolute;
+					bottom: 3px;
+					left: 50%;
+					z-index: 2;
+					transform: translateX(-50%);
+					white-space: nowrap;
+					font-size: 12px;
+				}
+
+
+		.b-opensource__cat {
+			width: 34px;
+			height: 30px;
+			position: absolute;
+			z-index: 1;
+			transform: rotate(45deg) translate(20px, 22px) scale(.9);
+			transition: $opensource-transition-duration 0s;
+		}
+
+				.b-opensource:hover .b-opensource__cat,
+				.b-opensource:focus .b-opensource__cat {
+					transform: rotate(45deg) translate(20px, 17px) scale(1);
+					transition: $opensource-transition-duration/2 $opensource-transition-duration/2;
+				}
+
+				.b-opensource:active .b-opensource__cat {
+					transform: rotate(45deg) translate(20px, 22px) scale(1);
+					transition-delay: 0s;
+				}
+
+		.b-opensource__code {
+			width: $opensource-size;
+			height: $opensource-size;
+			position: absolute;
+			top: 0;
+			right: 0;
+			background: #eee;
+			font-family: monospace;
+			color: $text-color;
+			text-shadow: 0 1px 0 rgba(#fff, .5);
+			box-sizing: border-box;
+			padding: 5px 5px 5px 25px;
+			margin: 0;
+			overflow: hidden;
+			font-size: 11px;
+			text-align: left;
+			line-height: 1.4;
+			transition: $transition;
+
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 1.2 * $opensource-size-root;
+				height: 1.2 * $opensource-size-root;
+				background: #fff;
+				z-index: 1;
+				transform: rotate(45deg) translate(0, 32px);
+			}
+		}
+
+				.b-opensource:active .b-opensource__code {
+					background: #ddd;
+				}
+
+	.b-opensource__translate {
+		font-size: px2rem(12);
+		line-height: 1.35;
+		color: currentColor;
+		padding: 2px 5px;
+		box-sizing: border-box;
+		position: absolute;
+		top: 90px;
+		right: 0;
+		width: $opensource-size;
+		background: #fff;
+		transition: $opensource-transition-duration;
+		opacity: 0;
+		visibility: hidden;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: -20px;
+			width: 20px;
+
+		}
+	}
+
+			.b-opensource:hover .b-opensource__translate,
+			.b-opensource:focus .b-opensource__translate {
 				opacity: 1;
 				visibility: visible;
-				transition-delay: .3s;
+				color: $text-color;
 			}
 
 
-@keyframes catEarRight {
-	10%, 30% {
-		transform: rotateX(0deg) rotateY(0deg);
-	}
-
-	20%, 25% {
-		transform: rotateX(75deg) rotateY(30deg);
-	}
-}
-
-@keyframes catEarLeft {
-	10%, 35% {
-		transform: rotateX(0deg) rotateY(0deg);
-	}
-
-	20%, 25% {
-		transform: rotateX(-75deg) rotateY(30deg);
+@media (min-width: $wrap-width + 1) {
+	.b-opensource--translate-show .b-opensource__translate {
+		color: $text-light-color;
+		opacity: 1;
+		visibility: visible;
 	}
 }

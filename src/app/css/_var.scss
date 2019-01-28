@@ -23,8 +23,15 @@ $transition-show-delay: 0.3s;
 
 $text-color: #222;
 $chart-color: $text-color;
+$text-light-color: #666;
 $chart-axis-color: #ccc;
 $brand: #FF3333;
+
+$opensource-size: 80px;
+$opensource-size-root: 100px;
+$opensource-transition-duration: .6s;
+$opensource-transition-timing-func: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$opensource-ratio-bg: 9;
 
 $second-color: #0055FF;
 $third-color: #7B59C0;
@@ -40,6 +47,7 @@ $media-small: 550px;
 
 $a11y-color: #007AFF;
 
+$line-height: 1.35;
 $general-line-height: px2rem(22);
 
 $title-size: px2rem(42);
