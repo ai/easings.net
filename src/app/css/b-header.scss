@@ -9,13 +9,19 @@
 	.b-header__definition {
 		flex: 1 1 auto;
 		width: 100%;
-		max-width: $max-readable-text-width;
+		max-width: #{$max-readable-text-width + 100px};
 		text-align: justify;
 		hyphens: auto;
-		padding: $general-line-height 0 $general-line-height/2;
+		padding: $general-line-height 100px $general-line-height/2 0;
 
 		p {
 			padding: 0 0 $general-line-height/2;
 			margin: 0;
 		}
 	}
+
+@media (max-width: $media-small) {
+	.b-header__definition {
+		padding-right: 0;
+	}
+}

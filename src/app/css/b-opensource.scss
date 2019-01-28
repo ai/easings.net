@@ -143,10 +143,10 @@
 		font-size: px2rem(12);
 		line-height: 1.35;
 		color: currentColor;
-		padding: 2px 5px;
+		padding: 10px 5px 2px;
 		box-sizing: border-box;
 		position: absolute;
-		top: 90px;
+		top: 82px;
 		right: 0;
 		width: $opensource-size;
 		background: #fff;
@@ -162,7 +162,6 @@
 			bottom: 0;
 			left: -20px;
 			width: 20px;
-
 		}
 	}
 
@@ -179,5 +178,11 @@
 		color: $text-light-color;
 		opacity: 1;
 		visibility: visible;
+	}
+}
+
+@media (max-width: $media-small) {
+	.b-opensource {
+		display: none;
 	}
 }
