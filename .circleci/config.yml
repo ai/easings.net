@@ -1,7 +1,7 @@
 version: 2
 
 jobs:
-  docs-build:
+  build:
     docker:
       - image: circleci/node:latest
     steps:
@@ -12,13 +12,12 @@ jobs:
       - run:
           name: Install dependencies
           command: npm i
+       - run:
+         name: Install gh-pages
+         command: npm install gh-pages@2.0.1
       - run:
-          name: Build docs
+          name: Build project
           command: npm run build
-
-      - run:
-          name: Install gh-pages
-          command: npm install gh-pages@2.0.1
       - run:
           name: Git config user.email
           command: git config user.email "ivan@solovev.one"
@@ -26,14 +25,14 @@ jobs:
           name: Git config user.name
           command: git config user.name "Ivan Solovev"
       - run:
-          name: Deploy docs to gh-pages branch
-          command: ./node_modules/.bin/gh-pages --dotfiles --message "[skip ci] Updates" --dist docs
+          name: Deploy project to gh-pages branch
+          command: ./node_modules/.bin/gh-pages --dotfiles --message "[skip ci] Updates" --dist dist
 
 workflows:
   version: 2
   build:
     jobs:
-      - docs-build:
+      - build:
           filters:
             branches:
               only: master
