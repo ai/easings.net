@@ -1,12 +1,15 @@
 import { forNodeList } from "../helpers/forNodeList";
 import { scrollTo } from "../helpers/scrollTo";
 import { getTransitionTime } from "../helpers/getTransitionTime";
+import { changePageSize, initChangePage } from "./changePageSize";
 
 const selectorChartForInfo = ".js-chart-for-info";
 const selectorInfo = ".js-info";
 const selectorColumns = ".js-columns";
 const timeTransitionChart = 400;
 const additionalIndentForColumns = 50;
+
+let openItemId;
 
 export function navigateMain() {
 	const item = document.querySelector(".b-function--open");
@@ -16,7 +19,7 @@ export function navigateMain() {
 	const chartLink = item.querySelector(".js-function-chart");
 
 	columns.removeAttribute("style");
-	item.isExpand = false;
+	openItemId = false;
 	chart.style.transitionDuration = `${timeTransitionChart}ms`;
 	chart.style.transitionTimingFunction = item.getAttribute("data-func");
 	chartLink.removeAttribute("style");
@@ -32,22 +35,24 @@ export function navigateMain() {
 	setTimeout(() => {
 		item.classList.remove("b-function--open", "b-function--opened");
 		columns.classList.remove("b-columns--hide");
+		changePageSize();
 	}, 200);
 
 	setTimeout(() => {
 		info.style.display = null;
 		chart.removeAttribute("style");
+		changePageSize();
 	}, 400);
 }
 
 export function navigateChart(id) {
 	const item = document.getElementById(`func-${id}`);
 
-	if (!item || item.isExpand) {
+	if (!item || openItemId === id) {
 		return;
 	}
 
-	item.isExpand = true;
+	openItemId = id;
 	const name = item.getAttribute("data-name");
 	const func = item.getAttribute("data-func");
 
@@ -68,6 +73,8 @@ export function navigateChart(id) {
 			info.querySelectorAll(".js-info-func"),
 			e => (e.innerText = func)
 		);
+
+		initChangePage();
 
 		info.style.transitionTimingFunction = func;
 		chart.style.transitionTimingFunction = func;
@@ -91,6 +98,8 @@ export function navigateChart(id) {
 			chartLink.style.paddingBottom = `${holderOffset}%`;
 
 			requestAnimationFrame(() => {
+				changePageSize();
+
 				const offsetLeft = infoChartPosition.x - position.x;
 				const offsetTop = infoChartPosition.y - position.y;
 

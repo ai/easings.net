@@ -57,12 +57,12 @@ $title-offset: .25em;
 $subtitle-size: px2rem(26);
 $subtitle-line-height: $general-line-height * 2;
 
-@mixin wrap {
+@mixin wrap($vertical-padding: 0) {
 	box-sizing: border-box;
 	width: 100%;
 	margin: 0 auto;
 	max-width: $wrap-width;
-	padding: 0 15px;
+	padding: $vertical-padding 15px;
 }
 
 @mixin visually-hidden {

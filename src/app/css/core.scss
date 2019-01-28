@@ -8,11 +8,17 @@ html {
 body {
 	line-height: $line-height;
 	letter-spacing: 0.01em;
+	position: relative;
+	box-sizing: border-box;
+	transition: height $transition-big ease-in;
 }
+
+.u-root {}
 
 .u-wrap {
 	@include wrap;
 	position: relative;
+	overflow: hidden;
 }
 
 .u-container {

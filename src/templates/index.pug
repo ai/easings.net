@@ -14,98 +14,99 @@ html
 		link(href="app/css/main.css" rel="stylesheet")
 
 	body
-		svg.u-visually-hidden(xmlns="http://www.w3.org/2000/svg" width="0" height="0")
-			-
-				const colorBase = '#222';
-				const colorStart = '#34AADC';
-				const colorEnd = '#4CD964';
+		.u-root.js-root
+			svg.u-visually-hidden(xmlns="http://www.w3.org/2000/svg" width="0" height="0")
+				-
+					const colorBase = '#222';
+					const colorStart = '#34AADC';
+					const colorEnd = '#4CD964';
 
-			defs
-				linearGradient#in(x1="0%" y1="100%" x2="100%" y2="0%")
-					stop(offset="0%" stop-color=colorBase)
-					stop(offset="50%" stop-color=colorBase)
-					stop(offset="70%" stop-color=colorEnd)
-					stop(offset="100%" stop-color=colorEnd)
-				linearGradient#out(x1="0%" y1="100%" x2="100%" y2="0%")
-					stop(offset="0%" stop-color=colorStart)
-					stop(offset="30%" stop-color=colorStart)
-					stop(offset="50%" stop-color=colorBase)
-					stop(offset="100%" stop-color=colorBase)
-				linearGradient#inOut(x1="0%" y1="100%" x2="100%" y2="0%")
-					stop(offset="0%" stop-color=colorStart)
-					stop(offset="20%" stop-color=colorStart)
-					stop(offset="80%" stop-color=colorEnd)
-					stop(offset="100%" stop-color=colorEnd)
+				defs
+					linearGradient#in(x1="0%" y1="100%" x2="100%" y2="0%")
+						stop(offset="0%" stop-color=colorBase)
+						stop(offset="50%" stop-color=colorBase)
+						stop(offset="70%" stop-color=colorEnd)
+						stop(offset="100%" stop-color=colorEnd)
+					linearGradient#out(x1="0%" y1="100%" x2="100%" y2="0%")
+						stop(offset="0%" stop-color=colorStart)
+						stop(offset="30%" stop-color=colorStart)
+						stop(offset="50%" stop-color=colorBase)
+						stop(offset="100%" stop-color=colorBase)
+					linearGradient#inOut(x1="0%" y1="100%" x2="100%" y2="0%")
+						stop(offset="0%" stop-color=colorStart)
+						stop(offset="20%" stop-color=colorStart)
+						stop(offset="80%" stop-color=colorEnd)
+						stop(offset="100%" stop-color=colorEnd)
 
-		h1.u-visually-hidden Шпаргалка функций плавности (easing)
+			h1.u-visually-hidden Шпаргалка функций плавности (easing)
 
-		a.b-opensource(target="_blank" href="https://github.com/ai/easings.net" rel="noreferrer noopener")
-			.b-opensource__wrap
-				.b-opensource__corner
-					.b-opensource__caption
-						.b-opensource__text open source
+			a.b-opensource(target="_blank" href="https://github.com/ai/easings.net" rel="noreferrer noopener")
+				.b-opensource__wrap
+					.b-opensource__corner
+						.b-opensource__caption
+							.b-opensource__text open source
 
-				svg.b-opensource__cat
-					use(xlink:href="app/img/sprite.svg#github")
+					svg.b-opensource__cat
+						use(xlink:href="app/img/sprite.svg#github")
 
-				pre.b-opensource__code
-					!= `html(lang="en")<br>${`  `}head<br>${`    `}meta(charset="UTF-8")<br>${`    `}script()`
+					pre.b-opensource__code
+						!= `html(lang="en")<br>${`  `}head<br>${`    `}meta(charset="UTF-8")<br>${`    `}script()`
 
-			.b-opensource__translate Помоги перевести сайт на твой язык
+				.b-opensource__translate Помоги перевести сайт на твой язык
 
-		.u-wrap
-			.b-header
-				.b-header__definition
-					p #[b Функция плавности (easing)] определяет скорость течения анимации, делая её более реалистичной.
-					p Реальные вещи не начинают двигаться мгновенно и с постоянной скоростью. Если мы открываем ящик стола, то сначала ускоряем его, а на второй половине пути — тормозим. Если что-то упало, то оно сначала летит всё быстрее и быстрее, а ударившись о пол — слегка подпрыгивает обратно.
-					p Этот сайт поможет каждый раз подобрать нужную функцию плавности.
+			.u-wrap
+				.b-header
+					.b-header__definition
+						p #[b Функция плавности (easing)] определяет скорость течения анимации, делая её более реалистичной.
+						p Реальные вещи не начинают двигаться мгновенно и с постоянной скоростью. Если мы открываем ящик стола, то сначала ускоряем его, а на второй половине пути — тормозим. Если что-то упало, то оно сначала летит всё быстрее и быстрее, а ударившись о пол — слегка подпрыгивает обратно.
+						p Этот сайт поможет каждый раз подобрать нужную функцию плавности.
 
-			.u-container
-				.b-columns.js-columns
-					.b-columns__wrap
-						each group in all_easings
-							.b-columns__group
-								each item, index in group
-									+Item(item, index)
-
-
-				section.b-info.js-info
-					.b-info__header
-						a.b-info__back(href="#") Все функции
-
-					.b-info__wrap
-						.b-info__chart
-							.b-info-chart.js-info-chart
-								-
-									const radioScale = 1;
-									const chartWidth = 125 * radioScale;
-									const chartHeight = 85 * radioScale;
-
-								.b-info-chart__wrap
-									.b-info-chart__text x
-									.b-info-chart__text.b-info-chart__text--bottom t
-
-						.b-info__main
-							h2.b-info__title.js-info-name easeInSine
-
-							.b-example
-								.b-example__title CSS
-								.b-example__text В CSS свойства transition и animation позволяют указывать функцию плавности.
-								.b-example__code
-									+CodeCss
-
-							.b-example
-								.b-example__title PostCSS
-								.b-example__text.
-									В PostCSS функцию перехода описывать сильно проще. Есть плагин (postcss-easings),
-									который берёт информацию о переходе с этого сайта.
-								.b-example__code
-									+CodePostCss
-								.b-example__text Эта декларация преобразуется в подобную, которая описана выше.
+				.u-container
+					.b-columns.js-columns
+						.b-columns__wrap
+							each group in all_easings
+								.b-columns__group
+									each item, index in group
+										+Item(item, index)
 
 
+					section.b-info.js-info
+						.b-info__header
+							a.b-info__back(href="#") Все функции
 
-			footer.b-footer
+						.b-info__wrap
+							.b-info__chart
+								.b-info-chart.js-info-chart
+									-
+										const radioScale = 1;
+										const chartWidth = 125 * radioScale;
+										const chartHeight = 85 * radioScale;
+
+									.b-info-chart__wrap
+										.b-info-chart__text x
+										.b-info-chart__text.b-info-chart__text--bottom t
+
+							.b-info__main
+								h2.b-info__title.js-info-name easeInSine
+
+								.b-example
+									.b-example__title CSS
+									.b-example__text В CSS свойства transition и animation позволяют указывать функцию плавности.
+									.b-example__code
+										+CodeCss
+
+								.b-example
+									.b-example__title PostCSS
+									.b-example__text.
+										В PostCSS функцию перехода описывать сильно проще. Есть плагин (postcss-easings),
+										который берёт информацию о переходе с этого сайта.
+									.b-example__code
+										+CodePostCss
+									.b-example__text Эта декларация преобразуется в подобную, которая описана выше.
+
+
+
+			footer.b-footer.js-footer
 				.b-footer__group
 					.b-footer__copyright
 						a(href="https://twitter.com/andrey_sitnik" rel="noopener noreferrer" target="_blank") Андрей Ситник
