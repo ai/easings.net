@@ -27,20 +27,33 @@ $text-color: #222;
 $chart-color: $text-color;
 $text-light-color: #666;
 $chart-axis-color: #ccc;
-$brand: #c62828;
-$text-on-brand: #fff;
 
-$brand-dark: #ba000d;
-$text-on-brand-dark: #fff;
+$text-dark: #222;
+$text-light: #fff;
+
+$brand: #1976d2;
+$text-on-brand: $text-light;
+
+$brand-light: #63a4ff;
+$text-on-brand-light: $text-dark;
+
+$brand-dark: #004ba0;
+$text-on-brand-dark: $text-light;
+
+$second: #00c853;
+$text-on-second: $text-dark;
+
+$second-light: #5efc82;
+$text-on-second-light: $text-dark;
+
+$second-dark: #009624;
+$text-on-second-dark: $text-dark;
 
 $opensource-size: 80px;
 $opensource-size-root: 100px;
 $opensource-transition-duration: .6s;
 $opensource-transition-timing-func: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 $opensource-ratio-bg: 9;
-
-$second-color: #0055FF;
-$third-color: #7B59C0;
 
 $chart-width: 125px;
 $chart-height: 85px;
