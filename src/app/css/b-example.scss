@@ -21,11 +21,17 @@
 	}
 
 	.b-example__code {
-		padding: px2rem(5) 0;
+		padding: $general-line-height/2 0;
 		margin: px2rem(-2) 0;
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
 		white-space: nowrap;
+
+		code {
+			font-family: monospace;
+			font-size: 13px;
+			line-height: 1.2;
+		}
 	}
 
 		.b-example__spaces {
