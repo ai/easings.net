@@ -87,3 +87,9 @@
 			width: 100%;
 		}
 }
+
+@media (max-width: $media-small) {
+	.b-info__title {
+		font-size: $title-size-small;
+	}
+}

@@ -41,6 +41,46 @@ body {
 	color: $third-color;
 }
 
+.u-button {
+	background: $brand;
+	color: $text-on-brand;
+	font-family: $system-fonts;
+	font-size: px2rem(14);
+	font-stretch: 100%;
+	font-weight: 500;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: $line-height;
+	padding: $general-line-height/2 1rem;
+	display: inline-block;
+	border-radius: 4px;
+	min-width: 64px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	transition: $transition;
+	box-shadow: 0 3px 1px -2px rgba(#000, .2),
+		0 2px 2px 0 rgba(#000, .14),
+		0 1px 5px 0 rgba(#000, .12);
+
+	&:hover {
+		background: $brand-dark;
+		color: $text-on-brand-dark;
+	}
+
+	&:active {
+		box-shadow: 0 5px 5px -3px rgba(#000, .2),
+			0 8px 10px 1px rgba(#000, .14),
+			0 3px 14px 2px rgba(#000, .12);
+	}
+
+	span {
+		line-height: normal;
+		user-select: none;
+		vertical-align: middle;
+	}
+}
+
 a {
 	color: $text-color;
 	text-decoration: underline;

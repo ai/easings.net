@@ -1,0 +1,8 @@
+@import "var";
+
+.b-cases {
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	margin: 0 #{$offset-block / -2};
+}

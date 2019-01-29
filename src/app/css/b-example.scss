@@ -32,3 +32,10 @@
 			width: 4ex;
 			display: inline-block;
 		}
+
+@media (max-width: $media-small) {
+	.b-example__title {
+		font-weight: 400;
+		font-size: $subtitle-size-small;
+	}
+}

@@ -1,7 +1,9 @@
 import { forNodeList } from "../helpers/forNodeList";
 import { scrollTo } from "../helpers/scrollTo";
 import { getTransitionTime } from "../helpers/getTransitionTime";
+import { getElementPosition } from "../helpers/getElementPosition";
 import { changePageSize, initChangePage } from "./changePageSize";
+import { setCases } from "./case";
 
 const selectorChartForInfo = ".js-chart-for-info";
 const selectorInfo = ".js-info";
@@ -74,6 +76,7 @@ export function navigateChart(id) {
 			e => (e.innerText = func)
 		);
 
+		setCases(func);
 		initChangePage();
 
 		info.style.transitionTimingFunction = func;
@@ -86,10 +89,10 @@ export function navigateChart(id) {
 		chartLink.classList.remove("b-chart--active");
 
 		requestAnimationFrame(() => {
-			const columnsPosition = columns.getBoundingClientRect();
+			const columnsPosition = getElementPosition(columns);
 
-			const position = chart.getBoundingClientRect();
-			const infoChartPosition = infoChart.getBoundingClientRect();
+			const position = getElementPosition(chart);
+			const infoChartPosition = getElementPosition(infoChart);
 			const holderOffset = position.height / position.width * 100;
 
 			chart.style.position = `absolute`;
@@ -115,7 +118,7 @@ export function navigateChart(id) {
 				}, timeTransitionChart + itemTimeSlide);
 
 				setTimeout(() => {
-					const position = chart.getBoundingClientRect();
+					const position = getElementPosition(chart);
 					const height =
 						position.y -
 						columnsPosition.y +
@@ -129,8 +132,8 @@ export function navigateChart(id) {
 				}, timeTransitionChart + itemTimeSlide + infoTimeSlide);
 
 				setTimeout(() => {
-					const position = chart.getBoundingClientRect();
-					const infoChartPosition = infoChart.getBoundingClientRect();
+					const position = getElementPosition(chart);
+					const infoChartPosition = getElementPosition(infoChart);
 					const diffX = infoChartPosition.x - position.x;
 
 					chart.style.transform = `translate(${offsetLeft +
@@ -158,11 +161,11 @@ export function resizeChart() {
 		const info = document.querySelector(selectorInfo);
 		const infoChart = info.querySelector(".js-info-chart");
 		const columns = document.querySelector(selectorColumns);
-		const infoPosition = info.getBoundingClientRect();
-		const columnsPosition = columns.getBoundingClientRect();
+		const infoPosition = getElementPosition(info);
+		const columnsPosition = getElementPosition(columns);
 
-		const position = chartParent.getBoundingClientRect();
-		const infoChartPosition = infoChart.getBoundingClientRect();
+		const position = getElementPosition(chartParent);
+		const infoChartPosition = getElementPosition(infoChart);
 		const offsetLeft = infoChartPosition.x - position.x;
 		const offsetTop =
 			infoChartPosition.y - position.y + columnsPosition.y - infoPosition.y;

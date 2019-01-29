@@ -77,11 +77,6 @@ html
 						.b-info__wrap
 							.b-info__chart
 								.b-info-chart.js-info-chart
-									-
-										const radioScale = 1;
-										const chartWidth = 125 * radioScale;
-										const chartHeight = 85 * radioScale;
-
 									.b-info-chart__wrap
 										.b-info-chart__text x
 										.b-info-chart__text.b-info-chart__text--bottom t
@@ -104,6 +99,40 @@ html
 										+CodePostCss
 									.b-example__text Эта декларация преобразуется в подобную, которая описана выше.
 
+						.b-cases
+							-
+								const chartWidth = 50;
+								const chartHeight = 30;
+
+							.b-case.js-case(data-class="b-case__image--scale")
+								button.u-button.b-case__button.js-case-button
+									span Запустить анимацию
+								.b-case__image.js-case-image.js-case-func
+									svg.b-case__chart.js-case-place(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
+										path(d="")
+								.b-case__image.b-case__image--linear.js-case-image
+									svg.b-case__chart(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
+										path(d=(`M0 ${chartHeight}L${chartWidth} 0`))
+
+							.b-case.js-case(data-class="b-case__image--translate")
+								button.u-button.b-case__button.js-case-button
+									span Запустить анимацию
+								.b-case__image.js-case-image.js-case-func
+									svg.b-case__chart.js-case-place(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
+										path(d="")
+								.b-case__image.b-case__image--linear.js-case-image
+									svg.b-case__chart(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
+										path(d=(`M0 ${chartHeight}L${chartWidth} 0`))
+
+							.b-case.js-case(data-class="b-case__image--opacity")
+								button.u-button.b-case__button.js-case-button
+									span Запустить анимацию
+								.b-case__image.js-case-image.js-case-func
+									svg.b-case__chart.js-case-place(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
+										path(d="")
+								.b-case__image.b-case__image--linear.js-case-image
+									svg.b-case__chart(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
+										path(d=(`M0 ${chartHeight}L${chartWidth} 0`))
 
 
 			footer.b-footer.js-footer
