@@ -1,7 +1,6 @@
 const path = require("path");
-const cwd = process.cwd();
+const pwd = process.cwd();
 
-const pwd = path.join(cwd, "..");
 const dist = "dist";
 
 module.exports = {

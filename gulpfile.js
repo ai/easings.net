@@ -6,7 +6,7 @@ const gulp = require("gulp");
 const plumber = require("gulp-plumber");
 const util = require("gulp-util");
 
-const config = require("./config.js");
+const config = require("./helpers/config.js");
 
 const constant = {
 	DEV: false
@@ -14,7 +14,7 @@ const constant = {
 
 const getHtmlEnv = () => ({
 	dev: constant.DEV,
-	all_easings: require("../src/easings")
+	all_easings: require("./src/easings")
 });
 
 gulp.task("html", done => {
@@ -48,16 +48,18 @@ gulp.task("html", done => {
 
 gulp.task("js", done => {
 	const rollup = require("rollup");
-	const resolve = require("rollup-plugin-node-resolve");
+	const typescript = require("rollup-plugin-typescript");
 	const commonjs = require("rollup-plugin-commonjs");
 	const babel = require("rollup-plugin-babel");
 	const terser = require("rollup-plugin-terser").terser;
 
 	rollup
 		.rollup({
-			input: path.join(config.path.src.js, "main.js"),
+			input: path.join(config.path.src.js, "main.ts"),
 			plugins: [
-				resolve(),
+				typescript({
+					typescript: require("typescript")
+				}),
 				commonjs(),
 				babel({
 					exclude: "node_modules/**" // only transpile our source code

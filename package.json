@@ -1,11 +1,11 @@
 {
 	"name": "easings.net",
 	"version": "1.0.0",
-	"main": "helpers/gulpfile.js",
+	"main": "gulpfile.js",
 	"author": "Ivan Solovev <solovev.one@yandex.ru> (https://solovev.one/)",
 	"scripts": {
-		"start": "./node_modules/.bin/gulp --gulpfile ./helpers/gulpfile.js start",
-		"build": "./node_modules/.bin/gulp --gulpfile ./helpers/gulpfile.js build",
+		"start": "./node_modules/.bin/gulp start",
+		"build": "./node_modules/.bin/gulp build",
 		"precommit": "lint-staged"
 	},
 	"license": "MIT",
@@ -39,8 +39,10 @@
 		"rollup": "^1.1.2",
 		"rollup-plugin-babel": "^4.3.2",
 		"rollup-plugin-commonjs": "^9.2.0",
-		"rollup-plugin-node-resolve": "^4.0.0",
-		"rollup-plugin-terser": "^4.0.3"
+		"rollup-plugin-terser": "^4.0.3",
+		"rollup-plugin-typescript": "^1.0.0",
+		"tslib": "^1.9.3",
+		"typescript": "^3.2.4"
 	},
 	"husky": {
 		"hooks": {
