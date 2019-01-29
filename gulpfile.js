@@ -4,7 +4,7 @@ const path = require("path");
 
 const gulp = require("gulp");
 const plumber = require("gulp-plumber");
-const util = require("gulp-util");
+const gulpIf = require("gulp-if");
 
 const config = require("./helpers/config.js");
 
@@ -94,8 +94,8 @@ gulp.task("css", done => {
 				require("postcss-preset-env")
 			])
 		)
-		.pipe(!constant.DEV ? media() : util.noop())
-		.pipe(!constant.DEV ? cssMin() : util.noop())
+		.pipe(gulpIf(!constant.DEV, media()))
+		.pipe(gulpIf(!constant.DEV, cssMin()))
 		.pipe(gulp.dest(config.path.dist.css))
 		.on("end", done);
 });
