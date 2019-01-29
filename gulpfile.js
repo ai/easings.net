@@ -213,7 +213,7 @@ function buildTask(mode) {
 				);
 
 				gulp.watch(
-					path.join(config.path.src.js, "**", "*.js"),
+					path.join(config.path.src.js, "**", "*.{js,ts}"),
 					gulp.series("js")
 				);
 
