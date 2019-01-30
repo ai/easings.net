@@ -1,33 +1,24 @@
 @import "var";
 
 .b-function {
-	width: 33%;
+	width: calc(100%/3 - 10px);
 	max-width: 160px;
 	box-sizing: border-box;
-	padding: px2rem(15) px2rem(20) px2rem(8);
+	padding: px2rem(15) px2rem(15) px2rem(8);
+	margin: 0 5px 10px;
 	transition: $transition;
 	position: relative;
 	outline: none;
 	display: flex;
 	flex-direction: column;
+	border-radius: $corner-radius;
+	@include shadow;
 
 	&:active {
-		background: #eee;
+		@include shadow-active;
 	}
 
-	&::after {
-		content: '';
-		display: block;
-		position: absolute;
-		pointer-events: none;
-		top: -3px;
-		right: px2rem(3);
-		bottom: 0;
-		left: px2rem(3);
-		box-shadow: 0 0 2px 4px $a11y-color;
-		transition: $transition;
-		opacity: 0;
-	}
+	@include a11y-outline;
 }
 
 		.b-function--focus {
@@ -38,7 +29,7 @@
 
 		.b-function--active {
 			z-index: 1;
-			box-shadow: 0 0 2px 1px rgba(#000, .3);
+			@include shadow-hover;
 		}
 
 		.b-columns--hide .b-function:not(.b-function--open) {

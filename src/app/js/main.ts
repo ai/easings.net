@@ -1,3 +1,5 @@
+import "focus-visible/src/focus-visible";
+
 import { forNodeList } from "./helpers/forNodeList";
 import {
 	navigateChart,
@@ -64,6 +66,16 @@ if (listFunction) {
 				item.classList.remove(classFunctionFocus);
 			}
 		});
+	});
+}
+
+const transitionButton: HTMLInputElement = document.querySelector(".js-translate-button");
+if (transitionButton) {
+	transitionButton.addEventListener("click", () => {
+		transitionButton.blur();
+		transitionButton.disabled = true;
+		transitionButton.setAttribute("tabIndex", "-1");
+		document.querySelector(".js-translate").classList.add("b-translate--show");
 	});
 }
 

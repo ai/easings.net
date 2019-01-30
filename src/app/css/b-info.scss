@@ -19,27 +19,7 @@
 	}
 
 		.b-info__back {
-			text-decoration: none;
-			color: $brand;
-			border-bottom: 1px solid transparent;
-			padding: 0 3px;
 
-			&:hover,
-			&:focus {
-				border-bottom-color: currentColor;
-			}
-
-			&::before {
-				content: '';
-				display: inline-block;
-				width: 10px;
-				height: 10px;
-				border-top: 1px solid currentColor;
-				border-left: 1px solid currentColor;
-				transform: rotate(-45deg);
-				top: -1px;
-				position: relative;
-			}
 		}
 
 	.b-info__wrap {

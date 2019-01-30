@@ -18,6 +18,7 @@
 		"browser-sync": "^2.23.6",
 		"del": "^3.0.0",
 		"express": "^4.16.2",
+		"focus-visible": "^4.1.5",
 		"gulp": "^4.0.0",
 		"gulp-csso": "^3.0.1",
 		"gulp-group-css-media-queries": "^1.2.2",

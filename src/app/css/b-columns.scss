@@ -15,6 +15,7 @@
 		flex-wrap: wrap;
 		align-items: flex-start;
 		justify-content: center;
+		margin: 0 -15px;
 	}
 
 		.b-columns__group {
@@ -22,9 +23,9 @@
 			flex-wrap: wrap;
 			align-items: stretch;
 			justify-content: center;
-			width: calc(50% - 30px);
+			width: calc(50% - #{$general-line-height});
 			box-sizing: border-box;
-			margin: 0 15px $general-line-height * 1.5;
+			margin: 0 $general-line-height/2 $general-line-height;
 		}
 
 

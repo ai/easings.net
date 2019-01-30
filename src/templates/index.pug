@@ -40,26 +40,24 @@ html
 
 			h1.u-visually-hidden Шпаргалка функций плавности (easing)
 
-			a.b-opensource(target="_blank" href="https://github.com/ai/easings.net" rel="noreferrer noopener")
-				.b-opensource__wrap
-					.b-opensource__corner
-						.b-opensource__caption
-							.b-opensource__text open source
-
-					svg.b-opensource__cat
-						use(xlink:href="app/img/sprite.svg#github")
-
-					pre.b-opensource__code
-						!= `html(lang="en")<br>${`  `}head<br>${`    `}meta(charset="UTF-8")<br>${`    `}script()`
-
-				.b-opensource__translate Помоги перевести сайт на твой язык
-
 			.u-wrap
 				.b-header.js-header
 					.b-header__definition
 						p #[b Функция плавности (easing)] определяет скорость течения анимации, делая её более реалистичной.
 						p Реальные вещи не начинают двигаться мгновенно и с постоянной скоростью. Если мы открываем ящик стола, то сначала ускоряем его, а на второй половине пути — тормозим. Если что-то упало, то оно сначала летит всё быстрее и быстрее, а ударившись о пол — слегка подпрыгивает обратно.
 						p Этот сайт поможет каждый раз подобрать нужную функцию плавности.
+
+					.b-header__opensource
+						button.u-button.u-button--with-icon.js-translate-button
+							span
+								svg.u-icon.u-icon--right-space
+									use(xlink:href="app/img/sprite.svg#help")
+								| Translate me!
+
+						.b-translate.js-translate
+							div Help translate site to your language
+							div
+								a(target="_blank" href="https://github.com/ai/easings.net" rel="noreferrer noopener") github.com
 
 				.u-container
 					.b-columns.js-columns
@@ -72,7 +70,11 @@ html
 
 					section.b-info.js-info
 						.b-info__header
-							a.b-info__back.js-back(href="#") Все функции
+							a.b-info__back.u-button.u-button--outlined.u-button--with-icon.js-back(href="#")
+								span
+									svg.u-icon
+										use(xlink:href="app/img/sprite.svg#arrow")
+									!= `Все функции`
 
 						.b-info__wrap
 							.b-info__chart
