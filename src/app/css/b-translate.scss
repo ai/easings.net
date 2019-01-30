@@ -1,0 +1,22 @@
+@import "var";
+
+.b-translate {
+	position: absolute;
+	top: $a11y-offset;
+	left: $a11y-offset;
+	right: $a11y-offset;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 5px 10px 5px;
+	background: #fff;
+	border-radius: $corner-radius;
+	@include shadow;
+	opacity: 0;
+	visibility: hidden;
+	transition: $transition;
+}
+
+		.b-translate--show {
+			opacity: 1;
+			visibility: visible;
+		}

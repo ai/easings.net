@@ -1,0 +1,68 @@
+@import "var";
+
+.u-button {
+	position: relative;
+	background: $brand;
+	color: $text-on-brand;
+	font-family: $system-fonts;
+	font-size: px2rem(14);
+	font-stretch: 100%;
+	font-weight: 500;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	line-height: $line-height;
+	padding: $general-line-height/2 1rem;
+	display: inline-block;
+	border-radius: $corner-radius;
+	min-width: 64px;
+	border: 2px solid transparent;
+	cursor: pointer;
+	outline: none;
+	transition: $transition;
+	@include shadow;
+	box-sizing: border-box;
+	margin: -2px;
+
+	&:hover {
+		background: $brand-dark;
+		color: $text-on-brand-dark;
+		@include shadow-hover;
+	}
+
+	&:active {
+		@include shadow-active;
+	}
+
+	&:focus {
+		color: $text-on-brand;
+	}
+
+	@include a11y-outline;
+
+	span {
+		line-height: normal;
+		user-select: none;
+		vertical-align: middle;
+	}
+}
+
+		.u-button--outlined {
+			background-color: transparent;
+			border: 2px solid $brand;
+			color: $brand;
+
+			&:hover,
+			&:focus {
+				background: $brand;
+				border-color: $brand;
+				color: $text-on-brand;
+			}
+		}
+
+		.u-button--with-icon {
+			span {
+				display: flex;
+				align-items: center;
+			}
+		}
