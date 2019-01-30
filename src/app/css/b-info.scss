@@ -43,11 +43,11 @@
 		}
 
 	.b-info__wrap {
-		font-size: 0;
+		display: flex;
+		align-items: flex-start;
 	}
 
 		.b-info__chart {
-			display: inline-block;
 			width: 40%;
 			vertical-align: top;
 			box-sizing: border-box;
@@ -55,7 +55,6 @@
 		}
 
 		.b-info__main {
-			display: inline-block;
 			width: 60%;
 			max-width: $max-readable-text-width;
 			box-sizing: border-box;
