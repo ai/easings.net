@@ -3,6 +3,17 @@
 .b-info-chart {
 	position: relative;
 	width: 100%;
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
 }
 
 	.b-info-chart__wrap {

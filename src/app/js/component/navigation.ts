@@ -22,6 +22,10 @@ export function navigateMain(): void {
 	const columns: HTMLElement = document.querySelector(selectorColumns);
 	const chart: HTMLElement = item.querySelector(selectorChartForInfo);
 	const chartLink: HTMLElement = item.querySelector(".js-function-chart");
+	const infoChart: HTMLElement = info.querySelector(".js-info-chart");
+
+	infoChart.onmouseenter = null;
+	infoChart.onmouseleave = null;
 
 	columns.removeAttribute("style");
 	openItemId = null;
@@ -159,6 +163,9 @@ export function navigateChart(id: string): void {
 					chart.style.width = `${newInfoChartPosition.width}px`;
 
 					chartLink.classList.add("b-chart--active");
+					setTimeout(() => {
+						chartLink.classList.remove("b-chart--active");
+					}, 2100);
 				}, timeTransitionChart + infoTimeSlide + 100);
 
 				scrollTo({
@@ -167,6 +174,9 @@ export function navigateChart(id: string): void {
 				});
 			});
 		});
+
+		infoChart.onmouseenter = () => chartLink.classList.add("b-chart--active");
+		infoChart.onmouseleave = () => chartLink.classList.remove("b-chart--active");
 	}
 }
 

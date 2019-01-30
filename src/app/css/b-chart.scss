@@ -6,6 +6,10 @@
 	text-decoration: none;
 }
 
+		.b-function--open .b-chart {
+			pointer-events: none;
+		}
+
 	.b-chart__wrap {
 		position: relative;
 		z-index: 1;

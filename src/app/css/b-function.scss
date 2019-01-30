@@ -50,6 +50,10 @@
 
 		.b-function--open {
 			box-shadow: none;
+
+			&::after {
+				opacity: 0;
+			}
 		}
 
 	.b-function__chart {

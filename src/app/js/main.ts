@@ -11,14 +11,15 @@ const classChartActive = "b-chart--active";
 
 const listFunction = document.querySelectorAll(".js-function");
 if (listFunction) {
-	forNodeList(listFunction, (item) => {
+	forNodeList(listFunction, (item, index) => {
 		const chart = item.querySelector(".js-function-chart");
-		const link = item.querySelector("a");
 
 		item.addEventListener("mouseenter", () => {
-			forNodeList(listFunction, (other) => {
-				other.classList.remove(classFunctionFocus);
-				other.querySelector(".js-function-chart").classList.remove(classChartActive);
+			forNodeList(listFunction, (other, otherIndex) => {
+				if (otherIndex !== index) {
+					other.classList.remove(classFunctionFocus);
+					other.querySelector(".js-function-chart").classList.remove(classChartActive);
+				}
 			});
 
 			item.classList.add(classFunctionActive);
@@ -27,12 +28,23 @@ if (listFunction) {
 
 		item.addEventListener("mouseleave", () => {
 			item.classList.remove(classFunctionActive);
-
 			chart.classList.remove(classChartActive);
 		});
 
-		link.addEventListener("blur", () => {
-			item.classList.remove(classFunctionFocus);
+		chart.addEventListener("focus", () => {
+			forNodeList(listFunction, (other, otherIndex) => {
+				if (otherIndex !== index) {
+					other.classList.remove(classFunctionFocus);
+					other.querySelector(".js-function-chart").classList.remove(classChartActive);
+				}
+			});
+
+			chart.classList.add(classChartActive);
+		});
+
+		chart.addEventListener("blur", () => {
+			item.classList.remove(classFunctionFocus, classFunctionActive);
+			chart.classList.remove(classChartActive);
 		});
 
 		item.addEventListener("keyup", (event) => {

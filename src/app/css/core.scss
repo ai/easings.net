@@ -37,6 +37,7 @@ body {
 }
 
 .u-button {
+	position: relative;
 	background: $brand;
 	color: $text-on-brand;
 	font-family: $system-fonts;
@@ -67,6 +68,27 @@ body {
 		box-shadow: 0 5px 5px -3px rgba(#000, .2),
 			0 8px 10px 1px rgba(#000, .14),
 			0 3px 14px 2px rgba(#000, .12);
+	}
+
+	&::after {
+		$offset: -2px;
+		content: '';
+		position: absolute;
+		top: $offset;
+		right: $offset;
+		bottom: $offset;
+		left: $offset;
+		pointer-events: none;
+		box-shadow: 0 0 1px 4px $brand;
+		border-radius: 4px;
+		transition: $transition;
+		opacity: 0;
+	}
+
+	&:focus {
+		&::after {
+			opacity: 1;
+		}
 	}
 
 	span {
