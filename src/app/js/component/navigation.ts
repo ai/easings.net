@@ -12,8 +12,11 @@ const timeTransitionChart = 400;
 const additionalIndentForColumns = 50;
 
 let openItemId: string|null;
+let isAbort: boolean = false;
 
 export function navigateMain(): void {
+	isAbort = true;
+
 	const item: HTMLElement = document.querySelector(".b-function--open");
 	const info: HTMLElement = document.querySelector(selectorInfo);
 	const columns: HTMLElement = document.querySelector(selectorColumns);
@@ -37,7 +40,6 @@ export function navigateMain(): void {
 	setTimeout(() => {
 		item.classList.remove("b-function--open", "b-function--opened");
 		columns.classList.remove("b-columns--hide");
-		changePageSize();
 	}, 200);
 
 	setTimeout(() => {
@@ -49,6 +51,7 @@ export function navigateMain(): void {
 
 export function navigateChart(id: string): void {
 	const item = document.getElementById(`func-${id}`);
+	isAbort = false;
 
 	if (!item || openItemId === id) {
 		return;
@@ -89,6 +92,10 @@ export function navigateChart(id: string): void {
 		chartLink.classList.remove("b-chart--active");
 
 		requestAnimationFrame(() => {
+			if (isAbort) {
+				return;
+			}
+
 			const columnsPosition = getElementPosition(columns);
 
 			const position = getElementPosition(chart);
@@ -101,6 +108,10 @@ export function navigateChart(id: string): void {
 			chartLink.style.paddingBottom = `${holderOffset}%`;
 
 			requestAnimationFrame(() => {
+				if (isAbort) {
+					return;
+				}
+
 				changePageSize();
 
 				const offsetLeft = infoChartPosition.x - position.x;
@@ -109,15 +120,27 @@ export function navigateChart(id: string): void {
 				chart.style.transitionDuration = `${timeTransitionChart}ms`;
 
 				setTimeout(() => {
+					if (isAbort) {
+						return;
+					}
+
 					chart.style.transform = `translate(${offsetLeft}px, ${offsetTop}px)`;
 					chart.style.width = `${infoChartPosition.width}px`;
 				}, itemTimeSlide);
 
 				setTimeout(() => {
+					if (isAbort) {
+						return;
+					}
+
 					info.classList.add("b-info--evident");
 				}, timeTransitionChart + itemTimeSlide);
 
 				setTimeout(() => {
+					if (isAbort) {
+						return;
+					}
+
 					const newPosition = getElementPosition(chart);
 					const height =
 						newPosition.y -
@@ -132,6 +155,10 @@ export function navigateChart(id: string): void {
 				}, timeTransitionChart + itemTimeSlide + infoTimeSlide);
 
 				setTimeout(() => {
+					if (isAbort) {
+						return;
+					}
+
 					const newPosition = getElementPosition(chart);
 					const newInfoChartPosition = getElementPosition(infoChart);
 					const diffX = newInfoChartPosition.x - newPosition.x;

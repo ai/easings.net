@@ -74,3 +74,10 @@ window.addEventListener(
 	},
 	false,
 );
+
+window.addEventListener("keydown", (event) => {
+	const keyName = "escape";
+	if (event.key.toLowerCase() === keyName || event.code.toLowerCase() === keyName) {
+		window.location.hash = "";
+	}
+});
