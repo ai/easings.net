@@ -69,12 +69,13 @@
 
 		.b-chart__cursor {
 			position: absolute;
-			bottom: -4px;
+			top: 100%;
 			right: -17px;
 			opacity: 0;
 			will-change: top, opacity;
-			transition: bottom 0s, opacity $transition;
+			transition: top 0s, opacity $transition;
 			transition-delay: $transition-show-delay, 0s;
+			transform: translateY(-7px);
 
 			&::after {
 				content: '';
@@ -89,13 +90,9 @@
 
 				.b-chart--active .b-chart__cursor {
 					opacity: 1;
-					bottom: calc(100% - 5px);
-					transition: bottom $transition-show, opacity $transition;
+					top: 1%;
+					transition: top $transition-show, opacity $transition;
 					transition-delay: $transition, 0s;
-				}
-
-				.b-function--open .b-chart--active .b-chart__cursor {
-					bottom: calc(100% - 7px);
 				}
 
 @media (max-width: $media-small) {
