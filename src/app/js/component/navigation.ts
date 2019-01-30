@@ -68,7 +68,6 @@ export function navigateChart(id: string): void {
 		const chart: HTMLElement = item.querySelector(selectorChartForInfo);
 		const chartLink: HTMLElement = item.querySelector(".js-function-chart");
 		const infoTimeSlide = getTransitionTime(info);
-		const itemTimeSlide = getTransitionTime(item);
 
 		forNodeList(
 			info.querySelectorAll(".js-info-name"),
@@ -97,7 +96,6 @@ export function navigateChart(id: string): void {
 			}
 
 			const columnsPosition = getElementPosition(columns);
-
 			const position = getElementPosition(chart);
 			const infoChartPosition = getElementPosition(infoChart);
 			const holderOffset = position.height / position.width * 100;
@@ -118,15 +116,8 @@ export function navigateChart(id: string): void {
 				const offsetTop = infoChartPosition.y - position.y;
 
 				chart.style.transitionDuration = `${timeTransitionChart}ms`;
-
-				setTimeout(() => {
-					if (isAbort) {
-						return;
-					}
-
-					chart.style.transform = `translate(${offsetLeft}px, ${offsetTop}px)`;
-					chart.style.width = `${infoChartPosition.width}px`;
-				}, itemTimeSlide);
+				chart.style.transform = `translate(${offsetLeft}px, ${offsetTop}px)`;
+				chart.style.width = `${infoChartPosition.width}px`;
 
 				setTimeout(() => {
 					if (isAbort) {
@@ -134,7 +125,7 @@ export function navigateChart(id: string): void {
 					}
 
 					info.classList.add("b-info--evident");
-				}, timeTransitionChart + itemTimeSlide);
+				}, timeTransitionChart - 100);
 
 				setTimeout(() => {
 					if (isAbort) {
@@ -152,7 +143,7 @@ export function navigateChart(id: string): void {
 					columns.style.overflow = "hidden";
 
 					item.classList.add("b-function--opened");
-				}, timeTransitionChart + itemTimeSlide + infoTimeSlide);
+				}, timeTransitionChart + infoTimeSlide);
 
 				setTimeout(() => {
 					if (isAbort) {
@@ -168,7 +159,7 @@ export function navigateChart(id: string): void {
 					chart.style.width = `${newInfoChartPosition.width}px`;
 
 					chartLink.classList.add("b-chart--active");
-				}, timeTransitionChart + itemTimeSlide + infoTimeSlide + 100);
+				}, timeTransitionChart + infoTimeSlide + 100);
 
 				scrollTo({
 					duration: 500,

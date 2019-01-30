@@ -46,7 +46,6 @@
 		.b-columns--hide .b-function:not(.b-function--open) {
 			opacity: 0;
 			visibility: hidden;
-			transform: translateY(20px);
 		}
 
 		.b-function--open {
@@ -76,7 +75,6 @@
 			.b-function--open .b-function__caption {
 				opacity: 0;
 				visibility: hidden;
-				transform: translateY(20px);
 			}
 
 @media (max-width: $wrap-width) {
