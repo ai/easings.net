@@ -7,6 +7,7 @@ import {
 
 const classFunctionActive = "b-function--active";
 const classFunctionFocus = "b-function--focus";
+const classChartActive = "b-chart--active";
 
 const listFunction = document.querySelectorAll(".js-function");
 if (listFunction) {
@@ -17,17 +18,17 @@ if (listFunction) {
 		item.addEventListener("mouseenter", () => {
 			forNodeList(listFunction, (other) => {
 				other.classList.remove(classFunctionFocus);
+				other.querySelector(".js-function-chart").classList.remove(classChartActive);
 			});
 
 			item.classList.add(classFunctionActive);
-
-			chart.classList.add("b-chart--active");
+			chart.classList.add(classChartActive);
 		});
 
 		item.addEventListener("mouseleave", () => {
 			item.classList.remove(classFunctionActive);
 
-			chart.classList.remove("b-chart--active");
+			chart.classList.remove(classChartActive);
 		});
 
 		link.addEventListener("blur", () => {
