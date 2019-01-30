@@ -4,9 +4,6 @@ jobs:
   build:
     docker:
       - image: circleci/node:latest
-    branches:
-      only:
-        - master
     steps:
       - add_ssh_keys:
           fingerprints:
@@ -35,5 +32,8 @@ workflows:
   version: 2
   build:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              only: master
 
