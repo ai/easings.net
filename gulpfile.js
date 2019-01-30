@@ -166,10 +166,6 @@ function server() {
 		res.render(path.join(config.path.src.templates, fileName), getHtmlEnv());
 	});
 
-	app.get("/*", function(req, res) {
-		res.render(path.join(config.path.src.templates, "index"), getHtmlEnv());
-	});
-
 	app.get("/", function(req, res) {
 		res.render(path.join(config.path.src.templates, "index"), getHtmlEnv());
 	});
