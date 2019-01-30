@@ -1,17 +1,16 @@
 @import "var";
 
 .b-function {
+	width: 33%;
+	max-width: 160px;
 	box-sizing: border-box;
 	padding: px2rem(15) px2rem(20) px2rem(8);
-	flex: 0 0 calc(100% / 3);
 	transition: $transition;
 	position: relative;
 	outline: none;
-	width: 33%;
-
-	display: flex;
+	display: inline-flex;
 	flex-direction: column;
-	align-items: stretch;
+	vertical-align: top;
 
 	&:active {
 		background: #eee;

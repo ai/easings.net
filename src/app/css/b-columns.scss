@@ -11,32 +11,27 @@
 		}
 
 	.b-columns__wrap {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: stretch;
-		justify-content: center;
+		text-align: center;
+		font-size: 0;
 	}
 
 		.b-columns__group {
-			flex: 0 0 calc(50% - 30px);
-			display: flex;
-			justify-content: center;
+			display: inline-block;
+			width: calc(50% - 30px);
 			box-sizing: border-box;
 			margin: 0 15px $general-line-height * 1.5;
 		}
 
 
 @media (max-width: $media-medium) {
-	.b-columns__wrap {
-		flex-direction: column;
-		flex-wrap: nowrap;
-		align-items: center;
+	.b-columns__group {
+		width: 100%;
+		text-align: center;
 	}
 }
 
 @media (max-width: $media-small) {
 	.b-columns__group {
-		flex-wrap: wrap;
 		margin: 0 0 px2rem(30);
 	}
 }

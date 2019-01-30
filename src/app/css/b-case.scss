@@ -40,7 +40,8 @@
 			}
 
 			.b-case__image--translate {
-				left: calc(100% - 64px);
+				left: 100%;
+				transform: translateX(-100%);
 			}
 
 			.b-case__image--scale {

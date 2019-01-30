@@ -108,6 +108,7 @@ export function navigateChart(id: string): void {
 			chart.style.position = `absolute`;
 			chart.style.width = `${position.width}px`;
 			infoChart.style.paddingBottom = `${holderOffset}%`;
+			chartLink.style.paddingBottom = `${holderOffset}%`;
 
 			requestAnimationFrame(() => {
 				if (isAbort) {

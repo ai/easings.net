@@ -43,19 +43,19 @@
 		}
 
 	.b-info__wrap {
-		display: flex;
-		align-items: flex-start;
+		font-size: 0;
 	}
 
 		.b-info__chart {
-			flex: 1 1 auto;
+			display: inline-block;
+			width: 40%;
+			vertical-align: top;
 			box-sizing: border-box;
 			padding: 0 20px $general-line-height*2 0;
-			width: 40%;
 		}
 
 		.b-info__main {
-			flex: 1 1 auto;
+			display: inline-block;
 			width: 60%;
 			max-width: $max-readable-text-width;
 			box-sizing: border-box;

@@ -22,7 +22,8 @@ mixin Item(item, index)
 	.b-function.js-function(id=(`func-${item.name}`) data-name=item.name data-func=item.css data-path-length=item.length)
 		a.b-function__chart.b-chart.js-function-chart(href=`#${item.name}` data-length=strokeLength)
 			.b-chart__wrap.js-chart-for-info
-				svg.b-chart__image(viewBox=(`0 0 ${chartWidth} ${chartHeight}`) xmlns="http://www.w3.org/2000/svg")
+				svg.b-chart__image(viewBox=(`0 0 ${chartWidth} ${chartHeight}`) xmlns="http://www.w3.org/2000/svg"
+				height=(chartHeight) width=(chartWidth))
 					g.b-chart__explanations
 						path.b-chart__axis(d=(`M1 0V${chartHeight - 1}H${chartWidth}`) fill="none")
 						text.b-chart__text(x="4" y="8") x
