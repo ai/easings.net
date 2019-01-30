@@ -8,7 +8,7 @@ import { setCases } from "./case";
 const selectorChartForInfo = ".js-chart-for-info";
 const selectorInfo = ".js-info";
 const selectorColumns = ".js-columns";
-const timeTransitionChart = 400;
+const timeTransitionChart = 600;
 const additionalIndentForColumns = 50;
 
 let openItemId: string|null;
@@ -100,10 +100,10 @@ export function navigateChart(id: string): void {
 			const infoChartPosition = getElementPosition(infoChart);
 			const holderOffset = position.height / position.width * 100;
 
+			chart.style.zIndex = `2`;
 			chart.style.position = `absolute`;
 			chart.style.width = `${position.width}px`;
 			infoChart.style.paddingBottom = `${holderOffset}%`;
-			chartLink.style.paddingBottom = `${holderOffset}%`;
 
 			requestAnimationFrame(() => {
 				if (isAbort) {
