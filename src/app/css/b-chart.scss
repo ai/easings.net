@@ -14,6 +14,7 @@
 		position: relative;
 		z-index: 1;
 		left: 0;
+		will-change: width, transform;
 	}
 
 		.b-chart__image {

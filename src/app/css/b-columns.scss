@@ -20,7 +20,7 @@
 		.b-columns__group {
 			display: flex;
 			flex-wrap: wrap;
-			align-items: flex-start;
+			align-items: stretch;
 			justify-content: center;
 			width: calc(50% - 30px);
 			box-sizing: border-box;

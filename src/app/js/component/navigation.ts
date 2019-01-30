@@ -37,8 +37,7 @@ export function navigateMain(): void {
 		info.classList.remove("b-info--evident");
 
 		chart.style.transform = null;
-		chart.style.width = null;
-		chart.style.position = null;
+		chart.style.width = `${chartLink.offsetWidth}px`;
 	});
 
 	setTimeout(() => {
@@ -50,7 +49,7 @@ export function navigateMain(): void {
 		info.style.display = null;
 		chart.removeAttribute("style");
 		changePageSize();
-	}, 400);
+	}, timeTransitionChart);
 }
 
 export function navigateChart(id: string): void {
@@ -108,7 +107,6 @@ export function navigateChart(id: string): void {
 			chart.style.position = `absolute`;
 			chart.style.width = `${position.width}px`;
 			infoChart.style.paddingBottom = `${holderOffset}%`;
-			chartLink.style.paddingBottom = `${holderOffset}%`;
 
 			requestAnimationFrame(() => {
 				if (isAbort) {
