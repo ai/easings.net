@@ -1,14 +1,14 @@
 import { forNodeList } from "../helpers/forNodeList";
 
-const casesList: NodeList = document.querySelectorAll('.js-case');
+const casesList: NodeList = document.querySelectorAll(".js-case");
 
-forNodeList(casesList, _case => {
-	const button: HTMLElement = _case.querySelector('.js-case-button');
-	const imageList: NodeList = _case.querySelectorAll('.js-case-image');
+forNodeList(casesList, (itemCase) => {
+	const button: HTMLElement = itemCase.querySelector(".js-case-button");
+	const imageList: NodeList = itemCase.querySelectorAll(".js-case-image");
 
-	button.addEventListener('click', () => {
+	button.addEventListener("click", () => {
 		forNodeList(imageList, (item) => {
-			const className: string = _case.getAttribute('data-class');
+			const className: string = itemCase.getAttribute("data-class");
 
 			item.classList.toggle(className);
 		});
@@ -16,12 +16,12 @@ forNodeList(casesList, _case => {
 });
 
 export function setCases(cssFunc: string): void {
-	const funcPlace: NodeList = document.querySelectorAll('.js-case-func');
+	const funcPlace: NodeList = document.querySelectorAll(".js-case-func");
 
-	forNodeList(funcPlace, item => {
-		const svgPlace: HTMLElement = item.querySelector('.js-case-place');
-		const path: SVGElement = svgPlace.querySelector('path');
-		const viewBox: string = svgPlace.getAttribute('viewBox');
+	forNodeList(funcPlace, (item) => {
+		const svgPlace: HTMLElement = item.querySelector(".js-case-place");
+		const path: SVGElement = svgPlace.querySelector("path");
+		const viewBox: string = svgPlace.getAttribute("viewBox");
 		const viewBoxAttr: RegExpMatchArray = viewBox.match(/([-.\d]+)/g);
 		const width: number = parseFloat(viewBoxAttr[2]);
 		const height: number = parseFloat(viewBoxAttr[3]);
@@ -34,9 +34,6 @@ export function setCases(cssFunc: string): void {
 
 		item.style.transitionTimingFunction = cssFunc;
 
-		path.setAttribute(
-			'd',
-			`M0 ${height}C${x1} ${y1} ${x2} ${y2} ${width} 0`
-		);
+		path.setAttribute("d", `M0 ${height}C${x1} ${y1} ${x2} ${y2} ${width} 0`);
 	});
 }

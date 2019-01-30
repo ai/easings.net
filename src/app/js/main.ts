@@ -2,7 +2,7 @@ import { forNodeList } from "./helpers/forNodeList";
 import {
 	navigateChart,
 	navigateMain,
-	resizeChart
+	resizeChart,
 } from "./component/navigation";
 
 const classFunctionActive = "b-function--active";
@@ -10,12 +10,12 @@ const classFunctionFocus = "b-function--focus";
 
 const listFunction = document.querySelectorAll(".js-function");
 if (listFunction) {
-	forNodeList(listFunction, item => {
+	forNodeList(listFunction, (item) => {
 		const chart = item.querySelector(".js-function-chart");
 		const link = item.querySelector("a");
 
 		item.addEventListener("mouseenter", () => {
-			forNodeList(listFunction, other => {
+			forNodeList(listFunction, (other) => {
 				other.classList.remove(classFunctionFocus);
 			});
 
@@ -34,7 +34,7 @@ if (listFunction) {
 			item.classList.remove(classFunctionFocus);
 		});
 
-		item.addEventListener("keyup", event => {
+		item.addEventListener("keyup", (event) => {
 			if (
 				event.key.toLowerCase() === "tab" ||
 				event.code.toLowerCase() === "tab"
@@ -43,7 +43,7 @@ if (listFunction) {
 			}
 		});
 
-		item.addEventListener("keydown", event => {
+		item.addEventListener("keydown", (event) => {
 			if (
 				event.key.toLowerCase() === "tab" ||
 				event.code.toLowerCase() === "tab"
@@ -72,5 +72,5 @@ window.addEventListener(
 			navigateMain();
 		}
 	},
-	false
+	false,
 );

@@ -11,17 +11,17 @@ const selectorColumns = ".js-columns";
 const timeTransitionChart = 400;
 const additionalIndentForColumns = 50;
 
-let openItemId;
+let openItemId: string|null;
 
-export function navigateMain() {
-	const item = document.querySelector(".b-function--open");
-	const info = document.querySelector(selectorInfo);
-	const columns = document.querySelector(selectorColumns);
-	const chart = item.querySelector(selectorChartForInfo);
-	const chartLink = item.querySelector(".js-function-chart");
+export function navigateMain(): void {
+	const item: HTMLElement = document.querySelector(".b-function--open");
+	const info: HTMLElement = document.querySelector(selectorInfo);
+	const columns: HTMLElement = document.querySelector(selectorColumns);
+	const chart: HTMLElement = item.querySelector(selectorChartForInfo);
+	const chartLink: HTMLElement = item.querySelector(".js-function-chart");
 
 	columns.removeAttribute("style");
-	openItemId = false;
+	openItemId = null;
 	chart.style.transitionDuration = `${timeTransitionChart}ms`;
 	chart.style.transitionTimingFunction = item.getAttribute("data-func");
 	chartLink.removeAttribute("style");
@@ -47,7 +47,7 @@ export function navigateMain() {
 	}, 400);
 }
 
-export function navigateChart(id) {
+export function navigateChart(id: string): void {
 	const item = document.getElementById(`func-${id}`);
 
 	if (!item || openItemId === id) {
@@ -59,21 +59,21 @@ export function navigateChart(id) {
 	const func = item.getAttribute("data-func");
 
 	if (name && func) {
-		const info = document.querySelector(selectorInfo);
-		const infoChart = info.querySelector(".js-info-chart");
-		const columns = document.querySelector(selectorColumns);
-		const chart = item.querySelector(selectorChartForInfo);
-		const chartLink = item.querySelector(".js-function-chart");
+		const info: HTMLElement = document.querySelector(selectorInfo);
+		const infoChart: HTMLElement = info.querySelector(".js-info-chart");
+		const columns: HTMLElement = document.querySelector(selectorColumns);
+		const chart: HTMLElement = item.querySelector(selectorChartForInfo);
+		const chartLink: HTMLElement = item.querySelector(".js-function-chart");
 		const infoTimeSlide = getTransitionTime(info);
 		const itemTimeSlide = getTransitionTime(item);
 
 		forNodeList(
 			info.querySelectorAll(".js-info-name"),
-			e => (e.innerText = name)
+			(e) => (e.innerText = name),
 		);
 		forNodeList(
 			info.querySelectorAll(".js-info-func"),
-			e => (e.innerText = func)
+			(e) => (e.innerText = func),
 		);
 
 		setCases(func);
@@ -118,9 +118,9 @@ export function navigateChart(id) {
 				}, timeTransitionChart + itemTimeSlide);
 
 				setTimeout(() => {
-					const position = getElementPosition(chart);
+					const newPosition = getElementPosition(chart);
 					const height =
-						position.y -
+						newPosition.y -
 						columnsPosition.y +
 						infoChart.offsetHeight +
 						additionalIndentForColumns;
@@ -132,35 +132,35 @@ export function navigateChart(id) {
 				}, timeTransitionChart + itemTimeSlide + infoTimeSlide);
 
 				setTimeout(() => {
-					const position = getElementPosition(chart);
-					const infoChartPosition = getElementPosition(infoChart);
-					const diffX = infoChartPosition.x - position.x;
+					const newPosition = getElementPosition(chart);
+					const newInfoChartPosition = getElementPosition(infoChart);
+					const diffX = newInfoChartPosition.x - newPosition.x;
 
 					chart.style.transform = `translate(${offsetLeft +
 						diffX}px, ${offsetTop}px)`;
-					chart.style.width = `${infoChartPosition.width}px`;
+					chart.style.width = `${newInfoChartPosition.width}px`;
 
 					chartLink.classList.add("b-chart--active");
 				}, timeTransitionChart + itemTimeSlide + infoTimeSlide + 100);
 
 				scrollTo({
+					duration: 500,
 					to: 0,
-					duration: 500
 				});
 			});
 		});
 	}
 }
 
-export function resizeChart() {
-	const item = document.querySelector(".js-function.b-function--open");
+export function resizeChart(): void {
+	const item: HTMLElement = document.querySelector(".js-function.b-function--open");
 
 	if (item) {
-		const chart = item.querySelector(selectorChartForInfo);
-		const chartParent = chart.parentElement;
-		const info = document.querySelector(selectorInfo);
-		const infoChart = info.querySelector(".js-info-chart");
-		const columns = document.querySelector(selectorColumns);
+		const chart: HTMLElement = item.querySelector(selectorChartForInfo);
+		const chartParent: HTMLElement = chart.parentElement;
+		const info: HTMLElement = document.querySelector(selectorInfo);
+		const infoChart: HTMLElement = info.querySelector(".js-info-chart");
+		const columns: HTMLElement = document.querySelector(selectorColumns);
 		const infoPosition = getElementPosition(info);
 		const columnsPosition = getElementPosition(columns);
 
