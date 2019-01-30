@@ -1,0 +1,16 @@
+{
+	"extends": "tslint:recommended",
+	"rules": {
+		"max-line-length": {
+			"options": [120]
+		},
+		"no-console": {
+			"severity": "warning",
+			"options": ["debug", "info", "log", "time", "timeEnd", "trace"]
+		},
+		"ordered-imports": false,
+		"indent": {
+			"options": ["tabs"]
+		}
+	}
+}

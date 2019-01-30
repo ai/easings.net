@@ -1,5 +1,3 @@
-"use strict";
-
 const path = require("path");
 
 const gulp = require("gulp");
@@ -17,7 +15,7 @@ const getHtmlEnv = () => ({
 	all_easings: require("./src/easings")
 });
 
-gulp.task("html", done => {
+function html(done) {
 	const pug = require("gulp-pug");
 	const htmlMin = require("gulp-htmlmin");
 
@@ -44,10 +42,11 @@ gulp.task("html", done => {
 		)
 		.pipe(gulp.dest(config.path.dist.root))
 		.on("end", done);
-});
+}
 
-gulp.task("js", done => {
+function scripts(done) {
 	const rollup = require("rollup");
+	const tslint = require("rollup-plugin-tslint");
 	const typescript = require("rollup-plugin-typescript");
 	const commonjs = require("rollup-plugin-commonjs");
 	const babel = require("rollup-plugin-babel");
@@ -57,6 +56,10 @@ gulp.task("js", done => {
 		.rollup({
 			input: path.join(config.path.src.js, "main.ts"),
 			plugins: [
+				tslint({
+					throwOnError: true,
+					throwOnWarning: true
+				}),
 				typescript({
 					typescript: require("typescript")
 				}),
@@ -75,10 +78,11 @@ gulp.task("js", done => {
 				compact: true
 			});
 		})
-		.then(() => done());
-});
+		.then(() => done())
+		.catch(() => done());
+}
 
-gulp.task("css", done => {
+function styles(done) {
 	const sass = require("gulp-sass");
 	const postCSS = require("gulp-postcss");
 	const media = require("gulp-group-css-media-queries");
@@ -98,9 +102,9 @@ gulp.task("css", done => {
 		.pipe(gulpIf(!constant.DEV, cssMin()))
 		.pipe(gulp.dest(config.path.dist.css))
 		.on("end", done);
-});
+}
 
-gulp.task("symbols", done => {
+function symbols(done) {
 	const symbols = require("gulp-svg-symbols");
 	const svgMin = require("gulp-svgmin");
 
@@ -132,18 +136,18 @@ gulp.task("symbols", done => {
 		)
 		.pipe(gulp.dest(config.path.dist.svg))
 		.on("end", done);
-});
+}
 
-gulp.task("clean", done => {
+function cleanDist(done) {
 	const del = require("del");
 	const pathDel = constant.DEV
 		? path.join(config.path.dist.root, "*.html")
 		: config.path.dist.root;
 
-	del(pathDel, { force: true }).then(() => done());
-});
+	del(pathDel).then(() => done());
+}
 
-gulp.task("server", () => {
+function server() {
 	const express = require("express");
 	const app = express();
 	const port = 3000;
@@ -189,43 +193,42 @@ gulp.task("server", () => {
 		.watch(path.join(config.path.src.templates, "*.pug"))
 		.on("add", browserSync.reload)
 		.on("change", browserSync.reload);
-});
-
-gulp.task("default", buildTask("dev"));
-gulp.task("start", buildTask("dev"));
-gulp.task("build", buildTask("build"));
+}
 
 function buildTask(mode) {
 	return gulp.series(
-		done => {
+		function setENV(done) {
 			constant.DEV = !!mode.match(/dev/gi);
-
 			done();
 		},
 
-		"clean",
+		cleanDist,
 
-		gulp.parallel("js", "css", "symbols", done => {
+		gulp.parallel(scripts, styles, symbols, function startingWatchers(done) {
 			if (constant.DEV) {
 				gulp.watch(
 					path.join(config.path.src.svg, "*.svg"),
-					gulp.series("symbols")
+					gulp.series(symbols)
 				);
 
 				gulp.watch(
 					path.join(config.path.src.js, "**", "*.{js,ts}"),
-					gulp.series("js")
+					gulp.series(scripts)
 				);
 
 				gulp.watch(
 					path.join(config.path.src.css, "**", "*.{sass,scss,css}"),
-					gulp.series("css")
+					gulp.series(styles)
 				);
 			}
 
 			done();
 		}),
 
-		!!mode.match(/dev/i) ? "server" : "html"
+		!!mode.match(/dev/i) ? server : html
 	);
 }
+
+exports.default = buildTask("dev");
+exports.start = buildTask("dev");
+exports.build = buildTask("build");

@@ -4,7 +4,8 @@
 		"declarationDir": "./dist",
 		"module": "es6",
 		"outDir": "./dist",
-		"target": "es5"
+		"target": "es5",
+		"noImplicitAny": true
 	},
 	"include": ["src/**/*"],
 	"exclude": ["node_modules"]
