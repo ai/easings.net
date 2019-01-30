@@ -8,9 +8,8 @@
 	transition: $transition;
 	position: relative;
 	outline: none;
-	display: inline-flex;
+	display: flex;
 	flex-direction: column;
-	vertical-align: top;
 
 	&:active {
 		background: #eee;

@@ -11,12 +11,17 @@
 		}
 
 	.b-columns__wrap {
-		text-align: center;
-		font-size: 0;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		justify-content: center;
 	}
 
 		.b-columns__group {
-			display: inline-block;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			justify-content: center;
 			width: calc(50% - 30px);
 			box-sizing: border-box;
 			margin: 0 15px $general-line-height * 1.5;
