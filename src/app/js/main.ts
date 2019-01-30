@@ -72,6 +72,15 @@ if (chartId) {
 	navigateChart(chartId);
 }
 
+const backLinks: NodeList = document.querySelectorAll(".js-back");
+forNodeList(backLinks, (item) => {
+	item.addEventListener("click", (event) => {
+		event.preventDefault();
+		navigateMain();
+		history.pushState("", document.title, window.location.pathname);
+	});
+});
+
 window.addEventListener("resize", resizeChart);
 
 window.addEventListener(

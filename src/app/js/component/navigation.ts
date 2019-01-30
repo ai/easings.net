@@ -17,6 +17,11 @@ let isAbort: boolean = false;
 export function navigateMain(): void {
 	isAbort = true;
 
+	scrollTo({
+		duration: 500,
+		to: 0,
+	});
+
 	const item: HTMLElement = document.querySelector(".b-function--open");
 	const info: HTMLElement = document.querySelector(selectorInfo);
 	const columns: HTMLElement = document.querySelector(selectorColumns);
@@ -167,9 +172,10 @@ export function navigateChart(id: string): void {
 					}, 2100);
 				}, timeTransitionChart + infoTimeSlide + 100);
 
+				const header: HTMLElement = document.querySelector(".js-header");
 				scrollTo({
 					duration: 500,
-					to: 0,
+					to: header.offsetHeight,
 				});
 			});
 		});
