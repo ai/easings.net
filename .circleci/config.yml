@@ -9,35 +9,35 @@ jobs:
         - master
     steps:
       - add_ssh_keys:
-        fingerprints:
-          - "cf:94:68:a5:ab:31:17:ab:24:6e:7b:7b:14:07:fe:79"
+          fingerprints:
+            - "cf:94:68:a5:ab:31:17:ab:24:6e:7b:7b:14:07:fe:79"
       - checkout
       - run:
-        name: Install dependencies
-        command: npm i
+          name: Install dependencies
+          command: npm i
       - run:
-        name: Install gh-pages
-        command: npm install gh-pages@2.0.1
+          name: Install gh-pages
+          command: npm install gh-pages@2.0.1
       - run:
-        name: Build project
-        command: npm run build
+          name: Build project
+          command: npm run build
       - run:
-        name: Git config user.email
-        command: git config user.email "ivan@solovev.one"
+          name: Git config user.email
+          command: git config user.email "ivan@solovev.one"
       - run:
-        name: Git config user.name
-        command: git config user.name "Ivan Solovev"
+          name: Git config user.name
+          command: git config user.name "Ivan Solovev"
       - run:
-        name: Deploy project to gh-pages branch
-        command: ./node_modules/.bin/gh-pages --dotfiles --message "Updates" --dist dist
+          name: Deploy project to gh-pages branch
+          command: ./node_modules/.bin/gh-pages --dotfiles --message "Updates" --dist dist
 
 workflows:
   version: 2
   build:
     jobs:
       - build:
-        filters:
-          branches:
-            only:
-              - master
+          filters:
+            branches:
+              only:
+                - master
 
