@@ -173,9 +173,11 @@ export function navigateChart(id: string): void {
 				}, timeTransitionChart + infoTimeSlide + 100);
 
 				const header: HTMLElement = document.querySelector(".js-header");
+				const headerStyles = window.getComputedStyle(header);
+
 				scrollTo({
 					duration: 500,
-					to: header.offsetHeight,
+					to: header.offsetHeight - parseFloat(headerStyles.paddingBottom),
 				});
 			});
 		});
