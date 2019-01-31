@@ -21,7 +21,7 @@ mixin Item(item, index)
 
 	.b-function.js-function(id=(`func-${item.name}`) data-name=item.name data-func=item.css data-path-length=item.length)
 		a.b-function__chart.b-chart.js-function-chart(href=`#${item.name}` data-length=strokeLength)
-			.b-chart__wrap.js-chart-for-info
+			.b-chart__wrap
 				svg.b-chart__image(viewBox=(`0 0 ${chartWidth} ${chartHeight}`) xmlns="http://www.w3.org/2000/svg"
 				height=(chartHeight) width=(chartWidth))
 					g.b-chart__explanations

@@ -6,10 +6,6 @@
 	text-decoration: none;
 }
 
-		.b-function--open .b-chart {
-			pointer-events: none;
-		}
-
 	.b-chart__wrap {
 		position: relative;
 		z-index: 1;
@@ -35,10 +31,6 @@
 						opacity: 1;
 					}
 
-					.b-function--open .b-chart__explanations {
-						opacity: 0;
-					}
-
 				.b-chart__axis {
 					fill: none;
 					stroke-width: 1px;
@@ -58,15 +50,6 @@
 				transition: $transition;
 				transform: translate(1px, -1px);
 			}
-
-					.b-function--open .b-chart__curve {
-						stroke-width: 1px;
-						transform: none;
-					}
-
-					.b-function--opened .b-chart__curve {
-						stroke: $brand;
-					}
 
 		.b-chart__cursor {
 			position: absolute;

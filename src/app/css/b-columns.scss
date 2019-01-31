@@ -3,11 +3,14 @@
 .b-columns {
 	box-sizing: border-box;
 	padding: .25rem 0 0;
+	transition: $transition;
 }
 		.b-columns--hide {
 			position: absolute;
 			left: 0;
 			right: 0;
+			opacity: 0;
+			visibility: hidden;
 		}
 
 	.b-columns__wrap {

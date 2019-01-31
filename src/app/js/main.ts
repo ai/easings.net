@@ -4,7 +4,6 @@ import { forNodeList } from "./helpers/forNodeList";
 import {
 	navigateChart,
 	navigateMain,
-	resizeChart,
 } from "./component/navigation";
 
 const classFunctionActive = "b-function--active";
@@ -92,8 +91,6 @@ forNodeList(backLinks, (item) => {
 		history.pushState("", document.title, window.location.pathname);
 	});
 });
-
-window.addEventListener("resize", resizeChart);
 
 window.addEventListener(
 	"hashchange",

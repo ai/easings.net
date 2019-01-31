@@ -10,7 +10,7 @@
 	padding: 5px 10px 5px;
 	background: #fff;
 	border-radius: $corner-radius;
-	@include shadow;
+	@include block-default;
 	opacity: 0;
 	visibility: hidden;
 	transition: $transition;

@@ -10,6 +10,7 @@ body {
 	letter-spacing: 0.01em;
 	position: relative;
 	box-sizing: border-box;
+	background: $background;
 }
 
 .u-root {}
@@ -17,7 +18,6 @@ body {
 .u-wrap {
 	@include wrap;
 	position: relative;
-	overflow: hidden;
 }
 
 .u-container {
@@ -36,24 +36,21 @@ body {
 	color: $second;
 }
 
-a:not([class]) {
-	color: $text-color;
-	text-decoration: underline;
+a {
+	color: $brand;
+	text-decoration: none;
 	transition: $transition;
-	display: inline-block;
-	cursor: pointer;
+	outline: none;
+	border-bottom: 1px solid;
+	@include a11y-outline;
 
 	&:hover,
 	&:focus {
-		color: $brand;
-	}
-
-	&:visited {
-		color: $text-color;
+		color: $brand-dark;
 	}
 
 	&:active {
-		color: $brand-dark;
+		color: $brand-light;
 	}
 }
 

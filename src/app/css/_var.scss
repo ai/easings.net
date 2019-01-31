@@ -17,10 +17,10 @@ $system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen"
 $offset-block: 15px;
 
 $transition: 0.2s;
-$transition-big: 0.3s;
-$transition-info: 0.5s;
 $transition-show: 1.5s;
 $transition-show-delay: 0.3s;
+
+$background: #f8f8f8;
 
 $text-color: #222;
 $chart-color: $text-color;
@@ -48,7 +48,7 @@ $text-on-second-light: $text-dark;
 $second-dark: #009624;
 $text-on-second-dark: $text-dark;
 
-$corner-radius: 4px;
+$corner-radius: 0px;
 
 $opensource-size: 80px;
 $opensource-size-root: 100px;
@@ -97,19 +97,23 @@ $subtitle-line-height: $general-line-height * 2;
 	margin: -1px;
 }
 
-@mixin shadow {
-	box-shadow: 0 3px 1px -2px rgba(#000, .2), 0 2px 2px 0 rgba(#000, .14), 0 1px 5px 0 rgba(#000, .12);
+@mixin block-default {
+	box-shadow: 0 2px 8px rgba(#000, .05);
 }
 
-@mixin shadow-hover {
-	box-shadow: 0 2px 4px -1px rgba(#000, .2), 0 4px 5px 0 rgba(#000, .14), 0 1px 10px 0 rgba(#000, .12);
+@mixin block-hover {
+	box-shadow: 0 12px 30px 0 rgba(#000, .2);
+	transform: translateY(-3%);
 }
 
-@mixin shadow-active {
-	box-shadow: 0 5px 5px -3px rgba(#000, .2), 0 8px 10px 1px rgba(#000, .14), 0 3px 14px 2px rgba(#000, .12);
+@mixin block-active {
+	box-shadow: 0 12px 30px 0 rgba(#000, .2);
+	transform: translateY(0);
 }
 
 @mixin a11y-outline {
+	position: relative;
+
 	&::after {
 		content: '';
 		position: absolute;

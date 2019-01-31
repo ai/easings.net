@@ -70,21 +70,22 @@ html
 
 					section.b-info.js-info
 						.b-info__header
-							a.b-info__back.u-button.u-button--outlined.u-button--with-icon.js-back(href="#")
-								span
-									svg.u-icon
-										use(xlink:href="app/img/sprite.svg#arrow")
-									!= `Все функции`
+							a.b-info__back.js-back(href="#")
+								svg.u-icon.u-icon--right-space
+									use(xlink:href="app/img/sprite.svg#arrow")
+								!= `Все функции`
 
 						.b-info__wrap
-							.b-info__chart
-								.b-info-chart.js-info-chart
-									.b-info-chart__wrap
-										.b-info-chart__text x
-										.b-info-chart__text.b-info-chart__text--bottom t
-
 							.b-info__main
 								h2.b-info__title.js-info-name easeInSine
+
+								.b-info-chart.js-info-chart
+									.b-info-chart__wrap
+										svg.b-info-chart__curve.js-info-curve(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 85")
+											path(d="")
+
+										.b-info-chart__text x
+										.b-info-chart__text.b-info-chart__text--bottom t
 
 								.b-example
 									.b-example__title CSS
@@ -101,40 +102,42 @@ html
 										+CodePostCss
 									.b-example__text Эта декларация преобразуется в подобную, которая описана выше.
 
-						.b-cases
-							-
-								const chartWidth = 50;
-								const chartHeight = 30;
 
-							.b-case.js-case(data-class="b-case__image--scale")
-								button.u-button.b-case__button.js-case-button
-									span Запустить анимацию
-								.b-case__image.js-case-image.js-case-func
-									svg.b-case__chart.js-case-place(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
-										path(d="")
-								.b-case__image.b-case__image--linear.js-case-image
-									svg.b-case__chart(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
-										path(d=(`M0 ${chartHeight}L${chartWidth} 0`))
+							.b-info__case
+								-
+									const chartWidth = 50;
+									const chartHeight = 30;
 
-							.b-case.js-case(data-class="b-case__image--translate")
-								button.u-button.b-case__button.js-case-button
-									span Запустить анимацию
-								.b-case__image.js-case-image.js-case-func
-									svg.b-case__chart.js-case-place(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
-										path(d="")
-								.b-case__image.b-case__image--linear.js-case-image
-									svg.b-case__chart(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
-										path(d=(`M0 ${chartHeight}L${chartWidth} 0`))
+								.b-case.js-case(data-class="b-case__image--scale")
+									button.u-button.u-button--second.b-case__button.js-case-button
+										span Изменить размер
+									.b-case__image.js-case-image.js-case-func
+										svg.b-case__chart.js-case-place(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
+											path(d="")
+									.b-case__image.b-case__image--linear.js-case-image
+										svg.b-case__chart(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
+											path(d=(`M0 ${chartHeight}L${chartWidth} 0`))
 
-							.b-case.js-case(data-class="b-case__image--opacity")
-								button.u-button.b-case__button.js-case-button
-									span Запустить анимацию
-								.b-case__image.js-case-image.js-case-func
-									svg.b-case__chart.js-case-place(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
-										path(d="")
-								.b-case__image.b-case__image--linear.js-case-image
-									svg.b-case__chart(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
-										path(d=(`M0 ${chartHeight}L${chartWidth} 0`))
+								.b-case.js-case(data-class="b-case__image--opacity")
+									button.u-button.u-button--second.b-case__button.js-case-button
+										span Изменить прозрачность
+									.b-case__image.js-case-image.js-case-func
+										svg.b-case__chart.js-case-place(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
+											path(d="")
+									.b-case__image.b-case__image--linear.js-case-image
+										svg.b-case__chart(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
+											path(d=(`M0 ${chartHeight}L${chartWidth} 0`))
+
+								.b-case.js-case(data-class="b-case__image--translate")
+									button.u-button.u-button--second.b-case__button.js-case-button
+										span Изменить положение
+									.b-case__image.js-case-image.js-case-func
+										svg.b-case__chart.js-case-place(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
+											path(d="")
+									.b-case__image.b-case__image--linear.js-case-image
+										svg.b-case__chart(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
+											path(d=(`M0 ${chartHeight}L${chartWidth} 0`))
+
 
 
 			footer.b-footer.js-footer

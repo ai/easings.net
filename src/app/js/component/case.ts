@@ -1,4 +1,6 @@
 import { forNodeList } from "../helpers/forNodeList";
+import { getViewBox } from "../helpers/getViewBox";
+import { getPathCurve } from "../helpers/getPathCurve";
 
 const casesList: NodeList = document.querySelectorAll(".js-case");
 
@@ -21,19 +23,15 @@ export function setCases(cssFunc: string): void {
 	forNodeList(funcPlace, (item) => {
 		const svgPlace: HTMLElement = item.querySelector(".js-case-place");
 		const path: SVGElement = svgPlace.querySelector("path");
-		const viewBox: string = svgPlace.getAttribute("viewBox");
-		const viewBoxAttr: RegExpMatchArray = viewBox.match(/([-.\d]+)/g);
-		const width: number = parseFloat(viewBoxAttr[2]);
-		const height: number = parseFloat(viewBoxAttr[3]);
-
-		const points: RegExpMatchArray = cssFunc.match(/(-*[.\d]+)/g);
-		const x1: string = (parseFloat(points[0]) * width).toFixed(3);
-		const y1: string = ((1 - parseFloat(points[1])) * height).toFixed(3);
-		const x2: string = (parseFloat(points[2]) * width).toFixed(3);
-		const y2: string = ((1 - parseFloat(points[3])) * height).toFixed(3);
+		const viewBox = getViewBox(svgPlace);
+		const dCurve = getPathCurve({
+			cssFunc,
+			height: viewBox.height,
+			width: viewBox.width,
+		});
 
 		item.style.transitionTimingFunction = cssFunc;
 
-		path.setAttribute("d", `M0 ${height}C${x1} ${y1} ${x2} ${y2} ${width} 0`);
+		path.setAttribute("d", dCurve);
 	});
 }

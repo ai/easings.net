@@ -12,10 +12,11 @@
 	display: flex;
 	flex-direction: column;
 	border-radius: $corner-radius;
-	@include shadow;
+	background: #fff;
+	@include block-default;
 
 	&:active {
-		@include shadow-active;
+		@include block-active;
 	}
 
 	@include a11y-outline;
@@ -29,20 +30,7 @@
 
 		.b-function--active {
 			z-index: 1;
-			@include shadow-hover;
-		}
-
-		.b-columns--hide .b-function:not(.b-function--open) {
-			opacity: 0;
-			visibility: hidden;
-		}
-
-		.b-function--open {
-			box-shadow: none;
-
-			&::after {
-				opacity: 0;
-			}
+			@include block-hover;
 		}
 
 	.b-function__chart {
@@ -51,6 +39,11 @@
 		position: relative;
 		width: 100%;
 		transition: none;
+		border: none;
+
+		&::after {
+			display: none;
+		}
 
 		&:active {
 			transform: none;
@@ -64,11 +57,6 @@
 		transition: $transition;
 		margin: auto 0 0;
 	}
-
-			.b-function--open .b-function__caption {
-				opacity: 0;
-				visibility: hidden;
-			}
 
 @media (max-width: $wrap-width) {
 	.b-function__caption {
