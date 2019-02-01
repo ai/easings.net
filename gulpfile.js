@@ -104,6 +104,13 @@ function styles(done) {
 		.on("end", done);
 }
 
+function images(done) {
+	gulp
+		.src(path.join(config.path.src.svg, "*"))
+		.pipe(gulp.dest(config.path.dist.img))
+		.on("end", done);
+}
+
 function symbols(done) {
 	const symbols = require("gulp-svg-symbols");
 	const svgMin = require("gulp-svgmin");
@@ -200,12 +207,16 @@ function buildTask(mode) {
 
 		cleanDist,
 
-		gulp.parallel(scripts, styles, symbols, function startingWatchers(done) {
+		gulp.parallel(scripts, styles, symbols, images, function startingWatchers(
+			done
+		) {
 			if (constant.DEV) {
 				gulp.watch(
 					path.join(config.path.src.svg, "*.svg"),
 					gulp.series(symbols)
 				);
+
+				gulp.watch(path.join(config.path.src.img, "*"), gulp.series(images));
 
 				gulp.watch(
 					path.join(config.path.src.js, "**", "*.{js,ts}"),

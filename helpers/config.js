@@ -13,13 +13,15 @@ module.exports = {
 
 			css: path.join(pwd, "src", "app", "css"),
 			js: path.join(pwd, "src", "app", "js"),
-			svg: path.join(pwd, "src", "app", "svg")
+			svg: path.join(pwd, "src", "app", "svg"),
+			img: path.join(pwd, "src", "app", "img")
 		},
 		dist: {
 			root: path.join(pwd, dist),
 			css: path.join(pwd, dist, "app", "css"),
 			js: path.join(pwd, dist, "app", "js"),
-			svg: path.join(pwd, dist, "app", "img")
+			svg: path.join(pwd, dist, "app", "img"),
+			img: path.join(pwd, dist, "app", "img")
 		}
 	}
 };
