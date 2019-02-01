@@ -20,18 +20,15 @@
 	cursor: pointer;
 	outline: none;
 	transition: $transition;
-	@include block-default;
 	box-sizing: border-box;
 	margin: -2px;
 
 	&:hover {
 		background: $brand-dark;
 		color: $text-on-brand-dark;
-		@include block-hover;
 	}
 
 	&:active {
-		@include block-active;
 		background: $brand-light;
 		color: $text-on-brand-light;
 	}
@@ -58,11 +55,9 @@
 			&:hover {
 				background: rgba(#fff, .4);
 				color: $brand-dark;
-				@include block-hover;
 			}
 
 			&:active {
-				@include block-active;
 				color: $brand-light;
 				background: transparent;
 			}

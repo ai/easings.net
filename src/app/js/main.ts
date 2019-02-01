@@ -68,16 +68,6 @@ if (listFunction) {
 	});
 }
 
-const transitionButton: HTMLInputElement = document.querySelector(".js-translate-button");
-if (transitionButton) {
-	transitionButton.addEventListener("click", () => {
-		transitionButton.blur();
-		transitionButton.disabled = true;
-		transitionButton.setAttribute("tabIndex", "-1");
-		document.querySelector(".js-translate").classList.add("b-translate--show");
-	});
-}
-
 const chartId = window.location.hash.slice(1);
 if (chartId) {
 	navigateChart(chartId);
