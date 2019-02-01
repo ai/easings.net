@@ -106,7 +106,7 @@ function styles(done) {
 
 function images(done) {
 	gulp
-		.src(path.join(config.path.src.svg, "*"))
+		.src(path.join(config.path.src.img, "*"))
 		.pipe(gulp.dest(config.path.dist.img))
 		.on("end", done);
 }
