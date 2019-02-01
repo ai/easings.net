@@ -1,3 +1,5 @@
+import { parseStringOfFourNumbers } from "./parseStringOfFourNumbers";
+
 export interface IGetViewBox {
 	readonly x: number;
 	readonly y: number;
@@ -7,16 +9,16 @@ export interface IGetViewBox {
 
 export function getViewBox(element: HTMLElement): IGetViewBox {
 	const viewBox: string = element.getAttribute("viewBox");
-	const viewBoxAttr: RegExpMatchArray = viewBox.match(/([-.\d]+)/g);
+	const viewBoxAttr: number[] = parseStringOfFourNumbers(viewBox);
 
-	if (!viewBoxAttr) {
+	if (viewBoxAttr.length !== 4) {
 		return null;
 	}
 
 	return {
-		height: parseFloat(viewBoxAttr[3]),
-		width: parseFloat(viewBoxAttr[2]),
-		x: parseFloat(viewBoxAttr[0]),
-		y: parseFloat(viewBoxAttr[1]),
+		height: viewBoxAttr[3],
+		width: viewBoxAttr[2],
+		x: viewBoxAttr[0],
+		y: viewBoxAttr[1],
 	};
 }

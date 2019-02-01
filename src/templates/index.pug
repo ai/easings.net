@@ -1,6 +1,7 @@
 include components/Item
 include components/CodeCss
 include components/CodePostCss
+include components/Link
 
 doctype html
 html
@@ -99,6 +100,10 @@ html
 									.b-example__code
 										+CodePostCss
 									.b-example__text Эта декларация преобразуется в подобную, которая описана выше.
+
+								.b-example
+									!= `Редактировать текущую функцию на `
+									+Link('cubic-bezier.com', 'http://cubic-bezier.com/').js-cubic-bezier
 
 
 							.b-info__case.b-cases

@@ -6,11 +6,14 @@ import { getViewBox } from "../helpers/getViewBox";
 import { getPathCurve } from "../helpers/getPathCurve";
 import { getTransitionTime } from "../helpers/getTransitionTime";
 import { getElementPosition } from "../helpers/getElementPosition";
+import { parseStringOfFourNumbers } from "../helpers/parseStringOfFourNumbers";
 
 const selectorInfo = ".js-info";
 const selectorColumns = ".js-columns";
 const timeTransitionForOverlay = 300;
 const overlayElement: HTMLElement = document.querySelector(".js-overlay");
+const linkCubicBezierElement: HTMLLinkElement = document.querySelector(".js-cubic-bezier");
+const linkCubicBezierHref: string = linkCubicBezierElement.href;
 
 const info: HTMLElement = document.querySelector(selectorInfo);
 const columns: HTMLElement = document.querySelector(selectorColumns);
@@ -87,11 +90,14 @@ export function navigateChart(id: string): void {
 		initChangePage();
 
 		const infoCurveViewBox = getViewBox(infoCurve);
+		const points: number[] = parseStringOfFourNumbers(func);
 		const dCurve = getPathCurve({
-			cssFunc: func,
 			height: infoCurveViewBox.height,
+			points,
 			width: infoCurveViewBox.width,
 		});
+
+		linkCubicBezierElement.href = `${linkCubicBezierHref}#${points.join(",")}`;
 
 		infoCurve
 			.querySelector("path")
