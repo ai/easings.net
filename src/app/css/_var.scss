@@ -108,12 +108,10 @@ $info-background-color: #fff;
 
 @mixin block-hover {
 	box-shadow: 0 12px 30px 0 rgba(#000, .2);
-	transform: translateY(-3%);
 }
 
 @mixin block-active {
-	box-shadow: 0 12px 30px 0 rgba(#000, .2);
-	transform: translateY(0);
+	box-shadow: 0 2px 8px rgba(#000, .05);
 }
 
 @mixin a11y-outline {
