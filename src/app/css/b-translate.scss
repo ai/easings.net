@@ -6,42 +6,13 @@
 	border: none;
 	text-decoration: none;
 	color: $text-color;
-
-	&:hover,
-	&.focus-visible,
-	&:active {
-		color: $text-color;
-	}
-
-	&::after {
-		content: '';
-		display: block;
-		position: absolute;
-		top: -10px;
-		right: -10px;
-		bottom: -10px;
-		left: -10px;
-		background: #fff;
-		border-radius: $corner-radius;
-		@include block-default;
-		box-sizing: border-box;
-		z-index: -1;
-		opacity: 0;
-		visibility: hidden;
-		transition: $transition;
-	}
-
-	&:focus,
-	&:hover {
-		&::after {
-			opacity: 1;
-			visibility: visible;
-		}
-	}
+	background: #fff;
+	padding: 10px 15px;
+	@include block-default;
 }
 
 	.b-translate__button {
-		animation: warning 3.5s infinite;
+		//animation: warning 3.5s infinite;
 
 		&::before {
 			$offset: 0px;
@@ -54,7 +25,7 @@
 			left: $offset;
 			z-index: 0;
 			box-shadow: 0 0 1px 2px rgba($brand, .3);
-			animation: warning-border 3.5s infinite;
+			//animation: warning-border 3.5s infinite;
 			opacity: 0;
 		}
 	}
@@ -69,23 +40,11 @@
 			}
 
 	.b-translate__text {
-		padding: $general-line-height/2 0 0;
 		width: 1px;
 		min-width: 100%;
-		opacity: 0;
-		visibility: hidden;
-		transition: opacity $transition, visibility $transition, height 0s;
-		transition-delay: 0s, 0s, $transition;
-		height: 0;
+		box-sizing: border-box;
+		padding: 5px 0 0;
 	}
-
-		.b-translate.focus-visible .b-translate__text,
-		.b-translate:hover .b-translate__text {
-			transition-delay: 0s, 0s, 0s;
-			opacity: 1;
-			visibility: visible;
-			height: 100%;
-		}
 
 
 @keyframes warning {

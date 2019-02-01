@@ -12,7 +12,7 @@
 	text-decoration: none;
 	text-transform: uppercase;
 	line-height: $line-height;
-	padding: .75em 1em;
+	padding: 1em 1.25em .75em;
 	display: inline-block;
 	border-radius: $corner-radius;
 	min-width: 64px;
@@ -50,5 +50,5 @@
 
 		.u-button--small {
 			font-size: px2rem(12);
-			padding: .5em .75em .35em;
+			padding: 1em 1em .75em;
 		}
