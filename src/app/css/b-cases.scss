@@ -1,0 +1,27 @@
+@import "var";
+
+.b-cases {}
+
+	.b-cases__title {
+		font-size: $subtitle-size-small;
+		line-height: #{$line-height - .2};
+		margin: 0;
+		padding: 0;
+	}
+
+	.b-cases__actions {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 #{$general-line-height / -4};
+		transition: .5s;
+	}
+
+		.b-cases__action {
+			margin: #{$general-line-height / 2}  #{$general-line-height / 4} 0;
+		}
+
+	.b-cases__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 #{$general-line-height / -2};
+	}

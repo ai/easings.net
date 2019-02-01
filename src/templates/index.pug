@@ -49,7 +49,7 @@ html
 
 					a.b-header__opensource.b-translate(target="_blank" href="https://github.com/ai/easings.net" rel="noreferrer" +
 					" noopener")
-						.u-button.u-button--with-icon
+						.u-button.b-translate__button
 							span
 								svg.u-icon.u-icon--right-space
 									use(xlink:href="app/img/sprite.svg#help")
@@ -68,10 +68,11 @@ html
 
 					section.b-info.js-info
 						.b-info__header
-							a.b-info__back.js-back(href="#")
-								svg.u-icon.u-icon--right-space
-									use(xlink:href="app/img/sprite.svg#arrow")
-								!= `Все функции`
+							a.b-info__back.u-button.u-button--small.js-back(href="#")
+								span
+									svg.u-icon.u-icon--small.u-icon--right-space
+										use(xlink:href="app/img/sprite.svg#arrow")
+									!= `Все функции`
 
 						.b-info__wrap
 							.b-info__main
@@ -101,40 +102,30 @@ html
 									.b-example__text Эта декларация преобразуется в подобную, которая описана выше.
 
 
-							.b-info__case
-								-
-									const chartWidth = 50;
-									const chartHeight = 30;
+							.b-info__case.b-cases
+								.b-cases__title Проверить изинг на изменение:
+								.b-cases__actions
+									button.u-button.u-button--small.b-cases__action.js-case-button(data-type="scale")
+										span Размера
+									button.u-button.u-button--small.b-cases__action.js-case-button(data-type="opacity")
+										span Прозрачности
+									button.u-button.u-button--small.b-cases__action.js-case-button(data-type="translate")
+										span Положения
 
-								.b-case.js-case(data-class="b-case__image--scale")
-									button.u-button.u-button--second.b-case__button.js-case-button
-										span Изменить размер
-									.b-case__image.js-case-image.js-case-func
-										svg.b-case__chart.js-case-place(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
-											path(d="")
-									.b-case__image.b-case__image--linear.js-case-image
-										svg.b-case__chart(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
-											path(d=(`M0 ${chartHeight}L${chartWidth} 0`))
+								.b-cases__list
+									.b-case
+										.b-case__title Текущая функция:
+										.b-card
+											img.b-card__image(src="app/img/case.jpg" alt="")
+											.b-card__wrap.js-case-target.js-case-func
+												.b-card__text Текущая функция
+									.b-case
+										.b-case__title Линейная функция:
+										.b-card
+											img.b-card__image(src="app/img/case.jpg" alt="")
+											.b-card__wrap.js-case-target
+												.b-card__text Линейная функция
 
-								.b-case.js-case(data-class="b-case__image--opacity")
-									button.u-button.u-button--second.b-case__button.js-case-button
-										span Изменить прозрачность
-									.b-case__image.js-case-image.js-case-func
-										svg.b-case__chart.js-case-place(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
-											path(d="")
-									.b-case__image.b-case__image--linear.js-case-image
-										svg.b-case__chart(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
-											path(d=(`M0 ${chartHeight}L${chartWidth} 0`))
-
-								.b-case.js-case(data-class="b-case__image--translate")
-									button.u-button.u-button--second.b-case__button.js-case-button
-										span Изменить положение
-									.b-case__image.js-case-image.js-case-func
-										svg.b-case__chart.js-case-place(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
-											path(d="")
-									.b-case__image.b-case__image--linear.js-case-image
-										svg.b-case__chart(viewBox=(`0 0 ${chartWidth} ${chartHeight}`))
-											path(d=(`M0 ${chartHeight}L${chartWidth} 0`))
 
 
 

@@ -16,21 +16,23 @@
 	display: inline-block;
 	border-radius: $corner-radius;
 	min-width: 64px;
-	border: 2px solid transparent;
+	border: none;
 	cursor: pointer;
 	outline: none;
 	transition: $transition;
 	box-sizing: border-box;
-	margin: -2px;
+	@include block-default;
 
 	&:hover {
 		background: $brand-dark;
 		color: $text-on-brand-dark;
+		@include block-hover;
 	}
 
 	&:active {
 		background: $brand-light;
 		color: $text-on-brand-light;
+		@include block-active;
 	}
 
 	&:focus {
@@ -40,37 +42,13 @@
 	@include a11y-outline;
 
 	span {
-		line-height: normal;
+		display: flex;
+		align-items: center;
 		user-select: none;
-		vertical-align: middle;
 	}
 }
 
-		.u-button--second {
+		.u-button--small {
 			font-size: px2rem(12);
-			background: transparent;
-			border-color: currentColor;
-			color: $brand;
-
-			&:hover {
-				background: rgba(#fff, .4);
-				color: $brand-dark;
-			}
-
-			&:active {
-				color: $brand-light;
-				background: transparent;
-			}
-
-			&:focus {
-				color: $brand;
-				background: transparent;
-			}
-		}
-
-		.u-button--with-icon {
-			span {
-				display: flex;
-				align-items: center;
-			}
+			padding: .5em .75em .35em;
 		}

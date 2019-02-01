@@ -13,7 +13,9 @@ body {
 	background: $background;
 }
 
-.u-root {}
+.u-root {
+	overflow: hidden;
+}
 
 .u-wrap {
 	@include wrap;

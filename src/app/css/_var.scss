@@ -17,6 +17,7 @@ $system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen"
 $offset-block: 15px;
 
 $transition: 0.2s;
+$transition-card: 1s;
 $transition-show: 1.5s;
 $transition-show-delay: 0.3s;
 
@@ -80,6 +81,10 @@ $title-offset: .25em;
 $subtitle-size: px2rem(26);
 $subtitle-size-small: px2rem(22);
 $subtitle-line-height: $general-line-height * 2;
+
+$info-background-offset-vertical: -10px;
+$info-background-offset-horizontal: -15px;
+$info-background-color: #fff;
 
 @mixin wrap($vertical-padding: 0) {
 	box-sizing: border-box;

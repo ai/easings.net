@@ -1,7 +1,7 @@
 import { forNodeList } from "../helpers/forNodeList";
 import { scrollTo } from "../helpers/scrollTo";
 import { changePageSize, initChangePage } from "./changePageSize";
-import { setCases } from "./case";
+import { setFuncForCase } from "./case";
 import { getViewBox } from "../helpers/getViewBox";
 import { getPathCurve } from "../helpers/getPathCurve";
 import { getTransitionTime } from "../helpers/getTransitionTime";
@@ -23,17 +23,17 @@ export function navigateMain(): void {
 
 	openItemId = null;
 	columns.removeAttribute("style");
-	info.classList.add("b-info--hide");
+	columns.classList.remove("b-columns--hide");
+
+	changePageSize();
+
 	info.classList.remove("b-info--evident");
+	info.style.position = "absolute";
+	info.style.top = "0px";
 
 	setTimeout(() => {
-		columns.classList.remove("b-columns--hide");
-	}, infoTransitionTime / 2);
-
-	setTimeout(() => {
-		info.classList.remove("b-info--hide");
-		info.removeAttribute("style");
 		changePageSize();
+		info.removeAttribute("style");
 	}, infoTransitionTime);
 }
 
@@ -64,7 +64,7 @@ export function navigateChart(id: string): void {
 			(e) => (e.innerText = func),
 		);
 
-		setCases(func);
+		setFuncForCase(func);
 		initChangePage();
 
 		const infoCurveViewBox = getViewBox(infoCurve);

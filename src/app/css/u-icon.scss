@@ -5,8 +5,14 @@
 	height: 24px;
 	fill: currentColor;
 	display: inline-block;
+	transform: translateY(-4%);
 }
 
 		.u-icon--right-space {
 			margin-right: .5ex;
+		}
+
+		.u-icon--small {
+			width: 16px;
+			height: 16px;
 		}

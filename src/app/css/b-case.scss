@@ -1,80 +1,12 @@
 @import "var";
 
 .b-case {
-	flex: 1 1 33%;
+	padding: #{1.5 * $general-line-height} #{$general-line-height/2} 0;
+	min-width: 200px;
 	box-sizing: border-box;
-	padding: 0 0 $general-line-height;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	position: relative;
-	min-width: 300px;
-	width: 100%;
+	flex: 1 1 auto;
 }
 
-	.b-case__button {
-		margin: 0 auto $general-line-height/2 0;
+	.b-case__title {
+		padding: 0 0 $general-line-height/2;
 	}
-
-	.b-case__image {
-		border-radius: $corner-radius;
-		box-sizing: border-box;
-		padding: 7px;
-		display: inline-flex;
-		align-items: center;
-		color: $brand;
-		background: $background;
-		border: 2px solid;
-		transition: 1s;
-		transition-property: left, transform, opacity;
-		transform-origin: 0 0;
-		position: relative;
-		left: 0;
-		margin: 0 0 $general-line-height/2;
-		@include block-default;
-	}
-
-			.b-case__image--linear {
-				color: $second;
-			}
-
-			.b-case__image--translate {
-				left: 100%;
-				transform: translateX(-100%);
-			}
-
-			.b-case__image--scale {
-				transform: scale(1.4);
-			}
-
-			.b-case__image--opacity {
-				opacity: 0;
-			}
-
-		.b-case__chart {
-			width: 50px;
-			height: 30px;
-			fill: none;
-			stroke: currentColor;
-			stroke-width: 2px;
-			stroke-linecap: round;
-			display: block;
-			overflow: visible;
-		}
-
-@media (max-width: $media-small) {
-	.b-case {
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-		.b-case__button {
-			white-space: nowrap;
-			flex: 0 0 auto;
-			display: block;
-		}
-
-		.b-case__image {
-			margin-left: 0;
-		}
-}
