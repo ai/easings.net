@@ -1,0 +1,9 @@
+@import "var";
+
+.b-overlay {
+	position: absolute;
+	z-index: 1;
+	background: #fff;
+	border-radius: $corner-radius;
+	@include block-active;
+}

@@ -7,24 +7,12 @@
 	display: none;
 	position: relative;
 	z-index: 2;
-	transform: translateY(20px);
-
-	&::after {
-		content: '';
-		position: absolute;
-		top: $info-background-offset-vertical;
-		right: $info-background-offset-horizontal;
-		bottom: $info-background-offset-vertical;
-		left: $info-background-offset-horizontal;
-		z-index: -1;
-		background: $info-background-color;
-	}
+	margin: 0 0 $general-line-height;
 }
 
 		.b-info--evident {
 			opacity: 1;
 			visibility: visible;
-			transform: translateY(0);
 		}
 
 	.b-info__header {
@@ -43,7 +31,7 @@
 		.b-info__case {
 			vertical-align: top;
 			box-sizing: border-box;
-			padding: 0 0 $general-line-height*2 20px;
+			padding: 0 0 0 20px;
 			width: 100%;
 			flex: 0 0 350px;
 		}
