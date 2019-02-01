@@ -9,7 +9,7 @@ import { getElementPosition } from "../helpers/getElementPosition";
 
 const selectorInfo = ".js-info";
 const selectorColumns = ".js-columns";
-const timeTransitionForOverlay = 1300;
+const timeTransitionForOverlay = 300;
 const overlayElement: HTMLElement = document.querySelector(".js-overlay");
 
 const info: HTMLElement = document.querySelector(selectorInfo);
@@ -125,6 +125,14 @@ export function navigateChart(id: string): void {
 		setTimeout(() => {
 			info.classList.add("b-info--evident");
 			changePageSize();
+
+			const header: HTMLElement = document.querySelector(".js-header");
+			const headerPosition = getElementPosition(header);
+
+			scrollTo({
+				duration: 300,
+				to: headerPosition.height + headerPosition.y - overlayOffsetVertical / 2,
+			});
 		}, timeTransitionForOverlay);
 
 		setTimeout(() => {
