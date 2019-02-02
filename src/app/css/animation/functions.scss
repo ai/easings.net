@@ -1,0 +1,45 @@
+@import "math";
+@import "ratioList";
+
+@function easeInElastic($x) {
+	@return nth($easeInElasticList, $x * 100 + 1);
+}
+
+@function easeOutElastic($x) {
+	@return nth($easeOutElasticList, $x * 100 + 1);
+}
+
+@function easeInOutElastic($x) {
+	@return nth($easeInOutElasticList, $x * 100 + 1);
+}
+
+@function easeOutBounce($x) {
+	$n1: 7.5625;
+	$d1: 2.75;
+
+	@if $x < 1/$d1 {
+		@return $n1 * $x * $x;
+	}
+
+	@if $x < 2/$d1 {
+		@return $n1 * pow($x - 1.5/$d1, 2) + .75;
+	}
+
+	@if $x < 2.5/$d1 {
+		@return $n1 * pow($x - 2.25/$d1, 2) + .9375;
+	}
+
+	@return $n1 * pow($x - 2.625/$d1, 2) + .984375;
+}
+
+@function easeInBounce($x) {
+	@return 1 - easeOutBounce(1 - $x);
+}
+
+@function easeInOutBounce($x) {
+	@if ($x < 0.5) {
+		@return ( 1 - easeOutBounce( 1 - 2 * $x ) ) / 2;
+	}
+
+	@return ( 1 + easeOutBounce( 2 * $x - 1 ) ) / 2;
+}

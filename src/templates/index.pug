@@ -58,9 +58,21 @@ html
 						.b-translate__text Help translate site to your language
 
 				.u-container
+					-
+						const easings = all_easings.reduce(function(resultArray, item, index) {
+							const chunkIndex = Math.floor(index / 3);
+
+							if(!resultArray[chunkIndex]) {
+								resultArray[chunkIndex] = [];
+							}
+
+							resultArray[chunkIndex].push(item);
+							return resultArray;
+						}, []);
+
 					.b-columns.js-columns
 						.b-columns__wrap
-							each group in all_easings
+							each group in easings
 								.b-columns__group
 									each item, index in group
 										+Item(item, index)
@@ -121,7 +133,7 @@ html
 										.b-case__title Текущая функция:
 										.b-card
 											img.b-card__image(src="app/img/case.jpg" alt="")
-											.b-card__wrap.js-case-target.js-case-func
+											.b-card__wrap.js-case-func
 												.b-card__text Текущая функция
 									.b-case
 										.b-case__title Линейная функция:

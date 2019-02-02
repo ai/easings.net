@@ -56,6 +56,9 @@
 		text-align: center;
 		transition: $transition;
 		margin: auto 0 0;
+		background: linear-gradient(to top, #fff, rgba(#fff, 0));
+		position: relative;
+		z-index: 1;
 	}
 
 @media (max-width: $wrap-width) {

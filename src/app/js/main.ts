@@ -6,47 +6,68 @@ import {
 	navigateMain,
 	resizeInfo,
 } from "./component/navigation";
+import { getElement } from "./helpers/getElement";
+import { getElementsList } from "./helpers/getElementsList";
 
 const classFunctionActive = "b-function--active";
 const classFunctionFocus = "b-function--focus";
 const classChartActive = "b-chart--active";
 
-const listFunction = document.querySelectorAll(".js-function");
+const selectorChart = ".js-function-chart";
+const selectorCursor = ".js-function-cursor";
+const cursorTransitionTime = 1500;
+
+const listFunction = getElementsList(".js-function");
 if (listFunction) {
 	forNodeList(listFunction, (item, index) => {
-		const chart = item.querySelector(".js-function-chart");
+		const chart = getElement(selectorChart, item);
+		const cursor = getElement(selectorCursor, item);
+		const animationName = item.getAttribute("data-name");
+		const cssFunc = item.getAttribute("data-func");
 
 		item.addEventListener("mouseenter", () => {
 			forNodeList(listFunction, (other, otherIndex) => {
 				if (otherIndex !== index) {
 					other.classList.remove(classFunctionFocus);
-					other.querySelector(".js-function-chart").classList.remove(classChartActive);
+					getElement(selectorChart, other).classList.remove(classChartActive);
+					getElement(selectorCursor, other).style.animation = "";
 				}
 			});
 
 			item.classList.add(classFunctionActive);
 			chart.classList.add(classChartActive);
+
+			if (cssFunc === "no") {
+				cursor.style.animation = `${cursorTransitionTime}ms cursor-${animationName} 0.2s`;
+			}
 		});
 
 		item.addEventListener("mouseleave", () => {
 			item.classList.remove(classFunctionActive);
 			chart.classList.remove(classChartActive);
+			cursor.style.animation = "";
 		});
 
 		chart.addEventListener("focus", () => {
 			forNodeList(listFunction, (other, otherIndex) => {
 				if (otherIndex !== index) {
 					other.classList.remove(classFunctionFocus);
-					other.querySelector(".js-function-chart").classList.remove(classChartActive);
+					getElement(selectorChart, other).classList.remove(classChartActive);
+					getElement(selectorCursor, other).style.animation = "";
 				}
 			});
 
 			chart.classList.add(classChartActive);
+
+			if (cssFunc === "no") {
+				cursor.style.animation = `${cursorTransitionTime}ms cursor-${animationName} 0.2s`;
+			}
 		});
 
 		chart.addEventListener("blur", () => {
 			item.classList.remove(classFunctionFocus, classFunctionActive);
 			chart.classList.remove(classChartActive);
+			cursor.style.animation = "";
 		});
 
 		item.addEventListener("keyup", (event) => {
@@ -74,7 +95,7 @@ if (chartId) {
 	navigateChart(chartId);
 }
 
-const backLinks: NodeList = document.querySelectorAll(".js-back");
+const backLinks: NodeList = getElementsList(".js-back");
 forNodeList(backLinks, (item) => {
 	item.addEventListener("click", (event) => {
 		event.preventDefault();

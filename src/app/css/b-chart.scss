@@ -57,8 +57,8 @@
 			right: -17px;
 			opacity: 0;
 			will-change: top, opacity;
-			transition: top 0s, opacity $transition;
-			transition-delay: $transition-show-delay, 0s;
+			transition: top 0s, opacity 0s;
+			transition-delay: 0s, 0s;
 			transform: translateY(-7px);
 
 			&::after {

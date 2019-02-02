@@ -1,8 +1,10 @@
 const path = require("path");
+const fs = require("fs");
 
 const gulp = require("gulp");
 const plumber = require("gulp-plumber");
 const gulpIf = require("gulp-if");
+const yamlParse = require("js-yaml");
 
 const config = require("./helpers/config.js");
 
@@ -12,7 +14,7 @@ const constant = {
 
 const getHtmlEnv = () => ({
 	dev: constant.DEV,
-	all_easings: require("./src/easings")
+	all_easings: yamlParse.safeLoad(fs.readFileSync("./src/easings.yml", "utf8"))
 });
 
 function html(done) {

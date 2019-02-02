@@ -75,6 +75,7 @@ export function navigateChart(id: string): void {
 	if (name && func) {
 		const infoChart: HTMLElement = info.querySelector(".js-info-chart");
 		const infoCurve: HTMLElement = info.querySelector(".js-info-curve");
+		const itemCurve: HTMLElement = item.querySelector(".js-function-curve");
 		const columnsTransitionTime = getTransitionTime(columns);
 
 		forNodeList(
@@ -86,22 +87,25 @@ export function navigateChart(id: string): void {
 			(e) => (e.innerText = func),
 		);
 
-		setFuncForCase(func);
+		setFuncForCase(func, name);
 		initChangePage();
 
 		const infoCurveViewBox = getViewBox(infoCurve);
 		const points: number[] = parseStringOfFourNumbers(func);
-		const dCurve = getPathCurve({
-			height: infoCurveViewBox.height,
-			points,
-			width: infoCurveViewBox.width,
-		});
 
-		linkCubicBezierElement.href = `${linkCubicBezierHref}#${points.join(",")}`;
+		if (func !== "no") {
+			const dCurve = getPathCurve({
+				height: infoCurveViewBox.height,
+				points,
+				width: infoCurveViewBox.width,
+			});
+
+			linkCubicBezierElement.href = `${linkCubicBezierHref}#${points.join(",")}`;
+		}
 
 		infoCurve
 			.querySelector("path")
-			.setAttribute("d", dCurve);
+			.setAttribute("d", itemCurve.getAttribute("d"));
 
 		info.style.transitionTimingFunction = func;
 		info.style.display = "block";

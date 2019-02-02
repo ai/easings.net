@@ -1,0 +1,21 @@
+$PI: 3.14159265359;
+$c1: 1.70158;
+$c2: $c1 * 1.525;
+$c3: $c1 + 1;
+$c4: (2 * $PI) / 3;
+$c5: (2 * $PI) / 4.5;
+
+@function pow($base, $exp) {
+	$value: $base;
+	@if $exp > 1 {
+		@for $i from 2 through $exp {
+			$value: $value * $base;
+		}
+	}
+	@if $exp < 1 {
+		@for $i from 0 through -$exp {
+			$value: $value / $base;
+		}
+	}
+	@return $value;
+}
