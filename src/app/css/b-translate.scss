@@ -8,36 +8,7 @@
 	color: $text-color;
 	background: #fff;
 	padding: 10px 15px;
-	@include block-default;
 }
-
-	.b-translate__button {
-		//animation: warning 3.5s infinite;
-
-		&::before {
-			$offset: 0px;
-			content: '';
-			display: block;
-			position: absolute;
-			top: $offset;
-			right: $offset;
-			bottom: $offset;
-			left: $offset;
-			z-index: 0;
-			box-shadow: 0 0 1px 2px rgba($brand, .3);
-			//animation: warning-border 3.5s infinite;
-			opacity: 0;
-		}
-	}
-
-			.b-translate.focus-visible .b-translate__button,
-			.b-translate:hover .b-translate__button {
-				animation: none;
-
-				&::before {
-					animation: none;
-				}
-			}
 
 	.b-translate__text {
 		width: 1px;
@@ -45,31 +16,3 @@
 		box-sizing: border-box;
 		padding: 5px 0 0;
 	}
-
-
-@keyframes warning {
-	20%, 60% {
-		transform: scale(1);
-	}
-
-	40% {
-		transform: scale(1.03);
-	}
-}
-
-@keyframes warning-border {
-	0%, 19% {
-		transform: scale(1);
-		opacity: 0;
-	}
-
-	20% {
-		transform: scale(1);
-		opacity: 1;
-	}
-
-	60%, 100% {
-		transform: scale(1.2, 1.8);
-		opacity: 0;
-	}
-}
