@@ -1,6 +1,5 @@
 import { forNodeList } from "../helpers/forNodeList";
 import { scrollTo } from "../helpers/scrollTo";
-import { changePageSize, initChangePage } from "./changePageSize";
 import { setFuncForCase } from "./case";
 import { getViewBox } from "../helpers/getViewBox";
 import { getPathCurve } from "../helpers/getPathCurve";
@@ -36,8 +35,6 @@ export function navigateMain(): void {
 	columns.removeAttribute("style");
 	columns.classList.remove("b-columns--hide");
 
-	changePageSize();
-
 	info.classList.remove("b-info--evident");
 	info.style.position = "absolute";
 	info.style.top = "0px";
@@ -45,7 +42,6 @@ export function navigateMain(): void {
 	overlayElement.style.transitionDuration = `${timeTransitionForOverlay}ms`;
 
 	setTimeout(() => {
-		changePageSize();
 		info.removeAttribute("style");
 
 		const itemPosition = getElementPosition(item);
@@ -88,7 +84,6 @@ export function navigateChart(id: string): void {
 		);
 
 		setFuncForCase(func, name);
-		initChangePage();
 
 		const infoCurveViewBox = getViewBox(infoCurve);
 		const points: number[] = parseStringOfFourNumbers(func);
@@ -134,7 +129,6 @@ export function navigateChart(id: string): void {
 
 		setTimeout(() => {
 			info.classList.add("b-info--evident");
-			changePageSize();
 
 			const header: HTMLElement = document.querySelector(".js-header");
 			const headerPosition = getElementPosition(header);
