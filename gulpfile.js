@@ -200,6 +200,12 @@ function server() {
 		.on("change", browserSync.reload);
 }
 
+function staticFiles() {
+	return gulp
+		.src(config.path.src.static)
+		.pipe(gulp.dest(config.path.dist.static));
+}
+
 function buildTask(mode) {
 	return gulp.series(
 		function setENV(done) {
@@ -209,30 +215,35 @@ function buildTask(mode) {
 
 		cleanDist,
 
-		gulp.parallel(scripts, styles, symbols, images, function startingWatchers(
-			done
-		) {
-			if (constant.DEV) {
-				gulp.watch(
-					path.join(config.path.src.svg, "*.svg"),
-					gulp.series(symbols)
-				);
+		gulp.parallel(
+			scripts,
+			styles,
+			symbols,
+			images,
+			staticFiles,
+			function startingWatchers(done) {
+				if (constant.DEV) {
+					gulp.watch(
+						path.join(config.path.src.svg, "*.svg"),
+						gulp.series(symbols)
+					);
 
-				gulp.watch(path.join(config.path.src.img, "*"), gulp.series(images));
+					gulp.watch(path.join(config.path.src.img, "*"), gulp.series(images));
 
-				gulp.watch(
-					path.join(config.path.src.js, "**", "*.{js,ts}"),
-					gulp.series(scripts)
-				);
+					gulp.watch(
+						path.join(config.path.src.js, "**", "*.{js,ts}"),
+						gulp.series(scripts)
+					);
 
-				gulp.watch(
-					path.join(config.path.src.css, "**", "*.{sass,scss,css}"),
-					gulp.series(styles)
-				);
+					gulp.watch(
+						path.join(config.path.src.css, "**", "*.{sass,scss,css}"),
+						gulp.series(styles)
+					);
+				}
+
+				done();
 			}
-
-			done();
-		}),
+		),
 
 		!!mode.match(/dev/i) ? server : html
 	);
