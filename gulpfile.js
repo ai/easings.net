@@ -202,7 +202,7 @@ function server() {
 
 function staticFiles() {
 	return gulp
-		.src(config.path.src.static)
+		.src(path.join(config.path.src.static, "**/*"))
 		.pipe(gulp.dest(config.path.dist.static));
 }
 
@@ -229,6 +229,11 @@ function buildTask(mode) {
 					);
 
 					gulp.watch(path.join(config.path.src.img, "*"), gulp.series(images));
+
+					gulp.watch(
+						path.join(config.path.src.static, "**/*"),
+						gulp.series(staticFiles)
+					);
 
 					gulp.watch(
 						path.join(config.path.src.js, "**", "*.{js,ts}"),
