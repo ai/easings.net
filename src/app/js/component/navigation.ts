@@ -1,17 +1,14 @@
-import { forNodeList } from "../helpers/forNodeList";
 import { scrollTo } from "../helpers/scrollTo";
 import { setFuncForCase } from "./case";
-import { getViewBox } from "../helpers/getViewBox";
-import { getPathCurve } from "../helpers/getPathCurve";
 import { getTransitionTime } from "../helpers/getTransitionTime";
 import { getElementPosition } from "../helpers/getElementPosition";
 import { parseStringOfFourNumbers } from "../helpers/parseStringOfFourNumbers";
-import { noTimingFunction } from "../helpers/constants";
+import { noTimingFunction, selectorInfo } from "../helpers/constants";
+import { setInfoFunc, setInfoName } from "./infoText";
+import overlay from "./overlay";
 
-const selectorInfo = ".js-info";
 const selectorColumns = ".js-columns";
 const timeTransitionForOverlay = 300;
-const overlayElement: HTMLElement = document.querySelector(".js-overlay");
 const linkCubicBezierElement: HTMLLinkElement = document.querySelector(".js-cubic-bezier");
 const linkCubicBezierHref: string = linkCubicBezierElement.href;
 
@@ -40,22 +37,25 @@ export function navigateMain(): void {
 	info.style.position = "absolute";
 	info.style.top = "0px";
 
-	overlayElement.style.transitionDuration = `${timeTransitionForOverlay}ms`;
+	overlay.setTransitionDuration(timeTransitionForOverlay);
 
 	setTimeout(() => {
 		info.removeAttribute("style");
 
 		const itemPosition = getElementPosition(item);
 
-		overlayElement.style.width = `${itemPosition.width}px`;
-		overlayElement.style.height = `${itemPosition.height}px`;
-		overlayElement.style.top = `${itemPosition.y}px`;
-		overlayElement.style.left = `${itemPosition.x}px`;
+		overlay.setSize({
+			height: itemPosition.height,
+			left: itemPosition.x,
+			top: itemPosition.y,
+			width: itemPosition.width,
+		});
 	}, infoTransitionTime);
 
-	setTimeout(() => {
-		overlayElement.removeAttribute("style");
-	}, timeTransitionForOverlay + infoTransitionTime);
+	setTimeout(
+		overlay.reset,
+		timeTransitionForOverlay + infoTransitionTime,
+	);
 }
 
 export function navigateChart(id: string): void {
@@ -68,35 +68,19 @@ export function navigateChart(id: string): void {
 	openItemId = id;
 	const name = item.getAttribute("data-name");
 	const func = item.getAttribute("data-func");
-
 	const transitionTimingFunction = func === noTimingFunction ? "ease" : func;
 
 	if (name && func) {
-		const infoChart: HTMLElement = info.querySelector(".js-info-chart");
 		const infoCurve: HTMLElement = info.querySelector(".js-info-curve");
 		const itemCurve: HTMLElement = item.querySelector(".js-function-curve");
 		const columnsTransitionTime = getTransitionTime(columns);
 
-		forNodeList(
-			info.querySelectorAll(".js-info-name"),
-			(e) => (e.innerText = name),
-		);
-		forNodeList(
-			info.querySelectorAll(".js-info-func"),
-			(e) => (e.innerText = func),
-		);
-
+		setInfoName(name);
+		setInfoFunc(func);
 		setFuncForCase(func, name);
 
 		if (func !== noTimingFunction) {
-			const infoCurveViewBox = getViewBox(infoCurve);
 			const points: number[] = parseStringOfFourNumbers(func);
-			const dCurve = getPathCurve({
-				height: infoCurveViewBox.height,
-				points,
-				width: infoCurveViewBox.width,
-			});
-
 			linkCubicBezierElement.href = `${linkCubicBezierHref}#${points.join(",")}`;
 		}
 
@@ -109,24 +93,29 @@ export function navigateChart(id: string): void {
 
 		const itemPosition = getElementPosition(item);
 
-		overlayElement.style.display = "block";
-		overlayElement.style.top = `${itemPosition.y}px`;
-		overlayElement.style.left = `${itemPosition.x}px`;
-		overlayElement.style.width = `${itemPosition.width}px`;
-		overlayElement.style.height = `${itemPosition.height}px`;
-		overlayElement.style.transition = `${timeTransitionForOverlay}ms ${transitionTimingFunction}`;
+		overlay
+			.show()
+			.setSize({
+				height: itemPosition.height,
+				left: itemPosition.x,
+				top: itemPosition.y,
+				width: itemPosition.width,
+			})
+			.setTransitionDuration(timeTransitionForOverlay)
+			.setTransitionTimingFunction(transitionTimingFunction);
 
 		columns.classList.add("b-columns--hide");
 
 		requestAnimationFrame(() => {
 			const infoPosition = getElementPosition(info);
-			const offsetX = infoPosition.x - overlayOffsetHorizontal / 2;
-			const offsetY = infoPosition.y - overlayOffsetVertical / 2;
 
-			overlayElement.style.width = `${infoPosition.width + overlayOffsetHorizontal}px`;
-			overlayElement.style.height = `${infoPosition.height + overlayOffsetVertical}px`;
-			overlayElement.style.top = `${offsetY}px`;
-			overlayElement.style.left = `${offsetX}px`;
+			overlay
+				.setSize({
+					height: infoPosition.height + overlayOffsetVertical,
+					left: infoPosition.x - overlayOffsetHorizontal / 2,
+					top: infoPosition.y - overlayOffsetVertical / 2,
+					width: infoPosition.width + overlayOffsetHorizontal,
+				});
 		});
 
 		setTimeout(() => {
@@ -153,12 +142,12 @@ export function resizeInfo(): void {
 	}
 
 	const infoPosition = getElementPosition(info);
-	const offsetX = infoPosition.x - overlayOffsetHorizontal / 2;
-	const offsetY = infoPosition.y - overlayOffsetVertical / 2;
-
-	overlayElement.style.transitionDuration = "0s";
-	overlayElement.style.height = `${infoPosition.height + overlayOffsetVertical}px`;
-	overlayElement.style.width = `${infoPosition.width + overlayOffsetHorizontal}px`;
-	overlayElement.style.top = `${offsetY}px`;
-	overlayElement.style.left = `${offsetX}px`;
+	overlay
+		.disabledTransition()
+		.setSize({
+			height: infoPosition.height + overlayOffsetVertical,
+			left: infoPosition.x - overlayOffsetHorizontal / 2,
+			top: infoPosition.y - overlayOffsetVertical / 2,
+			width: infoPosition.width + overlayOffsetHorizontal,
+		});
 }
