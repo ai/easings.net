@@ -6,6 +6,7 @@ import { getPathCurve } from "../helpers/getPathCurve";
 import { getTransitionTime } from "../helpers/getTransitionTime";
 import { getElementPosition } from "../helpers/getElementPosition";
 import { parseStringOfFourNumbers } from "../helpers/parseStringOfFourNumbers";
+import { noTimingFunction } from "../helpers/constants";
 
 const selectorInfo = ".js-info";
 const selectorColumns = ".js-columns";
@@ -68,6 +69,8 @@ export function navigateChart(id: string): void {
 	const name = item.getAttribute("data-name");
 	const func = item.getAttribute("data-func");
 
+	const transitionTimingFunction = func === noTimingFunction ? "ease" : func;
+
 	if (name && func) {
 		const infoChart: HTMLElement = info.querySelector(".js-info-chart");
 		const infoCurve: HTMLElement = info.querySelector(".js-info-curve");
@@ -85,10 +88,9 @@ export function navigateChart(id: string): void {
 
 		setFuncForCase(func, name);
 
-		const infoCurveViewBox = getViewBox(infoCurve);
-		const points: number[] = parseStringOfFourNumbers(func);
-
-		if (func !== "no") {
+		if (func !== noTimingFunction) {
+			const infoCurveViewBox = getViewBox(infoCurve);
+			const points: number[] = parseStringOfFourNumbers(func);
 			const dCurve = getPathCurve({
 				height: infoCurveViewBox.height,
 				points,
@@ -102,7 +104,7 @@ export function navigateChart(id: string): void {
 			.querySelector("path")
 			.setAttribute("d", itemCurve.getAttribute("d"));
 
-		info.style.transitionTimingFunction = func;
+		info.style.transitionTimingFunction = transitionTimingFunction;
 		info.style.display = "block";
 
 		const itemPosition = getElementPosition(item);
@@ -112,7 +114,7 @@ export function navigateChart(id: string): void {
 		overlayElement.style.left = `${itemPosition.x}px`;
 		overlayElement.style.width = `${itemPosition.width}px`;
 		overlayElement.style.height = `${itemPosition.height}px`;
-		overlayElement.style.transition = `${timeTransitionForOverlay}ms ${func}`;
+		overlayElement.style.transition = `${timeTransitionForOverlay}ms ${transitionTimingFunction}`;
 
 		columns.classList.add("b-columns--hide");
 
