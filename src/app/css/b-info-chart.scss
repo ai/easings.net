@@ -6,6 +6,10 @@
 	padding: $general-line-height 0 $general-line-height 1px;
 }
 
+		.b-info-chart--offset_top {
+			padding-top: 2 * $general-line-height;
+		}
+
 	.b-info-chart__wrap {
 		position: relative;
 		color: $chart-axis-color;

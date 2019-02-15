@@ -3,7 +3,7 @@ import { setFuncForCase } from "./case";
 import { getTransitionTime } from "../helpers/getTransitionTime";
 import { getElementPosition } from "../helpers/getElementPosition";
 import { parseStringOfFourNumbers } from "../helpers/parseStringOfFourNumbers";
-import { noTimingFunction, selectorInfo } from "../helpers/constants";
+import { infoChartOffsetTopClassName, noTimingFunction, selectorInfo, selectorInfoChart } from "../helpers/constants";
 import { setInfoFunc, setInfoName, showComplexInfo, showSimpleInfo } from "./infoText";
 import overlay from "./overlay";
 
@@ -13,6 +13,7 @@ const linkCubicBezierElement: HTMLLinkElement = document.querySelector(".js-cubi
 const linkCubicBezierHref: string = linkCubicBezierElement.href;
 
 const info: HTMLElement = document.querySelector(selectorInfo);
+const infoChart: HTMLElement = document.querySelector(selectorInfoChart);
 const columns: HTMLElement = document.querySelector(selectorColumns);
 
 const overlayOffsetVertical = 30;
@@ -72,12 +73,19 @@ export function navigateChart(id: string): void {
 	openItemId = id;
 	const name = item.getAttribute("data-name");
 	const func = item.getAttribute("data-func");
+	const itemOffset = item.getAttribute("data-offset");
 	const transitionTimingFunction = func === noTimingFunction ? "ease" : func;
 
 	if (name && func) {
 		const infoCurve: HTMLElement = info.querySelector(".js-info-curve");
 		const itemCurve: HTMLElement = item.querySelector(".js-function-curve");
 		const columnsTransitionTime = getTransitionTime(columns);
+
+		if (itemOffset === "top") {
+			infoChart.classList.add(infoChartOffsetTopClassName);
+		} else {
+			infoChart.classList.remove(infoChartOffsetTopClassName);
+		}
 
 		setInfoName(name);
 		setInfoFunc(func);
