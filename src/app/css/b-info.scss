@@ -33,11 +33,13 @@
 			box-sizing: border-box;
 			padding: 0 0 0 20px;
 			width: 100%;
-			flex: 0 1 380px;
+			flex: 0 1 350px;
 		}
 
 		.b-info__main {
-			flex: 1 2 auto;
+			flex: 1 1 auto;
+			width: 1px;
+			min-width: 60%;
 			max-width: $max-readable-text-width;
 			box-sizing: border-box;
 			padding: 0 0 $general-line-height*2;
