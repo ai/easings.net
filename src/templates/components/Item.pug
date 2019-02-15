@@ -20,9 +20,17 @@ mixin Item(item, index)
 			y2 = ((1 - parseFloat(points[4])) * chartHeight).toFixed(3);
 		}
 
+		var className = "";
+
+		if (item.offset === "top")
+			className = "b-chart__wrap--offset_top";
+
+		if (item.offset === "bottom")
+			className = "b-chart__wrap--offset_bottom";
+
 	.b-function.js-function(id=(`func-${item.name}`) data-name=item.name data-func=item.css)
 		a.b-function__chart.b-chart.js-function-chart(href=`#${item.name}`)
-			.b-chart__wrap
+			.b-chart__wrap(class=className)
 				svg.b-chart__image(viewBox=(`0 0 ${chartWidth} ${chartHeight}`) xmlns="http://www.w3.org/2000/svg"
 				height=(chartHeight) width=(chartWidth))
 					g.b-chart__explanations

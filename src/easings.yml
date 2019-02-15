@@ -48,8 +48,10 @@
   css:  cubic-bezier(0.68, -0.55, 0.265, 1.55)
 - name: easeInElastic
   css:  no
+  offset: bottom
 - name: easeOutElastic
   css:  no
+  offset: top
 - name: easeInOutElastic
   css:  no
 - name: easeInBounce

@@ -1,17 +1,25 @@
 @import "var";
 
 .b-chart {
-	display: block;
+	display: flex;
 	max-width: 107px;
 	text-decoration: none;
+	height: 100%;
+	min-height: 70px;
 }
 
 	.b-chart__wrap {
 		position: relative;
-		z-index: 1;
-		left: 0;
-		will-change: width, transform;
 	}
+
+			.b-chart__wrap--offset_top {
+				height: 55px;
+				margin-top: auto;
+			}
+
+			.b-chart__wrap--offset_bottom {
+				height: 55px;
+			}
 
 		.b-chart__image {
 			width: 100%;
@@ -50,6 +58,11 @@
 				transition: $transition;
 				transform: translate(1px, -1px);
 			}
+
+					.b-chart__wrap--offset_top .b-chart__curve,
+					.b-chart__wrap--offset_bottom .b-chart__curve {
+						stroke-width: 4px;
+					}
 
 		.b-chart__cursor {
 			position: absolute;
