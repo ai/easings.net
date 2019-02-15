@@ -51,10 +51,10 @@ html
 
 					.b-header__opensource.b-translate
 						+ExternalLink("https://github.com/ai/easings.net").u-button
-							span
-								svg.u-icon.u-icon--right-space
+							span.u-icon
+								svg.u-icon__image
 									use(xlink:href="app/img/sprite.svg#help")
-								| Translate me!
+							!= ` Translate me!`
 
 						.b-translate__text Help translate site to your language
 
@@ -82,10 +82,10 @@ html
 					section.b-info.js-info
 						.b-info__header
 							a.b-info__back.u-button.u-button--small.js-back(href="#")
-								span
-									svg.u-icon.u-icon--small.u-icon--right-space
+								span.u-icon
+									svg.u-icon__image.u-icon__image--small
 										use(xlink:href="app/img/sprite.svg#arrow")
-									!= `Все функции`
+								!= ` Все функции`
 
 						.b-info__wrap
 							.b-info__main
@@ -134,12 +134,9 @@ html
 							.b-info__case.b-cases
 								.b-cases__title Проверить изинг на изменение:
 								.b-cases__actions
-									button.u-button.u-button--small.b-cases__action.js-case-button(data-type="scale")
-										span Размера
-									button.u-button.u-button--small.b-cases__action.js-case-button(data-type="opacity")
-										span Прозрачности
-									button.u-button.u-button--small.b-cases__action.js-case-button(data-type="translate")
-										span Положения
+									button.u-button.u-button--small.b-cases__action.js-case-button(data-type="scale") Размера
+									button.u-button.u-button--small.b-cases__action.js-case-button(data-type="opacity") Прозрачности
+									button.u-button.u-button--small.b-cases__action.js-case-button(data-type="translate") Положения
 
 								.b-cases__list
 									.b-case

@@ -1,18 +1,22 @@
 @import "var";
 
 .u-icon {
-	max-width: 24px;
-	height: 24px;
-	fill: currentColor;
-	display: inline-block;
-	transform: translateY(-6%);
+	height: 1em;
+	vertical-align: middle;
+	transform: translateY(-10%);
+	display: inline-flex;
+	align-items: center;
 }
 
-		.u-icon--right-space {
-			margin-right: .5ex;
-		}
+	.u-icon__image {
+		flex: 0 0 auto;
+		width: 24px;
+		height: 24px;
+		display: block;
+		fill: currentColor;
+	}
 
-		.u-icon--small {
-			width: 16px;
-			height: 16px;
-		}
+			.u-icon__image--small {
+				width: 16px;
+				height: 16px;
+			}

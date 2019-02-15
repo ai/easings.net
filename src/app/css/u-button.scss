@@ -5,14 +5,14 @@
 	background: $brand;
 	color: $text-on-brand;
 	font-family: $system-fonts;
-	font-size: px2rem(14);
+	font-size: px2rem(16);
 	font-stretch: 100%;
 	font-weight: 500;
 	text-align: center;
 	text-decoration: none;
-	text-transform: uppercase;
 	line-height: $line-height;
-	padding: 1em 1.25em .75em;
+	height: auto;
+	padding: 1em 1.25em;
 	display: inline-block;
 	border-radius: $corner-radius;
 	min-width: 64px;
@@ -40,15 +40,9 @@
 	}
 
 	@include a11y-outline;
-
-	span {
-		display: flex;
-		align-items: center;
-		user-select: none;
-	}
 }
 
 		.u-button--small {
-			font-size: px2rem(12);
-			padding: 1em 1em .75em;
+			font-size: px2rem(14);
+			padding: 0.75em 1em;
 		}
