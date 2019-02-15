@@ -20,6 +20,10 @@ const overlayOffsetHorizontal = 30;
 
 let openItemId: string|null;
 
+info.addEventListener("click", () => {
+	requestAnimationFrame(resizeInfo);
+});
+
 export function navigateMain(): void {
 	scrollTo({
 		duration: 500,
