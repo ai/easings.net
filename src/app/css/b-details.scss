@@ -1,0 +1,38 @@
+@import "var";
+
+.b-details {
+	margin: #{$general-line-height / 2} 0 0;
+}
+
+	.b-details__summary {
+		outline: none;
+		user-select: none;
+		cursor: pointer;
+
+		@include a11y-outline;
+	}
+
+	.b-details__content {
+		margin: #{$general-line-height / 2} 0 #{$general-line-height};
+	}
+
+		.b-details__code {
+			outline: none;
+			width: 100%;
+			max-height: 250px;
+			display: block;
+			box-sizing: border-box;
+			padding: #{$general-line-height / 2};
+			transition: $transition;
+
+			white-space: pre;
+			word-wrap: break-word;
+			font-family: monospace;
+			font-size: 14px;
+			line-height: 1.2;
+			tab-size : 25px;
+
+			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+			border: 1px solid $text-light-color;
+		}

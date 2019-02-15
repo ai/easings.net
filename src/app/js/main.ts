@@ -6,8 +6,7 @@ import {
 	navigateMain,
 	resizeInfo,
 } from "./component/navigation";
-import { getElement } from "./helpers/getElement";
-import { getElementsList } from "./helpers/getElementsList";
+import { getElement, getElementsList } from "./helpers/getElement";
 
 const classFunctionActive = "b-function--active";
 const classFunctionFocus = "b-function--focus";

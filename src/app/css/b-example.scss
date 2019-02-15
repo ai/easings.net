@@ -2,6 +2,12 @@
 
 .b-example {
 	font-size: 1rem;
+
+	code {
+		font-family: monospace;
+		font-size: 14px;
+		line-height: 1.2;
+	}
 }
 
 		.b-example + .b-example {
@@ -28,9 +34,7 @@
 		white-space: nowrap;
 
 		code {
-			font-family: monospace;
 			font-size: 13px;
-			line-height: 1.2;
 		}
 	}
 

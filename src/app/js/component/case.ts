@@ -1,7 +1,6 @@
 import { forNodeList } from "../helpers/forNodeList";
 import { getTransitionTime } from "../helpers/getTransitionTime";
-import { getElement } from "../helpers/getElement";
-import { getElementsList } from "../helpers/getElementsList";
+import { getElement, getElementsList } from "../helpers/getElement";
 
 const caseTarget: HTMLElement = getElement(".js-case-target");
 const caseTargetWithFunc: HTMLElement = getElement(".js-case-func");

@@ -4,7 +4,7 @@ import { getTransitionTime } from "../helpers/getTransitionTime";
 import { getElementPosition } from "../helpers/getElementPosition";
 import { parseStringOfFourNumbers } from "../helpers/parseStringOfFourNumbers";
 import { noTimingFunction, selectorInfo } from "../helpers/constants";
-import { setInfoFunc, setInfoName } from "./infoText";
+import { setInfoFunc, setInfoName, showComplexInfo, showSimpleInfo } from "./infoText";
 import overlay from "./overlay";
 
 const selectorColumns = ".js-columns";
@@ -82,6 +82,9 @@ export function navigateChart(id: string): void {
 		if (func !== noTimingFunction) {
 			const points: number[] = parseStringOfFourNumbers(func);
 			linkCubicBezierElement.href = `${linkCubicBezierHref}#${points.join(",")}`;
+			showSimpleInfo();
+		} else {
+			showComplexInfo(name);
 		}
 
 		infoCurve

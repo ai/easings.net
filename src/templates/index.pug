@@ -1,6 +1,7 @@
 include components/Item
 include components/CodeCss
 include components/CodePostCss
+include components/Details
 include helpers/ExternalLink
 
 doctype html
@@ -100,21 +101,32 @@ html
 
 								.b-example
 									.b-example__title CSS
-									.b-example__text В CSS свойства transition и animation позволяют указывать функцию плавности.
-									.b-example__code
-										+CodeCss
+									.js-info-simple
+										.b-example__text В CSS свойства transition и animation позволяют указывать функцию плавности.
+										.b-example__code
+											+CodeCss
+									.js-info-complex
+										.b-example__text В CSS эту функцию можно реализовать с помощью #[code @keyframes]:
+										+Details("Размер", "scale") Загрузка...
+										+Details("Прозрачность", "opacity") Загрузка...
+										+Details("Положение", "translate") Загрузка...
 
 								.b-example
 									.b-example__title PostCSS
-									.b-example__text.
-										В PostCSS функцию перехода описывать сильно проще.
-										Есть плагин (#[+ExternalLink("https://github.com/postcss/postcss-easings") postcss-easings]),
-										который берёт информацию о переходе с этого сайта.
-									.b-example__code
-										+CodePostCss
-									.b-example__text Эта декларация преобразуется в подобную, которая описана выше.
+									.js-info-simple
+										.b-example__text.
+											В PostCSS функцию перехода описывать сильно проще.
+											Есть плагин (#[+ExternalLink("https://github.com/postcss/postcss-easings") postcss-easings]),
+											который берёт информацию о переходе с этого сайта.
+										.b-example__code
+											+CodePostCss
+										.b-example__text Эта декларация преобразуется в подобную, которая описана выше.
+									.js-info-complex
+										.b-example__text.
+											К сожалению, такую функцию плавности нельзя задать с помощью какого-либо плагина PostCSS.
+											Это можно сделать с помощью #[code @keyframes], смотри выше.
 
-								.b-example
+								.b-example.js-info-simple
 									!= `Редактировать текущую функцию на `
 									+ExternalLink("http://cubic-bezier.com/").js-cubic-bezier cubic-bezier.com
 
