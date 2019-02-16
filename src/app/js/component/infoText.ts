@@ -16,9 +16,6 @@ const infoSimple: NodeList = getElementsList(selectorSimpleInfo);
 const infoComplex: NodeList = getElementsList(selectorComplexInfo);
 const infoName: NodeList = getElementsList(".js-info-name", info);
 const infoFuncName: NodeList = getElementsList(".js-info-func", info);
-const infoKeyframesScale = getElement(selectorComplexKeyframeScale) as HTMLTextAreaElement;
-const infoKeyframesOpacity = getElement(selectorComplexKeyframeOpacity) as HTMLTextAreaElement;
-const infoKeyframesTranslate = getElement(selectorComplexKeyframeTranslate) as HTMLTextAreaElement;
 
 const keyframeTypes = {
 	opacity: "opacity",
