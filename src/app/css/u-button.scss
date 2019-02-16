@@ -39,6 +39,14 @@
 		color: $text-on-brand;
 	}
 
+	&.focus-visible {
+		box-shadow: none;
+	}
+
+	&:focus-visible {
+		box-shadow: none;
+	}
+
 	@include a11y-outline;
 }
 

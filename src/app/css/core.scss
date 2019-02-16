@@ -48,7 +48,6 @@ a {
 	transition: $transition;
 	outline: none;
 	border-bottom: 1px solid;
-	@include a11y-outline;
 
 	&:hover,
 	&:focus {
@@ -57,6 +56,14 @@ a {
 
 	&:active {
 		color: $brand-light;
+	}
+
+	&.focus-visible {
+		box-shadow: 0 0 1px 4px $brand;
+	}
+
+	&:focus-visible {
+		box-shadow: 0 0 1px 4px $brand;
 	}
 }
 
