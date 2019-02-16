@@ -5,5 +5,7 @@
 	z-index: 1;
 	background: #fff;
 	border-radius: $corner-radius;
+	will-change: width, height, top, left;
+	transform: translateZ(0);
 	@include block-active;
 }
