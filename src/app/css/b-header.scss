@@ -10,8 +10,6 @@
 	.b-header__definition {
 		width: 100%;
 		max-width: #{$max-readable-text-width + 100px};
-		text-align: justify;
-		hyphens: auto;
 		padding: 0 #{2*$general-line-height} 0 0;
 
 		p {
