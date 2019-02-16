@@ -41,6 +41,8 @@ export function navigateMain(): void {
 	info.classList.remove("b-info--evident");
 	info.style.position = "absolute";
 	info.style.top = "0px";
+	info.style.left = "0px";
+	info.style.right = "0px";
 
 	overlay.setTransitionDuration(timeTransitionForOverlay);
 
