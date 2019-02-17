@@ -27,8 +27,8 @@
 
 			white-space: pre;
 			word-wrap: break-word;
-			font-family: monospace;
-			font-size: 14px;
+			font-family: $code-fonts;
+			font-size: px2rem(13);
 			line-height: 1.2;
 			tab-size : 25px;
 

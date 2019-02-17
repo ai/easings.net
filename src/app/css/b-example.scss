@@ -31,10 +31,14 @@
 		margin: px2rem(-2) 0;
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
-		white-space: nowrap;
 
 		code {
-			font-size: 13px;
+			white-space: pre;
+			word-wrap: break-word;
+			font-family: $code-fonts;
+			font-size: px2rem(13);
+			line-height: 1.2;
+			tab-size : 25px;
 		}
 	}
 
