@@ -107,6 +107,10 @@ html
 										.b-example__text В CSS свойства transition и animation позволяют указывать функцию плавности.
 										.b-example__code
 											+CodeCss
+										.b-example__text
+											!= `Редактировать текущую функцию на `
+											+ExternalLink("http://cubic-bezier.com/").js-cubic-bezier cubic-bezier.com
+
 									.js-info-complex
 										.b-example__text В CSS эту функцию можно реализовать с помощью #[code @keyframes]:
 										+Details("Размер", "scale") Загрузка...
@@ -127,10 +131,6 @@ html
 										.b-example__text.
 											К сожалению, такую функцию плавности нельзя задать с помощью какого-либо плагина PostCSS.
 											Это можно сделать с помощью #[code @keyframes], смотри выше.
-
-								.b-example.js-info-simple
-									!= `Редактировать текущую функцию на `
-									+ExternalLink("http://cubic-bezier.com/").js-cubic-bezier cubic-bezier.com
 
 								.b-example.js-info-simple
 									.b-example__title Пример градиента данной функции
