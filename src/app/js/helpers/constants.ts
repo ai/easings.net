@@ -8,6 +8,10 @@ export const selectorComplexKeyframeScale = ".js-info-complex-scale";
 export const selectorComplexKeyframeOpacity = ".js-info-complex-opacity";
 export const selectorComplexKeyframeTranslate = ".js-info-complex-translate";
 export const selectorCode = ".js-code";
+export const selectorGradient = ".js-gradient";
 
 export const hiddenClassName = "u-hidden";
 export const infoChartOffsetTopClassName = "b-info-chart--offset_top";
+
+export const color1 = "#1976d2";
+export const color2 = "#00c853";

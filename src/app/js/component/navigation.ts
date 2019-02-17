@@ -6,6 +6,7 @@ import { parseStringOfFourNumbers } from "../helpers/parseStringOfFourNumbers";
 import { infoChartOffsetTopClassName, noTimingFunction, selectorInfo, selectorInfoChart } from "../helpers/constants";
 import { setInfoFunc, setInfoName, showComplexInfo, showSimpleInfo } from "./infoText";
 import overlay from "./overlay";
+import { hideGradient, setGradient } from "./gradient";
 
 const selectorColumns = ".js-columns";
 const timeTransitionForOverlay = 300;
@@ -97,8 +98,10 @@ export function navigateChart(id: string): void {
 			const points: number[] = parseStringOfFourNumbers(func);
 			linkCubicBezierElement.href = `${linkCubicBezierHref}#${points.join(",")}`;
 			showSimpleInfo();
+			setGradient(name, points);
 		} else {
 			showComplexInfo(name);
+			hideGradient();
 		}
 
 		infoCurve

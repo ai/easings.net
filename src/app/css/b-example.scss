@@ -42,6 +42,14 @@
 			width: 4ex;
 			display: inline-block;
 		}
+		
+		.b-example__gradient {
+			max-width: 100%;
+			width: 300px;
+			height: 200px;
+			display: none;
+			margin: #{$general-line-height / 2} 0;
+		}
 
 @media (max-width: $media-small) {
 	.b-example__title {
