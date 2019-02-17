@@ -29,7 +29,7 @@
 			word-wrap: break-word;
 			font-family: $code-fonts;
 			font-size: px2rem(13);
-			line-height: 1.2;
+			line-height: $line-height;
 			tab-size : 25px;
 
 			overflow: auto;
