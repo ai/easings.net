@@ -1,6 +1,7 @@
 include components/Item
 include components/CodeCss
 include components/CodePostCss
+include components/CodeGradient
 include components/Details
 include helpers/ExternalLink
 
@@ -141,7 +142,9 @@ html
 									.b-example__gradient.js-gradient
 									.b-example__text
 										!= `Или можно воспользоваться `
-										+ExternalLink("https://github.com/larsenwork/postcss-easing-gradients") PostCSS плагином
+										+ExternalLink("https://github.com/larsenwork/postcss-easing-gradients") PostCSS плагином.
+									.b-example__code
+										+CodeGradient
 
 							.b-info__case.b-cases
 								.b-cases__title Проверить изинг на изменение:
