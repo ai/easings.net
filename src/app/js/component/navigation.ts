@@ -1,4 +1,3 @@
-import { scrollTo } from "../helpers/scrollTo";
 import { setFuncForCase } from "./case";
 import { getTransitionTime } from "../helpers/getTransitionTime";
 import { getElementPosition } from "../helpers/getElementPosition";
@@ -28,9 +27,9 @@ info.addEventListener("click", () => {
 });
 
 export function navigateMain(): void {
-	scrollTo({
-		duration: 500,
-		to: 0,
+	window.scrollTo({
+		behavior: "smooth",
+		top: 0,
 	});
 
 	const item = document.getElementById(`func-${openItemId}`);
@@ -112,37 +111,41 @@ export function navigateChart(id: string): void {
 		info.style.transitionTimingFunction = transitionTimingFunction;
 		info.style.display = "block";
 
-		const itemPosition = getElementPosition(item);
-
-		overlay
-			.show()
-			.setSize({
-				height: itemPosition.height,
-				left: itemPosition.x,
-				top: itemPosition.y,
-				width: itemPosition.width,
-			})
-			.setTransitionDuration(timeTransitionForOverlay)
-			.setTransitionTimingFunction(transitionTimingFunction);
-
-		columns.classList.add("b-columns--hide");
-
 		requestAnimationFrame(() => {
-			const infoPosition = getElementPosition(info);
+			const itemPosition = getElementPosition(item);
 
 			overlay
+				.show()
 				.setSize({
-					height: infoPosition.height + overlayOffsetVertical,
-					left: infoPosition.x - overlayOffsetHorizontal / 2,
-					top: infoPosition.y - overlayOffsetVertical / 2,
-					width: infoPosition.width + overlayOffsetHorizontal,
+					height: itemPosition.height,
+					left: itemPosition.x,
+					top: itemPosition.y,
+					width: itemPosition.width,
+				})
+				.setTransitionDuration(timeTransitionForOverlay);
+
+			columns.classList.add("b-columns--hide");
+
+			requestAnimationFrame(() => {
+				const infoPosition = getElementPosition(info);
+
+				overlay
+					.setSize({
+						height: infoPosition.height + overlayOffsetVertical,
+						left: infoPosition.x - overlayOffsetHorizontal / 2,
+						top: infoPosition.y - overlayOffsetVertical / 2,
+						width: infoPosition.width + overlayOffsetHorizontal,
+					});
+
+				const headerPosition = getElementPosition(header);
+				const topOffset = headerPosition.height + headerPosition.y - overlayOffsetVertical / 2;
+
+				requestAnimationFrame(() => {
+					window.scrollTo({
+						behavior: "smooth",
+						top: topOffset,
+					});
 				});
-
-			const headerPosition = getElementPosition(header);
-
-			scrollTo({
-				duration: 300,
-				to: headerPosition.height + headerPosition.y - overlayOffsetVertical / 2,
 			});
 		});
 
