@@ -93,7 +93,7 @@ function setAnimation(animationType: string): void {
 
 	requestAnimationFrame(() => {
 		caseTargetWithFunc.style.animation = `
-			${animationName} ${time}ms both ${isReverse ? "reverse" : ""}
+			${animationName} ${time}ms both ${isReverse ? "reverse" : ""} linear
 		`;
 	});
 }
