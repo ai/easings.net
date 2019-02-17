@@ -39,6 +39,12 @@
 		line-height: $line-height;
 		tab-size : 25px;
 	}
+
+		.b-example__tab {
+			width: 25px;
+			height: 1px;
+			display: inline-block;
+		}
 		
 		.b-example__gradient {
 			max-width: 100%;
