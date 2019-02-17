@@ -7,6 +7,7 @@ export const selectorComplexInfo = ".js-info-complex";
 export const selectorComplexKeyframeScale = ".js-info-complex-scale";
 export const selectorComplexKeyframeOpacity = ".js-info-complex-opacity";
 export const selectorComplexKeyframeTranslate = ".js-info-complex-translate";
+export const selectorCode = ".js-code";
 
 export const hiddenClassName = "u-hidden";
 export const infoChartOffsetTopClassName = "b-info-chart--offset_top";

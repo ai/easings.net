@@ -2,5 +2,5 @@ mixin Details(name, type)
 	details.b-details
 		summary.b-details__summary= name
 		.b-details__content
-			.b-details__code(class=(`js-info-complex-${type}`))
+			.b-details__code.js-code(class=(`js-info-complex-${type}`))
 				block

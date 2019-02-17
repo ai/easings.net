@@ -7,6 +7,7 @@ import {
 	resizeInfo,
 } from "./component/navigation";
 import { getElement, getElementsList } from "./helpers/getElement";
+import { selectorCode } from "./helpers/constants";
 
 const classFunctionActive = "b-function--active";
 const classFunctionFocus = "b-function--focus";
@@ -124,4 +125,19 @@ window.addEventListener("keydown", (event) => {
 	if (event.key.toLowerCase() === keyName || event.code.toLowerCase() === keyName) {
 		window.location.hash = "";
 	}
+});
+
+forNodeList(getElementsList(selectorCode), (item) => {
+	item.addEventListener("click", () => {
+		if (window.getSelection) {
+			if (window.getSelection().isCollapsed) {
+				const selection = document.createRange();
+				selection.selectNode(item);
+				window.getSelection().removeAllRanges();
+				window.getSelection().addRange(selection);
+			} else {
+				window.getSelection().removeAllRanges();
+			}
+		}
+	});
 });
