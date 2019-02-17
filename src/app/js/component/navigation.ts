@@ -13,6 +13,7 @@ const timeTransitionForOverlay = 300;
 const linkCubicBezierElement: HTMLLinkElement = document.querySelector(".js-cubic-bezier");
 const linkCubicBezierHref: string = linkCubicBezierElement.href;
 
+const header: HTMLElement = document.querySelector(".js-header");
 const info: HTMLElement = document.querySelector(selectorInfo);
 const infoChart: HTMLElement = document.querySelector(selectorInfoChart);
 const columns: HTMLElement = document.querySelector(selectorColumns);
@@ -136,18 +137,17 @@ export function navigateChart(id: string): void {
 					top: infoPosition.y - overlayOffsetVertical / 2,
 					width: infoPosition.width + overlayOffsetHorizontal,
 				});
-		});
 
-		setTimeout(() => {
-			info.classList.add("b-info--evident");
-
-			const header: HTMLElement = document.querySelector(".js-header");
 			const headerPosition = getElementPosition(header);
 
 			scrollTo({
 				duration: 300,
 				to: headerPosition.height + headerPosition.y - overlayOffsetVertical / 2,
 			});
+		});
+
+		setTimeout(() => {
+			info.classList.add("b-info--evident");
 		}, timeTransitionForOverlay);
 
 		setTimeout(() => {
