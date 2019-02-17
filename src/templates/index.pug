@@ -133,16 +133,14 @@ html
 											Это можно сделать с помощью #[code @keyframes], смотри выше.
 
 								.b-example.js-info-simple
-									.b-example__title Пример градиента данной функции
+									.b-example__title Градиент
 									.b-example__text
-										!= `Создать нужную функцию можно на `
-										+ExternalLink("https://larsenwork.com/easing-gradients/") larsenwork.com/easing-gradients/
-									.b-example__gradient.js-gradient
-									.b-example__text
-										!= `Или можно воспользоваться `
-										+ExternalLink("https://github.com/larsenwork/postcss-easing-gradients") PostCSS плагином.
+										!= `Возможно нарисовать градиент с помощью `
+										+ExternalLink("https://github.com/larsenwork/postcss-easing-gradients") postcss-easing-gradients
+										|.
 									.b-example__code
 										+CodeGradient
+									.b-example__gradient.js-gradient
 
 							.b-info__case.b-cases
 								.b-cases__title Проверить изинг на изменение:
