@@ -1,0 +1,8 @@
+.overlay {
+	position: absolute;
+	z-index: 1;
+	background: #fff;
+	will-change: width, height, top, left;
+	transform: translateZ(0);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}

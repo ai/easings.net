@@ -1,0 +1,55 @@
+include header/header
+include footer/footer
+include columns/columns
+include info/info
+include overlay/overlay
+
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+
+		title Easings
+
+		link(href="./index.css" rel="stylesheet")
+
+	body
+		.layout
+			svg.layout__gradients-curve(xmlns="http://www.w3.org/2000/svg" width="0" height="0")
+				-
+					var colorBase = '#222';
+					var colorStart = '#1976d2';
+					var colorEnd = '#00c853';
+
+				defs
+					linearGradient#in(x1="0%" y1="100%" x2="100%" y2="0%")
+						stop(offset="0%" stop-color=colorBase)
+						stop(offset="50%" stop-color=colorBase)
+						stop(offset="70%" stop-color=colorEnd)
+						stop(offset="100%" stop-color=colorEnd)
+					linearGradient#out(x1="0%" y1="100%" x2="100%" y2="0%")
+						stop(offset="0%" stop-color=colorStart)
+						stop(offset="30%" stop-color=colorStart)
+						stop(offset="50%" stop-color=colorBase)
+						stop(offset="100%" stop-color=colorBase)
+					linearGradient#inOut(x1="0%" y1="100%" x2="100%" y2="0%")
+						stop(offset="0%" stop-color=colorStart)
+						stop(offset="20%" stop-color=colorStart)
+						stop(offset="80%" stop-color=colorEnd)
+						stop(offset="100%" stop-color=colorEnd)
+
+			h1.layout__title Шпаргалка функций плавности (easing)
+
+			.layout__wrap
+				+header
+
+				.layout__content
+					+columns
+					+info
+
+			+overlay
+			+footer
+
+		script(src='./index.ts' async)

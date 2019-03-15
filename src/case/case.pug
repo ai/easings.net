@@ -1,0 +1,6 @@
+include ../card/card
+
+mixin case(name, isTarget)
+	.case
+		.case__title= `${name}:`
+		+card(name, isTarget)

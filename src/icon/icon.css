@@ -1,0 +1,20 @@
+.icon {
+	height: 1em;
+	vertical-align: middle;
+	transform: translateY(-10%);
+	display: inline-flex;
+	align-items: center;
+}
+
+	.icon__image {
+		flex: 0 0 auto;
+		width: 24px;
+		height: 24px;
+		display: block;
+		fill: currentColor;
+	}
+
+			.icon__image--small {
+				width: 16px;
+				height: 16px;
+			}

@@ -1,0 +1,25 @@
+.layout {
+	overflow: hidden;
+}
+
+	.layout__gradients-curve,
+	.layout__title {
+		position: absolute;
+		clip: rect(0 0 0 0);
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+	}
+
+	.layout__wrap {
+		position: relative;
+		box-sizing: border-box;
+		width: 100%;
+		margin: 0 auto;
+		max-width: 1050px;
+		padding: 0 15px;
+	}
+
+		.layout__content {
+			position: relative;
+		}

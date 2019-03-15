@@ -1,0 +1,21 @@
+include ../function/function
+
+mixin columns
+	-
+		var easings = all_easings.reduce(function(resultArray, item, index) {
+			var chunkIndex = Math.floor(index / 3);
+
+			if(!resultArray[chunkIndex]) {
+				resultArray[chunkIndex] = [];
+			}
+
+			resultArray[chunkIndex].push(item);
+			return resultArray;
+		}, []);
+
+	.columns
+		.columns__wrap
+			each group in easings
+				.columns__group
+					each item, index in group
+						+function(item, index)

@@ -1,0 +1,73 @@
+:root {
+	--text-color: #222;
+	--text-light-color: #666;
+
+	--brand-color: #1976d2;
+	--brand-color-text: #fff;
+	--brand-darken-color: #004ba0;
+	--brand-darken-color-text: #fff;
+	--brand-lighten-color: #63a4ff;
+	--brand-lighten-color-text: var(--text-color);
+
+	--second-color: #00c853;
+
+	--chart-axis-color: #ccc;
+
+	--transition-time: 0.2s;
+	--transition-card-time: 1s;
+	--transition-show-time: 1.5s;
+
+	--line-height: 1.35;
+	--line-height-code: 1.5;
+	--general-line-height: 22px;
+
+	--code-fonts: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html {
+	line-height: 1.15;
+	text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+	"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+	"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	font-kerning: normal;
+	font-size: 100%;
+	color: var(--text-color);
+}
+
+body {
+	line-height: var(--line-height);
+	letter-spacing: 0.01em;
+	position: relative;
+	box-sizing: border-box;
+	background: #f8f8f8;
+	margin: 0;
+}
+
+a {
+	color: var(--brand-color);
+	text-decoration: none;
+	transition: var(--transition-time);
+	outline: none;
+	border-bottom: 1px solid;
+}
+
+	a:hover,
+	a:focus {
+		color: var(--brand-darken-color);
+	}
+
+	a:active {
+		color: var(--brand-lighten-color);
+	}
+
+	a.focus-visible {
+		box-shadow: 0 0 1px 4px var(--brand-color);
+	}
+
+	a.focus-visible {
+		box-shadow: 0 0 1px 4px var(--brand-color);
+	}

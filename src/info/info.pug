@@ -1,0 +1,80 @@
+include ../code/codeCss
+include ../code/codePostCss
+include ../code/codeGradient
+
+include ../external-link/external-link
+include ../case/case
+include ../details/details
+
+mixin info
+	section.info
+		.info__header
+			a.info__back.button.button--small(href="#")
+				span.icon
+					svg.icon__image.icon__image--small(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 24")
+						path(d="M14,3.8L12.2,2L2,12l10.2,10l1.8-1.8L5.6,12L14,3.8z")
+				!= ` Все функции`
+
+		.info__wrap
+			.info__main
+				h2.info__title.js-info-name easeInSine
+
+				.info-chart
+					.info-chart__wrap
+						svg.info-chart__curve(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 85")
+							path(d="")
+
+						.info-chart__text x
+						.info-chart__text.info-chart__text--bottom t
+
+				.example
+					.example__title CSS
+					.js-info-simple
+						.example__text В CSS свойства transition и animation позволяют указывать функцию плавности.
+						.example__code
+							+codeCss
+						.example__text
+							!= `Редактировать текущую функцию на `
+							+external-link("http://cubic-bezier.com/").js-cubic-bezier cubic-bezier.com
+
+					.js-info-complex
+						.example__text В CSS эту функцию можно реализовать с помощью #[code @keyframes]:
+						+details("Размер", "scale") Загрузка...
+						+details("Положение", "translate") Загрузка...
+						+details("Прозрачность", "opacity") Загрузка...
+
+				.example
+					.example__title PostCSS
+					.js-info-simple
+						.example__text.
+							В PostCSS функцию перехода описывать сильно проще.
+							Есть плагин (#[+external-link("https://github.com/postcss/postcss-easings") postcss-easings]),
+							который берёт информацию о переходе с этого сайта.
+						.example__code
+							+codePostCss
+						.example__text Эта декларация преобразуется в подобную, которая описана выше.
+					.js-info-complex
+						.example__text.
+							К сожалению, такую функцию плавности нельзя задать с помощью какого-либо плагина PostCSS.
+							Это можно сделать с помощью #[code @keyframes], смотри выше.
+
+				.example.js-info-simple
+					.example__title Градиент
+					.example__text
+						!= `Возможно нарисовать градиент с помощью `
+						+external-link("https://github.com/larsenwork/postcss-easing-gradients") postcss-easing-gradients
+						| .
+					.example__code
+						+codeGradient
+					.example__gradient
+
+			.info__case.cases
+				.cases__title Проверить изинг на изменение:
+				.cases__actions
+					button.button.button--small.cases__action(data-type="scale") Размера
+					button.button.button--small.cases__action(data-type="translate") Положения
+					button.button.button--small.cases__action(data-type="opacity") Прозрачности
+
+				.cases__list
+					+case("Текущая функция", true)
+					+case("Линейная функция")

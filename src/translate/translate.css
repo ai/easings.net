@@ -1,0 +1,15 @@
+.translate {
+	position: relative;
+	text-align: center;
+	border: none;
+	text-decoration: none;
+	background: #fff;
+	padding: 10px 15px;
+}
+
+	.translate__text {
+		width: 1px;
+		min-width: 100%;
+		box-sizing: border-box;
+		padding: 5px 0 0;
+	}

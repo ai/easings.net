@@ -1,0 +1,101 @@
+.chart {
+	display: flex;
+	max-width: 107px;
+	text-decoration: none;
+	height: 100%;
+	min-height: 70px;
+}
+
+		.chart:focus {
+			box-shadow: none;
+		}
+
+	.chart__wrap {
+		position: relative;
+	}
+
+			.chart__wrap--offset_top {
+				height: 55px;
+				margin-top: auto;
+			}
+
+			.chart__wrap--offset_bottom {
+				height: 55px;
+			}
+
+		.chart__image {
+			width: 100%;
+			min-width: 50px;
+			height: 100%;
+			overflow: visible;
+			display: block;
+			margin: 0 auto;
+		}
+
+			.chart__explanations {
+				opacity: 0;
+				transition: var(--transition-time);
+			}
+
+					.chart--active .chart__explanations {
+						opacity: 1;
+					}
+
+				.chart__axis {
+					fill: none;
+					stroke-width: 1px;
+					stroke: var(--chart-axis-color);
+				}
+
+				.chart__text {
+					fill: var(--chart-axis-color);
+					font-size: 10px;
+				}
+
+
+			.chart__curve {
+				fill: none;
+				stroke-width: 3px;
+				stroke-linecap: round;
+				transition: var(--transition-time);
+				transform: translate(1px, -1px);
+			}
+
+					.chart__wrap--offset_top .chart__curve,
+					.chart__wrap--offset_bottom .chart__curve {
+						stroke-width: 4px;
+					}
+
+		.chart__cursor {
+			position: absolute;
+			top: 100%;
+			right: -17px;
+			opacity: 0;
+			will-change: top, opacity;
+			transition: top 0s, opacity 0s;
+			transition-delay: 0s, 0s;
+			transform: translateY(-7px);
+		}
+
+			.chart__cursor::after {
+				content: '';
+				display: block;
+				width: 10px;
+				height: 10px;
+				border-radius: 0 50% 50% 50%;
+				background: var(--brand-color);
+				transform: rotate(-45deg);
+			}
+
+				.chart--active .chart__cursor {
+					opacity: 1;
+					top: 1%;
+					transition: top var(--transition-show-time), opacity var(--transition-time);
+					transition-delay: var(--transition-time), 0s;
+				}
+
+@media (max-width: 550px) {
+	.chart {
+		width: 100px;
+	}
+}

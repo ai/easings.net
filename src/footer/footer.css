@@ -1,0 +1,33 @@
+.footer {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0 auto;
+	max-width: 1050px;
+	padding: 20px 15px;
+}
+
+	.footer__group {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+	}
+
+		.footer__copyright {
+			text-align: center;
+		}
+
+		.footer__lang {
+			display: flex;
+			justify-content: flex-end;
+			margin: 0 0 5px
+		}
+
+@media (max-width: 900px) {
+	.footer__group {
+		flex-direction: column-reverse;
+	}
+
+		.footer__copyright {
+			margin: 0 auto;
+		}
+}

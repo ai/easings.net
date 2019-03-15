@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><% if(defs) {%>
-	<defs>
-		<%= defs %>
-	</defs><% } %><% _.forEach( icons, function( icon ){ %>
-	<symbol id="<%= icon.id %>" viewBox="<%= icon.svg.viewBox %>"><% if (icon.title) {%>
-		<title><%= icon.title %></title><% }%>
-		<%= icon.svg.content %>
-	</symbol><%
-	}); %></svg>

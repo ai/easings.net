@@ -1,0 +1,54 @@
+.example {
+	font-size: 1rem;
+}
+
+	.example code {
+		font-family: monospace;
+		font-size: 14px;
+		line-height: 1.2;
+	}
+
+		.example + .example {
+			padding: var(--general-line-height) 0 0;
+		}
+
+	.example__title {
+		font-size: 26px;
+		font-weight: 500;
+		line-height: calc(2 * var(--general-line-height));
+		margin: 0;
+		padding: 0;
+	}
+
+	.example__text {
+
+	}
+
+	.example__code {
+		padding: calc(var(--general-line-height) / 2) 0;
+		margin: -2px 0;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+
+		white-space: pre;
+		word-wrap: break-word;
+		font-family: var(--code-fonts);
+		font-size: 13px;
+		line-height: var(--line-height-code);
+		tab-size : 25px;
+	}
+		
+		.example__gradient {
+			max-width: 100%;
+			width: 300px;
+			height: 200px;
+			display: none;
+			margin: 0 0 calc(var(--general-line-height) / 2) 0;
+		}
+
+@media (max-width: 550px) {
+	.example__title {
+		font-weight: 400;
+		font-size: 22px;
+	}
+}
