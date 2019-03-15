@@ -2,8 +2,8 @@ import { forNodeList } from "../helpers/forNodeList";
 import { getTransitionTime } from "../helpers/getTransitionTime";
 import { getElement, getElementsList } from "../helpers/getElement";
 
-const cardTarget: HTMLElement = getElement(".card__wrap--target");
-const cardTargetWithFunc: HTMLElement = getElement(".card__wrap:not(.card__wrap--target)");
+const cardTarget: HTMLElement = getElement(".card__wrap:not(.card__wrap--target)");
+const cardTargetWithFunc: HTMLElement = getElement(".card__wrap--target");
 const casesButtonsList: NodeList = getElementsList(".cases__action");
 
 const typeCard: {[key: string]: string} = {
