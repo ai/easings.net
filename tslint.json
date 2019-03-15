@@ -1,9 +1,8 @@
 {
 	"extends": "tslint:recommended",
 	"rules": {
-		"max-line-length": {
-			"options": [120]
-		},
+		"interface-name": false,
+		"max-line-length": false,
 		"no-console": {
 			"severity": "warning",
 			"options": ["debug", "info", "log", "time", "timeEnd", "trace"]

@@ -4,7 +4,7 @@
 	"main": "gulpfile.js",
 	"author": "Ivan Solovev <solovev.one@yandex.ru> (https://solovev.one/)",
 	"scripts": {
-		"start": "parcel ./src/templates/index.pug",
+		"start": "parcel ./src/index.pug",
 		"precommit": "lint-staged"
 	},
 	"license": "MIT",
@@ -22,6 +22,7 @@
 		"prettier": "^1.16.4",
 		"pug": "^2.0.3",
 		"sass": "^1.17.2",
+		"tslint": "^5.14.0",
 		"typescript": "^3.3.3333"
 	},
 	"husky": {
