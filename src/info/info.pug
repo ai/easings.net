@@ -30,15 +30,15 @@ mixin info
 				.example
 					.example__title CSS
 					.js-info-simple
-						.example__text В CSS свойства transition и animation позволяют указывать функцию плавности.
+						div В CSS свойства transition и animation позволяют указывать функцию плавности.
 						.example__code
 							+codeCss
-						.example__text
+						div
 							!= `Редактировать текущую функцию на `
 							+external-link("http://cubic-bezier.com/").js-cubic-bezier cubic-bezier.com
 
 					.js-info-complex
-						.example__text В CSS эту функцию можно реализовать с помощью #[code @keyframes]:
+						div В CSS эту функцию можно реализовать с помощью #[code @keyframes]:
 						+details("Размер", "scale") Загрузка...
 						+details("Положение", "translate") Загрузка...
 						+details("Прозрачность", "opacity") Загрузка...
@@ -46,21 +46,21 @@ mixin info
 				.example
 					.example__title PostCSS
 					.js-info-simple
-						.example__text.
+						div.
 							В PostCSS функцию перехода описывать сильно проще.
 							Есть плагин (#[+external-link("https://github.com/postcss/postcss-easings") postcss-easings]),
 							который берёт информацию о переходе с этого сайта.
 						.example__code
 							+codePostCss
-						.example__text Эта декларация преобразуется в подобную, которая описана выше.
+						div Эта декларация преобразуется в подобную, которая описана выше.
 					.js-info-complex
-						.example__text.
+						div.
 							К сожалению, такую функцию плавности нельзя задать с помощью какого-либо плагина PostCSS.
 							Это можно сделать с помощью #[code @keyframes], смотри выше.
 
 				.example.js-info-simple
 					.example__title Градиент
-					.example__text
+					div
 						!= `Возможно нарисовать градиент с помощью `
 						+external-link("https://github.com/larsenwork/postcss-easing-gradients") postcss-easing-gradients
 						| .

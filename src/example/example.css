@@ -20,10 +20,6 @@
 		padding: 0;
 	}
 
-	.example__text {
-
-	}
-
 	.example__code {
 		padding: calc(var(--general-line-height) / 2) 0;
 		margin: -2px 0;
