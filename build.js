@@ -25,7 +25,8 @@ const shortCssClassName = generateCssClassName();
 
 const bundler = new Parcel("./src/index.pug", {
 	sourceMaps: false,
-	scopeHoist: true
+	scopeHoist: true,
+	publicUrl: "./"
 });
 
 async function build() {
