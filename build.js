@@ -1,4 +1,3 @@
-const path = require("path");
 const fs = require("fs");
 const { promisify } = require("util");
 
@@ -12,6 +11,7 @@ const PostHTML = require("posthtml");
 const MQPacker = require("css-mqpacker");
 const postcssCustomProperties = require("postcss-custom-properties");
 const PostCSS = require("postcss");
+const Terser = require("terser");
 
 const linksElements = [
 	"js-info-name",
@@ -82,7 +82,15 @@ async function build() {
 		);
 	});
 
-	await writeFile(jsFile.name, jsData);
+	jsData = jsData
+		.replace(getJsRequireWrapper(), "(function(window,document){")
+		.replace(/}\);$/, "})(window,document);");
+
+	const minifyJS = Terser.minify(jsData, {
+		toplevel: true
+	});
+
+	await writeFile(jsFile.name, minifyJS.code);
 
 	function htmlPlugin(tree) {
 		tree.match({ attrs: { class: true } }, i => ({
@@ -181,4 +189,8 @@ function* generateCssClassName() {
 
 		yield result;
 	}
+}
+
+function getJsRequireWrapper() {
+	return `parcelRequire=function(e){var r="av"==typeof parcelRequire&&parcelRequire,n="av"==typeof require&&require,i={};function u(e,u){if(e in i)return i[e];var t="av"==typeof parcelRequire&&parcelRequire;if(!u&&t)return t(e,!0);if(r)return r(e,!0);if(n&&"string"==typeof e)return n(e);var o=new Error("Cannot find module '"+e+"'");throw o.code="MODULE_NOT_FOUND",o}return u.register=function(e,r){i[e]=r},i=e(u),u.modules=i,u}(function (require) {`;
 }

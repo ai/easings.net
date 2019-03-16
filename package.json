@@ -42,6 +42,7 @@
 		"husky": "^1.3.1",
 		"js-yaml": "^3.12.2",
 		"lint-staged": "^8.1.5",
+		"parcel-plugin-compress": "^1.0.7",
 		"postcss": "^7.0.14",
 		"postcss-custom-properties": "^8.0.9",
 		"postcss-flexbugs-fixes": "^4.1.0",
@@ -51,6 +52,7 @@
 		"prettier": "^1.16.4",
 		"pug": "^2.0.3",
 		"sass": "^1.17.2",
+		"terser": "^3.17.0",
 		"tslint": "^5.14.0",
 		"typescript": "^3.3.3333"
 	},
@@ -64,5 +66,26 @@
 			"prettier --write",
 			"git add"
 		]
+	},
+	"compress": {
+		"test": ".",
+		"gzip": {
+			"enabled": true,
+			"numiterations": 15,
+			"blocksplitting": true,
+			"blocksplittinglast": false,
+			"blocksplittingmax": 15
+		},
+		"brotli": {
+			"enabled": true,
+			"mode": 0,
+			"quality": 11,
+			"lgwin": 22,
+			"lgblock": 0,
+			"enable_dictionary": true,
+			"enable_transforms": false,
+			"greedy_block_split": false,
+			"enable_context_modeling": false
+		}
 	}
 }
