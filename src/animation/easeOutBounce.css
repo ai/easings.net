@@ -123,3 +123,45 @@
 		transform: translateX(-100%);
 	}
 }
+
+@keyframes cursor-easeOutBounce {
+	0% {
+		top: 101%;
+	}
+
+	12% {
+		top: 90%;
+	}
+
+	24% {
+		top: 56%;
+	}
+
+	36% {
+		top: 3%;
+	}
+
+	54% {
+		top: 25%;
+	}
+
+	74% {
+		top: 3%;
+	}
+
+	82% {
+		top: 7%;
+	}
+
+	92% {
+		top: 1%;
+	}
+
+	96% {
+		top: 3%;
+	}
+
+	100% {
+		top: 1%;
+	}
+}
