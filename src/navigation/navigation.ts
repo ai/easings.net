@@ -45,7 +45,6 @@ export function navigateMain(): void {
 	info.style.left = "0px";
 	info.style.right = "0px";
 
-	clearTransition();
 	overlay.setTransitionDuration(timeTransitionForOverlay);
 
 	setTimeout(() => {
@@ -73,6 +72,8 @@ export function navigateChart(id: string): void {
 	if (!item || openItemId === id) {
 		return;
 	}
+
+	clearTransition();
 
 	openItemId = id;
 	const name = item.getAttribute("data-name");
