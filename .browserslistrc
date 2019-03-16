@@ -1,3 +1,2 @@
-last 5 versions
-ie >= 10
-> 1%
+defaults
+not ie 11
