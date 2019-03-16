@@ -26,12 +26,10 @@
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
 
-		white-space: pre;
 		word-wrap: break-word;
 		font-family: var(--code-fonts);
 		font-size: 13px;
 		line-height: var(--line-height-code);
-		tab-size : 25px;
 	}
 		
 		.example__gradient {

@@ -1,12 +1,9 @@
 mixin codeGradient
-	-
-		var html = '<span class="u-color-second">.block</span> {<br>';
-		html += '<span class="u-tab"></span><span class="u-color-second">background</span>: linear-gradient(<br>'
-		html += '<span class="u-double-tab"></span>to bottom,<br>';
-		html += '<span class="u-double-tab"></span>#1976D2,<br>';
-		html += '<span class="u-double-tab"></span><span class="u-color-brand js-info-func"></span>,<br>';
-		html += '<span class="u-double-tab"></span>#00C853<br>';
-		html += '<span class="u-tab"></span>);<br>'
-		html += '}'
-
-	!= html
+	| #[span.u-color-second .block] {#[br]
+	| #[span.u-tab]#[span.u-color-second background]: linear-gradient(#[br]
+	| #[span.u-double-tab]to bottom,#[br]
+	| #[span.u-double-tab]#1976D2,#[br]
+	| #[span.u-double-tab]#[span.u-color-brand.js-info-func],#[br]
+	| #[span.u-double-tab]#00C853#[br]
+	| #[span.u-tab]);#[br]
+	| }

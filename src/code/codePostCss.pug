@@ -1,8 +1,4 @@
 mixin codePostCss()
-	-
-		var html = '<span class="u-color-second">.block</span> {<br>';
-		html += '<span class="u-tab"></span><span class="u-color-second">transition</span>: transform 0.6s ';
-		html += '<span class="u-color-brand js-info-name"> </span>;<br>'
-		html += '}'
-
-	!= html
+	| #[span.u-color-second .block] {#[br]
+	| #[span.u-tab]#[span.u-color-second transition]: transform 0.6s #[span.u-color-brand.js-info-name];#[br]
+	| }
