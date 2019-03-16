@@ -1,8 +1,0 @@
-{
-	"opacity":
-		"@keyframes opacity-easeInBounce {\n\t0% {\n\t\topacity: 1;\n\t}\n\n\t4% {\n\t\topacity: 0.985;\n\t}\n\n\t8% {\n\t\topacity: 0.995;\n\t}\n\n\t18% {\n\t\topacity: 0.938;\n\t}\n\n\t26% {\n\t\topacity: 0.9837;\n\t}\n\n\t46% {\n\t\topacity: 0.78;\n\t}\n\n\t64% {\n\t\topacity: 0.98;\n\t}\n\n\t76% {\n\t\topacity: 0.436;\n\t}\n\n\t88% {\n\t\topacity: 0.109;\n\t}\n\n\t100% {\n\t\topacity: 0;\n\t}\n}",
-	"scale":
-		"@keyframes scale-easeInBounce {\n\t0% {\n\t\ttransform: scale(1);\n\t}\n\n\t4% {\n\t\ttransform: scale(0.984);\n\t}\n\n\t8% {\n\t\ttransform: scale(0.995);\n\t}\n\n\t18% {\n\t\ttransform: scale(0.938);\n\t}\n\n\t26% {\n\t\ttransform: scale(0.9837);\n\t}\n\n\t46% {\n\t\ttransform: scale(0.78);\n\t}\n\n\t64% {\n\t\ttransform: scale(0.98);\n\t}\n\n\t76% {\n\t\ttransform: scale(0.436);\n\t}\n\n\t88% {\n\t\ttransform: scale(0.109);\n\t}\n\n\t100% {\n\t\ttransform: scale(0);\n\t}\n}",
-	"translate":
-		"@keyframes translate-easeInBounce {\n\t0% {\n\t\ttransform: translateX(0%);\n\t}\n\n\t4% {\n\t\ttransform: translateX(-1.6%);\n\t}\n\n\t8% {\n\t\ttransform: translateX(-0.5%);\n\t}\n\n\t18% {\n\t\ttransform: translateX(-6.8%);\n\t}\n\n\t26% {\n\t\ttransform: translateX(-1.7%);\n\t}\n\n\t46% {\n\t\ttransform: translateX(-22%);\n\t}\n\n\t64% {\n\t\ttransform: translateX(-2%);\n\t}\n\n\t76% {\n\t\ttransform: translateX(-56.4%);\n\t}\n\n\t88% {\n\t\ttransform: translateX(-89.1%);\n\t}\n\n\t100% {\n\t\ttransform: translateX(-100%);\n\t}\n}"
-}

@@ -1,8 +1,0 @@
-{
-	"opacity":
-		"@keyframes opacity-easeInOutElastic {\n\t0%, 16%, 22%, 36% {\n\t\topacity: 1;\n\t}\n\n\t4%, 8% {\n\t\topacity: 0.95;\n\t}\n\n\t28%, 32% {\n\t\topacity: 0.9;\n\t}\n\n\t70%, 72% {\n\t\topacity: 0.1;\n\t}\n\n\t90%, 92% {\n\t\topacity: 0.05;\n\t}\n\n\t76%, 86%, 96%, 100% {\n\t\topacity: 0;\n\t}\n}",
-	"scale":
-		"@keyframes scale-easeInOutElastic {\n\t0% {\n\t\ttransform: scale(1);\n\t}\n\n\t4%, 8% {\n\t\ttransform: scale(0.999);\n\t}\n\n\t18%, 20% {\n\t\ttransform: scale(1.01);\n\t}\n\n\t28%, 30% {\n\t\ttransform: scale(0.97);\n\t}\n\n\t38%, 40% {\n\t\ttransform: scale(1.1);\n\t}\n\n\t60%, 62% {\n\t\ttransform: scale(-0.1);\n\t}\n\n\t70%, 72% {\n\t\ttransform: scale(0.03);\n\t}\n\n\t80%, 82% {\n\t\ttransform: scale(-0.01);\n\t}\n\n\t90%, 92% {\n\t\ttransform: scale(0.001);\n\t}\n\n\t100% {\n\t\ttransform: scale(0);\n\t}\n}",
-	"translate":
-		"@keyframes translate-easeInOutElastic {\n\t0% {\n\t\ttransform: translateX(0%);\n\t}\n\n\t4%, 8% {\n\t\ttransform: translateX(-0.1%);\n\t}\n\n\t18%, 20% {\n\t\ttransform: translateX(0.5%);\n\t}\n\n\t28%, 30% {\n\t\ttransform: translateX(-2.4%);\n\t}\n\n\t38%, 40% {\n\t\ttransform: translateX(10%);\n\t}\n\n\t60%, 62% {\n\t\ttransform: translateX(-110%);\n\t}\n\n\t70%, 72% {\n\t\ttransform: translateX(-97.6%);\n\t}\n\n\t80%, 82% {\n\t\ttransform: translateX(-100.5%);\n\t}\n\n\t90%, 92% {\n\t\ttransform: translateX(-99.9%);\n\t}\n\n\t100% {\n\t\ttransform: translateX(-100%);\n\t}\n}"
-}

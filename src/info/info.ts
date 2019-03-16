@@ -4,11 +4,11 @@ import {
 	selectorComplexKeyframeScale,
 	selectorComplexKeyframeTranslate,
 	selectorInfo,
-	selectorSimpleInfo,
+	selectorSimpleInfo
 } from "../helpers/constants";
 import { forNodeList } from "../helpers/forNodeList";
 import { getElement, getElementsList } from "../helpers/getElement";
-import { cssKeyframeHighlight } from "../helpers/cssKeyframeHighlight";
+import { generateComplexEasings, keyframeTypes } from "../easings/easings";
 
 const info: HTMLElement = getElement(selectorInfo);
 const infoSimple: NodeList = getElementsList(selectorSimpleInfo);
@@ -16,13 +16,7 @@ const infoComplex: NodeList = getElementsList(selectorComplexInfo);
 const infoName: NodeList = getElementsList(".js-info-name", info);
 const infoFuncName: NodeList = getElementsList(".js-info-func", info);
 
-const keyframeTypes = {
-	opacity: "opacity",
-	scale: "scale",
-	translate: "translate",
-};
-
-const infoKeyframes: any = {
+const infoKeyframes = {
 	opacity: getElement(selectorComplexKeyframeOpacity),
 	scale: getElement(selectorComplexKeyframeScale),
 	translate: getElement(selectorComplexKeyframeTranslate),
@@ -55,28 +49,7 @@ export function showComplexInfo(name: string): void {
 	forNodeList(infoSimple, (item) => item.hidden = true);
 	forNodeList(infoComplex, (item) => item.hidden = false);
 
-	fetch(`complex-functions/${name}.json`)
-		.then((r) => r.json())
-		.then((data) => {
-			setTextAtInfoKeyframe(keyframeTypes.scale, data.scale);
-			setTextAtInfoKeyframe(keyframeTypes.opacity, data.opacity);
-			setTextAtInfoKeyframe(keyframeTypes.translate, data.translate);
-		})
-		.catch(() => {
-			setTextAtInfoKeyframe(keyframeTypes.scale);
-			setTextAtInfoKeyframe(keyframeTypes.opacity);
-			setTextAtInfoKeyframe(keyframeTypes.translate);
-		});
-}
-
-function setTextAtInfoKeyframe(type: string, text?: string): void {
-	const element: HTMLElement = infoKeyframes[type];
-
-	if (element) {
-		if (typeof text === "string") {
-			element.innerHTML = cssKeyframeHighlight(text);
-		} else {
-			element.innerHTML = `Ошибка загрузки!`;
-		}
-	}
+	infoKeyframes.opacity.innerHTML = generateComplexEasings(name, keyframeTypes.opacity);
+	infoKeyframes.scale.innerHTML = generateComplexEasings(name, keyframeTypes.scale);
+	infoKeyframes.translate.innerHTML = generateComplexEasings(name, keyframeTypes.translate);
 }
