@@ -1,6 +1,6 @@
 .columns {
 	box-sizing: border-box;
-	padding: .25rem 0 0;
+	padding: 0.25rem 0 0;
 	transition: var(--transition-time);
 }
 		.columns--hide {

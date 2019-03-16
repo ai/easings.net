@@ -12,7 +12,7 @@
 		flex-wrap: wrap;
 		align-items: flex-start;
 		margin: 0 calc(-0.25 * var(--general-line-height));
-		transition: .5s;
+		transition: 0.5s;
 	}
 
 		.cases__action {
