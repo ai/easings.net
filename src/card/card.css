@@ -28,8 +28,6 @@
 		transition: var(--transition-card-time) linear;
 	}
 
-			.card__wrap--target {}
-
 			.card__wrap--no-transition {
 				transition: none;
 			}

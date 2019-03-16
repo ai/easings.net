@@ -9,7 +9,7 @@ include ../details/details
 mixin info
 	section.info
 		.info__header
-			a.info__back.button.button--small(href="#")
+			a.button.button--small(href="#")
 				span.icon
 					svg.icon__image.icon__image--small(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 24")
 						path(d="M14,3.8L12.2,2L2,12l10.2,10l1.8-1.8L5.6,12L14,3.8z")
@@ -68,7 +68,7 @@ mixin info
 						+codeGradient
 					.example__gradient
 
-			.info__case.cases
+			.info__case
 				.cases__title Проверить изинг на изменение:
 				.cases__actions
 					button.button.button--small.cases__action(data-type="scale") Размера

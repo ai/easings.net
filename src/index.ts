@@ -95,13 +95,6 @@ if (chartId) {
 	navigateChart(chartId);
 }
 
-getElement(".info__back")
-	.addEventListener("click", (event) => {
-		event.preventDefault();
-		navigateMain();
-		history.pushState("", document.title, window.location.pathname);
-	});
-
 window.addEventListener("resize", resizeInfo, false);
 
 window.addEventListener(

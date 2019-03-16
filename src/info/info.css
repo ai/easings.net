@@ -17,17 +17,12 @@
 		margin: 0 0 var(--general-line-height);
 	}
 
-		.info__back {
-
-		}
-
 	.info__wrap {
 		display: flex;
 		align-items: flex-start;
 	}
 
 		.info__case {
-			vertical-align: top;
 			box-sizing: border-box;
 			padding: 0 0 0 20px;
 			width: 100%;
