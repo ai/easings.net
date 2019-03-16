@@ -31,8 +31,7 @@ mixin function(item, index)
 	.function(id=(`func-${item.name}`) data-name=item.name data-func=item.css data-offset=item.offset)
 		a.function__chart.chart(href=`#${item.name}`)
 			.chart__wrap(class=className)
-				svg.chart__image(viewBox=(`0 0 ${chartWidth} ${chartHeight}`) xmlns="http://www.w3.org/2000/svg"
-				height=(chartHeight) width=(chartWidth))
+				svg.chart__image(viewBox=(`0 0 ${chartWidth} ${chartHeight}`) xmlns="http://www.w3.org/2000/svg")
 					g.chart__explanations
 						path.chart__axis(d=(`M1 0V${chartHeight - 1}H${chartWidth}`) fill="none")
 						text.chart__text(x="4" y="8") x
