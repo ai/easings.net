@@ -37,8 +37,7 @@ forNodeList(casesButtonsList, (button) => {
 });
 
 export function setFuncForCard(cssFunc: string, name: string): void {
-	clearTransition(cardTarget);
-	clearTransition(cardTargetWithFunc);
+	clearTransition();
 
 	if (cssFunc === "no") {
 		currentName = name;
@@ -98,19 +97,27 @@ function setAnimation(animationType: string): void {
 	});
 }
 
-function clearTransition(target: HTMLElement): void {
-	target.classList.add(cardClassWithoutTransition);
-	target.removeAttribute("style");
+export function clearTransition(): void {
+	cardTarget.classList.add(cardClassWithoutTransition);
+	cardTargetWithFunc.classList.add(cardClassWithoutTransition);
+	cardTarget.removeAttribute("style");
+	cardTargetWithFunc.removeAttribute("style");
 
 	requestAnimationFrame(() => {
-		target.classList.remove(
+		cardTarget.classList.remove(
+			cardTargetClassList.opacity,
+			cardTargetClassList.scale,
+			cardTargetClassList.translate,
+		);
+		cardTargetWithFunc.classList.remove(
 			cardTargetClassList.opacity,
 			cardTargetClassList.scale,
 			cardTargetClassList.translate,
 		);
 
 		requestAnimationFrame(() => {
-			target.classList.remove(cardClassWithoutTransition);
+			cardTarget.classList.remove(cardClassWithoutTransition);
+			cardTargetWithFunc.classList.remove(cardClassWithoutTransition);
 		});
 	});
 }

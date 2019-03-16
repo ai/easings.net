@@ -1,4 +1,4 @@
-import { setFuncForCard } from "../card/card";
+import { clearTransition, setFuncForCard } from "../card/card";
 import { getTransitionTime } from "../helpers/getTransitionTime";
 import { getElementPosition } from "../helpers/getElementPosition";
 import { parseStringOfFourNumbers } from "../helpers/parseStringOfFourNumbers";
@@ -45,6 +45,7 @@ export function navigateMain(): void {
 	info.style.left = "0px";
 	info.style.right = "0px";
 
+	clearTransition();
 	overlay.setTransitionDuration(timeTransitionForOverlay);
 
 	setTimeout(() => {
