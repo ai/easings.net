@@ -974,7 +974,7 @@ atob@^2.1.1:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-autoprefixer@^9.4.9:
+autoprefixer@^9.4.9, autoprefixer@^9.5.0:
   version "9.5.0"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.5.0.tgz#7e51d0355c11596e6cf9a0afc9a44e86d1596c70"
   integrity sha512-hMKcyHsZn5+qL6AUeP3c8OyuteZ4VaUlg+fWbyl8z7PqsKHF/Bf8/px3K6AT8aMzDkBo8Bc11245MM+itDBOxQ==
@@ -1688,6 +1688,14 @@ css-modules-loader-core@^1.1.0:
     postcss-modules-local-by-default "1.2.0"
     postcss-modules-scope "1.1.0"
     postcss-modules-values "1.3.0"
+
+css-mqpacker@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/css-mqpacker/-/css-mqpacker-7.0.0.tgz#48f4a0ff45b81ec661c4a33ed80b9db8a026333b"
+  integrity sha512-temVrWS+sB4uocE2quhW8ru/KguDmGhCU7zN213KxtDvWOH3WS/ZUStfpF4fdCT7W8fPpFrQdWRFqtFtPPfBLA==
+  dependencies:
+    minimist "^1.2.0"
+    postcss "^7.0.0"
 
 css-prefers-color-scheme@^3.1.1:
   version "3.1.1"
@@ -3187,6 +3195,11 @@ isstream@~0.1.2:
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
   integrity sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
 
+js-base64@^2.1.9:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.5.1.tgz#1efa39ef2c5f7980bb1784ade4a8af2de3291121"
+  integrity sha512-M7kLczedRMYX4L8Mdh4MzyAMM9O5osx+4FcOQuTvr3A9F2D9S5JXheN0ewNbrvK2UatkTRhL5ejGmGSjNMiZuw==
+
 js-beautify@^1.8.9:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/js-beautify/-/js-beautify-1.9.0.tgz#2562fcdee340f9f962ae2ec4a8a40e7aaa6d964f"
@@ -4102,10 +4115,10 @@ pako@~1.0.5:
   resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.10.tgz#4328badb5086a426aa90f541977d4955da5c9732"
   integrity sha512-0DTvPVU3ed8+HNXOu5Bs+o//Mbdj9VNQMUOe9oKCwh8l0GNwpTDMKCWbRjgtD291AWnkAgkqA/LOnQS8AmS1tw==
 
-parcel@^1.12.2:
+parcel-bundler@^1.12.2:
   version "1.12.2"
-  resolved "https://registry.yarnpkg.com/parcel/-/parcel-1.12.2.tgz#3efac8a3a5dd53142996dd892a40d3338b8b47dc"
-  integrity sha512-Ye8EwEgkcj6JblcqTXVbJ3Rrr0lediOcRc4rEVvVX5v8bMGs9gkszGuStw3offujK6io5ocjemzAS0+FqBvUhw==
+  resolved "https://registry.yarnpkg.com/parcel-bundler/-/parcel-bundler-1.12.2.tgz#5736afcbeee80a488bb946fd53ba52d1c5786960"
+  integrity sha512-jgT72i0za+EAgnxPBhXOKKlEQtTa4BfYdhe2jzulnT7785v/zHZMCI6qw3oD/Cju850OZcSubIE3U8Bt8Lzw9w==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -4793,6 +4806,14 @@ postcss-pseudo-class-any-link@^6.0.0:
     postcss "^7.0.2"
     postcss-selector-parser "^5.0.0-rc.3"
 
+postcss-pxtorem@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-pxtorem/-/postcss-pxtorem-4.0.1.tgz#9c64d0efe4885473cc1cb0305c6ffc3ebb45b1cd"
+  integrity sha1-nGTQ7+SIVHPMHLAwXG/8PrtFsc0=
+  dependencies:
+    object-assign "^4.1.0"
+    postcss "^5.2.10"
+
 postcss-reduce-initial@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/postcss-reduce-initial/-/postcss-reduce-initial-4.0.3.tgz#7fd42ebea5e9c814609639e2c2e84ae270ba48df"
@@ -4893,6 +4914,16 @@ postcss@6.0.1:
   integrity sha1-AA29H47vIXqjaLmiEsX8QLKo8/I=
   dependencies:
     chalk "^1.1.3"
+    source-map "^0.5.6"
+    supports-color "^3.2.3"
+
+postcss@^5.2.10:
+  version "5.2.18"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.18.tgz#badfa1497d46244f6390f58b319830d9107853c5"
+  integrity sha512-zrUjRRe1bpXKsX1qAJNJjqZViErVuyEkMTRrwu4ud4sbTtIBRmtaYDrHmcGgmrbsW3MHfmtIf+vJumgQn+PrXg==
+  dependencies:
+    chalk "^1.1.3"
+    js-base64 "^2.1.9"
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
