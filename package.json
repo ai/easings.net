@@ -6,7 +6,8 @@
 	"scripts": {
 		"start": "parcel ./src/index.pug",
 		"build": "NODE_ENV=production node ./build.js",
-		"precommit": "lint-staged"
+		"precommit": "lint-staged",
+		"lint:typescript": "tsc && tslint -p ./tsconfig.json -c ./tslint.json"
 	},
 	"browserslist": [
 		"defaults",
@@ -62,9 +63,9 @@
 		}
 	},
 	"lint-staged": {
-		"*.{js,json,md}": [
-			"prettier --write",
-			"git add"
+		"*.ts":[
+			"tsc --noEmit",
+			"tslint -p ./tsconfig.json -c ./tslint.json"
 		]
 	},
 	"compress": {

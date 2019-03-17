@@ -4,7 +4,7 @@ import {
 	selectorComplexKeyframeScale,
 	selectorComplexKeyframeTranslate,
 	selectorInfo,
-	selectorSimpleInfo
+	selectorSimpleInfo,
 } from "../helpers/constants";
 import { forNodeList } from "../helpers/forNodeList";
 import { getElement, getElementsList } from "../helpers/getElement";
