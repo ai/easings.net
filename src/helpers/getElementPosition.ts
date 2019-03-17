@@ -1,4 +1,4 @@
-export interface IElementPosition {
+export interface ElementPosition {
 	height: number;
 	width: number;
 	x: number;
@@ -10,7 +10,7 @@ export interface IElementPosition {
  * @param element {HTMLElement}
  * @return {{x: number, width: number, y: number, height: number}}
  */
-export function getElementPosition(element: HTMLElement): IElementPosition {
+export function getElementPosition(element: HTMLElement): ElementPosition {
 	const position: ClientRect = element.getBoundingClientRect();
 
 	return {

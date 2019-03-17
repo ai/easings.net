@@ -1,4 +1,4 @@
-export interface IOverlaySize {
+export interface OverlaySize {
 	top: number;
 	left: number;
 	height: number;
@@ -37,7 +37,7 @@ class Overlay {
 		return this;
 	}
 
-	public setSize(size: IOverlaySize): Overlay {
+	public setSize(size: OverlaySize): Overlay {
 		this.element.style.height = `${size.height}px`;
 		this.element.style.width = `${size.width}px`;
 		this.element.style.top = `${size.top}px`;
