@@ -12,5 +12,5 @@ export const selectorGradient = ".example__gradient";
 
 export const infoChartOffsetTopClassName = "info-chart--offset_top";
 
-export const color1 = "#1976d2";
+export const color1 = "#166cc1";
 export const color2 = "#00c853";
