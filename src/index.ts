@@ -1,4 +1,4 @@
-import "focus-visible/src/focus-visible";
+import "./polyfills/focus-visible";
 
 import { forNodeList } from "./helpers/forNodeList";
 import {
