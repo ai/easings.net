@@ -3,7 +3,7 @@ import { getTransitionTime } from "../helpers/getTransitionTime";
 import { getElement, getElementsList } from "../helpers/getElement";
 
 const cardTarget: HTMLElement = getElement(".card__wrap[data-target=false]");
-const cardTargetWithFunc: HTMLElement = getElement(".card__wrap[data-target=true");
+const cardTargetWithFunc: HTMLElement = getElement(".card__wrap[data-target=true]");
 const casesButtonsList: NodeList = getElementsList(".cases__action");
 
 const typeCard: {[key: string]: string} = {
