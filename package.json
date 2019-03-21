@@ -32,7 +32,6 @@
 		}
 	},
 	"license": "MIT",
-	"dependencies": {},
 	"devDependencies": {
 		"@babel/core": "^7.3.4",
 		"@gfx/zopfli": "^1.0.11",
