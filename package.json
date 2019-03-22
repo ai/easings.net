@@ -29,6 +29,7 @@
 				]
 			},
 			"postcss-flexbugs-fixes": {},
+			"postcss-font-family-system-ui": {},
 			"autoprefixer": {}
 		}
 	},
@@ -48,6 +49,7 @@
 		"postcss": "^7.0.14",
 		"postcss-custom-properties": "^8.0.9",
 		"postcss-flexbugs-fixes": "^4.1.0",
+		"postcss-font-family-system-ui": "^4.1.0",
 		"postcss-preset-env": "^6.6.0",
 		"postcss-pxtorem": "^4.0.1",
 		"posthtml": "^0.11.3",

@@ -17,7 +17,7 @@
 	--transition-card-time: 1s;
 	--transition-show-time: 1.5s;
 
-	--line-height: 1.35;
+	--line-height: 1.4;
 	--line-height-code: 1.5;
 	--general-line-height: 22px;
 
@@ -25,22 +25,18 @@
 }
 
 html {
-	line-height: 1.15;
+	line-height: var(--line-height);
 	text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-	"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-	"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-	font-kerning: normal;
+	font-family: system-ui, sans-serif;
 	font-size: 100%;
 	color: var(--text-color);
 }
 
 body {
 	line-height: var(--line-height);
-	letter-spacing: 0.01em;
 	position: relative;
 	box-sizing: border-box;
 	background: #f8f8f8;
