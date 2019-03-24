@@ -107,37 +107,52 @@ async function build() {
 
 	await writeFile(jsFile.name, minifyJS.code);
 
-	function htmlPlugin(tree) {
-		tree.match({ attrs: { class: true } }, i => ({
-			tag: i.tag,
-			content: i.content,
-			attrs: {
-				...i.attrs,
-				class: i.attrs.class
-					.split(" ")
-					.map(origin => {
-						if (!(origin in classesList)) {
-							console.error(`Class "${origin}" don't use`);
-							return "";
-						}
+	function htmlPlugin(lang = "en") {
+		return (tree) => {
+			tree.match({ attrs: { class: true } }, i => ({
+				tag: i.tag,
+				content: i.content,
+				attrs: {
+					...i.attrs,
+					class: i.attrs.class
+						.split(" ")
+						.map(origin => {
+							if (!(origin in classesList)) {
+								console.error(`Class "${origin}" don't use`);
+								return "";
+							}
 
-						return classesList[origin];
-					})
-					.join(" ")
-			}
-		}));
+							return classesList[origin];
+						})
+						.join(" ")
+				}
+			}));
 
-		tree.match({ tag: "link", attrs: { rel: "stylesheet" } }, file => {
-			if (file.attrs.href.includes("src.")) {
+			tree.match({ tag: "link", attrs: { rel: "stylesheet" } }, file => {
+				if (file.attrs.href.includes("src.")) {
+					return {
+						tag: "style",
+						content: styles.css
+					};
+				}
+
+				return file;
+			});
+
+			tree.match({ tag: "link", attrs: { rel: "manifest" } }, (file) => {
 				return {
-					tag: "style",
-					content: styles.css
-				};
-			}
-
-			return file;
-		});
+					tag: "link",
+					attrs: {
+						...file.attrs,
+						href: `manifest.${lang}.json`
+					}
+				}
+			});
+		};
 	}
+
+	const manifest = bundleAssets.find((asset) => asset.type === "webmanifest");
+	const manifestFile = await readFile(manifest.name, 'utf8');
 
 	bundleAssets
 		.filter(i => i.type === "html")
@@ -150,22 +165,27 @@ async function build() {
 				const distDirName = path.dirname(item.name);
 
 				langList.forEach(async (lang) => {
-					const htmlFragment = Mustache.render(
-						html,
-						format(
-							lang,
-							lang.lang_code,
-							langList.map((dic) => ({
-								code: dic.lang_code,
-								name: dic.lang_name,
-							})),
-						)
+					const viewData = format(
+						lang,
+						lang.lang_code,
+						langList.map((dic) => ({
+							code: dic.lang_code,
+							name: dic.lang_name,
+						})),
+					);
+
+					const htmlFragment = Mustache.render(html, viewData);
+					const manifestLang = Mustache.render(manifestFile, viewData);
+
+					await writeFile(
+						path.join(distDirName, `manifest.${lang.lang_code}.json`),
+						manifestLang
 					);
 
 					await writeFile(
 						path.join(distDirName, `${lang.lang_code}.html`),
 						PostHTML()
-							.use(htmlPlugin)
+							.use(htmlPlugin(lang.lang_code))
 							.process(htmlFragment, { sync: true }).html
 					);
 				});
@@ -186,14 +206,14 @@ async function build() {
 				await writeFile(
 					item.name,
 					PostHTML()
-						.use(htmlPlugin)
+						.use(htmlPlugin())
 						.process(htmlFragment, { sync: true }).html
 				);
 			} else {
 				await writeFile(
 					item.name,
 					PostHTML()
-						.use(htmlPlugin)
+						.use(htmlPlugin())
 						.process(file, { sync: true }).html
 				);
 			}
