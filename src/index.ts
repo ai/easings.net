@@ -135,5 +135,9 @@ forNodeList(getElementsList(selectorCode), (item) => {
 
 const langSelect = getElement("select") as HTMLSelectElement;
 langSelect.addEventListener("change", () => {
-	window.location.href = `/${langSelect.value}`;
+	if (window.location.hostname === "isolovev.github.io") {
+		window.location.pathname = `/easings.net/${langSelect.value}`;
+	} else {
+		window.location.pathname = `/${langSelect.value}`;
+	}
 });
