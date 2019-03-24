@@ -1,0 +1,52 @@
+title: Funciones Easing Guía de Referencia
+description:
+  Cree animaciones más realistas escogiendo la función `easing` correcta.
+share:
+  La función `easing` especifica la velocidad del progreso de la animación
+  para hacerla más realista. El objeto real no comienza su movimiento
+  instantáneamente y de manera constante. Esta página le ayudará a escoger
+  la función deseada.
+
+about: !!format
+  La ~función easing~ especifica la velocidad de la animación para hacerla
+  más realista.
+
+  El objeto real no comienza su movimiento instantáneamente y de manera constante.
+  Cuando abrimos el cajón, primero le damos aceleración, y después lo frenamos. Cuando
+  algo se cae, primero baja rápidamente y después de alcanzar el suelo rebota.
+
+  Esta página le ayudará a escoger la función deseada.
+
+easings:
+  css: Disponible en todo
+  js: Solo en JavaScript
+
+howtos:
+  name: nombre easing
+  curve: curva Bézier del easing
+  js: !!code
+    jQuery con ^jQuery Easing Plugin^ es la manera más sencilla de definir una animación
+    con `easing`. Únicamente necesita ajustar el nombre `easing` al método `.animate` como
+    tercer argumento o la key `easing`.
+  scss: !!code
+    Sass/SCSS le ayudan a definir la animación. Compass elimina los prefijos previos a
+    las propiedades `transition` y `animation` y el plugin ^Compass Ceaser^ permite fijar
+    el `easing` por su nombre (sin curvas Bézier).
+  css: !!code
+    Las propiedades CSS `transition` y `animation` le permiten fijar la función `easing`.
+  css_bad:
+    Desgraciadamente, no están todos soportados y deberá fijar la función
+    con Bezier curve.
+  css_help:
+    Seleccione `easing` para mostrar su descripción en la curva Bézier.
+
+easing:
+  all_easings: Todos los easings
+  no_css: !!code
+    Desgraciadamente, CSS no soporta este `easing`. Pero puede utilizarlo con
+    JavaScript o con la propiedad CSS Animation `@keyframes`.
+  edit: ^Editar^ en cubic-bezier.com.
+
+opensource:
+  title: open source
+  translate: ^Ayuda a traducir^ esta web a tu idioma

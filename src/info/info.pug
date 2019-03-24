@@ -2,7 +2,6 @@ include ../code/codeCss
 include ../code/codePostCss
 include ../code/codeGradient
 
-include ../external-link/external-link
 include ../case/case
 include ../details/details
 
@@ -13,11 +12,11 @@ mixin info
 				span.icon
 					svg.icon__image.icon__image--small(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 24")
 						path(d="M14,3.8L12.2,2L2,12l10.2,10l1.8-1.8L5.6,12L14,3.8z")
-				!= ` Все функции`
+				!= ` {{ easing.all_easings }}`
 
 		.info__wrap
 			.info__main
-				h2.info__title.js-info-name easeInSine
+				h2.info__title.js-info-name
 
 				.info-chart
 					.info-chart__wrap
@@ -30,51 +29,53 @@ mixin info
 				.example
 					.example__title CSS
 					.js-info-simple
-						div В CSS свойства transition и animation позволяют указывать функцию плавности.
+						div {{ howtos.css.text }}
 						.example__code
 							+codeCss
-						div
-							!= `Редактировать текущую функцию на `
-							+external-link("http://cubic-bezier.com/").js-cubic-bezier cubic-bezier.com
+						div.
+							{{#link}}
+								( howtos.css.edit )
+								[href="http://cubic-bezier.com/" rel="noopener noreferrer" target="_blank" class="js-cubic-bezier"]
+							{{/link}}
 
 					.js-info-complex
-						div В CSS эту функцию можно реализовать с помощью #[code @keyframes]:
-						+details("Размер", "scale") Загрузка...
-						+details("Положение", "translate") Загрузка...
-						+details("Прозрачность", "opacity") Загрузка...
+						div {{{ howtos.css.with_animation }}}:
+						+details("{{ howtos.css.example_size }}", "scale") {{ easing.load }}
+						+details("{{ howtos.css.example_position }}", "translate") {{ easing.load }}
+						+details("{{ howtos.css.example_opacity }}", "opacity") {{ easing.load }}
 
 				.example
 					.example__title PostCSS
 					.js-info-simple
 						div.
-							В PostCSS функцию перехода описывать сильно проще.
-							Есть плагин (#[+external-link("https://github.com/postcss/postcss-easings") postcss-easings]),
-							который берёт информацию о переходе с этого сайта.
+							{{#link}}
+								( howtos.postcss.text )
+								[href="https://github.com/postcss/postcss-easings" rel="noopener noreferrer" target="_blank"]
+							{{/link}}
 						.example__code
 							+codePostCss
-						div Эта декларация преобразуется в подобную, которая описана выше.
+						div {{ howtos.postcss.explanation }}
 					.js-info-complex
-						div.
-							К сожалению, такую функцию плавности нельзя задать с помощью какого-либо плагина PostCSS.
-							Это можно сделать с помощью #[code @keyframes], смотри выше.
+						div {{{ howtos.postcss.disabled }}}
 
 				.example.js-info-simple
-					.example__title Градиент
-					div
-						!= `Возможно нарисовать градиент с помощью `
-						+external-link("https://github.com/larsenwork/postcss-easing-gradients") postcss-easing-gradients
-						| .
+					.example__title {{ howtos.gradient.name }}
+					div.
+						{{#link}}
+							( howtos.gradient.text )
+							[href="https://github.com/larsenwork/postcss-easing-gradients" rel="noopener noreferrer" target="_blank"]
+						{{/link}}
 					.example__code
 						+codeGradient
 					.example__gradient
 
 			.info__case
-				.cases__title Проверить изинг на изменение:
+				.cases__title {{ easing.check }}:
 				.cases__actions
-					button.button.button--small.cases__action(data-type="scale") Размера
-					button.button.button--small.cases__action(data-type="translate") Положения
-					button.button.button--small.cases__action(data-type="opacity") Прозрачности
+					button.button.button--small.cases__action(data-type="scale") {{ easing.check_size }}
+					button.button.button--small.cases__action(data-type="translate") {{ easing.check_position }}
+					button.button.button--small.cases__action(data-type="opacity") {{ easing.check_opacity }}
 
 				.cases__list
-					+case("Текущая функция", true)
-					+case("Линейная функция")
+					+case("{{ easing.current_func }}", true)
+					+case("{{ easing.linear_func }}")

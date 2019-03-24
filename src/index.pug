@@ -5,14 +5,15 @@ include info/info
 include overlay/overlay
 
 doctype html
-html(lang="ru")
+html(lang="{{ lang }}")
 	head
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover")
 		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		| {{{ redirect_script }}}
 
-		title Easings
-		meta(content="Сделай анимацию более реалистичной, подобрав нужную смягчающую функцию (easing)." name="description")
+		title {{ title }}
+		meta(content="{{ description }}" name="description")
 		meta(name="theme-color" content="#166cc1")
 		link(rel="manifest" href="./manifest.webmanifest")
 		link(rel="icon" type="image/png" sizes="192x192"  href="./icons/192.png")
@@ -49,7 +50,7 @@ html(lang="ru")
 						stop(offset="80%" stop-color=colorEnd)
 						stop(offset="100%" stop-color=colorEnd)
 
-			h1.layout__title Шпаргалка функций плавности (easing)
+			h1.layout__title {{ title }}
 
 			.layout__wrap
 				+header

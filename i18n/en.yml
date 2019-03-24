@@ -1,3 +1,7 @@
+version: 2
+lang_code: en
+lang_name: English
+
 title: Easing Functions Cheat Sheet
 description:
   Make animations more realistic by picking the right easing function.
@@ -7,7 +11,7 @@ share:
   at a constant speed, and do not start and stop in an instant.
   This page helps you choose the right easing function.
 
-about: !!format
+about: __format
   ~Easing functions~ specify the rate of change of a parameter
   over time.
 
@@ -18,39 +22,38 @@ about: !!format
 
   This page helps you choose the right easing function.
 
-easings:
-  css: Available everywhere
-  js: Only in JavaScript
-
 howtos:
-  name: easing name
-  curve: easing’s Bezier curve
-  js: !!code
-    jQuery with the ^jQuery Easing Plugin^ is the easiest way to describe
-    animation with easing. Pass the easing name (like `easeInCirc`)
-    to the `.animate()` function as the third argument, or use it as the value
-    of the `easing` option.
-  scss: !!code
-    Sass/SCSS can describe animations too! Compass removes prefixes before
-    the `transition` and `animation` properties, <nobr>and the
-    ^Compass Ceaser^</nobr> plugin lets you pass the easing function by name
-    (without specifying the exact Bezier curves).
-  css: !!code
-    CSS properties `transition` and `animation` allow you to pick the easing
-    function.
-  css_bad:
-    Unfortunately, they don’t support all easings and you must
-    specify the desired easing function yourself (as a Bezier curve).
-  css_help:
-    Select an easing function to show its Bezier curve notation.
+  css:
+    text: In CSS, the transition and animation properties allow you to specify an easing function.
+    edit: Edit on ^cubic-bezier.com^.
+    with_animation: __code In CSS, this function can be implemented using `@keyframes`
+    example_size: Size
+    example_position: Position
+    example_opacity: Transparency
+
+  postcss:
+    text:
+      In PostCSS, the easing function is much easier to describe.
+      There is a plugin ^postcss-easings^ that takes the transition information from that site.
+    explanation: That declaration is converted to the one described above.
+    disabled: __code
+      Unfortunately, the easing function cannot be set with any PostCSS plugin.
+      Can be done with `@keyframes`, see above.
+
+  gradient:
+    name: Gradient
+    text: It is possible to draw a gradient using ^postcss-easing-gradients^.
 
 easing:
   all_easings: All easings
-  no_css: !!code
-    Not supported in CSS. But you can use in JS
-    or write it out with the CSS Animation `@keyframes`.
-  edit: ^Edit^ on cubic-bezier.com.
+  check: Check easing for changes
+  check_size: Size's
+  check_position: Positions
+  check_opacity: Transparencies
+  current_func: That function
+  linear_func: Linear function
+  load: Loading...
 
 opensource:
-  title: open source
-  translate: ^Help translate^ site to your language
+  title: Translate me!
+  translate: Help translate site to your language

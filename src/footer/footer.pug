@@ -4,38 +4,12 @@ mixin footer
 	.footer
 		.footer__group
 			.footer__copyright
-				+external-link("https://twitter.com/andrey_sitnik") Андрей Ситник
-				!= ` и `
-				+external-link("https://solovev.one/") Иван Соловьев
+				+external-link("https://sitnik.ru/") {{ authors.sitnik }}
+				!= ` {{ covenant }} `
+				+external-link("https://solovev.one/") {{ authors.solovev }}
 
 			label.footer__lang(aria-label="Select language")
-				select
-					option(value="/af") Afrikaans
-					option(value="/az") Azərbaycanca
-					option(value="/ca") Català
-					option(value="/cs") Český
-					option(value="/cy") Welsh
-					option(value="/da") Dansk
-					option(value="/de") Deutsch
-					option(value="/en") English
-					option(value="/es") Español
-					option(value="/fa") فارسی
-					option(value="/fr") Français
-					option(value="/id") Bahasa Indonesia
-					option(value="/it") Italiano
-					option(value="/ja") 日本語
-					option(value="/ko") 한국어
-					option(value="/nb") Norsk (bokmål)
-					option(value="/nl") Nederlands
-					option(value="/pl") Polski
-					option(value="/pt") Português
-					option(value="/pt-br") Português brasileiro
-					option(value="/ru" selected) Русский
-					option(value="/sk") Slovenský
-					option(value="/sr-latn") Srpski
-					option(value="/sv-se") Svenska
-					option(value="/tr") Türkçe
-					option(value="/uk") Українська
-					option(value="/vi") Tiếng Việt
-					option(value="/zh-cn") 简体中文
-					option(value="/zh-tw") 繁體中文
+				select.
+					{{#langList}}
+						<option value="{{ code }}" {{{selected}}}>{{ name }}</option>
+					{{/langList}}
