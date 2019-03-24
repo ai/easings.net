@@ -1,0 +1,32 @@
+{
+	"lang": "{{ lang }}",
+	"name": "{{ title }}",
+	"short_name": "{{ short_name }}",
+	"description": "{{ description }}",
+	"start_url": "/{{ lang }}",
+	"display": "standalone",
+	"theme_color": "#166cc1",
+	"background_color": "#fff",
+	"icons": [
+		{
+			"src": "./icons/logo.svg",
+			"type": "image/svg"
+		},
+		{
+			"src": "./icons/72.png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "./icons/96.png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "./icons/144.png",
+			"sizes": "144x144"
+		},
+		{
+			"src": "./icons/192.png",
+			"sizes": "192x192"
+		}
+	]
+}
