@@ -148,6 +148,14 @@ async function build() {
 					}
 				}
 			});
+
+			tree.match({ tag: "meta", attrs: { property: "og:image" } }, (file) => ({
+				tag: "meta",
+				attrs: {
+					...file.attrs,
+					content: `https://easings.net/${file.attrs.content}`
+				}
+			}));
 		};
 	}
 
