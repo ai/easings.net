@@ -211,11 +211,13 @@ async function build() {
 					)
 				);
 
+				const htmlMinFragment = await PostHTML([require('htmlnano')()])
+					.use(htmlPlugin())
+					.process(htmlFragment);
+
 				await writeFile(
 					item.name,
-					PostHTML()
-						.use(htmlPlugin())
-						.process(htmlFragment, { sync: true }).html
+					htmlMinFragment.html
 				);
 			} else {
 				await writeFile(
