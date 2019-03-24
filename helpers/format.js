@@ -89,7 +89,11 @@ function renderRedirectScript(langList) {
 				function find(user) {
 					for (var i = 0; i < translations.length; i++) {
 						if (user === translations[i]) {
-							location.pathname = '/' + translations[i];
+							if (location.hostname === "isolovev.github.io") {
+								location.pathname = "/easings.net/" + translations[i];
+							} else {
+								location.pathname = "/" + translations[i];
+							}
 						}
 					}
 				}
