@@ -1,5 +1,8 @@
 const fs = require("fs");
+const path = require("path");
 const { promisify } = require("util");
+const yamlParse = require("js-yaml");
+const Mustache = require("mustache");
 
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
@@ -12,6 +15,15 @@ const MQPacker = require("css-mqpacker");
 const postcssCustomProperties = require("postcss-custom-properties");
 const PostCSS = require("postcss");
 const Terser = require("terser");
+
+const format = require("./helpers/format");
+const i18nDir = path.join(__dirname, "i18n");
+
+const langList = fs.readdirSync(i18nDir)
+	.filter((filename) => !/^_/.test(filename) && /\.ya?ml$/i.test(filename))
+	.map((filename) => fs.readFileSync(path.join(i18nDir, filename)))
+	.map((file) => yamlParse.load(file))
+	.filter((dic) => dic.version && dic.version > 1 && dic.lang_name);
 
 const linksElements = [
 	"js-info-name",
@@ -130,14 +142,61 @@ async function build() {
 	bundleAssets
 		.filter(i => i.type === "html")
 		.forEach(async item => {
-			const html = await readFile(item.name);
+			const file = await readFile(item.name);
+			const html = PostHTML()
+				.process(file, { sync: true }).html;
 
-			await writeFile(
-				item.name,
-				PostHTML()
-					.use(htmlPlugin)
-					.process(html, { sync: true }).html
-			);
+			if (/\/index\.html$/i.test(item.name)) {
+				const distDirName = path.dirname(item.name);
+
+				langList.forEach(async (lang) => {
+					const htmlFragment = Mustache.render(
+						html,
+						format(
+							lang,
+							lang.lang_code,
+							langList.map((dic) => ({
+								code: dic.lang_code,
+								name: dic.lang_name,
+							})),
+						)
+					);
+
+					await writeFile(
+						path.join(distDirName, `${lang.lang_code}.html`),
+						PostHTML()
+							.use(htmlPlugin)
+							.process(htmlFragment, { sync: true }).html
+					);
+				});
+
+				const engLang = langList.find((lang) => lang.lang_code === "en");
+				const htmlFragment = Mustache.render(
+					html,
+					format(
+						engLang,
+						"",
+						langList.map((dic) => ({
+							code: dic.lang_code,
+							name: dic.lang_name,
+						})),
+					)
+				);
+
+				await writeFile(
+					item.name,
+					PostHTML()
+						.use(htmlPlugin)
+						.process(htmlFragment, { sync: true }).html
+				);
+			} else {
+				await writeFile(
+					item.name,
+					PostHTML()
+						.use(htmlPlugin)
+						.process(file, { sync: true }).html
+				);
+			}
 		});
 }
 
