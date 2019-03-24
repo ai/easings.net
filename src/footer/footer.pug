@@ -11,5 +11,5 @@ mixin footer
 			label.footer__lang(aria-label="Select language")
 				select.
 					{{#langList}}
-						<option value="{{ code }}" {{{selected}}}>{{ name }}</option>
+						{{{.}}}
 					{{/langList}}
