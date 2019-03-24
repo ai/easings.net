@@ -11,6 +11,7 @@ const unlink = promisify(fs.unlink);
 const Parcel = require("parcel-bundler");
 
 const PostHTML = require("posthtml");
+const PostHTMLNano  =require('htmlnano');
 const MQPacker = require("css-mqpacker");
 const postcssCustomProperties = require("postcss-custom-properties");
 const PostCSS = require("postcss");
@@ -32,6 +33,10 @@ const linksElements = [
 	"js-info-complex",
 	"js-cubic-bezier"
 ];
+
+const htmlMinifyOptions = {
+	minifySvg: false,
+};
 
 const shortCssClassName = generateCssClassName();
 
@@ -190,11 +195,15 @@ async function build() {
 						manifestLang
 					);
 
+					const htmlMinFragment = await PostHTML([PostHTMLNano(htmlMinifyOptions)])
+						.use(htmlPlugin(lang.lang_code))
+						.process(htmlFragment);
+
 					await writeFile(
 						path.join(distDirName, `${lang.lang_code}.html`),
-						PostHTML()
-							.use(htmlPlugin(lang.lang_code))
-							.process(htmlFragment, { sync: true }).html
+						htmlMinFragment.html
+							.replace(/\n/g, "")
+							.replace(/>\s</g, "><")
 					);
 				});
 
@@ -211,13 +220,15 @@ async function build() {
 					)
 				);
 
-				const htmlMinFragment = await PostHTML([require('htmlnano')()])
+				const htmlMinFragment = await PostHTML([PostHTMLNano(htmlMinifyOptions)])
 					.use(htmlPlugin())
 					.process(htmlFragment);
 
 				await writeFile(
 					item.name,
 					htmlMinFragment.html
+						.replace(/\n/g, "")
+						.replace(/>\s</g, "><")
 				);
 			} else {
 				await writeFile(

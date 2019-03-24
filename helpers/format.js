@@ -14,11 +14,11 @@ function format(dictionary, lang, langList) {
 	const helpers = {
 		link: renderLink,
 		langList: langList.map((item) => {
-			return `
-				<option value="${item.code}"${item.code === currentLang ? ` selected` : ""}>
-					${item.name}
-				</option>
-			`;
+			return [
+				`<option value="${item.code}"${item.code === currentLang ? ` selected` : ""}>`,
+				item.name,
+				`</option>`
+			].join("")
 		}),
 		redirect_script: !lang ?
 			renderRedirectScript(langList.map((item) => item.code)) :

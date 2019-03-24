@@ -9,5 +9,5 @@ module.exports = {
 	locals: {
 		all_easings: easings
 	},
-	pretty: true
+	pretty: false
 };
