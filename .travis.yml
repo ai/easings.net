@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - "11"
+notifications:
+  email:
+    on_failure: change
+branches:
+  only:
+    - master
+before_script:
+  - npm install
+script:
+  - npm run build
+  - echo "easings.net" > dist/CNAME
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist
+  on:
+    branch: master
