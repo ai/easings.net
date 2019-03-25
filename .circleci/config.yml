@@ -27,6 +27,7 @@ jobs:
       - run:
           name: Deploy project to gh-pages branch
           command: ./node_modules/.bin/gh-pages --dotfiles --message "[ci skip] Updates" --dist dist
+      - run: echo "easings.net" > CNAME
 
 workflows:
   version: 2
