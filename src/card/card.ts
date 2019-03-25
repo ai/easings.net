@@ -6,11 +6,6 @@ const cardTarget: HTMLElement = getElement(".card__wrap[data-target=false]");
 const cardTargetWithFunc: HTMLElement = getElement(".card__wrap[data-target=true]");
 const casesButtonsList: NodeList = getElementsList(".cases__action");
 
-const typeCard: {[key: string]: string} = {
-	func: "",
-	withoutFunc: "",
-};
-
 const cardTargetClassList: {[key: string]: string} = {
 	opacity: "card__wrap--opacity",
 	scale: "card__wrap--scale",
@@ -21,18 +16,21 @@ const cardClassWithoutTransition = "card__wrap--no-transition";
 
 let isReverse: boolean = false;
 let currentName: string;
+let currentType: string;
 
 forNodeList(casesButtonsList, (button) => {
 	button.addEventListener("click", () => {
 		const newType: string = button.getAttribute("data-type");
 
-		setTransition(cardTarget, newType, false);
+		setTransition(cardTarget, newType);
 
 		if (currentName) {
 			setAnimation(newType);
 		} else {
-			setTransition(cardTargetWithFunc, newType, true);
+			setTransition(cardTargetWithFunc, newType);
 		}
+
+		currentType = newType;
 	});
 });
 
@@ -48,29 +46,22 @@ export function setFuncForCard(cssFunc: string, name: string): void {
 	}
 }
 
-function setTransition(target: HTMLElement, newType: string, isFunc: boolean): void {
-	const currentType = typeCard[isFunc ? "func" : "withoutFunc"];
-	const targetHasClass = target.classList.contains(cardTargetClassList[currentType]);
-
-	const setType = (type: string) => {
-		typeCard[isFunc ? "func" : "withoutFunc"] = type;
-	};
-
-	if (newType !== currentType && targetHasClass) {
+function setTransition(target: HTMLElement, newType: string): void {
+	if (newType !== currentType) {
 		target.classList.add(cardClassWithoutTransition);
 		target.classList.remove(cardTargetClassList[currentType]);
 
-		setTimeout(() => {
+		requestAnimationFrame(() => {
 			target.classList.remove(cardClassWithoutTransition);
 			target.classList.add(cardTargetClassList[newType]);
-			setType(newType);
-		}, 100);
-	} else if (newType !== currentType) {
-		target.classList.add(cardTargetClassList[newType]);
-		setType(newType);
+		});
 	} else {
-		target.classList.toggle(cardTargetClassList[newType]);
-		setType(newType);
+		target.classList.add(cardClassWithoutTransition);
+
+		requestAnimationFrame(() => {
+			target.classList.remove(cardClassWithoutTransition);
+			target.classList.toggle(cardTargetClassList[newType]);
+		});
 	}
 }
 
@@ -85,10 +76,7 @@ function setAnimation(animationType: string): void {
 		isReverse = false;
 	}
 
-	typeCard.func = animationType;
 	cardTargetWithFunc.style.animation = "none";
-	// tslint:disable-next-line:no-unused-expression
-	void cardTargetWithFunc.offsetWidth;
 
 	requestAnimationFrame(() => {
 		cardTargetWithFunc.style.animation = `
