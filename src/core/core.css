@@ -1,4 +1,7 @@
 :root {
+	--dark-background: #111;
+	--dark-brand-color: #1f8dfb;
+
 	--text-color: #222;
 	--text-light-color: #666;
 
@@ -68,3 +71,14 @@ a {
 	a.focus-visible {
 		box-shadow: 0 0 1px 4px var(--brand-color);
 	}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #222;
+		color: #fff;
+	}
+
+	a {
+		color: var(--dark-brand-color);
+	}
+}

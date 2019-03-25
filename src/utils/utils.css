@@ -17,3 +17,9 @@
 .u-color-second {
 	color: var(--second-color);
 }
+
+@media (prefers-color-scheme: dark) {
+	.u-color-brand {
+		color: var(--dark-brand-color);
+	}
+}

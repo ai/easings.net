@@ -30,10 +30,21 @@ html(lang="{{ lang }}")
 			svg.layout__gradients-curve(xmlns="http://www.w3.org/2000/svg" width="0" height="0")
 				-
 					var colorBase = '#222';
+					var colorBaseLight = '#fff';
 					var colorStart = '#166cc1';
 					var colorEnd = '#00c853';
 
 				defs
+					linearGradient#darkIn(x1="0%" y1="100%" x2="100%" y2="0%")
+						stop(offset="0%" stop-color=colorBaseLight)
+						stop(offset="50%" stop-color=colorBaseLight)
+						stop(offset="70%" stop-color=colorEnd)
+						stop(offset="100%" stop-color=colorEnd)
+					linearGradient#darkOut(x1="0%" y1="100%" x2="100%" y2="0%")
+						stop(offset="0%" stop-color=colorStart)
+						stop(offset="30%" stop-color=colorStart)
+						stop(offset="50%" stop-color=colorBaseLight)
+						stop(offset="100%" stop-color=colorBaseLight)
 					linearGradient#in(x1="0%" y1="100%" x2="100%" y2="0%")
 						stop(offset="0%" stop-color=colorBase)
 						stop(offset="50%" stop-color=colorBase)

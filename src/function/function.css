@@ -66,7 +66,6 @@
 		text-align: center;
 		transition: var(--transition-time);
 		margin: auto 0 0;
-		background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0));
 		position: relative;
 		z-index: 1;
 	}
@@ -85,4 +84,19 @@
 	.function {
 		width: auto;
 	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.function {
+		background: var(--dark-background);
+		box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+	}
+
+			.function:active {
+				box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+			}
+
+			.function--active {
+				box-shadow: 0 2px 8px rgba(255, 255, 255, 2);
+			}
 }

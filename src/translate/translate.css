@@ -16,3 +16,9 @@
 		box-sizing: border-box;
 		padding: 5px 0 0;
 	}
+
+@media (prefers-color-scheme: dark) {
+	.translate--with-background {
+		background: var(--dark-background);
+	}
+}
