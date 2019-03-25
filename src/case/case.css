@@ -1,0 +1,10 @@
+.case {
+	padding: calc(1.5 * var(--general-line-height)) calc(var(--general-line-height) / 2) 0;
+	min-width: 200px;
+	box-sizing: border-box;
+	flex: 1 1 auto;
+}
+
+	.case__title {
+		padding: 0 0 calc(var(--general-line-height) / 2);
+	}

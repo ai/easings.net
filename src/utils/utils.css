@@ -1,0 +1,25 @@
+.u-tab {
+	display: inline-block;
+	width: 25px;
+	height: 1px;
+}
+
+.u-double-tab {
+	display: inline-block;
+	width: 50px;
+	height: 1px;
+}
+
+.u-color-brand {
+	color: var(--brand-color);
+}
+
+.u-color-second {
+	color: var(--second-color);
+}
+
+@media (prefers-color-scheme: dark) {
+	.u-color-brand {
+		color: var(--dark-brand-color);
+	}
+}

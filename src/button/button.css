@@ -1,0 +1,71 @@
+.button {
+	font-family: inherit;
+	font-size: 100%;
+	margin: 0;
+	border: none;
+	overflow: visible;
+	text-transform: none;
+	outline: none;
+	height: auto;
+	box-sizing: border-box;
+
+	position: relative;
+	background: var(--brand-color);
+	color: var(--brand-color-text);
+	font-stretch: 100%;
+	font-weight: 500;
+	text-align: center;
+	text-decoration: none;
+	line-height: var(--line-height);
+	padding: 1em 1.25em;
+	display: inline-block;
+	border-radius: 0;
+	min-width: 64px;
+	cursor: pointer;
+	transition: var(--transition-time);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+	.button::after {
+		content: "";
+		position: absolute;
+		top: -4px;
+		right: -4px;
+		bottom: -4px;
+		left: -4px;
+		pointer-events: none;
+		box-shadow: 0 0 1px 4px var(--brand-color);
+		transition: var(--transition-time);
+		opacity: 0;
+	}
+
+	.button:hover {
+		background: var(--brand-darken-color);
+		color: var(--brand-darken-color-text);
+		box-shadow: 0 12px 30px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	.button:focus {
+		color: var(--brand-color-text);
+	}
+
+	.button:active {
+		background: var(--brand-lighten-color);
+		color: var(--brand-lighten-color-text);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+		transition: none;
+	}
+
+	.button.focus-visible {
+		box-shadow: none;
+	}
+
+	.button.focus-visible::after {
+		opacity: 1;
+	}
+
+
+.button--small {
+	font-size: 14px;
+	padding: 0.75em 1em;
+}

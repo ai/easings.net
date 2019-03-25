@@ -1,0 +1,81 @@
+include ../code/codeCss
+include ../code/codePostCss
+include ../code/codeGradient
+
+include ../case/case
+include ../details/details
+
+mixin info
+	section.info
+		.info__header
+			a.button.button--small(href="#")
+				span.icon
+					svg.icon__image.icon__image--small(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 24")
+						path(d="M14,3.8L12.2,2L2,12l10.2,10l1.8-1.8L5.6,12L14,3.8z")
+				!= ` {{ easing.all_easings }}`
+
+		.info__wrap
+			.info__main
+				h2.info__title.js-info-name
+
+				.info-chart
+					.info-chart__wrap
+						svg.info-chart__curve(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 85")
+							path(d="M0 0L0 0z")
+
+						.info-chart__text x
+						.info-chart__text.info-chart__text--bottom t
+
+				.example
+					.example__title CSS
+					.js-info-simple
+						div {{ howtos.css.text }}
+						.example__code
+							+codeCss
+						div.
+							{{#link}}
+								( howtos.css.edit )
+								[href="http://cubic-bezier.com/" rel="noopener noreferrer" target="_blank" class="js-cubic-bezier"]
+							{{/link}}
+
+					.js-info-complex
+						div {{{ howtos.css.with_animation }}}:
+						+details("{{ howtos.css.example_size }}", "scale") {{ easing.load }}
+						+details("{{ howtos.css.example_position }}", "translate") {{ easing.load }}
+						+details("{{ howtos.css.example_opacity }}", "opacity") {{ easing.load }}
+
+				.example
+					.example__title PostCSS
+					.js-info-simple
+						div.
+							{{#link}}
+								( howtos.postcss.text )
+								[href="https://github.com/postcss/postcss-easings" rel="noopener noreferrer" target="_blank"]
+							{{/link}}
+						.example__code
+							+codePostCss
+						div {{ howtos.postcss.explanation }}
+					.js-info-complex
+						div {{{ howtos.postcss.disabled }}}
+
+				.example.js-info-simple
+					.example__title {{ howtos.gradient.name }}
+					div.
+						{{#link}}
+							( howtos.gradient.text )
+							[href="https://github.com/larsenwork/postcss-easing-gradients" rel="noopener noreferrer" target="_blank"]
+						{{/link}}
+					.example__code
+						+codeGradient
+					.example__gradient
+
+			.info__case
+				.cases__title {{ easing.check }}:
+				.cases__actions
+					button.button.button--small.cases__action(data-type="scale") {{ easing.check_size }}
+					button.button.button--small.cases__action(data-type="translate") {{ easing.check_position }}
+					button.button.button--small.cases__action(data-type="opacity") {{ easing.check_opacity }}
+
+				.cases__list
+					+case("{{ easing.current_func }}", true)
+					+case("{{ easing.linear_func }}")

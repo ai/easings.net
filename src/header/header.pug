@@ -1,0 +1,16 @@
+include ../external-link/external-link
+
+mixin header
+	.header
+		.header__definition {{{ about }}}
+
+		.header__opensource.translate(class="{{#opensource.translate}}translate--with-background{{/opensource.translate}}")
+			+external-link("https://github.com/ai/easings.net").button
+				span.icon
+					svg.icon__image(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24")
+						path(d="M12 2A10.1 10.1 0 0 0 2 12.3 10.2 10.2 0 0 0 8.8 22c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4A2.8 2.8 0 0 0 5 16.9c-1-.7 0-.6 0-.6a2.1 2.1 0 0 1 1.6 1 2.1 2.1 0 0 0 3 .9 2.3 2.3 0 0 1 .6-1.4c-2.2-.3-4.6-1.2-4.6-5a4 4 0 0 1 1-2.8 3.8 3.8 0 0 1 .2-2.7s.8-.3 2.7 1a9.4 9.4 0 0 1 5 0c2-1.3 2.8-1 2.8-1a3.8 3.8 0 0 1 0 2.7 4 4 0 0 1 1 2.8c0 3.9-2.3 4.7-4.5 5a2.5 2.5 0 0 1 .7 2v2.7c0 .3.1.6.7.5a10.2 10.2 0 0 0 6.8-9.8A10.1 10.1 0 0 0 12 2z")
+				!= ` {{ opensource.title }}`
+
+			| {{#opensource.translate}}
+			| <div class="translate__text">{{ opensource.translate }}</div>
+			| {{/opensource.translate}}

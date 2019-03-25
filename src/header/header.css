@@ -1,0 +1,36 @@
+.header {
+	padding: calc(var(--general-line-height) / 2) 0;
+	display: flex;
+	align-items: flex-start;
+}
+
+	.header__definition {
+		width: 100%;
+		max-width: 900px;
+		padding: 0 calc(2 * var(--general-line-height)) 0 0;
+	}
+
+		.header__definition p {
+			margin: 0;
+			padding: 0 0 calc(var(--general-line-height) / 2);
+		}
+
+	.header__opensource {
+		flex: 0 0 auto;
+	}
+
+@media (max-width: 900px) {
+	.header__definition {
+		padding: 0;
+	}
+
+	.header__opensource {
+		display: none;
+	}
+}
+
+@media (max-width: 550px) {
+	.header__definition {
+		padding-right: 0;
+	}
+}

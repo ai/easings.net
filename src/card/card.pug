@@ -1,0 +1,4 @@
+mixin card(name, isTarget)
+	.card
+		img.card__image(src="./card/card.jpg" alt="")
+		.card__wrap(data-target=(isTarget ? "true" : "false"))= name

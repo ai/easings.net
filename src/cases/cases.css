@@ -1,0 +1,26 @@
+.cases {}
+
+	.cases__title {
+		font-size: 22px;
+		line-height: calc(var(--line-height) - 0.2);
+		margin: 0;
+		padding: 0;
+	}
+
+	.cases__actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		margin: 0 calc(-0.25 * var(--general-line-height));
+		transition: 0.5s;
+	}
+
+		.cases__action {
+			margin: calc(var(--general-line-height) / 2) calc(var(--general-line-height) / 4) 0;
+		}
+
+	.cases__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 calc(-0.5 * var(--general-line-height));
+	}

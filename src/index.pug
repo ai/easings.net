@@ -1,0 +1,77 @@
+include header/header
+include footer/footer
+include columns/columns
+include info/info
+include overlay/overlay
+
+doctype html
+html(lang="{{ lang }}")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		| {{{ redirect_script }}}
+
+		title {{ title }}
+		meta(content="{{ description }}" name="description")
+		meta(name="theme-color" content="#166cc1")
+		link(rel="manifest" href="./manifest.webmanifest")
+		link(rel="icon" type="image/png" sizes="192x192"  href="./icons/192.png")
+		link(rel="icon" type="image/png" sizes="96x96" href="./icons/96.png")
+
+		meta(property="og:url" content="http://easings.net/")
+		meta(property="og:image" content="./icons/192.png")
+		meta(property="og:description" content="{{ share }}")
+
+		link(href="./index.css" rel="stylesheet")
+
+	body
+		.layout
+			svg.layout__gradients-curve(xmlns="http://www.w3.org/2000/svg" width="0" height="0")
+				-
+					var colorBase = '#222';
+					var colorBaseLight = '#fff';
+					var colorStart = '#166cc1';
+					var colorEnd = '#00c853';
+
+				defs
+					linearGradient#darkIn(x1="0%" y1="100%" x2="100%" y2="0%")
+						stop(offset="0%" stop-color=colorBaseLight)
+						stop(offset="50%" stop-color=colorBaseLight)
+						stop(offset="70%" stop-color=colorEnd)
+						stop(offset="100%" stop-color=colorEnd)
+					linearGradient#darkOut(x1="0%" y1="100%" x2="100%" y2="0%")
+						stop(offset="0%" stop-color=colorStart)
+						stop(offset="30%" stop-color=colorStart)
+						stop(offset="50%" stop-color=colorBaseLight)
+						stop(offset="100%" stop-color=colorBaseLight)
+					linearGradient#in(x1="0%" y1="100%" x2="100%" y2="0%")
+						stop(offset="0%" stop-color=colorBase)
+						stop(offset="50%" stop-color=colorBase)
+						stop(offset="70%" stop-color=colorEnd)
+						stop(offset="100%" stop-color=colorEnd)
+					linearGradient#out(x1="0%" y1="100%" x2="100%" y2="0%")
+						stop(offset="0%" stop-color=colorStart)
+						stop(offset="30%" stop-color=colorStart)
+						stop(offset="50%" stop-color=colorBase)
+						stop(offset="100%" stop-color=colorBase)
+					linearGradient#inOut(x1="0%" y1="100%" x2="100%" y2="0%")
+						stop(offset="0%" stop-color=colorStart)
+						stop(offset="20%" stop-color=colorStart)
+						stop(offset="80%" stop-color=colorEnd)
+						stop(offset="100%" stop-color=colorEnd)
+
+			h1.layout__title {{ title }}
+
+			.layout__wrap
+				+header
+
+				.layout__content
+					+columns
+					+info
+
+			+overlay
+			+footer
+
+		script(src='./index.ts' async)
+		link(href="./keyframes.css" rel="stylesheet")

@@ -1,0 +1,34 @@
+/*noinspection CssInvalidFunction,CssOverwrittenProperties*/
+.layout {
+	overflow: hidden;
+	padding-top: constant(safe-area-inset-top, 0px);;
+	padding-top: env(safe-area-inset-top, 0px);;
+	padding-left: constant(safe-area-inset-left, 0px);;
+	padding-left: env(safe-area-inset-left, 0px);;
+	padding-right: constant(safe-area-inset-right, 0px);;
+	padding-right: env(safe-area-inset-right, 0px);;
+	padding-bottom: constant(safe-area-inset-bottom, 0px);;
+	padding-bottom: env(safe-area-inset-bottom, 0px);;
+}
+
+	.layout__gradients-curve,
+	.layout__title {
+		position: absolute;
+		clip: rect(0 0 0 0);
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+	}
+
+	.layout__wrap {
+		position: relative;
+		box-sizing: border-box;
+		width: 100%;
+		margin: 0 auto;
+		max-width: 1050px;
+		padding: 0 15px;
+	}
+
+		.layout__content {
+			position: relative;
+		}

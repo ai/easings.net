@@ -1,0 +1,50 @@
+.info-chart {
+	position: relative;
+	width: 100%;
+	padding: var(--general-line-height) 0 var(--general-line-height) 1px;
+}
+
+		.info-chart--offset_top {
+			padding-top: calc(2 * var(--general-line-height));
+		}
+
+	.info-chart__wrap {
+		position: relative;
+		color: var(--chart-axis-color);
+		max-width: 150px;
+	}
+
+		.info-chart__wrap::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: -1px;
+			left: -1px;
+			border-left: 1px solid currentColor;
+			border-bottom: 1px solid currentColor;
+		}
+	
+
+		.info-chart__curve {
+			fill: none;
+			stroke: var(--brand-color);
+			stroke-width: 1px;
+			stroke-linecap: round;
+			overflow: visible;
+			display: block;
+		}
+
+		.info-chart__text {
+			font-size: 14px;
+			position: absolute;
+			top: 1px;
+			left: 5px;
+		}
+
+				.info-chart__text--bottom {
+					top: auto;
+					left: auto;
+					right: 8px;
+					bottom: 4px;
+				}

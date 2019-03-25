@@ -1,0 +1,45 @@
+.card {
+	position: relative;
+	overflow: hidden;
+}
+
+	.card__image {
+		width: 100%;
+		display: block;
+	}
+
+	.card__wrap {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: flex-start;
+		background: rgba(0, 0, 0, 0.7);
+		color: #fff;
+		box-sizing: border-box;
+		padding: 10px 15px;
+
+		transition: var(--transition-card-time) linear;
+	}
+
+			.card__wrap--no-transition {
+				transition: none;
+			}
+
+			.card__wrap--opacity {
+				opacity: 0;
+			}
+
+			.card__wrap--scale {
+				transform: scale(0);
+			}
+
+			.card__wrap--translate {
+				transform: translateX(-100%);
+			}

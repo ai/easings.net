@@ -1,0 +1,69 @@
+{
+	"name": "easings.net",
+	"scripts": {
+		"start": "node ./start.js",
+		"build": "NODE_ENV=production node ./build.js",
+		"format:javascript": "prettier --write **/*.js *.js",
+		"lint:typescript": "tsc && tslint -p ./tsconfig.json -c ./tslint.json"
+	},
+	"browserslist": [
+		"defaults",
+		"not ie 11",
+		"not ie_mob 11"
+	],
+	"postcss": {
+		"plugins": {
+			"postcss-pxtorem": {
+				"rootValue": 16,
+				"mediaQuery": true,
+				"propList": [
+					"font",
+					"font-size",
+					"line-height",
+					"letter-spacing",
+					"margin",
+					"padding"
+				]
+			},
+			"postcss-flexbugs-fixes": {},
+			"postcss-font-family-system-ui": {},
+			"autoprefixer": {}
+		}
+	},
+	"devDependencies": {
+		"@babel/core": "^7.3.4",
+		"autoprefixer": "^9.5.0",
+		"css-mqpacker": "^7.0.0",
+		"express": "^4.16.4",
+		"htmlnano": "^0.2.3",
+		"husky": "^1.3.1",
+		"js-yaml": "^3.12.2",
+		"lint-staged": "^8.1.5",
+		"mustache": "^3.0.1",
+		"parcel-bundler": "^1.12.2",
+		"postcss": "^7.0.14",
+		"postcss-custom-properties": "^8.0.9",
+		"postcss-flexbugs-fixes": "^4.1.0",
+		"postcss-font-family-system-ui": "^4.1.0",
+		"postcss-preset-env": "^6.6.0",
+		"postcss-pxtorem": "^4.0.1",
+		"posthtml": "^0.11.3",
+		"prettier": "^1.16.4",
+		"pug": "^2.0.3",
+		"terser": "^3.17.0",
+		"tslint": "^5.14.0",
+		"typescript": "^3.3.3333"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.ts": [
+			"tsc --noEmit",
+			"tslint -p ./tsconfig.json -c ./tslint.json"
+		],
+		"*.js": "npm run format:javascript"
+	}
+}

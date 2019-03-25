@@ -1,0 +1,215 @@
+@keyframes opacity-easeInOutBounce {
+	0% {
+		opacity: 1;
+	}
+
+	2%, 14%, 32% {
+		opacity: 0.99;
+	}
+
+	4% {
+		opacity: 0.997;
+	}
+
+	10% {
+		opacity: 0.97;
+	}
+
+	22% {
+		opacity: 0.876;
+	}
+
+	42% {
+		opacity: 0.597;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+
+	58% {
+		opacity: 0.403;
+	}
+
+	68%, 86%, 98% {
+		opacity: 0.01;
+	}
+
+	78% {
+		opacity: 0.124;
+	}
+
+	90% {
+		opacity: 0.03;
+	}
+
+	96% {
+		opacity: 0.003;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes scale-easeInOutBounce {
+	0% {
+		transform: scale(1);
+	}
+
+	2%, 14%, 32% {
+		transform: scale(0.99);
+	}
+
+	4% {
+		transform: scale(0.997);
+	}
+
+	10% {
+		transform: scale(0.97);
+	}
+
+	22% {
+		transform: scale(0.876);
+	}
+
+	42% {
+		transform: scale(0.597);
+	}
+
+	50% {
+		transform: scale(0.5);
+	}
+
+	58% {
+		transform: scale(0.403);
+	}
+
+	68%, 86%, 98% {
+		transform: scale(0.01);
+	}
+
+	78% {
+		transform: scale(0.124);
+	}
+
+	90% {
+		transform: scale(0.03);
+	}
+
+	96% {
+		transform: scale(0.003);
+	}
+
+	100% {
+		transform: scale(0);
+	}
+}
+
+@keyframes translate-easeInOutBounce {
+	0% {
+		transform: translateX(0%);
+	}
+
+	2%, 14%, 32% {
+		transform: translateX(-1%);
+	}
+
+	4% {
+		transform: translateX(-0.3%);
+	}
+
+	10% {
+		transform: translateX(-3%);
+	}
+
+	22% {
+		transform: translateX(-12.4%);
+	}
+
+	42% {
+		transform: translateX(-40.3%);
+	}
+
+	50% {
+		transform: translateX(-50%);
+	}
+
+	58% {
+		transform: translateX(-59.7%);
+	}
+
+	68%, 86%, 98% {
+		transform: translateX(-99%);
+	}
+
+	78% {
+		transform: translateX(-87.6%);
+	}
+
+	90% {
+		transform: translateX(-97%);
+	}
+
+	96% {
+		transform: translateX(-99.7%);
+	}
+
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes cursor-easeInOutBounce {
+	0% {
+		top: 101%;
+	}
+
+	2%, 14%, 32% {
+		top: 100%;
+	}
+
+	4% {
+		top: 101%;
+	}
+
+	10% {
+		top: 98%;
+	}
+
+	22% {
+		top: 89%;
+	}
+
+	42% {
+		top: 63%;
+	}
+
+	50% {
+		top: 51%;
+	}
+
+	58% {
+		top: 39%;
+	}
+
+	68%, 86%, 98% {
+		top: 2%;
+	}
+
+	78% {
+		top: 13%;
+	}
+
+	90% {
+		top: 4%;
+	}
+
+	96% {
+		top: 1%;
+	}
+
+	100% {
+		top: 1%;
+	}
+}

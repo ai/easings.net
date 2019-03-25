@@ -26,26 +26,16 @@ for example `fr-ca` for Canadian French) and translate all messages.
 
 ### Test
 
-1. To build the site and test your fix/translation you’ll need to have Ruby and
-   Bundler installed. For example, in a Debian-based (e.g. Ubuntu) environment:
+1. Install project dependencies:
 
      ```sh
-    sudo apt-get install ruby1.9.1 ruby1.9.1-dev
-    sudo gem1.9.1 install bundler --no-user-install --bindir /usr/bin
+    yarn install
      ```
 
-2. Install project dependencies:
+2. That’s all. Run development server:
 
      ```sh
-    bundle install --path=.bundle
+    yarn run start
      ```
 
-3. That’s all. Run development server:
-
-     ```sh
-    bundle exec rake server
-     ```
-
-4. And open [localhost:3000] in browser.
-
-[localhost:3000]: http://localhost:3000/
+3. And open [localhost:3000] in browser.

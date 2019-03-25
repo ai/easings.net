@@ -1,0 +1,49 @@
+include ../math/math
+
+mixin function(item, index)
+	-
+		var gradient = 'inOut';
+		if (index === 0) gradient = 'in';
+		if (index === 1) gradient = 'out';
+
+		var radioScale = 1;
+		var chartWidth = 125 * radioScale;
+		var chartHeight = 85 * radioScale;
+
+		var x1, y1, x2, y2;
+
+		if (item.css !== "no") {
+			var points = /([-\d.]+), ([-\d.]+), ([-\d.]+), ([-\d.]+)/.exec(item.css);
+			x1 = (parseFloat(points[1]) * chartWidth).toFixed(3);
+			y1 = ((1 - parseFloat(points[2])) * chartHeight).toFixed(3);
+			x2 = (parseFloat(points[3]) * chartWidth).toFixed(3);
+			y2 = ((1 - parseFloat(points[4])) * chartHeight).toFixed(3);
+		}
+
+		var className = "";
+
+		if (item.offset === "top")
+			className = "chart__wrap--offset_top";
+
+		if (item.offset === "bottom")
+			className = "chart__wrap--offset_bottom";
+
+	.function(id=(`func-${item.name}`) data-name=item.name data-func=item.css data-offset=item.offset)
+		a.function__chart.chart(href=`#${item.name}`)
+			.chart__wrap(class=className)
+				svg.chart__image(viewBox=(`0 0 ${chartWidth} ${chartHeight}`) xmlns="http://www.w3.org/2000/svg")
+					g.chart__explanations
+						path.chart__axis(d=(`M1 0V${chartHeight - 1}H${chartWidth}`) fill="none")
+						text.chart__text(x="4" y="8") x
+						text.chart__text(x=(chartWidth - 3) y=(chartHeight - 5) text-anchor="end") t
+
+					if item.css !== "no"
+						path.chart__curve(d=(`M1 ${chartHeight-1}C${x1} ${y1} ${x2} ${y2} ${chartWidth-1} 1`)
+						fill="none" stroke=(`url(#${gradient})`))
+					else
+						path.chart__curve(fill="none" stroke=(`url(#${gradient})`)
+						d=(`M1 ${chartHeight - 1} L${getEasing(item.name, chartWidth, chartHeight)}`))
+
+				.chart__cursor(style=`${item.css !== "no" ? `transition-timing-function:${item.css}` : ''}`)
+
+		.function__caption= item.name

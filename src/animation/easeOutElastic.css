@@ -1,0 +1,123 @@
+@keyframes opacity-easeOutElastic {
+	0% {
+		opacity: 1;
+	}
+
+	28% {
+		opacity: 0.13;
+	}
+
+	56% {
+		opacity: 0.014;
+	}
+
+	86%, 92% {
+		opacity: 0.002;
+	}
+
+	8%, 22%, 68%, 82%, 100% {
+		opacity: 0;
+	}
+}
+
+@keyframes scale-easeOutElastic {
+	0% {
+		transform: scale(1);
+	}
+
+	16% {
+		transform: scale(-0.323);
+	}
+
+	28% {
+		transform: scale(0.131);
+	}
+
+	44% {
+		transform: scale(-0.046);
+	}
+
+	59% {
+		transform: scale(0.017);
+	}
+
+	73% {
+		transform: scale(-0.007);
+	}
+
+	88% {
+		transform: scale(0.002);
+	}
+
+	100% {
+		transform: scale(0);
+	}
+}
+
+@keyframes translate-easeOutElastic {
+	0% {
+		transform: translateX(0%);
+	}
+
+	14% {
+		transform: translateX(-137.1%);
+	}
+
+	28% {
+		transform: translateX(-86.9%);
+	}
+
+	44% {
+		transform: translateX(-104.6%);
+	}
+
+	59% {
+		transform: translateX(-98%);
+	}
+
+	73% {
+		transform: translateX(-100.8%);
+	}
+
+	88% {
+		transform: translateX(-99.8%);
+	}
+
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes cursor-easeOutElastic {
+	0% {
+		top: 101%;
+	}
+
+	16% {
+		top: -31%;
+	}
+
+	28% {
+		top: 14%;
+	}
+
+	44% {
+		top: -4%;
+	}
+
+	59% {
+		top: 2.6%;
+	}
+
+	73% {
+		top: 0.4%;
+	}
+
+	88% {
+		top: 1.2%;
+	}
+
+	100% {
+		top: 1%;
+	}
+}
