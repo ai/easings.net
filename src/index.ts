@@ -135,7 +135,11 @@ forNodeList(getElementsList(selectorCode), (item) => {
 
 const langSelect = getElement("select") as HTMLSelectElement;
 langSelect.addEventListener("change", () => {
-	window.location.pathname = `/${langSelect.value}`;
+	if (/^\/easings.net/.test(window.location.pathname)) {
+		window.location.pathname = `/easings.net/${langSelect.value}`;
+	} else {
+		window.location.pathname = `/${langSelect.value}`;
+	}
 });
 
 const mql = window.matchMedia("(prefers-color-scheme: dark)");

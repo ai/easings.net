@@ -97,7 +97,7 @@ function renderRedirectScript(langList) {
 				function find(user) {
 					for (var i = 0; i < translations.length; i++) {
 						if (user === translations[i]) {
-							location.pathname = "/" + translations[i];
+							location.pathname += translations[i];
 						}
 					}
 				}
