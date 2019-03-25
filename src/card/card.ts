@@ -16,6 +16,7 @@ const cardClassWithoutTransition = "card__wrap--no-transition";
 
 let isReverse: boolean = false;
 let currentName: string;
+let currentFunc: string;
 let currentType: string;
 
 forNodeList(casesButtonsList, (button) => {
@@ -27,6 +28,7 @@ forNodeList(casesButtonsList, (button) => {
 		if (currentName) {
 			setAnimation(newType);
 		} else {
+			cardTargetWithFunc.style.transitionTimingFunction = currentFunc;
 			setTransition(cardTargetWithFunc, newType);
 		}
 
@@ -35,33 +37,29 @@ forNodeList(casesButtonsList, (button) => {
 });
 
 export function setFuncForCard(cssFunc: string, name: string): void {
-	clearTransition();
-
 	if (cssFunc === "no") {
 		currentName = name;
 	} else {
-		cardTargetWithFunc.style.animation = "none";
-		cardTargetWithFunc.style.transitionTimingFunction = cssFunc;
 		currentName = null;
+		currentFunc = cssFunc;
 	}
 }
 
 function setTransition(target: HTMLElement, newType: string): void {
+	target.classList.add(cardClassWithoutTransition);
+
 	if (newType !== currentType) {
-		target.classList.add(cardClassWithoutTransition);
 		target.classList.remove(cardTargetClassList[currentType]);
 
-		requestAnimationFrame(() => {
-			target.classList.remove(cardClassWithoutTransition);
-			target.classList.add(cardTargetClassList[newType]);
-		});
+		// tslint:disable-next-line:no-unused-expression
+		void target.offsetWidth;
+		target.classList.remove(cardClassWithoutTransition);
+		target.classList.add(cardTargetClassList[newType]);
 	} else {
-		target.classList.add(cardClassWithoutTransition);
-
-		requestAnimationFrame(() => {
-			target.classList.remove(cardClassWithoutTransition);
-			target.classList.toggle(cardTargetClassList[newType]);
-		});
+		// tslint:disable-next-line:no-unused-expression
+		void target.offsetWidth;
+		target.classList.remove(cardClassWithoutTransition);
+		target.classList.toggle(cardTargetClassList[newType]);
 	}
 }
 
@@ -78,34 +76,31 @@ function setAnimation(animationType: string): void {
 
 	cardTargetWithFunc.style.animation = "none";
 
-	requestAnimationFrame(() => {
-		cardTargetWithFunc.style.animation = `
-			${animationName} ${time}ms both ${isReverse ? "reverse" : ""} linear
-		`;
-	});
+	// tslint:disable-next-line:no-unused-expression
+	void cardTargetWithFunc.offsetWidth;
+	cardTargetWithFunc.style.animation = `
+		${animationName} ${time}ms both ${isReverse ? "reverse" : ""} linear
+	`;
 }
 
 export function clearTransition(): void {
 	cardTarget.classList.add(cardClassWithoutTransition);
 	cardTargetWithFunc.classList.add(cardClassWithoutTransition);
-	cardTarget.removeAttribute("style");
 	cardTargetWithFunc.removeAttribute("style");
 
-	requestAnimationFrame(() => {
-		cardTarget.classList.remove(
-			cardTargetClassList.opacity,
-			cardTargetClassList.scale,
-			cardTargetClassList.translate,
-		);
-		cardTargetWithFunc.classList.remove(
-			cardTargetClassList.opacity,
-			cardTargetClassList.scale,
-			cardTargetClassList.translate,
-		);
+	cardTarget.classList.remove(
+		cardTargetClassList.opacity,
+		cardTargetClassList.scale,
+		cardTargetClassList.translate,
+	);
+	cardTargetWithFunc.classList.remove(
+		cardTargetClassList.opacity,
+		cardTargetClassList.scale,
+		cardTargetClassList.translate,
+	);
 
-		requestAnimationFrame(() => {
-			cardTarget.classList.remove(cardClassWithoutTransition);
-			cardTargetWithFunc.classList.remove(cardClassWithoutTransition);
-		});
+	requestAnimationFrame(() => {
+		cardTarget.classList.remove(cardClassWithoutTransition);
+		cardTargetWithFunc.classList.remove(cardClassWithoutTransition);
 	});
 }
