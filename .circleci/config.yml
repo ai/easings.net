@@ -18,12 +18,6 @@ jobs:
       - run:
           name: Build project
           command: npm run build
-      - run:
-          name: Git config user.email
-          command: git config user.email "ivan@solovev.one"
-      - run:
-          name: Git config user.name
-          command: git config user.name "Ivan Solovev"
       - run: echo "easings.net" > dist/CNAME
       - run:
           name: Deploy project to gh-pages branch
