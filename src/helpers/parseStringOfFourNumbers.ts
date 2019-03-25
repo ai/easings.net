@@ -1,3 +1,8 @@
+/**
+ * Parse string of four numbers (example: viewBox)
+ * @param stringOfFourNumbers {string}
+ * @return {number[]}
+ */
 export function parseStringOfFourNumbers(stringOfFourNumbers: string): number[] {
 	const points: RegExpMatchArray = stringOfFourNumbers.match(/(-*[.\d]+)/g);
 

@@ -11,7 +11,7 @@ const unlink = promisify(fs.unlink);
 const Parcel = require("parcel-bundler");
 
 const PostHTML = require("posthtml");
-const PostHTMLNano  =require('htmlnano');
+const PostHTMLNano = require("htmlnano");
 const MQPacker = require("css-mqpacker");
 const postcssCustomProperties = require("postcss-custom-properties");
 const PostCSS = require("postcss");
@@ -20,11 +20,12 @@ const Terser = require("terser");
 const format = require("./helpers/format");
 const i18nDir = path.join(__dirname, "i18n");
 
-const langList = fs.readdirSync(i18nDir)
-	.filter((filename) => !/^_/.test(filename) && /\.ya?ml$/i.test(filename))
-	.map((filename) => fs.readFileSync(path.join(i18nDir, filename)))
-	.map((file) => yamlParse.load(file))
-	.filter((dic) => dic.version && dic.version > 1 && dic.lang_name);
+const langList = fs
+	.readdirSync(i18nDir)
+	.filter(filename => !/^_/.test(filename) && /\.ya?ml$/i.test(filename))
+	.map(filename => fs.readFileSync(path.join(i18nDir, filename)))
+	.map(file => yamlParse.load(file))
+	.filter(dic => dic.version && dic.version > 1 && dic.lang_name);
 
 const linksElements = [
 	"js-info-name",
@@ -35,7 +36,7 @@ const linksElements = [
 ];
 
 const htmlMinifyOptions = {
-	minifySvg: false,
+	minifySvg: false
 };
 
 const shortCssClassName = generateCssClassName();
@@ -103,7 +104,10 @@ async function build() {
 	});
 
 	jsData = jsData
-		.replace(/parcelRequire=function.*\(function \(require\)\s?{/i, "(function(window,document){")
+		.replace(
+			/parcelRequire=function.*\(function \(require\)\s?{/i,
+			"(function(window,document){"
+		)
 		.replace(/}\);$/, "})(window,document);");
 
 	const minifyJS = Terser.minify(jsData, {
@@ -113,7 +117,7 @@ async function build() {
 	await writeFile(jsFile.name, minifyJS.code);
 
 	function htmlPlugin(lang = "en") {
-		return (tree) => {
+		return tree => {
 			tree.match({ attrs: { class: true } }, i => ({
 				tag: i.tag,
 				content: i.content,
@@ -144,17 +148,17 @@ async function build() {
 				return file;
 			});
 
-			tree.match({ tag: "link", attrs: { rel: "manifest" } }, (file) => {
+			tree.match({ tag: "link", attrs: { rel: "manifest" } }, file => {
 				return {
 					tag: "link",
 					attrs: {
 						...file.attrs,
 						href: `manifest.${lang}.json`
 					}
-				}
+				};
 			});
 
-			tree.match({ tag: "meta", attrs: { property: "og:image" } }, (file) => ({
+			tree.match({ tag: "meta", attrs: { property: "og:image" } }, file => ({
 				tag: "meta",
 				attrs: {
 					...file.attrs,
@@ -164,27 +168,26 @@ async function build() {
 		};
 	}
 
-	const manifest = bundleAssets.find((asset) => asset.type === "webmanifest");
-	const manifestFile = await readFile(manifest.name, 'utf8');
+	const manifest = bundleAssets.find(asset => asset.type === "webmanifest");
+	const manifestFile = await readFile(manifest.name, "utf8");
 
 	bundleAssets
 		.filter(i => i.type === "html")
 		.forEach(async item => {
 			const file = await readFile(item.name);
-			const html = PostHTML()
-				.process(file, { sync: true }).html;
+			const html = PostHTML().process(file, { sync: true }).html;
 
 			if (/\/index\.html$/i.test(item.name)) {
 				const distDirName = path.dirname(item.name);
 
-				langList.forEach(async (lang) => {
+				langList.forEach(async lang => {
 					const viewData = format(
 						lang,
 						lang.lang_code,
-						langList.map((dic) => ({
+						langList.map(dic => ({
 							code: dic.lang_code,
-							name: dic.lang_name,
-						})),
+							name: dic.lang_name
+						}))
 					);
 
 					const htmlFragment = Mustache.render(html, viewData);
@@ -195,40 +198,40 @@ async function build() {
 						manifestLang
 					);
 
-					const htmlMinFragment = await PostHTML([PostHTMLNano(htmlMinifyOptions)])
+					const htmlMinFragment = await PostHTML([
+						PostHTMLNano(htmlMinifyOptions)
+					])
 						.use(htmlPlugin(lang.lang_code))
 						.process(htmlFragment);
 
 					await writeFile(
 						path.join(distDirName, `${lang.lang_code}.html`),
-						htmlMinFragment.html
-							.replace(/\n/g, "")
-							.replace(/>\s</g, "><")
+						htmlMinFragment.html.replace(/\n/g, "").replace(/>\s</g, "><")
 					);
 				});
 
-				const engLang = langList.find((lang) => lang.lang_code === "en");
+				const engLang = langList.find(lang => lang.lang_code === "en");
 				const htmlFragment = Mustache.render(
 					html,
 					format(
 						engLang,
 						"",
-						langList.map((dic) => ({
+						langList.map(dic => ({
 							code: dic.lang_code,
-							name: dic.lang_name,
-						})),
+							name: dic.lang_name
+						}))
 					)
 				);
 
-				const htmlMinFragment = await PostHTML([PostHTMLNano(htmlMinifyOptions)])
+				const htmlMinFragment = await PostHTML([
+					PostHTMLNano(htmlMinifyOptions)
+				])
 					.use(htmlPlugin())
 					.process(htmlFragment);
 
 				await writeFile(
 					item.name,
-					htmlMinFragment.html
-						.replace(/\n/g, "")
-						.replace(/>\s</g, "><")
+					htmlMinFragment.html.replace(/\n/g, "").replace(/>\s</g, "><")
 				);
 			} else {
 				await writeFile(
@@ -241,11 +244,10 @@ async function build() {
 		});
 }
 
-build()
-	.catch(error => {
-		process.stderr.write(error.stack + "\n");
-		process.exit(1);
-	});
+build().catch(error => {
+	process.stderr.write(error.stack + "\n");
+	process.exit(1);
+});
 
 function findAssets(bundle) {
 	return Array.from(bundle.childBundles).reduce(

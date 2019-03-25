@@ -1,12 +1,9 @@
 {
 	"name": "easings.net",
-	"version": "1.0.0",
-	"main": "gulpfile.js",
-	"author": "Ivan Solovev <solovev.one@yandex.ru> (https://solovev.one/)",
 	"scripts": {
 		"start": "node ./start.js",
 		"build": "NODE_ENV=production node ./build.js",
-		"precommit": "lint-staged",
+		"format:javascript": "prettier --write **/*.js *.js",
 		"lint:typescript": "tsc && tslint -p ./tsconfig.json -c ./tslint.json"
 	},
 	"browserslist": [
@@ -33,7 +30,6 @@
 			"autoprefixer": {}
 		}
 	},
-	"license": "MIT",
 	"devDependencies": {
 		"@babel/core": "^7.3.4",
 		"autoprefixer": "^9.5.0",
@@ -67,6 +63,7 @@
 		"*.ts": [
 			"tsc --noEmit",
 			"tslint -p ./tsconfig.json -c ./tslint.json"
-		]
+		],
+		"*.js": "npm run format:javascript"
 	}
 }

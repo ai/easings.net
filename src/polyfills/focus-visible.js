@@ -12,13 +12,14 @@ function init() {
 	 * @param {Element} el
 	 */
 	function isValidFocusTarget(el) {
-		return !!(el &&
+		return !!(
+			el &&
 			el !== document &&
-			el.nodeName !== 'HTML' &&
-			el.nodeName !== 'BODY' &&
-			'classList' in el &&
-			'contains' in el.classList);
-
+			el.nodeName !== "HTML" &&
+			el.nodeName !== "BODY" &&
+			"classList" in el &&
+			"contains" in el.classList
+		);
 	}
 
 	/**
@@ -38,7 +39,7 @@ function init() {
 	 * @param {Element} el
 	 */
 	function addFocusVisibleClass(el) {
-		el.classList.add('focus-visible');
+		el.classList.add("focus-visible");
 	}
 
 	/**
@@ -47,7 +48,7 @@ function init() {
 	 * @param {Element} el
 	 */
 	function removeFocusVisibleClass(el) {
-		el.classList.remove('focus-visible');
+		el.classList.remove("focus-visible");
 	}
 
 	/**
@@ -103,7 +104,7 @@ function init() {
 			return;
 		}
 
-		if (e.target.classList.contains('focus-visible')) {
+		if (e.target.classList.contains("focus-visible")) {
 			// To detect a tab/window switch, we look for a blur event followed
 			// rapidly by a visibility change.
 			// If we don't see a visibility change within 100ms, it's probably a
@@ -124,7 +125,7 @@ function init() {
 	 * @param {Event} e
 	 */
 	function onVisibilityChange(e) {
-		if (document.visibilityState === 'hidden') {
+		if (document.visibilityState === "hidden") {
 			// If the tab becomes active again, the browser will handle calling focus
 			// on the element (Safari actually calls it twice).
 			// If this tab change caused a blur on an element with focus-visible,
@@ -143,27 +144,27 @@ function init() {
 	 * focus.
 	 */
 	function addInitialPointerMoveListeners() {
-		document.addEventListener('mousemove', onInitialPointerMove);
-		document.addEventListener('mousedown', onInitialPointerMove);
-		document.addEventListener('mouseup', onInitialPointerMove);
-		document.addEventListener('pointermove', onInitialPointerMove);
-		document.addEventListener('pointerdown', onInitialPointerMove);
-		document.addEventListener('pointerup', onInitialPointerMove);
-		document.addEventListener('touchmove', onInitialPointerMove);
-		document.addEventListener('touchstart', onInitialPointerMove);
-		document.addEventListener('touchend', onInitialPointerMove);
+		document.addEventListener("mousemove", onInitialPointerMove);
+		document.addEventListener("mousedown", onInitialPointerMove);
+		document.addEventListener("mouseup", onInitialPointerMove);
+		document.addEventListener("pointermove", onInitialPointerMove);
+		document.addEventListener("pointerdown", onInitialPointerMove);
+		document.addEventListener("pointerup", onInitialPointerMove);
+		document.addEventListener("touchmove", onInitialPointerMove);
+		document.addEventListener("touchstart", onInitialPointerMove);
+		document.addEventListener("touchend", onInitialPointerMove);
 	}
 
 	function removeInitialPointerMoveListeners() {
-		document.removeEventListener('mousemove', onInitialPointerMove);
-		document.removeEventListener('mousedown', onInitialPointerMove);
-		document.removeEventListener('mouseup', onInitialPointerMove);
-		document.removeEventListener('pointermove', onInitialPointerMove);
-		document.removeEventListener('pointerdown', onInitialPointerMove);
-		document.removeEventListener('pointerup', onInitialPointerMove);
-		document.removeEventListener('touchmove', onInitialPointerMove);
-		document.removeEventListener('touchstart', onInitialPointerMove);
-		document.removeEventListener('touchend', onInitialPointerMove);
+		document.removeEventListener("mousemove", onInitialPointerMove);
+		document.removeEventListener("mousedown", onInitialPointerMove);
+		document.removeEventListener("mouseup", onInitialPointerMove);
+		document.removeEventListener("pointermove", onInitialPointerMove);
+		document.removeEventListener("pointerdown", onInitialPointerMove);
+		document.removeEventListener("pointerup", onInitialPointerMove);
+		document.removeEventListener("touchmove", onInitialPointerMove);
+		document.removeEventListener("touchstart", onInitialPointerMove);
+		document.removeEventListener("touchend", onInitialPointerMove);
 	}
 
 	/**
@@ -176,7 +177,7 @@ function init() {
 	function onInitialPointerMove(e) {
 		// Work around a Safari quirk that fires a mousemove on <html> whenever the
 		// window blurs, even if you're tabbing out of the page. ¯\_(ツ)_/¯
-		if (e.target.nodeName.toLowerCase() === 'html') {
+		if (e.target.nodeName.toLowerCase() === "html") {
 			return;
 		}
 
@@ -184,13 +185,13 @@ function init() {
 		removeInitialPointerMoveListeners();
 	}
 
-	document.addEventListener('keydown', onKeyDown, true);
-	document.addEventListener('mousedown', onPointerDown, true);
-	document.addEventListener('pointerdown', onPointerDown, true);
-	document.addEventListener('touchstart', onPointerDown, true);
-	document.addEventListener('focus', onFocus, true);
-	document.addEventListener('blur', onBlur, true);
-	document.addEventListener('visibilitychange', onVisibilityChange, true);
+	document.addEventListener("keydown", onKeyDown, true);
+	document.addEventListener("mousedown", onPointerDown, true);
+	document.addEventListener("pointerdown", onPointerDown, true);
+	document.addEventListener("touchstart", onPointerDown, true);
+	document.addEventListener("focus", onFocus, true);
+	document.addEventListener("blur", onBlur, true);
+	document.addEventListener("visibilitychange", onVisibilityChange, true);
 	addInitialPointerMoveListeners();
 }
 
@@ -212,15 +213,15 @@ function onDOMReady(callback) {
 		}
 	}
 
-	if (['interactive', 'complete'].indexOf(document.readyState) >= 0) {
+	if (["interactive", "complete"].indexOf(document.readyState) >= 0) {
 		callback();
 	} else {
 		loaded = false;
-		document.addEventListener('DOMContentLoaded', load, false);
-		window.addEventListener('load', load, false);
+		document.addEventListener("DOMContentLoaded", load, false);
+		window.addEventListener("load", load, false);
 	}
 }
 
-if (typeof document !== 'undefined') {
+if (typeof document !== "undefined") {
 	onDOMReady(init);
 }

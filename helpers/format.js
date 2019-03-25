@@ -8,21 +8,23 @@ function format(dictionary, lang, langList) {
 			solovev: "Ivan Solovev"
 		},
 		covenant: /(ru|uk)/i.test(currentLang) ? "и" : "and",
-		short_name: "Easings.net",
+		short_name: "Easings.net"
 	};
 
 	const helpers = {
 		link: renderLink,
-		langList: langList.map((item) => {
+		langList: langList.map(item => {
 			return [
-				`<option value="${item.code}"${item.code === currentLang ? ` selected` : ""}>`,
+				`<option value="${item.code}"${
+					item.code === currentLang ? ` selected` : ""
+				}>`,
 				item.name,
 				`</option>`
-			].join("")
+			].join("");
 		}),
-		redirect_script: !lang ?
-			renderRedirectScript(langList.map((item) => item.code)) :
-			""
+		redirect_script: !lang
+			? renderRedirectScript(langList.map(item => item.code))
+			: ""
 	};
 
 	const newDictionary = Object.assign(defaultDictionary, dictionary);
@@ -69,7 +71,10 @@ function renderLink() {
 
 		return renderText
 			.replace(/\((.*)\)/, "$1")
-			.replace(/\^([^\^]+)\^/, `<a ${linkAttr.replace(/^\[(.*)\]$/, "$1")}>$1</a>`);
+			.replace(
+				/\^([^\^]+)\^/,
+				`<a ${linkAttr.replace(/^\[(.*)\]$/, "$1")}>$1</a>`
+			);
 	};
 }
 

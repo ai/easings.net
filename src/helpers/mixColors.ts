@@ -1,5 +1,12 @@
 import { linearInterpolation } from "./linearInterpolation";
 
+/**
+ * Mix 2 colors
+ * @param color1 {string} - hex color
+ * @param color2 {string} - hex color
+ * @param blend {number} - between 0 and 1
+ * @return {string} - hex color
+ */
 export function mixColors(color1: string, color2: string, blend: number): string {
 	if (color1.length !== 7 || color2.length !== 7) {
 		return "";
