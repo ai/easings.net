@@ -58,6 +58,7 @@ a {
 
 	a:active {
 		color: var(--brand-lighten-color);
+		transition: none;
 	}
 
 	a.focus-visible {

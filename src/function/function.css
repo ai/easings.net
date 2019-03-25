@@ -27,8 +27,9 @@
 	}
 
 		.function:active {
-			 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-		 }
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+			transition: none;
+		}
 
 		.function.focus-visible::after,
 		.function--focus::after {
@@ -55,6 +56,7 @@
 
 		.function__chart:active {
 			transform: none;
+			transition: none;
 		}
 
 
