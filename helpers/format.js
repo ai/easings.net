@@ -86,7 +86,7 @@ function renderLink() {
 function renderRedirectScript(langList) {
 	return `
 		<script>
-			document.addEventListener("DOMContentLoaded", function () {
+			(function () {
 				var translations = ${JSON.stringify(langList)};
 			
 				var system = navigator.userLanguage || navigator.language;
@@ -109,7 +109,7 @@ function renderRedirectScript(langList) {
 			
 				find(dialect);
 				find(language);
-			});
+			})();
 		</script>
 	`;
 }

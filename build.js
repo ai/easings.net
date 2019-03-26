@@ -36,6 +36,7 @@ const linksElements = [
 ];
 
 const htmlMinifyOptions = {
+	mergeScripts: false,
 	minifySvg: false
 };
 
