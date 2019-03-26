@@ -42,9 +42,11 @@ function fromCache(request) {
 }
 
 function updateCache(request) {
-	return caches.open(version).then((cache) =>
-		fetch(request).then((response) =>
-			cache.put(request, response.clone()).then(() => response)
-		)
-	);
+	return caches
+		.open(version)
+		.then(cache =>
+			fetch(request).then(response =>
+				cache.put(request, response.clone()).then(() => response)
+			)
+		);
 }

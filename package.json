@@ -64,6 +64,9 @@
 			"tsc --noEmit",
 			"tslint -p ./tsconfig.json -c ./tslint.json"
 		],
-		"*.js": "npm run format:javascript"
+		"*.js": [
+			"npm run format:javascript",
+			"git add"
+		]
 	}
 }
