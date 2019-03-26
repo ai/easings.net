@@ -1,4 +1,4 @@
-const version = "v1";
+const version = "v2";
 
 self.addEventListener("install", event => {
 	event.waitUntil(
@@ -22,6 +22,7 @@ self.addEventListener("install", event => {
 
 self.addEventListener("fetch", function(event) {
 	event.respondWith(cacheOrNetwork(event.request));
+	event.waitUntil(updateCache(event.request));
 });
 
 function fromNetwork(request) {
@@ -38,4 +39,12 @@ function fromCache(request) {
 		.then(cache =>
 			cache.match(request).then(matching => matching || Promise.reject(request))
 		);
+}
+
+function updateCache(request) {
+	return caches.open(version).then((cache) =>
+		fetch(request).then((response) =>
+			cache.put(request, response.clone()).then(() => response)
+		)
+	);
 }
