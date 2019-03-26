@@ -47,11 +47,10 @@ const bundler = new Parcel("./src/index.pug", {
 	publicUrl: "./"
 });
 
-let bundleAssets = [];
-
 async function build() {
+	let serviceWorkerCode = await readFile("./src/sw.js", "utf8");
 	const bundleHome = await bundler.bundle();
-	bundleAssets = findAssets(bundleHome);
+	const bundleAssets = findAssets(bundleHome);
 
 	const cssFile = bundleAssets.find(
 		item => item.type === "css" && item.name.includes("/src.")
@@ -115,6 +114,16 @@ async function build() {
 	});
 
 	await writeFile(jsFile.name, minifyJS.code);
+
+	bundleAssets.forEach((asset) => {
+		serviceWorkerCode = serviceWorkerCode
+			.replace(
+				new RegExp(`['"]${asset.entryName}['"]`, "g"),
+				`"/${path.basename(asset.name)}"`
+			);
+	});
+
+	serviceWorkerCode = Terser.minify(serviceWorkerCode).code;
 
 	function htmlPlugin(lang = "en") {
 		return tree => {
@@ -194,6 +203,11 @@ async function build() {
 					const manifestLang = Mustache.render(manifestFile, viewData);
 
 					await writeFile(
+						path.join(distDirName, `sw.${lang.lang_code}.js`),
+						serviceWorkerCode.replace("/:lang", `/${lang.lang_code}`)
+					);
+
+					await writeFile(
 						path.join(distDirName, `manifest.${lang.lang_code}.json`),
 						manifestLang
 					);
@@ -255,6 +269,7 @@ function findAssets(bundle) {
 		[
 			{
 				name: bundle.name,
+				entryName: bundle.entryAsset.basename,
 				type: bundle.type
 			}
 		]

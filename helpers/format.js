@@ -24,7 +24,11 @@ function format(dictionary, lang, langList) {
 		}),
 		redirect_script: !lang
 			? renderRedirectScript(langList.map(item => item.code))
-			: ""
+			: "",
+
+		service_worker: process.env.NODE_ENV === "production" ?
+			renderRegisterServiceWorker(currentLang) :
+			""
 	};
 
 	const newDictionary = Object.assign(defaultDictionary, dictionary);
@@ -105,6 +109,24 @@ function renderRedirectScript(langList) {
 				find(dialect);
 				find(language);
 			});
+		</script>
+	`;
+}
+
+function renderRegisterServiceWorker(lang) {
+	return `
+		<script>
+			if ("serviceWorker" in navigator) {
+					navigator
+						.serviceWorker
+						.register("./sw.${lang}.js")
+						.then(() =>
+							navigator
+								.serviceWorker.ready
+								.then((worker) => worker.sync.register("syncdata")))
+							.catch((error) => console.log(error)
+							);
+				}
 		</script>
 	`;
 }
