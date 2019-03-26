@@ -26,9 +26,10 @@ function format(dictionary, lang, langList) {
 			? renderRedirectScript(langList.map(item => item.code))
 			: "",
 
-		service_worker: process.env.NODE_ENV === "production" ?
-			renderRegisterServiceWorker(currentLang) :
-			""
+		service_worker:
+			process.env.NODE_ENV === "production"
+				? renderRegisterServiceWorker(currentLang)
+				: ""
 	};
 
 	const newDictionary = Object.assign(defaultDictionary, dictionary);

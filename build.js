@@ -115,12 +115,11 @@ async function build() {
 
 	await writeFile(jsFile.name, minifyJS.code);
 
-	bundleAssets.forEach((asset) => {
-		serviceWorkerCode = serviceWorkerCode
-			.replace(
-				new RegExp(`['"]${asset.entryName}['"]`, "g"),
-				`"/${path.basename(asset.name)}"`
-			);
+	bundleAssets.forEach(asset => {
+		serviceWorkerCode = serviceWorkerCode.replace(
+			new RegExp(`['"]${asset.entryName}['"]`, "g"),
+			`"/${path.basename(asset.name)}"`
+		);
 	});
 
 	serviceWorkerCode = Terser.minify(serviceWorkerCode).code;
