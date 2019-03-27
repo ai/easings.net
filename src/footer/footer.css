@@ -3,31 +3,33 @@
 	width: 100%;
 	margin: 0 auto;
 	max-width: 1050px;
-	padding: 20px 15px;
+	padding: 20px 15px 15px;
 }
 
 	.footer__group {
 		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row-reverse;
 		justify-content: space-between;
 		align-items: baseline;
 	}
 
+		.footer__group::before {
+			content: "";
+			order: 1;
+			flex: 3 1 auto;
+		}
+
 		.footer__copyright {
+			order: 2;
+			margin: 0 auto 5px;
 			text-align: center;
 		}
 
 		.footer__lang {
-			display: flex;
-			justify-content: flex-end;
-			margin: 0 0 5px
+			margin: 0 0 5px 20px;
 		}
 
-@media (max-width: 900px) {
-	.footer__group {
-		flex-direction: column-reverse;
-	}
-
-		.footer__copyright {
-			margin: 0 auto;
-		}
-}
+			.footer__lang select {
+				font-size: 0.85rem;
+			}
