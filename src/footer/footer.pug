@@ -8,8 +8,8 @@ mixin footer
 				!= ` {{ covenant }} `
 				+external-link("https://solovev.one/") {{ authors.solovev }}
 
-			label.footer__lang(aria-label="Select language")
-				select.
+			.footer__lang
+				ul(aria-label="Select language").
 					{{#langList}}
 						{{{.}}}
 					{{/langList}}

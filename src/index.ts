@@ -8,6 +8,7 @@ import {
 } from "./navigation/navigation";
 import { getElement, getElementsList } from "./helpers/getElement";
 import { selectorCode } from "./helpers/constants";
+import { renderLanguageSelect } from "./footer/footer";
 
 const classFunctionActive = "function--active";
 const classFunctionFocus = "function--focus";
@@ -16,6 +17,8 @@ const classChartActive = "chart--active";
 const selectorChart = ".function__chart";
 const selectorCursor = ".chart__cursor";
 const cursorTransitionTime = 1500;
+
+renderLanguageSelect();
 
 const listFunction = getElementsList(".function");
 if (listFunction) {
@@ -131,15 +134,6 @@ forNodeList(getElementsList(selectorCode), (item) => {
 			}
 		}
 	});
-});
-
-const langSelect = getElement("select") as HTMLSelectElement;
-langSelect.addEventListener("change", () => {
-	if (/^\/easings.net/.test(window.location.pathname)) {
-		window.location.pathname = `/easings.net/${langSelect.value}`;
-	} else {
-		window.location.pathname = `/${langSelect.value}`;
-	}
 });
 
 const mql = window.matchMedia("(prefers-color-scheme: dark)");

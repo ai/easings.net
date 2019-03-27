@@ -15,11 +15,13 @@ function format(dictionary, lang, langList) {
 		link: renderLink,
 		langList: langList.map(item => {
 			return [
-				`<option value="${item.code}"${
-					item.code === currentLang ? ` selected` : ""
-				}>`,
-				item.name,
-				`</option>`
+				`<li>`,
+				item.code === currentLang
+					? `<span>${item.name}</span>`
+					: `<a href="/${item.code}" rel="alternate" hreflang="${item.code}">${
+							item.name
+					  }</a>`,
+				`</li>`
 			].join("");
 		}),
 		redirect_script: !lang
