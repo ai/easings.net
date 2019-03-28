@@ -7,6 +7,7 @@ const Mustache = require("mustache");
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 const unlink = promisify(fs.unlink);
+const copyFile = promisify(fs.copyFile);
 
 const Parcel = require("parcel-bundler");
 
@@ -84,6 +85,8 @@ async function build() {
 			});
 		});
 	}
+
+	await copyFile("./src/favicon.ico", "./dist/favicon.ico");
 
 	const styles = await PostCSS([
 		postcssCustomProperties({
