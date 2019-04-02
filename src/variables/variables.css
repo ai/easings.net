@@ -1,0 +1,28 @@
+:root {
+	--dark-background: #111;
+	--dark-brand-color: #1f8dfb;
+
+	--text-color: #222;
+	--text-light-color: #666;
+
+	--brand-color: #166cc1;
+	--brand-color-text: #fff;
+	--brand-darken-color: #004ba0;
+	--brand-darken-color-text: #fff;
+	--brand-lighten-color: #63a4ff;
+	--brand-lighten-color-text: var(--text-color);
+
+	--second-color: #00c853;
+
+	--chart-axis-color: #ccc;
+
+	--transition-time: 0.2s;
+	--transition-card-time: 1s;
+	--transition-show-time: 1.5s;
+
+	--line-height: 1.4;
+	--line-height-code: 1.5;
+	--general-line-height: 22px;
+
+	--code-fonts: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}

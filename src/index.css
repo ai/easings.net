@@ -1,3 +1,4 @@
+@import "./variables/variables.css";
 @import "./core/core.css";
 @import "./utils/utils.css";
 @import "./layout/layout.css";

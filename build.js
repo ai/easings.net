@@ -57,14 +57,22 @@ async function build() {
 	const cssFile = bundleAssets.find(
 		item => item.type === "css" && item.name.includes("/src.")
 	);
+	const keyframesFile = bundleAssets.find(
+		item => item.type === "css" && item.entryName === "keyframes.css"
+	);
 	const jsFile = bundleAssets.find(
 		item => item.type === "js" && item.name.includes("/src.")
 	);
 
 	let cssData = (await readFile(cssFile.name)).toString();
+	let keyframesData = (await readFile(keyframesFile.name)).toString();
 	let jsData = (await readFile(jsFile.name)).toString();
 
-	await Promise.all([unlink(cssFile.name), unlink(jsFile.name)]);
+	await Promise.all([
+		unlink(cssFile.name),
+		unlink(keyframesFile.name),
+		unlink(jsFile.name)
+	]);
 
 	const classesList = {};
 
@@ -85,6 +93,14 @@ async function build() {
 			});
 		});
 	}
+
+	const stylesKeyframe = await PostCSS([
+		postcssCustomProperties({
+			preserve: false
+		})
+	]).process(keyframesData, { from: keyframesFile.name });
+
+	await writeFile(keyframesFile.name, stylesKeyframe);
 
 	await copyFile("./src/favicon.ico", "./dist/favicon.ico");
 
