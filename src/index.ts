@@ -41,7 +41,7 @@ if (listFunction) {
 			chart.classList.add(classChartActive);
 
 			if (cssFunc === "no") {
-				cursor.style.animation = `${cursorTransitionTime}ms cursor-${animationName} 0.2s linear`;
+				cursor.style.animation = `${cursorTransitionTime}ms cursor-${animationName} both 0.2s linear`;
 			}
 		});
 
@@ -63,7 +63,7 @@ if (listFunction) {
 			chart.classList.add(classChartActive);
 
 			if (cssFunc === "no") {
-				cursor.style.animation = `${cursorTransitionTime}ms cursor-${animationName} 0.2s linear`;
+				cursor.style.animation = `${cursorTransitionTime}ms cursor-${animationName} both 0.2s linear`;
 			}
 		});
 
