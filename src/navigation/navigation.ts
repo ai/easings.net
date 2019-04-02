@@ -6,6 +6,7 @@ import { infoChartOffsetTopClassName, noTimingFunction, selectorInfo, selectorIn
 import { setInfoFunc, setInfoName, showComplexInfo, showSimpleInfo } from "../info/info";
 import overlay from "../overlay/overlay";
 import { hideGradient, setGradient } from "../gradient/gradient";
+import infoChart from "../info-chart/info-chart";
 
 const selectorColumns = ".columns";
 const timeTransitionForOverlay = 300;
@@ -14,7 +15,7 @@ const linkCubicBezierHref: string = linkCubicBezierElement.href;
 
 const header: HTMLElement = document.querySelector(".header");
 const info: HTMLElement = document.querySelector(selectorInfo);
-const infoChart: HTMLElement = document.querySelector(selectorInfoChart);
+const infoChartElement: HTMLElement = document.querySelector(selectorInfoChart);
 const columns: HTMLElement = document.querySelector(selectorColumns);
 
 const overlayOffsetVertical = 30;
@@ -87,14 +88,15 @@ export function navigateChart(id: string): void {
 		const columnsTransitionTime = getTransitionTime(columns);
 
 		if (itemOffset === "top") {
-			infoChart.classList.add(infoChartOffsetTopClassName);
+			infoChartElement.classList.add(infoChartOffsetTopClassName);
 		} else {
-			infoChart.classList.remove(infoChartOffsetTopClassName);
+			infoChartElement.classList.remove(infoChartOffsetTopClassName);
 		}
 
 		setInfoName(name);
 		setInfoFunc(func);
 		setFuncForCard(func, name);
+		infoChart.setTransitionCursor(func, name);
 
 		if (func !== noTimingFunction) {
 			const points: number[] = parseStringOfFourNumbers(func);

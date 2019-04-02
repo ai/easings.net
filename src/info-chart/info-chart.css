@@ -76,11 +76,10 @@
 			transform: translateY(-5px);
 		}
 
-				.info-chart__target:focus + .info-chart__cursor,
-				.info-chart__wrap:hover .info-chart__cursor {
+				.info-chart__cursor--visible {
 					opacity: 1;
 					top: 1%;
-					transition: top var(--transition-show-time), opacity var(--transition-time);
+					transition: top var(--transition-card-time), opacity var(--transition-time);
 					transition-delay: var(--transition-time), 0s;
 				}
 
