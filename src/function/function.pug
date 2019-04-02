@@ -6,6 +6,10 @@ mixin function(item, index)
 		if (index === 0) gradient = 'in';
 		if (index === 1) gradient = 'out';
 
+		var cursorClass = 'chart__cursor--func-in-out';
+		if (index === 0) cursorClass = 'chart__cursor--func-in';
+		if (index === 1) cursorClass = 'chart__cursor--func-out';
+
 		var radioScale = 1;
 		var chartWidth = 125 * radioScale;
 		var chartHeight = 85 * radioScale;
@@ -44,6 +48,6 @@ mixin function(item, index)
 						path.chart__curve(fill="none" stroke=(`url(#${gradient})`)
 						d=(`M1 ${chartHeight - 1} L${getEasing(item.name, chartWidth, chartHeight)}`))
 
-				.chart__cursor(style=`${item.css !== "no" ? `transition-timing-function:${item.css}` : ''}`)
+				.chart__cursor(style=`${item.css !== "no" ? `transition-timing-function:${item.css}` : ''}` class=cursorClass)
 
 		.function__caption= item.name

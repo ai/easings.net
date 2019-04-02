@@ -72,10 +72,20 @@
 			right: -17px;
 			opacity: 0;
 			will-change: top, opacity;
-			transition: top 0s, opacity 0s;
-			transition-delay: 0s, 0s;
+			transition: top 0s, color 0s, opacity 0s;
+			transition-delay: 0s, 0s, 0s;
 			transform: translateY(-7px);
+			color: var(--brand-color);
 		}
+
+				.chart__cursor--func-in {
+					color: var(--text-color);
+				}
+
+				.chart__cursor--func-out,
+				.chart__cursor--func-in-out {
+					color: var(--brand-color);
+				}
 
 			.chart__cursor::after {
 				content: '';
@@ -83,19 +93,36 @@
 				width: 10px;
 				height: 10px;
 				border-radius: 0 50% 50% 50%;
-				background: var(--brand-color);
+				background: currentColor;
 				transform: rotate(-45deg);
 			}
 
 				.chart--active .chart__cursor {
 					opacity: 1;
 					top: 1%;
-					transition: top var(--transition-show-time), opacity var(--transition-time);
-					transition-delay: var(--transition-time), 0s;
+					transition: top var(--transition-show-time),  color var(--transition-show-time), opacity var(--transition-time);
+					transition-delay: var(--transition-time), var(--transition-time), 0s;
 				}
+
+					.chart--active .chart__cursor--func-in,
+					.chart--active .chart__cursor--func-in-out {
+						color: var(--second-color);
+					}
+
+					.chart--active .chart__cursor--func-out {
+						color: var(--text-color);
+					}
+
 
 @media (max-width: 550px) {
 	.chart {
 		width: 100px;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.chart__cursor--func-in,
+	.chart--active .chart__cursor--func-out {
+		color: #fff;
 	}
 }
