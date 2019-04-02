@@ -55,18 +55,18 @@ async function build() {
 	const bundleAssets = findAssets(bundleHome);
 
 	const cssFile = bundleAssets.find(
-		item => item.type === "css" && item.name.includes("/src.")
+		item => item.type === "css" && item.entryName === "index.css"
 	);
 	const keyframesFile = bundleAssets.find(
 		item => item.type === "css" && item.entryName === "keyframes.css"
 	);
 	const jsFile = bundleAssets.find(
-		item => item.type === "js" && item.name.includes("/src.")
+		item => item.type === "js" && item.entryName === "index.ts"
 	);
 
-	let cssData = (await readFile(cssFile.name)).toString();
-	let keyframesData = (await readFile(keyframesFile.name)).toString();
-	let jsData = (await readFile(jsFile.name)).toString();
+	let cssData = await readFile(cssFile.name, "utf8");
+	let keyframesData = await readFile(keyframesFile.name, "utf8");
+	let jsData = await readFile(jsFile.name, "utf8");
 
 	await Promise.all([
 		unlink(cssFile.name),
