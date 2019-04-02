@@ -27,7 +27,9 @@ class InfoChart {
 
 	private showCursor = (): void => {
 		if (this.nameAnimation) {
-			this.infoChartCursor.style.animation = `1s cursor-${this.nameAnimation} 0.2s linear`;
+			this.infoChartCursor.style.animation = `
+				1s cursor-${this.nameAnimation} both 0.2s linear
+			`;
 		}
 
 		this.infoChartCursor.classList.add(this.infoChartCursorVisibleSelector);
