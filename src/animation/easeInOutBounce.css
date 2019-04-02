@@ -163,6 +163,7 @@
 @keyframes cursor-easeInOutBounce {
 	0% {
 		top: 101%;
+		color: var(--brand-color);
 	}
 
 	2%, 14%, 32% {
@@ -179,6 +180,7 @@
 
 	22% {
 		top: 89%;
+		color: var(--brand-color);
 	}
 
 	42% {
@@ -199,6 +201,7 @@
 
 	78% {
 		top: 13%;
+		color: var(--second-color);
 	}
 
 	90% {
@@ -211,5 +214,6 @@
 
 	100% {
 		top: 1%;
+		color: var(--second-color);
 	}
 }

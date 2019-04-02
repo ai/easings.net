@@ -91,6 +91,7 @@
 @keyframes cursor-easeInElastic {
 	0%, 4%, 18% {
 		top: 101%;
+		color: var(--text-color);
 	}
 
 	8%, 14% {
@@ -106,18 +107,20 @@
 	}
 
 	56%, 58% {
-		top: 105%
+		top: 105%;
 	}
 
 	72% {
-		top: 88%
+		top: 88%;
 	}
 
 	86% {
 		top: 138%;
+		color: var(--text-color);
 	}
 
 	100% {
 		top: 1%;
+		color: var(--second-color);
 	}
 }

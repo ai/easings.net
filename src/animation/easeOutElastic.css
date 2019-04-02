@@ -91,10 +91,12 @@
 @keyframes cursor-easeOutElastic {
 	0% {
 		top: 101%;
+		color: var(--brand-color);
 	}
 
 	16% {
 		top: -31%;
+		color: var(--text-color);
 	}
 
 	28% {
@@ -119,5 +121,6 @@
 
 	100% {
 		top: 1%;
+		color: var(--text-color);
 	}
 }
