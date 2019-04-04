@@ -23,11 +23,39 @@ const overlayOffsetHorizontal = 30;
 
 let openItemId: string|null;
 
+window.addEventListener("resize", resizeInfo, false);
+
 info.addEventListener("click", () => {
 	requestAnimationFrame(resizeInfo);
 });
 
-export function navigateMain(): void {
+const chartId = window.location.hash.slice(1);
+if (chartId) {
+	navigateChart(chartId);
+}
+
+window.addEventListener(
+	"hashchange",
+	() => {
+		const id = window.location.hash.slice(1);
+
+		if (id) {
+			navigateChart(id);
+		} else {
+			navigateMain();
+		}
+	},
+	false,
+);
+
+window.addEventListener("keydown", (event) => {
+	const keyName = "escape";
+	if (event.key.toLowerCase() === keyName || event.code.toLowerCase() === keyName) {
+		window.location.hash = "";
+	}
+});
+
+function navigateMain(): void {
 	window.scrollTo({
 		behavior: "smooth",
 		top: 0,
@@ -66,7 +94,7 @@ export function navigateMain(): void {
 	);
 }
 
-export function navigateChart(id: string): void {
+function navigateChart(id: string): void {
 	const item = document.getElementById(`func-${id}`);
 
 	if (!item || openItemId === id) {
@@ -160,7 +188,7 @@ export function navigateChart(id: string): void {
 	}
 }
 
-export function resizeInfo(): void {
+function resizeInfo(): void {
 	if (!openItemId) {
 		return;
 	}
