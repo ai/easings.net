@@ -30,6 +30,10 @@
 			margin: 0 0 5px 20px;
 		}
 
+				[dir="rtl"] .footer__lang {
+					margin: 0 20px 5px 0;
+				}
+
 			.footer__lang select {
 				font-size: 0.85rem;
 			}

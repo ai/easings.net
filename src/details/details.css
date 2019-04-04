@@ -39,6 +39,7 @@
 			padding: 0 var(--general-line-height);
 			transition: var(--transition-time);
 
+			direction: ltr;
 			white-space: pre;
 			word-wrap: break-word;
 			font-family: var(--code-fonts);

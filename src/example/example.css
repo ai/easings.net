@@ -19,6 +19,7 @@
 		margin: -2px 0;
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
+		direction: ltr;
 
 		word-wrap: break-word;
 		font-family: var(--code-fonts);

@@ -10,6 +10,10 @@
 		padding: 0 calc(2 * var(--general-line-height)) 0 0;
 	}
 
+			[dir="rtl"] .header__definition {
+				padding: 0 0 0 calc(2 * var(--general-line-height));
+			}
+
 		.header__definition p {
 			margin: 0;
 			padding: 0 0 calc(var(--general-line-height) / 2);
@@ -20,17 +24,11 @@
 	}
 
 @media (max-width: 900px) {
-	.header__definition {
+	.header__definition.header__definition {
 		padding: 0;
 	}
 
 	.header__opensource {
 		display: none;
-	}
-}
-
-@media (max-width: 550px) {
-	.header__definition {
-		padding-right: 0;
 	}
 }

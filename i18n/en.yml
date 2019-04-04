@@ -1,6 +1,7 @@
 version: 2
 lang_code: en
 lang_name: English
+rtl: false
 
 title: Easing Functions Cheat Sheet
 description:

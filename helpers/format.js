@@ -3,6 +3,7 @@ function format(dictionary, lang, langList) {
 
 	const defaultDictionary = {
 		lang: currentLang,
+		dir: dictionary.rtl ? "rtl" : "ltr",
 		authors: {
 			sitnik: "Andrey Sitnik",
 			solovev: "Ivan Solovev"

@@ -1,0 +1,59 @@
+version: 2
+lang_code: fa
+lang_name: Faraon
+rtl: true
+
+title: برگه تقلب توابع easing
+description:
+  واقعی تر کردن انیمیشن ها با انتخاب تابع درستی از easing
+share:
+  توابع easing مشخص کننده سرعت انیمیشن ها برای طبیعی جلوه دادن حرکات هستند.
+  اشیاء واقعی با یک سرعت ثابت حرکت نمی کنند و به سرعت شروع به حرکت و ایستادن نمی کنند.
+  این صفحه به شما کمک میکنه تا easing درستی رو نتخاب کنید
+
+about: __format
+  ~توابع easing - نرخ تغییر پارامتر را در طول زمان مشخص می کنند.
+
+  اشیاء در زندگی واقعی به سرعت شروع به حرکت کردن و استادن نمی کنند، و همچنین
+  هیچوقت با یک سرعت ثابت حرکت نمی کنند . وقتی ما یک کشو را باز می کنیم در ایتدا
+  اون رو با سرعت حرکت میدم و سرعتش کم میشه تا زمانی که بیرون بیاد. یا یک شیء رو روی
+  زمین بندازید ، اول با سرعت شتاب رو به پائین می گیره و بعد از برخورد با زمین به بالا می پره.
+
+  این صفحه به شما کمک میکنه تا easing درستی رو نتخاب کنید
+
+howtos:
+  css:
+    text: In CSS, the transition and animation properties allow you to specify an easing function.
+    edit: Edit on ^cubic-bezier.com^.
+    with_animation: __code In CSS, this function can be implemented using `@keyframes`
+    example_size: Size
+    example_position: Position
+    example_opacity: Transparency
+
+  postcss:
+    text:
+      In PostCSS, the easing function is much easier to describe.
+      There is a plugin ^postcss-easings^ that takes the transition information from that site.
+    explanation: That declaration is converted to the one described above.
+    disabled: __code
+      Unfortunately, the easing function cannot be set with any PostCSS plugin.
+      Can be done with `@keyframes`, see above.
+
+  gradient:
+    name: Gradient
+    text: It is possible to draw a gradient using ^postcss-easing-gradients^.
+
+easing:
+  all_easings: All easings
+  check: Check easing for changes
+  check_size: Size's
+  check_position: Positions
+  check_opacity: Transparencies
+  current_func: That function
+  linear_func: Linear function
+  load: Loading...
+
+opensource:
+  title: Open Source
+  translate: Help translate site to your language
+

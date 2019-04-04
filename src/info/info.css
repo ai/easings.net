@@ -17,6 +17,12 @@
 		margin: 0 0 var(--general-line-height);
 	}
 
+		.info__icon {}
+
+				[dir="rtl"] .info__icon {
+					transform: scaleX(-1);
+				}
+
 	.info__wrap {
 		display: flex;
 		align-items: flex-start;
@@ -28,6 +34,10 @@
 			width: 100%;
 			flex: 0 1 370px;
 		}
+
+				[dir="rtl"] .info__case {
+					padding: 0 20px 0 0;
+				}
 
 		.info__main {
 			flex: 1 1 auto;
