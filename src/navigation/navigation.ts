@@ -4,9 +4,9 @@ import { getElementPosition } from "../helpers/getElementPosition";
 import { parseStringOfFourNumbers } from "../helpers/parseStringOfFourNumbers";
 import { infoChartOffsetTopClassName, noTimingFunction, selectorInfo, selectorInfoChart } from "../helpers/constants";
 import { setInfoFunc, setInfoName, showComplexInfo, showSimpleInfo } from "../info/info";
-import overlay from "../overlay/overlay";
+import { resetOverlay, setSizeOverlay, setTransitionDurationOverlay, showOverlay } from "../overlay/overlay";
 import { hideGradient, setGradient } from "../gradient/gradient";
-import infoChart from "../info-chart/info-chart";
+import { setTransitionForInfoChartCursor } from "../info-chart/info-chart";
 
 const selectorColumns = ".columns";
 const timeTransitionForOverlay = 300;
@@ -15,7 +15,7 @@ const linkCubicBezierHref: string = linkCubicBezierElement.href;
 
 const header: HTMLElement = document.querySelector(".header");
 const info: HTMLElement = document.querySelector(selectorInfo);
-const infoChartElement: HTMLElement = document.querySelector(selectorInfoChart);
+const infoChart: HTMLElement = document.querySelector(selectorInfoChart);
 const columns: HTMLElement = document.querySelector(selectorColumns);
 
 const overlayOffsetVertical = 30;
@@ -46,14 +46,13 @@ export function navigateMain(): void {
 	info.style.left = "0px";
 	info.style.right = "0px";
 
-	overlay.setTransitionDuration(timeTransitionForOverlay);
+	setTransitionDurationOverlay(timeTransitionForOverlay);
 
 	setTimeout(() => {
 		info.removeAttribute("style");
 
 		const itemPosition = getElementPosition(item);
-
-		overlay.setSize({
+		setSizeOverlay({
 			height: itemPosition.height,
 			left: itemPosition.x,
 			top: itemPosition.y,
@@ -62,7 +61,7 @@ export function navigateMain(): void {
 	}, infoTransitionTime);
 
 	setTimeout(
-		overlay.reset,
+		resetOverlay,
 		timeTransitionForOverlay + infoTransitionTime,
 	);
 }
@@ -88,15 +87,15 @@ export function navigateChart(id: string): void {
 		const columnsTransitionTime = getTransitionTime(columns);
 
 		if (itemOffset === "top") {
-			infoChartElement.classList.add(infoChartOffsetTopClassName);
+			infoChart.classList.add(infoChartOffsetTopClassName);
 		} else {
-			infoChartElement.classList.remove(infoChartOffsetTopClassName);
+			infoChart.classList.remove(infoChartOffsetTopClassName);
 		}
 
 		setInfoName(name);
 		setInfoFunc(func);
 		setFuncForCard(func, name);
-		infoChart.setTransitionCursor(func, name);
+		setTransitionForInfoChartCursor(func, name);
 
 		if (func !== noTimingFunction) {
 			const points: number[] = parseStringOfFourNumbers(func);
@@ -118,28 +117,26 @@ export function navigateChart(id: string): void {
 		requestAnimationFrame(() => {
 			const itemPosition = getElementPosition(item);
 
-			overlay
-				.show()
-				.setSize({
-					height: itemPosition.height,
-					left: itemPosition.x,
-					top: itemPosition.y,
-					width: itemPosition.width,
-				})
-				.setTransitionDuration(timeTransitionForOverlay);
+			setTransitionDurationOverlay(timeTransitionForOverlay);
+			showOverlay();
+			setSizeOverlay({
+				height: itemPosition.height,
+				left: itemPosition.x,
+				top: itemPosition.y,
+				width: itemPosition.width,
+			});
 
 			columns.classList.add("columns--hide");
 
 			requestAnimationFrame(() => {
 				const infoPosition = getElementPosition(info);
 
-				overlay
-					.setSize({
-						height: infoPosition.height + overlayOffsetVertical,
-						left: infoPosition.x - overlayOffsetHorizontal / 2,
-						top: infoPosition.y - overlayOffsetVertical / 2,
-						width: infoPosition.width + overlayOffsetHorizontal,
-					});
+				setSizeOverlay({
+					height: infoPosition.height + overlayOffsetVertical,
+					left: infoPosition.x - overlayOffsetHorizontal / 2,
+					top: infoPosition.y - overlayOffsetVertical / 2,
+					width: infoPosition.width + overlayOffsetHorizontal,
+				});
 
 				const headerPosition = getElementPosition(header);
 				const topOffset = headerPosition.height + headerPosition.y - overlayOffsetVertical / 2;
@@ -169,12 +166,12 @@ export function resizeInfo(): void {
 	}
 
 	const infoPosition = getElementPosition(info);
-	overlay
-		.disabledTransition()
-		.setSize({
-			height: infoPosition.height + overlayOffsetVertical,
-			left: infoPosition.x - overlayOffsetHorizontal / 2,
-			top: infoPosition.y - overlayOffsetVertical / 2,
-			width: infoPosition.width + overlayOffsetHorizontal,
-		});
+
+	setTransitionDurationOverlay(0);
+	setSizeOverlay({
+		height: infoPosition.height + overlayOffsetVertical,
+		left: infoPosition.x - overlayOffsetHorizontal / 2,
+		top: infoPosition.y - overlayOffsetVertical / 2,
+		width: infoPosition.width + overlayOffsetHorizontal,
+	});
 }

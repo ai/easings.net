@@ -45,6 +45,28 @@ export function setFuncForCard(cssFunc: string, name: string): void {
 	}
 }
 
+export function clearTransition(): void {
+	cardTarget.classList.add(cardClassWithoutTransition);
+	cardTargetWithFunc.classList.add(cardClassWithoutTransition);
+	cardTargetWithFunc.removeAttribute("style");
+
+	cardTarget.classList.remove(
+		cardTargetClassList.opacity,
+		cardTargetClassList.scale,
+		cardTargetClassList.translate,
+	);
+	cardTargetWithFunc.classList.remove(
+		cardTargetClassList.opacity,
+		cardTargetClassList.scale,
+		cardTargetClassList.translate,
+	);
+
+	requestAnimationFrame(() => {
+		cardTarget.classList.remove(cardClassWithoutTransition);
+		cardTargetWithFunc.classList.remove(cardClassWithoutTransition);
+	});
+}
+
 function setTransition(target: HTMLElement, newType: string): void {
 	target.classList.add(cardClassWithoutTransition);
 
@@ -81,26 +103,4 @@ function setAnimation(animationType: string): void {
 	cardTargetWithFunc.style.animation = `
 		${animationName} ${time}ms both ${isReverse ? "reverse" : ""} linear
 	`;
-}
-
-export function clearTransition(): void {
-	cardTarget.classList.add(cardClassWithoutTransition);
-	cardTargetWithFunc.classList.add(cardClassWithoutTransition);
-	cardTargetWithFunc.removeAttribute("style");
-
-	cardTarget.classList.remove(
-		cardTargetClassList.opacity,
-		cardTargetClassList.scale,
-		cardTargetClassList.translate,
-	);
-	cardTargetWithFunc.classList.remove(
-		cardTargetClassList.opacity,
-		cardTargetClassList.scale,
-		cardTargetClassList.translate,
-	);
-
-	requestAnimationFrame(() => {
-		cardTarget.classList.remove(cardClassWithoutTransition);
-		cardTargetWithFunc.classList.remove(cardClassWithoutTransition);
-	});
 }
