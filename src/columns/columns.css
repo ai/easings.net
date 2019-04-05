@@ -38,6 +38,10 @@
 }
 
 @media (max-width: 550px) {
+	.columns__wrap {
+		margin: 0 -0.3125rem;
+	}
+
 	.columns__group {
 		margin: 0 0 30px;
 	}
