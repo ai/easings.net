@@ -13,6 +13,7 @@ self.addEventListener("install", event => {
 					"192.png",
 					"512.png",
 					"logo.svg",
+					"mask.svg",
 					"/",
 					"/:lang"
 				])
