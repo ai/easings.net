@@ -49,7 +49,15 @@ const bundler = new Parcel("./src/index.pug", {
 	publicUrl: "./"
 });
 
+const errorBundler = new Parcel("./src/404.pug", {
+	sourceMaps: false,
+	scopeHoist: true,
+	publicUrl: "./"
+});
+
 async function build() {
+	await errorBundler.bundle();
+
 	let serviceWorkerCode = await readFile("./src/sw.js", "utf8");
 	const bundleHome = await bundler.bundle();
 	const bundleAssets = findAssets(bundleHome);

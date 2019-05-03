@@ -1,0 +1,12 @@
+include ../external-link/external-link
+
+mixin error
+	main.error
+		.error__wrap
+			.error__image
+				svg.error__ghost(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 187")
+					path(d="M1 77.5a80.1 80.1 0 0 1 160 0v108l-16-14-16 14-16-14-16 14-16-14-16 14-16-14-16 14-16-14-16 14zM69 129.5h24M48,89.5a1,1 0 1,0 2,0a1,1 0 1,0 -2,0M112,89.5a1,1 0 1,0 2,0a1,1 0 1,0 -2,0")
+
+			.error__title 404
+			.error__text Page not found
+			+external-link("/").error__link Back to our site
