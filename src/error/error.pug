@@ -1,5 +1,3 @@
-include ../external-link/external-link
-
 mixin error
 	main.error
 		.error__wrap
@@ -9,4 +7,4 @@ mixin error
 
 			.error__title 404
 			.error__text Page not found
-			+external-link("/").error__link Back to our site
+			a.error__link(href="/") Back to our site
