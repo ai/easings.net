@@ -4,6 +4,7 @@ export const selectorInfo = ".info";
 export const selectorInfoChart = ".info-chart";
 export const selectorSimpleInfo = ".js-info-simple";
 export const selectorComplexInfo = ".js-info-complex";
+export const selectorDetails = ".details";
 export const selectorCode = ".details__code";
 export const selectorComplexKeyframeScale = `${selectorCode}[data-type=scale]`;
 export const selectorComplexKeyframeOpacity = `${selectorCode}[data-type=opacity]`;

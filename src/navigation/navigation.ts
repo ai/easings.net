@@ -2,7 +2,15 @@ import { clearTransition, setFuncForCard } from "../card/card";
 import { getTransitionTime } from "../helpers/getTransitionTime";
 import { getElementPosition } from "../helpers/getElementPosition";
 import { parseStringOfFourNumbers } from "../helpers/parseStringOfFourNumbers";
-import { infoChartOffsetTopClassName, noTimingFunction, selectorInfo, selectorInfoChart } from "../helpers/constants";
+import {
+	infoChartOffsetTopClassName,
+	noTimingFunction,
+	selectorInfo,
+	selectorInfoChart,
+	selectorDetails,
+} from "../helpers/constants";
+import { forNodeList } from "../helpers/forNodeList";
+import { getElementsList } from "../helpers/getElement";
 import { setInfoFunc, setInfoName, showComplexInfo, showSimpleInfo } from "../info/info";
 import { resetOverlay, setSizeOverlay, setTransitionDurationOverlay, showOverlay } from "../overlay/overlay";
 import { hideGradient, setGradient } from "../gradient/gradient";
@@ -37,6 +45,15 @@ if (chartId) {
 window.addEventListener(
 	"hashchange",
 	() => {
+		if (window.getSelection) {
+			window.getSelection().removeAllRanges();
+		}
+		forNodeList(getElementsList(selectorDetails), (item) => {
+			if (item.hasAttribute("open")) {
+				item.removeAttribute("open");
+			}
+		});
+
 		const id = window.location.hash.slice(1);
 
 		if (id) {
