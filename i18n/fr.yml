@@ -1,0 +1,57 @@
+version: 2
+lang_code: fr
+lang_name: Français
+rtl: false
+
+title: Antisèche pour les courbes d'accélérations (easing functions)
+description:
+  Faites des animations plus réalistes en utilisant les bonnes courbes d'accélérations.
+share:
+  Les courbes d'accélérations (easing functions) décrivent la vitesse d'une animation pour rendre le mouvement plus naturel.
+  Dans la vie, les objets ne se déplacent pas à une vitesse constante, tout comme ils ne s'arrêtent pas instantanément.
+  Cette page vous aide à choisir les bonnes courbes d'accélérations.
+
+about: __format
+  ~Les courbes d'accélérations (easing functions)~ décrivent la vitesse à laquelle un paramètre change en fonction du temps.
+
+  Dans la vie, les objets ne s'arrêtent pas instantanément, et ne bougent presque jamais à vitesse constante.
+  Lorsque nous ouvrons un tiroir, nous le déplaçons d'abord rapidement puis de plus en plus lentement jusqu'à ce qu'il sorte.
+  Faites tomber quelque chose au sol, il va premièrement accélérer vers le sol puis rebondir.
+
+  Cette page vous aide à choisir les bonnes courbes d'accélérations.
+
+howtos:
+  css:
+    text: En CSS, les propriétés de transition ou d'animation vous permettent de définir une courbe d'accélération.
+    edit: Modifier sur ^cubic-bezier.com^.
+    with_animation: __code En CSS, cette courbe peut être implémenté en utilisant les `@keyframes`
+    example_size: Taille
+    example_position: Position  
+    example_opacity: Transparence
+
+  postcss:
+    text:
+      En PosrCSS, la courbe d'accélération est bien plus simple à décrire.
+      Il y a un plugin ^postcss-easings^ qui prend les informations de transition depuis ce site.
+    explanation: Cette déclaration est convertie par celle décrite plus haut.
+    disabled: __code
+      Malheureusement, cette courbe d'accélération ne peut pas être définie avec tous les plugins PostCSS.
+      Cela peut être réalisé avec les `@keyframes`, pour plus d'informations, regardez plus haut.
+
+  gradient:
+    name: Dégradé
+    text: Il est possible de dessiner un dégradé en utilisant ^postcss-easing-gradients^.
+
+easing:
+  all_easings: Toutes les accélérations
+  check: Regardez les modifications
+  check_size: Tailles
+  check_position: Positions
+  check_opacity: Transparences
+  current_func: Fonction actuelle
+  linear_func: Fonction linéaire
+  load: Chargement...
+
+opensource:
+  title: Open Source
+  translate: Aidez-nous à traduire ce site dans votre langue
