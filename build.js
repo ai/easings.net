@@ -20,6 +20,9 @@ const Terser = require("terser");
 const format = require("./helpers/format");
 const i18nDir = path.join(__dirname, "i18n");
 
+/**
+ * @type {Lang[]}
+ */
 const langList = fs
 	.readdirSync(i18nDir)
 	.filter((filename) => !/^_/.test(filename) && /\.ya?ml$/i.test(filename))
@@ -198,16 +201,16 @@ async function build() {
 	const manifest = bundleAssets.find((asset) => asset.type === "webmanifest");
 	const manifestFile = await readFile(manifest.name, "utf8");
 
-	bundleAssets
+	await bundleAssets
 		.filter((i) => i.type === "html")
-		.forEach(async (item) => {
+		.map(async (item) => {
 			const file = await readFile(item.name);
-			const html = PostHTML().process(file, { sync: true }).html;
+			const html = PostHTML([]).process(file, { sync: true }).html;
 
 			if (/\/index\.html$/i.test(item.name)) {
 				const distDirName = path.dirname(item.name);
 
-				langList.forEach(async (lang) => {
+				await langList.map(async (lang) => {
 					const viewData = format(
 						lang,
 						lang.lang_code,
@@ -268,7 +271,7 @@ async function build() {
 			} else {
 				await writeFile(
 					item.name,
-					PostHTML()
+					PostHTML([])
 						.use(htmlPlugin())
 						.process(file, { sync: true }).html
 				);
@@ -329,3 +332,10 @@ function* generateCssClassName() {
 		yield result;
 	}
 }
+
+/**
+ * @typedef {Object} Lang
+ * @property {string} lang_code
+ * @property {string} lang_name
+ * @property {string} version
+ */
