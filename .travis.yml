@@ -7,10 +7,9 @@ notifications:
 branches:
   only:
     - master
-before_script:
-  - npm install
 script:
-  - npm run build
+  - yarn run lint
+  - yarn run build
   - echo "easings.net" > dist/CNAME
 deploy:
   provider: pages
