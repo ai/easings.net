@@ -11,14 +11,26 @@ import {
 } from "../helpers/constants";
 import { forNodeList } from "../helpers/forNodeList";
 import { getElementsList } from "../helpers/getElement";
-import { setInfoFunc, setInfoName, showComplexInfo, showSimpleInfo } from "../info/info";
-import { resetOverlay, setSizeOverlay, setTransitionDurationOverlay, showOverlay } from "../overlay/overlay";
+import {
+	setInfoFunc,
+	setInfoName,
+	showComplexInfo,
+	showSimpleInfo,
+} from "../info/info";
+import {
+	resetOverlay,
+	setSizeOverlay,
+	setTransitionDurationOverlay,
+	showOverlay,
+} from "../overlay/overlay";
 import { hideGradient, setGradient } from "../gradient/gradient";
 import { setTransitionForInfoChartCursor } from "../info-chart/info-chart";
 
 const selectorColumns = ".columns";
 const timeTransitionForOverlay = 300;
-const linkCubicBezierElement: HTMLLinkElement = document.querySelector(".js-cubic-bezier");
+const linkCubicBezierElement: HTMLLinkElement = document.querySelector(
+	".js-cubic-bezier"
+);
 const linkCubicBezierHref: string = linkCubicBezierElement.href;
 
 const header: HTMLElement = document.querySelector(".header");
@@ -29,7 +41,7 @@ const columns: HTMLElement = document.querySelector(selectorColumns);
 const overlayOffsetVertical = 30;
 const overlayOffsetHorizontal = 30;
 
-let openItemId: string|null;
+let openItemId: string | null;
 
 window.addEventListener("resize", resizeInfo, false);
 
@@ -62,12 +74,15 @@ window.addEventListener(
 			navigateMain();
 		}
 	},
-	false,
+	false
 );
 
 window.addEventListener("keydown", (event) => {
 	const keyName = "escape";
-	if (event.key.toLowerCase() === keyName || event.code.toLowerCase() === keyName) {
+	if (
+		event.key.toLowerCase() === keyName ||
+		event.code.toLowerCase() === keyName
+	) {
 		window.location.hash = "";
 	}
 });
@@ -105,10 +120,7 @@ function navigateMain(): void {
 		});
 	}, infoTransitionTime);
 
-	setTimeout(
-		resetOverlay,
-		timeTransitionForOverlay + infoTransitionTime,
-	);
+	setTimeout(resetOverlay, timeTransitionForOverlay + infoTransitionTime);
 }
 
 function navigateChart(id: string): void {
@@ -144,7 +156,9 @@ function navigateChart(id: string): void {
 
 		if (func !== noTimingFunction) {
 			const points: number[] = parseStringOfFourNumbers(func);
-			linkCubicBezierElement.href = `${linkCubicBezierHref}#${points.join(",")}`;
+			linkCubicBezierElement.href = `${linkCubicBezierHref}#${points.join(
+				","
+			)}`;
 			showSimpleInfo();
 			setGradient(name, points);
 		} else {
@@ -184,7 +198,8 @@ function navigateChart(id: string): void {
 				});
 
 				const headerPosition = getElementPosition(header);
-				const topOffset = headerPosition.height + headerPosition.y - overlayOffsetVertical / 2;
+				const topOffset =
+					headerPosition.height + headerPosition.y - overlayOffsetVertical / 2;
 
 				requestAnimationFrame(() => {
 					window.scrollTo({

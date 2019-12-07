@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const keyframes: {[key: string]: number[]} = {
 	easeInElastic: [0, 4, 8, 14, 18, 26, 28, 40, 42, 56, 58, 72, 86, 100],
 	easeOutElastic: [0, 16, 28, 44, 59, 73, 88, 100],

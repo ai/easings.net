@@ -11,19 +11,19 @@ const format = require("./helpers/format");
 const i18nDir = path.join(__dirname, "i18n");
 const langList = fs
 	.readdirSync(i18nDir)
-	.filter(filename => !/^_/.test(filename))
-	.filter(filename => /\.ya?ml$/i.test(filename))
-	.map(filename => fs.readFileSync(path.join(i18nDir, filename)))
-	.map(file => yamlParse.load(file))
-	.filter(dic => dic.version && dic.version > 1 && dic.lang_name)
-	.map(dic => ({
+	.filter((filename) => !/^_/.test(filename))
+	.filter((filename) => /\.ya?ml$/i.test(filename))
+	.map((filename) => fs.readFileSync(path.join(i18nDir, filename)))
+	.map((file) => yamlParse.load(file))
+	.filter((dic) => dic.version && dic.version > 1 && dic.lang_name)
+	.map((dic) => ({
 		code: dic.lang_code,
-		name: dic.lang_name
+		name: dic.lang_name,
 	}));
 
 const bundler = new Parcel("./src/*.pug", {
 	watch: true,
-	hmr: true
+	hmr: true,
 });
 
 app.use("/", renderIndexPage);
@@ -39,13 +39,13 @@ function renderIndexPage(req, res, next) {
 	) {
 		const lang = req.params.lang;
 
-		bundler.bundle().then(data => {
+		bundler.bundle().then((data) => {
 			let indexHtml = "";
 
 			if (data.type === "html") {
 				indexHtml = data.entryAsset.generated.html;
 			} else {
-				data.childBundles.forEach(item => {
+				data.childBundles.forEach((item) => {
 					if (item.entryAsset.id === "index.pug") {
 						indexHtml = item.entryAsset.generated.html;
 					}

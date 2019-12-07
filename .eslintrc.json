@@ -1,0 +1,56 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:prettier/recommended"
+	],
+	"plugins": [
+		"@typescript-eslint",
+		"prettier"
+	],
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	"rules": {
+		"prettier/prettier": "error",
+		"arrow-parens": ["error", "always"],
+		"array-bracket-spacing": "error",
+		"arrow-spacing": "error",
+		"arrow-body-style": "error",
+		"block-spacing": "error",
+		"brace-style": ["error", "1tbs"],
+		"comma-dangle": [
+			"error",
+			{
+				"arrays": "always-multiline",
+				"objects": "always-multiline",
+				"imports": "always-multiline",
+				"exports": "always-multiline",
+				"functions": "ignore"
+			}
+		],
+		"eqeqeq": "error",
+		"key-spacing": "error",
+		"keyword-spacing": ["error", { "after": true }],
+		"object-curly-spacing": ["error", "always"],
+		"no-prototype-builtins": "error",
+		"no-undef": "off"
+	},
+
+	"overrides": [
+		{
+			"files": [
+				"*.ts"
+			],
+			"rules": {
+				"no-console": "error",
+				"no-undef": "error",
+				"no-unused-vars": "off"
+			}
+		}
+	]
+}

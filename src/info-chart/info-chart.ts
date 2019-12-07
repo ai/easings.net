@@ -4,7 +4,7 @@ const infoChartTargetState: HTMLElement = getElement(".info-chart__target");
 const infoChartCursor: HTMLElement = getElement(".info-chart__cursor");
 const infoChartCursorVisibleSelector: string = "info-chart__cursor--visible";
 
-let nameAnimation: string|null = null;
+let nameAnimation: string | null = null;
 
 infoChartTargetState.addEventListener("pointerenter", showCursor);
 infoChartTargetState.addEventListener("pointerleave", hideCursor);
@@ -13,7 +13,10 @@ infoChartTargetState.addEventListener("mouseleave", hideCursor);
 infoChartTargetState.addEventListener("focus", showCursor);
 infoChartTargetState.addEventListener("blur", hideCursor);
 
-export function setTransitionForInfoChartCursor(cssFunc: string, name: string): void {
+export function setTransitionForInfoChartCursor(
+	cssFunc: string,
+	name: string
+): void {
 	if (cssFunc === "no") {
 		nameAnimation = name;
 	} else {

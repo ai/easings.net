@@ -22,22 +22,22 @@ const i18nDir = path.join(__dirname, "i18n");
 
 const langList = fs
 	.readdirSync(i18nDir)
-	.filter(filename => !/^_/.test(filename) && /\.ya?ml$/i.test(filename))
-	.map(filename => fs.readFileSync(path.join(i18nDir, filename)))
-	.map(file => yamlParse.load(file))
-	.filter(dic => dic.version && dic.version > 1 && dic.lang_name);
+	.filter((filename) => !/^_/.test(filename) && /\.ya?ml$/i.test(filename))
+	.map((filename) => fs.readFileSync(path.join(i18nDir, filename)))
+	.map((file) => yamlParse.load(file))
+	.filter((dic) => dic.version && dic.version > 1 && dic.lang_name);
 
 const linksElements = [
 	"js-info-name",
 	"js-info-func",
 	"js-info-simple",
 	"js-info-complex",
-	"js-cubic-bezier"
+	"js-cubic-bezier",
 ];
 
 const htmlMinifyOptions = {
 	mergeScripts: false,
-	minifySvg: false
+	minifySvg: false,
 };
 
 const shortCssClassName = generateCssClassName();
@@ -45,13 +45,13 @@ const shortCssClassName = generateCssClassName();
 const bundler = new Parcel("./src/index.pug", {
 	sourceMaps: false,
 	scopeHoist: true,
-	publicUrl: "./"
+	publicUrl: "./",
 });
 
 const errorBundler = new Parcel("./src/404.pug", {
 	sourceMaps: false,
 	scopeHoist: true,
-	publicUrl: "./"
+	publicUrl: "./",
 });
 
 async function build() {
@@ -62,13 +62,13 @@ async function build() {
 	const bundleAssets = findAssets(bundleHome);
 
 	const cssFile = bundleAssets.find(
-		item => item.type === "css" && item.entryName === "index.css"
+		(item) => item.type === "css" && item.entryName === "index.css"
 	);
 	const keyframesFile = bundleAssets.find(
-		item => item.type === "css" && item.entryName === "keyframes.css"
+		(item) => item.type === "css" && item.entryName === "keyframes.css"
 	);
 	const jsFile = bundleAssets.find(
-		item => item.type === "js" && item.entryName === "index.ts"
+		(item) => item.type === "js" && item.entryName === "index.ts"
 	);
 
 	let cssData = await readFile(cssFile.name, "utf8");
@@ -78,18 +78,18 @@ async function build() {
 	await Promise.all([
 		unlink(cssFile.name),
 		unlink(keyframesFile.name),
-		unlink(jsFile.name)
+		unlink(jsFile.name),
 	]);
 
 	const classesList = {};
 
-	linksElements.forEach(item => {
+	linksElements.forEach((item) => {
 		classesList[item] = shortCssClassName.next().value;
 	});
 
 	function cssPlugin(root) {
-		root.walkRules(rule => {
-			rule.selector = rule.selector.replace(/\.[\w_-]+/g, str => {
+		root.walkRules((rule) => {
+			rule.selector = rule.selector.replace(/\.[\w_-]+/g, (str) => {
 				const kls = str.substr(1);
 
 				if (!classesList[kls]) {
@@ -102,7 +102,7 @@ async function build() {
 	}
 
 	const stylesKeyframe = await PostCSS().process(keyframesData, {
-		from: keyframesFile.name
+		from: keyframesFile.name,
 	});
 
 	await writeFile(keyframesFile.name, stylesKeyframe);
@@ -110,10 +110,10 @@ async function build() {
 	await copyFile("./src/favicon.ico", "./dist/favicon.ico");
 
 	const styles = await PostCSS([cssPlugin, MQPacker]).process(cssData, {
-		from: cssFile.name
+		from: cssFile.name,
 	});
 
-	Object.keys(classesList).forEach(origin => {
+	Object.keys(classesList).forEach((origin) => {
 		const startSelector = `["'.]`;
 		const endSelector = `["'\\s\\[):,+~>]`;
 
@@ -131,12 +131,12 @@ async function build() {
 		.replace(/}\);$/, "})(window,document);");
 
 	const minifyJS = Terser.minify(jsData, {
-		toplevel: true
+		toplevel: true,
 	});
 
 	await writeFile(jsFile.name, minifyJS.code);
 
-	bundleAssets.forEach(asset => {
+	bundleAssets.forEach((asset) => {
 		serviceWorkerCode = serviceWorkerCode.replace(
 			new RegExp(`['"]${asset.entryName}['"]`, "g"),
 			`"/${path.basename(asset.name)}"`
@@ -146,15 +146,15 @@ async function build() {
 	serviceWorkerCode = Terser.minify(serviceWorkerCode).code;
 
 	function htmlPlugin(lang = "en") {
-		return tree => {
-			tree.match({ attrs: { class: true } }, i => ({
+		return (tree) => {
+			tree.match({ attrs: { class: true } }, (i) => ({
 				tag: i.tag,
 				content: i.content,
 				attrs: {
 					...i.attrs,
 					class: i.attrs.class
 						.split(" ")
-						.map(origin => {
+						.map((origin) => {
 							if (!(origin in classesList)) {
 								console.error(`Class "${origin}" don't use`);
 								return "";
@@ -162,60 +162,58 @@ async function build() {
 
 							return classesList[origin];
 						})
-						.join(" ")
-				}
+						.join(" "),
+				},
 			}));
 
-			tree.match({ tag: "link", attrs: { rel: "stylesheet" } }, file => {
+			tree.match({ tag: "link", attrs: { rel: "stylesheet" } }, (file) => {
 				if (file.attrs.href.includes("src.")) {
 					return {
 						tag: "style",
-						content: styles.css
+						content: styles.css,
 					};
 				}
 
 				return file;
 			});
 
-			tree.match({ tag: "link", attrs: { rel: "manifest" } }, file => {
-				return {
-					tag: "link",
-					attrs: {
-						...file.attrs,
-						href: `manifest.${lang}.json`
-					}
-				};
-			});
+			tree.match({ tag: "link", attrs: { rel: "manifest" } }, (file) => ({
+				tag: "link",
+				attrs: {
+					...file.attrs,
+					href: `manifest.${lang}.json`,
+				},
+			}));
 
-			tree.match({ tag: "meta", attrs: { property: "og:image" } }, file => ({
+			tree.match({ tag: "meta", attrs: { property: "og:image" } }, (file) => ({
 				tag: "meta",
 				attrs: {
 					...file.attrs,
-					content: `https://easings.net/${file.attrs.content}`
-				}
+					content: `https://easings.net/${file.attrs.content}`,
+				},
 			}));
 		};
 	}
 
-	const manifest = bundleAssets.find(asset => asset.type === "webmanifest");
+	const manifest = bundleAssets.find((asset) => asset.type === "webmanifest");
 	const manifestFile = await readFile(manifest.name, "utf8");
 
 	bundleAssets
-		.filter(i => i.type === "html")
-		.forEach(async item => {
+		.filter((i) => i.type === "html")
+		.forEach(async (item) => {
 			const file = await readFile(item.name);
 			const html = PostHTML().process(file, { sync: true }).html;
 
 			if (/\/index\.html$/i.test(item.name)) {
 				const distDirName = path.dirname(item.name);
 
-				langList.forEach(async lang => {
+				langList.forEach(async (lang) => {
 					const viewData = format(
 						lang,
 						lang.lang_code,
-						langList.map(dic => ({
+						langList.map((dic) => ({
 							code: dic.lang_code,
-							name: dic.lang_name
+							name: dic.lang_name,
 						}))
 					);
 
@@ -233,7 +231,7 @@ async function build() {
 					);
 
 					const htmlMinFragment = await PostHTML([
-						PostHTMLNano(htmlMinifyOptions)
+						PostHTMLNano(htmlMinifyOptions),
 					])
 						.use(htmlPlugin(lang.lang_code))
 						.process(htmlFragment);
@@ -244,21 +242,21 @@ async function build() {
 					);
 				});
 
-				const engLang = langList.find(lang => lang.lang_code === "en");
+				const engLang = langList.find((lang) => lang.lang_code === "en");
 				const htmlFragment = Mustache.render(
 					html,
 					format(
 						engLang,
 						"",
-						langList.map(dic => ({
+						langList.map((dic) => ({
 							code: dic.lang_code,
-							name: dic.lang_name
+							name: dic.lang_name,
 						}))
 					)
 				);
 
 				const htmlMinFragment = await PostHTML([
-					PostHTMLNano(htmlMinifyOptions)
+					PostHTMLNano(htmlMinifyOptions),
 				])
 					.use(htmlPlugin())
 					.process(htmlFragment);
@@ -278,7 +276,7 @@ async function build() {
 		});
 }
 
-build().catch(error => {
+build().catch((error) => {
 	process.stderr.write(error.stack + "\n");
 	process.exit(1);
 });
@@ -290,8 +288,8 @@ function findAssets(bundle) {
 			{
 				name: bundle.name,
 				entryName: bundle.entryAsset.basename,
-				type: bundle.type
-			}
+				type: bundle.type,
+			},
 		]
 	);
 }
@@ -300,7 +298,7 @@ function* generateCssClassName() {
 	const options = {
 		alphabet: "abcefghijklmnopqrstuvwxyz0123456789-_",
 		length: 1,
-		index: 0
+		index: 0,
 	};
 
 	const getClassName = () => {

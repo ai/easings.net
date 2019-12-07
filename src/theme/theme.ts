@@ -3,7 +3,7 @@ import { forNodeList } from "../helpers/forNodeList";
 
 const mql = window.matchMedia("(prefers-color-scheme: dark)");
 changeTheme(mql.matches);
-mql.addListener(({matches}) => changeTheme(matches));
+mql.addListener(({ matches }) => changeTheme(matches));
 
 function changeTheme(matches: boolean): void {
 	const chartList = getElementsList(".chart__curve");
@@ -20,7 +20,10 @@ function changeTheme(matches: boolean): void {
 
 		if (type !== "inOut") {
 			if (matches) {
-				item.setAttribute("stroke", `url(#${type === "in" ? "darkIn" : "darkOut"})`);
+				item.setAttribute(
+					"stroke",
+					`url(#${type === "in" ? "darkIn" : "darkOut"})`
+				);
 			} else {
 				item.setAttribute("stroke", `url(#${type === "in" ? "in" : "out"})`);
 			}

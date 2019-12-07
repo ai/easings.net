@@ -2,28 +2,35 @@ import keyframes from "./keyframes";
 import easingsFunctions from "./easingsFunctions";
 import roundTo2DecimalPlaces from "../helpers/roundTo2DecimalPlaces";
 
-export enum keyframeTypes {
+export const enum keyframeTypes {
 	opacity = "opacity",
 	scale = "scale",
 	translate = "translate",
 }
 
-export function generateComplexEasings(name: string, property: keyframeTypes): string {
+export function generateComplexEasings(
+	name: string,
+	property: keyframeTypes
+): string {
 	if (name in keyframes) {
 		const keyframeList = keyframes[name]
 			.map((item: number) => {
 				const keyframeValue = easingsFunctions[name](item / 100);
 
-				return `\t<span class='u-color-brand'>${item}%</span> {\n` +
+				return (
+					`\t<span class='u-color-brand'>${item}%</span> {\n` +
 					`\t\t${getDeclaration(property, keyframeValue)}\n` +
-					`\t}\n\n`;
+					`\t}\n\n`
+				);
 			})
 			.join("");
 
-		return `` +
+		return (
+			`` +
 			`<span class='u-color-brand'>@keyframes</span> <span class='u-color-second'>${property}-${name}</span> {\n` +
 			keyframeList +
-			`}`;
+			`}`
+		);
 	}
 
 	return "";

@@ -3,7 +3,9 @@ import { getElement, getElementsList } from "../helpers/getElement";
 const selectorFooterLang = ".footer__lang";
 const selectorLangItem = `${selectorFooterLang} li`;
 
-const footerListItems = getElementsList(`${selectorLangItem} a, ${selectorLangItem} span`);
+const footerListItems = getElementsList(
+	`${selectorLangItem} a, ${selectorLangItem} span`
+);
 const selectElement: HTMLSelectElement = document.createElement("select");
 selectElement.onchange = changeLang;
 

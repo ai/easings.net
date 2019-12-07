@@ -3,7 +3,9 @@
  * @param stringOfFourNumbers {string}
  * @return {number[]}
  */
-export function parseStringOfFourNumbers(stringOfFourNumbers: string): number[] {
+export function parseStringOfFourNumbers(
+	stringOfFourNumbers: string
+): number[] {
 	const points: RegExpMatchArray = stringOfFourNumbers.match(/(-*[.\d]+)/g);
 
 	if (!points || points.length !== 4) {

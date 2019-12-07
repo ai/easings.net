@@ -1,4 +1,4 @@
-import "./polyfills/focus-visible";
+import "focus-visible";
 
 import "./navigation/navigation";
 import "./function/function";
