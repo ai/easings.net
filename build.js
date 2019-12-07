@@ -14,7 +14,6 @@ const Parcel = require("parcel-bundler");
 const PostHTML = require("posthtml");
 const PostHTMLNano = require("htmlnano");
 const MQPacker = require("css-mqpacker");
-const postcssCustomProperties = require("postcss-custom-properties");
 const PostCSS = require("postcss");
 const Terser = require("terser");
 
@@ -102,23 +101,17 @@ async function build() {
 		});
 	}
 
-	const stylesKeyframe = await PostCSS([
-		postcssCustomProperties({
-			preserve: false
-		})
-	]).process(keyframesData, { from: keyframesFile.name });
+	const stylesKeyframe = await PostCSS().process(keyframesData, {
+		from: keyframesFile.name
+	});
 
 	await writeFile(keyframesFile.name, stylesKeyframe);
 
 	await copyFile("./src/favicon.ico", "./dist/favicon.ico");
 
-	const styles = await PostCSS([
-		postcssCustomProperties({
-			preserve: false
-		}),
-		cssPlugin,
-		MQPacker
-	]).process(cssData, { from: cssFile.name });
+	const styles = await PostCSS([cssPlugin, MQPacker]).process(cssData, {
+		from: cssFile.name
+	});
 
 	Object.keys(classesList).forEach(origin => {
 		const startSelector = `["'.]`;
