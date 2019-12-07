@@ -40,11 +40,13 @@ function format(dictionary, lang, langList) {
 function formatObject(dictionary) {
 	const newDictionary = Object.assign({}, dictionary);
 
-	for (let field of newDictionary) {
-		if (typeof newDictionary[field] === "string") {
-			newDictionary[field] = formatString(newDictionary[field]);
-		} else {
-			newDictionary[field] = formatObject(newDictionary[field]);
+	for (let field in newDictionary) {
+		if ({}.hasOwnProperty.call(newDictionary, field)) {
+			if (typeof newDictionary[field] === "string") {
+				newDictionary[field] = formatString(newDictionary[field]);
+			} else {
+				newDictionary[field] = formatObject(newDictionary[field]);
+			}
 		}
 	}
 
