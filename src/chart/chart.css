@@ -71,7 +71,7 @@
 			top: 100%;
 			right: -17px;
 			opacity: 0;
-			will-change: top, opacity;
+			will-change: top;
 			transition: top 0s, color 0s, opacity 0s;
 			transition-delay: 0s, 0s, 0s;
 			transform: translateY(-7px);
