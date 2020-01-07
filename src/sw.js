@@ -1,10 +1,10 @@
 const version = "v3.0.2";
 
-self.addEventListener("install", event => {
+self.addEventListener("install", (event) => {
 	event.waitUntil(
 		caches
 			.open(version)
-			.then(cache =>
+			.then((cache) =>
 				cache.addAll([
 					"keyframes.css",
 					"index.ts",
@@ -15,7 +15,7 @@ self.addEventListener("install", event => {
 					"logo.svg",
 					"mask.svg",
 					"/",
-					"/:lang"
+					"/:lang",
 				])
 			)
 	);
@@ -37,16 +37,18 @@ function cacheOrNetwork(request) {
 function fromCache(request) {
 	return caches
 		.open(version)
-		.then(cache =>
-			cache.match(request).then(matching => matching || Promise.reject(request))
+		.then((cache) =>
+			cache
+				.match(request)
+				.then((matching) => matching || Promise.reject(request))
 		);
 }
 
 function updateCache(request) {
 	return caches
 		.open(version)
-		.then(cache =>
-			fetch(request).then(response =>
+		.then((cache) =>
+			fetch(request).then((response) =>
 				cache.put(request, response.clone()).then(() => response)
 			)
 		);
