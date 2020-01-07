@@ -9,8 +9,8 @@
 	outline: none;
 	display: flex;
 	flex-direction: column;
-	background: #fff;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+	background: var(--second-background);
+	box-shadow: 0 2px 8px var(--function-shadow);
 }
 
 	.function::after {
@@ -27,7 +27,7 @@
 	}
 
 		.function:active {
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+			box-shadow: 0 2px 8px var(--function-shadow);
 			transition: none;
 		}
 
@@ -38,7 +38,7 @@
 
 		.function--active {
 			z-index: 1;
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 2px 8px var(--function-shadow-active);
 		}
 
 	.function__chart {
@@ -84,19 +84,4 @@
 	.function {
 		width: auto;
 	}
-}
-
-@media (prefers-color-scheme: dark) {
-	.function {
-		background: var(--dark-background);
-		box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
-	}
-
-			.function:active {
-				box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
-			}
-
-			.function--active {
-				box-shadow: 0 2px 8px rgba(255, 255, 255, 2);
-			}
 }

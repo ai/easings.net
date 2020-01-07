@@ -23,7 +23,7 @@
 	min-width: 64px;
 	cursor: pointer;
 	transition: var(--transition-time);
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 2px 8px var(--transparent-color-5);
 }
 
 	.button::after {
@@ -42,7 +42,6 @@
 	.button:hover {
 		background: var(--brand-darken-color);
 		color: var(--brand-darken-color-text);
-		box-shadow: 0 12px 30px 0 rgba(0, 0, 0, 0.2);
 	}
 
 	.button:focus {
@@ -52,7 +51,6 @@
 
 	.button:active {
 		background: var(--brand-color);
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 		transition: none;
 	}
 

@@ -96,7 +96,7 @@
 
 	16% {
 		top: -31%;
-		color: var(--text-color);
+		color: var(--main-text-color);
 	}
 
 	28% {
@@ -121,6 +121,6 @@
 
 	100% {
 		top: 1%;
-		color: var(--text-color);
+		color: var(--main-text-color);
 	}
 }

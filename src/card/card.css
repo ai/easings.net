@@ -20,8 +20,8 @@
 		flex-direction: column;
 		justify-content: flex-end;
 		align-items: flex-start;
-		background: rgba(0, 0, 0, 0.7);
-		color: #fff;
+		background: var(--card-overlay);
+		color: var(--card-overlay-text);
 		box-sizing: border-box;
 		padding: 10px 15px;
 

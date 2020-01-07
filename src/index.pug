@@ -14,10 +14,10 @@ html(lang="{{ lang }}" dir="{{ dir }}")
 
 		title {{ title }}
 		meta(content="{{ description }}" name="description")
-		meta(name="theme-color" content="#166cc1")
+		meta(name="theme-color" content="#1473e6")
 		link(rel="manifest" href="./manifest.webmanifest")
 		link(rel="icon" type="image/png" href="./icons/96.png")
-		link(rel="mask-icon" href="./icons/mask.svg" color="#166cc1" sizes="any")
+		link(rel="mask-icon" href="./icons/mask.svg" color="#1473e6" sizes="any")
 
 		meta(property="og:url" content="http://easings.net/")
 		meta(property="og:image" content="./icons/192.png")
@@ -29,22 +29,11 @@ html(lang="{{ lang }}" dir="{{ dir }}")
 		.layout
 			svg.layout__gradients-curve(xmlns="http://www.w3.org/2000/svg" width="0" height="0")
 				-
-					var colorBase = '#222';
-					var colorBaseLight = '#fff';
-					var colorStart = '#166cc1';
-					var colorEnd = '#00c853';
+					var colorBase = 'var(--main-text-color)';
+					var colorStart = 'var(--brand-color)';
+					var colorEnd = 'var(--second-color)';
 
 				defs
-					linearGradient#darkIn(x1="0%" y1="100%" x2="100%" y2="0%")
-						stop(offset="0%" stop-color=colorBaseLight)
-						stop(offset="50%" stop-color=colorBaseLight)
-						stop(offset="70%" stop-color=colorEnd)
-						stop(offset="100%" stop-color=colorEnd)
-					linearGradient#darkOut(x1="0%" y1="100%" x2="100%" y2="0%")
-						stop(offset="0%" stop-color=colorStart)
-						stop(offset="30%" stop-color=colorStart)
-						stop(offset="50%" stop-color=colorBaseLight)
-						stop(offset="100%" stop-color=colorBaseLight)
 					linearGradient#in(x1="0%" y1="100%" x2="100%" y2="0%")
 						stop(offset="0%" stop-color=colorBase)
 						stop(offset="50%" stop-color=colorBase)

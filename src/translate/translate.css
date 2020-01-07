@@ -6,7 +6,7 @@
 }
 
 		.translate--with-background {
-			background: #fff;
+			background: var(--second-background);
 			padding: 10px 15px;
 		}
 
@@ -16,9 +16,3 @@
 		box-sizing: border-box;
 		padding: 5px 0 0;
 	}
-
-@media (prefers-color-scheme: dark) {
-	.translate--with-background {
-		background: var(--dark-background);
-	}
-}

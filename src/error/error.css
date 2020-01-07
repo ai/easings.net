@@ -13,7 +13,7 @@
 		padding: 15px;
 		margin: 0 auto;
 		text-align: center;
-		color: var(--text-light-color);
+		color: var(--gray-color);
 	}
 
 		.error__image {

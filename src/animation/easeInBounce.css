@@ -127,7 +127,7 @@
 @keyframes cursor-easeInBounce {
 	0% {
 		top: 101%;
-		color: var(--text-color);
+		color: var(--main-text-color);
 	}
 
 	4% {
@@ -152,7 +152,7 @@
 
 	64% {
 		top: 99%;
-		color: var(--text-color);
+		color: var(--main-text-color);
 	}
 
 	76% {

@@ -6,14 +6,14 @@ html {
 
 	font-family: system-ui, sans-serif;
 	font-size: 100%;
-	color: var(--text-color);
+	color: var(--main-text-color);
 }
 
 body {
 	line-height: var(--line-height);
 	position: relative;
 	box-sizing: border-box;
-	background: #f8f8f8;
+	background: var(--main-background);
 	margin: 0;
 }
 
@@ -31,7 +31,7 @@ a {
 	}
 
 	a:active {
-		color: var(--brand-lighten-color);
+		color: var(--brand-color);
 		transition: none;
 	}
 
@@ -42,14 +42,3 @@ a {
 	a.focus-visible {
 		box-shadow: 0 0 1px 4px var(--brand-color);
 	}
-
-@media (prefers-color-scheme: dark) {
-	body {
-		background: #222;
-		color: #fff;
-	}
-
-	a {
-		color: var(--dark-brand-color);
-	}
-}

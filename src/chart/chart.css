@@ -44,11 +44,11 @@
 				.chart__axis {
 					fill: none;
 					stroke-width: 1px;
-					stroke: var(--chart-axis-color);
+					stroke: var(--gray-lighten-color);
 				}
 
 				.chart__text {
-					fill: var(--chart-axis-color);
+					fill: var(--gray-lighten-color);
 					font-size: 10px;
 				}
 
@@ -79,7 +79,7 @@
 		}
 
 				.chart__cursor--func-in {
-					color: var(--text-color);
+					color: var(--main-text-color);
 				}
 
 				.chart__cursor--func-out,
@@ -110,19 +110,12 @@
 					}
 
 					.chart--active .chart__cursor--func-out {
-						color: var(--text-color);
+						color: var(--main-text-color);
 					}
 
 
 @media (max-width: 550px) {
 	.chart {
 		width: 100px;
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	.chart__cursor--func-in,
-	.chart--active .chart__cursor--func-out {
-		color: #fff;
 	}
 }

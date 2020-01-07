@@ -37,3 +37,7 @@
 			.footer__lang select {
 				font-size: 0.85rem;
 			}
+
+			.footer__link {
+				color: var(--brand-lighten-color);
+			}

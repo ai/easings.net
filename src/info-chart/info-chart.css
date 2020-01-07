@@ -11,7 +11,7 @@
 
 	.info-chart__wrap {
 		position: relative;
-		color: var(--chart-axis-color);
+		color: var(--gray-lighten-color);
 		max-width: 150px;
 	}
 

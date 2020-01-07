@@ -5,7 +5,7 @@
 	"description": "{{ description }}",
 	"start_url": "/{{ lang }}",
 	"display": "standalone",
-	"theme_color": "#166cc1",
+	"theme_color": "#1473e6",
 	"background_color": "#fff",
 	"icons": [
 		{

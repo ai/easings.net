@@ -140,7 +140,7 @@
 
 	36% {
 		top: 3%;
-		color: var(--text-color);
+		color: var(--main-text-color);
 	}
 
 	54% {
@@ -165,6 +165,6 @@
 
 	100% {
 		top: 1%;
-		color: var(--text-color);
+		color: var(--main-text-color);
 	}
 }

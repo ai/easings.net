@@ -1,20 +1,31 @@
 :root {
-	--dark-background: #111;
-	--dark-brand-color: #1f8dfb;
+	--main-background: #f8f8f8;
+	--main-text-color: #222;
 
-	--text-color: #222;
-	--text-light-color: #666;
+	--second-background: #fff;
+	--second-background-transparent: rgba(255, 255, 255, 0);
 
-	--brand-color: #166cc1;
+	--brand-color: #1473e6;
 	--brand-color-text: #fff;
-	--brand-darken-color: #004ba0;
+	--brand-darken-color: #095aba;
 	--brand-darken-color-text: #fff;
-	--brand-lighten-color: #63a4ff;
-	--brand-lighten-color-text: var(--text-color);
+	--brand-lighten-color: #2680eb;
 
-	--second-color: #00c853;
+	--second-color: #2d9d78;
 
-	--chart-axis-color: #ccc;
+	--gray-color: #6e6e6e;
+	--gray-lighten-color: #cacaca;
+
+	--function-shadow: rgba(0, 0, 0, 0.05);
+	--function-shadow-active: rgba(0, 0, 0, 0.2);
+
+	--card-overlay: rgba(0, 0, 0, 0.7);
+	--card-overlay-text: #fff;
+
+	--transparent-color: rgba(0, 0, 0, 0);
+	--transparent-color-5: rgba(0, 0, 0, 0.05);
+	--transparent-color-20: rgba(0, 0, 0, 0.2);
+	--transparent-invert-color: rgba(255, 255, 255, 0);
 
 	--transition-time: 0.2s;
 	--transition-card-time: 1s;
@@ -25,4 +36,22 @@
 	--general-line-height: 22px;
 
 	--code-fonts: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--main-background: #222;
+		--main-text-color: #fff;
+
+		--second-background: rgb(17, 17, 17);
+		--second-background-transparent: rgba(17, 17, 17, 0);
+
+		--function-shadow: rgba(255, 255, 255, 0.05);
+		--function-shadow-active: rgba(255, 255, 255, 0.2);
+
+		--transparent-color: rgba(255, 255, 255, 0);
+		--transparent-color-5: rgba(255, 255, 255, 0.05);
+		--transparent-color-20: rgba(255, 255, 255, 0.2);
+		--transparent-invert-color: rgba(0, 0, 0, 0);
+	}
 }
