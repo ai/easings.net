@@ -1,6 +1,9 @@
+include ../example-copy/example-copy
+
 mixin details(name, type)
 	details.details
 		summary.details__summary= name
 		.details__content
-			.details__code(data-type=type)
-				block
+			+example-copy
+				.details__code(data-type=type)
+					block

@@ -42,3 +42,9 @@ a {
 	a.focus-visible {
 		box-shadow: 0 0 1px 4px var(--brand-color);
 	}
+
+pre {
+	font-family: var(--code-fonts);
+	margin: 0;
+	tab-size: 25px;
+}

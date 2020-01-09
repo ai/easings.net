@@ -20,7 +20,6 @@
 	padding: 1em 1.25em;
 	display: inline-block;
 	border-radius: 0;
-	min-width: 64px;
 	cursor: pointer;
 	transition: var(--transition-time);
 	box-shadow: 0 2px 8px var(--transparent-color-5);

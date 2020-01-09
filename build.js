@@ -241,7 +241,7 @@ async function build() {
 
 					await writeFile(
 						path.join(distDirName, `${lang.lang_code}.html`),
-						htmlMinFragment.html.replace(/\n/g, "").replace(/>\s</g, "><")
+						htmlMinFragment.html.replace(/>\s</g, "><")
 					);
 				});
 
@@ -264,10 +264,7 @@ async function build() {
 					.use(htmlPlugin())
 					.process(htmlFragment);
 
-				await writeFile(
-					item.name,
-					htmlMinFragment.html.replace(/\n/g, "").replace(/>\s</g, "><")
-				);
+				await writeFile(item.name, htmlMinFragment.html.replace(/>\s</g, "><"));
 			} else {
 				await writeFile(
 					item.name,

@@ -10,6 +10,8 @@ export const selectorComplexKeyframeScale = `${selectorCode}[data-type=scale]`;
 export const selectorComplexKeyframeOpacity = `${selectorCode}[data-type=opacity]`;
 export const selectorComplexKeyframeTranslate = `${selectorCode}[data-type=translate]`;
 export const selectorGradient = ".example__gradient";
+export const selectorCopyButton = ".example-copy__button";
+export const selectorCopyCode = ".example-copy__code";
 
 export const infoChartOffsetTopClassName = "info-chart--offset_top";
 

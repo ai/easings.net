@@ -1,6 +1,7 @@
 include ../code/codeCss
 include ../code/codePostCss
 include ../code/codeGradient
+include ../example-copy/example-copy
 
 include ../case/case
 include ../details/details
@@ -33,7 +34,8 @@ mixin info
 					.js-info-simple
 						div {{ howtos.css.text }}
 						.example__code
-							+codeCss
+							+example-copy
+								+codeCss
 						div.
 							{{#link}}
 								( howtos.css.edit )
@@ -55,7 +57,8 @@ mixin info
 								[href="https://github.com/postcss/postcss-easings" rel="noopener noreferrer" target="_blank"]
 							{{/link}}
 						.example__code
-							+codePostCss
+							+example-copy
+								+codePostCss
 						div {{ howtos.postcss.explanation }}
 					.js-info-complex
 						div {{{ howtos.postcss.disabled }}}
@@ -68,7 +71,8 @@ mixin info
 							[href="https://github.com/larsenwork/postcss-easing-gradients" rel="noopener noreferrer" target="_blank"]
 						{{/link}}
 					.example__code
-						+codeGradient
+						+example-copy
+							+codeGradient
 					.example__gradient
 
 			.info__case
