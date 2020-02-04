@@ -4,9 +4,9 @@ mixin footer
 	.footer
 		.footer__group
 			.footer__copyright
-				+external-link.footer__link("https://sitnik.ru/") {{ authors.sitnik }}
+				+external-link("https://sitnik.ru/").footer__link {{ authors.sitnik }}
 				!= ` {{ covenant }} `
-				+external-link.footer__link("https://solovev.one/") {{ authors.solovev }}
+				+external-link("https://solovev.one/").footer__link {{ authors.solovev }}
 
 			.footer__lang
 				ul(aria-label="Select language").
