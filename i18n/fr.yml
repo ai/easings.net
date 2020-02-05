@@ -31,7 +31,7 @@ howtos:
 
   postcss:
     text:
-      En PosrCSS, la courbe d'accélération est bien plus simple à décrire.
+      En PostCSS, la courbe d'accélération est bien plus simple à décrire.
       Il y a un plugin ^postcss-easings^ qui prend les informations de transition depuis ce site.
     explanation: Cette déclaration est convertie par celle décrite plus haut.
     disabled: __code
