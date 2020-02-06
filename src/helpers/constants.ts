@@ -16,4 +16,4 @@ export const selectorCopyCode = ".example-copy__code";
 export const infoChartOffsetTopClassName = "info-chart--offset_top";
 
 export const color1 = "#1473e6";
-export const color2 = "#2d9d78";
+export const color2 = "#247b5e";

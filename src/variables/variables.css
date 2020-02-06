@@ -11,10 +11,13 @@
 	--brand-darken-color-text: #fff;
 	--brand-lighten-color: #2680eb;
 
-	--second-color: #2d9d78;
+	--second-color: #247b5e;
 
 	--gray-color: #6e6e6e;
 	--gray-lighten-color: #cacaca;
+
+	--button-background-color: var(--brand-color);
+	--footer-link-color: var(--brand-darken-color);
 
 	--function-shadow: rgba(0, 0, 0, 0.05);
 	--function-shadow-active: rgba(0, 0, 0, 0.2);
@@ -45,6 +48,13 @@
 
 		--second-background: rgb(17, 17, 17);
 		--second-background-transparent: rgba(17, 17, 17, 0);
+
+		--brand-color: #227dec;
+
+		--second-color: #298e6d;
+
+		--button-background-color: #136edd;
+		--footer-link-color: #4993ee;
 
 		--function-shadow: rgba(255, 255, 255, 0.05);
 		--function-shadow-active: rgba(255, 255, 255, 0.2);

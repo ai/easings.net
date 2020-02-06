@@ -10,7 +10,7 @@
 	box-sizing: border-box;
 
 	position: relative;
-	background: var(--brand-color);
+	background: var(--button-background-color);
 	color: var(--brand-color-text);
 	font-stretch: 100%;
 	font-weight: 500;
