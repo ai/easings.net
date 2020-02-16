@@ -63,3 +63,8 @@ authors:
   sitnik: Андрєй Сітнік
   separator: та
   solovev: Іван Соловйов
+
+theme:
+  auto: Dark/Light theme
+  light: Light theme
+  dark: Dark theme

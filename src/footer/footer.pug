@@ -10,9 +10,9 @@ mixin footer
 
 			.footer__list
 				select.footer__theme(aria-label="Select theme")
-					option(value="auto") Dark/Light
-					option(value="light") Light theme
-					option(value="dark") Dark theme
+					option(value="auto") {{ theme.auto }}
+					option(value="light") {{ theme.light }}
+					option(value="dark") {{ theme.dark }}
 
 			.footer__lang.footer__list
 				ul(aria-label="Select language").
