@@ -12,6 +12,7 @@
 	],
 	"postcss": {
 		"plugins": {
+			"postcss-dark-theme-class": {},
 			"postcss-pxtorem": {
 				"rootValue": 16,
 				"mediaQuery": true,
@@ -49,6 +50,7 @@
 		"mustache": "^3.0.1",
 		"parcel-bundler": "^1.12.3",
 		"postcss": "^7.0.17",
+		"postcss-dark-theme-class": "^0.4.0",
 		"postcss-flexbugs-fixes": "^4.1.0",
 		"postcss-font-family-system-ui": "^4.1.1",
 		"postcss-preset-env": "^6.7.0",

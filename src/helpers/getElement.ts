@@ -4,10 +4,10 @@
  * @param context {Document|HTMLElement}
  * @return {HTMLElement}
  */
-export function getElement(
+export function getElement<T extends HTMLElement = HTMLElement>(
 	selector: string,
 	context: Document | HTMLElement = document
-): HTMLElement {
+): T {
 	return context.querySelector(selector);
 }
 

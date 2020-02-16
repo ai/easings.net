@@ -8,7 +8,13 @@ mixin footer
 				!= ` {{ authors.separator }} `
 				+external-link("https://solovev.one/").footer__link {{ authors.solovev }}
 
-			.footer__lang
+			.footer__list
+				select.footer__theme(aria-label="Select theme")
+					option(value="auto") Dark/Light
+					option(value="light") Light theme
+					option(value="dark") Dark theme
+
+			.footer__lang.footer__list
 				ul(aria-label="Select language").
 					{{#langList}}
 						{{{.}}}
