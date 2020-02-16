@@ -13,7 +13,7 @@ share:
   This page helps you choose the right easing function.
 
 about: __format
-  ~Easing functions~ specify the rate of change of a parameter
+  ~~Easing functions~~ specify the rate of change of a parameter
   over time.
 
   Objects in real life don’t just start and stop instantly, and almost never
@@ -27,7 +27,7 @@ howtos:
   css:
     text: In CSS, the transition and animation properties allow you to specify an easing function.
     edit: Edit on ^cubic-bezier.com^.
-    with_animation: __code In CSS, this function can be implemented using `@keyframes`
+    with_animation: In CSS, this function can be implemented using {{@keyframes}}
     example_size: Size
     example_position: Position
     example_opacity: Transparency
@@ -37,9 +37,9 @@ howtos:
       In PostCSS, the easing function is much easier to describe.
       There is a plugin ^postcss-easings^ that takes the transition information from that site.
     explanation: That declaration is converted to the one described above.
-    disabled: __code
+    disabled:
       Unfortunately, the easing function cannot be set with any PostCSS plugin.
-      Can be done with `@keyframes`, see above.
+      Can be done with {{@keyframes}}, see above.
 
   gradient:
     name: Gradient

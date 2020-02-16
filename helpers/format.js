@@ -53,21 +53,19 @@ function formatObject(dictionary) {
 	return newDictionary;
 }
 
-function formatString(string) {
-	if (/^__format/i.test(string)) {
-		const newText = string
+function formatString(source) {
+	const text = source.replace(/{{([^}]{2,})}}/g, "<code>$1</code>");
+
+	if (/^__format/i.test(text)) {
+		const newText = text
 			.replace(/^__format?\s/i, "")
-			.replace(/~([^~]+)~/g, "<strong>$1</strong>")
+			.replace(/~~([^~]{2,})~~/g, "<strong>$1</strong>")
 			.replace(/\n/g, "</p><p>");
 
 		return `<p>${newText}</p>`;
-	} else if (/^__code/i.test(string)) {
-		return string
-			.replace(/^__code?\s/i, "")
-			.replace(/`([^`]+)`/g, "<code>$1</code>");
 	}
 
-	return string;
+	return text;
 }
 
 function renderLink() {
