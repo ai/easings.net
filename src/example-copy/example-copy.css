@@ -22,7 +22,22 @@
 			width: 15px;
 			height: 15px;
 			fill: currentColor;
+			transition: opacity var(--transition-small-time);
 		}
+
+			.example-copy__icon-action {}
+
+			.example-copy__icon-done {
+				position: absolute;
+				width: 16px;
+				height: 16px;
+				top: calc(50% - 8px);
+				left: calc(50% - 8px);
+			}
+
+			.example-copy__icon-hidden {
+				opacity: 0;
+			}
 
 	.example-copy__code {
 		display: block;

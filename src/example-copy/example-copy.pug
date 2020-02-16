@@ -1,7 +1,9 @@
 mixin example-copy
 	.example-copy
 		button.example-copy__button.button.button--small
-			svg.example-copy__icon(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+			svg.example-copy__icon.example-copy__icon-action(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
 				use(xlink:href="#copy")
+			svg.example-copy__icon.example-copy__icon-done.example-copy__icon-hidden(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink")
+				use(xlink:href="#done")
 		.example-copy__code
 			block

@@ -31,6 +31,7 @@
 	--transparent-invert-color: rgba(255, 255, 255, 0);
 
 	--transition-time: 0.2s;
+	--transition-small-time: 0.1s;
 	--transition-card-time: 1s;
 	--transition-show-time: 1.5s;
 
