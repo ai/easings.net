@@ -30,7 +30,7 @@ const langList = fs
 	.map((file) => yamlParse.load(file))
 	.filter((dic) => dic.version && dic.version > 1 && dic.lang_name);
 
-const ignoreSelectors = [
+const addedSelectors = [
 	"js-info-name",
 	"js-info-func",
 	"js-info-simple",
@@ -39,6 +39,8 @@ const ignoreSelectors = [
 	"example-copy__icon-action",
 	"footer__theme",
 ];
+
+const ignoreSelectors = ["is-light", "is-dark"];
 
 const htmlMinifyOptions = {
 	mergeScripts: false,
@@ -89,6 +91,10 @@ async function build() {
 	const classesList = {};
 
 	ignoreSelectors.forEach((item) => {
+		classesList[item] = item;
+	});
+
+	addedSelectors.forEach((item) => {
 		classesList[item] = shortCssClassName.next().value;
 	});
 
