@@ -58,3 +58,8 @@ easing:
 opensource:
   title: Open Source
   translate: Help translate site to your language
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: and
+  solovev: Ivan Solovev

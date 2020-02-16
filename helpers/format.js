@@ -6,9 +6,9 @@ function format(dictionary, lang, langList) {
 		dir: dictionary.rtl ? "rtl" : "ltr",
 		authors: {
 			sitnik: "Andrey Sitnik",
+			separator: "and",
 			solovev: "Ivan Solovev",
 		},
-		covenant: /(ru|uk)/i.test(currentLang) ? "и" : "and",
 		short_name: "Easings.net",
 	};
 

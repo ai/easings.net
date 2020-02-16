@@ -1,6 +1,7 @@
 version: 2
 lang_code: ru
 lang_name: Русский
+rtl: false
 
 title: Шпаргалка функций плавности (easing)
 description:
@@ -59,4 +60,5 @@ opensource:
 
 authors:
   sitnik: Андрей Ситник
+  separator: и
   solovev: Иван Соловьев

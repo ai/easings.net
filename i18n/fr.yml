@@ -55,3 +55,8 @@ easing:
 opensource:
   title: Open Source
   translate: Aidez-nous à traduire ce site dans votre langue
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: et
+  solovev: Ivan Soloviev

@@ -5,7 +5,7 @@ mixin footer
 		.footer__group
 			.footer__copyright
 				+external-link("https://sitnik.ru/").footer__link {{ authors.sitnik }}
-				!= ` {{ covenant }} `
+				!= ` {{ authors.separator }} `
 				+external-link("https://solovev.one/").footer__link {{ authors.solovev }}
 
 			.footer__lang
