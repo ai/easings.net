@@ -1,3 +1,5 @@
+import { getElement } from "../helpers/getElement";
+
 export interface OverlaySize {
 	top: number;
 	left: number;
@@ -5,7 +7,7 @@ export interface OverlaySize {
 	width: number;
 }
 
-const overlay: HTMLElement = document.querySelector(".overlay");
+const overlay = getElement(".overlay");
 
 export function setTransitionDurationOverlay(timeAtMs: number): void {
 	overlay.style.transitionDuration = `${timeAtMs}ms`;

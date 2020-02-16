@@ -17,9 +17,9 @@ export function getElement<T extends HTMLElement = HTMLElement>(
  * @param context {Document|HTMLElement}
  * @return {NodeList}
  */
-export function getElementsList(
+export function getElementsList<T extends HTMLElement = HTMLElement>(
 	selector: string,
 	context: Document | HTMLElement = document
-): NodeList {
+): NodeListOf<T> {
 	return context.querySelectorAll(selector);
 }

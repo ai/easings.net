@@ -5,17 +5,17 @@ const selectorLangList = `${selectorFooterLang} ul`;
 const selectorLangItem = `${selectorFooterLang} li`;
 
 const footerLangList = getElement(selectorLangList);
-const footerListItems = getElementsList(
+const footerListItems = getElementsList<HTMLElement>(
 	`${selectorLangItem} a, ${selectorLangItem} span`
 );
-const selectElement: HTMLSelectElement = document.createElement("select");
+const selectElement = document.createElement("select");
 selectElement.onchange = changeLang;
 
 const label = footerLangList.getAttribute("aria-label");
 selectElement.setAttribute("aria-label", label);
 
-footerListItems.forEach((langLink: HTMLElement) => {
-	const option: HTMLOptionElement = document.createElement("option");
+footerListItems.forEach((langLink) => {
+	const option = document.createElement("option");
 
 	const linkHref = langLink.getAttribute("href");
 	option.value = linkHref || window.location.pathname;

@@ -10,11 +10,11 @@ import { forNodeList } from "../helpers/forNodeList";
 import { getElement, getElementsList } from "../helpers/getElement";
 import { generateComplexEasings, keyframeTypes } from "../easings/easings";
 
-const info: HTMLElement = getElement(selectorInfo);
-const infoSimple: NodeList = getElementsList(selectorSimpleInfo);
-const infoComplex: NodeList = getElementsList(selectorComplexInfo);
-const infoName: NodeList = getElementsList(".js-info-name", info);
-const infoFuncName: NodeList = getElementsList(".js-info-func", info);
+const info = getElement(selectorInfo);
+const infoSimple = getElementsList(selectorSimpleInfo);
+const infoComplex = getElementsList(selectorComplexInfo);
+const infoName = getElementsList(".js-info-name", info);
+const infoFuncName = getElementsList(".js-info-func", info);
 
 const infoKeyframes = {
 	opacity: getElement(selectorComplexKeyframeOpacity),

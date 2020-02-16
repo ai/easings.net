@@ -11,7 +11,7 @@ export interface ElementPosition {
  * @return {{x: number, width: number, y: number, height: number}}
  */
 export function getElementPosition(element: HTMLElement): ElementPosition {
-	const position: ClientRect = element.getBoundingClientRect();
+	const position = element.getBoundingClientRect();
 
 	return {
 		height: position.height,

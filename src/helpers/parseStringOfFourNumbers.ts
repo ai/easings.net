@@ -6,7 +6,7 @@
 export function parseStringOfFourNumbers(
 	stringOfFourNumbers: string
 ): number[] {
-	const points: RegExpMatchArray = stringOfFourNumbers.match(/(-*[.\d]+)/g);
+	const points = stringOfFourNumbers.match(/(-*[.\d]+)/g);
 
 	if (!points || points.length !== 4) {
 		return [];

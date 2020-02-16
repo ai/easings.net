@@ -9,7 +9,7 @@ const c3 = c1 + 1;
 const c4 = (2 * PI) / 3;
 const c5 = (2 * PI) / 4.5;
 
-function bounceOut(x: number) {
+function bounceOut(x: number): number {
 	const n1 = 7.5625;
 	const d1 = 2.75;
 

@@ -7,7 +7,7 @@ const easings = yamlParse.safeLoad(
 
 module.exports = {
 	locals: {
-		all_easings: easings
+		all_easings: easings,
 	},
-	pretty: false
+	pretty: false,
 };

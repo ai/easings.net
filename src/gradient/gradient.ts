@@ -3,7 +3,7 @@ import { getElement } from "../helpers/getElement";
 import { mixColors } from "../helpers/mixColors";
 import easingsFunctions from "../easings/easingsFunctions";
 
-const gradient: HTMLElement = getElement(selectorGradient);
+const gradient = getElement(selectorGradient);
 
 export function setGradient(funcName: string, points: number[]): void {
 	if (points.length !== 4 || !(funcName in easingsFunctions)) {

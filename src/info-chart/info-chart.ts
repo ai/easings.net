@@ -1,8 +1,8 @@
 import { getElement } from "../helpers/getElement";
 
-const infoChartTargetState: HTMLElement = getElement(".info-chart__target");
-const infoChartCursor: HTMLElement = getElement(".info-chart__cursor");
-const infoChartCursorVisibleSelector: string = "info-chart__cursor--visible";
+const infoChartTargetState = getElement(".info-chart__target");
+const infoChartCursor = getElement(".info-chart__cursor");
+const infoChartCursorVisibleSelector = "info-chart__cursor--visible";
 
 let nameAnimation: string | null = null;
 
