@@ -65,6 +65,6 @@ authors:
   solovev: Ivan Solovev
 
 theme:
-  auto: Dark/Light theme
+  auto: Auto theme
   light: Light theme
   dark: Dark theme

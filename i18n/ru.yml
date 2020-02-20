@@ -64,6 +64,6 @@ authors:
   solovev: Иван Соловьев
 
 theme:
-  auto: Темная/Светлая тема
+  auto: Авто тема
   light: Светлая тема
   dark: Темная тема
