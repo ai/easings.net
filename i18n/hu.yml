@@ -1,0 +1,67 @@
+version: 2
+lang_code: hu
+lang_name: Magyar
+rtl: false
+
+title: Átmeneti Függvények Gyűjteménye
+description:
+  Animációk valósághűbbé tétele a megfelelő átmeneti függvénnyel (easing functions).
+share:
+  Átmeneti függvények (easing functions) meghatározzák az animációnak a gyorsaságát, a természetesebb hatás élérése érdekében.
+  A valós tárgyak sem csak állandó sebességgel mozognak, nem indulnak, nem állnak meg hirtelen.
+  Ez az oldal segít a megfelelő átmeneti függvények kiválasztásában.
+
+about: __format
+  ~~Átmeneti függvények (easing functions)~~ meghatározzák egy paraméter időbeli változásának mértékét.
+
+  A valódi tárgyak sem csak állandó sebességgel mozognak, nem indulnak, nem állnak meg hirtelen, azonnal.
+  A fiók kinyitásakor is először gyorsuló mozgással húzzunk, majd fokozatosan lassítjuk addig amíg teljes egészében kijön.
+  Bármilyen tárgyat ledobunk a padlóra, először lefelé kezd el gyorsulni, majd a padlóra érkezés után, (ruganyos test esetén) visszaugrik.
+
+  Ez az oldal segít a megfelelő átmeneti függvény kiválasztásában.
+
+howtos:
+  css:
+    text: A CSS-ben az átmenetnek és az animációnak a tulajdonságai lehetővé teszik az átmeneti függvény meghatározását.
+    edit: Szerkesztés a ^cubic-bezier.com^ oldalán.
+    with_animation: CSS-ben az átmeneti függvények a {{@keyframes}} használatával érhetőek el
+    example_size: Méret
+    example_position: Pozíció
+    example_opacity: Átlátszóság
+
+  postcss:
+    text:
+      A PostCSS-ben az átmeneti függvényeket könnyebb használni, leírni.
+      Ehhez létezik egy ^postcss-easings^ plugin, amely tartalmazza az átmeneti információkat erről az oldalról
+    explanation: Ezt a meghatározást a PostCSS átalakítja a fent leírtakhoz
+    disabled:
+      Sajnos, ez az átmeneti függvény nem érhető el semmilyen PostCSS pluginban
+      Az átmenet a {{@keyframes}} használatával elvégezhető, lásd fentebb
+
+  gradient:
+    name: Színátmenet
+    text: Lehetőség van színátmenet létrehozására a ^postcss-easing-gradients^ segítségével.
+
+easing:
+  all_easings: Összes átmenet
+  check: Átmenetek előnézete
+  check_size: Méret
+  check_position: Pozíció
+  check_opacity: Átlátszóság
+  current_func: Jelenlegi átmenet
+  linear_func: Lineáris átmenet
+  load: Betöltés...
+
+opensource:
+  title: Nyílt forrású
+  translate: Segíts lefordítani ezt az oldalt a saját nyelvedre
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: és
+  solovev: Ivan Solovev
+
+theme:
+  auto: Automatikus téma
+  light: Világos téma
+  dark: Sötét téma
