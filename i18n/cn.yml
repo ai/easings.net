@@ -1,0 +1,63 @@
+version: 2
+lang_code: cn
+lang_name: 简体中文
+rtl: false
+
+title: 缓动函数速查表
+description:
+  使用正确的缓动函数，让动画效果更加真实。
+share:
+  缓动函数可以自定义动画的速度使得物体的移动更加自然。现实生活中，物体当然不是匀速移动，同样也不会立刻启动或结束。
+  这个页面将帮助你选择正确的缓动函数。
+
+about: __format
+  ~~缓动函数~~ 通过时间的变化控制参数值变化的速率。
+
+  现实生活中，物体并不是突然启动或者停止，当然也不可能一直保持匀速移动。就像我们打开抽屉的过程那样，刚开始拉的那一下动作很快，但是当抽屉被拉出来之后我们会不自觉的放慢动作。掉落在地板上的东西，一开始下降的速度很快，后来就会在地板上来回反弹直到停止。
+
+  这个页面将帮助你选择正确的缓动函数。
+
+howtos:
+  css:
+    text: 在 CSS 中，transition 和 animation 属性允许你自定义缓动函数。
+    edit: 在 ^cubic-bezier.com^ 上编辑。
+    with_animation: 在 CSS 中，使用 {{@keyframes}} 来实现这个函数
+    example_size: 大小
+    example_position: 位移
+    example_opacity: 透明度
+
+  postcss:
+    text:
+      在 PostCSS 中，使用缓动函数就变得方便多了。
+      可以使用这个插件 ^postcss-easings^ 来定义 transition 的属性值。 
+    explanation: 这种方式将会被编译成上面的贝塞尔曲线的形式。
+    disabled:
+      糟糕，这个缓动函数不能使用 PostCSS plugin 插件。
+
+  gradient:
+    name: 渐变
+    text: 可以使用这个工具 ^postcss-easing-gradients^ 来实现渐变。
+
+easing:
+  all_easings: 所有缓动函数
+  check: 观看变化
+  check_size: 大小
+  check_position: 位移
+  check_opacity: 透明度
+  current_func: 当前函数
+  linear_func: 线性函数
+  load: Loading...
+
+opensource:
+  title: Open Source
+  translate: Help translate site to your language
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: and
+  solovev: Ivan Solovev
+
+theme:
+  auto: 跟随系统
+  light: 亮色主题
+  dark: 暗色主题
