@@ -14,6 +14,7 @@ import { getElement, getElementsList } from "../helpers/getElement";
 import {
 	setInfoFunc,
 	setInfoName,
+	setInfoMaths,
 	showComplexInfo,
 	showSimpleInfo,
 } from "../info/info";
@@ -133,6 +134,7 @@ function navigateChart(id: string): void {
 	openItemId = id;
 	const name = item.getAttribute("data-name");
 	const func = item.getAttribute("data-func");
+	const maths = item.getAttribute("data-maths");
 	const itemOffset = item.getAttribute("data-offset");
 	const transitionTimingFunction = func === noTimingFunction ? "ease" : func;
 
@@ -149,6 +151,7 @@ function navigateChart(id: string): void {
 
 		setInfoName(name);
 		setInfoFunc(func);
+		setInfoMaths(maths);
 		setFuncForCard(func, name);
 		setTransitionForInfoChartCursor(func, name);
 

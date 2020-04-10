@@ -15,6 +15,7 @@ const infoSimple = getElementsList(selectorSimpleInfo);
 const infoComplex = getElementsList(selectorComplexInfo);
 const infoName = getElementsList(".js-info-name", info);
 const infoFuncName = getElementsList(".js-info-func", info);
+const infoMaths = getElementsList(".js-info-maths", info);
 
 const infoKeyframes = {
 	opacity: getElement(selectorComplexKeyframeOpacity),
@@ -31,6 +32,12 @@ export function setInfoName(name: string): void {
 export function setInfoFunc(func: string): void {
 	forNodeList(infoFuncName, (e) => {
 		e.innerText = func;
+	});
+}
+
+export function setInfoMaths(maths: string): void {
+	forNodeList(infoMaths, (e) => {
+		e.innerText = maths;
 	});
 }
 
