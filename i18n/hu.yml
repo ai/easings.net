@@ -42,6 +42,13 @@ howtos:
     name: Színátmenet
     text: Lehetőség van színátmenet létrehozására a ^postcss-easing-gradients^ segítségével.
 
+  mathfunction:
+    name: Math function
+    text:
+      Below you see the code of this easing function written in TypeScript.
+      The variable x represents the absolute progress of the animation
+      in the bounds of 0 (beginning of the animation) and 1 (end of animation).
+
 easing:
   all_easings: Összes átmenet
   check: Átmenetek előnézete

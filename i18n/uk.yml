@@ -45,6 +45,13 @@ howtos:
     name: Градієнт
     text: Можна намалювати градієнт, використовуючи ^postcss-easing-gradients^.
 
+  mathfunction:
+    name: Math function
+    text:
+      Below you see the code of this easing function written in TypeScript.
+      The variable x represents the absolute progress of the animation
+      in the bounds of 0 (beginning of the animation) and 1 (end of animation).
+
 easing:
   all_easings: Всі функції
   check: Подивитись пом`якшення при зміні

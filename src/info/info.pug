@@ -1,6 +1,7 @@
 include ../code/codeCss
 include ../code/codePostCss
 include ../code/codeGradient
+include ../code/codeMaths
 include ../example-copy/example-copy
 
 include ../case/case
@@ -74,6 +75,20 @@ mixin info
 						+example-copy
 							+codeGradient
 					.example__gradient
+
+
+				.example
+					.example__title {{ howtos.mathfunction.name }}
+					.js-info-simple
+						div {{ howtos.mathfunction.text }}
+						.example__code
+							+example-copy
+								+codeMaths
+					.js-info-complex
+						div {{ howtos.mathfunction.text }}
+						.example__code
+							+example-copy
+								+codeMaths
 
 			.info__case
 				.cases__title {{ easing.check }}:

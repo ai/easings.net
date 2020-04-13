@@ -44,6 +44,13 @@ howtos:
     name: Gradient
     text: Mit ^postcss-easing-gradients^ ist es möglich, Gradienten darzustellen.
 
+  mathfunction:
+    name: Berechnungsfunktion
+    text:
+      Untenstehend ist eine Beispielimplementierung dieser Übergangsfunktion in TypeScript dargestellt.
+      Die Variable x repräsentiert den Fortschritt des Übergangs in den Grenzen von
+      0 (Start des Übergangs) bis 1 (Ende des Übergangs).
+
 easing:
   all_easings: Alle Übergangsfunktionen
   check: Animation mit dieser Funktion vergleichen für

@@ -32,7 +32,7 @@ mixin function(item, index)
 		if (item.offset === "bottom")
 			className = "chart__wrap--offset_bottom";
 
-	.function(id=(`func-${item.name}`) data-name=item.name data-func=item.css data-offset=item.offset)
+	.function(id=(`func-${item.name}`) data-name=item.name data-func=item.css data-maths=item.maths data-offset=item.offset)
 		a.function__chart.chart(href=`#${item.name}`)
 			.chart__wrap(class=className)
 				svg.chart__image(viewBox=(`0 0 ${chartWidth} ${chartHeight}`) xmlns="http://www.w3.org/2000/svg")
