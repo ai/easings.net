@@ -46,11 +46,10 @@ howtos:
     text: Возможно нарисовать градиент с помощью ^postcss-easing-gradients^.
 
   mathfunction:
-    name: Math function
+    name: Математическая функция
     text:
-      Below you see the code of this easing function written in TypeScript.
-      The variable x represents the absolute progress of the animation
-      in the bounds of 0 (beginning of the animation) and 1 (end of animation).
+      Ниже вы видите код функции перехода, написанный на TypeScript.
+      Переменная x это прогресс анимации, где 0 (начало анимации) и 1 (конец анимации).
 
 easing:
   all_easings: Все функции
