@@ -3,7 +3,7 @@
 	"scripts": {
 		"start": "node ./scripts/start.js",
 		"build": "NODE_ENV=production node ./scripts/build.js",
-		"lint": "eslint --fix ./src/**/*.{ts,js} ./*.js"
+		"lint": "eslint --fix ./src/**/*.{ts,js} ./scripts/*.js"
 	},
 	"browserslist": [
 		"defaults",
