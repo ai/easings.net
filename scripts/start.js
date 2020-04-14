@@ -8,7 +8,7 @@ const Mustache = require("mustache");
 
 const format = require("./helpers/format");
 
-const i18nDir = path.join(__dirname, "i18n");
+const i18nDir = path.join(process.cwd(), "i18n");
 const langList = fs
 	.readdirSync(i18nDir)
 	.filter((filename) => !/^_/.test(filename))
@@ -60,9 +60,7 @@ function renderIndexPage(req, res, next) {
 				const viewData = yamlParse.load(langFile);
 
 				if (viewData.version >= 2) {
-					res.send(
-						Mustache.render(indexHtml, format(viewData, lang, langList))
-					);
+					res.send(Mustache.render(indexHtml, format(viewData, langList)));
 				} else {
 					res.writeHead(406);
 					res.end("The translation must be at least the 2nd version!");

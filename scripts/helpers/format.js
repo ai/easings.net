@@ -1,40 +1,56 @@
-function format(dictionary, lang, langList) {
-	const currentLang = lang ? lang : "en";
+const { join } = require("path");
+const { readFileSync } = require("fs");
+const yamlParse = require("js-yaml");
 
-	const defaultDictionary = {
-		lang: currentLang,
-		dir: dictionary.rtl ? "rtl" : "ltr",
-		authors: {
-			sitnik: "Andrey Sitnik",
-			separator: "and",
-			solovev: "Ivan Solovev",
-		},
-		short_name: "Easings.net",
-	};
+const fileDefaultDictionary = readFileSync(
+	join(process.cwd(), "i18n", "en.yml")
+);
+const defaultDictionary = yamlParse.load(fileDefaultDictionary);
 
+function format(dictionary, langList) {
 	const helpers = {
+		dir: dictionary.rtl ? "rtl" : "ltr",
+		short_name: "Easings.net",
+
 		link: renderLink,
 		langList: langList.map((item) =>
 			[
 				`<li>`,
-				item.code === currentLang
+				item.code === dictionary.lang_code
 					? `<span>${item.name}</span>`
 					: `<a href="/${item.code}" rel="alternate" hreflang="${item.code}">${item.name}</a>`,
 				`</li>`,
 			].join("")
 		),
-		redirect_script: !lang
+		redirect_script: !dictionary.lang_code
 			? renderRedirectScript(langList.map((item) => item.code))
 			: "",
 
 		service_worker:
 			process.env.NODE_ENV === "production"
-				? renderRegisterServiceWorker(currentLang)
+				? renderRegisterServiceWorker(dictionary.lang_code)
 				: "",
 	};
 
-	const newDictionary = Object.assign(defaultDictionary, dictionary);
+	const newDictionary = joinDictionary(defaultDictionary, dictionary);
 	return Object.assign(formatObject(newDictionary), helpers);
+}
+
+function joinDictionary(defaultDictionary, dictionary) {
+	const result = {};
+
+	Object.keys(defaultDictionary).forEach((key) => {
+		if (typeof defaultDictionary[key] !== "object") {
+			result[key] =
+				dictionary !== undefined && dictionary[key] !== undefined
+					? dictionary[key]
+					: defaultDictionary[key];
+		} else {
+			result[key] = joinDictionary(defaultDictionary[key], dictionary[key]);
+		}
+	});
+
+	return result;
 }
 
 function formatObject(dictionary) {
@@ -42,7 +58,7 @@ function formatObject(dictionary) {
 
 	for (let field in newDictionary) {
 		if ({}.hasOwnProperty.call(newDictionary, field)) {
-			if (typeof newDictionary[field] === "string") {
+			if (typeof newDictionary[field] !== "object") {
 				newDictionary[field] = formatString(newDictionary[field]);
 			} else {
 				newDictionary[field] = formatObject(newDictionary[field]);
@@ -54,7 +70,7 @@ function formatObject(dictionary) {
 }
 
 function formatString(source) {
-	const text = source.replace(/{{([^}]{2,})}}/g, "<code>$1</code>");
+	const text = source.toString().replace(/{{([^}]{2,})}}/g, "<code>$1</code>");
 
 	if (/^__format/i.test(text)) {
 		const newText = text
@@ -117,16 +133,13 @@ function renderRegisterServiceWorker(lang) {
 	return `
 		<script>
 			if ("serviceWorker" in navigator) {
-					navigator
-						.serviceWorker
-						.register("./sw.${lang}.js")
-						.then(() =>
-							navigator
-								.serviceWorker.ready
-								.then((worker) => worker.sync.register("syncdata")))
-							.catch((error) => console.log(error)
-							);
-				}
+				navigator
+					.serviceWorker
+					.register("./sw.${lang}.js")
+					.then(() => navigator.serviceWorker.ready)
+					.then((worker) => worker.sync.register("syncdata"))
+					.catch((error) => console.log(error))
+			}
 		</script>
 	`;
 }

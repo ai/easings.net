@@ -1,8 +1,8 @@
 {
 	"name": "easings.net",
 	"scripts": {
-		"start": "node ./start.js",
-		"build": "NODE_ENV=production node ./build.js",
+		"start": "node ./scripts/start.js",
+		"build": "NODE_ENV=production node ./scripts/build.js",
 		"lint": "eslint --fix ./src/**/*.{ts,js} ./*.js"
 	},
 	"browserslist": [

@@ -18,7 +18,7 @@ const PostCSS = require("postcss");
 const Terser = require("terser");
 
 const format = require("./helpers/format");
-const i18nDir = path.join(__dirname, "i18n");
+const i18nDir = path.join(process.cwd(), "i18n");
 
 /**
  * @type {Lang[]}
@@ -35,6 +35,7 @@ const addedSelectors = [
 	"js-info-func",
 	"js-info-simple",
 	"js-info-complex",
+	"js-info-maths",
 	"js-cubic-bezier",
 	"example-copy__icon-action",
 	"footer__theme",
@@ -221,7 +222,6 @@ async function build() {
 				await langList.map(async (lang) => {
 					const viewData = format(
 						lang,
-						lang.lang_code,
 						langList.map((dic) => ({
 							code: dic.lang_code,
 							name: dic.lang_name,
@@ -258,7 +258,6 @@ async function build() {
 					html,
 					format(
 						engLang,
-						"",
 						langList.map((dic) => ({
 							code: dic.lang_code,
 							name: dic.lang_name,

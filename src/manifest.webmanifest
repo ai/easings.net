@@ -1,9 +1,9 @@
 {
-	"lang": "{{ lang }}",
+	"lang": "{{ lang_code }}",
 	"name": "{{ title }}",
 	"short_name": "{{ short_name }}",
 	"description": "{{ description }}",
-	"start_url": "/{{ lang }}",
+	"start_url": "/{{ lang_code }}",
 	"display": "standalone",
 	"theme_color": "#1473e6",
 	"background_color": "#fff",
