@@ -1,0 +1,73 @@
+version: 2
+lang_code: ko
+lang_name: 한국어
+rtl: false
+
+title: Easing 함수 치트 시트
+description:
+  적절한 easing 함수를 선택해 좀 더 자연스러운 애니메이션을 만들어보세요.
+share:
+  실제 사물들은 일정한 속도로 이동하지 않고, 즉시 시작하거나 즉시 멈추지도 않습니다.
+  Easing 함수는 실제 사물들 같이, 이동 속도를 지정하여 움직임을 좀 더 자연스럽도록 만듭니다.
+  이 페이지에서는 여러분이 알맞은 easing 함수를 고를 수 있도록 도와드립니다.
+
+about: __format
+  ~~Easing 함수~~는 시간 흐름에 따른 매개변수의 변화율을 지정합니다.
+
+  대부분의 실제 사물들은 일정한 속도로 이동하지 않고, 즉시 시작하거나 즉시 멈추지도 않습니다.
+  서랍을 예로 들자면, 처음에는 빠르게 열다가 거의 다 열었을 때쯤에는 천천히 엽니다.
+  사물을 바닥에 떨어트렸을 때는 사물이 아래로 가속하다 사물이 바닥을 쳤을 때 튕겨 올라옵니다.
+
+  이 페이지에서는 여러분이 알맞은 easing 함수를 고를 수 있도록 도와드립니다.
+
+howtos:
+  css:
+    text: CSS에서는 transition 속성과 animation 속성을 사용하여 easing 함수를 지정할 수 있습니다.
+    edit: 이 함수를 ^cubic-bezier.com^에서 수정해 볼 수 있습니다.
+    with_animation: CSS에서, 이 함수는 {{@keyframes}}를 사용하여 구현할 수 있습니다.
+    example_size: 크기
+    example_position: 위치
+    example_opacity: 불투명도
+
+  postcss:
+    text:
+      PostCSS의 easing 함수는 이 사이트에서 transition 정보를 가져오는
+      ^postcss-easings^라는 플러그인이 있어 구현하기 간편합니다.
+    explanation: 이 PostCSS 구현은 컴파일 시 CSS로 구현된 코드로 변환됩니다.
+    disabled:
+      아쉽게도 현재 함수는 PostCSS로 지정할 수 없습니다.
+      대신, {{@keyframes}}로 구현할 수 있으니 위를 확인해보세요.
+
+  gradient:
+    name: 그라디언트
+    text: ^postcss-easing-gradients^를 사용하여 그라디언트를 그릴 수 있습니다.
+
+  mathfunction:
+    name: 수학 함수
+    text:
+      아래에 있는 코드는 TypeScript로 작성된 Easing 함수입니다.
+      변수 x는 0 (움직임의 시작)에서 1 (움직임의 끝) 사이의 움직임 진척도입니다.
+
+easing:
+  all_easings: 목록
+  check: easing 비교
+  check_size: 크기
+  check_position: 위치
+  check_opacity: 불투명도
+  current_func: 현재 함수
+  linear_func: 선형 함수
+  load: 로딩 중...
+
+opensource:
+  title: Open Source
+  translate: 사이트 번역을 도와주세요.
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: 및
+  solovev: Ivan Solovev
+
+theme:
+  auto: 자동 테마 선택
+  light: 라이트 테마
+  dark: 다크 테마
