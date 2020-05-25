@@ -1,0 +1,76 @@
+version: 2
+lang_code: pt-br
+lang_name: Português (Brasil)
+rtl: false
+
+title: Cheat Sheet para funções de easing
+description:
+  Torne animações mais realistas escolhendo a função de easing correta.
+share:
+  Funções de easing especificam a velocidade da animação
+  para tornar o movimento mais natural. Objetos reais não se movem
+  a uma velocidade constante e não começam e param em um instante.
+  Esta página ajuda a escolher a função de easing correta.
+
+about: __format
+  ~~Funções de easing~~ especificam a taxa de alteração de um parâmetro ao longo do tempo.
+
+  Objetos na vida real não começam e param instantaneamente e quase nunca se movem
+  a uma velocidade constante. Quando abrimos uma gaveta, primeiro a movemos rapidamente
+  e diminuímos a velocidade à medida que sai. Deixe algo cair no chão e ele primeiro
+  acelerará caindo e saltará depois de bater no chão.
+
+  Esta página ajuda a escolher a função de easing correta.
+
+howtos:
+  css:
+    text: Em CSS, as propriedades 'transition' e 'animation' permitem especificar uma função de easing.
+    edit: Editar em ^cubic-bezier.com^.
+    with_animation: Em CSS, esta função pode ser implementada usando {{@keyframes}}
+    example_size: Tamanho
+    example_position: Posição
+    example_opacity: Transparência
+
+  postcss:
+    text:
+      No PostCSS, a função de easing é muito mais fácil de descrever.
+      Há um plugin, ^postcss-easings^, que tira a informação de transição deste site.
+    explanation: Tal declaração é convertida para a descrita acima.
+    disabled:
+      Infelizmente, esta função de easing não pode ser feita com um PostCSS plugin.
+      Pode ser feita com {{@keyframes}}, veja acima.
+
+  gradient:
+    name: Gradiente
+    text: É possível desenhar um gradiente usando o plugin ^postcss-easing-gradients^.
+
+  mathfunction:
+    name: Função matemática
+    text:
+      Abaixo está o código desta função de easing escrito em TypeScript.
+      A variável x representa o progresso absoluto da animação
+      nos limites de 0 (começo da animação) e 1 (fim da animação).
+
+easing:
+  all_easings: Todos os easings
+  check: Verificar o easing para mudanças de
+  check_size: Tamanho
+  check_position: Posição
+  check_opacity: Transparência
+  current_func: Função atual
+  linear_func: Função linear
+  load: Carregando...
+
+opensource:
+  title: Open Source
+  translate: Ajude a traduzir o site para seu idioma
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: e
+  solovev: Ivan Solovev
+
+theme:
+  auto: Tema auto
+  light: Tema claro
+  dark: Tema escuro
