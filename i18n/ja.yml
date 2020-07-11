@@ -37,11 +37,9 @@ howtos:
     text: ^postcss-easing-gradients^を使用してグラデーションを描くことができます。
 
   mathfunction:
-    name: Math function
+    name: 数学関数
     text:
-      Below you see the code of this easing function written in TypeScript.
-      The variable x represents the absolute progress of the animation
-      in the bounds of 0 (beginning of the animation) and 1 (end of animation).
+      以下に、TypeScriptで書かれたイージング関数のコードを示します。変数xはアニメーションの絶対的な進行度を0（アニメーションの開始）と1（アニメーションの終了）の範囲で表します。
 
 easing:
   all_easings: すべてのイージング
