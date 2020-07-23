@@ -14,9 +14,9 @@ share:
 about: __format
   ~~Les courbes d'accélérations (easing functions)~~ décrivent la vitesse à laquelle un paramètre change en fonction du temps.
 
-  Dans la vie, les objets ne s'arrêtent pas instantanément, et ne bougent presque jamais à vitesse constante.
-  Lorsque nous ouvrons un tiroir, nous le déplaçons d'abord rapidement puis de plus en plus lentement jusqu'à ce qu'il sorte.
-  Faites tomber quelque chose au sol, il va premièrement accélérer vers le sol puis rebondir.
+  Dans la vie, les objets ne se déplace pas instantanément et ne bougent pratiquement jamais à vitesse constante.
+  Lorsque nous ouvrons un tiroir, nous le déplaçons d'abord rapidement puis de plus en plus lentement jusqu'à ce qu'il soit complètement ouvert.
+  Lorsque que nous faisons tomber quelque chose au sol, il va premièrement accélérer vers le sol puis rebondir.
 
   Cette page vous aide à choisir les bonnes courbes d'accélérations.
 
