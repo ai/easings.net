@@ -12,9 +12,9 @@ GitHub has great instructions on how to [set up Git], [fork a project] and
 [make pull requests]. If you have a problem with Git, just send your files
 directly to <andrey@sitnik.ru>.
 
-[set up Git]:         http://help.github.com/set-up-git-redirect
-[fork a project]:     http://help.github.com/fork-a-repo/
-[make pull requests]: http://help.github.com/send-pull-requests/
+[set up Git]:         https://help.github.com/set-up-git-redirect
+[fork a project]:     https://help.github.com/fork-a-repo/
+[make pull requests]: https://help.github.com/send-pull-requests/
 
 ### Translate
 
