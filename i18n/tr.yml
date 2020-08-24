@@ -52,9 +52,9 @@ howtos:
 easing:
   all_easings: Tüm geçişler
   check: Değişiklikler için geçişi kontrol edin
-  check_size: Boyutun
-  check_position: Pozisyonlar
-  check_opacity: Şeffaflıklar
+  check_size: Boyut
+  check_position: Pozisyon
+  check_opacity: Şeffaflık
   current_func: Bu fonksiyon
   linear_func: Doğrusal fonksiyon
   load: Yükleniyor...
