@@ -44,9 +44,7 @@
 		"eslint-plugin-prettier": "^3.1.1",
 		"express": "^4.17.1",
 		"htmlnano": "^0.2.4",
-		"husky": "^3.0.4",
 		"js-yaml": "^3.13.1",
-		"lint-staged": "^9.2.3",
 		"mustache": "^3.0.1",
 		"parcel-bundler": "^1.12.3",
 		"postcss": "^7.0.17",
@@ -60,17 +58,6 @@
 		"pug": "^2.0.4",
 		"terser": "^4.1.4",
 		"typescript": "^3.5.3"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"*.{js,ts}": [
-			"eslint --fix",
-			"git add"
-		]
 	},
 	"dependencies": {
 		"focus-visible": "^5.0.2"
