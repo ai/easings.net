@@ -21,7 +21,7 @@ self.addEventListener("install", (event) => {
 	);
 });
 
-self.addEventListener("fetch", function(event) {
+self.addEventListener("fetch", function (event) {
 	event.respondWith(cacheOrNetwork(event.request));
 	event.waitUntil(updateCache(event.request));
 });

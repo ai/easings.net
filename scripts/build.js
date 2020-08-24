@@ -117,7 +117,7 @@ async function build() {
 		from: keyframesFile.name,
 	});
 
-	await writeFile(keyframesFile.name, stylesKeyframe);
+	await writeFile(keyframesFile.name, stylesKeyframe.css);
 
 	await copyFile("./src/favicon.ico", "./dist/favicon.ico");
 
@@ -142,7 +142,7 @@ async function build() {
 		)
 		.replace(/}\);$/, "})(window,document);");
 
-	const minifyJS = Terser.minify(jsData, {
+	const minifyJS = await Terser.minify(jsData, {
 		toplevel: true,
 	});
 
@@ -155,7 +155,7 @@ async function build() {
 		);
 	});
 
-	serviceWorkerCode = Terser.minify(serviceWorkerCode).code;
+	serviceWorkerCode = (await Terser.minify(serviceWorkerCode)).code;
 
 	function htmlPlugin(lang = "en") {
 		return (tree) => {
@@ -275,9 +275,7 @@ async function build() {
 			} else {
 				await writeFile(
 					item.name,
-					PostHTML([])
-						.use(htmlPlugin())
-						.process(file, { sync: true }).html
+					PostHTML([]).use(htmlPlugin()).process(file, { sync: true }).html
 				);
 			}
 		});

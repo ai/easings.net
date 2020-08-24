@@ -73,12 +73,10 @@ function setTransition(target: HTMLElement, newType: string): void {
 	if (newType !== currentType) {
 		target.classList.remove(cardTargetClassList[currentType]);
 
-		// tslint:disable-next-line:no-unused-expression
 		void target.offsetWidth;
 		target.classList.remove(cardClassWithoutTransition);
 		target.classList.add(cardTargetClassList[newType]);
 	} else {
-		// tslint:disable-next-line:no-unused-expression
 		void target.offsetWidth;
 		target.classList.remove(cardClassWithoutTransition);
 		target.classList.toggle(cardTargetClassList[newType]);
@@ -98,7 +96,6 @@ function setAnimation(animationType: string): void {
 
 	cardTargetWithFunc.style.animation = "none";
 
-	// tslint:disable-next-line:no-unused-expression
 	void cardTargetWithFunc.offsetWidth;
 	cardTargetWithFunc.style.animation = `
 		${animationName} ${time}ms both ${isReverse ? "reverse" : ""} linear

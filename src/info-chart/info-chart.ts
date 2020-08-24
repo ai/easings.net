@@ -37,7 +37,6 @@ function showCursor(): void {
 
 function hideCursor(): void {
 	infoChartCursor.style.transitionDuration = "0s";
-	// tslint:disable-next-line:no-unused-expression
 	void infoChartCursor.offsetWidth;
 
 	if (nameAnimation) {
