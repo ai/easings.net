@@ -17,7 +17,7 @@ about: __format
   bepaalde periode.
 
   Objecten in het dagelijks leven bewegen niet met een constante snelheid, en hun
-  beweging start en stopt niet abrupt. Als je een lade opent begint de beweging snel, 
+  beweging start en stopt niet abrupt. Als je een lade opent begint de beweging snel,
   maar als de lade bijna helemaal open is vertraagt de beweging. Wanneer je iets laat vallen
   beweegt het sneller en sneller, tot het de grond aanraakt en terug omhoog stuitert.
 
@@ -32,7 +32,7 @@ howtos:
     example_position: Positie
     example_opacity: Transparantie
 
-postcss:
+  postcss:
     text:
       In PostCSS is de easing-functie veel makkelijker te beschrijven.
       Er bestaat een plug-in ^postcss-easings^ die de overgangsinformatie van die site neemt.
