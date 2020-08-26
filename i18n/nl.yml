@@ -54,11 +54,11 @@ howtos:
 
 easing:
   all_easings: Alle easings
-  check: Check easing voor wijzigingen
-  check_size: Grootten
-  check_position: Posities
-  check_opacity: Transparanten
-  current_func: Die functie
+  check: Test deze en lineare functie
+  check_size: Grootte
+  check_position: Positie
+  check_opacity: Transparantie
+  current_func: Deze functie
   linear_func: Lineare functie
   load: Laden...
 
