@@ -1,32 +1,31 @@
 version: 2
 lang_code: ar
 lang_name: العربية
-rtl: false
+rtl: true
 
-title: Easing Functions Cheat Sheet
+title: ورقة غش لل Easing Functions.
 description:
-  Make animations more realistic by picking the right easing function.
+  إجعل الحركة أكثر واقعية باختيار ال easing function المناسبة.
 share:
-  Easing functions specify the speed of animation
-  to make the movement more natural. Real objects don’t just move
-  at a constant speed, and do not start and stop in an instant.
-  This page helps you choose the right easing function.
+  تحدد ال Easing functions سرعة الحركة
+  لجعل الحركة أكثر واقعية. ففي الواقع، الأشياء لا تتحرك
+  بسرعة ثابتة ولا تبدأ أو تنهي حركتها لحظياً.
+  هذه الصفحة تساعدك على إختيار ال easing function المناسبة.
 
 about: __format
-  ~~Easing functions~~ specify the rate of change of a parameter
-  over time.
+  ~~Easing functions~~ تحدد معدل تغيير الخاصية مع الزمن.
 
-  Objects in real life don’t just start and stop instantly, and almost never
-  move at a constant speed. When we open a drawer, we first move it quickly,
-  and slow it down as it comes out. Drop something on the floor, and it will
-  first accelerate downwards, and then bounce back up after hitting the floor.
+  الأشياء في الواقع لا تبدأ الحركة ولا تتوقف فجأة ، و غالبا لا تتحرك ب سرعة ثابتة.
+  عندما نفتح درج ، فإننا أولا نحركه بسرعة ثم ببطء و نحن نخرجه.
+  اقذف شيئا على الأرض و ستتزيد سرعته إلى الأسفل
+  ثم يرتد للأعلى بعد الإصطدام بالأرض.
 
-  This page helps you choose the right easing function.
+  هذه الصفحة تساعدك على إختيار ال easing function المناسبة.
 
 howtos:
   css:
-    text: In CSS, the transition and animation properties allow you to specify an easing function.
-    edit: Edit on ^cubic-bezier.com^.
+    text: في CSS ، خصائص ال transition و ال animation تسمح لك بتحديد ال easing function .
+    edit: جربها على  ^cubic-bezier.com^.
     with_animation: In CSS, this function can be implemented using {{@keyframes}}
     example_size: Size
     example_position: Position
@@ -34,23 +33,23 @@ howtos:
 
   postcss:
     text:
-      In PostCSS, the easing function is much easier to describe.
-      There is a plugin ^postcss-easings^ that takes the transition information from that site.
-    explanation: That declaration is converted to the one described above.
+      في PostCSS، ال easing function أسهل بكثير في الوصف.
+      هناك plugin ^postcss-easings^ الذي يحول خصائص ال transition من هذا الموقع.
+    explanation: يتم تحويل هذا الإعلان إلى الإعلان الموصوف أعلاه
     disabled:
-      Unfortunately, the easing function cannot be set with any PostCSS plugin.
-      Can be done with {{@keyframes}}, see above.
+      للأسف ال easing function لا يمكن ضبطها PostCSS plugin.
+      يمكن عملها ب  {{@keyframes}}, شاهد أعلاه.
 
   gradient:
     name: Gradient
-    text: It is possible to draw a gradient using ^postcss-easing-gradients^.
+    text: من الممكن رسم gradient بإستخدام ^postcss-easing-gradients^.
 
   mathfunction:
     name: Math function
     text:
-      Below you see the code of this easing function written in TypeScript.
-      The variable x represents the absolute progress of the animation
-      in the bounds of 0 (beginning of the animation) and 1 (end of animation).
+      بالأسفل يمكنك رؤية كود تلك ال easing function مكتوب بلغة TypeScript.
+      المتغير x يمثل تقدم الحركة
+      في الحدود بين 0 (بداية الحركة) و 1 (نهاية الحركة).
 
 easing:
   all_easings: All easings
@@ -64,7 +63,7 @@ easing:
 
 opensource:
   title: Open Source
-  translate: Help translate site to your language
+  translate: ساهم بترجمة هذه الصفحة للغتك
 
 authors:
   sitnik: Andrey Sitnik
