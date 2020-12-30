@@ -65,9 +65,9 @@ opensource:
   translate: നിങ്ങളുടെ ഭാഷയിലേക്ക് സൈറ്റ് വിവർത്തനം ചെയ്യാൻ സഹായിക്കുക
 
 authors:
-  sitnik: ആൻഡ്രി സിറ്റ്നിക്
-  separator: ഉം
-  solovev: ഇവാൻ സോളോവേവ് ഉം
+  sitnik: Andrey Sitnik
+  separator: and
+  solovev: Ivan Solovev
 
 theme:
   auto: സ്വയം പ്രേരിതമായ തീം
