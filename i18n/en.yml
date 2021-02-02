@@ -58,7 +58,7 @@ easing:
   check_size: Size's
   check_position: Positions
   check_opacity: Transparencies
-  current_func: That function
+  current_func: This function
   linear_func: Linear function
   load: Loading...
 
