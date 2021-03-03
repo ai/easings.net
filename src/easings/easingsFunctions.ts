@@ -2,7 +2,7 @@ type EasingFunction = (progress: number) => number;
 
 interface EasingDictionary {
 	[easing: string]: EasingFunction;
-};
+}
 
 const pow = Math.pow;
 const sqrt = Math.sqrt;
@@ -15,7 +15,7 @@ const c3 = c1 + 1;
 const c4 = (2 * PI) / 3;
 const c5 = (2 * PI) / 4.5;
 
-let bounceOut: EasingFunction = function (x) {
+const bounceOut: EasingFunction = function (x) {
 	const n1 = 7.5625;
 	const d1 = 2.75;
 
@@ -28,7 +28,7 @@ let bounceOut: EasingFunction = function (x) {
 	} else {
 		return n1 * (x -= 2.625 / d1) * x + 0.984375;
 	}
-}
+};
 
 const easingsFunctions: EasingDictionary = {
 	linear: (x) => x,
@@ -87,10 +87,10 @@ const easingsFunctions: EasingDictionary = {
 		return x === 0
 			? 0
 			: x === 1
-				? 1
-				: x < 0.5
-					? pow(2, 20 * x - 10) / 2
-					: (2 - pow(2, -20 * x + 10)) / 2;
+			? 1
+			: x < 0.5
+			? pow(2, 20 * x - 10) / 2
+			: (2 - pow(2, -20 * x + 10)) / 2;
 	},
 	easeInCirc: function (x) {
 		return 1 - sqrt(1 - pow(x, 2));
@@ -118,24 +118,24 @@ const easingsFunctions: EasingDictionary = {
 		return x === 0
 			? 0
 			: x === 1
-				? 1
-				: -pow(2, 10 * x - 10) * sin((x * 10 - 10.75) * c4);
+			? 1
+			: -pow(2, 10 * x - 10) * sin((x * 10 - 10.75) * c4);
 	},
 	easeOutElastic: function (x) {
 		return x === 0
 			? 0
 			: x === 1
-				? 1
-				: pow(2, -10 * x) * sin((x * 10 - 0.75) * c4) + 1;
+			? 1
+			: pow(2, -10 * x) * sin((x * 10 - 0.75) * c4) + 1;
 	},
 	easeInOutElastic: function (x) {
 		return x === 0
 			? 0
 			: x === 1
-				? 1
-				: x < 0.5
-					? -(pow(2, 20 * x - 10) * sin((20 * x - 11.125) * c5)) / 2
-					: (pow(2, -20 * x + 10) * sin((20 * x - 11.125) * c5)) / 2 + 1;
+			? 1
+			: x < 0.5
+			? -(pow(2, 20 * x - 10) * sin((20 * x - 11.125) * c5)) / 2
+			: (pow(2, -20 * x + 10) * sin((20 * x - 11.125) * c5)) / 2 + 1;
 	},
 	easeInBounce: function (x) {
 		return 1 - bounceOut(1 - x);
