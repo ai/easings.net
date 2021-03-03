@@ -1,0 +1,77 @@
+version: 2
+lang_code: nl
+lang_name: Nederlands
+rtl: false
+
+title: Easing-functies Cheatsheet
+description:
+  Maak animaties realistischer door de juiste easing-functie te kiezen.
+share:
+  Easing-functies beïnvloeden de snelheid van een animatie, om de beweging
+  natuurlijker te laten lijken. De snelheid van fysieke objecten is niet constant,
+  en de beweging start en stopt niet abrupt. Deze pagina helpt je de juiste
+  easing-functie te kiezen.
+
+about: __format
+  ~~Easing-functies~~ bepalen de mate van verandering van een waarde, gedurende een
+  bepaalde periode.
+
+  Objecten in het dagelijks leven bewegen niet met een constante snelheid, en hun
+  beweging start en stopt niet abrupt. Als je een lade opent begint de beweging snel,
+  maar als de lade bijna helemaal open is vertraagt de beweging. Wanneer je iets laat vallen
+  beweegt het sneller en sneller, tot het de grond aanraakt en terug omhoog stuitert.
+
+  Deze pagina helpt je bij het kiezen van de juiste easing-functie.
+
+howtos:
+  css:
+    text: In CSS kun je met de overgangs- en animatie-eigenschappen de easing-functie specificeren.
+    edit: Bewerk op ^cubic-bezier.com^.
+    with_animation: In CSS kan deze functie geïmplementeerd worden met {{@keyframes}}
+    example_size: Grootte
+    example_position: Positie
+    example_opacity: Transparantie
+
+  postcss:
+    text:
+      In PostCSS is de easing-functie veel makkelijker te beschrijven.
+      Er bestaat een plug-in ^postcss-easings^ die de overgangsinformatie van die site neemt.
+    explanation: Die declaratie wordt geconverteerd naar degene die hierboven is uitgelegd.
+    disabled:
+      Helaas kan de easing-functie niet worden ingesteld met een PostCSS-plug-in.
+      Dit kan gedaan worden met {{@keyframes}}, zie bovenstaande.
+
+  gradient:
+    name: Kleurovergang
+    text: Het is mogelijk om een kleurovergang te maken met ^postcss-easing-gradients^.
+
+  mathfunction:
+    name: Wiskundige functie
+    text:
+      Hieronder zie je de code van deze easing-functie, geschreven in TypeScript.
+      Variable x staat voor de absolute voortgang van de animatie
+      van 0 (start animatie) tot 1 (einde animatie).
+
+easing:
+  all_easings: Alle easings
+  check: Test deze en lineare functie
+  check_size: Grootte
+  check_position: Positie
+  check_opacity: Transparantie
+  current_func: Deze functie
+  linear_func: Lineare functie
+  load: Laden...
+
+opensource:
+  title: Open-source
+  translate: Help site te vertalen naar jouw taal
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: en
+  solovev: Ivan Solovev
+
+theme:
+  auto: Automatisch thema
+  light: Licht thema
+  dark: Donker thema

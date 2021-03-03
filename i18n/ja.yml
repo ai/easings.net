@@ -1,0 +1,66 @@
+version: 2
+lang_code: ja
+lang_name: 日本語
+rtl: false
+
+title: イージング関数チートシート
+description:
+  適切なイージング関数を選択して、アニメーションをよりリアルにします。
+share:
+  イージング関数はアニメーションの速度を指定して、動きをより自然にします。現実のオブジェクトは単に一定の速度で動かず、即座に動いたり止まったりしません。このページは、適切なイージング関数の選択に役立ちます。
+
+about: __format
+  ~~イージング関数~~は、時間の経過に伴うパラメーターの変化率を指定します。
+
+  現実生活のオブジェクトは、即座に動いたり停止したりすることはなく、一定の速度で動くことはほとんどありません。引き出しを開けるとき、私たちは最初にそれをすばやく動かし、出てくるときはゆっくりと動かします。床に何かを落とすと、最初に下に向かって加速し、床に当たった後跳ね返ります。
+
+  このページは、適切なイージング関数の選択に役立ちます。
+
+howtos:
+  css:
+    text: CSSでは、transitionプロパティとanimationプロパティでイージング関数を指定できます。
+    edit: ^cubic-bezier.com^で編集できます。
+    with_animation: CSSでは、この関数は{{@keyframes}}を使用して実行できます。
+    example_size: サイズ
+    example_position: 位置
+    example_opacity: 透明度
+
+  postcss:
+    text:
+      PostCSSは、イージング関数の記述がより簡単です。このサイトからtransition情報を取得するプラグイン^postcss-easings^があります。
+    explanation: その宣言は上記のものに変換されます。
+    disabled:
+      残念ながら、このイージング関数はPostCSSプラグインでは設定できません。{{@keyframes}}で実行できます。上記を参照してください。
+
+  gradient:
+    name: グラデーション
+    text: ^postcss-easing-gradients^を使用してグラデーションを描くことができます。
+
+  mathfunction:
+    name: 数学関数
+    text:
+      以下に、TypeScriptで書かれたイージング関数のコードを示します。変数xはアニメーションの絶対的な進行度を0（アニメーションの開始）と1（アニメーションの終了）の範囲で表します。
+
+easing:
+  all_easings: すべてのイージング
+  check: イージングの確認
+  check_size: サイズ
+  check_position: 位置
+  check_opacity: 透明度
+  current_func: 現在の関数
+  linear_func: 線形関数
+  load: ローディング...
+
+opensource:
+  title: オープンソース
+  translate: サイトの翻訳にご協力ください
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: and
+  solovev: Ivan Solovev
+
+theme:
+  auto: Auto theme
+  light: Light theme
+  dark: Dark theme

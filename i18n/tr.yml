@@ -1,0 +1,74 @@
+version: 2
+lang_code: tr
+lang_name: Türkçe
+rtl: false
+
+title: Geçiş Fonksiyonları Hızlı Başvuru
+description:
+  Animasyonları doğru geçiş fonksiyonlarını seçerek daha gerçekçi kılın.
+share:
+  Geçiş fonksiyonları hareketlerin daha doğal gözükmesini için animasyonun hızını ayarlar.
+  Gerçekte objeler harekete birden başlayıp durmazlar ve çoğu zaman sabit hızda ilerlemezler.
+  Bu site size doğru geçiş fonksiyonunu seçmenizde yardımcı olur.
+
+about: __format
+  ~~Geçiş Fonksiyonları~~ bir parametrenin zaman çizelgesinde değişim oranını kontrol eder.
+
+  Gerçekte objeler harekete birden başlayıp durmazlar ve çoğu zaman sabit hızda ilerlemezler.
+  Bir çekmeceyi açarken önce hızlıca çekeriz, açıldıkça yavaşlatırız. Yere bir şey attığınızda
+  önce aşağı doğru hızlanır ve sonra yere çarparak seker.
+
+  Bu site size doğru geçiş fonksiyonunu seçmenizde yardımcı olur.
+
+howtos:
+  css:
+    text: CSS içindeki `transition` ve `animation` değerleri geçiş fonksiyonunu seçmenizi sağlar.
+    edit: ^cubic-bezier.com^ sitesinde düzenle.
+    with_animation: CSS içinde, bu fonksiyon {{@keyframes}} kullanılarak uygulanabilir.
+    example_size: Boyut
+    example_position: Pozisyon
+    example_opacity: Şeffaflık
+
+  postcss:
+    text:
+      PostCSS'de, hareket hızı işlevini tanımlamak çok daha kolaydır.
+      Bu siteden geçiş bilgilerini alan bir ^ postcss-easings ^ eklentisi vardır.
+    explanation: Bu beyan, yukarıda anlatılana dönüştürülür.
+    disabled:
+      Maalesef, hareket hızı işlevi herhangi bir PostCSS eklentisiyle ayarlanamaz.
+      {{@Keyframes}} ile yapılabilir, yukarıya bakın.
+
+  gradient:
+    name: Geçiş
+    text: ^postcss-easing-gradients^ kullanarak bir geçiş çizmek mümkündür.
+
+  mathfunction:
+    name: Matematik fonksiyonu
+    text:
+      Aşağıda bu hareket hızı işlevinin TypeScript ile yazılmış kodunu görüyorsunuz.
+      X değişkeni, animasyonun mutlak ilerlemesini temsil eder
+      0 (animasyonun başlangıcı) ve 1 (animasyonun sonu) sınırlarında.
+
+easing:
+  all_easings: Tüm geçişler
+  check: Değişiklikler için geçişi kontrol edin
+  check_size: Boyut
+  check_position: Pozisyon
+  check_opacity: Şeffaflık
+  current_func: Bu fonksiyon
+  linear_func: Doğrusal fonksiyon
+  load: Yükleniyor...
+
+opensource:
+  title: Açık kaynak
+  translate: Siteyi dilinize çevirmeye yarıdmcı olun.
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: ve
+  solovev: Ivan Solovev
+
+theme:
+  auto: Oto tema
+  light: Aydınlık tema
+  dark: Karanlık tema

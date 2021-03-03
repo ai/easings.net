@@ -38,6 +38,13 @@ howtos:
     name: 渐变
     text: 可以使用这个工具 ^postcss-easing-gradients^ 来实现渐变。
 
+  mathfunction:
+    name: Math function
+    text:
+      Below you see the code of this easing function written in TypeScript.
+      The variable x represents the absolute progress of the animation
+      in the bounds of 0 (beginning of the animation) and 1 (end of animation).
+
 easing:
   all_easings: 所有缓动函数
   check: 观看变化

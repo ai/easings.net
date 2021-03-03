@@ -1,0 +1,76 @@
+version: 2
+lang_code: ar
+lang_name: العربية
+rtl: true
+
+title: ورقة غش لل Easing Functions.
+description:
+  إجعل الحركة أكثر واقعية باختيار ال easing function المناسبة.
+share:
+  تحدد ال Easing functions سرعة الحركة
+  لجعل الحركة أكثر واقعية. ففي الواقع، الأشياء لا تتحرك
+  بسرعة ثابتة ولا تبدأ أو تنهي حركتها لحظياً.
+  هذه الصفحة تساعدك على إختيار ال easing function المناسبة.
+
+about: __format
+  ~~Easing functions~~ تحدد معدل تغيير الخاصية مع الزمن.
+
+  الأشياء في الواقع لا تبدأ الحركة ولا تتوقف فجأة ، و غالبا لا تتحرك ب سرعة ثابتة.
+  عندما نفتح درج ، فإننا أولا نحركه بسرعة ثم ببطء و نحن نخرجه.
+  اقذف شيئا على الأرض و ستتزيد سرعته إلى الأسفل
+  ثم يرتد للأعلى بعد الإصطدام بالأرض.
+
+  هذه الصفحة تساعدك على إختيار ال easing function المناسبة.
+
+howtos:
+  css:
+    text: في CSS ، خصائص ال transition و ال animation تسمح لك بتحديد ال easing function .
+    edit: جربها على  ^cubic-bezier.com^.
+    with_animation: In CSS, this function can be implemented using {{@keyframes}}
+    example_size: Size
+    example_position: Position
+    example_opacity: Transparency
+
+  postcss:
+    text:
+      في PostCSS، ال easing function أسهل بكثير في الوصف.
+      هناك plugin ^postcss-easings^ الذي يحول خصائص ال transition من هذا الموقع.
+    explanation: يتم تحويل هذا الإعلان إلى الإعلان الموصوف أعلاه
+    disabled:
+      للأسف ال easing function لا يمكن ضبطها PostCSS plugin.
+      يمكن عملها ب  {{@keyframes}}, شاهد أعلاه.
+
+  gradient:
+    name: Gradient
+    text: من الممكن رسم gradient بإستخدام ^postcss-easing-gradients^.
+
+  mathfunction:
+    name: Math function
+    text:
+      بالأسفل يمكنك رؤية كود تلك ال easing function مكتوب بلغة TypeScript.
+      المتغير x يمثل تقدم الحركة
+      في الحدود بين 0 (بداية الحركة) و 1 (نهاية الحركة).
+
+easing:
+  all_easings: All easings
+  check: Check easing for changes
+  check_size: Size's
+  check_position: Positions
+  check_opacity: Transparencies
+  current_func: That function
+  linear_func: Linear function
+  load: Loading...
+
+opensource:
+  title: Open Source
+  translate: ساهم بترجمة هذه الصفحة للغتك
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: and
+  solovev: Ivan Solovev
+
+theme:
+  auto: Auto theme
+  light: Light theme
+  dark: Dark theme

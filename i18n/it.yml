@@ -1,0 +1,78 @@
+version: 2
+lang_code: it
+lang_name: Italiano
+rtl: false
+
+title: Guida alle Funzioni di Interpolazione
+description:
+  Rendi le animazioni più realistiche scegliendo la corretta funzione
+  di interpolazione.
+share:
+  Le funzioni di interpolazione specificano la velocità di un'animazione
+  rendendone il movimento più naturale. Nella vita reale un oggetto non inizia
+  a muoversi istantaneamente e la sua velocità non rimane costante.
+  Questa pagina ti aiuta a scegliere la corretta funzione di interpolazione.
+
+about: __format
+  ~~Le funzioni di interpolazione~~ specificano il cambiamento di un parametro
+  con il passare del tempo.
+
+  Gli oggetti nella vita reale non si muovono istantaneamente, e non hanno quasi mai
+  una velocità costante. Quando apriamo un cassetto, all'inizio lo spostiamo rapidamente ed
+  andiamo rallentando alla fine. Fai cadere un oggetto e lo vedrai
+  accelerare verso il basso, per poi rimbalzare all'impatto con il pavimento.
+
+  Questa pagina ti aiuta a scegliere la giusta funzione di interpolazione.
+
+howtos:
+  css:
+    text: In CSS, le proprietà transition e animation ti permettono di specificare una funzione di interpolazione.
+    edit: Modifica su ^cubic-bezier.com^.
+    with_animation: In CSS, questa funzione può essere implementata utilizzando {{@keyframes}}
+    example_size: Dimensione
+    example_position: Posizione
+    example_opacity: Trasparenza
+
+  postcss:
+    text:
+      In PostCSS, una funzione di interpolazione è molto più facile da descrivere.
+      Esiste un plugin ^postcss-easings^ che estrapola le informazioni di transizione dal sito stesso.
+    explanation: La dichiarazione viene convertita in quella descritta sopra.
+    disabled:
+      Purtroppo, questa funzione di interpolazione non può essere impostata con alcun plugin PostCSS.
+      Può essere implementata con {{@keyframes}}, vedi sopra.
+
+  gradient:
+    name: Gradiente
+    text: È possibile tracciare un gradiente utilizzando ^postcss-easing-gradients^.
+
+  mathfunction:
+    name: Funzione matematica
+    text:
+      Sotto puoi vedere il codice di questa funzione di interpolazione, scritto in TypeScript.
+      La variabile x rappresenta il progresso (assoluto) dell'animazione 
+      tra i valori 0 (inizio dell'animazione) e 1 (fine dell'animazione).
+
+easing:
+  all_easings: Tutte le interpolazioni
+  check: Visualizza interpolazione
+  check_size: Dimensione
+  check_position: Posizione
+  check_opacity: Trasparenza
+  current_func: Funzione selezionata
+  linear_func: Funzione lineare
+  load: Caricamento...
+
+opensource:
+  title: Open Source
+  translate: Aiutaci a tradurre il sito nella tua lingua
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: e
+  solovev: Ivan Solovev
+
+theme:
+  auto: Tema automatico
+  light: Tema chiaro
+  dark: Tema scuro

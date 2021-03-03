@@ -58,9 +58,9 @@
 				"prefer-const": "error",
 
 				"@typescript-eslint/adjacent-overload-signatures": "error",
-				"@typescript-eslint/ban-ts-ignore": "error",
+				"@typescript-eslint/ban-ts-comment": "error",
+				"@typescript-eslint/ban-tslint-comment": "error",
 				"@typescript-eslint/ban-types": "error",
-				"@typescript-eslint/class-name-casing": "error",
 				"@typescript-eslint/consistent-type-assertions": "error",
 				"@typescript-eslint/no-array-constructor": "error",
 				"@typescript-eslint/no-empty-interface": "error",

@@ -14,9 +14,9 @@ share:
 about: __format
   ~~Les courbes d'accélérations (easing functions)~~ décrivent la vitesse à laquelle un paramètre change en fonction du temps.
 
-  Dans la vie, les objets ne s'arrêtent pas instantanément, et ne bougent presque jamais à vitesse constante.
-  Lorsque nous ouvrons un tiroir, nous le déplaçons d'abord rapidement puis de plus en plus lentement jusqu'à ce qu'il sorte.
-  Faites tomber quelque chose au sol, il va premièrement accélérer vers le sol puis rebondir.
+  Dans la vie, les objets ne se déplacent pas instantanément et ne bougent pratiquement jamais à vitesse constante.
+  Lorsque nous ouvrons un tiroir, nous le déplaçons d'abord rapidement puis de plus en plus lentement jusqu'à ce qu'il soit complètement ouvert.
+  Lorsque que nous faisons tomber quelque chose au sol, il va premièrement accélérer vers le sol puis rebondir.
 
   Cette page vous aide à choisir les bonnes courbes d'accélérations.
 
@@ -24,7 +24,7 @@ howtos:
   css:
     text: En CSS, les propriétés de transition ou d'animation vous permettent de définir une courbe d'accélération.
     edit: Modifier sur ^cubic-bezier.com^.
-    with_animation: En CSS, cette courbe peut être implémenté en utilisant les {{@keyframes}}
+    with_animation: En CSS, cette courbe peut être implémentée en utilisant les {{@keyframes}}
     example_size: Taille
     example_position: Position
     example_opacity: Transparence
@@ -42,13 +42,20 @@ howtos:
     name: Dégradé
     text: Il est possible de dessiner un dégradé en utilisant ^postcss-easing-gradients^.
 
+  mathfunction:
+    name: Fonction mathématique
+    text:
+      Vous voyez ci-dessous le code de cette fonction d'accélération écrit en TypeScript.
+      La variable x représente la progression de l'animation
+      dans une plage variant de 0 (début de l'animation) à 1 (fin de l'animation).
+
 easing:
   all_easings: Toutes les accélérations
-  check: Regardez les modifications
-  check_size: Tailles
-  check_position: Positions
-  check_opacity: Transparences
-  current_func: Fonction actuelle
+  check: Testez cette fonction
+  check_size: Taille
+  check_position: Position
+  check_opacity: Transparence
+  current_func: Fonction sélectionnée
   linear_func: Fonction linéaire
   load: Chargement...
 
@@ -62,6 +69,6 @@ authors:
   solovev: Ivan Soloviev
 
 theme:
-  auto: Auto theme
-  light: Light theme
-  dark: Dark theme
+  auto: Thème par défaut
+  light: Thème clair
+  dark: Thème sombre

@@ -1,4 +1,5 @@
 .translate {
+	margin: 0 0 calc(var(--general-line-height) / 2);
 	position: relative;
 	text-align: center;
 	border: none;

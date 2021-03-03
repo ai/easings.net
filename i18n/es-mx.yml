@@ -1,0 +1,79 @@
+version: 2
+lang_code: es-mx
+lang_name: Español
+rtl: false
+
+title: Acordeón de Funciones de Suavizado
+description:
+  Hacer animaciones más realistas eligiendo la función de suavizado adecuada.
+share:
+  Las functiones de suavizado especifican la velocidad de la animación
+  para hacer el movimiento más natural. Los objetos reales solo no se mueven
+  a una velocidad constante, y no arrancan y se detienen en un instante.
+  Esta página te ayuda a elegir la función de suavizado correcta.
+
+about: __format
+  ~~Las funciones de suavizado~~ especifican la razón de cambio de un parámetro
+  sobre el tiempo.
+
+  Los objetos en la vida real solo no inician y paran instantáneamente, y casi
+  nunca se mueven a una velocidad constante. Cuando abrimos un cajón, primero
+  lo movemos rápidamente y vamos más despacio conforme va saliendo. Deja caer
+  algo al piso, y este primero se acelera hacia abajo, y luego rebota de vuelta
+  hacia arriba después de golpear el piso.
+
+  Esta página te ayuda a elegir la función de suavizado correcta.
+
+howtos:
+  css:
+    text: En CSS, las propiedades 'transition' y 'animation' te permiten especificar una función de suavizado.
+    edit: Editar en ^cubic-bezier.com^.
+    with_animation: En CSS, esta función puede ser implementada usando {{@keyframes}}
+    example_size: Tamaño
+    example_position: Posición
+    example_opacity: Transparencia
+
+  postcss:
+    text:
+      En PostCSS, la función de suavizado es mucho más fácil de describir.
+      Existe un plugin ^postcss-easings^ que toma la información de transición
+      de ese sitio.
+    explanation: Tal declaración es convertida a la que es descrita arriba.
+    disabled:
+      Desafortunadamente, la función de suavizado no puede ser establecida con
+      ningún plugin PostCSS. Puede hacerse con {{@keyframes}}, ver arriba.
+
+  gradient:
+    name: Gradiente
+    text: Es posible dibujar un gradiente usando ^postcss-easing-gradients^.
+
+  mathfunction:
+    name: Función Matemática
+    text:
+      Abajo verás el código de esta función de suavizado escrito en TypeScript.
+      La variable x representa el progreso absoluto de la animación
+      en los límites de 0 (inicio de la animación) y 1 (fin de la animación).
+
+easing:
+  all_easings: Todos los suavizados
+  check: Comprobar suavizado por cambios
+  check_size: de Tamaño
+  check_position: Posiciones
+  check_opacity: Transparencias
+  current_func: Functión actual
+  linear_func: Función linear
+  load: Cargando...
+
+opensource:
+  title: Open Source
+  translate: Ayuda a traducir el sitio a tu idioma
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: e
+  solovev: Ivan Solovev
+
+theme:
+  auto: Tema auto
+  light: Tema claro
+  dark: Tema oscuro

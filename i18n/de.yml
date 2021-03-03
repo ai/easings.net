@@ -1,0 +1,76 @@
+version: 2
+lang_code: de
+lang_name: Deutsch
+rtl: false
+
+title: Cheat Sheet für Easing-Funktionen
+description:
+  Finde passende Übergangsfunktionen (easing functions) und kreiere realistischere Animationen.
+share:
+  Übergangsfunktionen (engl. easing functions) bestimmen den Geschwindigkeitsverlauf
+  einer Animation, um diese natürlicher wirken zu lassen. Denn reale Gegenstände bewegen sich selten
+  ruckartig oder mit konstanter Geschwindigkeit.
+  Diese Seite hilft Dir, die passende Übergangsfunktionen zu finden.
+
+about: __format
+  ~~Übergangsfunktionen~~ <i>(engl. easing functions)</i> bestimmen
+  die Änderungsrate eines Parameters im Verlauf der Zeit.
+
+  Gegenstände in der Realität bewegen sich selten ruckartig oder mit konstanter Geschwindigkeit.
+  Öffnen wir eine Schublade, dann ziehen wir erst stark und bremsen die Bewegung dann ab.
+  Lassen wir einen Ball fallen, wird er zunächst gen Boden beschleunigen, um dann vom Boden abzuspringen.
+
+  Diese Seite hilft Dir, passende Übergangsfunktionen zu finden.
+
+howtos:
+  css:
+    text: In CSS können Übergangfunktionen in den 'transition'- und 'animation'-Properties eingestellt werden.
+    edit: Auf ^cubic-bezier.com^ bearbeiten.
+    with_animation: In CSS kann diese Funktion via {{@keyframes}} implementiert werden
+    example_size: Größe
+    example_position: Position
+    example_opacity: Transparenz
+
+  postcss:
+    text:
+      In PostCSS lässt sich diese Übergangsfunktion weitaus einfacher nutzen.
+      Das Plugin ^postcss-easings^ nutzt die Definitionen der Übergangsfunktionen dieser Seite.
+    explanation: Diese Deklaration wird später in die oben gezeigte umgewandelt.
+    disabled:
+      Diese Funktion kann leider mit keinem PostCSS-Plugin gesetzt werden.
+      Die Verwending von {{@keyframes}} ist jedoch möglich. Siehe oben.
+
+  gradient:
+    name: Gradient
+    text: Mit ^postcss-easing-gradients^ ist es möglich, Gradienten darzustellen.
+
+  mathfunction:
+    name: Berechnungsfunktion
+    text:
+      Untenstehend ist eine Beispielimplementierung dieser Übergangsfunktion in TypeScript dargestellt.
+      Die Variable x repräsentiert den Fortschritt des Übergangs in den Grenzen von
+      0 (Start des Übergangs) bis 1 (Ende des Übergangs).
+
+easing:
+  all_easings: Alle Übergangsfunktionen
+  check: Animation mit dieser Funktion vergleichen für
+  check_size: Größe
+  check_position: Position
+  check_opacity: Transparenz
+  current_func: Diese Funktion
+  linear_func: Lineare Funktion
+  load: Lade...
+
+opensource:
+  title: Open Source
+  translate: Hilf dabei, diese Seite in Deine Sprache zu übersetzen
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: und
+  solovev: Ivan Solovev
+
+theme:
+  auto: Automatisches Theme
+  light: Helles Theme
+  dark: Dunkles Theme

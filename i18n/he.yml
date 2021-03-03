@@ -1,0 +1,72 @@
+version: 2
+lang_code: he
+lang_name: עיברית
+rtl: true
+
+title: פונקציית הריכוך (Easing Functions)
+description:
+  הפוך את האנימציה ליותר מציאותית על ידי בחירת פונקציית הריכוך הנכונה.
+share:
+  פונקציית הריכוך (Easing Functions) קובע את מהירות של האנימציה, כך שהיא נראת יותר מציאותית
+  באתר הזה ניתן לראות איך אמורה להיראות עקומה, כך שאובייקט יזוז יותר טבעי וכמה שיותר קרוב למציאות
+
+about: __format
+  ~~ פונקציית הריכוך (Easing Functions)~~ קובעת את מהירות תזוזה באנימצייה
+
+  דברים אמיתיים לא מתחילים לנוע באופן מיידי ובמהירות קבועה.
+  כשפותחים מגירה, ראשית אנו מאיצים אותה ואז מאיטים.
+  וכאשר הכדור נופל הוא מאיץ כל הזמן, ואחרי שפוגע ברצפה הוא קופץ מעט, עד שעוצר
+
+  האתר הזה יעזור לך למצוא את הפונקצייה שמתאימה לך
+
+howtos:
+  css:
+    text: ב- CSS, מאפייני המעבר וההנפשה מאפשרים לך לציין פונקציית הקלה.
+    edit: לערוך ב ^cubic-bezier.com^.
+    with_animation: ב- CSS ניתן ליישם פונקציה זו עם {{@keyframes}}
+    example_size: גודל
+    example_position: עמדה
+    example_opacity: שקיפות
+
+  postcss:
+    text:
+      ב- PostCSS להישתמש בפונקצייה פשוט יותר.
+      יש פלגין ^postcss-easings^, שלוקח מידע מהאתר הזה.
+    explanation: הצהרה זו מומרת לזו שתוארה לעיל.
+    disabled:
+      למרבה הצער, לא ניתן להגדיר פונקציית החלקה זו באמצעות תוסף כלשהו PostCSS.
+      ניתן לעשות זאת עם {{@keyframes}}.
+
+  gradient:
+    name: מדרון צבעים
+    text: אפשר לצייר שיפוע עם ^postcss-easing-gradients^.
+
+  mathfunction:
+    name: פונקציית מתמטיקה
+    text:
+      להלן מופיע הקוד לפונקציית המעבר שנכתב TypeScript.
+      משתנה X זו התקדמות של האנימציה, איפה ש 0 זה תחילת אנימציה ו 1 – זה סופה
+
+easing:
+  all_easings: כל הפונקציות
+  check: לבדוק את השינוי של האטה
+  check_size: גודל
+  check_position: מיקום
+  check_opacity: שקיפות
+  current_func: פונקציה נוככית
+  linear_func: פונקציה לינארית
+  load: טעינה...
+
+opensource:
+  title: Open Source
+  translate: Help translate site to your language
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: and
+  solovev: Ivan Solovev
+
+theme:
+  auto: אוטומטי
+  light: בצבע בהיר
+  dark: צבע קהה
