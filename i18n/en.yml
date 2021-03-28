@@ -55,7 +55,7 @@ howtos:
 easing:
   all_easings: All easings
   check: Check easing for changes
-  check_size: Size's
+  check_size: Sizes
   check_position: Positions
   check_opacity: Transparencies
   current_func: This function
