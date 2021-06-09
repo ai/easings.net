@@ -1,0 +1,70 @@
+version: 2
+lang_code: zh-tw
+lang_name: 繁體中文
+rtl: false
+
+title: 緩動函數 (Easing function) 小抄
+description:
+  使用正確的緩動函數，讓動畫更加真實。
+share:
+  緩動函數指定了動畫效果在執行時的進度，讓它看起來更加真實。現實生活中的物體不會以等速移動，也不會突然開始或停止。
+  本頁可以在每次你需要時，幫助你找到想要的函數。
+
+about: __format
+  ~~緩動函數 (Easing function)~~ 能夠調整數值變化的速度。
+
+  現實生活中的物體不會以等速移動，也不會突然開始或停止。例如我們打開抽屜時，首先會加速，
+  然後慢下來。又或是當某個物體由高處往下掉時，首先是越掉越快，撞到地上彈回，最後才又回到地板。
+
+  本頁可以在每次你需要時，幫助你找到想要的函數。
+
+howtos:
+  css:
+    text: 在 CSS 中，transition 和 animation 這兩個屬性允許您指定緩動函數。
+    edit: 在 ^cubic-bezier.com^ 編輯。
+    with_animation: 在 CSS 中，這個函數可以透過 {{@keyframes}} 實現。
+    example_size: 大小
+    example_position: 位置 
+    example_opacity: 透明度
+
+  postcss:
+    text:
+      在 PostCSS 中，使用緩動函數就方便多了。
+      這個插件 ^postcss-easings^ 能夠將這個網頁的函數名稱轉換為貝茲曲線數值，您只需要輸入名稱就好了。
+    explanation: 等同於 CSS 的程式碼。
+    disabled: 
+      很不幸的，這個函數不能透過 PostCSS 插件設定。請使用上方的 {{@keyframes}} 來實現。
+
+  gradient:
+    name: 漸層
+    text: 您可以使用 ^postcss-easing-gradients^ 來繪製漸層。
+
+  mathfunction:
+    name: 公式
+    text:
+      以下是此函數的程式碼，以 TypeScript 編寫。
+      變數 x 表示動畫的進度，範圍在 0 (動畫開始) 到 1 (動畫結束) 之間。
+
+easing:
+  all_easings: 所有函數
+  check: 查看變化
+  check_size: 大小
+  check_position: 位置
+  check_opacity: 透明度
+  current_func: 此函數
+  linear_func: 線性函數
+  load: 載入中...
+
+opensource:
+  title: 開源
+  translate: 幫助我們將此網頁翻譯成您的語言
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: 和
+  solovev: Ivan Solovev
+
+theme:
+  auto: 系統預設
+  light: 亮色主題
+  dark: 暗色主題
