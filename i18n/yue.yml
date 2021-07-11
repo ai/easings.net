@@ -1,0 +1,73 @@
+version: 2
+lang_code: yue
+lang_name: 粵語
+rtl: false
+
+title: 緩動函數小冊子
+description:
+  揀啱緩動函數，令動畫更加真實。
+share:
+  緩動函數嘅作用係控制動畫嘅速度，令到佢更加有真實性。
+  現實生活嘅嘢唔會穩定速度郁動，並且唔會忽然之間挑起或者停低。
+  呢個網頁會幫你揀返啱嘅緩動函數。
+
+about: __format
+  ~~緩動函數 (Easing function)~~ 嘅用途係順住時間控制一個數目嘅變化。
+
+  現實生活嘅嘢唔會忽然之間挑起或者停低，而且基本上冇可能以穩定速度郁動。
+  當我哋開櫃桶嘅時候，我哋會先快速地掹佢出嚟，再慢返落嚟，直至佢出晒嚟為止。
+  如果你跌低嘢嘅話，嗰樣嘢會首先慢慢往下加速，之後由地上彈返上嚟。
+
+  呢個網頁會幫你揀返啱嘅緩動函數。
+
+howtos:
+  css:
+    text: 用 CSS 嘅時候，你可以用 transition 同埋 animation 元素嚟指定一個緩動函數。
+    edit: 喺 ^cubic-bezier.com^ 編輯。
+    with_animation: 呢個函數可以用 {{@keyframes}} 造成：
+    example_size: 大細
+    example_position: 位置
+    example_opacity: 透明度
+
+  postcss:
+    text:
+      用 PostCSS 整緩動函數就容易好多。
+      你可以用 ^postcss-easings^ 呢個插件嚟指定你想要嘅函數，佢會由呢個網頁抽出相關嘅資訊。
+    explanation: 呢個會被轉換成上面嘅 CSS 碼。
+    disabled:
+      呢個函數唔好彩地冇可能用任何 PostCSS 插件嚟製造。
+      你須要用上面嘅 {{@keyframes}} 方法。
+
+  gradient:
+    name: 漸變式
+    text: 你可以用 ^postcss-easing-gradients^ 嚟畫漸變式。
+
+  mathfunction:
+    name: 公式
+    text:
+      以下係呢個函數嘅 TypeScript 版。
+      裡面嘅變數 x 代表動畫嘅進度，由 0（動畫開始）至 1（動畫完結）。
+
+easing:
+  all_easings: 全部函數
+  check: 睇吓變化
+  check_size: 大細
+  check_position: 位置
+  check_opacity: 透明度
+  current_func: 呢個函數
+  linear_func: 線性函數
+  load: 載入緊…
+
+opensource:
+  title: 開源
+  translate: 幫手將呢個網頁翻譯成你嘅語言
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: 同埋
+  solovev: Ivan Solovev
+
+theme:
+  auto: 自動
+  light: 亮色
+  dark: 暗色
