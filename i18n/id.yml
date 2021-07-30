@@ -27,7 +27,7 @@ howtos:
   css:
     text: Di CSS, properti transisi dan animasi memungkinkan anda untuk memilih menentukan fungsi easing.
     edit: Ubah di ^cubic-bezier.com^.
-    with_animation: Di dalam CSS, fungsi ini dapat diimplementasikan dengan {{@keyframes}}
+    with_animation: Di CSS, fungsi ini dapat diimplementasikan dengan {{@keyframes}}
     example_size: Ukuran
     example_position: Posisi
     example_opacity: Transparansi
