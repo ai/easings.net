@@ -25,16 +25,16 @@ about: __format
 
 howtos:
   css:
-    text: Dalam CSS, properti transisi dan animasi memungkinkan anda untuk memilih menentukan fungsi easing.
+    text: Di CSS, properti transisi dan animasi memungkinkan anda untuk memilih menentukan fungsi easing.
     edit: Ubah di ^cubic-bezier.com^.
-    with_animation: Dalam CSS, fungsi ini dapat diimplementasikan dengan {{@keyframes}}
+    with_animation: Di dalam CSS, fungsi ini dapat diimplementasikan dengan {{@keyframes}}
     example_size: Ukuran
     example_position: Posisi
     example_opacity: Transparansi
 
   postcss:
     text:
-      Dalam PostCSS, fungsi easing ini lebih mudah digunakan. 
+      Di PostCSS, fungsi easing ini lebih mudah digunakan. 
       Terdapat plugin ^postcss-easings^ yang memudahkan untuk mengambil informasi tentang transisi dari website tersebut.
     explanation: Deklarasinya diubah menjadi seperti diatas ini.
     disabled:
@@ -49,7 +49,7 @@ howtos:
     name: Fungsi matematika
     text:
       Dibawah ini kamu melihat kode untuk fungsi easing ini yang ditulis dengan TypeScript.
-      Variabel x merepresentasikan progress animasi yang absolut
+      Variabel x merepresentasikan proses animasi yang absolut
       diantara 0 (awal dari animasi) dan 1 (akhir dari animasi).
 
 easing:
@@ -63,8 +63,8 @@ easing:
   load: Memuat...
 
 opensource:
-  title: Open Source
-  translate: Bantu translate situs ini ke bahasa anda.
+  title: Sumber Terbuka
+  translate: Bantu terjemahkan situs ini ke bahasa anda.
 
 authors:
   sitnik: Andrey Sitnik
@@ -72,6 +72,6 @@ authors:
   solovev: Ivan Solovev
 
 theme:
-  auto: Tema auto
+  auto: Tema otomatis
   light: Tema terang
   dark: Tema gelap
