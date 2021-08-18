@@ -1,0 +1,78 @@
+version: 2
+lang_code: vi
+lang_name: Tiếng Việt
+rtl: false
+
+title: Danh Sách Các Hàm Gia Tốc
+description:
+  Tạo ra các hiệu ứng chuyển động thực tế hơn bằng cách chọn đúng hàm gia tốc.
+share:
+  Các hàm gia tốc đưa ra tốc độ cho các hiệu ứng
+  giúp tạo ra chuyển động tự nhiên, mượt mà hơn. Các đối tượng trong thực tế
+  không phải lúc nào cũng chuyển động đều và cũng không khởi
+  đầu hay kết thúc tức thì.
+  Trang web này sẽ giúp bạn chọn ra hàm gia tốc phù hợp nhất.
+
+about: __format  
+  ~~Các hàm gia tốc (easing functions)~~ xác định độ thay đổi của các thuộc tính theo thời gian.
+
+  Các đối tượng trong thực tế không bao giờ khởi đầu hay kết thúc một cách đột
+  ngột, và cũng không di chuyển với tốc độ cố định. Khi bạn mở một ngăn kéo, 
+  ban đầu ta kéo nó nhanh, sau đó chậm dần cho đến khi mở ra hoàn toàn. 
+  Khi thả một vật gì đó xuống sàn nhà, nó sẽ bật ngược lại với độ cao thấp hơn, 
+  và cứ bật như vậy, mỗi lần độ cao lại giảm đi cho tới khi đứng im.
+
+  Trang web này sẽ giúp bạn chọn ra hàm gia tốc phù hợp để diễn tả đối tượng của mình.
+
+howtos:
+  css:
+    text: Trong CSS, các thuộc tính transition và animation cho phép bạn xác định một hàm gia tốc.
+    edit: Tuỳ chỉnh tại ^cubic-bezier.com^.
+    with_animation: Trong CSS, chức năng này có thể được thực hiện với {{@keyframes}}
+    example_size: Kích thước
+    example_position: Vị trí
+    example_opacity: Độ trong suốt
+
+  postcss:
+    text:
+      Trong PostCSS, câu lệnh cho hàm gia tốc có đơn giản hơn.
+      Có một plugin ^postcss-easings^ có thể dùng thông tin transition từ trang web này.
+    explanation: Câu lệnh này được chuyển đổi từ hàm bên trên.
+    disabled:
+      Rất tiếc, hàm gia tốc không được thiết lập với bất kỳ plugin PostCSS nào.
+      Có thể hoạt động được với {{@keyframes}}, xem bên trên.
+
+  gradient:
+    name: Gradient
+    text: Hoàn toàn có thể tạo màu gradient với ^postcss-easing-gradients^.
+
+  mathfunction:
+    name: Công thức Toán học
+    text:
+      Dưới đây là câu lệnh của hàm gia tốc này, được viết trong TypeScript.
+      Biến x đại diện cho tiến trình tuyệt đối của chuyển động, dao động trong
+      khoảng từ 0 (chuyển động bắt đầu) đến 1 (chuyển động kết thúc).
+
+easing:
+  all_easings: Tất cả các hàm
+  check: Thử nghiệm hoạt động với
+  check_size: Kích thước
+  check_position: Vị trí
+  check_opacity: Độ trong suốt
+  current_func: Hàm này
+  linear_func: Hàm tuyến tính
+  load: Xin chờ...
+
+opensource:
+  title: Open Source
+  translate: Help translate site to your language
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: và
+  solovev: Ivan Solovev
+
+theme:
+  auto: Tự động
+  light: Ban ngày
+  dark: Ban đêm
