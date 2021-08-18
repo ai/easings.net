@@ -3,30 +3,28 @@ lang_code: vi
 lang_name: Tiếng Việt
 rtl: false
 
-title: Danh Sách Các Hàm Gia Tốc
+title: Bảng Tổng Hợp Hiệu Ứng Chuyển Động (Easing)
 description:
-  Tạo ra các hiệu ứng chuyển động thực tế hơn bằng cách chọn đúng hàm gia tốc.
+  Tạo các hiệu ứng chuyển động thực tế hơn bằng cách chọn đúng easing.
 share:
-  Các hàm gia tốc đưa ra tốc độ cho các hiệu ứng
-  giúp tạo ra chuyển động tự nhiên, mượt mà hơn. Các đối tượng trong thực tế
-  không phải lúc nào cũng chuyển động đều và cũng không khởi
-  đầu hay kết thúc tức thì.
-  Trang web này sẽ giúp bạn chọn ra hàm gia tốc phù hợp nhất.
+  Các hàm easing sẽ điều chỉnh tốc độ để chuyển động của animation
+  nhìn tự nhiên hơn. Trong thực tế, các vật thể không di chuyển với một tốc độ
+  cố định, và cũng không bắt đầu hay kết thúc một cách tức thì.
 
 about: __format  
-  ~~Các hàm gia tốc (easing functions)~~ xác định độ thay đổi của các thuộc tính theo thời gian.
+  ~~Các hàm easing~~ xác định tỉ lệ của một tham số biến đổi theo thời gian.
 
-  Các đối tượng trong thực tế không bao giờ khởi đầu hay kết thúc một cách đột
+  Các vật thể trong thực tế không bao giờ khởi đầu hay kết thúc một cách đột
   ngột, và cũng không di chuyển với tốc độ cố định. Khi bạn mở một ngăn kéo, 
   ban đầu ta kéo nó nhanh, sau đó chậm dần cho đến khi mở ra hoàn toàn. 
   Khi thả một vật gì đó xuống sàn nhà, nó sẽ bật ngược lại với độ cao thấp hơn, 
-  và cứ bật như vậy, mỗi lần độ cao lại giảm đi cho tới khi đứng im.
+  và cứ bật như vậy, mỗi lần độ cao lại giảm đi cho tới khi nó đứng im.
 
-  Trang web này sẽ giúp bạn chọn ra hàm gia tốc phù hợp để diễn tả đối tượng của mình.
+  Trang web này sẽ giúp bạn chọn ra hàm easing phù hợp để diễn tả vật thể mà bạn cần.
 
 howtos:
   css:
-    text: Trong CSS, các thuộc tính transition và animation cho phép bạn xác định một hàm gia tốc.
+    text: Trong CSS, ta có thể sử dụng thuộc tính transition và animation để xác định easing.
     edit: Tuỳ chỉnh tại ^cubic-bezier.com^.
     with_animation: Trong CSS, chức năng này có thể được thực hiện với {{@keyframes}}
     example_size: Kích thước
@@ -35,27 +33,26 @@ howtos:
 
   postcss:
     text:
-      Trong PostCSS, câu lệnh cho hàm gia tốc có đơn giản hơn.
-      Có một plugin ^postcss-easings^ có thể dùng thông tin transition từ trang web này.
+      Miêu tả một hàm ease trong PostCSS dễ dàng hơn nhiều.
+      Bạn có thể lấy thông số transition từ plugin ^postcss-easings^.
     explanation: Câu lệnh này được chuyển đổi từ hàm bên trên.
     disabled:
       Rất tiếc, hàm gia tốc không được thiết lập với bất kỳ plugin PostCSS nào.
-      Có thể hoạt động được với {{@keyframes}}, xem bên trên.
+      Tuy nhiên, vẫn có thể làm được bằng cách sử dụng {{@keyframes}}, xem bên trên.
 
   gradient:
     name: Gradient
-    text: Hoàn toàn có thể tạo màu gradient với ^postcss-easing-gradients^.
+    text: Có thể tạo màu gradient với ^postcss-easing-gradients^.
 
   mathfunction:
     name: Công thức Toán học
     text:
-      Dưới đây là câu lệnh của hàm gia tốc này, được viết trong TypeScript.
-      Biến x đại diện cho tiến trình tuyệt đối của chuyển động, dao động trong
-      khoảng từ 0 (chuyển động bắt đầu) đến 1 (chuyển động kết thúc).
+      Dưới đây là code được viết bằng TypeScript cho hàm easing này.
+      Biến x thể hiện quá trình chuyển động từ 0 (bắt đầu) cho đến 1 (kết thúc) của animation.
 
 easing:
   all_easings: Tất cả các hàm
-  check: Thử nghiệm hoạt động với
+  check: Kiểm tra easing để thấy sự thay đổi
   check_size: Kích thước
   check_position: Vị trí
   check_opacity: Độ trong suốt
@@ -64,8 +61,8 @@ easing:
   load: Xin chờ...
 
 opensource:
-  title: Open Source
-  translate: Help translate site to your language
+  title: Mã nguồn mở
+  translate: Hỗ trợ dịch trang này sang ngôn ngữ của bạn
 
 authors:
   sitnik: Andrey Sitnik
