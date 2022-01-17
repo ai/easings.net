@@ -7,15 +7,15 @@ title: Geçiş Fonksiyonları Hızlı Başvuru
 description:
   Animasyonları doğru geçiş fonksiyonlarını seçerek daha gerçekçi kılın.
 share:
-  Geçiş fonksiyonları hareketlerin daha doğal gözükmesini için animasyonun hızını ayarlar.
-  Gerçekte objeler harekete birden başlayıp durmazlar ve çoğu zaman sabit hızda ilerlemezler.
+  Geçiş fonksiyonları, hareketlerin daha doğal gözükmesi için animasyonun hızını ayarlar.
+  Gerçekte objeler harekete birden başlayıp durmazlar ve neredeyse hiçbir zaman sabit hızda ilerlemezler.
   Bu site size doğru geçiş fonksiyonunu seçmenizde yardımcı olur.
 
 about: __format
   ~~Geçiş Fonksiyonları~~ bir parametrenin zaman çizelgesinde değişim oranını kontrol eder.
 
-  Gerçekte objeler harekete birden başlayıp durmazlar ve çoğu zaman sabit hızda ilerlemezler.
-  Bir çekmeceyi açarken önce hızlıca çekeriz, açıldıkça yavaşlatırız. Yere bir şey attığınızda
+  Gerçek hayatta objeler hareket etmeye birden başlayıp durmazlar ve neredeyse hiçbir zaman sabit hızda ilerlemezler.
+  Bir çekmeceyi açarken önce hızlıca çekeriz ve açıldıkça yavaşlatırız. Yere bir şey attığınızda
   önce aşağı doğru hızlanır ve sonra yere çarparak seker.
 
   Bu site size doğru geçiş fonksiyonunu seçmenizde yardımcı olur.
@@ -61,7 +61,7 @@ easing:
 
 opensource:
   title: Açık kaynak
-  translate: Siteyi dilinize çevirmeye yarıdmcı olun.
+  translate: Siteyi dilinize çevirmeye yardımcı olun.
 
 authors:
   sitnik: Andrey Sitnik
