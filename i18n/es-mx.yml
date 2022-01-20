@@ -16,13 +16,13 @@ about: __format
   ~~Las funciones de suavizado~~ especifican la razón de cambio de un parámetro
   sobre el tiempo.
 
-  Los objetos en la vida real solo no inician y paran instantáneamente, y casi
-  nunca se mueven a una velocidad constante. Cuando abrimos un cajón, primero
-  lo movemos rápidamente y vamos más despacio conforme va saliendo. Deja caer
-  algo al piso, y este primero se acelera hacia abajo, y luego rebota de vuelta
-  hacia arriba después de golpear el piso.
+  En la vida real, los objetos no se inician ni se detienen por sí solos instantáneamente, 
+  y casi nunca se mueven a una velocidad constante. Por ejemplo, cuando abrimos un cajón, 
+  el movimiento de jale o apertura se hace rápidamente al principio, y conforme dicho cajón
+  sale, el movimiento se hace más despacio. También; si se deja caer un objeto al piso, 
+  este primero se acelera hacia abajo hasta golpear el piso y luego rebota de vuelta hacia arriba.
 
-  Esta página te ayuda a elegir la función de suavizado correcta.
+  Esta página te ayuda a elegir la función de suavizado correcta para usar en animaciones con CSS.
 
 howtos:
   css:
@@ -45,7 +45,7 @@ howtos:
 
   gradient:
     name: Gradiente
-    text: Es posible dibujar un gradiente usando ^postcss-easing-gradients^.
+    text: Es posible dibujar un degradado usando ^postcss-easing-gradients^.
 
   mathfunction:
     name: Función Matemática
