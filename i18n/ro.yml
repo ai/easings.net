@@ -1,0 +1,77 @@
+version: 2
+lang_code: ro
+lang_name: Română
+rtl: false
+
+title: Easing Functions Cheat Sheet
+description:
+  Faceți animațiile mai realiste alegând funcția de relaxare potrivită.
+share:
+  Funcțiile de relaxare specifică viteza animației pentru a
+  face mișcarea mai naturală. Obiectele reale nu se mișcă doar
+  la o viteză constantă și nu pornesc sau se opresc instant.
+  Această pagină vă ajută să alegeți funcția de relaxare potrivită.
+
+about: __format
+  ~~Funcțiile de relaxare~~ specifică rata de modificare a unui parametru
+  în timp.
+
+  Obiectele din viața reală nu pornesc sau se opresc instantaneu și aproape niciodată
+  nu se deplasează cu viteză constantă. Când deschidem un sertar, mai întâi îl mișcăm rapid,
+  și îl încetinim pe măsură ce iese. Aruncă ceva pe podea și mai întâi
+  va accelera în jos, apoi revenind în sus după ce a lovit podeaua.
+
+  Această pagină vă ajută să alegeți funcția de relaxare potrivită.
+
+howtos:
+  css:
+    text: În CSS, proprietățile de tranziție și animație vă permit să specificați o funcție de relaxare.
+    edit: Editați pe ^cubic-bezier.com^.
+    with_animation: În CSS, această funcție poate fi implementată folosind {{@keyframes}}
+    example_size: Dimensiune
+    example_position: Poziție
+    example_opacity: Transparență
+
+  postcss:
+    text:
+      În PostCSS, funcția de relaxare este mult mai ușor de descris.
+      Există un plugin ^postcss-easings^ care preia informațiile de tranziție de pe acel site.
+    explanation: Acea declarație este abordată în descrierea de mai sus.
+    disabled:
+      Din păcate, funcția de relaxare nu poate fi setată cu niciun plugin PostCSS.
+      Se poate face cu {{@keyframes}}, vezi mai sus.
+
+  gradient:
+    name: Gradient
+    text: Este posibil să desenați un gradient folosind ^postcss-easing-gradients^.
+
+  mathfunction:
+    name: Funcția matematică
+    text:
+      Mai jos vedeți codul acestei funcții de simplificare scris în TypeScript.
+      Variabila x reprezintă progresul absolut al animației în limitele
+      lui 0 (începutul animației) și 1 (sfârșitul animației).
+
+easing:
+  all_easings: Toate relaxările
+  check: Verificați relaxarea pentru modificări
+  check_size: Mărimi
+  check_position: Poziții
+  check_opacity: Transparente
+  current_func: Această funcție
+  linear_func: Funcție liniară
+  load: Se încarcă...
+
+opensource:
+  title: Open Source
+  translate: Ajută la traducerea site-ului în limba ta
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: și
+  solovev: Ivan Solovev
+
+theme:
+  auto: Tema automată
+  light: Temă luminoasă
+  dark: Temă întunecată
