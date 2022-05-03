@@ -1,0 +1,69 @@
+version: 2
+lang_code: am
+lang_name: አማርኛ
+rtl: false
+
+title: Easing Functions አጋዥ
+description: ትክክለኛውን easing function በመምረጥ አኒሜሽኖችን የበለጠ እውነታዊ ያድርጉ።
+share: Easing functions የአኒሜሽን እንቅስቃሴን የበለጠ ተፈጥሯዊ ለማስመሰል ይጠቅማሉ።
+  እውነተኛ ነገሮች በቋሚ ፍጥነት ብቻ የሚንቀሳቀሱ አይደሉም፣ እናም በቅጽበት ጀምረው በቅጽበት የሚይቆሙ አይደሉም።
+  ይህ ገጽ ትክክለኛውን easing function መምረጥ ያግዝዎታል።
+
+about: __format
+  ~~Easing functions~~ በጊዜ ሂደት የአንድ parameter የለውጥ መጠንን ይገልጻሉ።
+
+  እውነተኛ ነገሮች በቅጽበት ጀምረው በቅጽበት የሚይቆሙ አይደሉም፣ እናም በቋሚ ፍጥነት በጭራሽ አይንቀሳቀሱም።
+  የልብስ መሳቢያን ስንከፍት መጀመሪያ በፍጥነት እናንቀሳቅሰዋለን፣ በመውጣት ላይ አያለ ግን ፍጥነቱን አንቀንሰዋለን።
+  አንድ ነገር ወደ መሬት ስንጥል በመጀመሪያ ወደታች በፍጥነት ይወርዳል፣ ወለሉን ከነካ በኋላ ግን ነጥሮ ይመለሳል።
+
+  ይህ ገጽ ትክክለኛውን easing function መምረጥ ያግዝዎታል።
+
+howtos:
+  css:
+    text: CSS ላይ transition እና animation የሚባሉት ንብረቶች easing function ለመግለጽ ያግዛሉ።
+    edit: ^cubic-bezier.com^ ላይ ያስተካክሉ።
+    with_animation: ይህ ተግባር CSS ላይ በ{{@keyframes}} መከናወን ይችላል።
+    example_size: መጠን
+    example_position: ቦታ
+    example_opacity: ግልፅነት
+
+  postcss:
+    text: በPostCSS የeasing function ተግባርን መግለፅ በጣም ቀላል ነው።
+      የtransition መረጃ ከ^cubic-bezier.com^ የሚወስድ ^postcss-easings^ የሚባል plugin አለ።
+
+    explanation: ይህ መግለጫ ከላይ ወደተገለጸው ተቀይሯል።
+    disabled: እንደ አለመታደል ሆኖ easing function በማንኛውም የPostCSS plugin ማዘጋጀት አይቻልም።
+      በ{{@keyframes}} ሊከናወን ይችላል፣ ከላይ ይመልከቱ።
+
+  gradient:
+    name: ግሬዲየንት
+    text: ^postcss-easing-gradients^ በመጠቀም ግሬዲየንት መሳል ይቻላል።
+
+  mathfunction:
+    name: Math function
+    text: ከዚህ በታች ይህ easing function በTypeScript ተጽፎ ያገኛሉ።
+      x የአኒሜሽኑን absolute progress(ግስጋሴ) በ0 (የአኒሜሽኑ መጀመሪያ) እና በ1 (የአኒሜሽኑ መጨረሻ) ይወክላል።
+
+easing:
+  all_easings: ሁሉም easings
+  check: የeasing ለውጦች ይመልከቱ
+  check_size: መጠኖች
+  check_position: ቦታዎች
+  check_opacity: ግልጽነቶች
+  current_func: This function
+  linear_func: Linear function
+  load: በመጫን ላይ...
+
+opensource:
+  title: Open Source
+  translate: ይህን ድህረ ገጽ ወደ ቋንቋዎት መተርጎም ያግዙን
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: እና
+  solovev: Ivan Solovev
+
+theme:
+  auto: Auto theme
+  light: Light theme
+  dark: Dark theme
