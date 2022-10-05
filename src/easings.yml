@@ -1,7 +1,7 @@
 - name: easeInSine
   css:  cubic-bezier(0.12, 0, 0.39, 0)
   maths: |-2
-      return 1 - cos((x * PI) / 2);
+      return 1 - Math.cos((x * Math.PI) / 2);
 - name: easeOutSine
   css:  cubic-bezier(0.61, 1, 0.88, 1)
   maths: |-2
@@ -9,7 +9,7 @@
 - name: easeInOutSine
   css:  cubic-bezier(0.37, 0, 0.63, 1)
   maths: |-2
-    return -(cos(PI * x) - 1) / 2;
+    return -(Math.cos(Math.PI * x) - 1) / 2;
 - name: easeInQuad
   css:  cubic-bezier(0.11, 0, 0.5, 0)
   maths: |-2
@@ -41,7 +41,7 @@
 - name: easeOutQuart
   css:  cubic-bezier(0.25, 1, 0.5, 1)
   maths: |-2
-    return 1 - pow(1 - x, 4);
+    return 1 - Math.pow(1 - x, 4);
 - name: easeInOutQuart
   css:  cubic-bezier(0.76, 0, 0.24, 1)
   maths: |-2
@@ -82,7 +82,7 @@
 - name: easeOutCirc
   css:  cubic-bezier(0, 0.55, 0.45, 1)
   maths: |-2
-    return sqrt(1 - pow(x - 1, 2));
+    return sqrt(1 - Math.pow(x - 1, 2));
 - name: easeInOutCirc
   css:  cubic-bezier(0.85, 0, 0.15, 1)
   maths: |-2
