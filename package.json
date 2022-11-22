@@ -1,10 +1,17 @@
 {
 	"name": "easings.net",
+	"version": "1.0.0",
 	"scripts": {
 		"start": "node ./scripts/start.js",
 		"build": "NODE_ENV=production node ./scripts/build.js",
-		"lint": "eslint ./src/**/*.{ts,js} ./scripts/*.js"
+		"lint": "eslint ./src/**/*.{ts,js} ./scripts/*.js",
+		"build:lib": "tsc src/easings/easingsFunctions.ts --outDir lib --declaration"
 	},
+	"files": [
+		"lib"
+	],
+	"main": "lib/easingsFunctions.js",
+	"types": "lib/easingsFunctions.d.ts",
 	"browserslist": [
 		"defaults",
 		"not ie 11",

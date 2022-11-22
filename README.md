@@ -6,6 +6,15 @@ Simple cheat sheet to help developers pick the right easing function.
 <img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg" alt="Sponsored by Evil Martians" width="236" height="54">
 </a>
 
+## Npm installing
+```sh
+npm install easings.net
+```
+use the easing functions
+```
+import easing from 'easings.net'
+```
+
 ## Contributing
 
 GitHub has great instructions on how to [set up Git], [fork a project] and
