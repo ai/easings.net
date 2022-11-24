@@ -10,9 +10,12 @@ Simple cheat sheet to help developers pick the right easing function.
 ```sh
 npm install easings.net
 ```
-use the easing functions
+
+## Usage
 ```
-import easing from 'easings.net'
+import easings from 'easings.net'
+
+const stepValue = easings.easeInQuad(x) // 0 <= x <= 1
 ```
 
 ## Contributing
