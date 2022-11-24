@@ -1,6 +1,7 @@
 {
 	"name": "easings.net",
 	"version": "1.0.2",
+	"homepage": "https://easings.net/",
 	"scripts": {
 		"start": "node ./scripts/start.js",
 		"build": "NODE_ENV=production node ./scripts/build.js",

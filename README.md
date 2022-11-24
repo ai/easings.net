@@ -2,6 +2,8 @@
 
 Simple cheat sheet to help developers pick the right easing function.
 
+See the [easing effects](https://easings.net/)
+
 <a href="https://evilmartians.com/?utm_source=easings.net">
 <img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg" alt="Sponsored by Evil Martians" width="236" height="54">
 </a>
