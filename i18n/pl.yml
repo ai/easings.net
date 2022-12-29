@@ -1,0 +1,70 @@
+version: 2
+lang_code: pl
+lang_name: Polish
+rtl: false
+
+title: Ściąga z Funkcji Przejścia
+description:
+  Spraw, że animacja wygląda na bardziej realistyczną, dobierając dla niej odpowiednią funkcję przejścia (tzw. easing).
+share:
+  Funkcje przejścia opisują tempo animacji, aby ruch wyglądał naturalniej. Prawdziwe obiekty bowiem nie poruszają się tak po prostu, ze stałą prędkością a także nie ruszają i nie zatrzymują się natychmiastowo.
+  Ta strona pomaga wybrać Ci odpowiednią funkcję przejścia.
+
+about: __format
+  ~~Funkcje przejścia~~ zadaj tempo zmian parametru w czasie.
+
+  Obiekty w prawdziwym życiu nie ruszają i nie zatrzymują się natychmiastowo i prawie nigdy nie poruszają się ze stałą prędkością. Kiedy wysuwamy szufladę, najpierw nadajemy jej energiczny, szybki ruch, zaś kiedy już się wysuwa, spowalniamy ją. Upuść coś na podłogę, a to najpierw zacznie przyspieszać w dół, po czym, gdy trafi w podłogę, odbije się od niej z powrotem.
+
+  Ta strona pomaga wybrać Ci odpowiednią funkcję przejścia.
+
+howtos:
+  css:
+    text: W CSS-ie, takie właściwości jak przemiana (transition) oraz animacja (animation) pozwalają na określenie dla nich funkcji przejścia.
+    edit: Edytuj na ^cubic-bezier.com^.
+    with_animation: W CSS-ie, taka funkcja może zostać zaimplementowana za pomocą {{@keyframes}}
+    example_size: Rozmiar
+    example_position: Pozycja
+    example_opacity: Przezroczystość
+
+  postcss:
+    text:
+      Funkcje przejścia są znacznie łatwiejsze do opisania w PostCSS.
+      Istnieje plugin ^postcss-easings^, który pobiera informacje o przejściach z tejże strony.
+    explanation: Tamta deklaracja została skonwertowana do tej opisanej powyżej.
+    disabled:
+      Niestety nie można ustawić funkcji przejścia za pomocą żadnego pluginu do PostCSS-a.
+      Zobacz powyżej, jak można to zrobić przy użyciu {{@keyframes}}.
+
+  gradient:
+    name: Gradient
+    text: Można narysować gradient przy użyciu ^postcss-easing-gradients^.
+
+  mathfunction:
+    name: Funkcje matematyczne
+    text:
+      Poniżej widzisz kod dla funkcji przejścia napisany w  TypeScriptcie.
+      Zmienna x odzwierciedla absolutny postęp animacji w zakresie od 0 (początek animacji) do 1 (koniec animacji).
+
+easing:
+  all_easings: Wszystkie przejścia
+  check: Sprawdź, jaką zmianę daje to przejście
+  check_size: Rozmiar
+  check_position: Pozycja
+  check_opacity: Przezroczystość
+  current_func: Ta funkcja
+  linear_func: Funkcja liniowa
+  load: Ładowanie...
+
+opensource:
+  title: Open Source
+  translate: Pomóż przetłumaczyć stronę na twój język!
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: i
+  solovev: Ivan Solovev
+
+theme:
+  auto: Motyw domyślny
+  light: Jasny motyw
+  dark: Ciemny motyw
