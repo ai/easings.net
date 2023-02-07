@@ -5,7 +5,7 @@ rtl: false
 
 title: Cheat Sheet für Easing-Funktionen
 description:
-  Finde passende Übergangsfunktionen (easing functions) und kreiere realistischere Animationen.
+  Finde passende Übergangsfunktionen (easing functions) und erstelle realistischere Animationen.
 share:
   Übergangsfunktionen (engl. easing functions) bestimmen den Geschwindigkeitsverlauf
   einer Animation, um diese natürlicher wirken zu lassen. Denn reale Gegenstände bewegen sich selten
@@ -17,8 +17,8 @@ about: __format
   die Änderungsrate eines Parameters im Verlauf der Zeit.
 
   Gegenstände in der Realität bewegen sich selten ruckartig oder mit konstanter Geschwindigkeit.
-  Öffnen wir eine Schublade, dann ziehen wir erst stark und bremsen die Bewegung dann ab.
-  Lassen wir einen Ball fallen, wird er zunächst gen Boden beschleunigen, um dann vom Boden abzuspringen.
+  Öffnen wir eine Schublade, dann ziehen wir erst stark und bremsen diese Bewegung dann ab.
+  Lassen wir einen Ball fallen, wird er zunächst zum Boden hin beschleunigen, um dann vom Boden abzuspringen.
 
   Diese Seite hilft Dir, passende Übergangsfunktionen zu finden.
 
