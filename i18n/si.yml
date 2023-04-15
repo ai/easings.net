@@ -1,0 +1,77 @@
+version: 1
+lang_code: si
+lang_name: Slovenian
+rtl: false
+
+title: Zapisi funkcij za blaženje gibanja
+description:
+  Oživite animacije z izbiro pravilne funkcije za blaženje gibanja.
+share:
+  Funkcije za blaženje gibanja določajo hitrost animacije,
+  da gibanje postane bolj naravno. Resnični predmeti se ne premikajo
+  s konstantno hitrostjo, in ne začnejo in ne ustavijo se v trenutku.
+  Ta stran vam pomaga izbrati pravilno funkcijo za blaženje gibanja.
+
+about: __format
+  ~~Funkcije blaženja~~ določajo hitrost spremembe parametra
+  s časom.
+
+  Predmeti v resničnem življenju se ne začnejo in ne ustavijo v trenutku, in skoraj nikoli
+  se ne premikajo s konstantno hitrostjo. Ko odpremo predal, ga najprej hitro premaknemo
+  in ga nato upočasnimo, ko se odpre. Nečesa, kar vržemo na tla, se bo najprej pospeševalo navzdol,
+  nato pa se bo odbilo nazaj gor, ko se dotakne tal.
+
+  Ta stran vam pomaga izbrati pravilno funkcijo za blaženje gibanja.
+
+howtos:
+  css:
+    text: V CSS-ju lastnosti prehoda in animacije omogočajo določitev funkcije za blaženje gibanja.
+    edit: Uredi na ^cubic-bezier.com^.
+    with_animation: V CSS-ju lahko to funkcijo izvedemo z uporabo {{@keyframes}}
+    example_size: Velikost
+    example_position: Položaj
+    example_opacity: Prosojnost
+
+  postcss:
+    text:
+      V PostCSS-ju je funkcijo za blaženje gibanja veliko lažje opisati.
+      Obstaja vtičnik ^postcss-easings^, ki prevzame informacije o prehodu s te strani.
+    explanation: Ta deklaracija se pretvori v opisano zgoraj.
+    disabled:
+      Na žalost funkcije za blaženje gibanja ni mogoče nastaviti z nobenim vtičnikom PostCSS.
+      Lahko pa se izvede s pomočjo {{@keyframes}}, glej zgoraj.
+
+  gradient:
+    name: Gradient
+    text: Mogoče je narisati gradient s pomočjo ^postcss-easing-gradients^.
+
+  mathfunction:
+    name: Matematična funkcija
+    text:
+      Spodaj vidite kodo te funkcije za blaženje gibanja, zapisane v TypeScriptu.
+      Spremenljivka x predstavlja absolutni napredek animacije
+      v mejah od 0 (začetek animacije) do 1 (konec animacije).
+
+easing:
+  all_easings: Vse funkcije za blaženje gibanja
+  check: Check easing for changes
+  check_size: Velikost
+  check_position: Pozicija
+  check_opacity: Prosojnost
+  current_func: Trenutna funkcija
+  linear_func: Linearna funkcija
+  load: Nalaganje...
+
+opensource:
+  title: Odprtokodno
+  translate: Pomagaj prevesti to stran v svoj jezik
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: in
+  solovev: Ivan Solovev
+
+theme:
+  auto: Automatska tema
+  light: Svetla tema
+  dark: Temna tema
