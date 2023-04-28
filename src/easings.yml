@@ -82,7 +82,7 @@
 - name: easeOutCirc
   css:  cubic-bezier(0, 0.55, 0.45, 1)
   maths: |-2
-    return sqrt(1 - Math.pow(x - 1, 2));
+    return Math.sqrt(1 - Math.pow(x - 1, 2));
 - name: easeInOutCirc
   css:  cubic-bezier(0.85, 0, 0.15, 1)
   maths: |-2
