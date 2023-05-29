@@ -29,7 +29,7 @@ howtos:
     with_animation: 在 CSS 中，使用 {{@keyframes}} 来实现这个函数
     example_size: 大小
     example_position: 位置
-    example_opacity: 透明度
+    example_opacity: 不透明度
 
   postcss:
     text:
@@ -55,7 +55,7 @@ easing:
   check: 观看缓动变化
   check_size: 大小
   check_position: 位置
-  check_opacity: 透明度
+  check_opacity: 不透明度
   current_func: 当前函数
   linear_func: 线性函数
   load: 加载中...
