@@ -1,0 +1,77 @@
+version: 2
+lang_code: sq
+lang_name: Shqip
+rtl: false
+
+title: Lista e funksioneve të shpejtësisë për animacione
+description:
+  Bëji funksionet më realiste duke zgjedhur shpejtësinë e duhur të animacionit.
+share:
+  Funksionet e shpejtësisë specifikojnë shpejtësine e animacioneve
+  për t'i bërë më të natyrshme. Objektet reale nuk lëvizin vetëm
+  me shpejtësi konstante, gjithashtu nuk fillojnë dhe ndalen menjëherë.
+  Kjo faqe ju ndihmon të zgjidhni funksionin e duhur të shpejtësisë së animacionit.
+
+about: __format
+  ~~Funksionet e shpejtësisë~~ specifikojnë ndryshimin e parametrit
+  në varësi të kohës.
+
+  Objektet reale nuk fillojnë dhe ndalen menjëherë, dhe pothuajse asnjëherë 
+  nuk lëvizin me shpejtësi konstante. Kur hapim një sirtar, në fillim e lëvizim shpejt,
+  dhe ngadalsojmë kur e nxjerrim jashtë. Nëse hedhim diçka në tokë,
+  fillimisht bie poshtë me shpejtësi dhe pastaj kthehet lart pasi godet dyshemenë.
+
+  Kjo faqe ju ndihmon të zgjidhni funksionin e duhur të animacionit.
+
+howtos:
+  css:
+    text: Në CSS, cilësimet e 'transition' dhe 'animation' të lejojnë të specifikosh një funksion shpejtësie.
+    edit: Redakto në ^cubic-bezier.com^.
+    with_animation: Në CSS, këto funksione mund të implementohen duke përdorur {{@keyframes}}
+    example_size: Madhësitë
+    example_position: Pozicionet
+    example_opacity: Transparenca
+
+  postcss:
+    text:
+      Në PostCSS, funksionet e shpejtësisë janë më të thjeshta per t'u përshkruar.
+      Ekziston një plugin ^postcss-easings^ që merr informacionin e tranzicionit nga ky sajt. 
+    explanation: Kjo deklaratë konvertohet në atë të përshkruar më lart.
+    disabled:
+      Fatkeqësisht, funksionet e shpejtësisë nuk mund të vendosen me një plugin PostCSS
+      Mund të arrihet me {{@keyframes}}, shihni më lart.
+
+  gradient:
+    name: Gradienti
+    text: Është e mundur të vizatojmë një gradient duke përdorur ^postcss-easing-gradients^.
+
+  mathfunction:
+    name: Funksion matematikor
+    text:
+      Më poshtë do të shihni funksionet e shpejtësisë të shkruara në TypeScript.
+      Variabla x përfaqëson progresin absolut të animacionit
+      në kufijtë e 0 (fillimi i animacionit) dhe 1 (fundit e animacionit).
+
+easing:
+  all_easings: Të gjitha funksionet e shpejtësitë
+  check: Kontrolloni shpejtësinë për ndryshime
+  check_size: Madhësitë
+  check_position: Pozicionet
+  check_opacity: Transparenca
+  current_func: Funksioni aktual
+  linear_func: Funksioni linear
+  load: Ngarkimi...
+
+opensource:
+  title: Open Source
+  translate: Ndihmo përkthimin në gjuhën tënde
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: dhe
+  solovev: Ivan Solovev
+
+theme:
+  auto: Modaliteti automatik
+  light: Modaliteti i hapur
+  dark: Modaliteti i errët
