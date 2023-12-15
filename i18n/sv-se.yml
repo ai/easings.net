@@ -1,0 +1,77 @@
+version: 2
+lang_code: sv
+lang_name: Svenska
+rtl: false
+
+title: Lättnadsfunktioner
+description:
+  Gör animationer mer realistiska genom att välja rätt lättnadsfunktion.
+share:
+  Lättringsfunktioner anger hastigheten på animeringen
+  för att göra rörelsen mer naturlig. Verkliga föremål rör sig inte bara
+  med konstant hastighet och startar och stannar inte på ett ögonblick.
+  Den här sidan hjälper dig att välja rätt lättnadsfunktion.
+
+about: __format
+  ~~Lättningsfunktioner~~ anger förändringshastigheten för en parameter
+  över tid.
+
+  Objekt i verkliga livet startar och stannar inte bara direkt, och nästan aldrig
+  rör sig med en konstant hastighet. När vi öppnar en låda flyttar vi först den snabbt,
+  och sen sakta ner den när den kommer ut. Släpp något på golvet och det kommer först accelerera
+  nedåt och studsar sedan upp igen efter att ha träffat golvet.
+
+  Den här sidan hjälper dig att välja rätt lättnadsfunktion.
+
+howtos:
+  css:
+    text: I CSS låter övergångs- och animeringsegenskaperna dig att ange en lättnadsfunktion.
+    edit: Redigera på ^cubic-bezier.com^.
+    with_animation: I CSS kan den här funktionen implementeras med {{@keyframes}}
+    example_size: Storlek
+    example_position: Position
+    example_opacity: Genomskinlighet
+
+  postcss:
+    text:
+      I PostCSS är lättnadsfunktionen mycket lättare att beskriva.
+      Det finns ett plugin ^postcss-easings^ som tar övergångsinformationen från den platsen.
+    explanation: Deklarationen konverteras till den som beskrivs ovan.
+    disabled:
+      Tyvärr kan lättnadsfunktionen inte ställas in med något PostCSS-plugin.
+      Kan göras med {{@keyframes}}, se ovan.
+
+  gradient:
+    name: Gradient
+    text: Det är möjligt att rita en gradient med ^postcss-easing-gradients^.
+
+  mathfunction:
+    name: Matematisk funktion
+    text:
+      Nedan ser du koden för denna lättnadsfunktion skriven i TypeScript.
+      Variabeln x representerar animeringens absoluta progressionen inom
+      gränserna 0 (animeringens början) och 1 (animeringens slut).
+
+easing:
+  all_easings: Alla lättnader
+  check: Kontrollera lättnad för ändringar
+  check_size: Storlekar
+  check_position: Positioner
+  check_opacity: Genomskinligheter
+  current_func: Denna funktion
+  linear_func: Linjär funktion
+  load: Laddar...
+
+opensource:
+  title: Öppen källkod
+  translate: Hjälp till att översätta webbplatsen till ditt språk
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: och
+  solovev: Ivan Solovev
+
+theme:
+  auto: Autotema
+  light: Ljust tema
+  dark: Mörkt tema
