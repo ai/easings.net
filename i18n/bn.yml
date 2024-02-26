@@ -1,0 +1,78 @@
+version: 2
+lang_code: bn
+lang_name: বাংলা
+rtl: false
+
+title: ইজিং ফাংশন চিট শিট (Easing Functions Cheat Sheet)
+description:
+  সঠিক ইজিং ফাংশন বেছে নিয়ে অ্যানিমেশনগুলো আরও বাস্তবসম্মত করুন।
+share:
+  ইজিং ফাংশনগুলি অ্যানিমেশনের গতি নির্দিষ্ট করে
+  গতিবিধি আরও স্বাভাবিক (natural) করে। বাস্তব বস্তু কেবল একটি ধ্রুব গতিতে চলে না,
+  এবং তাৎক্ষণিকভাবে শুরু এবং থামে না। এই পৃষ্ঠাটি আপনাকে
+  সঠিক ইজিং ফাংশন বেছে নিতে সাহায্য করে।
+
+about: __format
+  ~~ইজিং ফাংশনগুলি~~ সময়ের সাথে একটি প্যারামিটারের পরিবর্তনের হার নির্দিষ্ট করে।
+
+  বাস্তব জীবনে বস্তুগুলি তাত্ক্ষণিকভাবে শুরু এবং থামে না, এবং প্রায় কখনোই
+  একটি ধ্রুব গতিতে চলাচল করে না। যখন আমরা একটি ড্রয়ার খুলি, আমরা প্রথমে এটিকে দ্রুত সরিয়ে ফেলি।
+  ফ্লোরে কিছু ফেলে দিন, এবং এটি প্রথমে নিচের দিকে গতি বাড়বে ,
+  এবং তারপর ফ্লোরে আঘাত করার পরে আবার উপরে উঠবে।
+
+  এই পেজটি আপনাকে সঠিক ইজিং ফাংশন বেছে নিতে সাহায্য করে।
+
+howtos:
+  css:
+    text: css-এ, ট্রানজিশন এবং অ্যানিমেশন সম্পত্তিগুলি (properties) আপনাকে একটি ইজিং ফাংশন নির্দিষ্ট করতে দেয়।
+    edit: ^cubic-bezier.com^-এ সম্পাদনা করুন।
+    with_animation: সিএসএস-এ, এই ফাংশন {{@keyframes}} ব্যবহার করে প্রয়োগ করা যেতে পারে
+    example_size: আকার (size)
+    example_position: অবস্থান (position)
+    example_opacity: স্বচ্ছতা (transparency)
+
+  postcss:
+    text:
+      postcss-এ, ইজিং ফাংশন বর্ণনা করা অনেক সহজ।
+      ^postcss-easings^ নামের একটি প্লাগিন রয়েছে
+      যা সেই সাইট থেকে ট্রানজিশন তথ্য নেয়।
+    explanation: 
+      উক্ত ঘোষণা উপরে বর্ণিত একটিতে রূপান্তরিত হয়।
+    disabled:
+      দুর্ভাগ্যক্রমে, কোনো পোস্টসিএসএস প্লাগইন দিয়ে ইজিং ফাংশন সেট করা যায় না।
+      {{@keyframes}} দিয়ে সম্পন্ন করা যায়, উপরে দেখুন।
+
+  gradient:
+    name: গ্রেডিয়েন্ট (Gradient)
+    text: ^postcss-easing-gradients^ ব্যবহার করে গ্রেডিয়েন্ট আঁকা সম্ভব।
+
+  mathfunction:
+    name: গাণিতিক ফাংশন (Math function)
+    text:
+      নিচে আপনি এই ইজিং ফাংশনের কোড টাইপস্ক্রিপ্টে লেখা দেখতে পাবেন।
+      x ভেরিয়েবলটি 0 (অ্যানিমেশনের শুরু) এবং 1 (অ্যানিমেশনের শেষ) এর মধ্যে অ্যানিমেশনের সম্পূর্ণ অগ্রগতি নির্দেশ করে।
+
+easing:
+  all_easings: সব ইজিং (All easings)
+  check: পরিবর্তনের জন্য ইজিং পরীক্ষা করুন (Check easing for changes)
+  check_size: আকার (Sizes)
+  check_position: অবস্থান (Positions)
+  check_opacity: স্বচ্ছতা (Transparencies)
+  current_func: এই ফাংশন (This function)
+  linear_func: রৈখিক ফাংশন (Linear function)
+  load: লোড হচ্ছে... (Loading...)
+
+
+opensource:
+  title: Open Source
+  translate: সাইটটিকে আপনার ভাষায় অনুবাদ করতে সাহায্য করুন।
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: এবং
+  solovev: Ivan Solovev
+
+theme:
+  auto: Auto theme
+  light: Light theme
+  dark: Dark theme
