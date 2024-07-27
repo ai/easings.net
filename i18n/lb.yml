@@ -1,0 +1,76 @@
+version: 2
+lang_code: lb
+lang_name: Lëtzebuergesch
+rtl: false
+
+title: Cheat Sheet fir Easing-Funktiounen
+description:
+  Maacht Animatioune méi realistesch andeems Dir déi richteg Iwwergangsfunktioun (easing function) wielt.
+share:
+  Iwwergangsfunktiounen (engl. easing functions) bestëmmen de Geschwindegkeetsverlaf
+  vun enger Animatioun fir se méi natierlech ze maachen. Well real Objete beweegen
+  sech selte ruckelzeg oder mat enger konstanter Geschwindegkeet.
+  Dës Säit hëlleft Iech déi richteg Iwwergangsfunktiounen ze fannen.
+
+about: __format
+  ~~Iwwergangsfunktiounen~~ <i>(engl. easing functions)</i> bestëmmen den Taux vun
+  der Ännerung vun engem Parameter iwwer Zäit.
+
+  An der Realitéit beweegen sech Objete seele ruckelzeg oder mat enger konstanter Geschwindegkeet.
+  Wann mir een Tirang opmaachen, dann zeien mir fir d'éischt staark a bremsen eis Beweegung dann of.
+  Loosse mir ee Ball falen, da beschleunegt dee fir d'éischt a Richtung Buedem fir da vum Buedem ofzesprangen.
+
+  Des Säit hëlleft Dir, eng passend Iwwergangsfunktioun ze fannen.
+
+howtos:
+  css:
+    text: An CSS kënnen Iwwergangsfunktiounen an den 'transition' an 'animation' Eegenschafte benotzt ginn.
+    edit: Op ^cubic-bezier.com^ beaarbechten.
+    with_animation: An CSS kann des Funktioun via {{@keyframes}} implementéiert ginn.
+    example_size: Gréisst
+    example_position: Positioun
+    example_opacity: Transparenz
+
+  postcss:
+    text:
+      An PostCSS léisst sech des Iwwergangsfunktioun vill mei einfach notzen.
+      De Plugin ^postcss-easings^ notzt d'Definitioun fir d'Iwwergangsfunktioun vun dëser Säit.
+    explanation: Dës Deklaratioun gëtt spéider an déi uewe gewisen ëmgewandelt.
+    disabled:
+      Leider kann dës Funktioun mat kengem PostCSS Plugin agestallt ginn.
+      D'Verwendung vun {{@keyframes}} , wei uewe gewisen, ass awer méiglech.
+
+  gradient:
+    name: Gradient
+    text: Mat ^postcss-easing-gradients^ ass et méiglech Gradienten duerzestellen.
+
+  mathfunction:
+    name: Berechnungsfunktioun
+    text:
+      Hei ënne gesitt Dir de Code vun dëser Iwwergangsfunktioun am TypeScript geschriwwen.
+      D'Variabel x representéiert den absolutte Fortschrëtt vun der Animatioun an de Grenze vun
+      0 (Ufank vun der Animatioun) an 1 (Enn vun der Animatioun).
+
+easing:
+  all_easings: All Iwwergangsfunktiounen
+  check: Animatioun mat dëser Funktioun vergläiche fir
+  check_size: Gréisst
+  check_position: Positioun
+  check_opacity: Transparenz
+  current_func: Des Funktioun
+  linear_func: Linear Funktioun
+  load: Um Lueden...
+
+opensource:
+  title: Open Source
+  translate: Hëlleft dobäi dëse Site op Är Sprooch ze iwwersetzen
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: an
+  solovev: Ivan Solovev
+
+theme:
+  auto: Automatescht Theme
+  light: Hellt Theme
+  dark: Däischtert Theme
