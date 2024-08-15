@@ -1,0 +1,77 @@
+version: 2
+lang_code: no-bok
+lang_name: Norsk bokmål
+rtl: false
+
+title: Overgangsfunksjoner Jukselapp
+description:
+  Gjør animasjoner mer realistisk ved å velge den riktige overgangsfunksjonen.
+share:
+  Overgangsfunksjoner spesifiserer animasjonshastigheten
+  for å gjøre en bevegelse mer naturlig. Ekte objekter flytter seg ikke
+  med en konstant hastighet, og starter og stopper ikke øyeblikkelig.
+  Denne siden hjelper deg med å velge riktig overgangsfunksjon.
+
+about: __format
+  ~~Overgangsfunksjoner~~ spesifiser endringsraten til et parameter 
+  over tid
+
+  Objekter i virkeligheten starter og stopper ikke øyeblikkelig, og nesten aldri
+  har de en konstant hastighet. Når vi åpner en skoff, starter vi raskt,
+  og avslutter sakte mens den kommer ut. Slipp noe på gulvet, og den vil
+  først akselerere nedover, så sprette opp igjen etter å ha truffet gulvet.
+
+  Denne siden hjelper deg med å velge riktig overgangsfunksjon.
+
+howtos:
+  css:
+    text: I CSS, overgangs- og animasjonsegenskapene lar deg spesifisere en overgangsfunksjon.
+    edit: Rediger på ^cubic-bezier.com^.
+    with_animation: I CSS kan denne funksjonen bli implementert ved bruk av {{@keyframes}}
+    example_size: Størrelse
+    example_position: Posisjon
+    example_opacity: Gjennomsiktighet
+
+  postcss:
+    text:
+      I PostCSS er overgangsfunksjonen mye lettere å beskrive.
+      Det finnes en plugin ^poscss-easings^ som tar overgansinformasjon fra den siden.
+    explanation: Den deklareringen er gjort om til den beskrevet over.
+    disabled:
+      Uheldigvis kan ikke overgangsfunksjonen settes med noen PostCSS pluginer.
+      Kan bli gjort med {{@keyframes}}, se over.
+
+  gradient:
+    name: Overgang
+    text: Det er mulig å tegne en overgang med ^postcss-easing-gradients^.
+
+  mathfunction:
+    name: Mattefunksjon
+    text:
+      Under ser du koden av denne overgangsfunksjonen skrevet i TypeScript.
+      Variabelen x representerer den absolutte progresjonen av animasjonen
+      i området mellom 0 (starten av animasjonen) og 1 (sluttet av animasjonen).
+
+easing:
+  all_easings: Alle overganger
+  check: Sjekk overgang for endringer
+  check_size: Størrelser
+  check_position: Posisjoner
+  check_opacity: Gjennomsiktigheter
+  current_func: Denne funksjonen
+  linear_func: Lineær funksjon
+  load: Laster inn...
+
+opensource:
+  title: Openkildet
+  translate: Hjelp med å oversette siden til ditt språk
+
+authors:
+  sitnik: Andrey Sitnik
+  separator: og
+  solovev: Ivan Solovev
+
+theme:
+  auto: Automatisk tema
+  light: Lyst tema
+  dark: Mørkt tema
