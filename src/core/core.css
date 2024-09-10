@@ -25,26 +25,28 @@ a {
 	border-bottom: 1px solid;
 }
 
-	a:hover,
-	a:focus {
-		color: var(--brand-darken-color);
-	}
+a:hover,
+a:focus {
+	color: var(--brand-darken-color);
+}
 
-	a:active {
-		color: var(--brand-color);
-		transition: none;
-	}
+a:active {
+	color: var(--brand-color);
+	transition: none;
+}
 
-	a.focus-visible {
-		box-shadow: 0 0 1px 4px var(--brand-color);
-	}
+a.focus-visible {
+	box-shadow: 0 0 1px 4px var(--brand-color);
+}
 
-	a.focus-visible {
-		box-shadow: 0 0 1px 4px var(--brand-color);
-	}
+a.focus-visible {
+	box-shadow: 0 0 1px 4px var(--brand-color);
+}
 
 pre {
 	font-family: var(--code-fonts);
 	margin: 0;
 	tab-size: 25px;
+	padding: 1em;
+	border: 1px solid var(--brand-darken-color);
 }
