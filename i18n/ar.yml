@@ -3,74 +3,73 @@ lang_code: ar
 lang_name: العربية
 rtl: true
 
-title: ورقة غش لل Easing Functions.
+title: ورقة غش للـEasing Functions
 description:
   إجعل الحركة أكثر واقعية باختيار ال easing function المناسبة.
 share:
-  تحدد ال Easing functions سرعة الحركة
-  لجعل الحركة أكثر واقعية. ففي الواقع، الأشياء لا تتحرك
-  بسرعة ثابتة ولا تبدأ أو تنهي حركتها لحظياً.
+  تحدد ال Easing functions سرعة الحركات (animations)
+  لجعل حركتها أكثر واقعية. ففي الواقع، لا تتحرك الأشياء
+  بسرعة ثابتة، و حركتها لا تبدأ أو تنهي لحظياً.
   هذه الصفحة تساعدك على إختيار ال easing function المناسبة.
 
 about: __format
-  ~~Easing functions~~ تحدد معدل تغيير الخاصية مع الزمن.
+  ~~Easing functions~~ هي دوال تحدد معدل تغيير خاصية أو قيمة مع الزمن.
 
-  الأشياء في الواقع لا تبدأ الحركة ولا تتوقف فجأة ، و غالبا لا تتحرك ب سرعة ثابتة.
-  عندما نفتح درج ، فإننا أولا نحركه بسرعة ثم ببطء و نحن نخرجه.
-  اقذف شيئا على الأرض و ستتزيد سرعته إلى الأسفل
-  ثم يرتد للأعلى بعد الإصطدام بالأرض.
+  الأشياء في الواقع لا تيدأ أو توقف حركتها فجأة، وغالبا لا تتحرك بسرعة ثابتة.
+  عندما نفتح درجاً، فإننا نحركه بسرعة في البداية، ثم ننقص السرعة أثناء خروجه.
+  أسقط شيئا وستراه يتسارع للأسفل، ثم يرتد للأعلى بعد اصطدامه بالأرض.
 
   هذه الصفحة تساعدك على إختيار ال easing function المناسبة.
 
 howtos:
   css:
-    text: في CSS ، خصائص ال transition و ال animation تسمح لك بتحديد ال easing function .
-    edit: جربها على  ^cubic-bezier.com^.
-    with_animation: In CSS, this function can be implemented using {{@keyframes}}
-    example_size: Size
-    example_position: Position
-    example_opacity: Transparency
+    text: في CSS، خصائص ال transition وال animation تسمح لك بتحديد ال easing function.
+    edit: جربها على ^cubic-bezier.com^.
+    with_animation: في CSS، يمكن التعبير عن هذه الدالة بإستعمال {{@keyframes}}
+    example_size: الحجم
+    example_position: الموضع
+    example_opacity: الشفافية
 
   postcss:
     text:
-      في PostCSS، ال easing function أسهل بكثير في الوصف.
-      هناك plugin ^postcss-easings^ الذي يحول خصائص ال transition من هذا الموقع.
-    explanation: يتم تحويل هذا الإعلان إلى الإعلان الموصوف أعلاه
+      في PostCSS، التعبير عن هذه الدالة بشكل أسهل بكثير.
+      هناك إضافة ^postcss-easings^ التي تستعمل معلومات ال transition من هذا الموقع.
+    explanation: يتم تحويل هذا التعبير إلى تعبير CSS المذكور أعلاه
     disabled:
-      للأسف ال easing function لا يمكن ضبطها PostCSS plugin.
-      يمكن عملها ب  {{@keyframes}}, شاهد أعلاه.
+      للأسف، لا يمكن استعمال هذه الدالة عن طريق إضافة ل PostCSS.
+      لكن بمكن التعبير عنها عن طريق {{@keyframes}}, أنظر أعلاه.
 
   gradient:
     name: Gradient
-    text: من الممكن رسم gradient بإستخدام ^postcss-easing-gradients^.
+    text: يمكن رسم gradient بإستخدام ^postcss-easing-gradients^.
 
   mathfunction:
-    name: Math function
+    name: دالة رياضية
     text:
-      بالأسفل يمكنك رؤية كود تلك ال easing function مكتوب بلغة TypeScript.
+      بالأسفل يمكنك رؤية كود هذه الدالة بلغة TypeScript.
       المتغير x يمثل تقدم الحركة
-      في الحدود بين 0 (بداية الحركة) و 1 (نهاية الحركة).
+      بين 0 (بداية الحركة) و 1 (نهاية الحركة).
 
 easing:
-  all_easings: All easings
-  check: Check easing for changes
-  check_size: Size's
-  check_position: Positions
-  check_opacity: Transparencies
-  current_func: That function
-  linear_func: Linear function
-  load: Loading...
+  all_easings: كل ال easings
+  check: جرب ال easing من أجل تغيرات:
+  check_size: الحجم
+  check_position: الموضع
+  check_opacity: الشفافية
+  current_func: هذه الدالة
+  linear_func: الدالة الخطية
+  load: تحميل...
 
 opensource:
-  title: Open Source
+  title: مفتوح المصدر
   translate: ساهم بترجمة هذه الصفحة للغتك
 
 authors:
   sitnik: Andrey Sitnik
-  separator: and
+  separator: و
   solovev: Ivan Solovev
 
 theme:
-  auto: Auto theme
-  light: Light theme
-  dark: Dark theme
+  auto: مظهر تلقائي
+  light: مظهر فاتح
+  dark: مظهر داكن 
