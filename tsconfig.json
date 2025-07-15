@@ -2,10 +2,15 @@
 	"compilerOptions": {
 		"declaration": true,
 		"declarationDir": "./dist",
-		"module": "es6",
+		"module": "esnext",
 		"outDir": "./dist",
-		"target": "es5",
-		"noImplicitAny": true
+		"target": "esnext",
+		"noImplicitAny": true,
+		"strict": true,
+		"skipLibCheck": true,
+		"moduleResolution": "node",
+		"preserveConstEnums": true,
+		"sourceMap": true,
 	},
 	"include": ["src/**/*"],
 	"exclude": ["node_modules"]
