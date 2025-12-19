@@ -34,7 +34,7 @@ howtos:
   postcss:
     text:
       在 PostCSS 中，使用缓动函数就变得方便多了。
-      可以使用这个插件 ^postcss-easings^ 来定义 transition 的属性值。 
+      可以使用这个插件 ^postcss-easings^ 来定义 transition 的属性值。
     explanation: 这种形式和上面的贝塞尔曲线函数一致。
     disabled:
       可惜的是，这个缓动函数不能使用 PostCSS plugin 插件。
@@ -70,6 +70,6 @@ authors:
   solovev: Ivan Solovev
 
 theme:
-  auto: 默认主题
+  auto: 自动主题
   light: 亮色主题
   dark: 深色主题
