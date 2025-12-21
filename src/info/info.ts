@@ -16,6 +16,7 @@ const infoComplex = getElementsList(selectorComplexInfo);
 const infoName = getElementsList(".js-info-name", info);
 const infoFuncName = getElementsList(".js-info-func", info);
 const infoMaths = getElementsList(".js-info-maths", info);
+const infoFormula = getElementsList(".js-info-formula", info);
 
 const infoKeyframes = {
 	opacity: getElement(selectorComplexKeyframeOpacity),
@@ -40,7 +41,12 @@ export function setInfoMaths(maths: string): void {
 		e.innerText = maths;
 	});
 }
-
+export function setInfoFormula(formula: string): void {
+	forNodeList(infoFormula, (e) => {
+		e.innerText = `$$${formula}$$`;
+	});
+	MathJax.typeset();
+}
 export function showSimpleInfo(): void {
 	forNodeList(infoSimple, (item) => (item.hidden = false));
 	forNodeList(infoComplex, (item) => (item.hidden = true));
