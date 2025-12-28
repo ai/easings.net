@@ -97,11 +97,12 @@ mixin info
 						div {{ howtos.mathformula.text }}
 						.example__code
 								+codeFormula
-
 					.js-info-complex
-						+details("{{ howtos.css.example_size }}", "scale") {{ easing.load }}
-						+details("{{ howtos.css.example_position }}", "translate") {{ easing.load }}
-						+details("{{ howtos.css.example_opacity }}", "opacity") {{ easing.load }}
+						div {{ howtos.mathformula.text }}
+						.example__code
+							+example-copy
+								+codeFormula
+
 
 			.info__case
 				.cases__title {{ easing.check }}:

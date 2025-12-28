@@ -55,7 +55,7 @@ howtos:
     name: Math formula
     text:
       This easing function can also be written as a formula on the cartesian plane.
-      It has a domain and range of [0,1].
+      It has the domain \(x \in [0,1]\).
 
 easing:
   all_easings: All easings

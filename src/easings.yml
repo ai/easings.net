@@ -209,7 +209,45 @@
   css:  no
   maths: |-2
     return 1 - easeOutBounce(1 - x);
-  formula: f(x) = 1 - cos(\frac{x\PI}{2})
+  formula:
+    \begin{array}{l}
+    \mathrm{let\space} \alpha = 4 \\
+    \mathrm{let\space}\delta = 2\alpha-1 \\
+    \mathrm{let\space} n = [0...\delta]\\
+    \end{array}
+    \hphantom{...}
+    f(t) =
+    -\frac{
+    \left(
+    d-dt-2n
+    \left[\left\lfloor
+    \frac
+    {d-dt+3}
+    {2}
+    \right\rfloor\right]
+    +1
+    \right)
+    \left(
+    d-dt-2n
+    \left[\left\lfloor
+    \frac
+    {d-dt+3}
+    {2}
+    \right\rfloor\right]
+    -1
+    \right)
+    }{
+    \left(
+    n
+    \left[\left\lfloor
+    \frac
+    {d-dt+3}
+    {2}
+    \right\rfloor\right]
+    +1
+    \right)
+    ^{2}
+    }
 - name: easeOutBounce
   css:  no
   maths: |-2
@@ -225,9 +263,129 @@
     } else {
         return n1 * (x -= 2.625 / d1) * x + 0.984375;
     }
+  formula:
+    \begin{array}{l}
+    \mathrm{let\space} \alpha = 4 \\
+    \mathrm{let\space}\delta = 2\alpha-1 \\
+    \mathrm{let\space} n = [0...\delta]\\
+    \end{array}
+    \hphantom{...}
+    f(t) =
+    \frac{
+    \left(
+    dt-2n
+    \left[\left\lfloor
+    \frac
+    {dt+3}
+    {2}
+    \right\rfloor\right]
+    +1
+    \right)
+    \left(
+    dt-2n
+    \left[\left\lfloor
+    \frac
+    {dt+3}
+    {2}
+    \right\rfloor\right]
+    -1
+    \right)
+    }{
+    \left(
+    n
+    \left[\left\lfloor
+    \frac
+    {dt+3}
+    {2}
+    \right\rfloor\right]
+    +1
+    \right)
+    ^{2}
+    }+1
 - name: easeInOutBounce
   css:  no
   maths: |-2
     return x < 0.5
       ? (1 - easeOutBounce(1 - 2 * x)) / 2
       : (1 + easeOutBounce(2 * x - 1)) / 2;
+  formula:
+    \begin{array}{l}
+    \mathrm{let\space} \alpha = 4 \\
+    \mathrm{let\space}\delta = 2\alpha-1 \\
+    \mathrm{let\space} n = [0...\delta]\\
+    \end{array}
+    \hphantom{...}
+    f(t) =
+    \begin{cases}
+    -\frac{
+      \left(
+        d-2dt+1-2n
+        \left[
+          \left\lfloor
+            \frac{
+              d-2dt+3
+            }{2}
+          \right\rfloor
+        \right]
+      \right)
+      \left(
+        d-2dt-1-2n
+        \left[
+          \left\lfloor
+            \frac{
+            d-2dt+3
+            }{2}
+          \right\rfloor
+        \right]
+      \right)
+    }{
+      2
+      \left(
+        n
+        \left[
+          \left\lfloor
+            \frac{
+              d-2dt+3
+            }{2}
+          \right\rfloor
+        \right]+1
+      \right)
+        ^{2}
+    } & t \lt \frac{1}{2} \\
+
+
+    \frac{
+      \left(
+        2dt-d+1-2n
+        \left[
+          \left\lfloor
+            \frac{
+              d-2dt+3}{2
+            }
+          \right\rfloor
+        \right]
+      \right)
+      \left(
+        2dt-d-1-2n
+        \left[
+          \left\lfloor
+            \frac{
+              d-2dt+3
+            }{2}
+          \right\rfloor
+        \right]
+      \right)
+    }{
+      2
+      \left(
+        n
+        \left[
+          \left\lfloor
+            \frac{
+              d-2dt+3
+            }{2}
+          \right\rfloor
+        \right]+1
+      \right)
+        ^{2}} + 1 & t \ge \frac{1}{2} \\
+    \end{cases}
