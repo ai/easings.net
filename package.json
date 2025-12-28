@@ -1,10 +1,21 @@
 {
 	"name": "easings.net",
+	"version": "1.0.3",
+	"homepage": "https://easings.net/",
 	"scripts": {
 		"start": "node ./scripts/start.js",
 		"build": "NODE_ENV=production node ./scripts/build.js",
-		"lint": "eslint ./src/**/*.{ts,js} ./scripts/*.js"
+		"lint": "eslint ./src/**/*.{ts,js} ./scripts/*.js",
+		"build:lib": "npm run build:esm && npm run build:umd",
+		"build:esm": "tsc src/easings/easingsFunctions.ts --module es2015 --target es2015 --outDir lib/esm --skipLibCheck --declaration --declarationDir lib",
+		"build:umd": "tsc src/easings/easingsFunctions.ts --module umd --target es2015 --outDir lib/umd --skipLibCheck"
 	},
+	"files": [
+		"lib"
+	],
+	"main": "lib/umd/easingsFunctions.js",
+	"module": "lib/esm/easingsFunctions.js",
+	"types": "lib/easingsFunctions.d.ts",
 	"browserslist": [
 		"defaults",
 		"not ie 11",
