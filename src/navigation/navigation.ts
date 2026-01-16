@@ -16,7 +16,8 @@ import {
 	setInfoName,
 	setInfoMaths,
 	showComplexInfo,
-	showSimpleInfo,
+	showSimpleInfo, 
+	setInfoFormula,
 } from "../info/info";
 import {
 	resetOverlay,
@@ -135,6 +136,7 @@ function navigateChart(id: string): void {
 	const name = item.getAttribute("data-name");
 	const func = item.getAttribute("data-func");
 	const maths = item.getAttribute("data-maths");
+	const formula = item.getAttribute("data-formula");
 	const itemOffset = item.getAttribute("data-offset");
 	const transitionTimingFunction = func === noTimingFunction ? "ease" : func;
 
@@ -152,6 +154,7 @@ function navigateChart(id: string): void {
 		setInfoName(name);
 		setInfoFunc(func);
 		setInfoMaths(maths);
+		setInfoFormula(formula);
 		setFuncForCard(func, name);
 		setTransitionForInfoChartCursor(func, name);
 
