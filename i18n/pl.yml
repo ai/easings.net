@@ -5,17 +5,17 @@ rtl: false
 
 title: Ściąga z Funkcji Przejścia
 description:
-  Spraw, że animacja wygląda na bardziej realistyczną, dobierając dla niej odpowiednią funkcję przejścia (tzw. easing).
+  Spraw, aby animacje wyglądały bardziej realistycznie, dobierając odpowiednie funkcje przejścia (tzw. easings).
 share:
-  Funkcje przejścia opisują tempo animacji, aby ruch wyglądał naturalniej. Prawdziwe obiekty bowiem nie poruszają się tak po prostu, ze stałą prędkością a także nie ruszają i nie zatrzymują się natychmiastowo.
-  Ta strona pomaga wybrać Ci odpowiednią funkcję przejścia.
+  Funkcje przejścia określają tempo animacji, sprawiając, że ruch wygląda naturalniej. Prawdziwe obiekty nie poruszają się ze stałą prędkością, ani nie zatrzymują się natychmiastowo.
+  Ta strona pomoże Ci wybrać odpowiednią funkcję przejścia.
 
 about: __format
-  ~~Funkcje przejścia~~ zadaj tempo zmian parametru w czasie.
+  ~~Funkcje przejścia~~ określ tempo zmian parametru w czasie.
 
-  Obiekty w prawdziwym życiu nie ruszają i nie zatrzymują się natychmiastowo i prawie nigdy nie poruszają się ze stałą prędkością. Kiedy wysuwamy szufladę, najpierw nadajemy jej energiczny, szybki ruch, zaś kiedy już się wysuwa, spowalniamy ją. Upuść coś na podłogę, a to najpierw zacznie przyspieszać w dół, po czym, gdy trafi w podłogę, odbije się od niej z powrotem.
+  Obiekty w rzeczywistości nie ruszają ani nie zatrzymują się natychmiastowo i prawie nigdy nie poruszają się ze stałą prędkością. Kiedy wysuwamy szufladę, najpierw robimy to szybko, a pod koniec zwalniamy. Gdy upuścisz coś na podłogę, przedmiot przyspiesza w dół, a po uderzeniu odbija się.
 
-  Ta strona pomaga wybrać Ci odpowiednią funkcję przejścia.
+  Ta strona pomoże Ci wybrać odpowiednią funkcję przejścia.
 
 howtos:
   css:
@@ -28,30 +28,30 @@ howtos:
 
   postcss:
     text:
-      Funkcje przejścia są znacznie łatwiejsze do opisania w PostCSS.
-      Istnieje plugin ^postcss-easings^, który pobiera informacje o przejściach z tejże strony.
-    explanation: Tamta deklaracja została skonwertowana do tej opisanej powyżej.
+      Funkcje przejścia są znacznie łatwiejsze w użyciu z PostCSS.
+      Plugin ^postcss-easings^ pobiera definicje przejść z tej strony.
+    explanation: Ta deklaracja jest zamieniana na powyższy kod.
     disabled:
-      Niestety nie można ustawić funkcji przejścia za pomocą żadnego pluginu do PostCSS-a.
-      Zobacz powyżej, jak można to zrobić przy użyciu {{@keyframes}}.
+      Niestety, tej funkcji przejścia nie można ustawić za pomocą pluginu PostCSS.
+      Zobacz powyżej, jak uzyskać ten efekt przy użyciu {{@keyframes}}.
 
   gradient:
     name: Gradient
-    text: Można narysować gradient przy użyciu ^postcss-easing-gradients^.
+    text: Możesz narysować gradient używając ^postcss-easing-gradients^.
 
   mathfunction:
     name: Funkcje matematyczne
     text:
-      Poniżej widzisz kod dla funkcji przejścia napisany w  TypeScriptcie.
-      Zmienna x odzwierciedla absolutny postęp animacji w zakresie od 0 (początek animacji) do 1 (koniec animacji).
+      Poniżej znajduje się kod funkcji przejścia w języku TypeScript.
+      Zmienna x reprezentuje postęp animacji w zakresie od 0 (początek) do 1 (koniec).
 
 easing:
   all_easings: Wszystkie przejścia
-  check: Sprawdź, jaką zmianę daje to przejście
+  check: Sprawdź działanie tego przejścia
   check_size: Rozmiar
   check_position: Pozycja
   check_opacity: Przezroczystość
-  current_func: Ta funkcja
+  current_func: Wybrana funkcja
   linear_func: Funkcja liniowa
   load: Ładowanie...
 
