@@ -43,7 +43,7 @@ howtos:
     name: Funkcje matematyczne
     text:
       Poniżej widzisz kod dla funkcji przejścia napisany w  TypeScriptcie.
-      Zmienna x odzwierciedla absolutny postęp animacji w zakresie od 0 (początek animacji) do 1 (koniec animacji).
+      Zmienna x odzwierciedla bezwzględny postęp animacji w zakresie od 0 (początek animacji) do 1 (koniec animacji).
 
 easing:
   all_easings: Wszystkie przejścia
