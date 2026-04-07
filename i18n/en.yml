@@ -51,6 +51,11 @@ howtos:
       Below you see the code of this easing function written in TypeScript.
       The variable x represents the absolute progress of the animation
       in the bounds of 0 (beginning of the animation) and 1 (end of animation).
+  mathformula:
+    name: Math formula
+    text:
+      This easing function can also be written as a formula on the cartesian plane.
+      It has the domain \(x \in [0,1]\).
 
 easing:
   all_easings: All easings

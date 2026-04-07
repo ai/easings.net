@@ -2,6 +2,7 @@ include ../code/codeCss
 include ../code/codePostCss
 include ../code/codeGradient
 include ../code/codeMaths
+include ../code/codeFormula
 include ../example-copy/example-copy
 
 include ../case/case
@@ -89,6 +90,19 @@ mixin info
 						.example__code
 							+example-copy
 								+codeMaths
+
+				.example
+					.example__title {{ howtos.mathformula.name}}
+					.js-info-simple
+						div {{ howtos.mathformula.text }}
+						.example__code
+								+codeFormula
+					.js-info-complex
+						div {{ howtos.mathformula.text }}
+						.example__code
+							+example-copy
+								+codeFormula
+
 
 			.info__case
 				.cases__title {{ easing.check }}:
