@@ -1,5 +1,5 @@
 import keyframes from "./keyframes";
-import easingsFunctions from "./easingsFunctions";
+import easingsFunctions, { EasingTypes } from "./easingsFunctions";
 import roundTo2DecimalPlaces from "../helpers/roundTo2DecimalPlaces";
 
 export const enum keyframeTypes {
@@ -9,7 +9,7 @@ export const enum keyframeTypes {
 }
 
 export function generateComplexEasings(
-	name: string,
+	name: EasingTypes,
 	property: keyframeTypes
 ): string {
 	if (name in keyframes) {
